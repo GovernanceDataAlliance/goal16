@@ -9,4 +9,8 @@ script: npm test
 after_success: bash ./scripts/cibuild.sh
 branches:
   only:
-    - develop
+  - develop
+env:
+  global:
+    - GH_REF: github.com/Vizzuality/goal16.git
+    - secure: GIWph8nLKn0KPxTPbL678XIffvsd+XDtk7+RXneJ4s5dGOUMer1b5/VvVoUS/r01Dk/vgrhHRBSLJD0RuSQExpv7x0GwZUg0IrPVxze4FJRIYSCbksiabnfomNeWwl8s1EhCWdZ4KOc9o7mcYS1KqIP43nkP9gy9Ltcktu9DGvWncsm1R4qfwIxhz+sOEFf9ZUFXlw0ExA/cG5DrQVS0U1seXCJYhV5K4tp71gfatUxmIiriqPVw9KITzSnvUocEo9iQyPVfOXGhC5wFXdSJ5pJ+95AsI6qQfq0w31NMXDC4YU+w1Skgi9T8A6DkUCRS62++m5tdSU31HiLvG8/qZ75M+1FttFVnum48oJoS2wSIUhBNm+lOVBTg6/evaMJwDtNVLjAUOt/yA8zEse3trmtxQ95ORoJ8vHeCI4PywP6XK9bwNkIY4n+rzK7be+31z1XJEiffAc6UeFYPYl6nYsA70BaPDUwDftghEULXIBsupkrmfyfjvXdrGhlznHEKi9RR3n9jY6TJ78PCnVd8tIJFkxaUyr6XpXTGArzDZ4X3x8XcbdsnFRWNm/O11HTMcAuVdzgkZHK4xSfroRaNdl8y6/y8ZCH5ZTvfmDbnSoQYlVDyWO3BPTIbBKIj/3YRmtjx+zwH/DsgjetsHlR9YAO8ODUBY2XxhfxzJOu5oWE=
