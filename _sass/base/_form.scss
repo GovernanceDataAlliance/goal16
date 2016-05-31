@@ -55,7 +55,7 @@ select {
   padding: 8px 30px 8px 5px;
   border-color: $bg-color-3;
   color: $font-color-3;
-  background: url('../img/search.svg') no-repeat  95% 50%;
+  background: url('#{$baseUrl}/img/search.svg') no-repeat  95% 50%;
   background-size: 15px 15px;
 }
 

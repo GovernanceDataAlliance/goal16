@@ -1001,7 +1001,7 @@ select {
   padding: 8px 30px 8px 5px;
   border-color: #beb7aa;
   color: #39a1b2;
-  background: url("../img/search.svg") no-repeat 95% 50%;
+  background: url("clara/img/search.svg") no-repeat 95% 50%;
   background-size: 15px 15px; }
 
 .chzn-container .chzn-results {
@@ -1226,7 +1226,7 @@ select {
         .l-banner.-detail .description {
           max-width: 80%; } }
   .l-banner.promoHome {
-    background-image: url("../img/promoHome.jpg");
+    background-image: url("clara/img/promoHome.jpg");
     background-size: cover;
     background-position: center; }
     .l-banner.promoHome:before {
@@ -1238,7 +1238,7 @@ select {
       right: 0;
       background-color: rgba(65, 52, 43, 0.5); }
   .l-banner.promoInteriores-About {
-    background-image: url("../img/promoInteriores-About.jpg");
+    background-image: url("clara/img/promoInteriores-About.jpg");
     background-size: cover;
     background-position: center; }
     .l-banner.promoInteriores-About:before {
@@ -1250,7 +1250,7 @@ select {
       right: 0;
       background-color: rgba(65, 52, 43, 0.5); }
   .l-banner.promoInteriores-CompareCountries {
-    background-image: url("../img/promoInteriores-CompareCountries.jpg");
+    background-image: url("clara/img/promoInteriores-CompareCountries.jpg");
     background-size: cover;
     background-position: center; }
     .l-banner.promoInteriores-CompareCountries:before {
@@ -1262,7 +1262,7 @@ select {
       right: 0;
       background-color: rgba(65, 52, 43, 0.5); }
   .l-banner.promoInteriores-Countries {
-    background-image: url("../img/promoInteriores-Countries.jpg");
+    background-image: url("clara/img/promoInteriores-Countries.jpg");
     background-size: cover;
     background-position: center; }
     .l-banner.promoInteriores-Countries:before {
@@ -1274,7 +1274,7 @@ select {
       right: 0;
       background-color: rgba(65, 52, 43, 0.5); }
   .l-banner.promoInteriores-Data {
-    background-image: url("../img/promoInteriores-Data.jpg");
+    background-image: url("clara/img/promoInteriores-Data.jpg");
     background-size: cover;
     background-position: center; }
     .l-banner.promoInteriores-Data:before {
@@ -1286,7 +1286,7 @@ select {
       right: 0;
       background-color: rgba(65, 52, 43, 0.5); }
   .l-banner.promoInteriores-Blog {
-    background-image: url("../img/promoInteriores-Blog.jpg");
+    background-image: url("clara/img/promoInteriores-Blog.jpg");
     background-size: cover;
     background-position: center; }
     .l-banner.promoInteriores-Blog:before {
@@ -1548,7 +1548,7 @@ select {
   padding: 3.125rem 0;
   background-color: #ccc; }
   .l-highlight.distribuidorDestacado-About {
-    background-image: url("../img/distribuidorDestacado-About.jpg");
+    background-image: url("clara/img/distribuidorDestacado-About.jpg");
     background-size: cover;
     background-position: center; }
     .l-highlight.distribuidorDestacado-About:before {
@@ -1560,7 +1560,7 @@ select {
       right: 0;
       background-color: rgba(65, 52, 43, 0.5); }
   .l-highlight.distribuidorDestacado-Countries {
-    background-image: url("../img/distribuidorDestacado-Countries.jpg");
+    background-image: url("clara/img/distribuidorDestacado-Countries.jpg");
     background-size: cover;
     background-position: center; }
     .l-highlight.distribuidorDestacado-Countries:before {
@@ -1572,7 +1572,7 @@ select {
       right: 0;
       background-color: rgba(65, 52, 43, 0.5); }
   .l-highlight.distribuidorDestacado-About02 {
-    background-image: url("../img/distribuidorDestacado-About02.jpg");
+    background-image: url("clara/img/distribuidorDestacado-About02.jpg");
     background-size: cover;
     background-position: center; }
     .l-highlight.distribuidorDestacado-About02:before {
@@ -1675,7 +1675,7 @@ select {
         flex-basis: 50%;
     background-color: #ddd; }
     .l-presentation > .picture.distribuidoresMul-01 {
-      background-image: url("../img/distribuidoresMul-01.jpg");
+      background-image: url("clara/img/distribuidoresMul-01.jpg");
       background-size: cover;
       background-position: center; }
       .l-presentation > .picture.distribuidoresMul-01:before {
@@ -1687,7 +1687,7 @@ select {
         right: 0;
         background-color: rgba(65, 52, 43, 0.5); }
     .l-presentation > .picture.distribuidoresMul-03 {
-      background-image: url("../img/distribuidoresMul-03.jpg");
+      background-image: url("clara/img/distribuidoresMul-03.jpg");
       background-size: cover;
       background-position: center; }
       .l-presentation > .picture.distribuidoresMul-03:before {
@@ -1699,7 +1699,7 @@ select {
         right: 0;
         background-color: rgba(65, 52, 43, 0.5); }
     .l-presentation > .picture.distribuidoresMul-04 {
-      background-image: url("../img/distribuidoresMul-04.jpg");
+      background-image: url("clara/img/distribuidoresMul-04.jpg");
       background-size: cover;
       background-position: center; }
       .l-presentation > .picture.distribuidoresMul-04:before {
