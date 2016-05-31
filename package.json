@@ -1,0 +1,51 @@
+{
+  "name": "goal-16",
+  "version": "1.0.0",
+  "description": "Goal16 project",
+  "main": "js/bundle.js",
+  "scripts": {
+    "start": "grunt",
+    "build": "bundle exec jekyll build && grunt build",
+    "deploy": "./scripts/deploy.sh"
+  },
+  "dependencies": {
+    "async": "^1.5.0",
+    "autoprefixer": "^6.3.1",
+    "backbone": "^1.2.3",
+    "browserify": "^12.0.0",
+    "chosen-jquery-browserify": "^1.0.0",
+    "d3": "^3.5.12",
+    "enquire.js": "^2.1.1",
+    "handlebars": "^4.0.4",
+    "jquery": "^2.1.4",
+    "lodash": "^3.10.1",
+    "slick-carousel-browserify": "^1.6.12",
+    "stringify": "^3.1.0",
+    "topojson": "^1.6.19",
+    "urijs": "^1.16.1"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-browserify": "^4.0.1",
+    "grunt-connect-rewrite": "^0.2.1",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-connect": "^0.11.2",
+    "grunt-contrib-copy": "^0.5.0",
+    "grunt-contrib-sass": "^0.9.2",
+    "grunt-contrib-uglify": "^0.10.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-jekyll": "^0.4.3",
+    "grunt-newer": "^1.2.0",
+    "grunt-postcss": "^0.7.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vizzuality/goal-16.git"
+  },
+  "author": "clara.linos@vizzuality.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Vizzuality/goal-16/issues"
+  },
+  "homepage": "https://github.com/Vizzuality/goal-16#readme"
+}

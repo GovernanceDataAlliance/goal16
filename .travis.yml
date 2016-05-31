@@ -1,0 +1,12 @@
+language: ruby
+rvm:
+- 2.2.2
+before_script:
+- npm install
+- npm install -g grunt-cli
+- gem install sass
+script: npm test
+after_success: bash ./scripts/cibuild.sh
+branches:
+  only:
+    - develop
