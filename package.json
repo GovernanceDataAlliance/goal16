@@ -1,5 +1,5 @@
 {
-  "name": "goal-16",
+  "name": "goal16",
   "version": "1.0.0",
   "description": "Goal16 project",
   "main": "js/bundle.js",
@@ -46,12 +46,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Vizzuality/goal-16.git"
+    "url": "git+https://github.com/Vizzuality/goal16.git"
   },
   "author": "clara.linos@vizzuality.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Vizzuality/goal-16/issues"
+    "url": "https://github.com/Vizzuality/goal16/issues"
   },
-  "homepage": "https://github.com/Vizzuality/goal-16#readme"
+  "homepage": "https://github.com/Vizzuality/goal16#readme"
 }
