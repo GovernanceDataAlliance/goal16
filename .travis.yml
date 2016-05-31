@@ -10,6 +10,8 @@ after_success: bash ./scripts/cibuild.sh
 branches:
   only:
   - develop
+git:
+  depth: 1
 env:
   global:
     - GH_REF: github.com/Vizzuality/goal16.git
