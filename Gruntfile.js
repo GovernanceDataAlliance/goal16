@@ -9,13 +9,16 @@ module.exports = function(grunt) {
         bundleExec: true,
         src : '<%= app %>',
         dest: '<%= dist %>',
-        config: '_config.yml'
+        config: '_config.yml,_config_dev.yml'
       },
-      dist: { options: {} },
+      dist: { options: {
+        siteUrl: 'goal16'
+      } },
       dev: {
         options: {
           watch: true,
-          incremental: true
+          incremental: true,
+          siteUrl: 'hola'
         }
       }
     },
@@ -121,6 +124,15 @@ module.exports = function(grunt) {
       },
     },
 
+    envVar: {
+      dist: {
+        baseUrl:'caracola'
+      },
+      env: {
+        baseUrl: 'arbol'
+      }
+    },
+
     uglify: {
       dist: {
         files: {
@@ -164,9 +176,13 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-connect-rewrite");
   grunt.loadNpmTasks('grunt-contrib-uglify');
 
+  grunt.registerTask('envVar', function (env) {
+      var baseUrl = env === 'dist' ? '/goal16' : '';
+      grunt.file.write('_sass/_env.scss', '$baseUrl:"' + baseUrl + '";');
+  });
 
   grunt.registerTask('styles', ['sass:dist', 'postcss:dist']);
   grunt.registerTask('build', ['browserify:countries', 'browserify:compare', 'browserify:map', 'browserify:about', 'browserify:indicators', 'browserify:welcome', 'browserify:blog', 'styles', 'jekyll:dist']);
-  grunt.registerTask('dist', ['build', 'uglify:dist']);
-  grunt.registerTask('default', ['build', 'configureRewriteRules', 'connect:development', 'watch']);
+  grunt.registerTask('dist', ['envVar:dist', 'build', 'uglify:dist']);
+  grunt.registerTask('default', ['envVar:dev', 'build', 'configureRewriteRules', 'connect:development', 'watch']);
 };
