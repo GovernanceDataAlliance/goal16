@@ -8,7 +8,7 @@ module.exports = function(grunt) {
         bundleExec: true,
         src : '<%= app %>',
         dest: '<%= dist %>',
-        config: '_config.yml,_config_dev.yml'
+        config: '_config.yml'
       },
       dist: { options: {} },
       dev: {
