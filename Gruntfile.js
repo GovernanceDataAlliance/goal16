@@ -1,4 +1,3 @@
-var rewriteRulesSnippet = require("grunt-connect-rewrite/lib/utils").rewriteRequest;
 var serveStatic = require('serve-static');
 var stringify = require('stringify');
 
@@ -9,16 +8,13 @@ module.exports = function(grunt) {
         bundleExec: true,
         src : '<%= app %>',
         dest: '<%= dist %>',
-        config: '_config.yml,_config_dev.yml'
+        config: '_config.yml'
       },
-      dist: { options: {
-        siteUrl: 'goal16'
-      } },
+      dist: { options: {} },
       dev: {
         options: {
           watch: true,
-          incremental: true,
-          siteUrl: 'hola'
+          incremental: true
         }
       }
     },
@@ -110,27 +106,18 @@ module.exports = function(grunt) {
 
     watch: {
       js: {
-        files: ['js/src/**/*.js'],
+        files: ['js/src/**/*.js', '!_site/**/*'],
         tasks: ['browserify:countries', 'browserify:compare', 'browserify:map', 'browserify:about',
           'browserify:indicators', 'browserify:welcome', 'browserify:blog', 'jekyll:dist']
       },
       sass: {
-          files: ['css/**/*', '_sass/**/*'],
+          files: ['css/**/*', '_sass/**/*', '!_site/**/*'],
           tasks: ['sass:dist', 'postcss:dist', 'jekyll:dist']
       },
       jekyll: {
-          files: ['**/*.{html,yml,md,mkd,markdown}'],
+          files: ['**/*.{html,yml,md,mkd,markdown}', '!_site/**/*'],
           tasks: ['jekyll:dist']
       },
-    },
-
-    envVar: {
-      dist: {
-        baseUrl:'caracola'
-      },
-      env: {
-        baseUrl: 'arbol'
-      }
     },
 
     uglify: {
@@ -156,13 +143,7 @@ module.exports = function(grunt) {
       rules: [
         {from: '(^((?!css|html|js|img|fonts|\/$).)*$)', to: "$1.html"}
       ],
-      development: {
-        options: {
-          middleware: function (connect, options) {
-            return [rewriteRulesSnippet, serveStatic(require("path").resolve(options.base[0]))];
-          }
-        }
-      }
+      development: {}
     }
   });
 
@@ -184,5 +165,5 @@ module.exports = function(grunt) {
   grunt.registerTask('styles', ['sass:dist', 'postcss:dist']);
   grunt.registerTask('build', ['browserify:countries', 'browserify:compare', 'browserify:map', 'browserify:about', 'browserify:indicators', 'browserify:welcome', 'browserify:blog', 'styles', 'jekyll:dist']);
   grunt.registerTask('dist', ['envVar:dist', 'build', 'uglify:dist']);
-  grunt.registerTask('default', ['envVar:dev', 'build', 'configureRewriteRules', 'connect:development', 'watch']);
+  grunt.registerTask('default', ['envVar:dev', 'build', 'connect:development', 'watch']);
 };
