@@ -9,6 +9,7 @@ _site
 /node_modules
 /js/bundle.js
 /js/about_bundle.js
+/js/map_bundle.js
 /js/blog_bundle.js
 /js/countries_bundle.js
 /js/compare_bundle.js
@@ -27,4 +28,3 @@ js/test/bundle.js
 css/main.css
 _SpecRunner.html
 _config_dev.yml
-
