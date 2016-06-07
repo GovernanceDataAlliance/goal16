@@ -143,7 +143,13 @@ module.exports = function(grunt) {
       rules: [
         {from: '(^((?!css|html|js|img|fonts|\/$).)*$)', to: "$1.html"}
       ],
-      development: {}
+      development: {
+        options: {
+          open: {
+            target: 'http://localhost:4000'
+          }
+        }
+      }
     }
   });
 
