@@ -6,4 +6,4 @@ var Router = require('./routers/router.js'),
       $el: $('.l-main-container')
     });
 
-Backbone.history.start();
+Backbone.history.start({pushState: true});

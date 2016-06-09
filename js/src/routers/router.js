@@ -3,7 +3,8 @@ var $ = require('jquery');
 var  _ = require('lodash');
 var URI = require('urijs');
 
-var WelcomeView = require('../views/welcome/welcome.js'),
+var ViewManager = require('../lib/view_manager.js'),
+  WelcomeView = require('../views/welcome/welcome.js'),
   MapView = require('../views/map/map.js'),
   MobileMenuView = require('../views/common/mobile_menu_view.js'),
   CompareView = require('../views/compare/compare.js'),
@@ -13,11 +14,11 @@ var WelcomeView = require('../views/welcome/welcome.js'),
 var Router = Backbone.Router.extend({
 
   routes: {
-    "": "welcome",
-    "/map": "map",
-    "/countries/:params": "countriesShow",
-    "/countries/*path": "countriesIndex",
-    "/compare/*path": "compareIndex"
+    "(/)": "welcome",
+    "map(/)": "map",
+    "countries(/)": "countriesIndex",
+    "countries(/):params": "countriesShow",
+    "compare(/)": "compareIndex"
   },
 
   initialize: function(options) {
@@ -26,6 +27,7 @@ var Router = Backbone.Router.extend({
 
   //COMMON
   commonViews: function(){
+    this.views = new ViewManager();
     new MobileMenuView();
   },
 
@@ -41,12 +43,16 @@ var Router = Backbone.Router.extend({
 
   //COUNTRIES
   countriesIndex: function() {
+    console.log('countries');
+
     if (!this.views.hasView('index')) {
       var view = new CountriesView();
       this.views.addView('index', view);
     }
 
-    this.views.showView('index');
+    var el = '.js--country-container';
+
+    this.views.showView('index', el);
     this.setListenersCountries();
   },
 
