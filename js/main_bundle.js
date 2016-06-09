@@ -916,7 +916,7 @@ var ViewManager = require('../lib/view_manager.js'),
 var Router = Backbone.Router.extend({
 
   routes: {
-    "(/)": "welcome",
+    "(/)": "map",
     "map(/)": "map",
     "countries/(:params)": "countriesIndex",
     "compare(/)(:params)": "compareIndex"
