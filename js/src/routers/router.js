@@ -16,9 +16,8 @@ var Router = Backbone.Router.extend({
   routes: {
     "(/)": "welcome",
     "map(/)": "map",
-    "countries(/)": "countriesIndex",
-    "countries(/):params": "countriesShow",
-    "compare(/)": "compareIndex"
+    "countries/(:params)": "countriesIndex",
+    "compare(/)(:params)": "compareIndex"
   },
 
   initialize: function(options) {
@@ -38,11 +37,19 @@ var Router = Backbone.Router.extend({
 
   //MAP
   map: function() {
-    new MapView();
+    if (!this.views.hasView('index')) {
+      var view = new MapView();
+      this.views.addView('index', view);
+    }
+
+    var el = '.js--map-container';
+
+    this.views.showView('index', el);
   },
 
   //COUNTRIES
-  countriesIndex: function() {
+  countriesIndex: function(params) {
+    console.log(params)
     console.log('countries');
 
     if (!this.views.hasView('index')) {
@@ -57,6 +64,7 @@ var Router = Backbone.Router.extend({
   },
 
   countriesShow: function(params) {
+
     var configView = {
       iso: params.split("&")[0],
       year: params.split("&")[1] || null
@@ -97,8 +105,8 @@ var Router = Backbone.Router.extend({
   },
 
   //COMPARE
-  compare: function() {
-
+  compareIndex: function() {
+    console.log('compare')
     var params =  URI("?" + window.location.hash.split("#")[1]).query(true);
     var data = {};
 
@@ -108,13 +116,15 @@ var Router = Backbone.Router.extend({
       data = c.split(',');
     }
 
+    var el = '.js--compare-container';
+
     if (!this.views.hasView('compare')) {
       this.views.addView('compare', new CompareView(data));
     } else {
       this.views.getView('compare').update(data);
     }
 
-    this.views.showView('compare');
+    this.views.showView('compare', el);
   },
 
   //Update URL

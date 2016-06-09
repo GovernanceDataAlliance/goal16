@@ -15,12 +15,10 @@
       <div class="scroll-wrapper">
         <nav class="m-site-navigation -header">
           <ul>
-            <li class='link {% if page.url == "/countries/" %} -current {% endif %}'><a href="{{ site.baseurl }}/countries/">Countries</a></li>
             <li class='link {% if page.url == "/map/" %} -current {% endif %}'><a href="{{ site.baseurl }}/map/">Map</a></li>
-            <li class='link {% if page.url == "/data/" %} -current {% endif %}'><a href="{{ site.baseurl }}/data/">Data</a></li>
+            <li class='link {% if page.url == "/countries/" %} -current {% endif %}'><a href="{{ site.baseurl }}/countries/">Countries</a></li>
             <li class='link {% if page.url == "/compare/" %} -current {% endif %}'><a href="{{ site.baseurl }}/compare/">Compare</a></li>
             <li class='link {% if page.url == "/about/" %} -current {% endif %}'><a href="{{ site.baseurl }}/about/">About</a></li>
-            <li class='link {% if page.isBlog or page.layout == "blog/post" %} -current {% endif %}'><a href="{{ site.baseurl }}/blog/">Blog</a></li>
           </ul>
         </nav>
 
@@ -33,13 +31,6 @@
                 </svg>
               </a>
             </li>
-            <!-- <li class="icon -facebook">
-              <a href="https://www.facebook.com">
-                <svg class="icon">
-                  <use xlink:href="#icon-facebook"></use>
-                </svg>
-              </a>
-            </li> -->
           </ul>
         </div>
       </div>
