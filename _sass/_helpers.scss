@@ -147,17 +147,6 @@
   text-overflow: ellipsis;
 }
 
-//Decoration
-@mixin fade ($color) {
-  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, $color), color-stop(1, rgba($color, 0)));
-  background-image: -o-linear-gradient(left, $color 0, rgba($color, 0) 100%);
-  background-image: -moz-linear-gradient(left, $color 0, rgba($color, 0) 100%);
-  background-image: -webkit-linear-gradient(left, $color 0, rgba($color, 0) 100%);
-  background-image: -ms-linear-gradient(left, $color 0, rgba($color, 0) 100%);
-  background-image: linear-gradient(to left, $color 0, rgba($color, 0) 100%);
-  pointer-events: none;
-}
-
 //Shapes
 @mixin arrow ($width, $color, $border-width, $deg) {
   width: $width;

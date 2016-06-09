@@ -3,7 +3,7 @@ var Backbone = require('backbone'),
 
 var helpers = require('./helpers/handlebars.js');
 
-var Router = require('./routers/router.js'),
+var Router = require('./router.js'),
     router = new Router({
       $el: $('.l-main-container')
     });

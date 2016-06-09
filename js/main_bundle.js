@@ -97,7 +97,7 @@ var Countries = CartoDBCollection.extend({
 
 module.exports = Countries;
 
-},{"../../config.json":1,"../lib/cartodb_collection.js":10,"../lib/services/colors.js":14,"../templates/queries/countries_for_index.sql.hbs":49,"../templates/queries/countries_list.sql.hbs":50,"handlebars":125,"jquery":137,"lodash":138}],3:[function(require,module,exports){
+},{"../../config.json":1,"../lib/cartodb_collection.js":10,"../lib/services/colors.js":14,"../templates/queries/countries_for_index.sql.hbs":49,"../templates/queries/countries_list.sql.hbs":50,"handlebars":124,"jquery":136,"lodash":137}],3:[function(require,module,exports){
 var Handlebars = require('handlebars');
 var _ = require('lodash');
 var CartoDBCollection = require('../lib/cartodb_collection.js');
@@ -136,7 +136,7 @@ var IndicatorConfigs = CartoDBCollection.extend({
 
 module.exports = IndicatorConfigs;
 
-},{"../../config.json":1,"../lib/cartodb_collection.js":10,"../templates/queries/indicators_config.sql.hbs":55,"../templates/queries/indicators_list.sql.hbs":57,"handlebars":125,"lodash":138}],4:[function(require,module,exports){
+},{"../../config.json":1,"../lib/cartodb_collection.js":10,"../templates/queries/indicators_config.sql.hbs":55,"../templates/queries/indicators_list.sql.hbs":57,"handlebars":124,"lodash":137}],4:[function(require,module,exports){
 var $ = require('jquery'),
     _ = require('lodash');
 
@@ -246,7 +246,7 @@ var Indicators = CartoDBCollection.extend({
 
 module.exports = Indicators;
 
-},{"../../config.json":1,"../lib/cartodb_collection.js":10,"../lib/services/colors.js":14,"../templates/queries/indicators-multiple-countries.sql.hbs":53,"../templates/queries/indicators.sql.hbs":54,"../templates/queries/indicators_historical_data.sql.hbs":56,"../templates/queries/indicators_with_years.sql.hbs":58,"handlebars":125,"jquery":137,"lodash":138}],5:[function(require,module,exports){
+},{"../../config.json":1,"../lib/cartodb_collection.js":10,"../lib/services/colors.js":14,"../templates/queries/indicators-multiple-countries.sql.hbs":53,"../templates/queries/indicators.sql.hbs":54,"../templates/queries/indicators_historical_data.sql.hbs":56,"../templates/queries/indicators_with_years.sql.hbs":58,"handlebars":124,"jquery":136,"lodash":137}],5:[function(require,module,exports){
 var $ = require('jquery'),
     _ = require('lodash');
 
@@ -280,7 +280,7 @@ var PartialRanks = CartoDBCollection.extend({
 
 module.exports = PartialRanks;
 
-},{"../../config.json":1,"../lib/cartodb_collection.js":10,"../templates/queries/partial_ranks_for_country.sql.hbs":59,"handlebars":125,"jquery":137,"lodash":138}],6:[function(require,module,exports){
+},{"../../config.json":1,"../lib/cartodb_collection.js":10,"../templates/queries/partial_ranks_for_country.sql.hbs":59,"handlebars":124,"jquery":136,"lodash":137}],6:[function(require,module,exports){
 var $ = require('jquery'),
     _ = require('lodash');
 
@@ -333,7 +333,7 @@ var Years = CartoDBCollection.extend({
 
 module.exports = Years;
 
-},{"../../config.json":1,"../lib/cartodb_collection.js":10,"../templates/queries/total_years.sql.hbs":60,"../templates/queries/years_by_country.sql.hbs":61,"../templates/queries/years_for_this_index.sql.hbs":62,"handlebars":125,"jquery":137,"lodash":138}],7:[function(require,module,exports){
+},{"../../config.json":1,"../lib/cartodb_collection.js":10,"../templates/queries/total_years.sql.hbs":60,"../templates/queries/years_by_country.sql.hbs":61,"../templates/queries/years_for_this_index.sql.hbs":62,"handlebars":124,"jquery":136,"lodash":137}],7:[function(require,module,exports){
 var d3 = require('d3'),
   topojson = require('topojson');
 
@@ -377,7 +377,7 @@ var countryHelper = {
 
 module.exports = countryHelper;
 
-},{"d3":93,"topojson":142}],8:[function(require,module,exports){
+},{"d3":92,"topojson":141}],8:[function(require,module,exports){
 
 var FunctionHelper = {
 
@@ -457,7 +457,7 @@ Handlebars.registerHelper('unlessPercentage', function(max_score) {
   }
 });
 
-},{"handlebars":125,"lodash":138}],10:[function(require,module,exports){
+},{"handlebars":124,"lodash":137}],10:[function(require,module,exports){
 var  $ = require('jquery'),
     Backbone = require('backbone'),
     format = require('./format.js');
@@ -491,7 +491,7 @@ var CartoDBCollection = Backbone.Collection.extend({
 
 module.exports = CartoDBCollection;
 
-},{"./format.js":12,"backbone":91,"jquery":137}],11:[function(require,module,exports){
+},{"./format.js":12,"backbone":90,"jquery":136}],11:[function(require,module,exports){
 var Backbone = require('backbone'),
     format = require('./format.js'),
     _ = require('lodash');
@@ -529,7 +529,7 @@ var CartoDBModel = Backbone.Model.extend({
 
 module.exports = CartoDBModel;
 
-},{"./format.js":12,"backbone":91,"lodash":138}],12:[function(require,module,exports){
+},{"./format.js":12,"backbone":90,"lodash":137}],12:[function(require,module,exports){
 module.exports = function() {
   var str = arguments[0],
       len = arguments.length+1,
@@ -670,7 +670,7 @@ svg.selectAll(".dot")
 
 module.exports = LineChart;
 
-},{"d3":93,"jquery":137}],14:[function(require,module,exports){
+},{"d3":92,"jquery":136}],14:[function(require,module,exports){
 
 var red  = '-score-poor',
 	orange = '-score-fair',
@@ -783,7 +783,7 @@ var IndicatorService = {
 
 module.exports = IndicatorService;
 
-},{"../../collections/indicators.js":4,"lodash":138}],16:[function(require,module,exports){
+},{"../../collections/indicators.js":4,"lodash":137}],16:[function(require,module,exports){
 var _ = require('lodash'),
     Backbone = require('backbone');
 
@@ -826,20 +826,20 @@ var ViewManager = Backbone.Model.extend({
 
 module.exports = ViewManager;
 
-},{"backbone":91,"lodash":138}],17:[function(require,module,exports){
+},{"backbone":90,"lodash":137}],17:[function(require,module,exports){
 var Backbone = require('backbone'),
     $ = require('jquery');
 
 var helpers = require('./helpers/handlebars.js');
 
-var Router = require('./routers/router.js'),
+var Router = require('./router.js'),
     router = new Router({
       $el: $('.l-main-container')
     });
 
 Backbone.history.start({pushState: true});
 
-},{"./helpers/handlebars.js":9,"./routers/router.js":21,"backbone":91,"jquery":137}],18:[function(require,module,exports){
+},{"./helpers/handlebars.js":9,"./router.js":21,"backbone":90,"jquery":136}],18:[function(require,module,exports){
 var CartoDBModel = require('../lib/cartodb_model.js');
 
 var CONFIG = require('../../config.json');
@@ -869,7 +869,7 @@ var CountrySelectorModel = Backbone.Model.extend({
 
 module.exports = CountrySelectorModel;
 
-},{"backbone":91,"jquery":137,"lodash":138}],20:[function(require,module,exports){
+},{"backbone":90,"jquery":136,"lodash":137}],20:[function(require,module,exports){
 var _ = require('lodash'),
   Backbone = require('backbone'),
   Handlebars = require('handlebars'),
@@ -899,28 +899,31 @@ var InfowindowModel = CartoDBModel.extend({
 
 module.exports = InfowindowModel;
 
-},{"../lib/cartodb_model.js":11,"../lib/format.js":12,"../templates/queries/indicator_info.sql.hbs":52,"backbone":91,"handlebars":125,"lodash":138}],21:[function(require,module,exports){
+},{"../lib/cartodb_model.js":11,"../lib/format.js":12,"../templates/queries/indicator_info.sql.hbs":52,"backbone":90,"handlebars":124,"lodash":137}],21:[function(require,module,exports){
 var Backbone = require('backbone');
 var $ = require('jquery');
 var  _ = require('lodash');
 var URI = require('urijs');
 
-var ViewManager = require('../lib/view_manager.js'),
-  WelcomeView = require('../views/welcome/welcome.js'),
-  MapView = require('../views/map/map.js'),
-  MobileMenuView = require('../views/common/mobile_menu_view.js'),
-  CompareView = require('../views/compare/compare.js'),
-  CountryView = require('../views/countries/country.js'),
-  CountriesView = require('../views/countries/countries.js');
+var ViewManager = require('./lib/view_manager.js'),
+  MapView = require('./views/map/map.js'),
+  MobileMenuView = require('./views/common/mobile_menu_view.js'),
+  CompareView = require('./views/compare/compare.js'),
+  CountriesView = require('./views/countries/countries.js'),
+  CountryView = require('./views/countries/country.js');
 
 var Router = Backbone.Router.extend({
+
+  /*
+   * Routes examples:
+   * countries: countries?iso=GAB&year=2015
+   */
 
   routes: {
     "(/)": "map",
     "map(/)": "map",
-    "countries(/)": "countriesIndex",
-    "countries/:params": "countriesShow",
-    "compare(/)(:params)": "compareIndex"
+    "countries(/)(?iso=:iso&year=:year)": "countries",
+    "compare(/)(?isoA=:isoA)(&isoB=:isoB)(&isoC=:isoC)": "compare"
   },
 
   initialize: function(options) {
@@ -935,62 +938,62 @@ var Router = Backbone.Router.extend({
 
   //MAP
   map: function() {
-    if (!this.views.hasView('index')) {
+    if (!this.views.hasView('indexMap')) {
       var view = new MapView();
-      this.views.addView('index', view);
+      this.views.addView('indexMap', view);
     }
 
     var el = '.js--map-container';
 
-    this.views.showView('index', el);
+    this.views.showView('indexMap', el);
   },
 
   //COUNTRIES
-  countriesIndex: function() {
-    if (!this.views.hasView('index')) {
-      var view = new CountriesView();
-      this.views.addView('index', view);
-    }
-
+  countries: function(iso, year) {
     var el = '.js--country-container';
 
-    this.views.showView('index', el);
-    this.setListenersCountries();
-  },
+    if (!iso) {
 
-  countriesShow: function(params) {
-    console.log(params)
-    console.log('countries');
+      if (!this.views.hasView('indexCountries')) {
+        var view = new CountriesView();
+        this.views.addView('indexCountries', view);
+      }
+      this.views.showView('indexCountries', el);
 
-    var configView = {
-      iso: params.split("&")[0],
-      year: params.split("&")[1] || null
-    };
-
-    if (!this.views.hasView('show')) {
-      var view = new CountryView(configView);
-      this.views.addView('show', view);
     } else {
-      this.views.getView('show')._updateParams(configView)
+
+      var configView = {
+        iso: iso,
+        year: year || null
+      };
+
+      if (!this.views.hasView('showCountries')) {
+        var view = new CountryView(configView);
+        this.views.addView('showCountries', view);
+      } else {
+        this.views.getView('showCountries')._updateCountryParams(configView)
+      }
+      this.views.showView('showCountries', el);
+
     }
 
-    this.views.showView('show');
     this.setListenersCountries();
   },
 
 
   setListenersCountries: function() {
-      Backbone.Events.on('year:selected', this.updateParams, this);
-    },
+    Backbone.Events.on('year:selected', this.updateParams, this);
+  },
 
   //Update params
-  updateParams: function(year) {
+  _updateCountryParams: function(year) {
     this.year = year;
     this.updateUrl();
   },
 
   //Update URL
   updateUrl: function() {
+    //TOOD - review this method
     var stringYear = '',
       iso = window.location.hash.split('&')[0].slice(1);
 
@@ -1002,10 +1005,9 @@ var Router = Backbone.Router.extend({
   },
 
   //COMPARE
-  compareIndex: function(params) {
+  compare: function(isoA, isoB, isoC) {
     var params =  URI("?" + window.location.hash.split("#")[1]).query(true);
     var data = {};
-
 
     if (params.countries) {
       var c = params.countries;
@@ -1093,7 +1095,7 @@ var Router = Backbone.Router.extend({
 
 module.exports = Router;
 
-},{"../lib/view_manager.js":16,"../views/common/mobile_menu_view.js":67,"../views/compare/compare.js":76,"../views/countries/countries.js":79,"../views/countries/country.js":80,"../views/map/map.js":87,"../views/welcome/welcome.js":88,"backbone":91,"jquery":137,"lodash":138,"urijs":146}],22:[function(require,module,exports){
+},{"./lib/view_manager.js":16,"./views/common/mobile_menu_view.js":67,"./views/compare/compare.js":76,"./views/countries/countries.js":79,"./views/countries/country.js":80,"./views/map/map.js":87,"backbone":90,"jquery":136,"lodash":137,"urijs":145}],22:[function(require,module,exports){
 module.exports = "<div class=\"c-download\">\n  <div class=\"tabs-content content\">\n    <div class=\"content active\" id=\"share-link\">\n      <p>For details on the data you are about to download, including a full description of the\n      meta data and data fields used by Alliance data producers to share their data in a consistent and comparable manner, please <a href=\"{{siteURL}}/blog/2016/02/19/a-guide-to-the-data-available-on-the-governance-data-alliance-website.html\" target=\"_blank\">click here</a>.</p>\n    </div>\n  </div>\n\n  <div class=\"buttons\">\n    <a href=\"{{csv}}\" class=\"btn -secondary js--download-btn\" download=\"data.csv\">download</a>\n    <a href=\"\" class=\"btn js--cancel-btn\">cancel</a>\n  </div>\n</div>\n";
 
 },{}],23:[function(require,module,exports){
@@ -1157,7 +1159,7 @@ module.exports = "<div class=\"js--country-header\"></div>\n\n<div class=\"l-too
 module.exports = "<div class=\"l-banner -detail -country -row\">\n  <div class=\"m-breadcrumbs\">\n    <ul>\n      <li><a href=\"/\">home </a></li>\n      <li><span> / </span></li>\n      <li><a href=\"{{siteURL}}/countries\"> countries </a></li>\n      <li><span> / </span></li>\n      <li> {{name}}</li>\n    </ul>\n  </div>\n\n  <div class=\"c-share-shortcut\">\n    <button class=\"js--view-share btn\">\n      <svg class=\"icon -regular\">\n        <use xlink:href=\"#icon-share\"></use>\n      </svg>\n      <span class=\"button-literal\">share</span>\n    </button>\n  </div>\n\n  <div class=\"wrap\">\n    <div class=\"title-container\">\n      <h1 class=\"c-section-title -country-name\">{{name}}</h1>\n      <div class=\"c-switcher--wrapper\">\n        <span class=\"c-switcher--label\">hide not covered</span>\n        <div class=\"c-switcher\">\n          <input id=\"notCoveredSwitcher\" type=\"checkbox\">\n          <label for=\"notCoveredSwitcher\"></label>\n        </div>\n      </div>\n    </div>\n    <div class=\"js--country-silhouette m-country-silhouette\"></div>\n  </div>\n</div>\n";
 
 },{}],43:[function(require,module,exports){
-module.exports = "{{#each countriesByRegion}}\n<div class=\"l-content -main\">\n  <div class=\"wrap\">\n    <div class=\"m-list\">\n      <h2 class=\"c-section-title -small\">{{@key}}</h2>\n        <div class=\"lists-container\">\n        {{#each this}}\n          <ul>\n          {{#each this}}\n            <li><a href=\"#?{{iso3}}&{{max}}\" title=\"{{name}}\">{{name}}</a></li>\n          {{/each}}\n          </ul>\n        {{/each}}\n        </div>\n    </div>\n  </div>\n</div>\n{{/each}}\n\n";
+module.exports = "{{#each countriesByRegion}}\n<div class=\"l-content -main\">\n  <div class=\"wrap\">\n    <div class=\"m-list\">\n      <h2 class=\"c-section-title -small\">{{@key}}</h2>\n        <div class=\"lists-container\">\n        {{#each this}}\n          <ul>\n          {{#each this}}\n            <li><a href=\"?iso={{iso3}}&year={{max}}\" title=\"{{name}}\">{{name}}</a></li>\n          {{/each}}\n          </ul>\n        {{/each}}\n        </div>\n    </div>\n  </div>\n</div>\n{{/each}}\n";
 
 },{}],44:[function(require,module,exports){
 module.exports = "<ul>\n  {{#each countriesByRegion}}\n  <li>\n    <div class=\"m-list -mobile\"> \n      <h2 class=\"js--list-handler list-header\">{{@key}}</h2>\n      <ul>\n        {{#each this}}\n          <li><a href=\"#{{iso3}}&{{max}}\" title=\"{{name}}\">{{name}}</a></li>\n        {{/each}}\n      </ul>\n    </div>\n  </li>\n  {{/each}}\n</ul>\n\n";
@@ -1350,7 +1352,7 @@ var DownloadView = infoWindowView.extend({
 
 module.exports = DownloadView;
 
-},{"../../collections/countries":2,"../../collections/indicators":4,"../../templates/common/download_tpl.hbs":22,"./infowindow_view.js":64,"backbone":91,"handlebars":125,"jquery":137,"lodash":138}],64:[function(require,module,exports){
+},{"../../collections/countries":2,"../../collections/indicators":4,"../../templates/common/download_tpl.hbs":22,"./infowindow_view.js":64,"backbone":90,"handlebars":124,"jquery":136,"lodash":137}],64:[function(require,module,exports){
 var _ = require('lodash'),
   $ = require('jquery'),
   Backbone = require('backbone'),
@@ -1472,7 +1474,7 @@ var ModalWindowView = Backbone.View.extend({
 
 module.exports = ModalWindowView;
 
-},{"../../templates/common/modal_window_tpl.hbs":25,"backbone":91,"handlebars":125,"jquery":137,"lodash":138}],65:[function(require,module,exports){
+},{"../../templates/common/modal_window_tpl.hbs":25,"backbone":90,"handlebars":124,"jquery":136,"lodash":137}],65:[function(require,module,exports){
 var _ = require('lodash'),
   $ = require('jquery'),
   Backbone = require('backbone'),
@@ -1533,7 +1535,7 @@ var Legend = Backbone.View.extend({
 
 module.exports = Legend;
 
-},{"../../templates/common/legend_tpl.hbs":23,"../common/infowindow_view.js":64,"backbone":91,"enquire.js":94,"handlebars":125,"jquery":137,"lodash":138}],66:[function(require,module,exports){
+},{"../../templates/common/legend_tpl.hbs":23,"../common/infowindow_view.js":64,"backbone":90,"enquire.js":93,"handlebars":124,"jquery":136,"lodash":137}],66:[function(require,module,exports){
 var _ = require('lodash'),
   $ = require('jquery'),
   Backbone = require('backbone'),
@@ -1574,7 +1576,7 @@ var LineChartView = Backbone.View.extend({
 
 module.exports = LineChartView;
 
-},{"../../lib/line_chart.js":13,"backbone":91,"d3":93,"handlebars":125,"jquery":137,"lodash":138}],67:[function(require,module,exports){
+},{"../../lib/line_chart.js":13,"backbone":90,"d3":92,"handlebars":124,"jquery":136,"lodash":137}],67:[function(require,module,exports){
 var _ = require('lodash'),
   $ = require('jquery'),
   Backbone = require('backbone'),
@@ -1685,7 +1687,7 @@ var MobileMenuView = Backbone.View.extend({
 
 module.exports = MobileMenuView;
 
-},{"../../helpers/functions.js":8,"../../templates/common/mobile_menu_tpl.hbs":24,"backbone":91,"enquire.js":94,"handlebars":125,"jquery":137,"lodash":138}],68:[function(require,module,exports){
+},{"../../helpers/functions.js":8,"../../templates/common/mobile_menu_tpl.hbs":24,"backbone":90,"enquire.js":93,"handlebars":124,"jquery":136,"lodash":137}],68:[function(require,module,exports){
 var $ = require('jquery'),
   _ = require('lodash'),
   Backbone = require('backbone'),
@@ -1759,7 +1761,7 @@ var SearchMobileView = Backbone.View.extend({
 
 module.exports = SearchMobileView;
 
-},{"../../collections/countries.js":2,"../../helpers/functions.js":8,"../../templates/common/search_mobile_tpl.hbs":26,"backbone":91,"handlebars":125,"jquery":137,"lodash":138}],69:[function(require,module,exports){
+},{"../../collections/countries.js":2,"../../helpers/functions.js":8,"../../templates/common/search_mobile_tpl.hbs":26,"backbone":90,"handlebars":124,"jquery":136,"lodash":137}],69:[function(require,module,exports){
 var $ = require('jquery'),
   _ = require('lodash');
   Backbone = require('backbone'),
@@ -2056,7 +2058,7 @@ var SearchView = Backbone.View.extend({
 
 module.exports = SearchView;
 
-},{"../../collections/countries.js":2,"../../helpers/functions.js":8,"../../templates/common/search_suggestions_tpl.hbs":27,"../../templates/common/search_tpl.hbs":28,"backbone":91,"enquire.js":94,"handlebars":125,"jquery":137,"lodash":138}],70:[function(require,module,exports){
+},{"../../collections/countries.js":2,"../../helpers/functions.js":8,"../../templates/common/search_suggestions_tpl.hbs":27,"../../templates/common/search_tpl.hbs":28,"backbone":90,"enquire.js":93,"handlebars":124,"jquery":136,"lodash":137}],70:[function(require,module,exports){
 var _ = require('lodash');
   $ = require('jquery'),
   Backbone = require('backbone'),
@@ -2102,7 +2104,7 @@ var ShareView = infoWindowView.extend({
 
 module.exports = ShareView;
 
-},{"../../templates/common/share_tpl.hbs":29,"./infowindow_view.js":64,"backbone":91,"handlebars":125,"jquery":137,"lodash":138}],71:[function(require,module,exports){
+},{"../../templates/common/share_tpl.hbs":29,"./infowindow_view.js":64,"backbone":90,"handlebars":124,"jquery":136,"lodash":137}],71:[function(require,module,exports){
 var _ = require('lodash'),
   $ = require('jquery'),
   Backbone = require('backbone'),
@@ -2226,7 +2228,7 @@ var ShareWindowView = infoWindowView.extend({
 
 module.exports = ShareWindowView;
 
-},{"../../templates/common/share_window_tpl.hbs":30,"./download_view.js":63,"./infowindow_view.js":64,"./share_view.js":70,"backbone":91,"handlebars":125,"jquery":137,"lodash":138}],72:[function(require,module,exports){
+},{"../../templates/common/share_window_tpl.hbs":30,"./download_view.js":63,"./infowindow_view.js":64,"./share_view.js":70,"backbone":90,"handlebars":124,"jquery":136,"lodash":137}],72:[function(require,module,exports){
 var _ = require('lodash'),
   $ = require('jquery'),
   Backbone = require('backbone');
@@ -2288,7 +2290,7 @@ var TextShortener = Backbone.View.extend({
 
 module.exports = TextShortener;
 
-},{"backbone":91,"jquery":137,"lodash":138}],73:[function(require,module,exports){
+},{"backbone":90,"jquery":136,"lodash":137}],73:[function(require,module,exports){
 var _ = require('lodash'),
   $ = require('jquery'),
   Backbone = require('backbone'),
@@ -2357,7 +2359,7 @@ var LegendView = Backbone.View.extend({
 
 module.exports = LegendView;
 
-},{"backbone":91,"handlebars":125,"jquery":137,"lodash":138}],74:[function(require,module,exports){
+},{"backbone":90,"handlebars":124,"jquery":136,"lodash":137}],74:[function(require,module,exports){
 (function (global){
 var $ = require('jquery');
 global.$ = $; // for chosen.js
@@ -2449,7 +2451,7 @@ var YearSelectors = Backbone.View.extend({
 module.exports = YearSelectors;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../../templates/common/year_selector.hbs":31,"backbone":91,"chosen-jquery-browserify":92,"enquire.js":94,"handlebars":125,"jquery":137,"lodash":138}],75:[function(require,module,exports){
+},{"../../templates/common/year_selector.hbs":31,"backbone":90,"chosen-jquery-browserify":91,"enquire.js":93,"handlebars":124,"jquery":136,"lodash":137}],75:[function(require,module,exports){
 (function (global){
 var $ = require('jquery');
 global.$ = $; // for chosen.js
@@ -2552,7 +2554,7 @@ var CompareYearSelectors = ParentView.extend({
 module.exports = CompareYearSelectors;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../../templates/common/year_selector.hbs":31,"./year_selector.js":74,"backbone":91,"chosen-jquery-browserify":92,"enquire.js":94,"handlebars":125,"jquery":137,"lodash":138}],76:[function(require,module,exports){
+},{"../../templates/common/year_selector.hbs":31,"./year_selector.js":74,"backbone":90,"chosen-jquery-browserify":91,"enquire.js":93,"handlebars":124,"jquery":136,"lodash":137}],76:[function(require,module,exports){
 var $ = require('jquery'),
   _ = require('lodash'),
   Backbone = require('backbone'),
@@ -3064,7 +3066,7 @@ var CompareView = Backbone.View.extend({
 
 module.exports = CompareView;
 
-},{"../../collections/countries.js":2,"../../collections/indicator_configs.js":3,"../../collections/indicators.js":4,"../../collections/years.js":6,"../../helpers/functions.js":8,"../../models/infowindow.js":20,"../../templates/compare/compare-country-scores.hbs":32,"../../templates/compare/compare-indicators.hbs":33,"../../templates/compare/compare.hbs":34,"../../templates/compare/mobile/compare-country-scores-mobile.hbs":36,"../../templates/compare/mobile/compare-mobile-slide.hbs":37,"../../templates/compare/mobile/compare-mobile.hbs":38,"../common/infowindow_view.js":64,"../common/legend.js":65,"../common/share_window_view.js":71,"./compare_mobile_selector.js":77,"./compare_selectors.js":78,"async":90,"backbone":91,"enquire.js":94,"handlebars":125,"jquery":137,"lodash":138,"slick-carousel-browserify":141}],77:[function(require,module,exports){
+},{"../../collections/countries.js":2,"../../collections/indicator_configs.js":3,"../../collections/indicators.js":4,"../../collections/years.js":6,"../../helpers/functions.js":8,"../../models/infowindow.js":20,"../../templates/compare/compare-country-scores.hbs":32,"../../templates/compare/compare-indicators.hbs":33,"../../templates/compare/compare.hbs":34,"../../templates/compare/mobile/compare-country-scores-mobile.hbs":36,"../../templates/compare/mobile/compare-mobile-slide.hbs":37,"../../templates/compare/mobile/compare-mobile.hbs":38,"../common/infowindow_view.js":64,"../common/legend.js":65,"../common/share_window_view.js":71,"./compare_mobile_selector.js":77,"./compare_selectors.js":78,"async":89,"backbone":90,"enquire.js":93,"handlebars":124,"jquery":136,"lodash":137,"slick-carousel-browserify":140}],77:[function(require,module,exports){
 (function (global){
 var $ = require('jquery');
   global.$ = $; // for chosen.js
@@ -3280,7 +3282,7 @@ var CountrySelectorView = Backbone.View.extend({
 module.exports = CountrySelectorView;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../../collections/countries.js":2,"../../collections/years.js":6,"../../templates/compare/selectors/compare_country_selector.hbs":39,"async":90,"backbone":91,"chosen-jquery-browserify":92,"enquire.js":94,"handlebars":125,"jquery":137,"lodash":138}],78:[function(require,module,exports){
+},{"../../collections/countries.js":2,"../../collections/years.js":6,"../../templates/compare/selectors/compare_country_selector.hbs":39,"async":89,"backbone":90,"chosen-jquery-browserify":91,"enquire.js":93,"handlebars":124,"jquery":136,"lodash":137}],78:[function(require,module,exports){
 (function (global){
 var $ = require('jquery');
 global.$ = $; // for chosen.js
@@ -3586,7 +3588,7 @@ var CompareSelectorsView = Backbone.View.extend({
 module.exports = CompareSelectorsView;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../../collections/countries.js":2,"../../collections/years.js":6,"../../models/countrySelector.js":19,"../../templates/compare/compare_selectors.hbs":35,"../common/year_selector_compare.js":75,"async":90,"backbone":91,"chosen-jquery-browserify":92,"enquire.js":94,"handlebars":125,"jquery":137,"lodash":138}],79:[function(require,module,exports){
+},{"../../collections/countries.js":2,"../../collections/years.js":6,"../../models/countrySelector.js":19,"../../templates/compare/compare_selectors.hbs":35,"../common/year_selector_compare.js":75,"async":89,"backbone":90,"chosen-jquery-browserify":91,"enquire.js":93,"handlebars":124,"jquery":136,"lodash":137}],79:[function(require,module,exports){
 var _ = require('lodash'),
     enquire = require('enquire.js'),
     Backbone = require('backbone'),
@@ -3654,7 +3656,7 @@ var CountriesView = Backbone.View.extend({
 
 module.exports = CountriesView;
 
-},{"../../collections/countries.js":2,"../../templates/countries/countries.hbs":40,"../common/search_mobile_view.js":68,"../common/search_view.js":69,"./country_list.js":82,"backbone":91,"enquire.js":94,"handlebars":125,"lodash":138}],80:[function(require,module,exports){
+},{"../../collections/countries.js":2,"../../templates/countries/countries.hbs":40,"../common/search_mobile_view.js":68,"../common/search_view.js":69,"./country_list.js":82,"backbone":90,"enquire.js":93,"handlebars":124,"lodash":137}],80:[function(require,module,exports){
 var _ = require('lodash'),
     Backbone = require('backbone'),
     Handlebars = require('handlebars');
@@ -3913,7 +3915,7 @@ var CountryView = Backbone.View.extend({
 
 module.exports = CountryView;
 
-},{"../../collections/indicators.js":4,"../../collections/years.js":6,"../../helpers/functions.js":8,"../../models/country.js":18,"../../models/infowindow.js":20,"../../templates/countries/country.hbs":41,"../common/infowindow_view.js":64,"../common/legend.js":65,"../common/share_window_view.js":71,"../common/year_selector.js":74,"./country_header.js":81,"./country_toolbar.js":83,"./indicator_list.js":85,"backbone":91,"handlebars":125,"lodash":138}],81:[function(require,module,exports){
+},{"../../collections/indicators.js":4,"../../collections/years.js":6,"../../helpers/functions.js":8,"../../models/country.js":18,"../../models/infowindow.js":20,"../../templates/countries/country.hbs":41,"../common/infowindow_view.js":64,"../common/legend.js":65,"../common/share_window_view.js":71,"../common/year_selector.js":74,"./country_header.js":81,"./country_toolbar.js":83,"./indicator_list.js":85,"backbone":90,"handlebars":124,"lodash":137}],81:[function(require,module,exports){
 var _ = require('lodash'),
     Backbone = require('backbone'),
     d3 = require('d3'),
@@ -4021,7 +4023,7 @@ var CountryHeaderView = Backbone.View.extend({
 
 module.exports = CountryHeaderView;
 
-},{"../../helpers/country_drawer.js":7,"../../templates/countries/country_header.hbs":42,"../../templates/queries/country_topology.hbs":51,"backbone":91,"d3":93,"enquire.js":94,"handlebars":125,"lodash":138}],82:[function(require,module,exports){
+},{"../../helpers/country_drawer.js":7,"../../templates/countries/country_header.hbs":42,"../../templates/queries/country_topology.hbs":51,"backbone":90,"d3":92,"enquire.js":93,"handlebars":124,"lodash":137}],82:[function(require,module,exports){
 var _ = require('lodash'),
     Backbone = require('backbone'),
     enquire = require('enquire.js'),
@@ -4137,7 +4139,7 @@ var CountryListView = Backbone.View.extend({
 
 module.exports = CountryListView;
 
-},{"../../templates/countries/country_list.hbs":43,"../../templates/countries/country_list_mb.hbs":44,"backbone":91,"enquire.js":94,"handlebars":125,"lodash":138}],83:[function(require,module,exports){
+},{"../../templates/countries/country_list.hbs":43,"../../templates/countries/country_list_mb.hbs":44,"backbone":90,"enquire.js":93,"handlebars":124,"lodash":137}],83:[function(require,module,exports){
 var _ = require('lodash'),
   Backbone = require('backbone'),
   $ = require('jquery'),
@@ -4175,7 +4177,7 @@ var CountryToolbarView = Backbone.View.extend({
 
 module.exports = CountryToolbarView;
 
-},{"../../templates/countries/country_toolbar.hbs":45,"backbone":91,"handlebars":125,"jquery":137,"lodash":138}],84:[function(require,module,exports){
+},{"../../templates/countries/country_toolbar.hbs":45,"backbone":90,"handlebars":124,"jquery":136,"lodash":137}],84:[function(require,module,exports){
 var Backbone = require('backbone'),
     _ = require('lodash'),
     Handlebars = require('handlebars');
@@ -4266,7 +4268,7 @@ var IndicatorView = Backbone.View.extend({
 
 module.exports = IndicatorView;
 
-},{"../../collections/indicators.js":4,"../../templates/countries/indicator.hbs":46,"../common/infowindow_view.js":64,"../common/line_chart_view.js":66,"../common/tooltip_view.js":73,"./partial_ranks.js":86,"backbone":91,"handlebars":125,"lodash":138}],85:[function(require,module,exports){
+},{"../../collections/indicators.js":4,"../../templates/countries/indicator.hbs":46,"../common/infowindow_view.js":64,"../common/line_chart_view.js":66,"../common/tooltip_view.js":73,"./partial_ranks.js":86,"backbone":90,"handlebars":124,"lodash":137}],85:[function(require,module,exports){
 var _ = require('lodash'),
   Backbone = require('backbone'),
   Handlebars = require('handlebars');
@@ -4322,7 +4324,7 @@ var IndicatorListView = Backbone.View.extend({
 
 module.exports = IndicatorListView;
 
-},{"../../collections/indicators.js":4,"../../lib/services/indicator.js":15,"../../templates/countries/indicators-list.hbs":47,"../common/text_shortener.js":72,"./indicator.js":84,"backbone":91,"handlebars":125,"lodash":138}],86:[function(require,module,exports){
+},{"../../collections/indicators.js":4,"../../lib/services/indicator.js":15,"../../templates/countries/indicators-list.hbs":47,"../common/text_shortener.js":72,"./indicator.js":84,"backbone":90,"handlebars":124,"lodash":137}],86:[function(require,module,exports){
 var Backbone = require('backbone'),
     _ = require('lodash'),
     async = require('async'),
@@ -4366,7 +4368,7 @@ var PartialRanksView = Backbone.View.extend({
 
 module.exports = PartialRanksView;
 
-},{"../../collections/partial_ranks.js":5,"../../templates/countries/partial_ranks.hbs":48,"async":90,"backbone":91,"handlebars":125,"lodash":138}],87:[function(require,module,exports){
+},{"../../collections/partial_ranks.js":5,"../../templates/countries/partial_ranks.hbs":48,"async":89,"backbone":90,"handlebars":124,"lodash":137}],87:[function(require,module,exports){
 var $ = require('jquery'),
   _ = require('lodash'),
   enquire = require('enquire.js'),
@@ -4434,72 +4436,7 @@ var MapView = Backbone.View.extend({
 
 module.exports = MapView;
 
-},{"backbone":91,"enquire.js":94,"jquery":137,"lodash":138}],88:[function(require,module,exports){
-var $ = require('jquery'),
-  _ = require('lodash'),
-  enquire = require('enquire.js'),
-  Backbone = require('backbone');
-
-var SearchView = require('../common/search_view.js'),
-  SearchMobileView = require('../common/search_mobile_view.js');
-
-var WelcomeView = Backbone.View.extend({
-
-  el: '.welcome',
-
-  events: {
-    'click .scroll-down' : '_scrollDown'
-  },
-
-  initialize: function() {
-    enquire.register("screen and (max-width:769px)", {
-      match: _.bind(function(){
-        this.mobile = true;
-        this.initViews();
-      },this)
-    });
-
-    enquire.register("screen and (min-width:770px)", {
-      match: _.bind(function(){
-        this.mobile = false;
-        this.initViews();
-      },this)
-    });
-  },
-
-  show: function() {
-    this.initViews();
-  },
-
-  _preventLink: function(e) {
-    if (e) {
-      e.preventDefault();
-    }
-  },
-
-  initViews: function() {
-    if (!this.mobile) {
-      new SearchView({ el: $('.js--search') });
-    } else {
-      new SearchMobileView({ el: $('.js--search') });;
-    }
-  },
-
-  _scrollDown: function() {
-    var $banner = $('.l-banner'),
-      $header = $('.m-site-navigation'),
-      scroll = $header.outerHeight() + $banner.outerHeight();
-
-    $('body').animate(
-      {scrollTop: scroll },
-    '500', 'swing');
-  }
-
-});
-
-module.exports = WelcomeView;
-
-},{"../common/search_mobile_view.js":68,"../common/search_view.js":69,"backbone":91,"enquire.js":94,"jquery":137,"lodash":138}],89:[function(require,module,exports){
+},{"backbone":90,"enquire.js":93,"jquery":136,"lodash":137}],88:[function(require,module,exports){
 (function (process,__filename){
 /** vim: et:ts=4:sw=4:sts=4
  * @license amdefine 1.0.0 Copyright (c) 2011-2015, The Dojo Foundation All Rights Reserved.
@@ -4804,7 +4741,7 @@ function amdefine(module, requireFn) {
 module.exports = amdefine;
 
 }).call(this,require('_process'),"/node_modules/amdefine/amdefine.js")
-},{"_process":140,"path":139}],90:[function(require,module,exports){
+},{"_process":139,"path":138}],89:[function(require,module,exports){
 (function (process,global){
 /*!
  * async
@@ -6073,7 +6010,7 @@ module.exports = amdefine;
 }());
 
 }).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"_process":140}],91:[function(require,module,exports){
+},{"_process":139}],90:[function(require,module,exports){
 (function (global){
 //     Backbone.js 1.3.3
 
@@ -7997,7 +7934,7 @@ module.exports = amdefine;
 });
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"jquery":137,"underscore":143}],92:[function(require,module,exports){
+},{"jquery":136,"underscore":142}],91:[function(require,module,exports){
 (function (global){
 (function() {
   var $, AbstractChosen, Chosen, SelectParser, get_side_border_padding, _ref,
@@ -9077,7 +9014,7 @@ module.exports = amdefine;
 }).call(this);
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],93:[function(require,module,exports){
+},{}],92:[function(require,module,exports){
 !function() {
   var d3 = {
     version: "3.5.17"
@@ -18632,7 +18569,7 @@ module.exports = amdefine;
   });
   if (typeof define === "function" && define.amd) this.d3 = d3, define(d3); else if (typeof module === "object" && module.exports) module.exports = d3; else this.d3 = d3;
 }();
-},{}],94:[function(require,module,exports){
+},{}],93:[function(require,module,exports){
 /*!
  * enquire.js v2.1.1 - Awesome Media Queries in JavaScript
  * Copyright (c) 2014 Nick Williams - http://wicky.nillia.ms/enquire.js
@@ -18926,9 +18863,9 @@ module.exports = amdefine;
 	return new MediaQueryDispatch();
 
 }));
-},{}],95:[function(require,module,exports){
+},{}],94:[function(require,module,exports){
 
-},{}],96:[function(require,module,exports){
+},{}],95:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -18995,7 +18932,7 @@ exports['default'] = inst;
 module.exports = exports['default'];
 
 
-},{"./handlebars.runtime":97,"./handlebars/compiler/ast":99,"./handlebars/compiler/base":100,"./handlebars/compiler/compiler":102,"./handlebars/compiler/javascript-compiler":104,"./handlebars/compiler/visitor":107,"./handlebars/no-conflict":121}],97:[function(require,module,exports){
+},{"./handlebars.runtime":96,"./handlebars/compiler/ast":98,"./handlebars/compiler/base":99,"./handlebars/compiler/compiler":101,"./handlebars/compiler/javascript-compiler":103,"./handlebars/compiler/visitor":106,"./handlebars/no-conflict":120}],96:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -19063,7 +19000,7 @@ exports['default'] = inst;
 module.exports = exports['default'];
 
 
-},{"./handlebars/base":98,"./handlebars/exception":111,"./handlebars/no-conflict":121,"./handlebars/runtime":122,"./handlebars/safe-string":123,"./handlebars/utils":124}],98:[function(require,module,exports){
+},{"./handlebars/base":97,"./handlebars/exception":110,"./handlebars/no-conflict":120,"./handlebars/runtime":121,"./handlebars/safe-string":122,"./handlebars/utils":123}],97:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -19169,7 +19106,7 @@ exports.createFrame = _utils.createFrame;
 exports.logger = _logger2['default'];
 
 
-},{"./decorators":109,"./exception":111,"./helpers":112,"./logger":120,"./utils":124}],99:[function(require,module,exports){
+},{"./decorators":108,"./exception":110,"./helpers":111,"./logger":119,"./utils":123}],98:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -19202,7 +19139,7 @@ exports['default'] = AST;
 module.exports = exports['default'];
 
 
-},{}],100:[function(require,module,exports){
+},{}],99:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -19252,7 +19189,7 @@ function parse(input, options) {
 }
 
 
-},{"../utils":124,"./helpers":103,"./parser":105,"./whitespace-control":108}],101:[function(require,module,exports){
+},{"../utils":123,"./helpers":102,"./parser":104,"./whitespace-control":107}],100:[function(require,module,exports){
 /* global define */
 'use strict';
 
@@ -19420,7 +19357,7 @@ exports['default'] = CodeGen;
 module.exports = exports['default'];
 
 
-},{"../utils":124,"source-map":126}],102:[function(require,module,exports){
+},{"../utils":123,"source-map":125}],101:[function(require,module,exports){
 /* eslint-disable new-cap */
 
 'use strict';
@@ -19994,7 +19931,7 @@ function transformLiteralToPath(sexpr) {
 }
 
 
-},{"../exception":111,"../utils":124,"./ast":99}],103:[function(require,module,exports){
+},{"../exception":110,"../utils":123,"./ast":98}],102:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -20226,7 +20163,7 @@ function preparePartialBlock(open, program, close, locInfo) {
 }
 
 
-},{"../exception":111}],104:[function(require,module,exports){
+},{"../exception":110}],103:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -21354,7 +21291,7 @@ exports['default'] = JavaScriptCompiler;
 module.exports = exports['default'];
 
 
-},{"../base":98,"../exception":111,"../utils":124,"./code-gen":101}],105:[function(require,module,exports){
+},{"../base":97,"../exception":110,"../utils":123,"./code-gen":100}],104:[function(require,module,exports){
 /* istanbul ignore next */
 /* Jison generated parser */
 "use strict";
@@ -22094,7 +22031,7 @@ var handlebars = (function () {
 exports['default'] = handlebars;
 
 
-},{}],106:[function(require,module,exports){
+},{}],105:[function(require,module,exports){
 /* eslint-disable new-cap */
 'use strict';
 
@@ -22282,7 +22219,7 @@ PrintVisitor.prototype.HashPair = function (pair) {
 /* eslint-enable new-cap */
 
 
-},{"./visitor":107}],107:[function(require,module,exports){
+},{"./visitor":106}],106:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -22424,7 +22361,7 @@ exports['default'] = Visitor;
 module.exports = exports['default'];
 
 
-},{"../exception":111}],108:[function(require,module,exports){
+},{"../exception":110}],107:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -22647,7 +22584,7 @@ exports['default'] = WhitespaceControl;
 module.exports = exports['default'];
 
 
-},{"./visitor":107}],109:[function(require,module,exports){
+},{"./visitor":106}],108:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -22665,7 +22602,7 @@ function registerDefaultDecorators(instance) {
 }
 
 
-},{"./decorators/inline":110}],110:[function(require,module,exports){
+},{"./decorators/inline":109}],109:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -22696,7 +22633,7 @@ exports['default'] = function (instance) {
 module.exports = exports['default'];
 
 
-},{"../utils":124}],111:[function(require,module,exports){
+},{"../utils":123}],110:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -22738,7 +22675,7 @@ exports['default'] = Exception;
 module.exports = exports['default'];
 
 
-},{}],112:[function(require,module,exports){
+},{}],111:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -22786,7 +22723,7 @@ function registerDefaultHelpers(instance) {
 }
 
 
-},{"./helpers/block-helper-missing":113,"./helpers/each":114,"./helpers/helper-missing":115,"./helpers/if":116,"./helpers/log":117,"./helpers/lookup":118,"./helpers/with":119}],113:[function(require,module,exports){
+},{"./helpers/block-helper-missing":112,"./helpers/each":113,"./helpers/helper-missing":114,"./helpers/if":115,"./helpers/log":116,"./helpers/lookup":117,"./helpers/with":118}],112:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -22827,7 +22764,7 @@ exports['default'] = function (instance) {
 module.exports = exports['default'];
 
 
-},{"../utils":124}],114:[function(require,module,exports){
+},{"../utils":123}],113:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -22923,7 +22860,7 @@ exports['default'] = function (instance) {
 module.exports = exports['default'];
 
 
-},{"../exception":111,"../utils":124}],115:[function(require,module,exports){
+},{"../exception":110,"../utils":123}],114:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -22950,7 +22887,7 @@ exports['default'] = function (instance) {
 module.exports = exports['default'];
 
 
-},{"../exception":111}],116:[function(require,module,exports){
+},{"../exception":110}],115:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -22981,7 +22918,7 @@ exports['default'] = function (instance) {
 module.exports = exports['default'];
 
 
-},{"../utils":124}],117:[function(require,module,exports){
+},{"../utils":123}],116:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -23009,7 +22946,7 @@ exports['default'] = function (instance) {
 module.exports = exports['default'];
 
 
-},{}],118:[function(require,module,exports){
+},{}],117:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -23023,7 +22960,7 @@ exports['default'] = function (instance) {
 module.exports = exports['default'];
 
 
-},{}],119:[function(require,module,exports){
+},{}],118:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -23058,7 +22995,7 @@ exports['default'] = function (instance) {
 module.exports = exports['default'];
 
 
-},{"../utils":124}],120:[function(require,module,exports){
+},{"../utils":123}],119:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -23107,7 +23044,7 @@ exports['default'] = logger;
 module.exports = exports['default'];
 
 
-},{"./utils":124}],121:[function(require,module,exports){
+},{"./utils":123}],120:[function(require,module,exports){
 (function (global){
 /* global window */
 'use strict';
@@ -23131,7 +23068,7 @@ module.exports = exports['default'];
 
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],122:[function(require,module,exports){
+},{}],121:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -23425,7 +23362,7 @@ function executeDecorators(fn, prog, container, depths, data, blockParams) {
 }
 
 
-},{"./base":98,"./exception":111,"./utils":124}],123:[function(require,module,exports){
+},{"./base":97,"./exception":110,"./utils":123}],122:[function(require,module,exports){
 // Build out our basic SafeString type
 'use strict';
 
@@ -23442,7 +23379,7 @@ exports['default'] = SafeString;
 module.exports = exports['default'];
 
 
-},{}],124:[function(require,module,exports){
+},{}],123:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -23568,7 +23505,7 @@ function appendContextPath(contextPath, id) {
 }
 
 
-},{}],125:[function(require,module,exports){
+},{}],124:[function(require,module,exports){
 // USAGE:
 // var handlebars = require('handlebars');
 /* eslint-disable no-var */
@@ -23595,7 +23532,7 @@ if (typeof require !== 'undefined' && require.extensions) {
   require.extensions['.hbs'] = extension;
 }
 
-},{"../dist/cjs/handlebars":96,"../dist/cjs/handlebars/compiler/printer":106,"fs":95}],126:[function(require,module,exports){
+},{"../dist/cjs/handlebars":95,"../dist/cjs/handlebars/compiler/printer":105,"fs":94}],125:[function(require,module,exports){
 /*
  * Copyright 2009-2011 Mozilla Foundation and contributors
  * Licensed under the New BSD license. See LICENSE.txt or:
@@ -23605,7 +23542,7 @@ exports.SourceMapGenerator = require('./source-map/source-map-generator').Source
 exports.SourceMapConsumer = require('./source-map/source-map-consumer').SourceMapConsumer;
 exports.SourceNode = require('./source-map/source-node').SourceNode;
 
-},{"./source-map/source-map-consumer":133,"./source-map/source-map-generator":134,"./source-map/source-node":135}],127:[function(require,module,exports){
+},{"./source-map/source-map-consumer":132,"./source-map/source-map-generator":133,"./source-map/source-node":134}],126:[function(require,module,exports){
 /* -*- Mode: js; js-indent-level: 2; -*- */
 /*
  * Copyright 2011 Mozilla Foundation and contributors
@@ -23714,7 +23651,7 @@ define(function (require, exports, module) {
 
 });
 
-},{"./util":136,"amdefine":89}],128:[function(require,module,exports){
+},{"./util":135,"amdefine":88}],127:[function(require,module,exports){
 /* -*- Mode: js; js-indent-level: 2; -*- */
 /*
  * Copyright 2011 Mozilla Foundation and contributors
@@ -23862,7 +23799,7 @@ define(function (require, exports, module) {
 
 });
 
-},{"./base64":129,"amdefine":89}],129:[function(require,module,exports){
+},{"./base64":128,"amdefine":88}],128:[function(require,module,exports){
 /* -*- Mode: js; js-indent-level: 2; -*- */
 /*
  * Copyright 2011 Mozilla Foundation and contributors
@@ -23937,7 +23874,7 @@ define(function (require, exports, module) {
 
 });
 
-},{"amdefine":89}],130:[function(require,module,exports){
+},{"amdefine":88}],129:[function(require,module,exports){
 /* -*- Mode: js; js-indent-level: 2; -*- */
 /*
  * Copyright 2011 Mozilla Foundation and contributors
@@ -24056,7 +23993,7 @@ define(function (require, exports, module) {
 
 });
 
-},{"amdefine":89}],131:[function(require,module,exports){
+},{"amdefine":88}],130:[function(require,module,exports){
 /* -*- Mode: js; js-indent-level: 2; -*- */
 /*
  * Copyright 2014 Mozilla Foundation and contributors
@@ -24144,7 +24081,7 @@ define(function (require, exports, module) {
 
 });
 
-},{"./util":136,"amdefine":89}],132:[function(require,module,exports){
+},{"./util":135,"amdefine":88}],131:[function(require,module,exports){
 /* -*- Mode: js; js-indent-level: 2; -*- */
 /*
  * Copyright 2011 Mozilla Foundation and contributors
@@ -24266,7 +24203,7 @@ define(function (require, exports, module) {
 
 });
 
-},{"amdefine":89}],133:[function(require,module,exports){
+},{"amdefine":88}],132:[function(require,module,exports){
 /* -*- Mode: js; js-indent-level: 2; -*- */
 /*
  * Copyright 2011 Mozilla Foundation and contributors
@@ -25345,7 +25282,7 @@ define(function (require, exports, module) {
 
 });
 
-},{"./array-set":127,"./base64-vlq":128,"./binary-search":130,"./quick-sort":132,"./util":136,"amdefine":89}],134:[function(require,module,exports){
+},{"./array-set":126,"./base64-vlq":127,"./binary-search":129,"./quick-sort":131,"./util":135,"amdefine":88}],133:[function(require,module,exports){
 /* -*- Mode: js; js-indent-level: 2; -*- */
 /*
  * Copyright 2011 Mozilla Foundation and contributors
@@ -25746,7 +25683,7 @@ define(function (require, exports, module) {
 
 });
 
-},{"./array-set":127,"./base64-vlq":128,"./mapping-list":131,"./util":136,"amdefine":89}],135:[function(require,module,exports){
+},{"./array-set":126,"./base64-vlq":127,"./mapping-list":130,"./util":135,"amdefine":88}],134:[function(require,module,exports){
 /* -*- Mode: js; js-indent-level: 2; -*- */
 /*
  * Copyright 2011 Mozilla Foundation and contributors
@@ -26162,7 +26099,7 @@ define(function (require, exports, module) {
 
 });
 
-},{"./source-map-generator":134,"./util":136,"amdefine":89}],136:[function(require,module,exports){
+},{"./source-map-generator":133,"./util":135,"amdefine":88}],135:[function(require,module,exports){
 /* -*- Mode: js; js-indent-level: 2; -*- */
 /*
  * Copyright 2011 Mozilla Foundation and contributors
@@ -26534,7 +26471,7 @@ define(function (require, exports, module) {
 
 });
 
-},{"amdefine":89}],137:[function(require,module,exports){
+},{"amdefine":88}],136:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v2.2.4
  * http://jquery.com/
@@ -36350,7 +36287,7 @@ if ( !noGlobal ) {
 return jQuery;
 }));
 
-},{}],138:[function(require,module,exports){
+},{}],137:[function(require,module,exports){
 (function (global){
 /**
  * @license
@@ -48705,7 +48642,7 @@ return jQuery;
 }.call(this));
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],139:[function(require,module,exports){
+},{}],138:[function(require,module,exports){
 (function (process){
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -48933,7 +48870,7 @@ var substr = 'ab'.substr(-1) === 'b'
 ;
 
 }).call(this,require('_process'))
-},{"_process":140}],140:[function(require,module,exports){
+},{"_process":139}],139:[function(require,module,exports){
 // shim for using process in browser
 
 var process = module.exports = {};
@@ -49029,7 +48966,7 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],141:[function(require,module,exports){
+},{}],140:[function(require,module,exports){
 /*
      _ _      _       _
  ___| (_) ___| | __  (_)___
@@ -51725,7 +51662,7 @@ process.umask = function() { return 0; };
 
 }));
 
-},{"jquery":137}],142:[function(require,module,exports){
+},{"jquery":136}],141:[function(require,module,exports){
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
   typeof define === 'function' && define.amd ? define(['exports'], factory) :
@@ -52271,7 +52208,7 @@ process.umask = function() { return 0; };
   exports.presimplify = presimplify;
 
 }));
-},{}],143:[function(require,module,exports){
+},{}],142:[function(require,module,exports){
 //     Underscore.js 1.8.3
 //     http://underscorejs.org
 //     (c) 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
@@ -53821,7 +53758,7 @@ process.umask = function() { return 0; };
   }
 }.call(this));
 
-},{}],144:[function(require,module,exports){
+},{}],143:[function(require,module,exports){
 /*!
  * URI.js - Mutating URLs
  * IPv6 Support
@@ -54008,7 +53945,7 @@ process.umask = function() { return 0; };
   };
 }));
 
-},{}],145:[function(require,module,exports){
+},{}],144:[function(require,module,exports){
 /*!
  * URI.js - Mutating URLs
  * Second Level Domain (SLD) Support
@@ -54250,7 +54187,7 @@ process.umask = function() { return 0; };
   return SLD;
 }));
 
-},{}],146:[function(require,module,exports){
+},{}],145:[function(require,module,exports){
 /*!
  * URI.js - Mutating URLs
  *
@@ -56462,7 +56399,7 @@ process.umask = function() { return 0; };
   return URI;
 }));
 
-},{"./IPv6":144,"./SecondLevelDomains":145,"./punycode":147}],147:[function(require,module,exports){
+},{"./IPv6":143,"./SecondLevelDomains":144,"./punycode":146}],146:[function(require,module,exports){
 (function (global){
 /*! https://mths.be/punycode v1.4.0 by @mathias */
 ;(function(root) {
