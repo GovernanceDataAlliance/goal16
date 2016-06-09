@@ -16,7 +16,8 @@ var Router = Backbone.Router.extend({
   routes: {
     "(/)": "map",
     "map(/)": "map",
-    "countries/(:params)": "countriesIndex",
+    "countries(/)": "countriesIndex",
+    "countries/:params": "countriesShow",
     "compare(/)(:params)": "compareIndex"
   },
 
@@ -28,11 +29,6 @@ var Router = Backbone.Router.extend({
   commonViews: function(){
     this.views = new ViewManager();
     new MobileMenuView();
-  },
-
-  //WELCOME
-  welcome: function() {
-    new WelcomeView();
   },
 
   //MAP
@@ -48,10 +44,7 @@ var Router = Backbone.Router.extend({
   },
 
   //COUNTRIES
-  countriesIndex: function(params) {
-    console.log(params)
-    console.log('countries');
-
+  countriesIndex: function() {
     if (!this.views.hasView('index')) {
       var view = new CountriesView();
       this.views.addView('index', view);
@@ -64,6 +57,8 @@ var Router = Backbone.Router.extend({
   },
 
   countriesShow: function(params) {
+    console.log(params)
+    console.log('countries');
 
     var configView = {
       iso: params.split("&")[0],
@@ -105,8 +100,7 @@ var Router = Backbone.Router.extend({
   },
 
   //COMPARE
-  compareIndex: function() {
-    console.log('compare')
+  compareIndex: function(params) {
     var params =  URI("?" + window.location.hash.split("#")[1]).query(true);
     var data = {};
 

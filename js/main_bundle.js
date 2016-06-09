@@ -918,7 +918,8 @@ var Router = Backbone.Router.extend({
   routes: {
     "(/)": "map",
     "map(/)": "map",
-    "countries/(:params)": "countriesIndex",
+    "countries(/)": "countriesIndex",
+    "countries/:params": "countriesShow",
     "compare(/)(:params)": "compareIndex"
   },
 
@@ -930,11 +931,6 @@ var Router = Backbone.Router.extend({
   commonViews: function(){
     this.views = new ViewManager();
     new MobileMenuView();
-  },
-
-  //WELCOME
-  welcome: function() {
-    new WelcomeView();
   },
 
   //MAP
@@ -950,10 +946,7 @@ var Router = Backbone.Router.extend({
   },
 
   //COUNTRIES
-  countriesIndex: function(params) {
-    console.log(params)
-    console.log('countries');
-
+  countriesIndex: function() {
     if (!this.views.hasView('index')) {
       var view = new CountriesView();
       this.views.addView('index', view);
@@ -966,6 +959,8 @@ var Router = Backbone.Router.extend({
   },
 
   countriesShow: function(params) {
+    console.log(params)
+    console.log('countries');
 
     var configView = {
       iso: params.split("&")[0],
@@ -1007,8 +1002,7 @@ var Router = Backbone.Router.extend({
   },
 
   //COMPARE
-  compareIndex: function() {
-    console.log('compare')
+  compareIndex: function(params) {
     var params =  URI("?" + window.location.hash.split("#")[1]).query(true);
     var data = {};
 
@@ -1163,7 +1157,7 @@ module.exports = "<div class=\"js--country-header\"></div>\n\n<div class=\"l-too
 module.exports = "<div class=\"l-banner -detail -country -row\">\n  <div class=\"m-breadcrumbs\">\n    <ul>\n      <li><a href=\"/\">home </a></li>\n      <li><span> / </span></li>\n      <li><a href=\"{{siteURL}}/countries\"> countries </a></li>\n      <li><span> / </span></li>\n      <li> {{name}}</li>\n    </ul>\n  </div>\n\n  <div class=\"c-share-shortcut\">\n    <button class=\"js--view-share btn\">\n      <svg class=\"icon -regular\">\n        <use xlink:href=\"#icon-share\"></use>\n      </svg>\n      <span class=\"button-literal\">share</span>\n    </button>\n  </div>\n\n  <div class=\"wrap\">\n    <div class=\"title-container\">\n      <h1 class=\"c-section-title -country-name\">{{name}}</h1>\n      <div class=\"c-switcher--wrapper\">\n        <span class=\"c-switcher--label\">hide not covered</span>\n        <div class=\"c-switcher\">\n          <input id=\"notCoveredSwitcher\" type=\"checkbox\">\n          <label for=\"notCoveredSwitcher\"></label>\n        </div>\n      </div>\n    </div>\n    <div class=\"js--country-silhouette m-country-silhouette\"></div>\n  </div>\n</div>\n";
 
 },{}],43:[function(require,module,exports){
-module.exports = "{{#each countriesByRegion}}\n<div class=\"l-content -main\">\n  <div class=\"wrap\">\n    <div class=\"m-list\">\n      <h2 class=\"c-section-title -small\">{{@key}}</h2>\n        <div class=\"lists-container\">\n        {{#each this}}\n          <ul>\n          {{#each this}}\n            <li><a href=\"#{{iso3}}&{{max}}\" title=\"{{name}}\">{{name}}</a></li>\n          {{/each}}\n          </ul>\n        {{/each}}\n        </div>\n    </div>\n  </div>\n</div>\n{{/each}}\n\n";
+module.exports = "{{#each countriesByRegion}}\n<div class=\"l-content -main\">\n  <div class=\"wrap\">\n    <div class=\"m-list\">\n      <h2 class=\"c-section-title -small\">{{@key}}</h2>\n        <div class=\"lists-container\">\n        {{#each this}}\n          <ul>\n          {{#each this}}\n            <li><a href=\"#?{{iso3}}&{{max}}\" title=\"{{name}}\">{{name}}</a></li>\n          {{/each}}\n          </ul>\n        {{/each}}\n        </div>\n    </div>\n  </div>\n</div>\n{{/each}}\n\n";
 
 },{}],44:[function(require,module,exports){
 module.exports = "<ul>\n  {{#each countriesByRegion}}\n  <li>\n    <div class=\"m-list -mobile\"> \n      <h2 class=\"js--list-handler list-header\">{{@key}}</h2>\n      <ul>\n        {{#each this}}\n          <li><a href=\"#{{iso3}}&{{max}}\" title=\"{{name}}\">{{name}}</a></li>\n        {{/each}}\n      </ul>\n    </div>\n  </li>\n  {{/each}}\n</ul>\n\n";
