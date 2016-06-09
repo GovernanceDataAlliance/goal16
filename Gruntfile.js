@@ -95,6 +95,13 @@ module.exports = function(grunt) {
           }
         }
       }
+    },
+
+    concurrent: {
+      options: {
+        logConcurrentOutput: true
+      },
+      tasks1: ['browserify:main', 'styles', 'jekyll:dist']
     }
   });
 
@@ -107,6 +114,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks("grunt-connect-rewrite");
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-concurrent');
 
   grunt.registerTask('envVar', function (env) {
       var baseUrl = env === 'dist' ? '/goal16' : '';
@@ -114,7 +122,7 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('styles', ['sass:dist', 'postcss:dist']);
-  grunt.registerTask('build', ['browserify:main', 'styles', 'jekyll:dist']);
+  grunt.registerTask('build', ['concurrent:tasks1']);
   grunt.registerTask('dist', ['envVar:dist', 'build', 'uglify:dist']);
   grunt.registerTask('default', ['envVar:dev', 'build', 'connect:development', 'watch']);
 };
