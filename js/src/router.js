@@ -48,23 +48,23 @@ var Router = Backbone.Router.extend({
 
   //COUNTRIES
   countries: function(iso) {
+    var view;
     var el = '.js--country-container';
 
     if (!iso) {
 
       if (!this.views.hasView('indexCountries')) {
-        var view = new CountriesView();
+        view = new CountriesView();
         this.views.addView('indexCountries', view);
       }
       this.views.showView('indexCountries', el);
     } else {
 
-
       if (!this.views.hasView('showCountries')) {
-        var view = new CountryView();
+        view = new CountryView();
         this.views.addView('showCountries', view);
       } else {
-        var view = this.views.getView('showCountries');
+        view = this.views.getView('showCountries');
       }
 
       view.status.set({ iso: iso });
@@ -74,22 +74,23 @@ var Router = Backbone.Router.extend({
 
   //COMPARE
   compare: function(isoA, isoB, isoC) {
-    var params =  URI("?" + window.location.hash.split("#")[1]).query(true);
-    var data = {};
-
-    if (params.countries) {
-      var c = params.countries;
-      data = c.split(',');
-    }
-
+    var view;
     var el = '.js--compare-container';
 
     if (!this.views.hasView('compare')) {
-      this.views.addView('compare', new CompareView(data));
+      view = new CompareView();
+      this.views.addView('compare', view);
     } else {
-      this.views.getView('compare').update(data);
+      view = this.views.getView('compare');
     }
 
+    var params = {
+      isoA: isoA || null,
+      isoB: isoB || null,
+      isoC: isoC || null
+    }
+
+    view.status.set(params);
     this.views.showView('compare', el);
   },
 
