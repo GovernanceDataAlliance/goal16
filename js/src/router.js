@@ -21,7 +21,7 @@ var Router = Backbone.Router.extend({
   routes: {
     "(/)": "map",
     "map(/)": "map",
-    "countries(/)(?iso=:iso&year=:year)": "countries",
+    "countries(/)(?iso=:iso)": "countries",
     "compare(/)(?isoA=:isoA)(&isoB=:isoB)(&isoC=:isoC)": "compare"
   },
 
@@ -47,7 +47,7 @@ var Router = Backbone.Router.extend({
   },
 
   //COUNTRIES
-  countries: function(iso, year) {
+  countries: function(iso) {
     var el = '.js--country-container';
 
     if (!iso) {
@@ -59,46 +59,17 @@ var Router = Backbone.Router.extend({
       this.views.showView('indexCountries', el);
     } else {
 
-      var configView = {
-        iso: iso,
-        year: year || null
-      };
 
       if (!this.views.hasView('showCountries')) {
-        var view = new CountryView(configView);
+        var view = new CountryView();
         this.views.addView('showCountries', view);
       } else {
-        this.views.getView('showCountries')._updateCountryParams(iso, year)
+        var view = this.views.getView('showCountries');
       }
+
+      view.status.set({ iso: iso });
       this.views.showView('showCountries', el);
     }
-
-    this.setListenersCountries();
-  },
-
-
-  setListenersCountries: function() {
-    Backbone.Events.on('year:selected', this.updateParams, this);
-  },
-
-  //Update params
-  _updateCountryParams: function(iso, year) {
-    this.year = year;
-    this.iso = iso;
-    this.updateUrl();
-  },
-
-  //Update URL
-  updateUrl: function() {
-    //TOOD - review this method
-    var stringYear = '',
-      iso = window.location.hash.split('&')[0].slice(1);
-
-    if (this.year) {
-      stringYear = '&' + this.year;
-    }
-
-    this.navigate(iso + stringYear);
   },
 
   //COMPARE
