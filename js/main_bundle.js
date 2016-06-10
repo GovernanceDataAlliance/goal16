@@ -923,7 +923,7 @@ var Router = Backbone.Router.extend({
   routes: {
     "(/)": "map",
     "map(/)": "map",
-    "countries(/)(?iso=:iso&year=:year)": "countries",
+    "countries(/)(?iso=:iso)": "countries",
     "compare(/)(?isoA=:isoA)(&isoB=:isoB)(&isoC=:isoC)": "compare"
   },
 
@@ -949,78 +949,50 @@ var Router = Backbone.Router.extend({
   },
 
   //COUNTRIES
-  countries: function(iso, year) {
+  countries: function(iso) {
+    var view;
     var el = '.js--country-container';
 
     if (!iso) {
 
       if (!this.views.hasView('indexCountries')) {
-        var view = new CountriesView();
+        view = new CountriesView();
         this.views.addView('indexCountries', view);
       }
       this.views.showView('indexCountries', el);
     } else {
 
-      var configView = {
-        iso: iso,
-        year: year || null
-      };
-
       if (!this.views.hasView('showCountries')) {
-        var view = new CountryView(configView);
+        view = new CountryView();
         this.views.addView('showCountries', view);
       } else {
-        this.views.getView('showCountries')._updateCountryParams(iso, year)
+        view = this.views.getView('showCountries');
       }
+
+      view.status.set({ iso: iso });
       this.views.showView('showCountries', el);
     }
-
-    this.setListenersCountries();
-  },
-
-
-  setListenersCountries: function() {
-    Backbone.Events.on('year:selected', this.updateParams, this);
-  },
-
-  //Update params
-  _updateCountryParams: function(iso, year) {
-    this.year = year;
-    this.iso = iso;
-    this.updateUrl();
-  },
-
-  //Update URL
-  updateUrl: function() {
-    //TOOD - review this method
-    var stringYear = '',
-      iso = window.location.hash.split('&')[0].slice(1);
-
-    if (this.year) {
-      stringYear = '&' + this.year;
-    }
-
-    this.navigate(iso + stringYear);
   },
 
   //COMPARE
   compare: function(isoA, isoB, isoC) {
-    var params =  URI("?" + window.location.hash.split("#")[1]).query(true);
-    var data = {};
-
-    if (params.countries) {
-      var c = params.countries;
-      data = c.split(',');
-    }
-
+    var view;
     var el = '.js--compare-container';
 
     if (!this.views.hasView('compare')) {
-      this.views.addView('compare', new CompareView(data));
+      view = new CompareView();
+      this.views.addView('compare', view);
     } else {
-      this.views.getView('compare').update(data);
+      view = this.views.getView('compare');
     }
 
+    var params = {
+      isoA: isoA || null,
+      isoB: isoB || null,
+      isoC: isoC || null
+    }
+
+    view.status.set(params);
     this.views.showView('compare', el);
   },
 
@@ -1158,7 +1130,7 @@ module.exports = "<div class=\"js--country-header\"></div>\n\n<div class=\"l-too
 module.exports = "<div class=\"l-banner -detail -country -row\">\n  <div class=\"m-breadcrumbs\">\n    <ul>\n      <li><a href=\"/\">home </a></li>\n      <li><span> / </span></li>\n      <li><a href=\"{{siteURL}}/countries\"> countries </a></li>\n      <li><span> / </span></li>\n      <li> {{name}}</li>\n    </ul>\n  </div>\n\n  <div class=\"c-share-shortcut\">\n    <button class=\"js--view-share btn\">\n      <svg class=\"icon -regular\">\n        <use xlink:href=\"#icon-share\"></use>\n      </svg>\n      <span class=\"button-literal\">share</span>\n    </button>\n  </div>\n\n  <div class=\"wrap\">\n    <div class=\"title-container\">\n      <h1 class=\"c-section-title -country-name\">{{name}}</h1>\n      <div class=\"c-switcher--wrapper\">\n        <span class=\"c-switcher--label\">hide not covered</span>\n        <div class=\"c-switcher\">\n          <input id=\"notCoveredSwitcher\" type=\"checkbox\">\n          <label for=\"notCoveredSwitcher\"></label>\n        </div>\n      </div>\n    </div>\n    <div class=\"js--country-silhouette m-country-silhouette\"></div>\n  </div>\n</div>\n";
 
 },{}],43:[function(require,module,exports){
-module.exports = "{{#each countriesByRegion}}\n<div class=\"l-content -main\">\n  <div class=\"wrap\">\n    <div class=\"m-list\">\n      <h2 class=\"c-section-title -small\">{{@key}}</h2>\n        <div class=\"lists-container\">\n        {{#each this}}\n          <ul>\n          {{#each this}}\n            <li><a href=\"?iso={{iso3}}&year={{max}}\" title=\"{{name}}\">{{name}}</a></li>\n          {{/each}}\n          </ul>\n        {{/each}}\n        </div>\n    </div>\n  </div>\n</div>\n{{/each}}\n";
+module.exports = "{{#each countriesByRegion}}\n<div class=\"l-content -main\">\n  <div class=\"wrap\">\n    <div class=\"m-list\">\n      <h2 class=\"c-section-title -small\">{{@key}}</h2>\n        <div class=\"lists-container\">\n        {{#each this}}\n          <ul>\n          {{#each this}}\n            <li><a href=\"?iso={{iso3}}\" title=\"{{name}}\">{{name}}</a></li>\n          {{/each}}\n          </ul>\n        {{/each}}\n        </div>\n    </div>\n  </div>\n</div>\n{{/each}}\n";
 
 },{}],44:[function(require,module,exports){
 module.exports = "<ul>\n  {{#each countriesByRegion}}\n  <li>\n    <div class=\"m-list -mobile\"> \n      <h2 class=\"js--list-handler list-header\">{{@key}}</h2>\n      <ul>\n        {{#each this}}\n          <li><a href=\"#{{iso3}}&{{max}}\" title=\"{{name}}\">{{name}}</a></li>\n        {{/each}}\n      </ul>\n    </div>\n  </li>\n  {{/each}}\n</ul>\n\n";
@@ -2585,6 +2557,13 @@ var templateMobile = Handlebars.compile(require('../../templates/compare/mobile/
   templateMobileSlide = Handlebars.compile(require('../../templates/compare/mobile/compare-mobile-slide.hbs')),
   templateMobileScores = Handlebars.compile(require('../../templates/compare/mobile/compare-country-scores-mobile.hbs'));
 
+var status = new (Backbone.Model.extend({
+  defaults: {
+    isoA: null,
+    isoB: null,
+    isoC: null
+  }
+}));
 
 var CompareView = Backbone.View.extend({
 
@@ -2594,9 +2573,10 @@ var CompareView = Backbone.View.extend({
   },
 
   initialize: function(options) {
-    options = options || {};
-
+    this.options = options;
     this._setView();
+
+    this.status = status;
 
     // views
     this.infoWindowModel = new InfoWindowModel();
@@ -3662,8 +3642,7 @@ var _ = require('lodash'),
 
 var Country = require('../../models/country.js'),
     InfoWindowModel = require('../../models/infowindow.js'),
-    Indicators = require('../../collections/indicators.js'),
-    Years = require('../../collections/years.js');
+    Indicators = require('../../collections/indicators.js');
 
 var FunctionHelper = require('../../helpers/functions.js');
 
@@ -3671,12 +3650,15 @@ var CountryHeaderView = require('./country_header.js'),
     IndicatorListView = require('./indicator_list.js'),
     CountryToolbarView = require('./country_toolbar.js'),
     ModalWindowView = require('../common/infowindow_view.js')
-    ShareWindowView = require('../common/share_window_view.js'),
-    YearSelectorView = require('../common/year_selector.js'),
-    LegendView = require('../common/legend.js');
-
+    ShareWindowView = require('../common/share_window_view.js');
 
 var template = Handlebars.compile(require('../../templates/countries/country.hbs'));
+
+var status = new (Backbone.Model.extend({
+  defaults: {
+    iso: null
+  }
+}));
 
 var CountryView = Backbone.View.extend({
 
@@ -3685,73 +3667,30 @@ var CountryView = Backbone.View.extend({
     'click .js--view-share': '_openShareWindow'
   },
 
-  initialize: function(options) {
-    options = options || {};
-    if (options.iso === undefined) {
-      throw new Error('CountryView requires a Country ISO ID');
-    }
-
+  initialize: function() {
     // Models
+    this.status = status;
     this.infoWindowModel = new InfoWindowModel();
 
-    this.status = new (Backbone.Model.extend({
-      defaults: {
-        iso: null,
-        year: null
-      }
-    }));
-
     this.functionHelper = FunctionHelper;
-
     this.shareWindowView = new ShareWindowView();
-
-    // Initialize collections
-    this.country = new Country({id: options.iso});
-    this.indicators = new Indicators();
-    this.yearsCollection = new Years();
-
-    this.status.set({
-      iso: options.iso,
-      year: options.year
-    });
-
-    this._setListeners();
-    this.initializeData();
   },
 
   initializeData: function() {
-    var iso = this.status.get('iso'),
-      currentYear = this.status.get('year');
-
-    this.render();
-
+    // Initialize collections
+    this.country = new Country({id: this.status.get('iso')});
     this.country.fetch();
 
-    this.yearsCollection.getYearsByCountry({iso: iso}).done(function() {
+    this.indicators = new Indicators();
 
-      if (!this.status.get('year')) {
-        this.status.set('year', this.yearsCollection.getLastYear())
-      } else {
-        this.indicators.forCountryAndYear(iso, this.status.get('year'));
-      }
-
-      this._updateCompareLink();
-
-    }.bind(this));
-
+    this.render();
+    this._setListeners();
   },
 
   _setListeners: function() {
-    // Model listeners
-    this.status.on('change:year', _.bind(this._onUpdateYear, this));
-    this.status.on('change:iso', _.bind(this.updateCountry, this));
-
-    Backbone.Events.on('year:selected', this._updateYear, this);
-
     // Collections listeners
-    this.listenTo(this.indicators, 'sync', this.renderIndicators);
-    this.listenTo(this.country, 'sync', this.renderCountry);
-    this.listenTo(this.yearsCollection, 'sync', this.renderYearSelector);
+    this.listenTo(this.indicators, 'sync', this._renderIndicators);
+    this.listenTo(this.country, 'sync', this._renderCountry);
   },
 
   _openShareWindow: function() {
@@ -3759,110 +3698,17 @@ var CountryView = Backbone.View.extend({
     this.shareWindowView.delegateEvents();
   },
 
-  _hideBanner: function() {
-    if (!$('.js--index-banner').hasClass('is-hidden')) {
-      $('.js--index-banner').addClass('is-hidden');
-    }
-  },
 
   render: function() {
     this._hideBanner();
 
     this.$el.html(template());
-    this.renderToolbars();
-    this.renderLegend();
+    this._renderToolbars();
 
     this.functionHelper.scrollTop();
   },
 
-  _toggleTooltip: function(e) {
-    new TooltipView().toggleStatus(e);
-  },
-
-  _updateCompareLink: function() {
-    var link = document.querySelector('.l-aside-content a'),
-      iso = this.status.get('iso'),
-      year = this.status.get('year');
-
-    link.href = '/compare#countries=' + iso + ':' + year;
-  },
-
-  updateCountry: function() {
-    this.stopListening(this.country);
-
-    this.country.id = this.status.get('iso');
-    this.country.fetch();
-  },
-
-  _updateYear: function(year) {
-    this.status.set('year', year);
-  },
-
-  _onUpdateYear: function() {
-    // this._setDownloadData();
-    this._updateCompareLink();
-    this.indicators.forCountryAndYear(this.status.get('iso'), this.status.get('year'));
-  },
-
-  _updateParams: function(params) {
-
-    this.yearsCollection.getYearsByCountry({iso: params.iso}).done(function() {
-
-      var lastYear = this.yearsCollection.getLastYear();
-
-      if (params.year == this.status.get('year')) {
-
-        this.status.set({
-          iso: params.iso,
-          year: params.year ? params.year : lastYear
-        });
-
-        this.status.trigger('change:year');
-
-      } else {
-
-        this.status.set({
-          iso: params.iso,
-          year: params.year ? params.year : lastYear
-        });
-
-        if (this.status.get('year') == lastYear) {
-          this.status.trigger('change:year');
-        }
-      }
-
-      this._hideBanner();
-      this._updateYearSelector();
-
-      this.countryToolbar.delegateEvents();
-
-    }.bind(this));
-
-  },
-
-  _updateYearSelector: function() {
-    var $yearSelector = $('.js--year-selector-country').find('select');
-    $yearSelector.val(this.status.get('year'))
-    $yearSelector.trigger("liszt:updated");
-  },
-
-  renderYearSelector: function() {
-    new YearSelectorView({
-      el: this.$('.js--year-selector-country'),
-      'years': this.yearsCollection.toJSON(),
-      'actualYear': this.status.get('year')
-    }).render();
-  },
-
-  renderLegend: function() {
-    var legends = this.$('.js--legend');
-    _.each(legends, function(legend) {
-      var legendView = new LegendView({ el: legend });
-      legendView.delegateEvents();
-    });
-  },
-
-  renderCountry: function() {
+  _renderCountry: function() {
     var headerView = new CountryHeaderView({
       country: this.country
     });
@@ -3870,13 +3716,34 @@ var CountryView = Backbone.View.extend({
     this.$('.js--country-header').html(headerView.render().el);
   },
 
-  renderToolbars: function() {
+  _renderToolbars: function() {
     this.countryToolbar = new CountryToolbarView({
       el: this.$el.find('.js--toolbar-display')
     });
 
     this.$el.find('.js--country-toolbar').find('.wrap').append(this.countryToolbar.render().el);
   },
+
+  _renderIndicators: function() {
+    new IndicatorListView({
+      'indicators': this.indicators
+    }).render();
+  },
+
+  _hideBanner: function() {
+    //Trick to hidde the countries index header.
+    //As we are ussing the same Jekyll template, we need to do it.
+    if (!$('.js--index-banner').hasClass('is-hidden')) {
+      $('.js--index-banner').addClass('is-hidden');
+    }
+  },
+
+  _updateCompareLink: function() {
+    var link = document.querySelector('.l-aside-content a'),
+      iso = this.status.get('iso');
+      link.href = '/compare/?isoA=' + iso;
+  },
+
 
   _getIndicatorInfo: function(opts) {
     return this.infoWindowModel.getIndicator(opts);
@@ -3898,23 +3765,17 @@ var CountryView = Backbone.View.extend({
       });
 
     }.bind(this));
-
   },
 
-  renderIndicators: function() {
-    new IndicatorListView({
-      'indicators': this.indicators,
-      currentYear: this.status.get('year')
-    }).render();
-  },
-
-  show: function() {}
+  show: function() {
+    this.initializeData();
+  }
 
 });
 
 module.exports = CountryView;
 
-},{"../../collections/indicators.js":4,"../../collections/years.js":6,"../../helpers/functions.js":8,"../../models/country.js":18,"../../models/infowindow.js":20,"../../templates/countries/country.hbs":41,"../common/infowindow_view.js":64,"../common/legend.js":65,"../common/share_window_view.js":71,"../common/year_selector.js":74,"./country_header.js":81,"./country_toolbar.js":83,"./indicator_list.js":85,"backbone":90,"handlebars":124,"lodash":137}],81:[function(require,module,exports){
+},{"../../collections/indicators.js":4,"../../helpers/functions.js":8,"../../models/country.js":18,"../../models/infowindow.js":20,"../../templates/countries/country.hbs":41,"../common/infowindow_view.js":64,"../common/share_window_view.js":71,"./country_header.js":81,"./country_toolbar.js":83,"./indicator_list.js":85,"backbone":90,"handlebars":124,"lodash":137}],81:[function(require,module,exports){
 var _ = require('lodash'),
     Backbone = require('backbone'),
     d3 = require('d3'),

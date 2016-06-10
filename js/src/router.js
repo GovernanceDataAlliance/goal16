@@ -21,7 +21,7 @@ var Router = Backbone.Router.extend({
   routes: {
     "(/)": "map",
     "map(/)": "map",
-    "countries(/)(?iso=:iso&year=:year)": "countries",
+    "countries(/)(?iso=:iso)": "countries",
     "compare(/)(?isoA=:isoA)(&isoB=:isoB)(&isoC=:isoC)": "compare"
   },
 
@@ -47,78 +47,50 @@ var Router = Backbone.Router.extend({
   },
 
   //COUNTRIES
-  countries: function(iso, year) {
+  countries: function(iso) {
+    var view;
     var el = '.js--country-container';
 
     if (!iso) {
 
       if (!this.views.hasView('indexCountries')) {
-        var view = new CountriesView();
+        view = new CountriesView();
         this.views.addView('indexCountries', view);
       }
       this.views.showView('indexCountries', el);
     } else {
 
-      var configView = {
-        iso: iso,
-        year: year || null
-      };
-
       if (!this.views.hasView('showCountries')) {
-        var view = new CountryView(configView);
+        view = new CountryView();
         this.views.addView('showCountries', view);
       } else {
-        this.views.getView('showCountries')._updateCountryParams(iso, year)
+        view = this.views.getView('showCountries');
       }
+
+      view.status.set({ iso: iso });
       this.views.showView('showCountries', el);
     }
-
-    this.setListenersCountries();
-  },
-
-
-  setListenersCountries: function() {
-    Backbone.Events.on('year:selected', this.updateParams, this);
-  },
-
-  //Update params
-  _updateCountryParams: function(iso, year) {
-    this.year = year;
-    this.iso = iso;
-    this.updateUrl();
-  },
-
-  //Update URL
-  updateUrl: function() {
-    //TOOD - review this method
-    var stringYear = '',
-      iso = window.location.hash.split('&')[0].slice(1);
-
-    if (this.year) {
-      stringYear = '&' + this.year;
-    }
-
-    this.navigate(iso + stringYear);
   },
 
   //COMPARE
   compare: function(isoA, isoB, isoC) {
-    var params =  URI("?" + window.location.hash.split("#")[1]).query(true);
-    var data = {};
-
-    if (params.countries) {
-      var c = params.countries;
-      data = c.split(',');
-    }
-
+    var view;
     var el = '.js--compare-container';
 
     if (!this.views.hasView('compare')) {
-      this.views.addView('compare', new CompareView(data));
+      view = new CompareView();
+      this.views.addView('compare', view);
     } else {
-      this.views.getView('compare').update(data);
+      view = this.views.getView('compare');
     }
 
+    var params = {
+      isoA: isoA || null,
+      isoB: isoB || null,
+      isoC: isoC || null
+    }
+
+    view.status.set(params);
     this.views.showView('compare', el);
   },
 
