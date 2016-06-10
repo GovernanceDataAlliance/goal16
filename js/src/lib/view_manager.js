@@ -6,9 +6,7 @@ var ViewManager = Backbone.Model.extend({
     views: {}
   },
 
-  initialize: function(options) {
-    this.$el = options.$el;
-  },
+  initialize: function() {},
 
   addView: function(viewName, view) {
     var views = this.get('views');
@@ -21,30 +19,22 @@ var ViewManager = Backbone.Model.extend({
     return this.get('views')[viewName];
   },
 
-  showView: function(viewName) {
+  showView: function(viewName, el) {
     var view = this.get('views')[viewName];
+    this.$el = $(el);
+
     if (view !== undefined) {
       this.set('currentView', view);
 
       view.show();
       this.$el.html(view.el);
-      // this._hideViewsExcept(viewName);
       view.delegateEvents();
     }
   },
 
   hasView: function(viewName) {
     return (this.get('views')[viewName] !== undefined);
-  },
-
-  // _hideViewsExcept: function(viewName) {
-  //   var views = this.get('views');
-  //   _.each(views, function(view, key) {
-  //     if (key !== viewName) {
-  //       view.hide();
-  //     }
-  //   });
-  // }
+  }
 });
 
 

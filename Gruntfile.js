@@ -47,57 +47,9 @@ module.exports = function(grunt) {
     },
 
     browserify: {
-      welcome: {
-        src: ['js/src/welcome_main.js'],
-        dest: 'js/welcome_bundle.js',
-        options: {
-          transform: [stringify(['.hbs', '.txt', '.sql', '.md'])]
-        }
-      },
-
-      countries: {
-        src: ['js/src/countries_main.js'],
-        dest: 'js/countries_bundle.js',
-        options: {
-          transform: [stringify(['.hbs', '.txt', '.sql', '.md'])]
-        }
-      },
-
-      compare: {
-        src: ['js/src/compare_main.js'],
-        dest: 'js/compare_bundle.js',
-        options: {
-          transform: [stringify(['.hbs', '.txt', '.sql', '.md'])]
-        }
-      },
-
-      map: {
-        src: ['js/src/map_main.js'],
-        dest: 'js/map_bundle.js',
-        options: {
-          transform: [stringify(['.hbs', '.txt', '.sql', '.md'])]
-        }
-      },
-
-      about: {
-        src: ['js/src/about_main.js'],
-        dest: 'js/about_bundle.js',
-        options: {
-          transform: [stringify(['.hbs', '.txt', '.sql', '.md'])]
-        }
-      },
-
-      indicators: {
-        src: ['js/src/indicators_main.js'],
-        dest: 'js/indicators_bundle.js',
-        options: {
-          transform: [stringify(['.hbs', '.txt', '.sql', '.md'])]
-        }
-      },
-
-      blog: {
-        src: ['js/src/blog_main.js'],
-        dest: 'js/blog_bundle.js',
+      main: {
+        src: ['js/src/main.js'],
+        dest: 'js/main_bundle.js',
         options: {
           transform: [stringify(['.hbs', '.txt', '.sql', '.md'])]
         }
@@ -107,8 +59,7 @@ module.exports = function(grunt) {
     watch: {
       js: {
         files: ['js/src/**/*.js', '!_site/**/*'],
-        tasks: ['browserify:countries', 'browserify:compare', 'browserify:map', 'browserify:about',
-          'browserify:indicators', 'browserify:welcome', 'browserify:blog', 'jekyll:dist']
+        tasks: ['browserify:main', 'jekyll:dist']
       },
       sass: {
           files: ['css/**/*', '_sass/**/*', '!_site/**/*'],
@@ -123,13 +74,7 @@ module.exports = function(grunt) {
     uglify: {
       dist: {
         files: {
-          'js/countries_bundle.js': 'js/countries_bundle.js',
-          'js/compare_bundle.js': 'js/compare_bundle.js',
-          'js/map_bundle.js': 'js/map_bundle.js',
-          'js/about_bundle.js': 'js/about_bundle.js',
-          'js/indicators_bundle.js': 'js/indicators_bundle.js',
-          'js/welcome_bundle.js': 'js/welcome_bundle.js',
-          'js/blog_bundle.js': 'js/blog_bundle.js'
+          'js/main_bundle.js': 'js/main_bundle.js'
         }
       }
     },
@@ -150,6 +95,13 @@ module.exports = function(grunt) {
           }
         }
       }
+    },
+
+    concurrent: {
+      options: {
+        logConcurrentOutput: true
+      },
+      tasks1: ['browserify:main', 'styles', 'jekyll:dist']
     }
   });
 
@@ -162,14 +114,16 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks("grunt-connect-rewrite");
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-concurrent');
 
   grunt.registerTask('envVar', function (env) {
+      //This task will add the base url to css files when needed.
       var baseUrl = env === 'dist' ? '/goal16' : '';
       grunt.file.write('_sass/_env.scss', '$baseUrl:"' + baseUrl + '";');
   });
 
   grunt.registerTask('styles', ['sass:dist', 'postcss:dist']);
-  grunt.registerTask('build', ['browserify:countries', 'browserify:compare', 'browserify:map', 'browserify:about', 'browserify:indicators', 'browserify:welcome', 'browserify:blog', 'styles', 'jekyll:dist']);
+  grunt.registerTask('build', ['concurrent:tasks1']);
   grunt.registerTask('dist', ['envVar:dist', 'build', 'uglify:dist']);
   grunt.registerTask('default', ['envVar:dev', 'build', 'connect:development', 'watch']);
 };

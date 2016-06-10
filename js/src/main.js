@@ -3,9 +3,9 @@ var Backbone = require('backbone'),
 
 var helpers = require('./helpers/handlebars.js');
 
-var Router = require('./routers/blog.js'),
+var Router = require('./router.js'),
     router = new Router({
-      $el: $('js-blog')
+      $el: $('.l-main-container')
     });
 
-Backbone.history.start();
+Backbone.history.start({pushState: true});
