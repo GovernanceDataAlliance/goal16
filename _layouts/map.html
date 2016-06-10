@@ -6,7 +6,11 @@
     {% include icons.html %}
     <div class="l-main-container">
       {% include header.html %}
-      <div class="l-map js--map-container"></div>
+
+      <div id="content">
+        <div class="l-map js--map-container"></div>
+      </div>
+
     </div>
     <script>
       var SITEURL = '{{ site.baseurl }}' || null;

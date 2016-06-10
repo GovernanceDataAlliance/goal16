@@ -6,6 +6,8 @@ var ViewManager = Backbone.Model.extend({
     views: {}
   },
 
+  el: '#content',
+
   initialize: function() {},
 
   addView: function(viewName, view) {
@@ -19,15 +21,15 @@ var ViewManager = Backbone.Model.extend({
     return this.get('views')[viewName];
   },
 
-  showView: function(viewName, el) {
+  showView: function(viewName) {
     var view = this.get('views')[viewName];
-    this.$el = $(el);
-
+    // this.$el = $(el);
+    debugger
     if (view !== undefined) {
       this.set('currentView', view);
 
       view.show();
-      this.$el.html(view.el);
+      $(this.el).html(view.el);
       view.delegateEvents();
     }
   },

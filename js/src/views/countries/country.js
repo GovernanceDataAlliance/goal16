@@ -24,6 +24,8 @@ var status = new (Backbone.Model.extend({
 
 var CountryView = Backbone.View.extend({
 
+  el: '.js--country-container',
+
   events: {
     'click .btn-info': 'showModalWindow',
     'click .js--view-share': '_openShareWindow'

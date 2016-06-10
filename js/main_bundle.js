@@ -792,6 +792,8 @@ var ViewManager = Backbone.Model.extend({
     views: {}
   },
 
+  el: '#content',
+
   initialize: function() {},
 
   addView: function(viewName, view) {
@@ -805,15 +807,15 @@ var ViewManager = Backbone.Model.extend({
     return this.get('views')[viewName];
   },
 
-  showView: function(viewName, el) {
+  showView: function(viewName) {
     var view = this.get('views')[viewName];
-    this.$el = $(el);
-
+    // this.$el = $(el);
+    debugger
     if (view !== undefined) {
       this.set('currentView', view);
 
       view.show();
-      this.$el.html(view.el);
+      $(this.el).html(view.el);
       view.delegateEvents();
     }
   },
@@ -940,19 +942,17 @@ var Router = Backbone.Router.extend({
   //MAP
   map: function() {
     var view;
-    var el = '.js--map-container';
 
     if (!this.views.hasView('indexMap')) {
       view = new MapView();
       this.views.addView('indexMap', view);
     }
-    this.views.showView('indexMap', el);
+    this.views.showView('indexMap');
   },
 
   //COUNTRIES
   countries: function(iso) {
     var view;
-    var el = '.js--country-container';
 
     if (!iso) {
 
@@ -960,7 +960,7 @@ var Router = Backbone.Router.extend({
         view = new CountriesView();
         this.views.addView('indexCountries', view);
       }
-      this.views.showView('indexCountries', el);
+      this.views.showView('indexCountries');
     } else {
 
       if (!this.views.hasView('showCountries')) {
@@ -971,14 +971,13 @@ var Router = Backbone.Router.extend({
       }
 
       view.status.set({ iso: iso });
-      this.views.showView('showCountries', el);
+      this.views.showView('showCountries');
     }
   },
 
   //COMPARE
   compare: function(isoA, isoB, isoC) {
     var view;
-    var el = '.js--compare-container';
 
     if (!this.views.hasView('compare')) {
       view = new CompareView();
@@ -994,7 +993,7 @@ var Router = Backbone.Router.extend({
     }
 
     view.status.set(params);
-    this.views.showView('compare', el);
+    this.views.showView('compare');
   },
 
   //Update URL
@@ -2568,6 +2567,8 @@ var status = new (Backbone.Model.extend({
 
 var CompareView = Backbone.View.extend({
 
+  el: '.js--compare-container',
+
   events: {
     'click .btn-info' : 'showModalWindow',
     'click .js--view-share': '_openShareWindow'
@@ -3663,6 +3664,8 @@ var status = new (Backbone.Model.extend({
 
 var CountryView = Backbone.View.extend({
 
+  el: '.js--country-container',
+
   events: {
     'click .btn-info': 'showModalWindow',
     'click .js--view-share': '_openShareWindow'
@@ -4236,6 +4239,8 @@ var $ = require('jquery'),
   Backbone = require('backbone');
 
 var MapView = Backbone.View.extend({
+
+  el: '.js--map-container',
 
   options: {
     map: {

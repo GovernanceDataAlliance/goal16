@@ -39,6 +39,8 @@ var status = new (Backbone.Model.extend({
 
 var CompareView = Backbone.View.extend({
 
+  el: '.js--compare-container',
+
   events: {
     'click .btn-info' : 'showModalWindow',
     'click .js--view-share': '_openShareWindow'

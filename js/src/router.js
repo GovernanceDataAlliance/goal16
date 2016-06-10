@@ -38,19 +38,17 @@ var Router = Backbone.Router.extend({
   //MAP
   map: function() {
     var view;
-    var el = '.js--map-container';
 
     if (!this.views.hasView('indexMap')) {
       view = new MapView();
       this.views.addView('indexMap', view);
     }
-    this.views.showView('indexMap', el);
+    this.views.showView('indexMap');
   },
 
   //COUNTRIES
   countries: function(iso) {
     var view;
-    var el = '.js--country-container';
 
     if (!iso) {
 
@@ -58,7 +56,7 @@ var Router = Backbone.Router.extend({
         view = new CountriesView();
         this.views.addView('indexCountries', view);
       }
-      this.views.showView('indexCountries', el);
+      this.views.showView('indexCountries');
     } else {
 
       if (!this.views.hasView('showCountries')) {
@@ -69,14 +67,13 @@ var Router = Backbone.Router.extend({
       }
 
       view.status.set({ iso: iso });
-      this.views.showView('showCountries', el);
+      this.views.showView('showCountries');
     }
   },
 
   //COMPARE
   compare: function(isoA, isoB, isoC) {
     var view;
-    var el = '.js--compare-container';
 
     if (!this.views.hasView('compare')) {
       view = new CompareView();
@@ -92,7 +89,7 @@ var Router = Backbone.Router.extend({
     }
 
     view.status.set(params);
-    this.views.showView('compare', el);
+    this.views.showView('compare');
   },
 
   //Update URL

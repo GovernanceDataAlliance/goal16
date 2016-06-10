@@ -5,6 +5,8 @@ var $ = require('jquery'),
 
 var MapView = Backbone.View.extend({
 
+  el: '.js--map-container',
+
   options: {
     map: {
       center: [39.1, 4.5],
