@@ -36,13 +36,12 @@ var Router = Backbone.Router.extend({
 
   //MAP
   map: function() {
+    var el = '.js--map-container';
+
     if (!this.views.hasView('indexMap')) {
       var view = new MapView();
       this.views.addView('indexMap', view);
     }
-
-    var el = '.js--map-container';
-
     this.views.showView('indexMap', el);
   },
 
@@ -57,7 +56,6 @@ var Router = Backbone.Router.extend({
         this.views.addView('indexCountries', view);
       }
       this.views.showView('indexCountries', el);
-
     } else {
 
       var configView = {
@@ -69,10 +67,9 @@ var Router = Backbone.Router.extend({
         var view = new CountryView(configView);
         this.views.addView('showCountries', view);
       } else {
-        this.views.getView('showCountries')._updateCountryParams(configView)
+        this.views.getView('showCountries')._updateCountryParams(iso, year)
       }
       this.views.showView('showCountries', el);
-
     }
 
     this.setListenersCountries();
@@ -84,8 +81,9 @@ var Router = Backbone.Router.extend({
   },
 
   //Update params
-  _updateCountryParams: function(year) {
+  _updateCountryParams: function(iso, year) {
     this.year = year;
+    this.iso = iso;
     this.updateUrl();
   },
 
