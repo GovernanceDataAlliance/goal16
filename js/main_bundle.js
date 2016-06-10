@@ -917,6 +917,7 @@ var Router = Backbone.Router.extend({
   /*
    * Routes examples:
    * countries: countries?iso=GAB&year=2015
+   * compare: compare?isoA=SPA&isoB=FRA&isoC=ENG
    */
 
   routes: {
