@@ -5,8 +5,6 @@ var $ = require('jquery'),
 
 var MapView = Backbone.View.extend({
 
-  el: '.js--map-container',
-
   options: {
     map: {
       center: [39.1, 4.5],
@@ -33,14 +31,12 @@ var MapView = Backbone.View.extend({
     enquire.register("screen and (max-width:769px)", {
       match: _.bind(function(){
         this.mobile = true;
-        this.initViews();
       },this)
     });
 
     enquire.register("screen and (min-width:770px)", {
       match: _.bind(function(){
         this.mobile = false;
-        this.initViews();
       },this)
     });
   },
@@ -54,7 +50,6 @@ var MapView = Backbone.View.extend({
     var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
       attribution: '<a href="https://www.mapzen.com/rights">Attribution.</a>. Data &copy;<a href="https://openstreetmap.org/copyright">OSM</a> contributors.'
     });
-
     /* Here we create the map with Leafleft... */
     this.map = L.map(this.el, this.options.map);
     /* ...and we add the basemap layer with Leaflet as well */

@@ -37,10 +37,11 @@ var Router = Backbone.Router.extend({
 
   //MAP
   map: function() {
+    var view;
     var el = '.js--map-container';
 
     if (!this.views.hasView('indexMap')) {
-      var view = new MapView();
+      view = new MapView();
       this.views.addView('indexMap', view);
     }
     this.views.showView('indexMap', el);
