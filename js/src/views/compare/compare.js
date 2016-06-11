@@ -39,7 +39,8 @@ var status = new (Backbone.Model.extend({
 
 var CompareView = Backbone.View.extend({
 
-  el: '.js--compare-container',
+  is: 'js--compare-container',
+  className: 'compare-container',
 
   events: {
     'click .btn-info' : 'showModalWindow',
@@ -47,6 +48,8 @@ var CompareView = Backbone.View.extend({
   },
 
   initialize: function(options) {
+    this.render();
+
     this.options = options;
     this._setView();
 
@@ -62,32 +65,32 @@ var CompareView = Backbone.View.extend({
     this.indicatorsNamesCollection = new IndicatorsNamesCollection()
 
 
-    if (this.mobile) {
-
-      this.slides = [
-        new MobileSelectorView(),
-        new MobileSelectorView(),
-        new MobileSelectorView()
-      ];
-
-      var promises = this.slides.map(function(slide) {
-        return slide.getPromise();
-      });
-
-      $.when.apply($, promises).done(function() {
-        this._setListeners();
-        if (options) {
-          this.setParams(options);
-        }
-
-      }.bind(this));
-
-    } else {
-
-      this.selectorsView = new CompareSelectorsView();
-      this._setListeners();
-      this.setParams(options);
-    }
+    // if (this.mobile) {
+    //
+    //   this.slides = [
+    //     new MobileSelectorView(),
+    //     new MobileSelectorView(),
+    //     new MobileSelectorView()
+    //   ];
+    //
+    //   var promises = this.slides.map(function(slide) {
+    //     return slide.getPromise();
+    //   });
+    //
+    //   $.when.apply($, promises).done(function() {
+    //     this._setListeners();
+    //     if (options) {
+    //       this.setParams(options);
+    //     }
+    //
+    //   }.bind(this));
+    //
+    // } else {
+    //
+    //   this.selectorsView = new CompareSelectorsView();
+    //   this._setListeners();
+    //   this.setParams(options);
+    // }
   },
 
   _setView: function() {
@@ -134,13 +137,13 @@ var CompareView = Backbone.View.extend({
       this.renderSlides();
       this.calculateLimitPoint();
     } else {
-      this.renderIndicatorNames();
+      // this.renderIndicatorNames();
       this.$el.html(template());
-      this.calculateLimitPoint();
-      this.renderComparesSelector();
+      // this.calculateLimitPoint();
+      // this.renderComparesSelector();
     }
 
-    this.renderLegend();
+    // this.renderLegend();
 
     return this;
   },
@@ -507,14 +510,8 @@ var CompareView = Backbone.View.extend({
   _openShareWindow: function() {
     this.shareWindowView.render();
     this.shareWindowView.delegateEvents();
-  },
-
-  show: function() {
-    this.render();
-  },
-
-  hide: function() {}
-
+  }
+  
 });
 
 module.exports = CompareView;

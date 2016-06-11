@@ -17,7 +17,7 @@ $header-height: rem(70px);
 .l-main-container {
   @extend %l-main-container;
   margin-top: $header-height;
-  
+
   @media screen and (min-width: $screen-m) {
     margin-top: 0;
   }
@@ -25,7 +25,7 @@ $header-height: rem(70px);
 
 
 .js--countries,
-.js--compare-container {
+.compare-container {
   min-height: rem(500px);
 }
 

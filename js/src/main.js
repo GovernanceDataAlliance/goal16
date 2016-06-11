@@ -1,11 +1,8 @@
-var Backbone = require('backbone'),
-    $ = require('jquery');
+var Backbone = require('backbone');
 
 var helpers = require('./helpers/handlebars.js');
 
 var Router = require('./router.js'),
-    router = new Router({
-      $el: $('.l-main-container')
-    });
+    router = new Router();
 
 Backbone.history.start({pushState: true});
