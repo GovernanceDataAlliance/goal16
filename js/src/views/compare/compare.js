@@ -39,7 +39,7 @@ var status = new (Backbone.Model.extend({
 
 var CompareView = Backbone.View.extend({
 
-  is: 'js--compare-container',
+  id: 'js--compare-container',
   className: 'compare-container',
 
   events: {
@@ -511,7 +511,7 @@ var CompareView = Backbone.View.extend({
     this.shareWindowView.render();
     this.shareWindowView.delegateEvents();
   }
-  
+
 });
 
 module.exports = CompareView;
