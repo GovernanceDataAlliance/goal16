@@ -60,8 +60,6 @@ var CountryView = Backbone.View.extend({
   render: function() {
     this._hideBanner();
 
-    console.log(this.el);
-
     this.$el.html(template());
     this._renderToolbars();
 

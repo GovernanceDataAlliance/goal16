@@ -16,8 +16,6 @@ var CountriesView = Backbone.View.extend({
 
   id: 'js--countries-container',
 
-  // el: '#js--countries-container',
-
   initialize: function() {
     this.countries = new Countries();
 
