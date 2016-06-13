@@ -15,38 +15,12 @@ var CountryListView = Backbone.View.extend({
   initialize: function(options) {
     options = options || {};
     this.countries = options.countries;
-
     this.listenTo(this.countries, 'sync', this.render);
 
     if (this.countries.length === 0) {
       this.countries.fetch();
     }
 
-    enquire.register("screen and (max-width:769px)", {
-      match: _.bind(function(){
-        this.tablet = true;
-        this.render();
-      },this)
-    });
-
-    enquire.register("screen and (min-width:770px)", {
-      match: _.bind(function(){
-        this.tablet = false;
-        this.render();
-      },this)
-    });
-
-    enquire.register("screen and (min-width:1024px) and (max-width:1400px)", {
-      match: _.bind(function(){
-        this.render();
-      },this)
-    });
-
-    enquire.register("screen and (min-width:1400px)", {
-      match: _.bind(function(){
-        this.render();
-      },this)
-    });
   },
 
   _divideCols: function() {

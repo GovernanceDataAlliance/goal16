@@ -21,12 +21,8 @@ var Countries = CartoDBCollection.extend({
     return _.groupBy(_.sortBy(this.toJSON(), 'region_name'), 'region_name');
   },
 
-
-  /*
-   * Adding color schema.
-   */
   parse: function(rawData) {
-
+    return rawData.rows;
   }
 });
 
