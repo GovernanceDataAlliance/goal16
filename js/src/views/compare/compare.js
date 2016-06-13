@@ -10,20 +10,20 @@ var FunctionHelper = require('../../helpers/functions.js');
 
 var InfoWindowModel = require('../../models/infowindow.js');
 
-var Countries = require('../../collections/common/countries.js');
+var CountriesCollection = require('../../collections/common/countries.js');
 
 var CompareSelectorsView = require('./compare_selectors.js'),
   ModalWindowView = require('../common/infowindow_view.js'),
   ShareWindowView = require('../common/share_window_view.js'),
   LegendView = require('../common/legend.js');
 
-var template = Handlebars.compile(require('../../templates/compare/compare.hbs')),
-  indicatorsTemplate = Handlebars.compile(require('../../templates/compare/compare-indicators.hbs')),
-  countryScoresTemplate = Handlebars.compile(require('../../templates/compare/compare-country-scores.hbs'));
-
-var templateMobile = Handlebars.compile(require('../../templates/compare/mobile/compare-mobile.hbs')),
-  templateMobileSlide = Handlebars.compile(require('../../templates/compare/mobile/compare-mobile-slide.hbs')),
-  templateMobileScores = Handlebars.compile(require('../../templates/compare/mobile/compare-country-scores-mobile.hbs'));
+var template = Handlebars.compile(require('../../templates/compare/index.hbs'));
+//   indicatorsTemplate = Handlebars.compile(require('../../templates/compare/compare-indicators.hbs')),
+//   countryScoresTemplate = Handlebars.compile(require('../../templates/compare/compare-country-scores.hbs'));
+//
+// var templateMobile = Handlebars.compile(require('../../templates/compare/mobile/compare-mobile.hbs')),
+//   templateMobileSlide = Handlebars.compile(require('../../templates/compare/mobile/compare-mobile-slide.hbs')),
+//   templateMobileScores = Handlebars.compile(require('../../templates/compare/mobile/compare-country-scores-mobile.hbs'));
 
 var Status = require ('../../models/compare/status.js');
 
@@ -38,7 +38,7 @@ var CompareView = Backbone.View.extend({
   },
 
   initialize: function(options) {
-    this.render();
+    // this.render();
 
     this.options = options;
     this._setView();
@@ -46,13 +46,12 @@ var CompareView = Backbone.View.extend({
     this.status = new Status();
 
     // views
-    this.infoWindowModel = new InfoWindowModel();
-
-    this.shareWindowView = new ShareWindowView();
+    // this.infoWindowModel = new InfoWindowModel();
+    //
+    // this.shareWindowView = new ShareWindowView();
 
     // collections
-    this.indicatorCollection = new IndicatorCollection();
-    this.indicatorsNamesCollection = new IndicatorsNamesCollection()
+    this.countriesCollection = new CountriesCollection();
 
 
     // if (this.mobile) {
@@ -120,24 +119,25 @@ var CompareView = Backbone.View.extend({
     }
   },
 
-  update: function(params) {
-    this.setParams(params);
+  _populateSelectors: function() {
+    var $selectors = this.$el.find('#compare-countries-selectors .m-selector'),
+      selectOptions;
+
+    this.countriesCollection.forEach(function(countryModel) {
+      var country = countryModel.toJSON();
+      selectOptions += '<option value="' + country.iso + '">' + country.name + '</option>';
+    });
+
+
+    $selectors.each(function(i, selector) {
+      $(selector).append(selectOptions);
+    });
   },
 
   render: function() {
+    this.$el.html(template());
 
-    if (this.mobile) {
-      this.$el.html(templateMobile());
-      this.renderSlides();
-      this.calculateLimitPoint();
-    } else {
-      // this.renderIndicatorNames();
-      this.$el.html(template());
-      // this.calculateLimitPoint();
-      // this.renderComparesSelector();
-    }
-
-    // this.renderLegend();
+    this.countriesCollection.getCountriesList().done(this._populateSelectors.bind(this));
 
     return this;
   },
