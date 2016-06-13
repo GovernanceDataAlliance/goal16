@@ -34,7 +34,7 @@ var ViewManager = Backbone.Model.extend({
   },
 
   _renderView: function(view) {
-    //We can do an append because everytime we are cahnging the #content.
+    //We can do an append because everytime we are changing the #content.
     $(this.el).append(view.render().el);
 
     view.show();

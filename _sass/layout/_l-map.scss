@@ -4,6 +4,11 @@
   bottom: 0;
   left: $dashboard-width;
   right: 0;
+  transition: .2s ease;
+
+  .is-dashboard-close & {
+    left: 0;
+  }
 
   @media screen and (min-width: $screen-l) {
     top:$header-height-desktop;

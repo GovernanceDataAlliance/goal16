@@ -11,7 +11,7 @@ var MapView = Backbone.View.extend({
   options: {
     map: {
       center: [39.1, 4.5],
-      zoom: 3,
+      zoom: 1,
       zoomControl: false,
       minZoom: 2,
       scrollWheelZoom: true,

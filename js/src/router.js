@@ -26,9 +26,7 @@ var Router = Backbone.Router.extend({
 
   initialize: function() {
     this.viewManager = new ViewManager();
-
     this.commonViews();
-
     this._setListeners();
   },
 
@@ -52,8 +50,8 @@ var Router = Backbone.Router.extend({
       this.viewManager.addView('dashboard', DashboardView);
     }
 
-    this.viewManager.showView('map');
     this.viewManager.showView('dashboard');
+    this.viewManager.showView('map');
   },
 
   //COUNTRIES
