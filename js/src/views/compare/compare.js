@@ -25,13 +25,7 @@ var templateMobile = Handlebars.compile(require('../../templates/compare/mobile/
   templateMobileSlide = Handlebars.compile(require('../../templates/compare/mobile/compare-mobile-slide.hbs')),
   templateMobileScores = Handlebars.compile(require('../../templates/compare/mobile/compare-country-scores-mobile.hbs'));
 
-var status = new (Backbone.Model.extend({
-  defaults: {
-    isoA: null,
-    isoB: null,
-    isoC: null
-  }
-}));
+var Status = require ('../../models/compare/status.js');
 
 var CompareView = Backbone.View.extend({
 
@@ -49,7 +43,7 @@ var CompareView = Backbone.View.extend({
     this.options = options;
     this._setView();
 
-    this.status = status;
+    this.status = new Status();
 
     // views
     this.infoWindowModel = new InfoWindowModel();
@@ -87,6 +81,10 @@ var CompareView = Backbone.View.extend({
     //   this._setListeners();
     //   this.setParams(options);
     // }
+  },
+
+  _updateRouterParams() {
+    Backbone.Events.trigger('router:update-params', this.status);
   },
 
   _setView: function() {
