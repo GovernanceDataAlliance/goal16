@@ -2,14 +2,12 @@ var _ = require('lodash'),
     Backbone = require('backbone'),
     Handlebars = require('handlebars');
 
-var Country = require('../../models/country.js'),
-    InfoWindowModel = require('../../models/infowindow.js'),
-    Indicators = require('../../collections/indicators.js');
+var Country = require('../../models/countries/country.js'),
+    InfoWindowModel = require('../../models/infowindow.js');
 
 var FunctionHelper = require('../../helpers/functions.js');
 
 var CountryHeaderView = require('./country_header.js'),
-    IndicatorListView = require('./indicator_list.js'),
     CountryToolbarView = require('./country_toolbar.js'),
     ModalWindowView = require('../common/infowindow_view.js')
     ShareWindowView = require('../common/share_window_view.js');
@@ -40,15 +38,11 @@ var CountryView = Backbone.View.extend({
     this.shareWindowView = new ShareWindowView();
 
     this.country = new Country({id: this.status.get('iso')});
-    this.indicators = new Indicators();
-    // this.country.fetch();
-
-    // this._setListeners();
   },
 
   _setListeners: function() {
     // Collections listeners
-    this.listenTo(this.indicators, 'sync', this._renderIndicators);
+    // this.listenTo(this.indicators, 'sync', this._renderIndicators);
     this.listenTo(this.country, 'sync', this._renderCountry);
   },
 

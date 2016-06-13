@@ -4,9 +4,7 @@ var _ = require('lodash'),
     enquire = require('enquire.js'),
     Handlebars = require('handlebars');
 
-var countryDrawer = require('../../helpers/country_drawer.js');
-
-var countryQuery = require('../../templates/queries/country_topology.hbs');
+// var countryQuery = require('../../queries/country_topology.hbs');
 
 var template = Handlebars.compile(
   require('../../templates/countries/country_header.hbs'));
@@ -23,7 +21,7 @@ var CountryHeaderView = Backbone.View.extend({
     this.country = options.country;
     this.listenTo(this.country, 'sync', this.render);
 
-    this.countryQuery = Handlebars.compile(countryQuery);
+    // this.countryQuery = Handlebars.compile(countryQuery);
 
     enquire.register("screen and (max-width:768px)", {
       match: _.bind(function(){
@@ -44,28 +42,28 @@ var CountryHeaderView = Backbone.View.extend({
     this.checked = false;
   },
 
-  drawCountry: function() {
-    var iso = this.country.get('iso3'),
-      sql;
+  // drawCountry: function() {
+  //   var iso = this.country.get('iso3'),
+  //     sql;
 
-      sql = this.countryQuery({
-        iso: iso.toUpperCase()
-      });
+  //     sql = this.countryQuery({
+  //       iso: iso.toUpperCase()
+  //     });
 
-      sql += '&format=topojson';
+  //     sql += '&format=topojson';
 
-      var options = {
-        element: '.js--country-silhouette',
-        width: 300,
-        height: 175
-      };
+  //     var options = {
+  //       element: '.js--country-silhouette',
+  //       width: 300,
+  //       height: 175
+  //     };
 
 
 
-      d3.json('https://gda.cartodb.com/api/v2/sql?q=' + sql, _.bind(function(error, topology) {
-        countryDrawer.draw(topology, 0, options, { alerts: true });
-      }, this ));
-  },
+  //     d3.json('https://gda.cartodb.com/api/v2/sql?q=' + sql, _.bind(function(error, topology) {
+  //       countryDrawer.draw(topology, 0, options, { alerts: true });
+  //     }, this ));
+  // },
 
   render: function() {
     this.$el.html(template({
@@ -74,7 +72,7 @@ var CountryHeaderView = Backbone.View.extend({
     }));
 
     if (!this.tablet) {
-      this.drawCountry();
+      // this.drawCountry();
     }
 
     Backbone.Events.on('countriesList:render', _.bind( this.toogleNotCoveredItems, this ));

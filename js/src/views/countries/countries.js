@@ -3,7 +3,7 @@ var _ = require('lodash'),
     Backbone = require('backbone'),
     Handlebars = require('handlebars');
 
-var Countries = require('../../collections/countries.js');
+var Countries = require('../../collections/common/countries.js');
 var CountryList = require('./country_list.js');
 
 var SearchView = require('../common/search_view.js'),

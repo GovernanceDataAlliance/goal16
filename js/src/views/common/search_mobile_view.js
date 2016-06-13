@@ -6,7 +6,7 @@ var $ = require('jquery'),
 
 var template = Handlebars.compile(require('../../templates/common/search_mobile_tpl.hbs'));
 
-var SearchCollection = require('../../collections/countries.js');
+var SearchCollection = require('../../collections/common/countries.js');
 
 var FunctionHelper = require('../../helpers/functions.js');
 
@@ -37,7 +37,7 @@ var SearchMobileView = Backbone.View.extend({
     this.searchCollection.fetch().done(function(countries) {
       var orderedCollection = _.sortByOrder(countries.rows, ['name']);
       $('body').append(template({ 'countries': orderedCollection }));
-      
+
       this.setEvents();
     }.bind(this));
 
