@@ -2,9 +2,14 @@ var  $ = require('jquery'),
     Backbone = require('backbone'),
     format = require('./format.js');
 
+var CONFIG = require('../../config.json');
+
 var BASE_URL = "http://{0}.cartodb.com/api/v2/sql";
 
 var CartoDBCollection = Backbone.Collection.extend({
+
+  user_name: CONFIG.cartodb.user_name,
+
   url: function() {
     return this._urlForQuery(this._getQuery());
   },
@@ -26,7 +31,7 @@ var CartoDBCollection = Backbone.Collection.extend({
   parse: function(data) {
     return data.rows;
   }
-  
+
 });
 
 module.exports = CartoDBCollection;
