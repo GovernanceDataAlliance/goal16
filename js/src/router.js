@@ -3,6 +3,7 @@ var Backbone = require('backbone'),
 
 var ViewManager = require('./lib/view_manager.js'),
   MapView = require('./views/map/map.js'),
+  DashboardView = require('./views/map/dashboard.js'),
   MobileMenuView = require('./views/common/mobile_menu_view.js'),
   CompareView = require('./views/compare/compare.js'),
   CountriesView = require('./views/countries/countries.js'),
@@ -47,7 +48,12 @@ var Router = Backbone.Router.extend({
       this.viewManager.addView('map', MapView);
     }
 
+    if (!this.viewManager.hasView('dashboard')) {
+      this.viewManager.addView('dashboard', DashboardView);
+    }
+
     this.viewManager.showView('map');
+    this.viewManager.showView('dashboard');
   },
 
   //COUNTRIES

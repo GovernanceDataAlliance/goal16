@@ -34,7 +34,8 @@ var ViewManager = Backbone.Model.extend({
   },
 
   _renderView: function(view) {
-    $(this.el).html(view.render().el);
+    //We can do an append because everytime we are cahnging the #content.
+    $(this.el).append(view.render().el);
 
     view.show();
     view.delegateEvents();

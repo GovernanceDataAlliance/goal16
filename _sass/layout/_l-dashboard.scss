@@ -1,0 +1,12 @@
+.l-dashboard {
+  position: absolute;
+  top: $header-height;
+  bottom: 0;
+  left: 0;
+  width: $dashboard-width;
+  background-color: #fff;
+
+  @media screen and (min-width: $screen-l) {
+    top: $header-height-desktop;
+  }
+}
