@@ -5,25 +5,25 @@ var CONFIG = require('../../../config.json');
 
 var Handlebars = require('handlebars');
 
-var countriesListSQL = Handlebars.compile(require('../../queries/common/countries_list_sql.hbs'));
+var countriesListSQL = Handlebars.compile(require('../../queries/common/countries_list.hbs'));
 
-var Countries = CartoDBCollection.extend({
-  user_name: CONFIG.cartodb.user_name,
-  table: CONFIG.cartodb.country_table_name,
+var CountriesCollection = CartoDBCollection.extend({
 
-  url: function() {
-    var query = countriesListSQL({ table: this.table });
-    return this._urlForQuery(query);
+  table: CONFIG.cartodb.countries_table,
+
+  // list of countries (no filters)
+  getCountriesList: function() {
+    var query = countriesListSQL({ table: this.table }),
+      url = this._urlForQuery(query);
+
+    return this.fetch({ url: url });
   },
 
-  //For general list at /countries.
-  groupByRegion: function() {
+  // list of countries by region
+  getCountriesByRegion: function() {
     return _.groupBy(_.sortBy(this.toJSON(), 'region_name'), 'region_name');
-  },
-
-  parse: function(rawData) {
-    return rawData.rows;
   }
+
 });
 
-module.exports = Countries;
+module.exports = CountriesCollection;
