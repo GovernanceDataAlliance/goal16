@@ -8,10 +8,9 @@ var _ = require('lodash'),
   chosen = require('chosen-jquery-browserify'),
   async = require('async');
 
-var CountrySelectorModel = require('../../models/countrySelector.js');
+var CountrySelectorModel = require('../../models/compare/countrySelector.js');
 
-var CountriesCollection = require('../../collections/countries.js');
-  yearsCollection = require('../../collections/years.js');
+var CountriesCollection = require('../../collections/common/countries.js');
 
 var YearSelectorView = require('../common/year_selector_compare.js');
 
@@ -29,7 +28,6 @@ var CompareSelectorsView = Backbone.View.extend({
 
     // collections
     this.countriesCollection = new CountriesCollection();
-    this.yearsCollection = new yearsCollection();
     this.countriesSelectorCollection = new (Backbone.Collection.extend({
       model: CountrySelectorModel
     }));
@@ -162,7 +160,7 @@ var CompareSelectorsView = Backbone.View.extend({
         this.$('select').chosen();
       }
 
-      this._populateYearSelectors();
+
       this._setNewCountry();
 
       this.delegateEvents();
@@ -174,30 +172,7 @@ var CompareSelectorsView = Backbone.View.extend({
     return this;
   },
 
-  _populateYearSelectors: function() {
-    this.yearsCollection.getYears().done(function() {
 
-      var selectors = $('.js--year-selector-compare');
-
-      $.each(selectors, function(i, selector) {
-
-        this.countriesSelectorCollection.at(Number(i)).set({
-          'yearSelectorView' : new YearSelectorView({
-            actualYear: this.countriesSelectorCollection.at(Number(i)).get('year'),
-            el: $(selector),
-            index: Number(i) + 1,
-            years: this.yearsCollection.toJSON()
-          }).render()
-        });
-
-      }.bind(this));
-
-      Backbone.Events.trigger('yearsView:loaded');
-
-      this._sendDownloadData();
-
-    }.bind(this));
-  },
 
   getCountry: function(e) {
     e && e.preventDefault();

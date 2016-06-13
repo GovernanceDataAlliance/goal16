@@ -10,13 +10,9 @@ var FunctionHelper = require('../../helpers/functions.js');
 
 var InfoWindowModel = require('../../models/infowindow.js');
 
-var Countries = require('../../collections/countries.js'),
-  YearsCollection = require('../../collections/years.js'),
-  IndicatorsNamesCollection = require('../../collections/indicator_configs.js'),
-  IndicatorCollection = require('../../collections/indicators.js');
+var Countries = require('../../collections/common/countries.js');
 
 var CompareSelectorsView = require('./compare_selectors.js'),
-  MobileSelectorView = require('./compare_mobile_selector.js'),
   ModalWindowView = require('../common/infowindow_view.js'),
   ShareWindowView = require('../common/share_window_view.js'),
   LegendView = require('../common/legend.js');

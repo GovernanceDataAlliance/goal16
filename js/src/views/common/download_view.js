@@ -3,8 +3,7 @@ var _ = require('lodash'),
   Backbone = require('backbone'),
   Handlebars = require('handlebars');
 
-var indicators = require('../../collections/indicators'),
-  countries = require('../../collections/countries');
+var countries = require('../../collections/countries/');
 
 var infoWindowView = require('./infowindow_view.js');
 
@@ -27,14 +26,14 @@ var DownloadView = infoWindowView.extend({
       id: window.indicatorId
     });
 
-    if (window.location.pathname == '/countries') {
-      _.extend(this.options, {
-        iso: window.location.hash.split('&')[0].slice(1)
-      });
-    }
+    // if (window.location.pathname == '/countries') {
+    //   _.extend(this.options, {
+    //     iso: window.location.hash.split('&')[0].slice(1)
+    //   });
+    // }
 
-    this.indicatorsCollection = new indicators();
-    this.countriesCollection  = new countries();
+    // this.indicatorsCollection = new indicators();
+    // this.countriesCollection  = new countries();
 
     this._setListeners();
   },
@@ -80,16 +79,16 @@ var DownloadView = infoWindowView.extend({
         .unbind('click')
         .removeClass('disabled');
 
-      return this.indicatorsCollection.downloadForCountries({
-        countries: this.options.compare
-      });
+      // return this.indicatorsCollection.downloadForCountries({
+      //   countries: this.options.compare
+      // });
 
     } else {
 
-      return this.indicatorsCollection.downloadForCountry({
-        iso: this.options.iso,
-        year: this.options.year
-      });
+      // return this.indicatorsCollection.downloadForCountry({
+      //   iso: this.options.iso,
+      //   year: this.options.year
+      // });
 
     }
   },

@@ -8,7 +8,7 @@ var _ = require('lodash'),
   chosen = require('chosen-jquery-browserify'),
   async = require('async');
 
-var CountriesCollection = require('../../collections/countries.js'),
+var CountriesCollection = require('../../collections/common/countries.js'),
   YearsCollection = require('../../collections/years.js');
 
 var template = Handlebars.compile(

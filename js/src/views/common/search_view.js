@@ -4,7 +4,7 @@ var $ = require('jquery'),
   Handlebars = require('handlebars'),
   enquire = require('enquire.js');
 
-var SearchCollection = require('../../collections/countries.js');
+var SearchCollection = require('../../collections/common/countries.js');
 
 var FunctionHelper = require('../../helpers/functions.js');
 
