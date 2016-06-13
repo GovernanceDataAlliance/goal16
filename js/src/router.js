@@ -20,13 +20,19 @@ var Router = Backbone.Router.extend({
     "(/)": "map",
     "map(/)": "map",
     "countries(/)(?iso=:iso)": "countries",
-    "compare(/)(?isoA=:isoA)(&isoB=:isoB)(&isoC=:isoC)": "compare"
+    "compare(/)": "compare"
   },
 
   initialize: function() {
     this.viewManager = new ViewManager();
 
     this.commonViews();
+
+    this._setListeners();
+  },
+
+  _setListeners: function() {
+    Backbone.Events.on('router:update-params', this._updateParams, this);
   },
 
   //COMMON
@@ -70,8 +76,10 @@ var Router = Backbone.Router.extend({
   },
 
   //COMPARE
-  compare: function(isoA, isoB, isoC) {
-    var view;
+  compare: function() {
+    var view,
+      uri = new URI(window.location),
+      params = uri.search(true);
 
     if (!this.viewManager.hasView('compare')) {
       this.viewManager.addView('compare', CompareView);
@@ -79,14 +87,31 @@ var Router = Backbone.Router.extend({
 
     view = this.viewManager.getView('compare');
 
-    var params = {
-      isoA: isoA || null,
-      isoB: isoB || null,
-      isoC: isoC || null
-    };
-
     this.viewManager.showView('compare');
+
     view.status.set(params);
+
+    // set a valid function to avoid more than X params
+    // if (!view.status.isValid()) {
+    //   return;
+    // }
+
+    console.log('incoming params');
+    console.log(view.status.toJSON());
+  },
+
+  // Receives the status (Backbone Model only) of the current view.
+  // Updates the URL silently.
+  _updateParams: function(status) {
+    var params = status.toJSON(),
+      uri = new URI(window.location),
+      path = uri.path();
+
+    // set object params as query params
+    uri.setSearch(params);
+
+    // updates url
+    this.navigate(path + uri.search());
   }
 
 });
