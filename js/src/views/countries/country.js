@@ -24,7 +24,7 @@ var status = new (Backbone.Model.extend({
 
 var CountryView = Backbone.View.extend({
 
-  el: '.js--country-container',
+  id: 'js--country-container',
 
   events: {
     'click .btn-info': 'showModalWindow',
@@ -38,17 +38,12 @@ var CountryView = Backbone.View.extend({
 
     this.functionHelper = FunctionHelper;
     this.shareWindowView = new ShareWindowView();
-  },
 
-  initializeData: function() {
-    // Initialize collections
     this.country = new Country({id: this.status.get('iso')});
-    this.country.fetch();
-
     this.indicators = new Indicators();
+    // this.country.fetch();
 
-    this.render();
-    this._setListeners();
+    // this._setListeners();
   },
 
   _setListeners: function() {
@@ -62,7 +57,6 @@ var CountryView = Backbone.View.extend({
     this.shareWindowView.delegateEvents();
   },
 
-
   render: function() {
     this._hideBanner();
 
@@ -70,6 +64,8 @@ var CountryView = Backbone.View.extend({
     this._renderToolbars();
 
     this.functionHelper.scrollTop();
+
+    return this;
   },
 
   _renderCountry: function() {
@@ -108,7 +104,6 @@ var CountryView = Backbone.View.extend({
       link.href = '/compare/?isoA=' + iso;
   },
 
-
   _getIndicatorInfo: function(opts) {
     return this.infoWindowModel.getIndicator(opts);
   },
@@ -129,10 +124,6 @@ var CountryView = Backbone.View.extend({
       });
 
     }.bind(this));
-  },
-
-  show: function() {
-    this.initializeData();
   }
 
 });

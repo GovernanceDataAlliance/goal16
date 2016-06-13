@@ -1,7 +1,5 @@
-var Backbone = require('backbone');
-var $ = require('jquery');
-var  _ = require('lodash');
-var URI = require('urijs');
+var Backbone = require('backbone'),
+  URI = require('urijs');
 
 var ViewManager = require('./lib/view_manager.js'),
   MapView = require('./views/map/map.js'),
@@ -25,25 +23,25 @@ var Router = Backbone.Router.extend({
     "compare(/)(?isoA=:isoA)(&isoB=:isoB)(&isoC=:isoC)": "compare"
   },
 
-  initialize: function(options) {
+  initialize: function() {
+    this.viewManager = new ViewManager();
+
     this.commonViews();
   },
 
   //COMMON
-  commonViews: function(){
-    this.views = new ViewManager();
+  commonViews: function() {
     new MobileMenuView();
   },
 
   //MAP
   map: function() {
-    var view;
 
-    if (!this.views.hasView('indexMap')) {
-      view = new MapView();
-      this.views.addView('indexMap', view);
+    if (!this.viewManager.hasView('map')) {
+      this.viewManager.addView('map', MapView);
     }
-    this.views.showView('indexMap');
+
+    this.viewManager.showView('map');
   },
 
   //COUNTRIES
@@ -52,22 +50,22 @@ var Router = Backbone.Router.extend({
 
     if (!iso) {
 
-      if (!this.views.hasView('indexCountries')) {
-        view = new CountriesView();
-        this.views.addView('indexCountries', view);
+      if (!this.viewManager.hasView('countries')) {
+        this.viewManager.addView('countries', CountriesView);
       }
-      this.views.showView('indexCountries');
+
+      this.viewManager.showView('countries');
+
     } else {
 
-      if (!this.views.hasView('showCountries')) {
-        view = new CountryView();
-        this.views.addView('showCountries', view);
-      } else {
-        view = this.views.getView('showCountries');
+      if (!this.viewManager.hasView('country')) {
+        this.viewManager.addView('country', CountryView);
       }
 
+      view = this.viewManager.getView('country');
+
+      this.viewManager.showView('country');
       view.status.set({ iso: iso });
-      this.views.showView('showCountries');
     }
   },
 
@@ -75,88 +73,21 @@ var Router = Backbone.Router.extend({
   compare: function(isoA, isoB, isoC) {
     var view;
 
-    if (!this.views.hasView('compare')) {
-      view = new CompareView();
-      this.views.addView('compare', view);
-    } else {
-      view = this.views.getView('compare');
+    if (!this.viewManager.hasView('compare')) {
+      this.viewManager.addView('compare', CompareView);
     }
+
+    view = this.viewManager.getView('compare');
 
     var params = {
       isoA: isoA || null,
       isoB: isoB || null,
       isoC: isoC || null
-    }
+    };
 
+    this.viewManager.showView('compare');
     view.status.set(params);
-    this.views.showView('compare');
-  },
-
-  //Update URL
-  _updateUrl: function(p) {
-    var isCollection = false,
-      url = 'countries=';
-
-    if (typeof p.toJSON === 'function') {
-      isCollection = true;
-      params= p.toJSON();
-
-      params = _.omit(params, function(p) {
-        return !p.iso || p.iso == 'no_data' || !p.year || p.year == 'no-data';
-      });
-
-      totalData = _.size(params);
-
-    } else {
-      params = [];
-      _.each(p, function(slide) {
-
-        if(slide.status.get('iso') && slide.status.get('iso') !== 'no_data'
-          && slide.status.get('year') && slide.status.get('year') !== 'no-data') {
-          params.push(slide.status);
-        }
-
-      });
-
-      totalData = params.length;
-    }
-
-    if (isCollection) {
-
-      if(totalData == 0) {
-        url = 'default';
-      }
-
-      _.each(params, function(country, i) {
-
-        url +=  country.iso + ':' + country.year;
-
-        if(Number(i) + 1 < totalData) {
-          url += ',';
-        }
-
-      }.bind(this));
-
-    } else {
-
-      if(totalData == 0) {
-        url = 'default';
-      } else {
-        url = 'countries=';
-      }
-
-      _.each(params, function(slide, i) {
-        url += slide.get('iso') + ':' + slide.get('year');
-
-        if(i + 1 < totalData) {
-          url += ',';
-        }
-      });
-
-    }
-    this.navigate(url);
   }
-
 
 });
 

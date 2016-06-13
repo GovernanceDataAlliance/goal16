@@ -1,18 +1,16 @@
-var _ = require('lodash'),
-    Backbone = require('backbone');
+var Backbone = require('backbone');
 
 var ViewManager = Backbone.Model.extend({
+
   defaults: {
     views: {}
   },
 
   el: '#content',
 
-  initialize: function() {},
-
   addView: function(viewName, view) {
     var views = this.get('views');
-    views[viewName] = view;
+    views[viewName] = new view();
 
     this.set('views', views);
   },
@@ -22,21 +20,25 @@ var ViewManager = Backbone.Model.extend({
   },
 
   showView: function(viewName) {
-    var view = this.get('views')[viewName];
-    // this.$el = $(el);
-    debugger
-    if (view !== undefined) {
-      this.set('currentView', view);
+    var view = this.getView(viewName);
 
-      view.show();
-      $(this.el).html(view.el);
-      view.delegateEvents();
+    if (!view) {
+      return;
     }
+
+    this._renderView(view);
   },
 
   hasView: function(viewName) {
-    return (this.get('views')[viewName] !== undefined);
+    return this.get('views')[viewName] ? true : false;
+  },
+
+  _renderView: function(view) {
+    $(this.el).html(view.render().el);
+
+    view.delegateEvents();
   }
+
 });
 
 
