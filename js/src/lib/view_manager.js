@@ -36,6 +36,7 @@ var ViewManager = Backbone.Model.extend({
   _renderView: function(view) {
     $(this.el).html(view.render().el);
 
+    view.show();
     view.delegateEvents();
   }
 
