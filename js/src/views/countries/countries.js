@@ -14,8 +14,6 @@ var template = Handlebars.compile(
 
 var CountriesView = Backbone.View.extend({
 
-  id: 'js--countries-container',
-
   initialize: function() {
     this.countries = new Countries();
 
@@ -55,7 +53,13 @@ var CountriesView = Backbone.View.extend({
     } else {
       new SearchMobileView({ el: $('.js--search') });
     }
-  }
+  },
+
+  show: function() {
+    this.render();
+  },
+
+  // hide: function() {}
 
 });
 
