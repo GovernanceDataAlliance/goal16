@@ -3,12 +3,15 @@ var $ = require('jquery'),
   enquire = require('enquire.js'),
   Backbone = require('backbone');
 
+var status = require ('../../models/map/status.js');
+
 var MapView = Backbone.View.extend({
 
   id: 'map-container',
   className: 'l-map',
 
   options: {
+    basemap: 'http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
     map: {
       center: [39.1, 4.5],
       zoom: 1,
@@ -18,18 +21,15 @@ var MapView = Backbone.View.extend({
       worldCopyJump: true
     },
     cartodb: {
-      user_name: 'dhakelila',
-      type: 'cartodb',
+      user_name: 'goal16',
       noWrap: true,
-      sublayers: [{
-        sql: 'SELECT * FROM buildings_height',
-        cartocss: '#buildings_height{  marker-fill-opacity: 0.9;  marker-line-color: #FFF;  marker-line-width: 1;  marker-line-opacity: 1;  marker-placement: point;  marker-multi-policy: largest;  marker-type: ellipse;  marker-fill: #FF5C00;  marker-allow-overlap: true;  marker-clip: false;}#buildings_height [ height <= 829.8] {   marker-width: 25.0;}#buildings_height [ height <= 529.5] {   marker-width: 23.3;}#buildings_height [ height <= 392.5] {   marker-width: 21.7;}#buildings_height [ height <= 348] {   marker-width: 20.0;}#buildings_height [ height <= 257.5] {   marker-width: 18.3;}#buildings_height [ height <= 176.65] {   marker-width: 16.7;}#buildings_height [ height <= 164.5] {   marker-width: 15.0;}#buildings_height [ height <= 151.2] {   marker-width: 13.3;}#buildings_height [ height <= 130] {   marker-width: 11.7;}#buildings_height [ height <= 114.3] {   marker-width: 10.0;}',
-        interactivity: 'city, built_name, height'
-      }]
+      css: ''
     }
   },
 
   initialize: function() {
+    this.status = status;
+    this._setListeners();
 
     enquire.register("screen and (max-width:769px)", {
       match: _.bind(function(){
@@ -45,21 +45,81 @@ var MapView = Backbone.View.extend({
 
   },
 
+  _setListeners: function() {
+    this.status.on('change:layerConfig', _.bind(this._activeLayer, this))
+  },
+
   _initMap: function() {
     /* this is the definition for basemap */
-    var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+    var baseMap = L.tileLayer(this.options.basemap, {
       attribution: '<a href="https://www.mapzen.com/rights">Attribution.</a>. Data &copy;<a href="https://openstreetmap.org/copyright">OSM</a> contributors.'
     });
     /* Here we create the map with Leafleft... */
     this.map = L.map(this.el, this.options.map);
     /* ...and we add the basemap layer with Leaflet as well */
-    this.map.addLayer(layer);
+    this.map.addLayer(baseMap);
 
     return this;
   },
 
   show: function() {
     this._initMap();
+  },
+
+  _activeLayer: function() {
+    this._removeLayer();
+    this._createLayer();
+    // console.log('map', this.status.get('activeLayer'))
+  },
+
+  _createLayer: function() {
+    var sql = this._getLayerQuery();
+    var cartoAccount = this.options.cartodb.user_name;
+    var cartoCss = this.options.cartodb.css || '#table_score_test{ polygon-fill: #FF6600; polygon-opacity: 0.7; line-color: #FFF; line-width: 0.5; line-opacity: 1; }';
+    var deferred = $.Deferred();
+
+    var request = {
+      layers: [{
+        'user_name': cartoAccount,
+        'type': 'cartodb',
+        'options': {
+          'sql': sql,
+          'cartocss': cartoCss,
+          'cartocss_version': '2.3.0'
+        }
+      }]
+    };
+
+    $.ajax({
+      type: 'POST',
+      dataType: 'json',
+      contentType: 'application/json; charset=UTF-8',
+      url: 'http://'+ cartoAccount +'.cartodb.com/api/v1/map/',
+      data: JSON.stringify(request),
+    }).done(data => {
+      var tileUrl = 'http://'+ cartoAccount +'.cartodb.com/api/v1/map/'+ data.layergroupid + '/{z}/{x}/{y}.png32';
+      this.layer = L.tileLayer(tileUrl, { noWrap: true });
+      return deferred.resolve(this.layer);
+    });
+
+    return deferred;
+  },
+
+  _addLayer: function() {
+    this.layer.addTo(this.map);
+  },
+
+  _removeLayer: function() {
+    if (this.layer) {
+      this.map.removeLayer(this.layer);
+    }
+  },
+
+  _getLayerQuery: function() {
+    var layerConfig = this.status.get('layerConfig');
+    console.log(layerConfig)
+
+    return 'SELECT * FROM score_test'
   }
 
 });

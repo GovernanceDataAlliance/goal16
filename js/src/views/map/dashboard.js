@@ -6,6 +6,8 @@ var $ = require('jquery'),
 
 var TargetsCollection = require('../../collections/map/indicators_by_target.js');
 
+var status = require ('../../models/map/status.js');
+
 var template = Handlebars.compile(require('../../templates/map/dashboard.hbs')),
     targetsTemplate = Handlebars.compile(require('../../templates/map/targets.hbs'));
 
@@ -17,9 +19,13 @@ var DashboardView = Backbone.View.extend({
   events: {
     'click .js--toggle-dashboard' : '_toggleDashboard',
     'click .js--target' : '_selectTarget',
+    'change .js--indicator-selector' : '_selectIndicator',
+
   },
 
   initialize: function() {
+    this.status = status;
+
     this.targets = new TargetsCollection();
     this.listenTo(this.targets, 'sync', this._renderTargets);
   },
@@ -41,9 +47,22 @@ var DashboardView = Backbone.View.extend({
     this.targets.getIndicatorsByTarget();
   },
 
-  _selectTarget: function() {
-    var $currentTarget = $(e.currentTarget).data('slug');
+  _selectTarget: function(e) {
+    var $currentTarget = $(e.currentTarget);
+    var currentTargetSlug = $currentTarget.data('slug');
+
     $currentTarget.addClass('is-active');
+
+    this._setActiveLayer(currentTargetSlug, 'target');
+  },
+
+  _selectIndicator: function(e) {
+     var $currentIndicatorSlug = $(e.currentTarget).val();
+     this._setActiveLayer($currentIndicatorSlug, 'indicator');
+  },
+
+  _setActiveLayer: function(layer, type) {
+    this.status.set({'layerConfig': {layer: layer, type: type}});
   }
 
 });
