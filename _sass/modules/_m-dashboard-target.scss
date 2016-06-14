@@ -1,12 +1,12 @@
 .m-dashboard-target {
+  padding: rem(25px);
+  border-bottom: 1px solid #e5eaea;
 
   .header {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    padding: rem(25px);
     padding-right: rem(35px);
-    border-bottom: 1px solid #e5eaea;
 
     > .btn-toggle-target {
       width: rem(16px);
@@ -47,7 +47,7 @@
     justify-content: flex-start;
     align-items: flex-start;
 
-    > input {
+    input {
       width: rem(16px);
       height: rem(16px);
       border-radius: 50%;
@@ -55,7 +55,7 @@
       border: 1px solid $color-4;
     }
 
-    > .indicator-title {
+    .indicator-title {
       font-size: rem(12px);
       line-height: rem(20px);
       color: $font-color-3;
