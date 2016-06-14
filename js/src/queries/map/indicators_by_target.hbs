@@ -4,4 +4,4 @@ i.slug,
 i.code,  
 i.title as indicators_title, 
 t.title as target_title 
-FROM indicators i JOIN targets t ON i.target_slug=t.slug
+FROM {{indicators_table}} i JOIN {{targets_table}} t ON i.target_slug=t.slug

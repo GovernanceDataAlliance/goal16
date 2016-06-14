@@ -15,7 +15,8 @@ var DashboardView = Backbone.View.extend({
   className: 'l-dashboard',
 
   events: {
-    'click .js--toggle-dashboard' : '_toggleDashboard'
+    'click .js--toggle-dashboard' : '_toggleDashboard',
+    'click .js--target' : '_selectTarget',
   },
 
   initialize: function() {
@@ -37,7 +38,12 @@ var DashboardView = Backbone.View.extend({
   },
 
   show: function() {
-    this.targets.fetch();
+    this.targets.getIndicatorsByTarget();
+  },
+
+  _selectTarget: function() {
+    var $currentTarget = $(e.currentTarget).data('slug');
+    $currentTarget.addClass('is-active');
   }
 
 });
