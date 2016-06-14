@@ -1,4 +1,5 @@
-var Backbone = require('backbone'),
+var _ = require('lodash'),
+  Backbone = require('backbone'),
   URI = require('urijs');
 
 var ViewManager = require('./lib/view_manager.js'),
@@ -89,7 +90,7 @@ var Router = Backbone.Router.extend({
 
     this.viewManager.showView('compare');
 
-    view.status.set(params);
+    view.status.set(params, { silent: true });
 
     // set a valid function to avoid more than X params
     // if (!view.status.isValid()) {
@@ -107,8 +108,15 @@ var Router = Backbone.Router.extend({
       uri = new URI(window.location),
       path = uri.path();
 
+    // omit null values
+    params = _.omit(params, function(val) {
+      return !val || val == '';
+    });
+
+    // removes previous params and
     // set object params as query params
-    uri.setSearch(params);
+    uri.search('')
+      .setSearch(params);
 
     // updates url
     this.navigate(path + uri.search());
