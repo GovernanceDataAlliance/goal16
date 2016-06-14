@@ -5,12 +5,13 @@ var $ = require('jquery'),
 
 var MapView = Backbone.View.extend({
 
-  el: '#js--map-container',
+  id: 'map-container',
+  className: 'l-map',
 
   options: {
     map: {
       center: [39.1, 4.5],
-      zoom: 3,
+      zoom: 1,
       zoomControl: false,
       minZoom: 2,
       scrollWheelZoom: true,
@@ -44,7 +45,7 @@ var MapView = Backbone.View.extend({
 
   },
 
-  render: function() {
+  _initMap: function() {
     /* this is the definition for basemap */
     var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
       attribution: '<a href="https://www.mapzen.com/rights">Attribution.</a>. Data &copy;<a href="https://openstreetmap.org/copyright">OSM</a> contributors.'
@@ -55,6 +56,10 @@ var MapView = Backbone.View.extend({
     this.map.addLayer(layer);
 
     return this;
+  },
+
+  show: function() {
+    this._initMap();
   }
 
 });

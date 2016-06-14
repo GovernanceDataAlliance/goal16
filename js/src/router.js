@@ -4,6 +4,7 @@ var _ = require('lodash'),
 
 var ViewManager = require('./lib/view_manager.js'),
   MapView = require('./views/map/map.js'),
+  DashboardView = require('./views/map/dashboard.js'),
   MobileMenuView = require('./views/common/mobile_menu_view.js'),
   CompareView = require('./views/compare/compare.js'),
   CountriesView = require('./views/countries/countries.js'),
@@ -26,9 +27,7 @@ var Router = Backbone.Router.extend({
 
   initialize: function() {
     this.viewManager = new ViewManager();
-
     this.commonViews();
-
     this._setListeners();
   },
 
@@ -48,6 +47,11 @@ var Router = Backbone.Router.extend({
       this.viewManager.addView('map', MapView);
     }
 
+    if (!this.viewManager.hasView('dashboard')) {
+      this.viewManager.addView('dashboard', DashboardView);
+    }
+
+    this.viewManager.showView('dashboard');
     this.viewManager.showView('map');
   },
 

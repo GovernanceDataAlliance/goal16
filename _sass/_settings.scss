@@ -1,3 +1,4 @@
+$dashboard-width: 400px;
 /*
  * Add here values that
  * affect the whole proyect
@@ -52,6 +53,13 @@ $orange: #cd8200;
 $blue: #5883b4;
 $dark-sky-blue: #55cee2;
 
+// GOAL16
+$blue-topaz: #19aec4;
+$blue-evergreen: #073339;
+$blue-grey: #a1babd;
+$blue-green: #156975;
+$pale-grey: #f6faf9;
+
 
 $dark-grey: #9b9b9b;
 $grey: #b4b6b6;
@@ -59,12 +67,13 @@ $light-grey: #d6d8d9;
 $light-grey-two: #eeedea;
 
 //Theme colors
-$color-1: $brown;
-$color-2: $turquoise;
-$color-3: $magenta;
-$color-4: $celeste;
+$color-1: $blue-topaz;
+$color-2: $blue-evergreen;
+$color-3: $blue-grey;
+$color-4: $blue-green;
 
-$bg-color-1: $beige-light;
+$bg-color-1: $pale-grey;
+
 $bg-color-2: $brown;
 $bg-color-3: $beige;
 $bg-color-4: $beige-medium;
@@ -76,9 +85,10 @@ $fair: $orange;
 $poor: $magenta;
 
 //Font colors
-$font-color-1: $brown;
+$font-color-1: $blue-evergreen;
 $font-color-2: $white;
-$font-color-3: $turquoise;
+$font-color-3: $blue-topaz;
+
 $font-color-4: $dark-grey;
 $font-color-hover: $turquoise;
 

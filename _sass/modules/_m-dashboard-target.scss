@@ -1,0 +1,65 @@
+.m-dashboard-target {
+  padding: rem(25px);
+  border-bottom: 1px solid #e5eaea;
+
+  .header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-right: rem(35px);
+
+    > .btn-toggle-target {
+      width: rem(16px);
+      height: rem(16px);
+      border-radius: 50%;
+      border: 2px solid $color-1;
+    }
+
+    > .target-title {
+      margin-left: rem(10px);
+      margin-bottom: rem(25px);
+      padding: rem(5px);
+      font-size: rem(14px);
+      line-height: rem(25px);
+      color: $font-color-3;
+
+      &.is-active {
+        color: $font-color-1;
+      }
+    }
+  }
+
+  .indicators-wrapper {
+    margin-left: rem(60px);
+  }
+
+  .indicator-type {
+    display: block;
+    padding-bottom: rem(7px);
+    border-bottom: 2px solid $color-3;
+    margin-bottom: rem(20px);
+    font-size: rem(10px);
+    text-transform: uppercase;
+  }
+
+  .indicator-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    input {
+      width: rem(16px);
+      height: rem(16px);
+      border-radius: 50%;
+      background-color: $bg-color-1;
+      border: 1px solid $color-4;
+    }
+
+    .indicator-title {
+      font-size: rem(12px);
+      line-height: rem(20px);
+      color: $font-color-3;
+      font-size: rem(14px);
+    }
+  }
+}

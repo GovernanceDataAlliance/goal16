@@ -1,0 +1,43 @@
+.l-dashboard {
+  position: absolute;
+  top: $header-height;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  width: $dashboard-width;
+  background-color: #fff;
+  transition: .2s ease;
+
+  .is-dashboard-close & {
+    transform: translatex(-100%);
+  }
+
+  @media screen and (min-width: $screen-l) {
+    top: $header-height-desktop;
+  }
+}
+
+.btn-toogle-dashboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: rem(-32px);
+  top: 0;
+  z-index: 2;
+  width: rem(32px);
+  height: rem(32px);
+  background-color: $color-1;
+
+  &:after {
+    content: "";
+    @include arrow(5px, $white, 2px, -45deg);
+    transition: .2s ease;
+  }
+
+  .is-dashboard-close & {
+    &:after {
+      transform: rotate(-225deg);
+    }
+  }
+}
