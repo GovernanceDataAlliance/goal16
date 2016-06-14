@@ -67,9 +67,9 @@ var MapView = Backbone.View.extend({
   },
 
   _activeLayer: function() {
-    this._removeLayer();
-    this._createLayer();
-    // console.log('map', this.status.get('activeLayer'))
+    this._createLayer().done(_.bind(function() {
+      this._addLayer();      
+    }, this));
   },
 
   _createLayer: function() {
@@ -97,9 +97,12 @@ var MapView = Backbone.View.extend({
       url: 'http://'+ cartoAccount +'.cartodb.com/api/v1/map/',
       data: JSON.stringify(request),
     }).done(data => {
+      //We remove the previous layer just when the new one arrive. 
+      //This way, we are sure we only have one layer at a time.
+      this._removeLayer();
       var tileUrl = 'http://'+ cartoAccount +'.cartodb.com/api/v1/map/'+ data.layergroupid + '/{z}/{x}/{y}.png32';
       this.layer = L.tileLayer(tileUrl, { noWrap: true });
-      return deferred.resolve(this.layer);
+      return deferred.resolve();
     });
 
     return deferred;
@@ -116,10 +119,18 @@ var MapView = Backbone.View.extend({
   },
 
   _getLayerQuery: function() {
+    var query;
     var layerConfig = this.status.get('layerConfig');
-    console.log(layerConfig)
+    var layer = layerConfig.layer;
+    var type = layerConfig.type;
 
-    return 'SELECT * FROM score_test'
+    if (type === 'target') {
+      query = 'SELECT * FROM score_test WHERE indicator_slug=' + layer;
+    } else {
+      query = 'SELECT * FROM score_test WHERE indicator_slug=' + layer; 
+    }
+
+    return 'SELECT * FROM score_test';
   }
 
 });
