@@ -33,7 +33,6 @@ var DashboardView = Backbone.View.extend({
   },
 
   _renderTargets: function() {
-    console.log(this.$('#targets-container'))
     this.$('#targets-container').append(targetsTemplate())
   },
 
