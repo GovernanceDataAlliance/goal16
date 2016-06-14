@@ -1,0 +1,7 @@
+SELECT 
+i.target_slug, 
+i.slug, 
+i.code,  
+i.title as indicators_title, 
+t.title as target_title 
+FROM indicators i JOIN targets t ON i.target_slug=t.slug

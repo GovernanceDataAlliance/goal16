@@ -4,7 +4,10 @@ var $ = require('jquery'),
   enquire = require('enquire.js'),
   Handlebars = require('handlebars');
 
-var template = Handlebars.compile(require('../../templates/map/dashboard.hbs'));
+var TargetsCollection = require('../../collections/map/indicators_by_target.js');
+
+var template = Handlebars.compile(require('../../templates/map/dashboard.hbs')),
+    targetsTemplate = Handlebars.compile(require('../../templates/map/targets.hbs'));
 
 var DashboardView = Backbone.View.extend({
 
@@ -16,6 +19,8 @@ var DashboardView = Backbone.View.extend({
   },
 
   initialize: function() {
+    this.targets = new TargetsCollection();
+    this.listenTo(this.targets, 'sync', this._renderTargets);
   },
 
   _toggleDashboard: function(e) {
@@ -27,7 +32,13 @@ var DashboardView = Backbone.View.extend({
     return this;
   },
 
+  _renderTargets: function() {
+    console.log(this.$('#targets-container'))
+    this.$('#targets-container').append(targetsTemplate())
+  },
+
   show: function() {
+    this.targets.fetch();
   }
 
 });
