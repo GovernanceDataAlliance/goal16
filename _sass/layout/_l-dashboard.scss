@@ -31,7 +31,7 @@
 
   &:after {
     content: "";
-    @include arrow(7px, $white, 2px, -45deg);
+    @include arrow(5px, $white, 2px, -45deg);
     transition: .2s ease;
   }
 
