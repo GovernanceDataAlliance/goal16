@@ -5,7 +5,7 @@ var CONFIG = require('../../../config.json');
 
 var OrganizationsCollection = CartoDBCollection.extend({
 
-  organization_table: CONFIG.cartodb.organizations_table
+  organizations_table: CONFIG.cartodb.organizations_table
 
 });
 
