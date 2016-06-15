@@ -4,7 +4,7 @@ var $ = require('jquery'),
   enquire = require('enquire.js'),
   Handlebars = require('handlebars');
 
-var TargetsCollection = require('../../collections/map/indicators_by_target.js');
+var TargetsCollection = require('../../collections/common/targets.js');
 
 var status = require ('../../models/map/status.js');
 
@@ -18,7 +18,7 @@ var DashboardView = Backbone.View.extend({
 
   events: {
     'click .js--toggle-dashboard': '_toggleDashboard',
-    'click js--toggle-target': '_toogleIndicators',
+    'click .js--toggle-target': '_toogleIndicators',
     'click .js--target': '_selectTarget',
     'change .js--indicator-selector': '_selectIndicator',
   },
@@ -30,12 +30,14 @@ var DashboardView = Backbone.View.extend({
     // which indicators has already been requested in order to avoid asking twice for the same info;
     this.requestedTargets = [];
 
-    this.targets = new TargetsCollection();
-    this.listenTo(this.targets, 'sync', this._renderTargets);
+    this.targetsCollection = new TargetsCollection();
+    // this.listenTo(this.targetsCollection, 'sync', this._renderTargets);
   },
 
   show: function() {
-    this.targets.getIndicatorsByTarget();
+    this.targetsCollection.getTargetsList().done(_.bind(function() {
+      this._renderTargets();
+    }, this));
   },
 
   _updateRouterParams: function() {
@@ -61,6 +63,8 @@ var DashboardView = Backbone.View.extend({
         $currentTarget.parents('.m-dashboard-target').toogleClass('is-open');
       })
     }
+
+
   },
 
   render: function() {
@@ -69,7 +73,8 @@ var DashboardView = Backbone.View.extend({
   },
 
   _renderTargets: function() {
-    this.$('#targets-container').append(targetsTemplate())
+    var targets = this.targetsCollection.toJSON();
+    this.$('#targets-container').append(targetsTemplate({targets: targets}))
   },
 
   _selectTarget: function(e) {
@@ -87,7 +92,7 @@ var DashboardView = Backbone.View.extend({
   },
 
   _setActiveLayer: function(type, layer) {
-    this.status.set({layer: layer, layerType: type});
+    this.status.set({layerType: type, layer: layer});
     this._updateRouterParams();
   }
 
