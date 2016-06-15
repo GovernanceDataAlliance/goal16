@@ -30,23 +30,29 @@ var MapView = Backbone.View.extend({
   initialize: function() {
     this.status = status;
     this._setListeners();
+  },
 
-    enquire.register("screen and (max-width:769px)", {
+  show: function() {
+    this._setView();
+    this._initMap();
+  },
+
+  _setView: function() {
+    enquire.register("screen and (max-width:767px)", {
       match: _.bind(function(){
         this.mobile = true;
       },this)
     });
 
-    enquire.register("screen and (min-width:770px)", {
+    enquire.register("screen and (min-width:768px)", {
       match: _.bind(function(){
         this.mobile = false;
       },this)
     });
-
   },
 
   _setListeners: function() {
-    this.status.on('change:layerConfig', _.bind(this._activeLayer, this))
+    this.status.on('change:layer', _.bind(this._activeLayer, this))
   },
 
   _initMap: function() {
@@ -60,10 +66,6 @@ var MapView = Backbone.View.extend({
     this.map.addLayer(baseMap);
 
     return this;
-  },
-
-  show: function() {
-    this._initMap();
   },
 
   _activeLayer: function() {
@@ -113,6 +115,8 @@ var MapView = Backbone.View.extend({
   },
 
   _removeLayer: function() {
+    //TODO - Use something to be sure we are appending the right
+    //layer. TimeStamp, loader...
     if (this.layer) {
       this.map.removeLayer(this.layer);
     }
@@ -120,9 +124,8 @@ var MapView = Backbone.View.extend({
 
   _getLayerQuery: function() {
     var query;
-    var layerConfig = this.status.get('layerConfig');
-    var layer = layerConfig.layer;
-    var type = layerConfig.type;
+    var layer = this.status.get('layer');
+    var type = this.status.get('layerType');
 
     if (type === 'target') {
       query = 'SELECT * FROM score_test WHERE indicator_slug=' + layer;

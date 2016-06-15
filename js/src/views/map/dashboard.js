@@ -34,6 +34,14 @@ var DashboardView = Backbone.View.extend({
     this.listenTo(this.targets, 'sync', this._renderTargets);
   },
 
+  show: function() {
+    this.targets.getIndicatorsByTarget();
+  },
+
+  _updateRouterParams: function() {
+    Backbone.Events.trigger('router:update-params', this.status);
+  },
+
   _toggleDashboard: function(e) {
     $('body').toggleClass('is-dashboard-close');
   },
@@ -64,26 +72,23 @@ var DashboardView = Backbone.View.extend({
     this.$('#targets-container').append(targetsTemplate())
   },
 
-  show: function() {
-    this.targets.getIndicatorsByTarget();
-  },
-
   _selectTarget: function(e) {
     var $currentTarget = $(e.currentTarget);
     var currentTargetSlug = $currentTarget.data('slug');
 
     $currentTarget.addClass('is-active');
 
-    this._setActiveLayer(currentTargetSlug, 'target');
+    this._setActiveLayer('target', currentTargetSlug);
   },
 
   _selectIndicator: function(e) {
      var $currentIndicatorSlug = $(e.currentTarget).val();
-     this._setActiveLayer($currentIndicatorSlug, 'indicator');
+     this._setActiveLayer('indicator', $currentIndicatorSlug);
   },
 
-  _setActiveLayer: function(layer, type) {
-    this.status.set({'layerConfig': {layer: layer, type: type}});
+  _setActiveLayer: function(type, layer) {
+    this.status.set({layer: layer, layerType: type});
+    this._updateRouterParams();
   }
 
 });

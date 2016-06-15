@@ -42,7 +42,6 @@ var Router = Backbone.Router.extend({
 
   //MAP
   map: function() {
-
     if (!this.viewManager.hasView('map')) {
       this.viewManager.addView('map', MapView);
     }
