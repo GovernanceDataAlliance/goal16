@@ -17,7 +17,7 @@ var template = Handlebars.compile(require('../../templates/compare/index.hbs'));
 
 var CompareView = Backbone.View.extend({
 
-  id: 'js--compare-container',
+  id: 'compare-container',
   className: 'compare-container',
 
   events: {
@@ -166,7 +166,7 @@ var CompareView = Backbone.View.extend({
   _compareCountries: function() {
 
     // Think about a way to avoid clicking on compare
-    // when countries haven't changed
+    // when countries haven't been modified
 
     this._updateRouterParams();
     this._showTargets();
