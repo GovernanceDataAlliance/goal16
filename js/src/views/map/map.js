@@ -68,7 +68,10 @@ var MapView = Backbone.View.extend({
 
   _activeLayer: function() {
     this._createLayer().done(_.bind(function() {
-      this._addLayer();      
+      //We remove the previous layer just when the new one arrive.
+      //This way, we are sure we only have one layer at a time.
+      this._removeLayer();
+      this._addLayer();
     }, this));
   },
 
@@ -97,9 +100,6 @@ var MapView = Backbone.View.extend({
       url: 'http://'+ cartoAccount +'.cartodb.com/api/v1/map/',
       data: JSON.stringify(request),
     }).done(data => {
-      //We remove the previous layer just when the new one arrive. 
-      //This way, we are sure we only have one layer at a time.
-      this._removeLayer();
       var tileUrl = 'http://'+ cartoAccount +'.cartodb.com/api/v1/map/'+ data.layergroupid + '/{z}/{x}/{y}.png32';
       this.layer = L.tileLayer(tileUrl, { noWrap: true });
       return deferred.resolve();
@@ -127,7 +127,7 @@ var MapView = Backbone.View.extend({
     if (type === 'target') {
       query = 'SELECT * FROM score_test WHERE indicator_slug=' + layer;
     } else {
-      query = 'SELECT * FROM score_test WHERE indicator_slug=' + layer; 
+      query = 'SELECT * FROM score_test WHERE indicator_slug=' + layer;
     }
 
     return 'SELECT * FROM score_test';
