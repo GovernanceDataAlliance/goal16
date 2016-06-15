@@ -13,7 +13,7 @@ var TargetCardTemplate = require('../../../templates/compare/targets/target_card
 var TargetCardView = Backbone.View.extend({
 
   tagName: 'article',
-  className: 'c-target-card',
+  className: 'm-target-report',
 
   template: Handlebars.compile(TargetCardTemplate),
 
