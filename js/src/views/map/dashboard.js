@@ -17,14 +17,18 @@ var DashboardView = Backbone.View.extend({
   className: 'l-dashboard',
 
   events: {
-    'click .js--toggle-dashboard' : '_toggleDashboard',
-    'click .js--target' : '_selectTarget',
-    'change .js--indicator-selector' : '_selectIndicator',
-
+    'click .js--toggle-dashboard': '_toggleDashboard',
+    'click js--toggle-target': '_toogleIndicators',
+    'click .js--target': '_selectTarget',
+    'change .js--indicator-selector': '_selectIndicator',
   },
 
   initialize: function() {
     this.status = status;
+
+    //We will keep in this array the slug of the target
+    // which indicators has already been requested in order to avoid asking twice for the same info;
+    this.requestedTargets = [];
 
     this.targets = new TargetsCollection();
     this.listenTo(this.targets, 'sync', this._renderTargets);
@@ -32,6 +36,23 @@ var DashboardView = Backbone.View.extend({
 
   _toggleDashboard: function(e) {
     $('body').toggleClass('is-dashboard-close');
+  },
+
+  _toogleIndicators: function(e) {
+    //1 - Check if the indicator has already been requested.
+    //2 - if so, open target. If not, request indicators and open target.
+    var $currentTarget = $(e.currentTarget);
+    var currentTargetSlug = $currentTarget.data('slug');
+
+    if ( _.includes(this.requestedTargets, currentTargetSlug) ) {
+      $currentTarget.parents('.m-dashboard-target').toogleClass('is-open');
+    } else {
+      this.indicators.getIndicatorsForTarget().done(function(indicators) {
+        this._addIndicators(indicators);
+        this.requestedTargets.push(currentTargetSlug);
+        $currentTarget.parents('.m-dashboard-target').toogleClass('is-open');
+      })
+    }
   },
 
   render: function() {
