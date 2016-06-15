@@ -7,7 +7,7 @@
 
   // Links, paragraphs
   p, a, h6 {
-    font-family: $font-main;
+    font-family: $font-family-primary;
     font-size: rem(14px);
     font-weight: 400;
     line-height: rem(26px);
@@ -41,7 +41,7 @@
     font-size: rem(12px);
     font-weight: 400;
     color: $font-color-1;
-    font-family: $font-secondary;
+    font-family: $font-family-secondary;
     text-transform: uppercase;
 
     &:after {
@@ -111,7 +111,7 @@
   ol {
     list-style-type: none;
     counter-reset: item;
-    font-family: $font-secondary;
+    font-family: $font-family-secondary;
     font-size: rem(40px);
     font-weight: 700;
 
@@ -146,7 +146,7 @@
 
     h3 {
       margin-bottom: rem(15px);
-      font-family: $font-main;
+      font-family: $font-family-primary;
       font-size: rem(16px);
       font-weight: 400;
       line-height: rem(26px);

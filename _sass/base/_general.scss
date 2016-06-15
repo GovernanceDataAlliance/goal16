@@ -18,7 +18,7 @@ html {
 
 body {
   margin: 0;
-  font-family: $font-main, Helvetica, Arial, sans-serif;
+  font-family: $font-family-primary;
   color: $font-color-1;
   font-size: rem(15px);
   background-color: #eee;
@@ -31,7 +31,7 @@ body {
   }
 
   @media screen and (min-width: $screen-m) {
-    font-size: $font-size;
+    font-size: $font-size-normal;
   }
 }
 
