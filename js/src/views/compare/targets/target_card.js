@@ -44,7 +44,7 @@ var TargetCardView = Backbone.View.extend({
     var target_slug = this.options.target.slug,
       countries = this.options.countries;
 
-    this.scoresCollection.getScoresByTarget({
+    this.scoresCollection.getScoresGroupByTarget({
       countries: countries,
       target_slug: target_slug
     }).done(function() {
