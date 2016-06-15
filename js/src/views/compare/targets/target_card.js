@@ -18,7 +18,6 @@ var TargetCardView = Backbone.View.extend({
   template: Handlebars.compile(TargetCardTemplate),
 
   events: {
-    'click .more-info' : '_openModal',
     'click .toggle-card' : '_toggleCard'
   },
 
@@ -64,11 +63,6 @@ var TargetCardView = Backbone.View.extend({
   updateScores: function() {
     this.removeScores();
     this._getInfo();
-  },
-
-  _openModal: function() {
-    // need some options..
-    new InfoWindowView();
   },
 
   _toggleCard: function() {
