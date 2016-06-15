@@ -5,11 +5,13 @@ var $ = require('jquery'),
   Handlebars = require('handlebars');
 
 var TargetsCollection = require('../../collections/common/targets.js');
+    IndicatorsCollection = require('../../collections/common/indicators.js');
 
 var status = require ('../../models/map/status.js');
 
 var template = Handlebars.compile(require('../../templates/map/dashboard.hbs')),
     targetsTemplate = Handlebars.compile(require('../../templates/map/targets.hbs'));
+    indicatorsTemplate = Handlebars.compile(require('../../templates/map/indicators.hbs'));
 
 var DashboardView = Backbone.View.extend({
 
@@ -31,6 +33,7 @@ var DashboardView = Backbone.View.extend({
     this.requestedTargets = [];
 
     this.targetsCollection = new TargetsCollection();
+    this.indicatorsCollection = new IndicatorsCollection();
     // this.listenTo(this.targetsCollection, 'sync', this._renderTargets);
   },
 
@@ -55,16 +58,14 @@ var DashboardView = Backbone.View.extend({
     var currentTargetSlug = $currentTarget.data('slug');
 
     if ( _.includes(this.requestedTargets, currentTargetSlug) ) {
-      $currentTarget.parents('.m-dashboard-target').toogleClass('is-open');
+      // $currentTarget.parent('.m-dashboard-target').toogleClass('is-open');
     } else {
-      this.indicators.getIndicatorsForTarget().done(function(indicators) {
-        this._addIndicators(indicators);
+      this.indicatorsCollection.getInidcatorsByTarget(currentTargetSlug).done(_.bind(function() {
+        this._renderIndicators(currentTargetSlug);
         this.requestedTargets.push(currentTargetSlug);
-        $currentTarget.parents('.m-dashboard-target').toogleClass('is-open');
-      })
+        // $currentTarget.parent('.m-dashboard-target').toogleClass('is-open');
+      }, this))
     }
-
-
   },
 
   render: function() {
@@ -84,6 +85,12 @@ var DashboardView = Backbone.View.extend({
     $currentTarget.addClass('is-active');
 
     this._setActiveLayer('target', currentTargetSlug);
+  },
+
+  _renderIndicators: function(targetSlug) {
+    var indicatorsGrupedByType = this.indicatorsCollection.groupByType();
+
+    this.$('#' + targetSlug).find('.js--indicators').html(indicatorsTemplate(indicatorsGrupedByType))
   },
 
   _selectIndicator: function(e) {

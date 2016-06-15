@@ -1,17 +1,24 @@
+{{#if official}}
 <div class="indicators-wrapper official-indicators">
   <span class="indicator-type">official indicators</span>
+  {{#each official}}
   <div class="indicator-wrapper">
-    <input type="radio" name="indicator" value="number_of_conflict_deaths" id="number_of_conflict_deaths" class="js--indicator-selector">
-    <label for="number_of_conflict_deaths"><h1 class="indicator-title">indicator name</h1></label>
-    <button class="js--indicator-info" data-slug="indicator-slug">i</button>
+    <input type="radio" name="indicator" value={{this.slug}} id={{this.slug}} class="js--indicator-selector">
+    <label for={{this.slug}}><h1 class="indicator-title">{{this.title}}</h1></label>
+    <button class="js--indicator-info" data-slug={{this.slug}}>i</button>
   </div>
+  {{/each}}
 </div>
-
+{{/if}}
+{{#if shadow}}
 <div class="indicators-wrapper shadow-indicators">
   <span class="indicator-type">shadow indicators</span>
+  {{#each shadow}}
   <div class="indicator-wrapper">
     <input type="radio" name="indicator" value="percentage_of_people_violence" class="js--indicator-selector">
     <label for="percentage_of_people_violence"><h1 class="indicator-title">indicator name</h1></label>
     <button class="js--indicator-info" data-slug="percentage_of_people_violence">i</button>
   </div>
+  {{/each}}
 </div>
+{{/if}}
