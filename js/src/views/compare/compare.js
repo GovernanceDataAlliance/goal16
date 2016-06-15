@@ -1,7 +1,6 @@
 var $ = require('jquery'),
   _ = require('lodash'),
   Backbone = require('backbone'),
-  async = require('async'),
   enquire = require('enquire.js'),
   Handlebars = require('handlebars');
 
@@ -14,7 +13,6 @@ var SelectorsView = require('./selectors/selectors.js'),
   TargetListView = require('./targets/target_list.js');
 
 var template = Handlebars.compile(require('../../templates/compare/index.hbs'));
-
 
 var CompareView = Backbone.View.extend({
 
@@ -33,11 +31,14 @@ var CompareView = Backbone.View.extend({
 
     // collections
     this.countriesCollection = CountriesCollection;
-    this.targetsCollection = new TargetsCollection();
+    this.targetsCollection = TargetsCollection;
 
     // views
-    this.targetListView;
     this.selectorsView = new SelectorsView({
+      status: this.status
+    });
+
+    this.targetListView = new TargetListView({
       status: this.status
     });
   },
@@ -45,7 +46,6 @@ var CompareView = Backbone.View.extend({
   // this function initializes just before initial render
   show: function() {
     this._setView();
-    this._setVars();
 
     $.when(
       this.countriesCollection.getCountriesList(),
@@ -58,10 +58,6 @@ var CompareView = Backbone.View.extend({
 
   _updateRouterParams: function() {
     Backbone.Events.trigger('router:update-params', this.status);
-  },
-
-  _setVars: function() {
-    this.$targetList = this.$el.find('#target-list');
   },
 
   _setView: function() {
@@ -88,37 +84,17 @@ var CompareView = Backbone.View.extend({
     // when countries haven't been modified
 
     this._updateRouterParams();
-    this._showTargets();
-    this._updateScores();
-  },
-
-  _showTargets() {
-
-    if (this.$targetList.hasClass('is-hidden')) {
-      this.$targetList.removeClass('is-hidden');
-    }
+    this.targetListView.updateScores();
   },
 
   _renderTargetList: function() {
-    var isoArray = _.compact(_.values(this.status.toJSON())),
-      countries = this.countriesCollection.getCountryData(isoArray);
+    var countries = _.compact(_.values(this.status.toJSON()));
 
-    this.targetListView = new TargetListView({
-      countries: countries,
-      targets: this.targetsCollection.toJSON()
-    }).render();
+    this.$el.find('#target-list-container').html(this.targetListView.render().el);
 
-    if (_.compact(countries).length > 0) {
-      this._showTargets();
+    if (countries.length > 1) {
+      this.targetListView.showTargets();
     }
-  },
-
-  _updateScores: function() {
-    var countries = this._getCountriesInfo();
-
-    this.targetListView.updateScores({
-      countries: countries
-    });
   },
 
   render: function() {
