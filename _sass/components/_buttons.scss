@@ -183,6 +183,19 @@
   }
 }
 
+.btn-primary{
+  background-color: $green-primary;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-align: center;
+  color: $white;
+  cursor: pointer;
+  transition: 0.1s;
+  &:hover{
+    background-color: darken($green-primary, 10% ); 
+  }
+}
+
 .btn-info {
   color: $white;
   background-color: $color-4;

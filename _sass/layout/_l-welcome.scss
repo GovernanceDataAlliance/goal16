@@ -1,0 +1,113 @@
+.l-welcome {
+  background-image: url('../../../img/fullscreenBG/fullscreenBG.jpg');
+  background-size: cover;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  .layer-welcome {
+    padding: 0 $wrap-padding-mobile;
+    @media screen and (min-width: 768px) {
+      padding: 0;
+    }
+  }
+  h1 {
+    img {
+      margin: 0 auto;
+      display: block;
+      width: 150px;
+      @media screen and (min-width: $screen-s) {
+        width: 200px;
+      }
+    }
+    &:after {
+      content: "";
+      display: block;
+      height: rem(3px);
+      background-color: $blue-topaz;
+      margin: rem(40px) auto;
+      width: rem(37px);
+    }
+  }
+  .layer-welcome {
+    background-color: rgba(14, 29, 42, 0.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding-top: rem(115px);
+  }
+  p {
+    text-align: center;
+    color: $white;
+    &:nth-child(2) {
+      font-family: $font-main;
+      font-size: rem(22px);
+      font-weight: normal;
+      margin-top: rem(34px);
+      line-height: 1.36;
+      @media screen and (min-width: 768px) {
+        font-size: rem(27px);
+        margin: rem(55px) auto;
+        letter-spacing: 0.3px;
+      }
+    }
+    &:nth-child(3) {
+      font-family: $font-secondary;
+      font-size: rem(14px);
+      font-weight: normal;
+      line-height: 1.79;
+      width: 100%;
+      display: block;
+      margin: rem(17px) auto;
+      @media screen and (min-width: 768px) {
+        width: 736px;
+        font-size: rem(19px);
+        line-height: 1.68;
+        margin: rem(22px) auto;
+      }
+    }
+    &:nth-child(4) {
+      font-family: $font-secondary;
+      font-size: rem(10px);
+      font-weight: normal;
+      letter-spacing: 0.5px;
+      text-transform: capitalize;
+      margin-top: rem(25px);
+      @media screen and (min-width: 768px) {
+        margin-top: rem(41px);
+      }
+    }
+    &:nth-child(5) {
+      font-family: $font-secondary;
+      font-size: rem(14px);
+      font-weight: normal;
+      line-height: 1.79;
+      width: 100%;
+      display: block;
+      margin: rem(11px) auto;
+      @media screen and (min-width: 768px) {
+        width: rem(736px);
+        line-height: 1.75;
+        font-size: rem(16px);
+        margin: rem(16px) auto;
+      }
+    }
+  }
+  .btn-primary {
+    text-transform: uppercase;
+    font-family: $font-secondary;
+    font-size: rem(11px);
+    font-weight: normal;
+    letter-spacing: 0.6px;
+    display: block;
+    margin: rem(27px) auto;
+    width: 100%;
+    @media screen and (min-width: 768px) {
+      width: rem(211px);
+      font-size: rem(12px);
+      letter-spacing: 0.7px;
+      margin: rem(52px) auto;
+    }
+  }
+}
