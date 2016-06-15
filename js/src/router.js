@@ -88,9 +88,9 @@ var Router = Backbone.Router.extend({
 
     view = this.viewManager.getView('compare');
 
-    this.viewManager.showView('compare');
+    view.status.set(params);
 
-    view.status.set(params, { silent: true });
+    this.viewManager.showView('compare');
 
     // set a valid function to avoid more than X params
     // if (!view.status.isValid()) {
