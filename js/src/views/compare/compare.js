@@ -3,29 +3,17 @@ var $ = require('jquery'),
   Backbone = require('backbone'),
   async = require('async'),
   enquire = require('enquire.js'),
-  Handlebars = require('handlebars'),
-  slick = require('slick-carousel-browserify');
-
-var FunctionHelper = require('../../helpers/functions.js');
-
-var InfoWindowModel = require('../../models/infowindow.js');
+  Handlebars = require('handlebars');
 
 var CountriesCollection = require('../../collections/common/countries.js');
-
-var CompareSelectorsView = require('./compare_selectors.js'),
-  ModalWindowView = require('../common/infowindow_view.js'),
-  ShareWindowView = require('../common/share_window_view.js'),
-  LegendView = require('../common/legend.js');
-
-var template = Handlebars.compile(require('../../templates/compare/index.hbs'));
-//   indicatorsTemplate = Handlebars.compile(require('../../templates/compare/compare-indicators.hbs')),
-//   countryScoresTemplate = Handlebars.compile(require('../../templates/compare/compare-country-scores.hbs'));
-//
-// var templateMobile = Handlebars.compile(require('../../templates/compare/mobile/compare-mobile.hbs')),
-//   templateMobileSlide = Handlebars.compile(require('../../templates/compare/mobile/compare-mobile-slide.hbs')),
-//   templateMobileScores = Handlebars.compile(require('../../templates/compare/mobile/compare-country-scores-mobile.hbs'));
+var TargetsCollection = require('../../collections/common/targets.js');
 
 var Status = require ('../../models/compare/status.js');
+
+var TargetListView = require('./targets/target_list.js');
+
+var template = Handlebars.compile(require('../../templates/compare/index.hbs'));
+
 
 var CompareView = Backbone.View.extend({
 
@@ -44,6 +32,7 @@ var CompareView = Backbone.View.extend({
 
     // collections
     this.countriesCollection = new CountriesCollection();
+    this.targetsCollection = new TargetsCollection();
   },
 
   // this function initializes just before initial render
@@ -53,6 +42,7 @@ var CompareView = Backbone.View.extend({
     this._setListeners();
 
     this.countriesCollection.getCountriesList().done(this._populateSelectors.bind(this));
+    this.targetsCollection.getTargetsList().done(this._renderTargets.bind(this));
   },
 
   _updateRouterParams() {
@@ -61,6 +51,7 @@ var CompareView = Backbone.View.extend({
 
   _setVars: function() {
     this.$selectors = this.$el.find('#compare-countries-selectors select');
+    this.$targetList = this.$el.find('#target-list');
   },
 
   _setView: function() {
@@ -145,6 +136,28 @@ var CompareView = Backbone.View.extend({
 
   _compareCountries: function() {
     this._updateRouterParams();
+    this._showTargets();
+  },
+
+  _showTargets() {
+
+    if (this.$targetList.hasClass('is-hidden')) {
+      this.$targetList.removeClass('is-hidden');
+    }
+  },
+
+  _renderTargets: function() {
+    var countries = _.values(this.status.toJSON());
+
+    new TargetListView({
+      targets: this.targetsCollection.toJSON(),
+      countries: countries
+    }).render();
+
+    // show target list if countries are already setted
+    if (_.compact(countries).length > 0) {
+      this._showTargets();
+    }
   },
 
   render: function() {
