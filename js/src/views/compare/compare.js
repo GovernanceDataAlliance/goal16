@@ -180,23 +180,9 @@ var CompareView = Backbone.View.extend({
     }
   },
 
-  _getCountriesInfo: function() {
-    var isos = _.values(this.status.toJSON()),
-      countries = [];
-
-    isos.forEach(function(iso) {
-      if (!iso) {
-        return;
-      }
-      var countryData = this.countriesCollection.findWhere({ iso: iso });
-      countries.push(countryData.toJSON());
-    }.bind(this));
-
-    return countries;
-  },
-
   _renderTargetList: function() {
-    var countries = this._getCountriesInfo();
+    var isoArray = _.compact(_.values(this.status.toJSON())),
+      countries = this.countriesCollection.getCountryData(isoArray);
 
     this.targetListView = new TargetListView({
       countries: countries,

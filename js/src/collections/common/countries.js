@@ -19,6 +19,24 @@ var CountriesCollection = CartoDBCollection.extend({
     return this.fetch({ url: url });
   },
 
+  // get country information, once collection is loaded previously,
+  // through an iso array
+  getCountryData: function(isoArray) {
+    var countries = [];
+
+    isoArray.forEach(function(iso) {
+      if (!iso) {
+        return;
+      }
+
+      var countryData = this.findWhere({ iso: iso });
+      countries.push(countryData.toJSON());
+
+    }.bind(this));
+
+    return countries;
+  },
+
   // list of countries by region
   getCountriesByRegion: function() {
     return _.groupBy(_.sortBy(this.toJSON(), 'region_name'), 'region_name');
