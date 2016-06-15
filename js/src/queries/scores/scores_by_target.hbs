@@ -1,0 +1,22 @@
+select 
+
+  i.code,
+  i.target_slug,
+  i.slug,
+  i.title,
+  i.type,
+  i.units,
+  i.units_abbr,
+  i.description,
+
+  s.iso,
+  s.score 
+
+from 
+  {{ scores_table }} as s 
+join 
+  {{ indicators_table }} as i 
+on 
+  s.indicator_slug = i.slug
+  and i.target_slug = '{{ target_slug }}' 
+  {{ countries_conditional }}
