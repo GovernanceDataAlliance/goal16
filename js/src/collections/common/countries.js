@@ -44,4 +44,4 @@ var CountriesCollection = CartoDBCollection.extend({
 
 });
 
-module.exports = CountriesCollection;
+module.exports = new CountriesCollection();

@@ -31,7 +31,7 @@ var TargetCardView = Backbone.View.extend({
     this.indicatorTableTemplate = Handlebars.compile(IndicatorTableTemplate);
 
     // collections
-    this.countriesCollection = new CountriesCollection();
+    this.countriesCollection = CountriesCollection;
     this.scoresCollection = new ScoresCollection();
   },
 
