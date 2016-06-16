@@ -7,7 +7,8 @@ var TargetsCollection = require('../../../collections/common/targets.js');
 
 var TargetListView = Backbone.View.extend({
 
-  id: 'target-list',
+  id: 'js--target-list',
+  className: 'target-list',
 
   initialize: function(settings) {
     this.options = settings || {};
@@ -52,6 +53,7 @@ var TargetListView = Backbone.View.extend({
     this.scoreCardViews.forEach(function(card) {
       this.$el.append(card.render().el);
     }.bind(this));
+
 
     this.toggleList();
 
