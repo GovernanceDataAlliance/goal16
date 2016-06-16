@@ -1,67 +1,66 @@
-.text{
-  font-family: $font-main;
-  &.-white{
-    color: $font-color-2
+.text {
+  font-family: $font-family-primary;
+  &.-white {
+    color: $font-color-2;
   }
-  &.-black{
-    color: $font-color-5;
+  &.-black {
+    color: $font-color-6;
   }
-  &.-primary{
-    color: $font-color-3
+  &.-primary {
+    color: $font-color-3;
   }
 }
-
-.text-banner-title-s{
-  font-size: rem(9px);
-  font-weight: normal;
+.text-banner-title-s {
+  color: $font-color-2;
+  font-size: $font-size-xsmall;
+  font-weight: $font-weight-regular;
   letter-spacing: 0.5px;
   text-align: center;
   text-transform: uppercase;
 }
-
-.text-banner-title-l{
-  font-size: rem(30px);
-  font-weight: normal;
+.text-banner-title-xl {
+  color: $font-color-2;
+  font-size: $font-size-large;
+  font-weight: $font-weight-regular;
   line-height: 1.3;
   text-transform: capitalize;
   text-align: center;
   @media screen and (min-width: $screen-s) {
-    font-size: rem(55px);
+    font-size: $font-size-xlarge;
     line-height: 1.55;
   }
 }
-
-.text-banner-l{
-  font-family: $font-main;
-  font-size: rem(22px);
-  font-weight: normal;
+.text-banner-l {
+  color: $font-color-2;
+  font-family: $font-family-secondary;
+  font-size: $font-size-medium;
+  font-weight: $font-weight-regular;
   line-height: 1.36;
   text-align: center;
   @media screen and (min-width: 768px) {
-    font-size: rem(27px);
+    font-size: $font-size-large;
     letter-spacing: 0.3px;
   }
 }
-
-.text-banner-m{
-  font-family: $font-secondary;
-  font-size: rem(13px);
-  font-weight: normal;
+.text-banner-m {
+  color: $font-color-2;
+  font-size: $font-size-small;
+  font-weight: $font-weight-regular;
   line-height: 1.92;
   width: 100%;
   display: block;
   text-align: center;
   @media screen and (min-width: 768px) {
     width: 736px;
-    font-size: rem(19px);
+    font-size: $font-size-medium;
     line-height: 1.68;
   }
 }
-
-.text-banner-s{
-  font-family: $font-secondary;
-  font-size: rem(14px);
-  font-weight: normal;
+.text-banner-s {
+  color: $font-color-2;
+  font-family: $font-family-primary;
+  font-size: $font-size-small;
+  font-weight: $font-weight-regular;
   line-height: 1.79;
   width: 100%;
   display: block;
@@ -69,6 +68,16 @@
   @media screen and (min-width: 768px) {
     width: rem(736px);
     line-height: 1.75;
-    font-size: rem(16px);
+    font-size: $font-size-normal;
+  }
+}
+.text-heading-underline {
+  &:after {
+    content: "";
+    display: block;
+    height: rem(3px);
+    background-color: $blue-topaz;
+    margin: rem(40px) auto;
+    width: rem(37px);
   }
 }
