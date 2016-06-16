@@ -11,7 +11,7 @@ var ScoresCollection = CartoDBCollection.extend({
   indicators_table: CONFIG.cartodb.indicators_table,
 
   getScoresGroupByTarget: function(settings) {
-    var query = ScoresByIndicatorSQL({
+    var query = ScoresGroupByTargetSQL({
       indicators_table: this.indicators_table,
       scores_table: this.scores_table,
       countries_conditional: null,
