@@ -1,4 +1,4 @@
-$backgrounds-highlight: 'distribuidorDestacado-About', 'distribuidorDestacado-Countries', 'distribuidorDestacado-About02';
+$backgrounds-highlight: 'crosseling-map', 'crosseling-compare', 'crosseling-about';
 
 .l-highlight {
   position: relative;
@@ -10,8 +10,8 @@ $backgrounds-highlight: 'distribuidorDestacado-About', 'distribuidorDestacado-Co
 
 
   @for $i from 1 through length($backgrounds-highlight) {
-    &.#{nth($backgrounds-highlight, $i)}{
-      background-image: url('#{$baseUrl}/img/#{nth($backgrounds-highlight, $i)}.jpg');
+    &.-#{nth($backgrounds-highlight, $i)}{
+      background-image: url('#{$baseUrl}/img/crosseling/#{nth($backgrounds-highlight, $i)}.jpg');
       background-size: cover;
       background-position: center;
 
