@@ -68,7 +68,7 @@ var SearchView = Backbone.View.extend({
   },
 
   _getData: function() {
-    this.searchCollection.fetch().done(function() {
+    this.searchCollection.getCountriesList().done(function() {
       this.render();
     }.bind(this));
   },
