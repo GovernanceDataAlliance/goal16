@@ -1,36 +1,55 @@
 .m-dashboard-indicators {
 
-  .indicators-wrapper {
-    margin-left: rem(60px);
-  }
-
-  .indicator-type {
+  .indicator-type {
     display: block;
     padding-bottom: rem(7px);
-    border-bottom: 2px solid $color-3;
+    border-bottom: rem(2px) solid $color-3;
     margin-bottom: rem(20px);
-    font-size: rem(10px);
+    font-size: rem($font-size-xsmall);
+    font-weight: $font-weight-regular;
     text-transform: uppercase;
   }
 
-  .indicators-wrapper {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
+  .indicator-wrapper {
+    margin-bottom: rem(10px);
 
     input {
+      float: left;
       width: rem(16px);
       height: rem(16px);
       border-radius: 50%;
       background-color: $bg-color-1;
-      border: 1px solid $color-4;
+      border: rem(1px) solid $color-4;
+    }
+
+    label {
+      float: left;
+      margin-left: rem(10px);
     }
 
     .indicator-title {
+      font-weight: $font-weight-regular;
       font-size: rem(12px);
       line-height: rem(20px);
       color: $font-color-3;
-      font-size: rem(14px);
+    }
+
+    .btn-info {
+      float: right;
+      margin-left: rem(10px);
+      width: rem(16px);
+      height: rem(16px);
+      border-radius: 50%;
+      align-self: flex-end;
     }
   }
 }
+
+.indicators-wrapper {
+  margin-left: rem(60px);
+
+  &.official-indicators {
+    margin-top: rem(20px);
+  }
+}
+

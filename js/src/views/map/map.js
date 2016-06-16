@@ -19,13 +19,14 @@ var MapView = Backbone.View.extend({
       zoom: 1,
       zoomControl: false,
       minZoom: 2,
-      scrollWheelZoom: true,
-      worldCopyJump: true
+      scrollWheelZoom: false,
+      worldCopyJump: true,
+      controls: true
     },
     cartodb: {
       user_name: CONFIG.cartodb.user_name,
       noWrap: true,
-      css: ''
+      css: '#score_test{ polygon-fill: #82bf72; polygon-opacity: 0.7; line-color: #f6faf9; line-width: 0.5; line-opacity: 1; }'
     }
   },
 
