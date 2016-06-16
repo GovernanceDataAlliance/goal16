@@ -101,6 +101,7 @@ var SelectorsView = Backbone.View.extend({
         }
 
         $(selector).find('option:not(:selected)[value="' + iso + '"]').attr('disabled', 'disabled');
+        $(selector).trigger('liszt:updated');
 
       }, this);
 
@@ -135,8 +136,9 @@ var SelectorsView = Backbone.View.extend({
 
     this._setVars();
     this._setListeners();
+
     this._populateSelectors();
-    // this._setChosen();
+
     this._checkCompareButton();
 
     return this;
