@@ -6,12 +6,16 @@
     display: flex;
     justify-content: space-between;
 
-    padding-bottom: 15px;
-    border-bottom: 1px solid $border-2;
+    padding-bottom: rem(15px);
+    border-bottom: rem(1px) solid rgba($border-2, .7);
   }
 
   > .target-info > .target-title {
+
     flex-basis: 75%;
+
+    font-size: $font-size-medium;
+    color: $font-color-1;
   }
 
   > .target-info > .card-options {

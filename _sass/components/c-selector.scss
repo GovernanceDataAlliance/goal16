@@ -9,7 +9,9 @@
     width: 100%;
     height: rem(45px);
     padding: 0 rem(6px) 0 rem(15px);
-    border: 1px solid rgba($border-1, .5);
+    border: rem(1px) solid rgba($border-1, .5);
+
+    background-color: $white;
 
     @media screen and (min-width: $screen-m) {
       height: rem(45px);
