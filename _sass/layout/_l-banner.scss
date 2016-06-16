@@ -134,41 +134,32 @@ $backgrounds: 'promoHome', 'promoInteriores-About', 'promoInteriores-CompareCoun
   //Data-main
   //About-main
   &.-section-2 {
-    padding: rem(75px) 0 rem(60px);
-
+    padding-top: rem(24px);
     @media screen and (min-width: $screen-s) {
-      padding: rem(115px) 0 rem(170px);
     }
 
     @media screen and (min-width: 768px) {
-      padding: rem(130px) 0 rem(135px);
+      padding-top: rem(40px);
     }
 
     .c-section-title {
-      margin-bottom: rem(40px);
+      margin-bottom: rem(0px);
     }
 
     @media screen and (min-width: $screen-l) {
       > .wrap {
-        max-width: $content-width;
+        max-width: 100%;
         margin-left: 0;
       }
     }
-
-    p {
-      color: $white;
-      letter-spacing: rem(0.5px);
-      font-size: rem(16px);
-      line-height: rem(26px);
-
-      @media screen and (min-width: $screen-s) {
-        font-size: rem(18px);
-        line-height: rem(32px);
-      }
-
+    .text-banner-m{
+      margin: rem(21px) auto;
+      margin-bottom: 0px;
+      padding-bottom: rem(67px);
       @media screen and (min-width: 768px) {
-        font-size: rem(20px);
-        line-height: rem(34px);
+        margin: rem(33px) auto;
+        padding-bottom: rem(112px);
+        margin-bottom: 0px;
       }
     }
   }
@@ -255,7 +246,7 @@ $backgrounds: 'promoHome', 'promoInteriores-About', 'promoInteriores-CompareCoun
 
   @for $i from 1 through length($backgrounds) {
     &.#{nth($backgrounds, $i)}{
-      background-image: url('#{$baseUrl}/img/#{nth($backgrounds, $i)}.jpg');
+      background-image: url('#{$baseUrl}/img/topsection_about.jpg');
       background-size: cover;
       background-position: center;
 

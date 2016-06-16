@@ -1,12 +1,16 @@
 .c-section-title {
   position: relative;
-  padding-bottom: rem(20px);
-  margin-bottom: rem(40px);
-  font-size: rem(40px);
-  font-weight: 400;
+  margin-top: rem(32px);
+  font-size: $font-size-large;
+  font-weight: $font-weight-regular;
   color: $font-color-1;
-  line-height: 1em;
-
+  line-height: 1.55em;
+  text-align: center;
+  font-family: $font-family-primary;
+  @media screen and (min-width: $screen-s) {
+    margin-top: rem(72px);
+    font-size: $font-size-xlarge;
+  }
   .m-markdown & {
     max-width: 100%;
   }
@@ -17,16 +21,6 @@
     line-height: rem(15px);
     margin-top: rem(10px);
     font-weight: 400;
-  }
-
-  &:after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: rem(60px);
-    height: rem(3px);
-    background-color: $color-4;
   }
 
   &.-small {
@@ -48,14 +42,8 @@
     margin-bottom: 0;
   }
 
-  + p {
-    font-size: rem(16px);
-    line-height: rem(26px);
-    margin-top: rem(20px);
-  }
-
   @media screen and (min-width: $screen-s) {
-    padding-bottom: rem(50px);
+    padding-bottom: rem(0px);
     margin-bottom: rem(50px);
 
     &.-small {
@@ -67,7 +55,7 @@
   @media screen and (min-width: 768px) {
     font-size: rem(45px);
     margin-bottom: rem(55px);
-    padding-bottom: rem(55px);
+    padding-bottom: rem(0px);
 
     &.-small {
       padding-bottom: rem(45px);
@@ -86,7 +74,7 @@
   @media screen and (min-width: $screen-l) {
     font-size: rem(50px);
     line-height: 1.2em;
-    max-width: 70%;
+    width: 100%;
 
     &.-country-name {
       padding-bottom: rem(40px);

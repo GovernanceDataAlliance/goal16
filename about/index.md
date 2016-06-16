@@ -1,8 +1,8 @@
 ---
 layout: about
-title: About the Alliance
+title: About
 page-name: About
-"intro-text": "The Governance Data Alliance is a community of governance data producers, users, and funders committed to the effective production and use of high-quality data to advance democratic governance reforms in countries."
+"intro-text": "Quisque eu odio vitae leo aliquet fermentum in sit amet quam. Morbi dapibus nibh et congue convallis. Nulla malesuada leo et volutpat rhoncus. Aliquam sagittis rhoncus tellus quis placerat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia."
 published: true
 ---
 
