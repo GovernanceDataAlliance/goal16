@@ -1,0 +1,60 @@
+.btn-primary {
+  background-color: $color-5;
+  padding: 15px 50px;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: $font-family-primary;
+  font-size: rem(11px);
+  font-weight: $font-weight-regular;
+  letter-spacing: 0.6px;
+  color: $white;
+  cursor: pointer;
+  transition: 0.1s;
+  display: block;
+  width: 100%;
+  &:hover {
+    background-color: darken($color-5, 10% );
+  }
+  @media screen and (min-width: 768px) {
+    font-size: rem(12px);
+    letter-spacing: 0.7px;
+    max-width: rem(211px);
+  }
+
+  &.-disabled {
+    opacity: .5;
+    pointer-events: none;
+  }
+}
+
+.btn-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  //Margin left and bottom are to make click area bigger
+  margin: rem(30px) rem(20px) rem(5px) rem(5px);
+  cursor: pointer;
+  font-family: $font-family-primary;
+  font-weight: bold;
+  color: $color-4;
+  font-size: rem(20px);
+  width: rem(24px);
+  height: rem(24px);
+  line-height: rem(17px);
+  letter-spacing: -1px;
+  border-radius: 50%;
+  text-align: center;
+  border: 2px solid $color-4;
+  &.-color-1 {
+    color: $color-1;
+    border-color: $color-1;
+  }
+  @media screen and (min-width: 768px) {
+    margin: rem(40px) rem(30px) 0 0;
+  }
+  @media screen and (min-width: $screen-l) {
+    position: absolute;
+    margin: rem(40px) rem(40px) 0 0;
+  }
+}

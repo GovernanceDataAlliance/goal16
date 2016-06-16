@@ -7,7 +7,8 @@ var TargetsCollection = require('../../../collections/common/targets.js');
 
 var TargetListView = Backbone.View.extend({
 
-  id: 'target-list',
+  id: 'js--target-list',
+  className: 'target-list',
 
   initialize: function(settings) {
     this.options = settings || {};
@@ -38,10 +39,12 @@ var TargetListView = Backbone.View.extend({
     });
   },
 
-  showTargets: function() {
-    if (this.$el.hasClass('is-hidden')) {
-      this.$el.removeClass('is-hidden');
-    }
+  toggleList: function() {
+    this.$el.toggleClass('is-hidden');
+  },
+
+  showList: function() {
+    this.$el.removeClass('is-hidden');
   },
 
   render: function() {
@@ -50,6 +53,9 @@ var TargetListView = Backbone.View.extend({
     this.scoreCardViews.forEach(function(card) {
       this.$el.append(card.render().el);
     }.bind(this));
+
+
+    this.toggleList();
 
     return this;
   }

@@ -1,4 +1,4 @@
-$backgrounds: 'promoHome', 'promoInteriores-About', 'promoInteriores-CompareCountries', 'promoInteriores-Countries', 'promoInteriores-Data', 'promoInteriores-Blog';
+$backgrounds: 'promoHome', 'topsection-country', 'topsection-countries', 'topsection-compare', 'topsection-about', 'promoInteriores-Blog';
 
 .l-banner {
   position: relative;
@@ -254,8 +254,8 @@ $backgrounds: 'promoHome', 'promoInteriores-About', 'promoInteriores-CompareCoun
 
 
   @for $i from 1 through length($backgrounds) {
-    &.#{nth($backgrounds, $i)}{
-      background-image: url('#{$baseUrl}/img/#{nth($backgrounds, $i)}.jpg');
+    &.-#{nth($backgrounds, $i)} {
+      background-image: url('#{$baseUrl}/img/cover-pages/#{nth($backgrounds, $i)}.jpg');
       background-size: cover;
       background-position: center;
 

@@ -1,15 +1,45 @@
 {{#if scores}}
-  <ul>
+  <div class="c-score-table">
+    <div class="table-header">
+      <div class="table-row">
+        <div class="table-cell -category">
+          <span>official indicators</span>
+        </div>
 
-    {{#each countries}}
-      <span>{{ name }}</span>
-    {{/each}}
+        {{#each countries}}
+          <div class="table-cell -country">
+            <span>{{ name }}</span>
+          </div>
+        {{/each}}
 
-    {{#each scores}}
+      </div>
+    </div>
+    <div class="table-body">
 
-      <li>{{ code }}  {{ title }}</li>
+      {{#each scores}}
 
-    {{/each}}
+        <div class="table-row">
+          <div class="table-cell -indicator">
+            <span>{{ title }}</span>
+            <span class="indicator-info">Score name  |  % of victims reduced  |  Last data point: 2014</span>
+          </div>
 
-  </ul>
+          <div class="table-cell -score">
+            <span> 5% </span>
+          </div>
+
+          <div class="table-cell -score">
+            <span> 25% </span>
+          </div>
+
+          <div class="table-cell -score">
+            <span> 100% </span>
+          </div>
+        </div>
+
+      {{/each}}
+
+    </div>
+
+</div>
 {{/if}}

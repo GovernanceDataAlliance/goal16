@@ -85,6 +85,7 @@ var CompareView = Backbone.View.extend({
 
     this._updateRouterParams();
     this.targetListView.updateScores();
+    this.targetListView.showList();
   },
 
   _renderTargetList: function() {
@@ -93,7 +94,7 @@ var CompareView = Backbone.View.extend({
     this.$el.find('#target-list-container').html(this.targetListView.render().el);
 
     if (countries.length > 1) {
-      this.targetListView.showTargets();
+      this.targetListView.toggleList();
     }
   },
 

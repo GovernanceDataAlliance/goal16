@@ -8,6 +8,7 @@
   "settings",
   "env",
   "helpers",
+  "icons",
 
   "base/general",
   "base/form",
@@ -29,8 +30,10 @@
   "layout/l-map",
   "layout/l-dashboard",
   "layout/l-tag-cloud",
+  "layout/l-selectors",
   "layout/l-compare-selectors",
   "layout/l-welcome",
+  "layout/l-target-list",
 
   "modules/m-site-navigation",
   "modules/m-list",
@@ -69,9 +72,8 @@
   "modules/m-target-report",
 
 
-  "components/buttons",
+  "components/c-buttons",
   "components/c-share-shortcut",
-  "components/icons",
   "components/c-title",
   "components/c-main-title",
   "components/c-subtitle",
@@ -87,6 +89,9 @@
   "components/c-switcher",
   "components/c-selector",
   "components/c-button",
+  "components/c-score-card",
+  "components/c-score-table",
+
 
   "states",
 
