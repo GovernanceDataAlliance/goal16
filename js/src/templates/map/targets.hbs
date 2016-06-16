@@ -2,7 +2,8 @@
   <div class="m-dashboard-target" id="{{this.slug}}">
     <div class="header">
       <button class="js--toggle-target btn-toggle-target" data-slug={{this.slug}}>+</button>
-      <h2 class="target-title js--target" data-slug={{this.slug}}>{{this.title}}</h2>
+      <input type="radio" name="layer-selector" value={{this.slug}} id={{this.slug}} class="js--layer-selector -target">
+      <label for={{this.slug}}><h2 class="target-title js--target" data-slug={{this.slug}}>{{this.title}}</h2></label>
     </div>
     <div class="m-indicators js--indicators"></div>
   </div>

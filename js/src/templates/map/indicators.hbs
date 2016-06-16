@@ -3,7 +3,7 @@
   <span class="indicator-type">official indicators</span>
   {{#each official}}
   <div class="indicator-wrapper">
-    <input type="radio" name="indicator" value={{this.slug}} id={{this.slug}} class="js--indicator-selector">
+    <input type="radio" name="layer-selector" value={{this.slug}} id={{this.slug}} class="js--layer-selector -indicator">
     <label for={{this.slug}}><h1 class="indicator-title">{{this.title}}</h1></label>
     <button class="js--indicator-info" data-slug={{this.slug}}>i</button>
   </div>
@@ -15,8 +15,8 @@
   <span class="indicator-type">shadow indicators</span>
   {{#each shadow}}
   <div class="indicator-wrapper">
-    <input type="radio" name="indicator" value="percentage_of_people_violence" class="js--indicator-selector">
-    <label for="percentage_of_people_violence"><h1 class="indicator-title">indicator name</h1></label>
+    <input type="radio" name="layer-selector" value={{this.slug}} id={{this.slug}} class="js--layer-selector -indicator">
+    <label for={{this.slug}}><h1 class="indicator-title">indicator name</h1></label>
     <button class="js--indicator-info" data-slug="percentage_of_people_violence">i</button>
   </div>
   {{/each}}

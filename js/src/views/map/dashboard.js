@@ -4,7 +4,7 @@ var $ = require('jquery'),
   enquire = require('enquire.js'),
   Handlebars = require('handlebars');
 
-var TargetsCollection = require('../../collections/common/targets.js');
+var targetsCollection = require('../../collections/common/targets.js');
     IndicatorsCollection = require('../../collections/common/indicators.js');
 
 var status = require ('../../models/map/status.js');
@@ -21,8 +21,7 @@ var DashboardView = Backbone.View.extend({
   events: {
     'click .js--toggle-dashboard': '_toggleDashboard',
     'click .js--toggle-target': '_toogleIndicators',
-    'click .js--target': '_selectTarget',
-    'change .js--indicator-selector': '_selectIndicator',
+    'change .js--layer-selector': '_selectLayer',
   },
 
   initialize: function() {
@@ -32,9 +31,8 @@ var DashboardView = Backbone.View.extend({
     // which indicators has already been requested in order to avoid asking twice for the same info;
     this.requestedTargets = [];
 
-    this.targetsCollection = new TargetsCollection();
+    this.targetsCollection = targetsCollection;
     this.indicatorsCollection = new IndicatorsCollection();
-    // this.listenTo(this.targetsCollection, 'sync', this._renderTargets);
   },
 
   show: function() {
@@ -58,12 +56,12 @@ var DashboardView = Backbone.View.extend({
     var currentTargetSlug = $currentTarget.data('slug');
 
     if ( _.includes(this.requestedTargets, currentTargetSlug) ) {
-      // $currentTarget.parent('.m-dashboard-target').toogleClass('is-open');
+      $currentTarget.parents('.m-dashboard-target').toggleClass('is-open');
     } else {
       this.indicatorsCollection.getInidcatorsByTarget(currentTargetSlug).done(_.bind(function() {
         this._renderIndicators(currentTargetSlug);
         this.requestedTargets.push(currentTargetSlug);
-        // $currentTarget.parent('.m-dashboard-target').toogleClass('is-open');
+        $currentTarget.parents('.m-dashboard-target').toggleClass('is-open');
       }, this))
     }
   },
@@ -78,24 +76,21 @@ var DashboardView = Backbone.View.extend({
     this.$('#targets-container').append(targetsTemplate({targets: targets}))
   },
 
-  _selectTarget: function(e) {
-    var $currentTarget = $(e.currentTarget);
-    var currentTargetSlug = $currentTarget.data('slug');
-
-    $currentTarget.addClass('is-active');
-
-    this._setActiveLayer('target', currentTargetSlug);
-  },
-
   _renderIndicators: function(targetSlug) {
     var indicatorsGrupedByType = this.indicatorsCollection.groupByType();
 
     this.$('#' + targetSlug).find('.js--indicators').html(indicatorsTemplate(indicatorsGrupedByType))
   },
 
-  _selectIndicator: function(e) {
-     var $currentIndicatorSlug = $(e.currentTarget).val();
-     this._setActiveLayer('indicator', $currentIndicatorSlug);
+  _selectLayer: function(e) {
+    var $currentTarget = $(e.currentTarget);
+    var currentTargetSlug = $currentTarget.val();
+
+    if ($currentTarget.hasClass('-target')) {
+      this._setActiveLayer('target', currentTargetSlug);
+    } else {
+      this._setActiveLayer('target', currentTargetSlug);
+    }
   },
 
   _setActiveLayer: function(type, layer) {

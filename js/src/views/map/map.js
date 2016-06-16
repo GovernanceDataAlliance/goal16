@@ -72,7 +72,7 @@ var MapView = Backbone.View.extend({
     this._createLayer().done(_.bind(function() {
       //We remove the previous layer just when the new one arrive.
       //This way, we are sure we only have one layer at a time.
-      this._removeLayer();
+
       this._addLayer();
     }, this));
   },
@@ -103,6 +103,7 @@ var MapView = Backbone.View.extend({
       data: JSON.stringify(request),
     }).done(data => {
       var tileUrl = 'http://'+ cartoAccount +'.cartodb.com/api/v1/map/'+ data.layergroupid + '/{z}/{x}/{y}.png32';
+      this._removeLayer();
       this.layer = L.tileLayer(tileUrl, { noWrap: true });
       return deferred.resolve();
     });
