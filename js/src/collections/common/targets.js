@@ -19,4 +19,4 @@ var TargetsCollection = CartoDBCollection.extend({
 
 });
 
-module.exports = TargetsCollection;
+module.exports = new TargetsCollection();
