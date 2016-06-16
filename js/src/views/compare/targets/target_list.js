@@ -1,46 +1,53 @@
 var $ = require('jquery'),
   Backbone = require('backbone');
 
-var TargetCardView = require('./target_card');
+var ScoreCardView = require('./score_card');
+
+var TargetsCollection = require('../../../collections/common/targets.js');
 
 var TargetListView = Backbone.View.extend({
 
-  el: '#target-list',
+  id: 'target-list',
 
   initialize: function(settings) {
     this.options = settings || {};
+    this.status = this.options.status;
 
-    this.cardViews = [];
+    this.scoreCardViews = [];
 
-    this._getTargetList();
+    this.targetsCollection = TargetsCollection;
   },
 
   _getTargetList: function() {
-    var targets = this.options.targets;
+    var targets = this.targetsCollection.toArray();
 
     targets.forEach(function(target) {
-      var cardView = this._getTargetCard(target);
-      this.cardViews.push(cardView);
+      var cardView = new ScoreCardView({
+        status: this.status,
+        target: target.toJSON()
+      });
+
+      this.scoreCardViews.push(cardView);
+
     }.bind(this));
   },
 
-  _getTargetCard: function(target) {
-    return new TargetCardView({
-      countries: this.options.countries,
-      target: target
+  updateScores: function() {
+    this.scoreCardViews.forEach(function(card) {
+      card.updateScores();
     });
   },
 
-  updateScores: function(settings) {
-    var countries = settings.countries;
-    this.cardViews.forEach(function(cardView) {
-      cardView.options.countries = countries;
-      cardView.updateScores();
-    });
+  showTargets: function() {
+    if (this.$el.hasClass('is-hidden')) {
+      this.$el.removeClass('is-hidden');
+    }
   },
 
   render: function() {
-    this.cardViews.forEach(function(card) {
+    this._getTargetList();
+
+    this.scoreCardViews.forEach(function(card) {
       this.$el.append(card.render().el);
     }.bind(this));
 
