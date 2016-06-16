@@ -89,7 +89,7 @@ var DashboardView = Backbone.View.extend({
     if ($currentTarget.hasClass('-target')) {
       this._setActiveLayer('target', currentTargetSlug);
     } else {
-      this._setActiveLayer('target', currentTargetSlug);
+      this._setActiveLayer('indicator', currentTargetSlug);
     }
   },
 

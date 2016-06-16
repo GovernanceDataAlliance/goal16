@@ -21,6 +21,8 @@
       font-size: rem(14px);
       line-height: rem(25px);
       color: $font-color-3;
+      font-family: $font-family-primary;
+      font-weight: $font-weight-regular;
 
       &.is-active {
         color: $font-color-1;

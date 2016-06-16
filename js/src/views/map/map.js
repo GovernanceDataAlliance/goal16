@@ -3,6 +3,8 @@ var $ = require('jquery'),
   enquire = require('enquire.js'),
   Backbone = require('backbone');
 
+var CONFIG = require('../../../config.json');
+
 var status = require ('../../models/map/status.js');
 
 var MapView = Backbone.View.extend({
@@ -21,7 +23,7 @@ var MapView = Backbone.View.extend({
       worldCopyJump: true
     },
     cartodb: {
-      user_name: 'goal16',
+      user_name: CONFIG.cartodb.user_name,
       noWrap: true,
       css: ''
     }
