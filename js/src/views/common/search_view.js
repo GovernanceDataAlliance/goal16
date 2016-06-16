@@ -4,7 +4,7 @@ var $ = require('jquery'),
   Handlebars = require('handlebars'),
   enquire = require('enquire.js');
 
-var SearchCollection = require('../../collections/common/countries.js');
+var searchCollection = require('../../collections/common/countries.js');
 
 var FunctionHelper = require('../../helpers/functions.js');
 
@@ -38,7 +38,7 @@ var SearchView = Backbone.View.extend({
     this.limit = -1;
 
     // collections
-    this.searchCollection = new SearchCollection();
+    this.searchCollection = searchCollection;
 
     // search elements
     this.elContent = this.options.elContent;

@@ -18,7 +18,7 @@ var CountryListView = Backbone.View.extend({
     this.listenTo(this.countries, 'sync', this.render);
 
     if (this.countries.length === 0) {
-      this.countries.fetch();
+      this.countries.getCountriesList();
     }
 
   },
@@ -72,7 +72,7 @@ var CountryListView = Backbone.View.extend({
   },
 
   _getRegions: function() {
-    var groupedRegions = this.countries.groupByRegion();
+    var groupedRegions = this.countries.getCountriesByRegion();
     var sortedRegions = _.mapValues(groupedRegions, function(countries, region) {
       return _.sortBy(countries, 'name');
     });

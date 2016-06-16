@@ -6,7 +6,7 @@ var $ = require('jquery'),
 
 var template = Handlebars.compile(require('../../templates/common/search_mobile_tpl.hbs'));
 
-var SearchCollection = require('../../collections/common/countries.js');
+var searchCollection = require('../../collections/common/countries.js');
 
 var FunctionHelper = require('../../helpers/functions.js');
 
@@ -19,7 +19,7 @@ var SearchMobileView = Backbone.View.extend({
   },
 
   initialize: function(settings) {
-    this.searchCollection = new SearchCollection();
+    this.searchCollection = searchCollection;
 
     this.functionHelper = FunctionHelper;
 

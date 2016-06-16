@@ -3,7 +3,7 @@ var _ = require('lodash'),
     Backbone = require('backbone'),
     Handlebars = require('handlebars');
 
-var Countries = require('../../collections/common/countries.js');
+var countries = require('../../collections/common/countries.js');
 var CountryList = require('./country_list.js');
 
 var SearchView = require('../common/search_view.js'),
@@ -15,7 +15,7 @@ var template = Handlebars.compile(
 var CountriesView = Backbone.View.extend({
 
   initialize: function() {
-    this.countries = new Countries();
+    this.countries = countries;
 
     enquire.register("screen and (max-width:769px)", {
       match: _.bind(function(){
