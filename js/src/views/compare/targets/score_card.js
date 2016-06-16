@@ -41,7 +41,7 @@ var ScoreCardView = Backbone.View.extend({
   },
 
   _setVars: function() {
-    this.$scoresTable = this.$el.find('.score-table');
+    this.$scoresTable = this.$el.find('#js--score-container');
     this.$openBtn = this.$el.find('.icon-open_arrow')
     this.$closeBtn = this.$el.find('.icon-close');
   },

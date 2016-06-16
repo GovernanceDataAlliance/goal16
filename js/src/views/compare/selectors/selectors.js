@@ -14,7 +14,7 @@ var SelectorsTemplate = require('../../../templates/compare/selectors/selectors.
 
 var SelectorsView = Backbone.View.extend({
 
-  className: 'l-selectors',
+  className: 'js--selectors',
 
   template: Handlebars.compile(SelectorsTemplate),
 
