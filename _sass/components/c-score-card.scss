@@ -1,0 +1,24 @@
+.c-score-card {
+
+  padding-bottom: rem(50px);
+
+  > .target-info {
+    display: flex;
+    justify-content: space-between;
+
+    padding-bottom: 15px;
+    border-bottom: 1px solid $border-2;
+  }
+
+  > .target-info > .target-title {
+    flex-basis: 75%;
+  }
+
+  > .target-info > .card-options {
+    position: relative;
+
+    > .js--toggle-card {
+      cursor: pointer;
+    }
+  }
+}

@@ -1,5 +1,6 @@
 .c-selector {
-  width: 310px;
+  width: rem(310px);
+
 
   > .btn-drop-down {
     position: relative;
@@ -8,7 +9,7 @@
     width: 100%;
     height: rem(45px);
     padding: 0 rem(6px) 0 rem(15px);
-    border: 1px solid $color-4;
+    border: 1px solid rgba($border-1, .5);
 
     @media screen and (min-width: $screen-m) {
       height: rem(45px);
@@ -16,13 +17,37 @@
       line-height: rem(11px) !important;
       padding: 0 rem(12px);
     }
+
+    &:after {
+      content: "";
+      @extend %centery;
+      @include arrow (5px, $color-5, 2px, 225deg);
+      top: 40%;
+      right: rem(20px);
+      pointer-events: none;
+
+      @media screen and (min-width: $screen-s) {
+        right: rem(10px);
+      }
+
+      @media screen and (min-width: $screen-l) {
+        right: rem(20px);
+      }
+    }
   }
 
   > .btn-drop-down select {
+    width: 100%;
+    height: 100%;
+    // height: rem(45px);
+
     padding: 0;
     padding-right: 15%;
-    width: 100%;
-    height: rem(45px);
+
+    font-family: $font-family-primary;
+    font-size: $font-size-xsmall;
+    color: $color-5;
+    letter-spacing: rem(.7px);
     text-transform: uppercase;
 
     &.-disabled {

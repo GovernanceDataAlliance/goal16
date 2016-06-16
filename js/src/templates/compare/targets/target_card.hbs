@@ -1,10 +1,13 @@
 
-<header>
+<header class="target-info">
 
-    <h2>{{ target.code }} - {{ target.title }}</h2>
+    <h3 class="target-title">{{ target.code }} - {{ target.title }}</h3>
 
     <div class="card-options">
-      <div class="toggle-card">x</div>
+      <div class="js--toggle-card">
+        <svg class="icon icon-open_arrow"><use xlink:href="#icon-open_bigarrow"></use></svg>
+        <svg class="icon icon-close is-hidden"><use xlink:href="#icon-close"></use></svg>
+      </div>
     </div>
 
 </header>

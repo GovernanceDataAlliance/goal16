@@ -14,12 +14,13 @@ var TargetCardTemplate = require('../../../templates/compare/targets/target_card
 var ScoreCardView = Backbone.View.extend({
 
   tagName: 'article',
+
   className: 'c-score-card',
 
   template: Handlebars.compile(TargetCardTemplate),
 
   events: {
-    'click .toggle-card' : '_toggleCard'
+    'click .js--toggle-card' : '_toggleCard'
   },
 
   initialize: function(settings) {
@@ -41,6 +42,8 @@ var ScoreCardView = Backbone.View.extend({
 
   _setVars: function() {
     this.$scoresTable = this.$el.find('.score-table');
+    this.$openBtn = this.$el.find('.icon-open_arrow')
+    this.$closeBtn = this.$el.find('.icon-close');
   },
 
   _getInfo: function() {
@@ -72,11 +75,17 @@ var ScoreCardView = Backbone.View.extend({
   updateScores: function() {
     this.removeScores();
 
+    this.$openBtn.removeClass('is-hidden');
+    this.$closeBtn.addClass('is-hidden');
     this.$scoresTable.addClass('is-hidden');
+
     this._getInfo();
   },
 
   _toggleCard: function() {
+
+    this.$openBtn.toggleClass('is-hidden');
+    this.$closeBtn.toggleClass('is-hidden');
 
     if (!this.scoresCollection.isEmpty()) {
       this.$scoresTable.toggleClass('is-hidden');
