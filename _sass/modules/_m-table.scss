@@ -57,7 +57,7 @@
       p {
         display: inline-block;
         font-size: rem(35px);
-        font-family: $font-secondary;
+        font-family: $font-family-secondary;
         font-weight: 700;
       }
 
@@ -66,13 +66,13 @@
       }
 
       .usd {
-        .max_score, 
+        .max_score,
         .units {
           font-size: rem(12px);
         }
 
         @media screen and (min-width: 768px) {
-          .max_score, 
+          .max_score,
           .units {
             font-size: rem(20px);
           }
@@ -81,7 +81,7 @@
 
       .units {
         align-self: flex-end;
-        font-family: $font-secondary;
+        font-family: $font-family-secondary;
         font-weight: 400;
         font-size: rem(20px);
         letter-spacing: .1px;
@@ -89,29 +89,29 @@
       }
 
       // Scores
-      &.-score-excellent {
-        color: $excellent;
-      }
-
-      &.-score-good {
-        color: $good;
-      }
-
-      &.-score-moderate {
-        color: $moderate;
-      }
-
-      &.-score-fair {
-        color: $fair;
-      }
-
-      &.-score-poor {
-        color: $poor;
-      }
+      // &.-score-excellent {
+      //   color: $excellent;
+      // }
+      //
+      // &.-score-good {
+      //   color: $good;
+      // }
+      //
+      // &.-score-moderate {
+      //   color: $moderate;
+      // }
+      //
+      // &.-score-fair {
+      //   color: $fair;
+      // }
+      //
+      // &.-score-poor {
+      //   color: $poor;
+      // }
     }
 
     &.-load-more {
-      font-family: $font-secondary;
+      font-family: $font-family-secondary;
       font-size: rem(11px);
       letter-spacing: rem(0.6px);
       color: $font-color-3;

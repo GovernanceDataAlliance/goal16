@@ -5,7 +5,10 @@ var CONFIG = require('../../../config.json');
 
 var IndicatorsCollection = CartoDBCollection.extend({
 
-  indicators_table: CONFIG.cartodb.indicators_table
+  indicators_table: CONFIG.cartodb.indicators_table,
+
+  // get indicators by slug target
+  getIndicatorsByTarget: function() {}
 
 });
 

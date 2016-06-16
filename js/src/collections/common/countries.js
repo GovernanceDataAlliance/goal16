@@ -5,18 +5,36 @@ var CONFIG = require('../../../config.json');
 
 var Handlebars = require('handlebars');
 
-var countriesListSQL = Handlebars.compile(require('../../queries/common/countries_list.hbs'));
+var countriesListSQL = Handlebars.compile(require('../../queries/countries/countries_list.hbs'));
 
 var CountriesCollection = CartoDBCollection.extend({
 
-  table: CONFIG.cartodb.countries_table,
+  countries_table: CONFIG.cartodb.countries_table,
 
   // list of countries (no filters)
   getCountriesList: function() {
-    var query = countriesListSQL({ table: this.table }),
+    var query = countriesListSQL({ countries_table: this.countries_table }),
       url = this._urlForQuery(query);
 
     return this.fetch({ url: url });
+  },
+
+  // get country information, once collection is loaded previously,
+  // through an iso array
+  getCountryData: function(isoArray) {
+    var countries = [];
+
+    isoArray.forEach(function(iso) {
+      if (!iso) {
+        return;
+      }
+
+      var countryData = this.findWhere({ iso: iso });
+      countries.push(countryData.toJSON());
+
+    }.bind(this));
+
+    return countries;
   },
 
   // list of countries by region
@@ -26,4 +44,4 @@ var CountriesCollection = CartoDBCollection.extend({
 
 });
 
-module.exports = CountriesCollection;
+module.exports = new CountriesCollection();

@@ -1,4 +1,5 @@
 var  $ = require('jquery'),
+    _ = require('lodash'),
     Backbone = require('backbone'),
     format = require('./format.js');
 
@@ -26,6 +27,10 @@ var CartoDBCollection = Backbone.Collection.extend({
     }
 
     return format("SELECT {0} FROM {1}", columns, this.table);
+  },
+
+  isEmpty: function() {
+    return _.compact(_.values(this.toJSON())).length > 0 ? false : true;
   },
 
   parse: function(data) {

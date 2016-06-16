@@ -294,7 +294,7 @@
       font-weight: 700;
       color: #5b5b5b;
       text-transform: uppercase;
-      font-family: $font-secondary;
+      font-family: $font-family-secondary;
     }
 
     .btn:last-child {
@@ -365,7 +365,7 @@
       }
 
       > .global-score {
-        font-family: $font-secondary;
+        font-family: $font-family-secondary;
         font-weight: 700;
         font-size: rem(62px);
         letter-spacing: rem(-3.6px);
@@ -385,7 +385,7 @@
         .units {
           margin-left: rem(-8px);
           align-self: flex-end;
-          font-family: $font-secondary;
+          font-family: $font-family-secondary;
           font-weight: 400;
           font-size: rem(15px);
           letter-spacing: rem(.1px);
@@ -530,65 +530,65 @@
   }
 
   // Scores
-  &.-score-excellent {
-    .global-score { color: $excellent;}
-    .graph > svg { stroke: $excellent;}
-  }
-
-  &.-score-good {
-    .global-score { color: $good;}
-    .graph > svg { stroke: $good;}
-  }
-
-  &.-score-moderate {
-    .global-score { color: $moderate;}
-    .graph > svg { stroke: $moderate;}
-  }
-
-  &.-score-fair {
-    .global-score { color: $fair;}
-    .graph > svg { stroke: $fair;}
-  }
-
-  &.-score-poor {
-    color: $font-color-2;
-    background-color: $poor;
-
-    .index-description {
-      .name,
-      .name a {
-        color: $font-color-2;
-      }
-
-      .organization {
-        color: $font-color-2;
-  
-        .btn-info {
-          color: $font-color-3;
-          background-color: $white;
-        }
-      }
-    }
-
-    .btn,
-    .read-more,
-    .read-less  {
-      color: $font-color-2;
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-
-    .read-more:after,
-    .read-less:after {
-      border-color: $font-color-2;
-    }
-
-    .partial-scores-wrapper,
-    .index-score .partial-scores {
-      background-color: #850e27;
-    }
-
-    .graph > svg { stroke: $white;}
-  }
+  // &.-score-excellent {
+  //   .global-score { color: $excellent;}
+  //   .graph > svg { stroke: $excellent;}
+  // }
+  //
+  // &.-score-good {
+  //   .global-score { color: $good;}
+  //   .graph > svg { stroke: $good;}
+  // }
+  //
+  // &.-score-moderate {
+  //   .global-score { color: $moderate;}
+  //   .graph > svg { stroke: $moderate;}
+  // }
+  //
+  // &.-score-fair {
+  //   .global-score { color: $fair;}
+  //   .graph > svg { stroke: $fair;}
+  // }
+  //
+  // &.-score-poor {
+  //   color: $font-color-2;
+  //   background-color: $poor;
+  //
+  //   .index-description {
+  //     .name,
+  //     .name a {
+  //       color: $font-color-2;
+  //     }
+  //
+  //     .organization {
+  //       color: $font-color-2;
+  //
+  //       .btn-info {
+  //         color: $font-color-3;
+  //         background-color: $white;
+  //       }
+  //     }
+  //   }
+  //
+  //   .btn,
+  //   .read-more,
+  //   .read-less  {
+  //     color: $font-color-2;
+  //     &:hover {
+  //       text-decoration: underline;
+  //     }
+  //   }
+  //
+  //   .read-more:after,
+  //   .read-less:after {
+  //     border-color: $font-color-2;
+  //   }
+  //
+  //   .partial-scores-wrapper,
+  //   .index-score .partial-scores {
+  //     background-color: #850e27;
+  //   }
+  //
+  //   .graph > svg { stroke: $white;}
+  // }
 }

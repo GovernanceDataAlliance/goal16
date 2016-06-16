@@ -1,0 +1,15 @@
+{{#if scores}}
+  <ul>
+
+    {{#each countries}}
+      <span>{{ name }}</span>
+    {{/each}}
+
+    {{#each scores}}
+
+      <li>{{ code }}  {{ title }}</li>
+
+    {{/each}}
+
+  </ul>
+{{/if}}

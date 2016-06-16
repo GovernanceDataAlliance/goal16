@@ -1,7 +1,6 @@
 var $ = require('jquery'),
   _ = require('lodash'),
   Backbone = require('backbone'),
-  async = require('async'),
   enquire = require('enquire.js'),
   Handlebars = require('handlebars');
 
@@ -10,14 +9,14 @@ var TargetsCollection = require('../../collections/common/targets.js');
 
 var Status = require ('../../models/compare/status.js');
 
-var TargetListView = require('./targets/target_list.js');
+var SelectorsView = require('./selectors/selectors.js'),
+  TargetListView = require('./targets/target_list.js');
 
 var template = Handlebars.compile(require('../../templates/compare/index.hbs'));
 
-
 var CompareView = Backbone.View.extend({
 
-  id: 'js--compare-container',
+  id: 'compare-container',
   className: 'compare-container',
 
   events: {
@@ -31,27 +30,34 @@ var CompareView = Backbone.View.extend({
     this.status = new Status();
 
     // collections
-    this.countriesCollection = new CountriesCollection();
-    this.targetsCollection = new TargetsCollection();
+    this.countriesCollection = CountriesCollection;
+    this.targetsCollection = TargetsCollection;
+
+    // views
+    this.selectorsView = new SelectorsView({
+      status: this.status
+    });
+
+    this.targetListView = new TargetListView({
+      status: this.status
+    });
   },
 
   // this function initializes just before initial render
   show: function() {
     this._setView();
-    this._setVars();
-    this._setListeners();
 
-    this.countriesCollection.getCountriesList().done(this._populateSelectors.bind(this));
-    this.targetsCollection.getTargetsList().done(this._renderTargets.bind(this));
+    $.when(
+      this.countriesCollection.getCountriesList(),
+      this.targetsCollection.getTargetsList()
+    ).done(function() {
+      this._renderSelectors();
+      this._renderTargetList();
+    }.bind(this));
   },
 
-  _updateRouterParams() {
+  _updateRouterParams: function() {
     Backbone.Events.trigger('router:update-params', this.status);
-  },
-
-  _setVars: function() {
-    this.$selectors = this.$el.find('#compare-countries-selectors select');
-    this.$targetList = this.$el.find('#target-list');
   },
 
   _setView: function() {
@@ -68,95 +74,26 @@ var CompareView = Backbone.View.extend({
     });
   },
 
-  _setListeners: function() {
-    this.$selectors.on('change', this._setCountry.bind(this));
-    this.status.on('change', this._checkSelectors.bind(this));
-  },
-
-  _populateSelectors: function() {
-    var selectOptions;
-
-    this.countriesCollection.forEach(function(countryModel) {
-      var country = countryModel.toJSON();
-      selectOptions += '<option value="' + country.iso + '">' + country.name + '</option>';
-    });
-
-    this.$selectors.each(function(i, selector) {
-      $(selector).append(selectOptions);
-    });
-
-    var currentCountries = _.uniq(_.values(this.status.toJSON()));
-
-    if (!(_.compact(currentCountries).length)) {
-      return;
-    }
-
-    this.$selectors.each(function(i, selector) {
-      if (!currentCountries[i]) {
-        return;
-      }
-
-      this.value = currentCountries[i];
-    });
-
-    this._checkSelectors();
-  },
-
-  _checkSelectors: function() {
-    var newCountries = _.values(this.status.toJSON());
-
-    this.$selectors.each(function(i, selector) {
-
-      $(selector).find('option:disabled').removeAttr('disabled');
-
-      _.map(newCountries, function(iso, i) {
-
-        if (iso == '') {
-          return;
-        }
-
-        $(selector).find('option:not(:selected)[value="' + iso + '"]').attr('disabled', 'disabled');
-
-      }, this);
-
-    }.bind(this));
-  },
-
-  // set status with new incoming params
-  _setCountry: function(e) {
-    var selector = e.currentTarget;
-      id = selector.id,
-      iso = selector.value;
-
-    var newStatus = this.status.toJSON()
-    newStatus[id] = iso;
-
-    this.status.set(newStatus);
+  _renderSelectors: function() {
+    this.$el.find('#selectors-container').html(this.selectorsView.render().el);
   },
 
   _compareCountries: function() {
+
+    // Think about a way to avoid clicking on compare
+    // when countries haven't been modified
+
     this._updateRouterParams();
-    this._showTargets();
+    this.targetListView.updateScores();
   },
 
-  _showTargets() {
+  _renderTargetList: function() {
+    var countries = _.compact(_.values(this.status.toJSON()));
 
-    if (this.$targetList.hasClass('is-hidden')) {
-      this.$targetList.removeClass('is-hidden');
-    }
-  },
+    this.$el.find('#target-list-container').html(this.targetListView.render().el);
 
-  _renderTargets: function() {
-    var countries = _.values(this.status.toJSON());
-
-    new TargetListView({
-      targets: this.targetsCollection.toJSON(),
-      countries: countries
-    }).render();
-
-    // show target list if countries are already setted
-    if (_.compact(countries).length > 0) {
-      this._showTargets();
+    if (countries.length > 1) {
+      this.targetListView.showTargets();
     }
   },
 
