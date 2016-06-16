@@ -1,6 +1,6 @@
 .btn {
   font-size: rem(11px);
-  font-family: $font-secondary;
+  font-family: $font-family-secondary;
   text-transform: uppercase;
   text-align: center;
   width: 100%;
@@ -233,53 +233,53 @@
     margin-top: 0;
   }
 
-  select {
-    padding: 0;
-    padding-right: 15%;
-    width: 100%;
-    height: rem(45px);
-    text-transform: uppercase;
+  // select {
+  //   padding: 0;
+  //   padding-right: 15%;
+  //   width: 100%;
+  //   height: rem(45px);
+  //   text-transform: uppercase;
+  //
+  //   @media screen and (min-width: $screen-m) {
+  //     padding-right: 5%;
+  //   }
+  //
+  //   &:hover {
+  //     color: $color-4;
+  //   }
+  //
+  //   &:disabled {
+  //     opacity: .5;
+  //   }
+  // }
+  //
+  // .chzn-container,
+  // .chzn-container-single .chzn-single {
+  //   height: rem(43px);
+  //   line-height: rem(40px);
+  //   padding: 0;
+  //
+  //   span:hover {
+  //     color: $color-4;
+  //   }
+  // }
 
-    @media screen and (min-width: $screen-m) {
-      padding-right: 5%;
-    }
-
-    &:hover {
-      color: $color-4;
-    }
-
-    &:disabled {
-      opacity: .5;
-    }
-  }
-
-  .chzn-container,
-  .chzn-container-single .chzn-single {
-    height: rem(43px);
-    line-height: rem(40px);
-    padding: 0;
-
-    span:hover {
-      color: $color-4;
-    }
-  }
-
-  &:after {
-    content: "";
-    @extend %centery;
-    @include arrow (5px, $color-2, 2px, 225deg);
-    top: 40%;
-    right: rem(20px);
-    pointer-events: none;
-
-    @media screen and (min-width: $screen-s) {
-      right: rem(10px);
-    }
-
-    @media screen and (min-width: $screen-l) {
-      right: rem(20px);
-    }
-  }
+  // &:after {
+  //   content: "";
+  //   @extend %centery;
+  //   @include arrow (5px, $color-2, 2px, 225deg);
+  //   top: 40%;
+  //   right: rem(20px);
+  //   pointer-events: none;
+  //
+  //   @media screen and (min-width: $screen-s) {
+  //     right: rem(10px);
+  //   }
+  //
+  //   @media screen and (min-width: $screen-l) {
+  //     right: rem(20px);
+  //   }
+  // }
 }
 
 .l-banner .btn-drop-down .chzn-container-single .chzn-drop {
@@ -300,7 +300,7 @@
   margin: rem(30px) rem(20px) rem(5px) rem(5px);
 
   cursor: pointer;
-  font-family: $font-main;
+  font-family: $font-family-primary;
   font-weight: bold;
   color: $color-4;
   font-size: rem(20px);

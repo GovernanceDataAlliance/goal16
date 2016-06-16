@@ -19,7 +19,7 @@
         transform: translate(-50%, 0);
         background-color: #eeedea;
         box-shadow: 0 0 4px rgba(91, 91, 91, .3);
-        
+
         &:before {
           @include equi-triangle(rem(12px), #eeedea, top);
           content: '';
@@ -97,25 +97,25 @@
         margin-right: rem(5px);
       }
 
-      &.-excellent:before {
-        background: $excellent;
-      }
-
-      &.-good:before {
-        background: $good;
-      }
-
-      &.-moderate:before {
-        background: $moderate;
-      }
-
-      &.-fair:before {
-        background: $fair;
-      }
-
-      &.-poor:before {
-        background: $poor;
-      }
+      // &.-excellent:before {
+      //   background: $excellent;
+      // }
+      //
+      // &.-good:before {
+      //   background: $good;
+      // }
+      //
+      // &.-moderate:before {
+      //   background: $moderate;
+      // }
+      //
+      // &.-fair:before {
+      //   background: $fair;
+      // }
+      //
+      // &.-poor:before {
+      //   background: $poor;
+      // }
 
       &.literal {
         font-family: "Montserrat";
