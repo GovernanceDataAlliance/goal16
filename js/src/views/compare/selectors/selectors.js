@@ -1,7 +1,12 @@
-var $ = require('jquery'),
-  _ = require('lodash'),
+
+var $ = require('jquery');
+global.$ = $; // for chosen.js
+
+var _ = require('lodash'),
   Backbone = require('backbone'),
-  Handlebars = require('handlebars');
+  Handlebars = require('handlebars'),
+  chosen = require('chosen-jquery-browserify');
+
 
 var CountriesCollection = require('../../../collections/common/countries.js');
 
@@ -9,7 +14,7 @@ var SelectorsTemplate = require('../../../templates/compare/selectors/selectors.
 
 var SelectorsView = Backbone.View.extend({
 
-  className: 'selectors-box',
+  className: 'js--selectors',
 
   template: Handlebars.compile(SelectorsTemplate),
 
@@ -81,6 +86,12 @@ var SelectorsView = Backbone.View.extend({
     this._checkSelectors();
   },
 
+  _setChosen: function() {
+    this.$selectors.each(function(i, selector) {
+      $(selector).chosen();
+    });
+  },
+
   // enable/disable selector's options based on
   // the current status of the application
   _checkSelectors: function() {
@@ -126,6 +137,8 @@ var SelectorsView = Backbone.View.extend({
     this._setVars();
     this._setListeners();
     this._populateSelectors();
+    // this._setChosen();
+    this._checkCompareButton();
 
     return this;
   }

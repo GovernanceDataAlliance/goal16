@@ -1,26 +1,39 @@
 .m-dashboard-target {
   padding: rem(25px) rem(35px);
-  border-bottom: rem(1px) solid $border-2;
-
-  &.is-open {
-    background-color: $bg-color-1;
-  }
+  border-bottom: rem(1px) solid $border-3;
 
   .header {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
 
+    .btn-wrapper {
+      position: absolute;
+    }
+
     .btn-open-target,
     .btn-close-target {
+      position: absolute;
+      top: rem(10px);
+      left: 0;
+      z-index: 1;
       width: rem(16px);
       height: rem(16px);
+      line-height: rem(16px);
       border-radius: 50%;
       border: rem(2px) solid $color-1;
     }
 
+    .btn-open-target {
+      display: block;
+    }
+
+    .btn-close-target {
+      display: none;
+    }
+
     .target-title {
-      margin-left: rem(10px);
+      margin-left: rem(26px);
       padding: rem(5px);
       font-size: rem($font-size-small);
       line-height: rem(25px);
@@ -32,6 +45,18 @@
         color: $font-color-1;
         background-color: $white;
       }
+    }
+  }
+
+  &.is-open {
+    background-color: $bg-color-1;
+
+    .btn-open-target {
+      display: none;
+    }
+
+    .btn-close-target {
+      display: block;
     }
   }
 }
