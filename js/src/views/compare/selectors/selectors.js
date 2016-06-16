@@ -1,4 +1,3 @@
-
 var $ = require('jquery');
 global.$ = $; // for chosen.js
 
@@ -86,12 +85,6 @@ var SelectorsView = Backbone.View.extend({
     this._checkSelectors();
   },
 
-  _setChosen: function() {
-    this.$selectors.each(function(i, selector) {
-      $(selector).chosen();
-    });
-  },
-
   // enable/disable selector's options based on
   // the current status of the application
   _checkSelectors: function() {
@@ -129,6 +122,12 @@ var SelectorsView = Backbone.View.extend({
         this.$compareBtn.addClass('-disabled');
       }
     }
+  },
+
+  setChosen: function() {
+    this.$selectors.each(function(i, selector) {
+      $(selector).chosen();
+    });
   },
 
   render: function() {
