@@ -1,0 +1,12 @@
+.l-selectors {
+  padding: 30px 0;
+  > .selectors-box {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  > .buttons-box {
+    display: flex;
+    justify-content: center;
+  }
+}
