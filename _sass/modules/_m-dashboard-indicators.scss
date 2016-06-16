@@ -1,4 +1,21 @@
 .m-dashboard-indicators {
+  display: none;
+
+  .is-open & {
+    display: block;
+  }
+
+  .indicators-type-wrapper {
+    margin-left: rem(60px);
+
+    &.official-indicators {
+      margin-top: rem(20px);
+    }
+
+    &.shadow-indicators {
+      margin-top: rem(20px);
+    }
+  }
 
   .indicator-type {
     display: block;
@@ -12,19 +29,28 @@
 
   .indicator-wrapper {
     margin-bottom: rem(10px);
+    overflow: hidden;
 
     input {
+      @extend %clean-button-or-input;
       float: left;
       width: rem(16px);
       height: rem(16px);
       border-radius: 50%;
       background-color: $bg-color-1;
       border: rem(1px) solid $color-4;
+
+      &:checked {
+        border-width: rem(4px);
+        border-color: $color-1;
+      }
+
     }
 
     label {
       float: left;
       margin-left: rem(10px);
+      max-width: 80%;
     }
 
     .indicator-title {
@@ -45,11 +71,4 @@
   }
 }
 
-.indicators-wrapper {
-  margin-left: rem(60px);
-
-  &.official-indicators {
-    margin-top: rem(20px);
-  }
-}
 

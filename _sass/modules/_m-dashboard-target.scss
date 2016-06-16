@@ -2,6 +2,10 @@
   padding: rem(25px) rem(35px);
   border-bottom: rem(1px) solid $border-2;
 
+  &.is-open {
+    background-color: $bg-color-1;
+  }
+
   .header {
     display: flex;
     justify-content: flex-start;

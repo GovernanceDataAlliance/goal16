@@ -56,11 +56,14 @@ var DashboardView = Backbone.View.extend({
     var currentTargetSlug = $currentTarget.data('slug');
 
     if ( _.includes(this.requestedTargets, currentTargetSlug) ) {
+      this.$targetsWrapper.removeClass('is-open');
       $currentTarget.parents('.m-dashboard-target').toggleClass('is-open');
     } else {
       this.indicatorsCollection.getInidcatorsByTarget(currentTargetSlug).done(_.bind(function() {
         this._renderIndicators(currentTargetSlug);
         this.requestedTargets.push(currentTargetSlug);
+
+        this.$targetsWrapper.removeClass('is-open');
         $currentTarget.parents('.m-dashboard-target').toggleClass('is-open');
       }, this))
     }
@@ -73,7 +76,13 @@ var DashboardView = Backbone.View.extend({
 
   _renderTargets: function() {
     var targets = this.targetsCollection.toJSON();
-    this.$('#targets-container').append(targetsTemplate({targets: targets}))
+    this.$('#targets-container').append(targetsTemplate({targets: targets}));
+
+    this._setVars();
+  },
+
+  _setVars: function() {
+    this.$targetsWrapper = $('.m-dashboard-target');
   },
 
   _renderIndicators: function(targetSlug) {
