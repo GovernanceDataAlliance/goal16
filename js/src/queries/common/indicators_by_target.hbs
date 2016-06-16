@@ -1,0 +1,10 @@
+
+select 
+  code, 
+  slug, 
+  title,
+  type, 
+  target_slug 
+from 
+  {{ table }} 
+where target_slug = '{{ slug }}'
