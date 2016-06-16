@@ -14,6 +14,7 @@ var TargetCardTemplate = require('../../../templates/compare/targets/target_card
 var ScoreCardView = Backbone.View.extend({
 
   tagName: 'article',
+
   className: 'c-score-card',
 
   template: Handlebars.compile(TargetCardTemplate),

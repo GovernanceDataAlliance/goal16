@@ -20,37 +20,37 @@
         height: 7px;
       }
 
-      &.-excellent:before {
-        background: $excellent;
-      }
-
-      &.-good:before {
-        background: $good;
-      }
-
-      &.-moderate:before {
-        background: $moderate;
-      }
-
-      &.-fair:before {
-        background: $fair;
-      }
-
-      &.-poor:before {
-        background: $poor;
-      }
-
-      &.literal {
-        font-family: $font-secondary;
-        font-size: rem(11px);
-        text-transform: uppercase;
-        color: $font-color-3;
-        margin-right: rem(4px);
-
-        &:before {
-          display: none;
-        }
-      }
+      // &.-excellent:before {
+      //   background: $excellent;
+      // }
+      //
+      // &.-good:before {
+      //   background: $good;
+      // }
+      //
+      // &.-moderate:before {
+      //   background: $moderate;
+      // }
+      //
+      // &.-fair:before {
+      //   background: $fair;
+      // }
+      //
+      // &.-poor:before {
+      //   background: $poor;
+      // }
+      //
+      // &.literal {
+      //   font-family: $font-family-secondary;
+      //   font-size: rem(11px);
+      //   text-transform: uppercase;
+      //   color: $font-color-3;
+      //   margin-right: rem(4px);
+      //
+      //   &:before {
+      //     display: none;
+      //   }
+      // }
     }
 
     .legend-item {
