@@ -20,7 +20,8 @@ var DashboardView = Backbone.View.extend({
 
   events: {
     'click .js--toggle-dashboard': '_toggleDashboard',
-    'click .js--toggle-target': '_toogleIndicators',
+    'click .js--open-target': '_showIndicators',
+    'click .js--close-target': '_hideIndicators',
     'change .js--layer-selector': '_selectLayer',
   },
 
@@ -49,7 +50,7 @@ var DashboardView = Backbone.View.extend({
     $('body').toggleClass('is-dashboard-close');
   },
 
-  _toogleIndicators: function(e) {
+  _showIndicators: function(e) {
     //1 - Check if the indicator has already been requested.
     //2 - if so, open target. If not, request indicators and open target.
     var $currentTarget = $(e.currentTarget);
@@ -57,16 +58,21 @@ var DashboardView = Backbone.View.extend({
 
     if ( _.includes(this.requestedTargets, currentTargetSlug) ) {
       this.$targetsWrapper.removeClass('is-open');
-      $currentTarget.parents('.m-dashboard-target').toggleClass('is-open');
+      $currentTarget.parents('.m-dashboard-target').addClass('is-open');
     } else {
       this.indicatorsCollection.getInidcatorsByTarget(currentTargetSlug).done(_.bind(function() {
         this._renderIndicators(currentTargetSlug);
         this.requestedTargets.push(currentTargetSlug);
 
         this.$targetsWrapper.removeClass('is-open');
-        $currentTarget.parents('.m-dashboard-target').toggleClass('is-open');
+        $currentTarget.parents('.m-dashboard-target').addClass('is-open');
       }, this))
     }
+  },
+
+  _hideIndicators: function(e) {
+    var $currentTarget = $(e.currentTarget);
+    $currentTarget.parents('.m-dashboard-target').removeClass('is-open');
   },
 
   render: function() {

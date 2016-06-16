@@ -11,7 +11,8 @@
     justify-content: flex-start;
     align-items: flex-start;
 
-    .btn-toggle-target {
+    .btn-open-target,
+    .btn-close-target {
       width: rem(16px);
       height: rem(16px);
       border-radius: 50%;
@@ -34,3 +35,4 @@
     }
   }
 }
+
