@@ -1,6 +1,6 @@
 .btn {
   font-size: rem(11px);
-  font-family: $font-secondary;
+  font-family: $font-family-secondary;
   text-transform: uppercase;
   text-align: center;
   width: 100%;
@@ -300,7 +300,7 @@
   margin: rem(30px) rem(20px) rem(5px) rem(5px);
 
   cursor: pointer;
-  font-family: $font-main;
+  font-family: $font-family-primary;
   font-weight: bold;
   color: $color-4;
   font-size: rem(20px);

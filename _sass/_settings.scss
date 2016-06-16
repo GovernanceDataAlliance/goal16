@@ -1,8 +1,8 @@
-$dashboard-width: 400px;
 /*
  * Add here values that
  * affect the whole proyect
  */
+
 ////////////////////
 //**** Screen ****//
 ////////////////////
@@ -21,24 +21,40 @@ $grid-max-width: 1400px;
 $wrap-padding-mobile: 20px;
 $wrap-padding-tablet: 30px;
 $wrap-padding-desktop: 40px;
-$wrap-padding-desktop-xl: 80px;
+$wrap-padding-desktop-xl: 90px;
 $content-width: 80%;
 $content-width-xl: 90%;
 
 ////////////////////
+//**** Layout ****//
+////////////////////
+$dashboard-width: 400px;
+
+////////////////////
 //**** Fonts ****//
 ////////////////////
-$font-main: 'Lora', sans-serif;
-$font-secondary: 'Montserrat';
+$font-family-primary: 'Merriweather', serif;
+$font-family-secondary: 'Lora',  serif;
 
-//Font sizes
-$font-size: 20px;
+$font-size-xlarge: 55px;
+$font-size-large: 27px;
+$font-size-medium: 19px;
+$font-size-normal: 16px;
+$font-size-small: 14px;
+$font-size-xsmall: 10px;
+
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-semi: 600;
+$font-weight-bold: 700;
 
 
 ////////////////////
 //**** Colors ****//
 ////////////////////
-$white: #fff;
+
+
+// delete these colors
 $beige: #beb7aa;
 $beige-medium: #eceae8;
 $beige-light: #f4f3f2;
@@ -59,6 +75,10 @@ $blue-evergreen: #073339;
 $blue-grey: #a1babd;
 $blue-green: #156975;
 $pale-grey: #f6faf9;
+$soft-green: #82bf72;
+$turquoise: #04beb0;
+
+$white: #fff;
 
 
 $dark-grey: #9b9b9b;
@@ -71,33 +91,21 @@ $color-1: $blue-topaz;
 $color-2: $blue-evergreen;
 $color-3: $blue-grey;
 $color-4: $blue-green;
+$color-5: $soft-green;
 
+// background colors
 $bg-color-1: $pale-grey;
-
 $bg-color-2: $brown;
 $bg-color-3: $beige;
 $bg-color-4: $beige-medium;
-
-$excellent: $dark-green;
-$good: $green;
-$moderate: $yellow;
-$fair: $orange;
-$poor: $magenta;
 
 //Font colors
 $font-color-1: $blue-evergreen;
 $font-color-2: $white;
 $font-color-3: $blue-topaz;
+$font-color-4: $turquoise;
+$font-color-5: $dark-grey;
 
-$font-color-4: $dark-grey;
-$font-color-hover: $turquoise;
 
-//bprder-colors
-$border-1: $light-grey;
-
-//Rank colors
-$rank-1: $green;
-
-////////////////////
-//**** Margins ***//
-////////////////////
+//border-colors
+$border-1: $color-5;

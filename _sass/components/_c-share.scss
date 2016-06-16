@@ -48,7 +48,7 @@
     width: 100%;
     margin-bottom: rem(10px);
     padding: rem(16px) rem(10px);
-    font-family: $font-secondary;
+    font-family: $font-family-secondary;
     font-size: rem(14px);
     font-style: italic;
     color: #5b5b5b;
@@ -73,7 +73,7 @@
   .btn-copy {
     width: 100%;
     height: rem(51px);
-    font-family: $font-secondary;
+    font-family: $font-family-secondary;
     font-size: rem(11px);
     cursor: pointer;
     text-align: center;

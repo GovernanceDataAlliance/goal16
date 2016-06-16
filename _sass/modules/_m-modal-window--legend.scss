@@ -1,7 +1,7 @@
 .m-modal-window .-legend {
 
   > ul {
-    display: flex; 
+    display: flex;
     display: -ms-box;
     flex-direction: row;
     flex-wrap: wrap;
@@ -13,7 +13,7 @@
     }
 
     li {
-      display: flex; 
+      display: flex;
       display: -ms-box;
       align-items: center;
       justify-content: center;
@@ -42,41 +42,41 @@
         }
       }
 
-      &.-excellent:before {
-        background: $excellent;
-      }
-
-      &.-good:before {
-        background: $good;
-      }
-
-      &.-moderate:before {
-        background: $moderate;
-      }
-
-      &.-fair:before {
-        background: $fair;
-      }
-
-      &.-poor:before {
-        background: $poor;
-      }
-
-      &.literal {
-        font-family: $font-secondary;
-        font-size: rem(11px);
-        text-transform: uppercase;
-        color: $font-color-3;
-        margin-right: rem(4px);
-
-        &:before {
-          display: none;
-        }
-      }
+      // &.-excellent:before {
+      //   background: $excellent;
+      // }
+      //
+      // &.-good:before {
+      //   background: $good;
+      // }
+      //
+      // &.-moderate:before {
+      //   background: $moderate;
+      // }
+      //
+      // &.-fair:before {
+      //   background: $fair;
+      // }
+      //
+      // &.-poor:before {
+      //   background: $poor;
+      // }
+      //
+      // &.literal {
+      //   font-family: $font-family-secondary;
+      //   font-size: rem(11px);
+      //   text-transform: uppercase;
+      //   color: $font-color-3;
+      //   margin-right: rem(4px);
+      //
+      //   &:before {
+      //     display: none;
+      //   }
+      // }
     }
 
     .legend-item {
-      font-family: $font-secondary;
+      font-family: $font-family-secondary;
       font-size: rem(10px);
       letter-spacing: rem(0.2px);
       color: $brown;
