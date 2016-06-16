@@ -3,9 +3,10 @@ var _ = require('lodash'),
   URI = require('urijs');
 
 var ViewManager = require('./lib/view_manager.js'),
+  MobileMenuView = require('./views/common/mobile_menu_view.js'),
+  WelcomeView = require('./views/welcome/welcome.js'),
   MapView = require('./views/map/map.js'),
   DashboardView = require('./views/map/dashboard.js'),
-  MobileMenuView = require('./views/common/mobile_menu_view.js'),
   CompareView = require('./views/compare/compare.js'),
   CountriesView = require('./views/countries/countries.js'),
   CountryView = require('./views/countries/country.js');
@@ -19,8 +20,8 @@ var Router = Backbone.Router.extend({
    */
 
   routes: {
-    "(/)": "map",
-    "map(/)": "map",
+    "(/)": "welcome",
+    "map(/)(?layerType=:type)(&layer=:layer)(&zoom=:zoom)(&center=:center)": "map",
     "countries(/)(?iso=:iso)": "countries",
     "compare(/)": "compare"
   },
@@ -40,8 +41,19 @@ var Router = Backbone.Router.extend({
     new MobileMenuView();
   },
 
+  //WELCOME
+  welcome: function() {
+    if (!this.viewManager.hasView('welcome')) {
+      this.viewManager.addView('welcome', WelcomeView);
+    }
+
+    this.viewManager.showView('welcome');
+  },
+
   //MAP
   map: function() {
+    var uri = new URI(window.location),
+        params = uri.search(true);
 
     if (!this.viewManager.hasView('map')) {
       this.viewManager.addView('map', MapView);
