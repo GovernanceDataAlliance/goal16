@@ -1,5 +1,6 @@
 .l-welcome {
-  background-image: url('../../../img/fullscreenBG/fullscreenBG.jpg');
+  background-image: url('#{$baseUrl}/img/fullscreenbg.jpg');
+  //background-image: url('#{$baseUrl}/img/$backgrounds-welcome.jpg');
   background-size: cover;
   height: 100%;
   position: absolute;
@@ -37,21 +38,13 @@
     height: 100%;
     padding-top: rem(115px);
   }
-  p {
-    text-align: center;
-    color: $white;
-    &:nth-child(2) {
-      font-family: $font-main;
-      font-size: rem(22px);
-      font-weight: normal;
+    .text-banner-l {
       margin-top: rem(34px);
-      line-height: 1.36;
       @media screen and (min-width: 768px) {
-        font-size: rem(27px);
         margin: rem(55px) auto;
-        letter-spacing: 0.3px;
       }
     }
+    
     &:nth-child(3) {
       font-family: $font-secondary;
       font-size: rem(14px);
@@ -93,7 +86,6 @@
         margin: rem(16px) auto;
       }
     }
-  }
   .btn-primary {
     text-transform: uppercase;
     font-family: $font-secondary;

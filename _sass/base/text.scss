@@ -1,0 +1,74 @@
+.text{
+  font-family: $font-main;
+  &.-white{
+    color: $font-color-2
+  }
+  &.-black{
+    color: $font-color-5;
+  }
+  &.-primary{
+    color: $font-color-3
+  }
+}
+
+.text-banner-title-s{
+  font-size: rem(9px);
+  font-weight: normal;
+  letter-spacing: 0.5px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.text-banner-title-l{
+  font-size: rem(30px);
+  font-weight: normal;
+  line-height: 1.3;
+  text-transform: capitalize;
+  text-align: center;
+  @media screen and (min-width: $screen-s) {
+    font-size: rem(55px);
+    line-height: 1.55;
+  }
+}
+
+.text-banner-l{
+  font-family: $font-main;
+  font-size: rem(22px);
+  font-weight: normal;
+  line-height: 1.36;
+  text-align: center;
+  @media screen and (min-width: 768px) {
+    font-size: rem(27px);
+    letter-spacing: 0.3px;
+  }
+}
+
+.text-banner-m{
+  font-family: $font-secondary;
+  font-size: rem(13px);
+  font-weight: normal;
+  line-height: 1.92;
+  width: 100%;
+  display: block;
+  text-align: center;
+  @media screen and (min-width: 768px) {
+    width: 736px;
+    font-size: rem(19px);
+    line-height: 1.68;
+  }
+}
+
+.text-banner-s{
+  font-family: $font-secondary;
+  font-size: rem(14px);
+  font-weight: normal;
+  line-height: 1.79;
+  width: 100%;
+  display: block;
+  text-align: center;
+  @media screen and (min-width: 768px) {
+    width: rem(736px);
+    line-height: 1.75;
+    font-size: rem(16px);
+  }
+}
