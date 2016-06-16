@@ -9,7 +9,7 @@ var SelectorsTemplate = require('../../../templates/compare/selectors/selectors.
 
 var SelectorsView = Backbone.View.extend({
 
-  className: 'selectors-box',
+  className: 'l-selectors',
 
   template: Handlebars.compile(SelectorsTemplate),
 
@@ -126,6 +126,7 @@ var SelectorsView = Backbone.View.extend({
     this._setVars();
     this._setListeners();
     this._populateSelectors();
+    this._checkCompareButton();
 
     return this;
   }

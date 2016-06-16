@@ -38,10 +38,12 @@ var TargetListView = Backbone.View.extend({
     });
   },
 
-  showTargets: function() {
-    if (this.$el.hasClass('is-hidden')) {
-      this.$el.removeClass('is-hidden');
-    }
+  toggleList: function() {
+    this.$el.toggleClass('is-hidden');
+  },
+
+  showList: function() {
+    this.$el.removeClass('is-hidden');
   },
 
   render: function() {
@@ -50,6 +52,8 @@ var TargetListView = Backbone.View.extend({
     this.scoreCardViews.forEach(function(card) {
       this.$el.append(card.render().el);
     }.bind(this));
+
+    this.toggleList();
 
     return this;
   }
