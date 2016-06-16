@@ -5,15 +5,15 @@ var CONFIG = require('../../../config.json');
 
 var Handlebars = require('handlebars');
 
-var countriesListSQL = Handlebars.compile(require('../../queries/common/countries_list.hbs'));
+var countriesListSQL = Handlebars.compile(require('../../queries/countries/countries_list.hbs'));
 
 var CountriesCollection = CartoDBCollection.extend({
 
-  table: CONFIG.cartodb.countries_table,
+  countries_table: CONFIG.cartodb.countries_table,
 
   // list of countries (no filters)
   getCountriesList: function() {
-    var query = countriesListSQL({ table: this.table }),
+    var query = countriesListSQL({ countries_table: this.countries_table }),
       url = this._urlForQuery(query);
 
     return this.fetch({ url: url });

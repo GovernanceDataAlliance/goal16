@@ -17,7 +17,7 @@ var template = Handlebars.compile(require('../../templates/compare/index.hbs'));
 
 var CompareView = Backbone.View.extend({
 
-  id: 'js--compare-container',
+  id: 'compare-container',
   className: 'compare-container',
 
   events: {
@@ -33,6 +33,9 @@ var CompareView = Backbone.View.extend({
     // collections
     this.countriesCollection = new CountriesCollection();
     this.targetsCollection = new TargetsCollection();
+
+    // views
+    this.targetListView;
   },
 
   // this function initializes just before initial render
@@ -41,16 +44,24 @@ var CompareView = Backbone.View.extend({
     this._setVars();
     this._setListeners();
 
-    this.countriesCollection.getCountriesList().done(this._populateSelectors.bind(this));
-    this.targetsCollection.getTargetsList().done(this._renderTargets.bind(this));
+    this._checkCompareButton();
+
+    $.when(
+      this.countriesCollection.getCountriesList(),
+      this.targetsCollection.getTargetsList()
+    ).done(function() {
+      this._populateSelectors();
+      this._renderTargetList();
+    }.bind(this));
   },
 
-  _updateRouterParams() {
+  _updateRouterParams: function() {
     Backbone.Events.trigger('router:update-params', this.status);
   },
 
   _setVars: function() {
     this.$selectors = this.$el.find('#compare-countries-selectors select');
+    this.$compareBtn = this.$el.find('#compare-countries');
     this.$targetList = this.$el.find('#target-list');
   },
 
@@ -132,11 +143,34 @@ var CompareView = Backbone.View.extend({
     newStatus[id] = iso;
 
     this.status.set(newStatus);
+
+    this._checkCompareButton();
+  },
+
+  // check if the compare button shoudl be available or not
+  _checkCompareButton: function() {
+    var settedCountries = _.compact(_.values(this.status.toJSON())),
+      totalCountries = settedCountries.length;
+
+    if (totalCountries > 1) {
+      if (this.$compareBtn.hasClass('-disabled')) {
+        this.$compareBtn.removeClass('-disabled');
+      }
+    } else {
+      if (!this.$compareBtn.hasClass('-disabled')) {
+        this.$compareBtn.addClass('-disabled');
+      }
+    }
   },
 
   _compareCountries: function() {
+
+    // Think about a way to avoid clicking on compare
+    // when countries haven't been modified
+
     this._updateRouterParams();
     this._showTargets();
+    this._updateScores();
   },
 
   _showTargets() {
@@ -146,18 +180,40 @@ var CompareView = Backbone.View.extend({
     }
   },
 
-  _renderTargets: function() {
-    var countries = _.values(this.status.toJSON());
+  _getCountriesInfo: function() {
+    var isos = _.values(this.status.toJSON()),
+      countries = [];
 
-    new TargetListView({
-      targets: this.targetsCollection.toJSON(),
-      countries: countries
+    isos.forEach(function(iso) {
+      if (!iso) {
+        return;
+      }
+      var countryData = this.countriesCollection.findWhere({ iso: iso });
+      countries.push(countryData.toJSON());
+    }.bind(this));
+
+    return countries;
+  },
+
+  _renderTargetList: function() {
+    var countries = this._getCountriesInfo();
+
+    this.targetListView = new TargetListView({
+      countries: countries,
+      targets: this.targetsCollection.toJSON()
     }).render();
 
-    // show target list if countries are already setted
     if (_.compact(countries).length > 0) {
       this._showTargets();
     }
+  },
+
+  _updateScores: function() {
+    var countries = this._getCountriesInfo();
+
+    this.targetListView.updateScores({
+      countries: countries
+    });
   },
 
   render: function() {

@@ -9,31 +9,38 @@ var TargetListView = Backbone.View.extend({
 
   initialize: function(settings) {
     this.options = settings || {};
+
+    this.cardViews = [];
+
+    this._getTargetList();
   },
 
   _getTargetList: function() {
-    var targets = this.options.targets,
-      cards = [];
+    var targets = this.options.targets;
 
     targets.forEach(function(target) {
       var cardView = this._getTargetCard(target);
-      cards.push(cardView);
+      this.cardViews.push(cardView);
     }.bind(this));
-
-    return cards;
   },
 
-  _getTargetCard: function(cardOptions) {
+  _getTargetCard: function(target) {
     return new TargetCardView({
-      cardOptions: cardOptions,
-      countries: this.options.countries
+      countries: this.options.countries,
+      target: target
+    });
+  },
+
+  updateScores: function(settings) {
+    var countries = settings.countries;
+    this.cardViews.forEach(function(cardView) {
+      cardView.options.countries = countries;
+      cardView.updateScores();
     });
   },
 
   render: function() {
-    var cardViews = this._getTargetList();
-
-    cardViews.forEach(function(card) {
+    this.cardViews.forEach(function(card) {
       this.$el.append(card.render().el);
     }.bind(this));
 
