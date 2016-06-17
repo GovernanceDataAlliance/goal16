@@ -1,22 +1,18 @@
-<!-- Country List goes here -->
-
-
-<!-- This is the legacy code to make the list, maybe you can get any idea or improve it -->
-<!-- {{#each countriesByRegion}}
-<div class="l-content -main">
-  <div class="wrap">
-    <div class="m-list">
-      <h2 class="c-section-title -small">{{@key}}</h2>
-        <div class="lists-container">
-        {{#each this}}
-          <ul>
+{{#each countriesByRegion}}
+  <div class="l-content -main">
+    <div class="wrap">
+      <div class="m-list">
+        <h2 class="c-section-title -small">{{@key}}</h2>
+          <div class="lists-container">
           {{#each this}}
-            <li><a href="?iso={{iso3}}" title="{{name}}">{{name}}</a></li>
+            <ul>
+            {{#each this}}
+              <li><a href="?iso={{iso}}" title="{{name}}">{{name}}</a></li>
+            {{/each}}
+            </ul>
           {{/each}}
-          </ul>
-        {{/each}}
-        </div>
+          </div>
+      </div>
     </div>
   </div>
-</div>
-{{/each}} -->
+{{/each}}

@@ -8,7 +8,7 @@ var ViewManager = require('./lib/view_manager.js'),
   MapView = require('./views/map/map.js'),
   DashboardView = require('./views/map/dashboard.js'),
   CompareView = require('./views/compare/compare.js'),
-  CountriesListView = require('./views/countries/countries-list/countries_list.js'),
+  CountriesListView = require('./views/countries/countries-list/countries.js'),
   CountryView = require('./views/countries/country/country.js');
 
 var Router = Backbone.Router.extend({
