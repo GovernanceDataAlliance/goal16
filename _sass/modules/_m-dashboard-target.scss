@@ -1,5 +1,6 @@
 .m-dashboard-target {
-  padding: rem(25px) rem(35px);
+  padding: rem(25px);
+  padding-right: rem(35px);
   border-bottom: rem(1px) solid $border-3;
 
   .header {
@@ -32,6 +33,15 @@
       display: none;
     }
 
+    input {
+      visibility: hidden;
+
+      &:checked + label .target-title {
+        background-color: $white;
+        color: $font-color-1;
+      }
+    }
+
     .target-title {
       margin-left: rem(26px);
       padding: rem(5px);
@@ -46,6 +56,7 @@
         background-color: $white;
       }
     }
+
   }
 
   &.is-open {
@@ -58,6 +69,13 @@
     .btn-close-target {
       display: block;
     }
+  }
+
+  .icon-minus,
+  .icon-open {
+    width: rem(8px);
+    height: rem(13px);
+    fill: $color-1;
   }
 }
 
