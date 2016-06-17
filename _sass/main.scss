@@ -2,7 +2,6 @@
 @charset "utf-8";
 @import 'normalize.scss';
 @import 'chosen.min.scss';
-@import 'slick.scss';
 
 @import
   "settings",
@@ -19,60 +18,44 @@
   "layout/l-toolbar",
   "layout/l-content",
   "layout/l-aside-content",
-  "layout/l-highlight",
-  "layout/l-presentation",
   "layout/l-footer",
   "layout/l-header",
   "layout/l-grid",
+  "layout/l-presentation",
   "layout/l-main-container",
-  "layout/l-post",
-  "layout/l-blog",
-  "layout/l-map",
-  "layout/l-dashboard",
-  "layout/l-tag-cloud",
+
   "layout/l-selectors",
   "layout/l-compare-selectors",
-  "layout/l-welcome",
+
+  // GOAL16
+  "layout/l-map",
+  "layout/l-dashboard",
+  "layout/l-highlight",
+  "layout/l-share",
   "layout/l-target-list",
+  "layout/l-welcome",
 
   "modules/m-site-navigation",
-  "modules/m-list",
-  "modules/m-title",
-  "modules/m-card",
   "modules/m-card--indexes",
-  "modules/m-comparison-table",
-  "modules/m-year-selector",
   "modules/m-modal-window",
-  "modules/m-modal-window--info",
-  "modules/m-modal-window--legend",
   "modules/m-search",
-  "modules/m-presentation",
   "modules/m-social-share",
-  "modules/m-objectives-list",
   "modules/m-breadcrumbs",
-  "modules/m-controls",
-  "modules/m-table",
-  "modules/m-cohort-groups",
-  "modules/m-advise",
-  "modules/m-graph-tooltip",
   "modules/m-static-content",
-  "modules/m-country-silhouette",
-  "modules/m-legend",
-  "modules/m-post",
   "modules/m-markdown",
   "modules/m-pagination",
-  "modules/m-tag-cloud",
-  "modules/m-highlight",
   "modules/m-share-window",
   "modules/m-mobile-menu",
   "modules/m-mobile-search",
+  "modules/m-highlight",
+
+  //GOAL16
   "modules/m-dashboard",
   "modules/m-dashboard-target",
   "modules/m-dashboard-indicators",
   "modules/m-selectors",
   "modules/m-target-report",
   "modules/m-map-controls",
-
 
   "components/c-buttons",
   "components/c-share-shortcut",
@@ -81,22 +64,16 @@
   "components/c-subtitle",
   "components/c-block-title",
   "components/c-section-title",
-  "components/c-table-metadata",
   "components/c-search",
   "components/c-brand",
-  "components/c-tooltip",
-  "components/c-tag",
   "components/c-share",
   "components/c-download",
   "components/c-switcher",
   "components/c-selector",
-  "components/c-button",
   "components/c-score-card",
   "components/c-score-table",
 
 
   "states",
 
-  "print",
-
-  "slick-theme";
+  "print";

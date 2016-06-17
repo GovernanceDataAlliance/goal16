@@ -1,24 +1,33 @@
 .btn-primary {
-  background-color: $color-5;
-  padding: 15px 50px;
-  text-align: center;
-  text-transform: uppercase;
-  font-family: $font-family-primary;
-  font-size: rem(11px);
-  font-weight: $font-weight-regular;
-  letter-spacing: 0.6px;
-  color: $white;
-  cursor: pointer;
-  transition: 0.1s;
   display: block;
   width: 100%;
+  padding: rem(15px) rem(50px);
+  background-color: $color-5;
+
+  font-family: $font-family-primary;
+  font-size: rem(11px);
+  text-align: center;
+  font-weight: $font-weight-regular;
+  text-transform: uppercase;
+  letter-spacing: rem(.6px);
+  color: $white;
+
+  cursor: pointer;
+  transition: .1s;
+
   &:hover {
     background-color: darken($color-5, 10% );
   }
+
   @media screen and (min-width: 768px) {
     font-size: rem(12px);
-    letter-spacing: 0.7px;
+    letter-spacing: rem(.7px);
     max-width: rem(211px);
+  }
+
+  &.-small {
+    width: auto;
+    padding: rem(15px) rem(45px);
   }
 
   &.-disabled {

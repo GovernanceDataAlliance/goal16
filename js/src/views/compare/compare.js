@@ -20,7 +20,8 @@ var CompareView = Backbone.View.extend({
   className: 'compare-container',
 
   events: {
-    'click #compare-countries' : '_compareCountries'
+    'click #compare-countries' : '_compareCountries',
+    'click #js--share' : '_share'
   },
 
   initialize: function(settings) {
@@ -46,6 +47,7 @@ var CompareView = Backbone.View.extend({
   // this function initializes just before initial render
   show: function() {
     this._setView();
+    this._setVars();
 
     $.when(
       this.countriesCollection.getCountriesList(),
@@ -54,6 +56,10 @@ var CompareView = Backbone.View.extend({
       this._renderSelectors();
       this._renderTargetList();
     }.bind(this));
+  },
+
+  _setVars: function() {
+    this.$shareSection = this.$el.find('.l-share');
   },
 
   _updateRouterParams: function() {
@@ -76,6 +82,8 @@ var CompareView = Backbone.View.extend({
 
   _renderSelectors: function() {
     this.$el.find('#selectors-container').html(this.selectorsView.render().el);
+
+    this.selectorsView.setChosen();
   },
 
   _compareCountries: function() {
@@ -85,8 +93,12 @@ var CompareView = Backbone.View.extend({
 
     this._updateRouterParams();
     this.targetListView.updateScores();
+
     this.targetListView.showList();
+    this.$shareSection.removeClass('is-hidden');
   },
+
+  _share: function() {},
 
   _renderTargetList: function() {
     var countries = _.compact(_.values(this.status.toJSON()));
@@ -95,6 +107,7 @@ var CompareView = Backbone.View.extend({
 
     if (countries.length > 1) {
       this.targetListView.toggleList();
+      this.$shareSection.removeClass('is-hidden');
     }
   },
 
