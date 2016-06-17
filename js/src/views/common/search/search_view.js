@@ -4,10 +4,10 @@ var $ = require('jquery'),
   Handlebars = require('handlebars'),
   enquire = require('enquire.js');
 
-var SearchCollection = require('../../collections/common/countries.js');
+var SearchCollection = require('../../../collections/common/countries.js');
 
-var template = Handlebars.compile(require('../../templates/common/search_tpl.hbs')),
-    templateSuggestions = Handlebars.compile(require('../../templates/common/search_suggestions_tpl.hbs'));
+var template = Handlebars.compile(require('../../../templates/common/search/search_tpl.hbs')),
+    templateSuggestions = Handlebars.compile(require('../../../templates/common/search/search_suggestions_tpl.hbs'));
 
 
 var SearchView = Backbone.View.extend({
@@ -36,7 +36,7 @@ var SearchView = Backbone.View.extend({
     this.limit = -1;
 
     // collections
-    this.searchCollection = new SearchCollection();
+    this.searchCollection =  SearchCollection;
 
     // search elements
     this.elContent = this.options.elContent;
@@ -52,7 +52,7 @@ var SearchView = Backbone.View.extend({
 
     this._setListeners();
 
-    this._getData();
+    this.render();
   },
 
   _setListeners: function() {
@@ -65,11 +65,11 @@ var SearchView = Backbone.View.extend({
     this.$(this.elSearchParent).html(template);
   },
 
-  _getData: function() {
-    this.searchCollection.fetch().done(function() {
-      this.render();
-    }.bind(this));
-  },
+  // _getData: function() {
+  //   this.searchCollection.fetch().done(function() {
+  //     this.render();
+  //   }.bind(this));
+  // },
 
   _onSearch: function(ev) {
     var target = ev ? ev.currentTarget : this.$input;

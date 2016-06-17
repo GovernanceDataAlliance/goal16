@@ -1,7 +1,14 @@
 .leaflet-top {
-  top: rem(40px);
-  right: rem(30px);
+  top: rem(30px);
+  right: rem(15px);
   left: auto;
+  z-index: 1;
+
+  @media screen and (min-width: 768px) {
+    top: rem(40px);
+    right: rem(30px);
+    left: auto;
+  }
 }
 
 .leaflet-left .leaflet-control {
@@ -34,6 +41,20 @@
 .leaflet-bar a:last-child {
   margin-top: rem(5px);
   font-size: rem(25px);
+}
+
+.leaflet-bottom {
+  bottom: rem(50px);
+  z-index: 1;
+  font-size: rem($font-size-xxsmall);
+
+  a {
+    font-size: rem($font-size-xxsmall);
+  }
+
+  @media screen and (min-width: 768px) {
+    bottom: rem(10px);
+  }
 }
 
 

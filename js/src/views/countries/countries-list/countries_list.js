@@ -1,10 +1,10 @@
 var _ = require('lodash'),
     Backbone = require('backbone'),
-    enquire = require('enquire.js'),
     Handlebars = require('handlebars');
 
-var template = Handlebars.compile(require('../../templates/countries/country_list.hbs')),
-  templateMb = Handlebars.compile(require('../../templates/countries/country_list_mb.hbs'));
+var CountriesCollection = require('../../../collections/common/countries.js');
+
+var template = Handlebars.compile(require('../../../templates/countries/countries-list/country_list.hbs'));
 
 var CountryListView = Backbone.View.extend({
 
@@ -14,13 +14,8 @@ var CountryListView = Backbone.View.extend({
 
   initialize: function(options) {
     options = options || {};
-    this.countries = options.countries;
-    this.listenTo(this.countries, 'sync', this.render);
 
-    if (this.countries.length === 0) {
-      this.countries.fetch();
-    }
-
+    this.countriesCollection = CountriesCollection;
   },
 
   _divideCols: function() {
@@ -55,7 +50,6 @@ var CountryListView = Backbone.View.extend({
     return list;
   },
 
-
   render: function() {
     var list = this._divideCols();
 
@@ -72,7 +66,7 @@ var CountryListView = Backbone.View.extend({
   },
 
   _getRegions: function() {
-    var groupedRegions = this.countries.groupByRegion();
+    var groupedRegions = this.countriesCollection.getCountriesByRegion();
     var sortedRegions = _.mapValues(groupedRegions, function(countries, region) {
       return _.sortBy(countries, 'name');
     });

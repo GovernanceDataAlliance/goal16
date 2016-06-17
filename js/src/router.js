@@ -8,8 +8,8 @@ var ViewManager = require('./lib/view_manager.js'),
   MapView = require('./views/map/map.js'),
   DashboardView = require('./views/map/dashboard.js'),
   CompareView = require('./views/compare/compare.js'),
-  CountriesView = require('./views/countries/countries.js'),
-  CountryView = require('./views/countries/country.js');
+  CountriesListView = require('./views/countries/countries-list/countries.js'),
+  CountryView = require('./views/countries/country/country.js');
 
 var Router = Backbone.Router.extend({
 
@@ -74,7 +74,7 @@ var Router = Backbone.Router.extend({
     if (!iso) {
 
       if (!this.viewManager.hasView('countries')) {
-        this.viewManager.addView('countries', CountriesView);
+        this.viewManager.addView('countries', CountriesListView);
       }
 
       this.viewManager.showView('countries');

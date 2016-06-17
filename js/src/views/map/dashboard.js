@@ -41,18 +41,17 @@ var DashboardView = Backbone.View.extend({
 
   _setVars: function() {
     this.$body = $('body');
-    console.log(this.$body);
   },
 
   _setView: function() {
-    enquire.register("screen and (max-width:1023px)", {
+    enquire.register("screen and (max-width:767px)", {
       match: _.bind(function(){
         this.mobile = true;
         $('body').addClass('is-dashboard-close');
       },this)
     });
 
-    enquire.register("screen and (min-width:1024px)", {
+    enquire.register("screen and (min-width:768px)", {
       match: _.bind(function(){
         this.mobile = false;
         $('body').removeClass('is-dashboard-close');
