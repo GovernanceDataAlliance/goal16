@@ -36,7 +36,7 @@ var SearchView = Backbone.View.extend({
     this.limit = -1;
 
     // collections
-    this.searchCollection = new SearchCollection();
+    this.searchCollection =  SearchCollection;
 
     // search elements
     this.elContent = this.options.elContent;
