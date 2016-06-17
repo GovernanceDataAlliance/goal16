@@ -92,7 +92,7 @@ var CompareView = Backbone.View.extend({
     // when countries haven't been modified
 
     this._updateRouterParams();
-    this.targetListView.updateScores();
+    this.targetListView.resetScores();
 
     this.targetListView.showList();
     this.$shareSection.removeClass('is-hidden');
