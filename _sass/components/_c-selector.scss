@@ -4,20 +4,22 @@
 
   > .btn-drop-down {
     position: relative;
-    font-size: rem(16px);
-    line-height: rem(16px) !important;
     width: 100%;
     height: rem(45px);
     padding: 0 rem(6px) 0 rem(15px);
-    border: rem(1px) solid rgba($border-1, .5);
 
+    font-size: rem(16px);
+    line-height: rem(16px) !important;
+
+    border: rem(1px) solid rgba($border-1, .5);
     background-color: $white;
 
     @media screen and (min-width: $screen-m) {
+      padding: 0 rem(12px);
       height: rem(45px);
+      
       font-size: rem(11px);
       line-height: rem(11px) !important;
-      padding: 0 rem(12px);
     }
 
     &:after {
