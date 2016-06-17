@@ -11,15 +11,20 @@
   }
 
   > .target-info > .target-title {
+    flex-basis: 70%;
 
-    flex-basis: 75%;
-
-    font-size: $font-size-medium;
+    font-size: $font-size-normal;
+    line-height: 1.4;
     color: $font-color-1;
+
+    @media screen and (min-width: $screen-m) {
+      flex-basis: 75%;
+
+      font-size: $font-size-medium;
+    }
   }
 
   > .target-info > .card-options {
-  
     > .js--toggle-card {
       transform: translate(0, rem(5px));
       cursor: pointer;
