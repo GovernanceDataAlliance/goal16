@@ -4,8 +4,6 @@ var _ = require('lodash'),
   Handlebars = require('handlebars'),
   enquire = require('enquire.js');
 
-var FunctionHelper = require('../../helpers/functions.js');
-
 var tpl = Handlebars.compile(
   require('../../templates/common/mobile_menu_tpl.hbs'));
 
@@ -81,7 +79,7 @@ var MobileMenuView = Backbone.View.extend({
 
   _retractableMenuOn: function() {
     this.currentScroll = 0;
-    var debouncedScroll = FunctionHelper.debounce(this._onScrollMobile, 10, true);
+    var debouncedScroll = _.debounce(this._onScrollMobile, 10);
     window.addEventListener('scroll', _.bind(debouncedScroll, this));
   },
 
