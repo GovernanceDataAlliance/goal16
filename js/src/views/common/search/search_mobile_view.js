@@ -3,12 +3,11 @@ var $ = require('jquery'),
   Backbone = require('backbone'),
   Handlebars = require('handlebars');
 
+var template = Handlebars.compile(require('../../../templates/common/search/search_mobile_tpl.hbs'));
 
-var template = Handlebars.compile(require('../../templates/common/search_mobile_tpl.hbs'));
+var CountriesCollection = require('../../../collections/common/countries.js');
 
-var SearchCollection = require('../../collections/common/countries.js');
-
-var FunctionHelper = require('../../helpers/functions.js');
+var FunctionHelper = require('../../../helpers/functions.js');
 
 var SearchMobileView = Backbone.View.extend({
 
@@ -19,7 +18,7 @@ var SearchMobileView = Backbone.View.extend({
   },
 
   initialize: function(settings) {
-    this.searchCollection = new SearchCollection();
+    this.countriesCollection = CountriesCollection;
 
     this.functionHelper = FunctionHelper;
 
@@ -34,12 +33,17 @@ var SearchMobileView = Backbone.View.extend({
   },
 
   render: function() {
-    this.searchCollection.fetch().done(function(countries) {
-      var orderedCollection = _.sortByOrder(countries.rows, ['name']);
-      $('body').append(template({ 'countries': orderedCollection }));
+    var countries = this.countriesCollection.toJSON();
+    var orderedCollection = _.sortByOrder(countries.rows, ['name']);
 
-      this.setEvents();
-    }.bind(this));
+    $('body').append(template({
+      countries: orderedCollection
+    }));
+
+    this.setEvents();
+    // this.searchCollection.fetch().done(function(countries) {
+
+    // }.bind(this));
 
   },
 
