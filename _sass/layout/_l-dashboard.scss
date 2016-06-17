@@ -1,15 +1,51 @@
+$button-height: rem(40px);
+
 .l-dashboard {
   position: absolute;
-  top: $header-height;
+  top: $button-height;
   bottom: 0;
   left: 0;
-  z-index: 1;
-  width: $dashboard-width;
-  background-color: #fff;
+  right: 0;
+  z-index: 25;
+  background-color: $white;
   transition: .2s ease;
+  transform: translatey(0);
+
+  .btn-toogle-dashboard-mobile {
+    position: absolute;
+    top: rem(-40px);
+    left: 0;
+    width: 100%;
+    height: $button-height;
+    background-color: $color-5;
+    color: $white;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: rem($font-size-xxsmall);
+    box-shadow: 0 0 rem(60px) 0 rgba(7, 56, 35, 0.1);
+  }
 
   .is-dashboard-close & {
-    transform: translatex(-100%);
+    transform: translatey(100%);
+
+    .btn-toogle-dashboard-mobile {
+      background-color: $white;
+      color: $font-color-3;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    top: $header-height;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    width: $dashboard-width;
+    background-color: #fff;
+    transition: .2s ease;
+
+    .is-dashboard-close & {
+      transform: translatex(-100%);
+    }
   }
 
   @media screen and (min-width: $screen-l) {
