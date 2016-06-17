@@ -11,22 +11,19 @@
 
   "base/general",
   "base/form",
-  "base/text",
+
 
   "layout/grid",
-  "layout/l-banner",
   "layout/l-toolbar",
-  "layout/l-content",
   "layout/l-aside-content",
   "layout/l-footer",
   "layout/l-header",
-  "layout/l-grid",
   "layout/l-presentation",
   "layout/l-main-container",
 
   "layout/l-selectors",
   "layout/l-compare-selectors",
-  
+
   // GOAL16
   "layout/l-map",
   "layout/l-dashboard",
@@ -36,24 +33,31 @@
   "layout/l-welcome",
 
   "modules/m-site-navigation",
-  "modules/m-card--indexes",
   "modules/m-modal-window",
   "modules/m-search",
   "modules/m-social-share",
-  "modules/m-breadcrumbs",
-  "modules/m-static-content",
   "modules/m-markdown",
   "modules/m-pagination",
   "modules/m-share-window",
   "modules/m-mobile-menu",
   "modules/m-mobile-search",
   "modules/m-highlight",
-  
+
   //GOAL16
+  "base/text",
+
+
+  "layout/l-banner",
+  "layout/l-content",
+  "layout/l-grid",
+
+  "modules/m-card--indexes",
   "modules/m-dashboard-target",
   "modules/m-dashboard-indicators",
+  "modules/m-breadcrumbs",
   "modules/m-selectors",
   "modules/m-target-report",
+  "modules/m-static-content",
 
   "components/c-buttons",
   "components/c-share-shortcut",
