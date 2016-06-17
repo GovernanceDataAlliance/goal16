@@ -1,6 +1,3 @@
-$header-height-desktop: rem(95px);
-$header-height: rem(70px);
-
 .l-header {
   display: flex;
   align-items: stretch;
@@ -41,7 +38,7 @@ $header-height: rem(70px);
       flex-basis: 37%;
       width: rem(270px);
     }
-    
+
     @media screen and (min-width: $screen-m) {
       width: rem(360px);
     }
