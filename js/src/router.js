@@ -21,7 +21,7 @@ var Router = Backbone.Router.extend({
 
   routes: {
     "(/)": "welcome",
-    "map(/)": "map",
+    "map(/)(?layerType=:type)(&layer=:layer)(&zoom=:zoom)(&center=:center)": "map",
     "countries(/)(?iso=:iso)": "countries",
     "compare(/)": "compare"
   },
@@ -52,6 +52,8 @@ var Router = Backbone.Router.extend({
 
   //MAP
   map: function() {
+    var uri = new URI(window.location),
+        params = uri.search(true);
 
     if (!this.viewManager.hasView('map')) {
       this.viewManager.addView('map', MapView);

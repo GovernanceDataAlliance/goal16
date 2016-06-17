@@ -1,9 +1,7 @@
 ---
 layout: compare
-page-name: Compare countries
-image: promoInteriores-CompareCountries
-intro-text: While no single number can capture a country's complex governance landscape, comparing countries to each other across many dimensions of governance can reveal powerful insights.
-crosseling-module-title: The Governance Data Alliance
-crosseling-module-text: We're a group of NGOs, governments, firms, and donors who are serious about improving the quality, availability, breadth, and use of governance data. We identify and spread good practices for data production, we build feedback loops between data users and data producers, and we drive down the time and cost to produce data.
+page-name: Compare
+intro-text: Quisque eu odio vitae leo aliquet fermentum in sit amet quam. Morbi dapibus nibh et congue convallis. Nulla malesuada leo et volutpat rhoncus. Aliquam sagittis rhoncus tellus quis placerat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia.
+crosseling-module-title: Explore the map
+crosseling-module-text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a orci ut ante varius rutrum. Cras aliquet pulvinar feugiat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis, metus eget bibendum consectetur, quam odio elementum urna, vel eleifend ligula leo at lacus. Maecenas malesuada, magna vel rhoncus consectetur, erat nunc vulputate arcu, a efficitur mauris ligula ac leo. Sed vitae ex suscipit libero efficitur dictum. Pellentesque ac efficitur nibh. Aenean et vulputate nisi.
 ---
-

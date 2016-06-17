@@ -1,11 +1,15 @@
 .m-card--indexes {
   width: 100%;
-  padding: 0 rem($wrap-padding-mobile);
-  border-bottom: 1px solid $border-1;
+  padding-top: rem(30px);
+  padding-bottom: rem(36px);
+  padding-left : rem(17px);
+  padding-right: rem(17px);
+  border-bottom: 1px solid $border-3;
   display: flex;
   flex: 1 1 auto;
   justify-content: center;
   align-items: center;
+  background-color: $color-6;
 
   &:last-child {
     border-bottom: 0;
@@ -18,13 +22,23 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    padding: rem(40px) 0;
 
     > .name {
+      cursor: pointer;
       font-size: rem(30px);
       font-weight: 400;
       line-height: 32px;
       margin-bottom: rem(7px);
+      font-family: $font-family-secondary;
+      font-size: $font-size-medium;
+      font-weight: $font-weight-regular;
+      line-height: 1.4;
+      letter-spacing: 0.3px;
+      margin-top: rem(22px);
+      @media screen and (min-width: $screen-s){
+        font-size: $font-size-large;
+        margin-top: rem(28px);
+      }
     }
 
     > .description {
@@ -32,9 +46,17 @@
     }
 
     > .organization {
-      font-size: rem(15px);
-      color: $font-color-1;
-      margin-bottom: 0;
+        font-family: $font-family-primary;
+        font-size: $font-size-small;
+        font-weight: $font-weight-regular;
+        line-height: 1.90;
+        margin-top: rem(11px);
+        color: $font-color-6;
+        @media screen and (min-width: $screen-s){
+          font-size: $font-size-normal;
+          line-height: 1.75;
+          margin-top: rem(12px);
+        }
     }
 
     span {
@@ -47,14 +69,15 @@
       background-repeat: no-repeat;
     }
 
-    .img {
+    img {
       display: block;
-      width: rem(200px);
-      height: rem(30px);
-      margin-bottom: rem(20px);
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: top left;
+      width: rem(120px);
+      margin-bottom: rem(22px);
+      margin-top: rem(30px);
+      @media screen and (min-width: $screen-s){
+        width: rem(183px);
+        margin: rem(0px) auto;
+      }
     }
 
     &:hover {
@@ -64,20 +87,20 @@
     }
   }
 
-  @media screen and (min-width: $screen-s) {
-    padding: 0 rem($wrap-padding-desktop);
+  @media screen and (min-width: 768px) {
+    padding-top: rem(50px);
+    padding-bottom: rem(72px);
+    padding-left : rem(72px);
+    padding-right: rem(72px);
+    width: 50%;
+    float: left;
+    justify-content: space-between;
 
-    .index-description {
-      padding: rem(60px) 0;
-    }
   }
 
   @media screen and (min-width: $screen-m) {
-    justify-content: space-between;
-    width: 50%;
-    float: left;
-    height: rem(285px);
-    padding: 0 rem($wrap-padding-tablet);
+
+
 
     .img {
       height: rem(40px);
@@ -87,18 +110,14 @@
       justify-content: flex-start;
 
       .index-description {
-        padding-left: rem($wrap-padding-desktop);
-        padding-right: rem($wrap-padding-desktop);
       }
     }
 
     &:nth-child(2n + 1) {
       justify-content: flex-end;
-      border-right: 1px solid $border-1;
+      border-right: 1px solid $border-3;
 
       .index-description {
-        padding-left: $wrap-padding-desktop;
-        padding-right: $wrap-padding-desktop;
       }
     }
 
@@ -108,7 +127,7 @@
     }
 
     &:nth-child(2n)  {
-      border-bottom: 1px solid $border-1;
+      border-bottom: 1px solid $border-3;
     }
 
     &:last-child {
@@ -117,7 +136,7 @@
     }
 
     &:nth-child(2n + 1) {
-      border-right: 1px solid $border-1;
+      border-right: 1px solid $border-3;
     }
   }
 }

@@ -33,7 +33,7 @@ $dashboard-width: 400px;
 ////////////////////
 //**** Fonts ****//
 ////////////////////
-$font-family-primary: 'Merriweather', serif;
+$font-family-primary: 'Merriweather Sans', sans-serif;
 $font-family-secondary: 'Lora',  serif;
 
 $font-size-xlarge: 55px;
@@ -41,7 +41,8 @@ $font-size-large: 27px;
 $font-size-medium: 19px;
 $font-size-normal: 16px;
 $font-size-small: 14px;
-$font-size-xsmall: 10px;
+$font-size-xsmall: 12px;
+$font-size-xxsmall: 10px;
 
 $font-weight-light: 300;
 $font-weight-regular: 400;
@@ -78,13 +79,16 @@ $blue-green: #156975;
 $pale-grey: #f6faf9;
 $soft-green: #82bf72;
 $turquoise: #04beb0;
+$bluish-grey: #809497;
+$silver: #e5eaea;
+$light-grey: #edf2f1;
 
 $white: #fff;
 
 
 $dark-grey: #9b9b9b;
 $grey: #b4b6b6;
-$light-grey: #d6d8d9;
+// $light-grey: #d6d8d9;
 $light-grey-two: #eeedea;
 
 //Theme colors
@@ -93,20 +97,27 @@ $color-2: $blue-evergreen;
 $color-3: $blue-grey;
 $color-4: $blue-green;
 $color-5: $soft-green;
+$color-6: $pale-grey;
 
 // background colors
+$bg-page: #F7FAF9;
 $bg-color-1: $pale-grey;
 $bg-color-2: $brown;
 $bg-color-3: $beige;
 $bg-color-4: $beige-medium;
+$bg-color-5: $light-grey;
 
 //Font colors
 $font-color-1: $blue-evergreen;
 $font-color-2: $white;
 $font-color-3: $blue-topaz;
 $font-color-4: $dark-grey;
+$font-color-5: $color-5;
 $font-color-6: $black;
+$font-color-7: $bluish-grey;
 $font-color-hover: $turquoise;
 
 //border-colors
 $border-1: $color-5;
+$border-2: $bluish-grey;
+$border-3: $silver;
