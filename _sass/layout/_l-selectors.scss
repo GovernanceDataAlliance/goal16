@@ -5,7 +5,13 @@
 
   .selectors-box {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    
+    @media screen and (min-width: $screen-m) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
   }
 
   .buttons-box {
