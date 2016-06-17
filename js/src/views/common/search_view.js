@@ -6,8 +6,6 @@ var $ = require('jquery'),
 
 var SearchCollection = require('../../collections/common/countries.js');
 
-var FunctionHelper = require('../../helpers/functions.js');
-
 var template = Handlebars.compile(require('../../templates/common/search_tpl.hbs')),
     templateSuggestions = Handlebars.compile(require('../../templates/common/search_suggestions_tpl.hbs'));
 
@@ -50,7 +48,7 @@ var SearchView = Backbone.View.extend({
     this.closeOnClick = this.options.closeOnClick;
     this.listHeight = 300;
 
-    this.debounceHightlight = FunctionHelper.debounce(this._highlightResult, 85, true);
+    this.debounceHightlight = _.debounce(this._highlightResult, 85);
 
     this._setListeners();
 
