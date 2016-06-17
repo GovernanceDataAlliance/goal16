@@ -30,7 +30,7 @@
           {% for organization in organizations %}
             <div class="m-card--indexes">
               <a href="{{ organization.link }}" target="_blank" class="index-description">
-                <img src="{{site.baseurl}}/img/logos/{{ organization.logo }}" alt="{{ organization.name }} logo">
+                 <span style="background-image:url('{{site.baseurl}}/img/logos/{{ organization.logo }}')" class="img" alt=""></span>
                 <h3 class="name">{{ organization.name }}</h3>
                 <p class="organization">{{ organization.description }}</p>
               </a>

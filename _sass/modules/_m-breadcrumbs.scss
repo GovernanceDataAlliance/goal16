@@ -2,26 +2,25 @@
   @extend %wrap;
   position: relative;
   text-align: center;
-  a {
-    color: #fff;
-    font-size: 10px;
-    font-weight: 400;
-    letter-spacing: 0.5px;
-    text-align: center;
-    text-transform: uppercase;
+  ul{
+    list-style: none;
+    display: block;
+    width: rem(75px);
+    margin: 0 auto;
+    li,a,span{
+      float:left;
+      color: #fff;
+      font-size: $font-size-xxsmall;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
+  a{
     cursor: pointer;
     &:hover{
       text-decoration: underline;;
     }
-  }
-  span {
-    color: #fff;
-    font-size: 10px;
-    font-weight: 400;
-    letter-spacing: 0.5px;
-    text-align: center;
-    text-transform: uppercase;
-  }
-  @media screen and (min-width: 768px){
   }
 }

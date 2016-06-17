@@ -1,20 +1,15 @@
 .m-card--indexes {
   width: 100%;
-  padding-top: rem(30px);
-  padding-bottom: rem(36px);
-  padding-left : rem(17px);
-  padding-right: rem(17px);
+  padding: rem(30px) rem(17px) rem(36px);
   border-bottom: 1px solid $border-3;
   display: flex;
   flex: 1 1 auto;
   justify-content: center;
   align-items: center;
   background-color: $color-6;
-
   &:last-child {
     border-bottom: 0;
   }
-
   .index-description {
     @include col(6);
     display: block;
@@ -22,7 +17,6 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
-
     > .name {
       cursor: pointer;
       font-size: rem(30px);
@@ -35,106 +29,76 @@
       line-height: 1.4;
       letter-spacing: 0.3px;
       margin-top: rem(22px);
-      @media screen and (min-width: $screen-s){
+      @media screen and (min-width: $screen-s) {
         font-size: $font-size-large;
         margin-top: rem(28px);
       }
     }
-
     > .description {
       font-size: rem(15px);
     }
-
     > .organization {
-        font-family: $font-family-primary;
-        font-size: $font-size-small;
-        font-weight: $font-weight-regular;
-        line-height: 1.90;
-        margin-top: rem(11px);
-        color: $font-color-6;
-        @media screen and (min-width: $screen-s){
-          font-size: $font-size-normal;
-          line-height: 1.75;
-          margin-top: rem(12px);
-        }
-    }
-
-    span {
-      display: flex;
-      height: rem(40px);
-      width: 50%;
-      margin-bottom: rem(15px);
-      background-position: top left;
-      background-size: contain;
-      background-repeat: no-repeat;
-    }
-
-    img {
-      display: block;
-      width: rem(120px);
-      margin-bottom: rem(22px);
-      margin-top: rem(30px);
-      @media screen and (min-width: $screen-s){
-        width: rem(183px);
-        margin: rem(0px) auto;
+      font-family: $font-family-primary;
+      font-size: $font-size-small;
+      font-weight: $font-weight-regular;
+      line-height: 1.90;
+      margin-top: rem(11px);
+      color: $font-color-6;
+      @media screen and (min-width: $screen-s) {
+        font-size: $font-size-normal;
+        line-height: 1.75;
+        margin-top: rem(12px);
       }
     }
-
+    span {
+      display: flex;
+      height: rem(60px);
+      width: 50%;
+      background-position: top left;
+      background-size: contain;;
+      background-repeat: no-repeat;
+      @media screen and (min-width: 768px) {
+        height: rem(100px);
+        background-position: 50%;
+        width: 100%;
+      }
+    }
     &:hover {
       .name {
         color: $color-4;
       }
     }
   }
-
   @media screen and (min-width: 768px) {
-    padding-top: rem(50px);
-    padding-bottom: rem(72px);
-    padding-left : rem(72px);
-    padding-right: rem(72px);
+    padding: rem(50px) rem(72px) rem(72px);
     width: 50%;
     float: left;
     justify-content: space-between;
-
   }
-
   @media screen and (min-width: $screen-m) {
-
-
-
     .img {
       height: rem(40px);
     }
-
     &:nth-child(2n) {
       justify-content: flex-start;
-
-      .index-description {
-      }
+      .index-description {}
     }
-
     &:nth-child(2n + 1) {
       justify-content: flex-end;
       border-right: 1px solid $border-3;
-
-      .index-description {
-      }
+      .index-description {}
     }
-
     &:nth-last-child(2) {
       border-right: 0;
       border-bottom: 0;
     }
-
-    &:nth-child(2n)  {
+    &:nth-child(2n) {
       border-bottom: 1px solid $border-3;
     }
-
     &:last-child {
       border-bottom: 0;
       border-right: 0;
     }
-
     &:nth-child(2n + 1) {
       border-right: 1px solid $border-3;
     }

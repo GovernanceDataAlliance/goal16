@@ -70,26 +70,26 @@
 
   h5, h6 {
     line-height: rem(26px);
-    font-weight: 400;
+    font-weight: $font-weight-regular;
   }
 
   h5 {
     margin-bottom: rem(20px);
-    font-size: rem(16px);
+    font-size: $font-size-normal;
     letter-spacing: rem(.3px);
     &:last-child {
       margin: 0;
     }
 
     a {
-      font-size: rem(16px);
+      font-size: $font-size-normal;
     }
 
     @media screen and (min-width: $screen-s) {
-      font-size: rem(18px);
+      font-size: $font-size-medium;
       line-height: rem(32px);
       a {
-        font-size: rem(18px);
+        font-size: $font-size-medium;
       }
     }
   }
@@ -124,7 +124,7 @@
     counter-reset: item;
     font-family: $font-family-secondary;
     font-size: rem(40px);
-    font-weight: 700;
+    font-weight: $font-weight-semi;
 
     @media screen and (min-width: 768px) {
       margin-top: rem(70px);
@@ -156,20 +156,18 @@
     }
 
     h3 {
-      margin-bottom: rem(15px);
       font-family: $font-family-primary;
-      font-size: rem(16px);
-      font-weight: 400;
+      font-size: $font-size-normal;
+      font-weight: $font-weight-regular;
       line-height: rem(26px);
       letter-spacing: rem(.3px);
 
       @media screen and (min-width: $screen-s) {
-        font-size: rem(18px);
+        font-size: $font-size-medium;
         line-height: rem(32px);
       }
 
       @media screen and (min-width: 768px) {
-        margin-bottom: rem(20px);
       }
     }
   }
