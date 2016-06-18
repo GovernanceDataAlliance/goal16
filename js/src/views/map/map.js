@@ -9,6 +9,8 @@ var CONFIG = require('../../../config.json');
 var targetLayerSQL = Handlebars.compile(require('../../queries/map/layer_target.hbs')),
     indicatorLayerSQL = Handlebars.compile(require('../../queries/map/layer_indicator.hbs'));
 
+var PopUpView = require('./pop_up.js');
+
 var status = require ('../../models/map/status.js');
 
 var MapView = Backbone.View.extend({
@@ -39,6 +41,7 @@ var MapView = Backbone.View.extend({
   show: function() {
     this._setView();
     this._initMap();
+    this._setMapListeners();
   },
 
   _setView: function() {
@@ -58,6 +61,36 @@ var MapView = Backbone.View.extend({
   _setListeners: function() {
     this.status.on('change:layer', _.bind(this._activeLayer, this))
     Backbone.Events.on('dashboard:change', _.bind(this._refreshMap, this))
+  },
+
+  _setMapListeners: function() {
+    this.map.on('click', this._popUpSetUp.bind(this));
+
+    this.map.on('zoomend', _.bind(this._onZoomMap, this));
+    this.map.on('dragend', _.bind(this._onDragEndMap, this));
+  },
+
+  _popUpSetUp: function(e) {
+    this.popUp = new PopUpView({
+      layer: this.status.get('layer'),
+      latLng: e.latlng,
+      map: this.map,
+      zoom: this.map.getZoom(),
+      mobile: this.mobile
+    });
+  },
+
+  _onDragEndMap: function() {
+    var position = this.map.getCenter();
+    this.status.set({
+      lat: position.lat,
+      lng: position.lng
+    });
+  },
+
+  _onZoomMap: function() {
+    var zoom = this.map.getZoom();
+    this.status.set({ zoom });
   },
 
   _initMap: function() {
@@ -144,6 +177,8 @@ var MapView = Backbone.View.extend({
     }
 
     // return query;
+
+    // We are temporary returning this because we do not have data.
     return 'SELECT * FROM score_test';
   }
 
