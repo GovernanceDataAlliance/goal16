@@ -40,7 +40,6 @@ var PopUpView = Backbone.View.extend({
       .openOn(this.options.map);
 
     this.setEvents();
-    // this._panMap();
   },
 
   setEvents: function() {
@@ -52,8 +51,13 @@ var PopUpView = Backbone.View.extend({
     Backbone.Events.trigger('popUp:close');
   },
 
+  _closeInfowindow: function() {
+    $('.btn-close').off('click');
+    $('.m-popup').remove();
+  },
+
   _getContent: function(options) {
-    var content = popUpTemplate();
+    return popUpTemplate();
   },
 
 

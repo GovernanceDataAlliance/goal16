@@ -4,49 +4,38 @@
   left: 0;
   right: 0;
   height: 100vh;
-  z-index: 20;
-  padding: rem(50) rem(17) rem(30);
+  z-index: 30;
+  background-color: $white;
   transform: translate3d(0) !important;
-
-  color: $font-color-3;
-  background-color: $color-2;
-
-  @media screen and (min-width: $screen-m) {
-    /* min-width: rem(250); */
-    padding: rem(30) rem(50) rem(10) rem(30);
-  }
-
 
   @media screen and (min-width: $screen-m) {
     position: relative;
     right: auto;
     height: auto;
-    /* min-width: rem(250); */
-    /* max-width: rem(450); */
-    min-height: rem(100);
-    //padding: rem(30) rem(40);
-    box-shadow: 0 0 5px 0 rgba(40, 40, 42, 0.3);
+    min-height: rem(100px);
 
     &:after {
       content: "";
-      @extend %centerx;
-      bottom: rem(-10);
+      position: absolute;
+     left: 50%;
+     transform: translateX(-50%);
+      bottom: rem(-10px);
       width: 0;
       height: 0;
-      border-left: rem(10) solid transparent;
-      border-right: rem(10) solid transparent;
-      border-top: rem(10) solid $color-2;
+      border-left: rem(10px) solid transparent;
+      border-right: rem(10px) solid transparent;
+      border-top: rem(10px) solid $color-2;
     }
   }
 
   .btn-close {
     @extend %clean-button-or-input;
-    width: rem(15);
-    height: rem(15);
+    width: rem(15px);
+    height: rem(15px);
     position: absolute;
     top: 0;
     right: 0;
-    margin: rem(20);
+    margin: rem(20px);
 
     .icon-close {
       width: 100%;
@@ -62,10 +51,7 @@
 
 .leaflet-popup {
 
-  /* min-width: rem(250); */
-
   @media screen and (min-width: $screen-m) {
-    /* min-width: rem(250); */
     width: auto;
   }
 }
@@ -86,9 +72,9 @@
 }
 
 .leaflet-popup-close-button {
-  width: rem(15);
-  height: rem(15);
-  margin: rem(15);
+  width: rem(15px);
+  height: rem(15px);
+  margin: rem(15px);
   z-index: 10;
 
   // background-image: url('../../images/close.svg');
@@ -96,7 +82,7 @@
   background-position: 0;
 
   @media screen and (min-width: $screen-m) {
-    margin: rem(30);
+    margin: rem(30px);
   }
 
   &:hover {
@@ -108,9 +94,7 @@
 
 }
 
-.leaflet-popup-content-wrapper,
-.map-legends,
-.map-tooltip {
+.leaflet-popup-content-wrapper {
   background-color: transparent;
   box-shadow: none;
 }
