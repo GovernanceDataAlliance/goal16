@@ -1,9 +1,13 @@
 var $ = require('jquery'),
   _ = require('lodash'),
   enquire = require('enquire.js'),
-  Backbone = require('backbone');
+  Backbone = require('backbone'),
+  Handlebars = require('handlebars');
 
 var CONFIG = require('../../../config.json');
+
+var targetLayerSQL = Handlebars.compile(require('../../queries/map/layer_target.hbs')),
+    indicatorLayerSQL = Handlebars.compile(require('../../queries/map/layer_indicator.hbs'));
 
 var status = require ('../../models/map/status.js');
 
@@ -134,11 +138,12 @@ var MapView = Backbone.View.extend({
     var type = this.status.get('layerType');
 
     if (type === 'target') {
-      query = 'SELECT * FROM score_test WHERE indicator_slug=' + layer;
+      query = targetLayerSQL({layer: layer})
     } else {
-      query = 'SELECT * FROM score_test WHERE indicator_slug=' + layer;
+      query = indicatorLayerSQL({layer: layer})
     }
 
+    // return query;
     return 'SELECT * FROM score_test';
   }
 
