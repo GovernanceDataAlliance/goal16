@@ -53,6 +53,7 @@ var MapView = Backbone.View.extend({
 
   _setListeners: function() {
     this.status.on('change:layer', _.bind(this._activeLayer, this))
+    Backbone.Events.on('dashboard:change', _.bind(this._refreshMap, this))
   },
 
   _initMap: function() {
@@ -66,6 +67,10 @@ var MapView = Backbone.View.extend({
     this.map.addLayer(baseMap);
 
     return this;
+  },
+
+  _refreshMap: function() {
+    this.map.invalidateSize();
   },
 
   _activeLayer: function() {

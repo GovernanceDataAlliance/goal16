@@ -36,12 +36,7 @@ var DashboardView = Backbone.View.extend({
     this.targetsCollection = targetsCollection;
     this.indicatorsCollection = new IndicatorsCollection();
 
-    this._setVars();
     this._setView();
-  },
-
-  _setVars: function() {
-    this.$body = $('body');
   },
 
   _setView: function() {
@@ -74,11 +69,13 @@ var DashboardView = Backbone.View.extend({
 
   _toggleDashboard: function(e) {
     this.dashboardClose = !this.dashboardClose;
-    $('body').toggleClass('is-dashboard-close', this.dashboardClose);
+    this.$body.toggleClass('is-dashboard-close', this.dashboardClose);
 
     if (this.mobile) {
-      this.dashboardClose ? this.$('.js--toggle-dashboard-mb').html('explore and select targets') : this.$('.js--toggle-dashboard-mb').html('go back to map');
+      this.dashboardClose ? this.$dashToggler.html('explore and select targets') : this.$dashToggler.html('go back to map');
     }
+
+    Backbone.Events.trigger('dashboard:change');
   },
 
   _showIndicators: function(e) {
@@ -119,6 +116,8 @@ var DashboardView = Backbone.View.extend({
   },
 
   _setVars: function() {
+    this.$body = $('body');
+    this.$dashToggler = $('.js--toggle-dashboard-mb');
     this.$targetsWrapper = $('.m-dashboard-target');
   },
 
