@@ -9,6 +9,10 @@
   transition: .2s ease;
   transform: translatey(0);
 
+  .is-dashboard-close & {
+    transform: translatey(100%);
+  }
+
   @media screen and (min-width: 768px) {
     top: $header-height-desktop;
     bottom: 0;
@@ -45,13 +49,11 @@
     display: none;
 
     @media screen and (min-width: 768px) {
-      display: block;
+      display: flex;
     }
   }
 
   .is-dashboard-close & {
-    transform: translatey(100%);
-
     .btn-toogle-dashboard-mobile {
       background-color: $white;
       color: $font-color-3;

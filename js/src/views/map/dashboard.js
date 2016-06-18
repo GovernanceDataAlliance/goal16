@@ -20,6 +20,7 @@ var DashboardView = Backbone.View.extend({
 
   events: {
     'click .js--toggle-dashboard': '_toggleDashboard',
+    'click .js--toggle-dashboard-mb': '_toggleDashboard',
     'click .js--open-target': '_showIndicators',
     'click .js--close-target': '_hideIndicators',
     'change .js--layer-selector': '_selectLayer',
@@ -47,6 +48,7 @@ var DashboardView = Backbone.View.extend({
     enquire.register("screen and (max-width:767px)", {
       match: _.bind(function(){
         this.mobile = true;
+        this.dashboardClose = true;
         $('body').addClass('is-dashboard-close');
       },this)
     });
@@ -54,6 +56,7 @@ var DashboardView = Backbone.View.extend({
     enquire.register("screen and (min-width:768px)", {
       match: _.bind(function(){
         this.mobile = false;
+        this.dashboardClose = false;
         $('body').removeClass('is-dashboard-close');
       },this)
     });
@@ -70,7 +73,12 @@ var DashboardView = Backbone.View.extend({
   },
 
   _toggleDashboard: function(e) {
-    $('body').toggleClass('is-dashboard-close');
+    this.dashboardClose = !this.dashboardClose;
+    $('body').toggleClass('is-dashboard-close', this.dashboardClose);
+
+    if (this.mobile) {
+      this.dashboardClose ? this.$('.js--toggle-dashboard-mb').html('explore and select targets') : this.$('.js--toggle-dashboard-mb').html('go back to map');
+    }
   },
 
   _showIndicators: function(e) {
