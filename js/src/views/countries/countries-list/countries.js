@@ -3,20 +3,24 @@ var _ = require('lodash'),
     Backbone = require('backbone'),
     Handlebars = require('handlebars');
 
-var Countries = require('../../collections/common/countries.js');
-var CountryList = require('./country_list.js');
+var CountriesCollection = require('../../../collections/common/countries.js');
+var CountryListView = require('./countries_list.js');
 
-var SearchView = require('../common/search_view.js'),
-  SearchMobileView = require('../common/search_mobile_view.js');
+var SearchView = require('../../common/search/search_view.js'),
+  SearchMobileView = require('../../common/search/search_mobile_view.js');
 
-var template = Handlebars.compile(
-  require('../../templates/countries/countries.hbs'));
 
 var CountriesView = Backbone.View.extend({
 
-  initialize: function() {
-    this.countries = new Countries();
+  className: 'js--countries-list',
 
+  initialize: function() {
+
+    // collections
+    this.countriesCollection = CountriesCollection;
+  },
+
+  _setViews: function() {
     enquire.register("screen and (max-width:769px)", {
       match: _.bind(function(){
         this.mobile = true;
@@ -32,19 +36,10 @@ var CountriesView = Backbone.View.extend({
     });
   },
 
-  render: function() {
-    this.$el.html(template());
-    this.renderCountryList();
-
-    return this;
-  },
-
   renderCountryList: function() {
-    if ($('.js--index-banner').hasClass('is-hidden')) {
-      $('.js--index-banner').removeClass('is-hidden')
-    }
-    var listView = new CountryList({ countries: this.countries });
-    this.$('.js--countries-list').html(listView.render().el);
+    this.countriesCollection.getCountriesList().done(function() {
+      this.$el.html(new CountryListView().render().el);
+    }.bind(this));
   },
 
   initViews: function() {
@@ -56,10 +51,16 @@ var CountriesView = Backbone.View.extend({
   },
 
   show: function() {
-    this.render();
+    this._setViews();
+    this.initViews()
+    this.renderCountryList();
   },
 
-  // hide: function() {}
+  render: function() {
+    this.$el.html();
+
+    return this;
+  }
 
 });
 
