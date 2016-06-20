@@ -1,10 +1,11 @@
 .m-site-navigation {
-
+  padding-left: rem(16px);
+  padding-right: rem(16px);
   .link {
     > a {
       position: relative;
-      font-family: $font-family-secondary;
-      color: $font-color-1;
+      font-family: $font-family-primary;
+      color: $font-color-2;
       text-transform: uppercase;
     }
   }
@@ -26,11 +27,10 @@
         > a {
           display:block;
           height: 100%;
-          font-size: rem(17px);
-          padding: rem(35px) 0 rem(20px) 0;
-
-          @media screen and (min-width: $screen-l) {
-            padding: rem(40px) 0 rem(20px) 0;
+          font-size: $font-size-xxsmall;
+          font-family: $font-family-primary;
+          @media screen and (min-width: $screen-s) {
+            font-size: $font-size-xsmall;
           }
         }
       }
@@ -70,7 +70,8 @@
         > a {
           font-size: rem(11px);
           &:hover {
-            color: $font-color-3;
+            color: $font-color-2;
+            text-decoration: underline;
           }
         }
       }
@@ -139,5 +140,8 @@
         max-width: rem(550px);
       }
     }
+  }
+  @media screen and (min-width: $screen-s) {
+    padding: 0px;
   }
 }
