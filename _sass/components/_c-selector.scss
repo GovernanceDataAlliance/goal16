@@ -1,0 +1,74 @@
+.c-selector {
+  width: 100%;
+  margin-bottom: rem(15px);
+
+  @media screen and (min-width: $screen-m) {
+    width: rem(310px);
+    margin: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  > .btn-drop-down {
+    position: relative;
+    width: 100%;
+    height: rem(45px);
+    padding-right: rem(6px);
+
+    font-size: rem(16px);
+    line-height: rem(16px) !important;
+
+    border: rem(1px) solid rgba($border-1, .5);
+    background-color: $white;
+
+    @media screen and (min-width: $screen-m) {
+      padding: 0 rem(12px);
+      height: rem(45px);
+
+      font-size: rem(11px);
+      line-height: rem(11px) !important;
+    }
+
+    &:after {
+      content: "";
+      @extend %centery;
+      @include arrow (5px, $color-5, 2px, 225deg);
+      top: 40%;
+      right: rem(20px);
+      pointer-events: none;
+
+      @media screen and (min-width: $screen-s) {
+        right: rem(10px);
+      }
+
+      @media screen and (min-width: $screen-l) {
+        right: rem(20px);
+      }
+    }
+  }
+
+  > .btn-drop-down select {
+    width: 100%;
+    height: 100%;
+
+    padding: 0;
+    padding-right: 15%;
+
+    font-family: $font-family-primary;
+    font-size: $font-size-xsmall;
+    color: $color-5;
+    letter-spacing: rem(.7px);
+    text-transform: uppercase;
+
+    &.-disabled {
+      opacity: .5;
+      pointer-events: none;
+    }
+
+    @media screen and (min-width: $screen-m) {
+      padding-right: 5%;
+    }
+  }
+}

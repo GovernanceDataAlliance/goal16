@@ -3,7 +3,7 @@ var _ = require('lodash');
   Backbone = require('backbone'),
   Handlebars = require('handlebars');
 
-var infoWindowView = require('./infowindow_view.js');
+var infoWindowView = require('./infowindow.js');
 
 var sharetemplate = Handlebars.compile(require('../../templates/common/share_tpl.hbs'));
 

@@ -33,9 +33,9 @@ var TargetListView = Backbone.View.extend({
     }.bind(this));
   },
 
-  updateScores: function() {
+  resetScores: function() {
     this.scoreCardViews.forEach(function(card) {
-      card.updateScores();
+      card.resetScores();
     });
   },
 
@@ -53,7 +53,6 @@ var TargetListView = Backbone.View.extend({
     this.scoreCardViews.forEach(function(card) {
       this.$el.append(card.render().el);
     }.bind(this));
-
 
     this.toggleList();
 

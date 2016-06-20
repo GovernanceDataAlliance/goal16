@@ -6,7 +6,7 @@ var $ = require('jquery'),
 var CountriesCollection = require('../../../collections/common/countries.js'),
   ScoresCollection = require('../../../collections/common/scores.js');
 
-var InfoWindowView = require('../../../views/common/infowindow_view.js');
+var InfoWindowView = require('../../../views/common/infowindow.js');
 
 var TargetCardTemplate = require('../../../templates/compare/targets/target_card.hbs'),
   IndicatorTableTemplate = require('../../../templates/compare/targets/score_table.hbs');
@@ -32,6 +32,8 @@ var ScoreCardView = Backbone.View.extend({
 
     this.el.id = this.target['slug'];
 
+    this.isFirstTime = true;
+
     // templates
     this.indicatorTableTemplate = Handlebars.compile(IndicatorTableTemplate);
 
@@ -55,10 +57,7 @@ var ScoreCardView = Backbone.View.extend({
       target_slug: targetSlug
     }).done(function() {
 
-      // shall we show a message saying there's no any score?
-      if(this.scoresCollection.isEmpty()) {
-        return;
-      }
+      this.isFirstTime = false;
 
       this.$scoresTable.html(this.indicatorTableTemplate({
         countries: countries,
@@ -72,26 +71,29 @@ var ScoreCardView = Backbone.View.extend({
     this.$scoresTable.html('');
   },
 
-  updateScores: function() {
-    this.removeScores();
-
+  resetCard: function() {
     this.$openBtn.removeClass('is-hidden');
     this.$closeBtn.addClass('is-hidden');
     this.$scoresTable.addClass('is-hidden');
+  },
 
-    this._getInfo();
+  resetScores: function() {
+    this.resetCard();
+    this.removeScores();
+
+    this.isFirstTime = true;
   },
 
   _toggleCard: function() {
-
     this.$openBtn.toggleClass('is-hidden');
     this.$closeBtn.toggleClass('is-hidden');
+    this.$scoresTable.toggleClass('is-hidden');
 
-    if (!this.scoresCollection.isEmpty()) {
-      this.$scoresTable.toggleClass('is-hidden');
-    } else {
+
+    if (this.isFirstTime) {
       this._getInfo();
     }
+
   },
 
   render: function() {

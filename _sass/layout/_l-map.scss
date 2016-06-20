@@ -1,13 +1,49 @@
 .l-map {
   position: absolute;
   top: $header-height;
+  left: 0;
   bottom: 0;
-  left: $dashboard-width;
   right: 0;
-  transition: .2s ease;
 
-  .is-dashboard-close & {
-    left: 0;
+  .btn-share {
+    position: absolute;
+    top: rem(135px);
+    right: rem(20px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+    width: rem(40px);
+    height: rem(40px);
+    line-height: rem(35px);
+    border-radius: 50%;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border: 0;
+    background-color: $white;
+    box-shadow: 0 0 rem(8px) 0 rgba(7, 51, 56, 0.3);
+    color: $color-5;
+
+    svg {
+      width: rem(15px);
+      height: rem(15px);
+      fill: $color-5;
+    }
+
+    @media screen and (min-width: 768px) {
+      top: rem(140px);
+      right: rem(30px);
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    top: $header-height-desktop;
+    left: $dashboard-width;
+    transition: .2s ease;
+
+    .is-dashboard-close & {
+      left: 0;
+    }
   }
 
   @media screen and (min-width: $screen-l) {
