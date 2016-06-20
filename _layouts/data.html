@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body>
+    {% include icons.html %}
+
+    <div class="l-main-container">
+      {% include header.html %}
+
+      <div class="l-banner -section-2 -about -topsection-about">
+
+        {% include breadcrumbs.html %}
+
+        <div class="wrap">
+          <h1 class="c-section-title -light">{{ page.title }}</h1>
+          <p class="text text-banner-m">{{ page.intro-text }}</p>
+        </div>
+      </div>
+
+      <div id="content"></div>
+
+      {% include modules/compare_module.html %}
+
+      <div class="l-highlight distribuidorDestacado-About02">
+        <div class="wrap">
+          <div class="m-highlight">
+            <h2 class="c-block-title">
+              {{ page.crosseling-module-title }}
+            </h2>
+            <p class="-highlighted">
+              {{ page.crosseling-module-text }}
+            </p>
+            <a href="{{ site.baseurl }}/about" class="btn -white">find out more</a>
+          </div>
+        </div>
+      </div>
+
+      {% include footer.html %}
+    </div>
+    <script>
+      var SITEURL = '{{ site.baseurl }}' || null;
+    </script>
+    <script src="{{ site.baseurl }}/js/main_bundle.js"></script>
+  </body>
+
+</html>
