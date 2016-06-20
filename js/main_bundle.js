@@ -59,7 +59,7 @@ var CountriesCollection = CartoDBCollection.extend({
 
 module.exports = new CountriesCollection();
 
-},{"../../../config.json":1,"../../lib/cartodb_collection.js":8,"../../queries/countries/countries_list.hbs":21,"handlebars":90,"jquery":102,"lodash":103}],3:[function(require,module,exports){
+},{"../../../config.json":1,"../../lib/cartodb_collection.js":8,"../../queries/countries/countries_list.hbs":21,"handlebars":98,"jquery":110,"lodash":111}],3:[function(require,module,exports){
 var CartoDBCollection = require('../../lib/cartodb_collection.js');
 var Handlebars = require('handlebars'),
     _ = require('lodash');
@@ -88,7 +88,7 @@ var IndicatorsCollection = CartoDBCollection.extend({
 
 module.exports = IndicatorsCollection;
 
-},{"../../../config.json":1,"../../lib/cartodb_collection.js":8,"../../queries/common/indicators_by_target.hbs":19,"handlebars":90,"lodash":103}],4:[function(require,module,exports){
+},{"../../../config.json":1,"../../lib/cartodb_collection.js":8,"../../queries/common/indicators_by_target.hbs":19,"handlebars":98,"lodash":111}],4:[function(require,module,exports){
 var CartoDBCollection = require('../../lib/cartodb_collection.js');
 var Handlebars = require('handlebars');
 
@@ -117,7 +117,7 @@ var ScoresCollection = CartoDBCollection.extend({
 
 module.exports = ScoresCollection;
 
-},{"../../../config.json":1,"../../lib/cartodb_collection.js":8,"../../queries/scores/scores_by_target.hbs":25,"handlebars":90}],5:[function(require,module,exports){
+},{"../../../config.json":1,"../../lib/cartodb_collection.js":8,"../../queries/scores/scores_by_target.hbs":25,"handlebars":98}],5:[function(require,module,exports){
 var CartoDBCollection = require('../../lib/cartodb_collection.js');
 var Handlebars = require('handlebars');
 
@@ -141,7 +141,7 @@ var TargetsCollection = CartoDBCollection.extend({
 
 module.exports = new TargetsCollection();
 
-},{"../../../config.json":1,"../../lib/cartodb_collection.js":8,"../../queries/common/targets_list.hbs":20,"handlebars":90}],6:[function(require,module,exports){
+},{"../../../config.json":1,"../../lib/cartodb_collection.js":8,"../../queries/common/targets_list.hbs":20,"handlebars":98}],6:[function(require,module,exports){
 
 var _ = require('lodash');
 
@@ -182,7 +182,7 @@ var FunctionHelper = {
 
 module.exports = FunctionHelper;
 
-},{"lodash":103}],7:[function(require,module,exports){
+},{"lodash":111}],7:[function(require,module,exports){
 var _ = require('lodash'),
   Handlebars = require('handlebars');
 
@@ -236,7 +236,7 @@ Handlebars.registerHelper('unlessPercentage', function(max_score) {
   }
 });
 
-},{"handlebars":90,"lodash":103}],8:[function(require,module,exports){
+},{"handlebars":98,"lodash":111}],8:[function(require,module,exports){
 var  $ = require('jquery'),
     _ = require('lodash'),
     Backbone = require('backbone'),
@@ -280,7 +280,7 @@ var CartoDBCollection = Backbone.Collection.extend({
 
 module.exports = CartoDBCollection;
 
-},{"../../config.json":1,"./format.js":10,"backbone":57,"jquery":102,"lodash":103}],9:[function(require,module,exports){
+},{"../../config.json":1,"./format.js":10,"backbone":65,"jquery":110,"lodash":111}],9:[function(require,module,exports){
 var Backbone = require('backbone'),
     format = require('./format.js'),
     _ = require('lodash');
@@ -323,7 +323,7 @@ var CartoDBModel = Backbone.Model.extend({
 
 module.exports = CartoDBModel;
 
-},{"../../config.json":1,"./format.js":10,"backbone":57,"lodash":103}],10:[function(require,module,exports){
+},{"../../config.json":1,"./format.js":10,"backbone":65,"lodash":111}],10:[function(require,module,exports){
 module.exports = function() {
   var str = arguments[0],
       len = arguments.length+1,
@@ -386,7 +386,7 @@ var ViewManager = Backbone.Model.extend({
 
 module.exports = ViewManager;
 
-},{"backbone":57}],12:[function(require,module,exports){
+},{"backbone":65}],12:[function(require,module,exports){
 var Backbone = require('backbone');
 
 var helpers = require('./helpers/handlebars.js');
@@ -396,7 +396,7 @@ var Router = require('./router.js'),
 
 Backbone.history.start({pushState: true});
 
-},{"./helpers/handlebars.js":7,"./router.js":26,"backbone":57}],13:[function(require,module,exports){
+},{"./helpers/handlebars.js":7,"./router.js":26,"backbone":65}],13:[function(require,module,exports){
 var _ = require('lodash'),
   Backbone = require('backbone'),
   Handlebars = require('handlebars'),
@@ -433,7 +433,7 @@ var InfowindowModel = CartoDBModel.extend({
 
 module.exports = InfowindowModel;
 
-},{"../../../config.json":1,"../../lib/cartodb_model.js":9,"../../lib/format.js":10,"../../queries/common/indicator_info.hbs":18,"backbone":57,"handlebars":90,"lodash":103}],14:[function(require,module,exports){
+},{"../../../config.json":1,"../../lib/cartodb_model.js":9,"../../lib/format.js":10,"../../queries/common/indicator_info.hbs":18,"backbone":65,"handlebars":98,"lodash":111}],14:[function(require,module,exports){
 var Backbone = require('backbone');
 
 var Status = Backbone.Model.extend({
@@ -450,7 +450,7 @@ var Status = Backbone.Model.extend({
 
 module.exports = Status;
 
-},{"backbone":57}],15:[function(require,module,exports){
+},{"backbone":65}],15:[function(require,module,exports){
 var Backbone = require('backbone');
 
 var Status = Backbone.Model.extend({
@@ -466,7 +466,7 @@ var Status = Backbone.Model.extend({
 
 module.exports = Status;
 
-},{"backbone":57}],16:[function(require,module,exports){
+},{"backbone":65}],16:[function(require,module,exports){
 var Backbone = require('backbone'),
   Handlebars = require('handlebars'),
   format = require('../../lib/format.js');
@@ -486,7 +486,7 @@ var PopUp = CartoDBModel.extend({
 
 module.exports = PopUp;
 
-},{"../../lib/cartodb_model.js":9,"../../lib/format.js":10,"../../queries/map/pop_up.hbs":24,"backbone":57,"handlebars":90}],17:[function(require,module,exports){
+},{"../../lib/cartodb_model.js":9,"../../lib/format.js":10,"../../queries/map/pop_up.hbs":24,"backbone":65,"handlebars":98}],17:[function(require,module,exports){
 var Backbone = require('backbone');
 
 var Status = Backbone.Model.extend({
@@ -504,7 +504,7 @@ var Status = Backbone.Model.extend({
 
 module.exports = new Status();
 
-},{"backbone":57}],18:[function(require,module,exports){
+},{"backbone":65}],18:[function(require,module,exports){
 module.exports = "SELECT \n  title, \n  description, \n  slug \nFROM\n  {{table}} \nWHERE \n  slug='number_of_conflict_deaths'\n";
 
 },{}],19:[function(require,module,exports){
@@ -539,6 +539,7 @@ var ViewManager = require('./lib/view_manager.js'),
   MapView = require('./views/map/map.js'),
   DashboardView = require('./views/map/dashboard.js'),
   CompareView = require('./views/compare/compare.js'),
+  DataView = require('./views/data/data.js'),
   CountriesListView = require('./views/countries/countries-list/countries.js'),
   CountryView = require('./views/countries/country/country.js');
 
@@ -554,7 +555,8 @@ var Router = Backbone.Router.extend({
     "(/)": "welcome",
     "map(/)(?layerType=:type)(&layer=:layer)(&zoom=:zoom)(&center=:center)": "map",
     "countries(/)(?iso=:iso)": "countries",
-    "compare(/)": "compare"
+    "compare(/)": "compare",
+    "data(/)(?target=:target)": "data"
   },
 
   initialize: function() {
@@ -667,55 +669,179 @@ var Router = Backbone.Router.extend({
 
     // updates url
     this.navigate(path + uri.search());
-  }
+  },
+
+  //DATA
+  data: function() {
+    if (!this.viewManager.hasView('data')) {
+      this.viewManager.addView('data', DataView);
+    }
+
+    this.viewManager.showView('data');
+  },
 
 });
 
 module.exports = Router;
 
-},{"./lib/view_manager.js":11,"./views/common/mobile_menu_view.js":42,"./views/compare/compare.js":45,"./views/countries/countries-list/countries.js":49,"./views/countries/country/country.js":51,"./views/map/dashboard.js":52,"./views/map/map.js":53,"./views/welcome/welcome.js":55,"backbone":57,"lodash":103,"urijs":109}],27:[function(require,module,exports){
-module.exports = "<div class=\"menu-background\"></div>\n<div class=\"m-mobile-menu\">\n  <div class=\"btn-close -color-1 js--close-menu\">×</div>\n  <div class=\"scroll-wrapper\">\n    <nav class=\"m-site-navigation -header\">\n      <ul>\n        <li class='link'><a href=\"/countries\">Countries</a></li>\n        <li class='link'><a href=\"/indicators\">Data</a></li>\n        <li class='link'><a href=\"/compare\">Compare</a></li>\n        <li class='link'><a href=\"/about\">About</a></li>\n        <li class='link'><a href=\"/blog/\">Blog</a></li>\n      </ul>\n    </nav>\n\n    <div class=\"m-social-share -header\">\n      <ul>\n        <li class=\"icon -twitter\">\n          <a href=\"https://twitter.com/@GovDataAlliance\">\n            <svg class=\"icon\">\n              <use xlink:href=\"#icon-twitter\"></use>\n            </svg>\n          </a>\n        </li>\n        <!-- <li class=\"icon -facebook\">\n          <a href=\"https://www.facebook.com\">\n            <svg class=\"icon\">\n              <use xlink:href=\"#icon-facebook\"></use>\n            </svg>\n          </a>\n        </li> -->\n      </ul>\n    </div>\n  </div>\n</div>\n";
+},{"./lib/view_manager.js":11,"./views/common/mobile_menu_view.js":47,"./views/compare/compare.js":52,"./views/countries/countries-list/countries.js":56,"./views/countries/country/country.js":58,"./views/data/data.js":59,"./views/map/dashboard.js":60,"./views/map/map.js":61,"./views/welcome/welcome.js":63,"backbone":65,"lodash":111,"urijs":117}],27:[function(require,module,exports){
+module.exports = "<div class=\"c-download\">\n  <div class=\"tabs-content content\">\n    <div class=\"content active\" id=\"share-link\">\n      <p>For details on the data you are about to download, including a full description of the\n      meta data and data fields used by Alliance data producers to share their data in a consistent and comparable manner, please <a href=\"{{siteURL}}/blog/2016/02/19/a-guide-to-the-data-available-on-the-governance-data-alliance-website.html\" target=\"_blank\">click here</a>.</p>\n    </div>\n  </div>\n\n  <div class=\"buttons\">\n    <a href=\"{{csv}}\" class=\"btn -secondary js--download-btn\" download=\"data.csv\">download</a>\n    <a href=\"\" class=\"btn js--cancel-btn\">cancel</a>\n  </div>\n</div>\n";
 
 },{}],28:[function(require,module,exports){
-module.exports = "{{#if isBase}}\n  <div id=\"infowindow-base\">\n    <div class=\"m-modal-window\">\n      <div class=\"modal-wrapper\">\n        <div class=\"btn-close-modal close-icon\">×</div>\n        <div class=\"modal-container\">\n          <div id=\"content\" class=\"modal-content\">\n            {{{content}}}\n          </div>\n        </div>\n      </div>\n      <div class=\"modal-background\"></div>\n    </div>\n  </div>\n{{/if}}\n\n{{#if isIndicator}}\n  <div id=\"info-infowindow\">\n    <div class=\"-indicator\">\n      <h2 class=\"indicator-name\">{{{data.product_name}}}</h2>\n      <div class=\"indicator-logo\" style=\"background-image: url('/img/logos/{{data.product_logo}}')\"></div>\n      <div class=\"info-wrapper\">\n        <span class=\"score-range\">Score Range: {{data.max_score}} - {{data.min_score}}</span>\n        <a class=\"btn -secondary indicator-website\" href=\"{{data.methodology_link}}\" target=\"_blank\">visit the website</a>\n      </div>\n      <p>{{data.product_description}}</p>\n    </div>\n  </div>\n{{/if}}\n\n";
+module.exports = "<div class=\"menu-background\"></div>\n<div class=\"m-mobile-menu\">\n  <div class=\"btn-close -color-1 js--close-menu\">×</div>\n  <div class=\"scroll-wrapper\">\n    <nav class=\"m-site-navigation -header\">\n      <ul>\n        <li class='link'><a href=\"/countries\">Countries</a></li>\n        <li class='link'><a href=\"/indicators\">Data</a></li>\n        <li class='link'><a href=\"/compare\">Compare</a></li>\n        <li class='link'><a href=\"/about\">About</a></li>\n        <li class='link'><a href=\"/blog/\">Blog</a></li>\n      </ul>\n    </nav>\n\n    <div class=\"m-social-share -header\">\n      <ul>\n        <li class=\"icon -twitter\">\n          <a href=\"https://twitter.com/@GovDataAlliance\">\n            <svg class=\"icon\">\n              <use xlink:href=\"#icon-twitter\"></use>\n            </svg>\n          </a>\n        </li>\n        <!-- <li class=\"icon -facebook\">\n          <a href=\"https://www.facebook.com\">\n            <svg class=\"icon\">\n              <use xlink:href=\"#icon-facebook\"></use>\n            </svg>\n          </a>\n        </li> -->\n      </ul>\n    </div>\n  </div>\n</div>\n";
 
 },{}],29:[function(require,module,exports){
-module.exports = "<div class=\"js--mobile-search search-wrapper m-mobile-search\">\n  <div class=\"btn-close-modal btn-close-search close-icon\">×</div>\n  <svg class=\"icon-search\">\n    <use xlink:href=\"#icon-search\"></use>\n  </svg>\n  <div class=\"search-box\" id=\"searchContent\">\n    <select name=\"countries\" id=\"countries\">\n      <option value=\"\">Search country</option>\n      {{#each countries}}\n        <option value=\"/countries#{{iso3}}&{{max}}\">{{name}}</option>\n      {{/each}}\n    </select>\n  </div>\n</div>\n";
+module.exports = "{{#if isBase}}\n  <div id=\"infowindow-base\">\n    <div class=\"m-modal-window\">\n      <div class=\"modal-wrapper\">\n        <div class=\"btn-close-modal close-icon\">×</div>\n        <div class=\"modal-container\">\n          <div id=\"content\" class=\"modal-content\">\n            {{{content}}}\n          </div>\n        </div>\n      </div>\n      <div class=\"modal-background\"></div>\n    </div>\n  </div>\n{{/if}}\n\n{{#if isIndicator}}\n  <div id=\"info-infowindow\">\n    <div class=\"-indicator\">\n      <h2 class=\"indicator-name\">{{{data.product_name}}}</h2>\n      <div class=\"indicator-logo\" style=\"background-image: url('/img/logos/{{data.product_logo}}')\"></div>\n      <div class=\"info-wrapper\">\n        <span class=\"score-range\">Score Range: {{data.max_score}} - {{data.min_score}}</span>\n        <a class=\"btn -secondary indicator-website\" href=\"{{data.methodology_link}}\" target=\"_blank\">visit the website</a>\n      </div>\n      <p>{{data.product_description}}</p>\n    </div>\n  </div>\n{{/if}}\n\n";
 
 },{}],30:[function(require,module,exports){
-module.exports = "{{#if data}}\n  <ul>\n    {{#each data}}\n      <li class=\"search-area{{#if selected}} selected{{/if}}\" title=\"{{title}}\" data-iso=\"{{iso3}}\" data-index=\"{{index}}\"><a href=\"?iso={{iso}}\"><span class=\"name\">{{{name}}}</span></a></li>\n    {{/each}}\n  </ul>\n{{else}}\n  <div class=\"no-results search-area\"><span>No results</span></div>\n{{/if}}\n";
+module.exports = "<div class=\"js--mobile-search search-wrapper m-mobile-search\">\n  <div class=\"btn-close-modal btn-close-search close-icon\">×</div>\n  <svg class=\"icon-search\">\n    <use xlink:href=\"#icon-search\"></use>\n  </svg>\n  <div class=\"search-box\" id=\"searchContent\">\n    <select name=\"countries\" id=\"countries\">\n      <option value=\"\">Search country</option>\n      {{#each countries}}\n        <option value=\"/countries#{{iso3}}&{{max}}\">{{name}}</option>\n      {{/each}}\n    </select>\n  </div>\n</div>\n";
 
 },{}],31:[function(require,module,exports){
-module.exports = "<input id=\"searchMap\" placeholder=\"Search country\" type=\"search\">\n<svg class=\"icon-search\">\n  <use xlink:href=\"#icon-search\"></use>\n</svg>\n<div class=\"search-box\" id=\"searchContent\">\n  <div id=\"search-tpl\">\n    <div class=\"search-content\">\n      <div class=\"search-result\"></div>\n      <div class=\"search-suggestions\"></div>\n    </div>\n  </div>\n</div>\n";
+module.exports = "{{#if data}}\n  <ul>\n    {{#each data}}\n      <li class=\"search-area{{#if selected}} selected{{/if}}\" title=\"{{title}}\" data-iso=\"{{iso3}}\" data-index=\"{{index}}\"><a href=\"?iso={{iso}}\"><span class=\"name\">{{{name}}}</span></a></li>\n    {{/each}}\n  </ul>\n{{else}}\n  <div class=\"no-results search-area\"><span>No results</span></div>\n{{/if}}\n";
 
 },{}],32:[function(require,module,exports){
-module.exports = "\n<!-- selectors  -->\n<div id=\"selectors-container\" class=\"l-selectors\"></div>\n\n<!-- target list  -->\n<div class=\"wrap\">\n  <div id=\"target-list-container\" class=\"l-target-list\"></div>\n</div>\n\n<div class=\"l-share is-hidden\">\n  <button class=\"btn-primary -small\" id=\"js--share\" type=\"button\" name=\"share\"> share </button>\n</div>\n";
+module.exports = "<input id=\"searchMap\" placeholder=\"Search country\" type=\"search\">\n<svg class=\"icon-search\">\n  <use xlink:href=\"#icon-search\"></use>\n</svg>\n<div class=\"search-box\" id=\"searchContent\">\n  <div id=\"search-tpl\">\n    <div class=\"search-content\">\n      <div class=\"search-result\"></div>\n      <div class=\"search-suggestions\"></div>\n    </div>\n  </div>\n</div>\n";
 
 },{}],33:[function(require,module,exports){
-module.exports = "<div class=\"wrap\">\n  <div class=\"selectors-box\">\n    <div class=\"c-selector\">\n      <div class=\"btn-drop-down\">\n        <select  id=\"isoA\" name=\"isoA\">\n          <option value=\"\"> select country </option>\n        </select>\n      </div>\n    </div>\n\n    <div class=\"c-selector\">\n      <div class=\"btn-drop-down\">\n        <select  id=\"isoB\" name=\"isoB\">\n          <option value=\"\"> select country </option>\n        </select>\n      </div>\n    </div>\n\n    <div class=\"c-selector\">\n      <div class=\"btn-drop-down\">\n        <select  id=\"isoC\" name=\"isoC\">\n          <option value=\"\"> select country </option>\n        </select>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"buttons-box\">\n    <button class=\"btn-primary\" type=\"button\" id=\"compare-countries\" name=\"compare-countries\"> compare </button>\n  </div>\n</div>\n";
+module.exports = "<div class=\"c-share\">\n  <div class=\"content active\" id=\"share-link\">\n    <p>Copy the link below to share it</p>\n    <div class=\"link-box\">\n      <input class=\"url\" value=\"{{link}}\" />\n      <div class=\"btn -secondary btn-copy\">Copy</div>\n    </div>\n  </div>\n\n  <div class=\"m-social-share -share-window\">\n    <ul>\n      <li>\n        <div class=\"btn-social twitter\">\n          <a class=\"icon -twitter\" href=\"https://twitter.com/share?url={{link}}\" target=\"_blank\">\n            <svg class=\"icon\">\n              <use xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"#icon-twitter\"></use>\n            </svg>\n          </a>\n        </div>\n      </li>\n      {{!-- <li>\n        <div class=\"btn-social facebook\">\n        <a href=\"https://www.facebook.com/sharer.php?u={{link}}\" target=\"_blank\">\n          <svg class=\"icon\">\n            <use xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"#icon-facebook\"></use>\n          </svg>\n        </a>\n        </div>\n      </li> --}}\n    </ul>\n  </div>\n</div>\n";
 
 },{}],34:[function(require,module,exports){
-module.exports = "{{#if scores}}\n  <div class=\"c-score-table\">\n    <div class=\"table-header\">\n      <div class=\"table-row\">\n        <div class=\"table-cell -category\">\n          <span>official indicators</span>\n        </div>\n\n        {{#each countries}}\n          <div class=\"table-cell -country\">\n            <span>{{ name }}</span>\n          </div>\n        {{/each}}\n\n      </div>\n    </div>\n    <div class=\"table-body\">\n\n      {{#each scores}}\n\n        <div class=\"table-row\">\n          <div class=\"table-cell -indicator\">\n            <span>{{ title }}</span>\n            <span class=\"indicator-info\">Score name  |  % of victims reduced  |  Last data point: 2014</span>\n          </div>\n\n          <div class=\"table-cell -score\">\n            <span> 5% </span>\n            <span class=\"country-name only-mobile\">Country name</span>\n          </div>\n\n          <div class=\"table-cell -score\">\n            <span> 25% </span>\n            <span class=\"country-name only-mobile\">Country name</span>\n          </div>\n\n          <div class=\"table-cell -score\">\n            <span> 100% </span>\n            <span class=\"country-name only-mobile\">Country name</span>\n          </div>\n        </div>\n\n      {{/each}}\n\n    </div>\n\n</div>\n\n{{else}}\n\n  <p>No indicators available for this target</p>\n\n{{/if}}\n";
+module.exports = "<div class=\"m-share-window\">\n  <h2>Share</h2>\n  <div class=\"share-toolbar\">\n    <!-- share -->\n    <button class=\"btn js--share \">\n      <svg class=\"icon -regular\">\n        <use xlink:href=\"#icon-share\"></use>\n      </svg>\n      <span class=\"button-literal\">share</span>\n    </button>\n\n    <!-- download -->\n    <button class=\"btn js--download\">\n      <svg class=\"icon -regular\">\n        <use xlink:href=\"#icon-download\"></use>\n      </svg>\n      <span class=\"button-literal\">download data</span>\n    </button>\n\n    <!-- print -->\n    <button class=\"btn js--print\">\n      <svg class=\"icon -regular\">\n        <use xlink:href=\"#icon-print\"></use>\n      </svg>\n      <span class=\"button-literal\">print</span>\n    </button>\n  </div>\n  <div id=\"toolbar-content\"></div>\n</div>\n";
 
 },{}],35:[function(require,module,exports){
-module.exports = "\n<header class=\"target-info\">\n\n    <h3 class=\"target-title\">{{ target.code }} {{ target.title }}</h3>\n\n    <div class=\"card-options\">\n      <div class=\"js--toggle-card\">\n        <svg class=\"icon icon-open_arrow\"><use xlink:href=\"#icon-open_bigarrow\"></use></svg>\n        <svg class=\"icon icon-close is-hidden\"><use xlink:href=\"#icon-close\"></use></svg>\n      </div>\n    </div>\n\n</header>\n<div id=\"js--score-container\" class=\"is-hidden\"></div>\n";
+module.exports = "\n<!-- selectors  -->\n<div id=\"selectors-container\" class=\"l-selectors\"></div>\n\n<!-- target list  -->\n<div class=\"wrap\">\n  <div id=\"target-list-container\" class=\"l-target-list\"></div>\n</div>\n\n<div class=\"l-share is-hidden\">\n  <button class=\"btn-primary -small\" id=\"js--share\" type=\"button\" name=\"share\"> share </button>\n</div>\n";
 
 },{}],36:[function(require,module,exports){
-module.exports = "{{#each countriesByRegion}}\n  <div class=\"l-content -main\">\n    <div class=\"wrap\">\n      <div class=\"m-list\">\n        <h2 class=\"c-section-title -small\">{{@key}}</h2>\n          <div class=\"lists-container\">\n          {{#each this}}\n            <ul>\n            {{#each this}}\n              <li><a href=\"?iso={{iso}}\" title=\"{{name}}\">{{name}}</a></li>\n            {{/each}}\n            </ul>\n          {{/each}}\n          </div>\n      </div>\n    </div>\n  </div>\n{{/each}}\n";
+module.exports = "<div class=\"wrap\">\n  <div class=\"selectors-box\">\n    <div class=\"c-selector\">\n      <div class=\"btn-drop-down\">\n        <select  id=\"isoA\" name=\"isoA\">\n          <option value=\"\"> select country </option>\n        </select>\n      </div>\n    </div>\n\n    <div class=\"c-selector\">\n      <div class=\"btn-drop-down\">\n        <select  id=\"isoB\" name=\"isoB\">\n          <option value=\"\"> select country </option>\n        </select>\n      </div>\n    </div>\n\n    <div class=\"c-selector\">\n      <div class=\"btn-drop-down\">\n        <select  id=\"isoC\" name=\"isoC\">\n          <option value=\"\"> select country </option>\n        </select>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"buttons-box\">\n    <button class=\"btn-primary\" type=\"button\" id=\"compare-countries\" name=\"compare-countries\"> compare </button>\n  </div>\n</div>\n";
 
 },{}],37:[function(require,module,exports){
-module.exports = "<button class=\"js--toggle-dashboard btn-toogle-dashboard\"></button>\n<button class=\"js--toggle-dashboard-mb btn-toogle-dashboard-mobile\">explore and select targets</button>\n<div class=\"m-dashboard\" id=\"targets-container\">\n</div>\n";
+module.exports = "{{#if scores}}\n  <div class=\"c-score-table\">\n    <div class=\"table-header\">\n      <div class=\"table-row\">\n        <div class=\"table-cell -category\">\n          <span>official indicators</span>\n        </div>\n\n        {{#each countries}}\n          <div class=\"table-cell -country\">\n            <span>{{ name }}</span>\n          </div>\n        {{/each}}\n\n      </div>\n    </div>\n    <div class=\"table-body\">\n\n      {{#each scores}}\n\n        <div class=\"table-row\">\n          <div class=\"table-cell -indicator\">\n            <span>{{ title }}</span>\n            <span class=\"indicator-info\">Score name  |  % of victims reduced  |  Last data point: 2014</span>\n          </div>\n\n          <div class=\"table-cell -score\">\n            <span> 5% </span>\n            <span class=\"country-name only-mobile\">Country name</span>\n          </div>\n\n          <div class=\"table-cell -score\">\n            <span> 25% </span>\n            <span class=\"country-name only-mobile\">Country name</span>\n          </div>\n\n          <div class=\"table-cell -score\">\n            <span> 100% </span>\n            <span class=\"country-name only-mobile\">Country name</span>\n          </div>\n        </div>\n\n      {{/each}}\n\n    </div>\n\n</div>\n\n{{else}}\n\n  <p>No indicators available for this target</p>\n\n{{/if}}\n";
 
 },{}],38:[function(require,module,exports){
-module.exports = "{{#if official}}\n<div class=\"indicators-type-wrapper official-indicators\">\n  <span class=\"indicator-type\">official indicators</span>\n  {{#each official}}\n  <div class=\"indicator-wrapper\">\n    <input type=\"radio\" name=\"layer-selector\" value={{slug}} id={{slug}} class=\"js--layer-selector -indicator\">\n    <label for={{slug}}><h1 class=\"indicator-title\">{{title}}</h1></label>\n    <button class=\"js--indicator-info btn-info\" data-slug={{slug}}>\n      <svg class=\"icon-info\">\n        <use xlink:href=\"#icon-info\"></use>\n      </svg>\n    </button>\n  </div>\n  {{/each}}\n</div>\n{{/if}}\n{{#if shadow}}\n<div class=\"indicators-type-wrapper shadow-indicators\">\n  <span class=\"indicator-type\">shadow indicators</span>\n  {{#each shadow}}\n  <div class=\"indicator-wrapper\">\n    <input type=\"radio\" name=\"layer-selector\" value={{slug}} id={{slug}} class=\"js--layer-selector -indicator\">\n    <label for={{slug}}><h1 class=\"indicator-title\">indicator name</h1></label>\n    <button class=\"js--indicator-info btn-info\" data-slug=\"percentage_of_people_violence\">\n      <svg class=\"icon-info\">\n        <use xlink:href=\"#icon-info\"></use>\n      </svg>\n    </button>\n  </div>\n  {{/each}}\n</div>\n{{/if}}\n";
+module.exports = "\n<header class=\"target-info\">\n\n    <h3 class=\"target-title\">{{ target.code }} {{ target.title }}</h3>\n\n    <div class=\"card-options\">\n      <div class=\"js--toggle-card\">\n        <svg class=\"icon icon-open_arrow\"><use xlink:href=\"#icon-open_bigarrow\"></use></svg>\n        <svg class=\"icon icon-close is-hidden\"><use xlink:href=\"#icon-close\"></use></svg>\n      </div>\n    </div>\n\n</header>\n<div id=\"js--score-container\" class=\"is-hidden\"></div>\n";
 
 },{}],39:[function(require,module,exports){
-module.exports = "<div class=\"m-popup\">\n  <button class=\"btn-close\">\n    <svg class=\"icon icon-close\"><use xlink:href=\"#icon-close\"></use></svg>\n  </button>\n  <div class=\"wrapper\">\n    {{content}}\n    <a href=\"countries/FRA\"><h1>France</h1></a> \n    <div class=\"data\">\n      <p>name of the layer you are seeing</p>\n      <p>Last data point: 2014</p>\n    </div>\n    <div class=\"score\">17%</div>\n    <div class=\"links\">\n      <a href=\"/countries/?iso=FRA\">visit country page</a>\n      <a href=\"/compare/?isoA=FRA\">compare to others</a>\n    </div>\n  </div>\n</div>\n";
+module.exports = "{{#each countriesByRegion}}\n  <div class=\"l-content -main\">\n    <div class=\"wrap\">\n      <div class=\"m-list\">\n        <h2 class=\"c-section-title -small\">{{@key}}</h2>\n          <div class=\"lists-container\">\n          {{#each this}}\n            <ul>\n            {{#each this}}\n              <li><a href=\"?iso={{iso}}\" title=\"{{name}}\">{{name}}</a></li>\n            {{/each}}\n            </ul>\n          {{/each}}\n          </div>\n      </div>\n    </div>\n  </div>\n{{/each}}\n";
 
 },{}],40:[function(require,module,exports){
-module.exports = "{{#each targets}}\n  <div class=\"m-dashboard-target\" id=\"target-{{slug}}\">\n    <div class=\"header\">\n      <div class=\"btn-wrapper\">\n        <button class=\"js--open-target btn-open-target\" data-slug={{slug}}>\n          <svg class=\"icon-open\">\n            <use xlink:href=\"#icon-open\"></use>\n          </svg>\n        </button>\n        <button class=\"js--close-target btn-close-target\" data-slug={{slug}}>\n          <svg class=\"icon-minus\">\n            <use xlink:href=\"#icon-minus\"></use>\n          </svg>\n        </button>\n      </div>\n      <input type=\"radio\" name=\"layer-selector\" value={{slug}} id=\"{{slug}}\" class=\"js--layer-selector -target\">\n      <label for={{slug}}><h2 class=\"target-title\">{{title}}</h2></label>\n    </div>\n    <div class=\"m-dashboard-indicators js--indicators\"></div>\n  </div>\n{{/each}}\n";
+module.exports = "<div class=\"m-targets-table\">\n  <div id=\"targets-container\" class=\"wrapper\">\n\n    <div class=\"m-table-target\" id=\"{{slug}}\">\n      <div class=\"header\">\n        <h2>target name</h2>\n      </div>\n      <div class=\"m-table-indicators js--indicators\">\n\n        <div class=\"table-indicator\">\n          <div class=\"header\">\n            <h1>Indicator name <span>(indicator type)</span></h1>\n          </div>\n          <div class=\"indicator-info\">\n            <p>info for the indicator</p>\n          </div>\n        </div>\n        \n      </div>\n    </div>\n\n  </div>\n</div>\n";
 
 },{}],41:[function(require,module,exports){
+module.exports = "<button class=\"js--toggle-dashboard btn-toogle-dashboard\"></button>\n<button class=\"js--toggle-dashboard-mb btn-toogle-dashboard-mobile\">explore and select targets</button>\n<div class=\"m-dashboard\" id=\"targets-container\">\n</div>\n";
+
+},{}],42:[function(require,module,exports){
+module.exports = "{{#if official}}\n<div class=\"indicators-type-wrapper official-indicators\">\n  <span class=\"indicator-type\">official indicators</span>\n  {{#each official}}\n  <div class=\"indicator-wrapper\">\n    <input type=\"radio\" name=\"layer-selector\" value={{slug}} id={{slug}} class=\"js--layer-selector -indicator\">\n    <label for={{slug}}><h1 class=\"indicator-title\">{{title}}</h1></label>\n    <button class=\"js--indicator-info btn-info\" data-slug={{slug}}>\n      <svg class=\"icon-info\">\n        <use xlink:href=\"#icon-info\"></use>\n      </svg>\n    </button>\n  </div>\n  {{/each}}\n</div>\n{{/if}}\n{{#if shadow}}\n<div class=\"indicators-type-wrapper shadow-indicators\">\n  <span class=\"indicator-type\">shadow indicators</span>\n  {{#each shadow}}\n  <div class=\"indicator-wrapper\">\n    <input type=\"radio\" name=\"layer-selector\" value={{slug}} id={{slug}} class=\"js--layer-selector -indicator\">\n    <label for={{slug}}><h1 class=\"indicator-title\">indicator name</h1></label>\n    <button class=\"js--indicator-info btn-info\" data-slug=\"percentage_of_people_violence\">\n      <svg class=\"icon-info\">\n        <use xlink:href=\"#icon-info\"></use>\n      </svg>\n    </button>\n  </div>\n  {{/each}}\n</div>\n{{/if}}\n";
+
+},{}],43:[function(require,module,exports){
+module.exports = "<div class=\"m-popup\">\n  <button class=\"btn-close\">\n    <svg class=\"icon icon-close\"><use xlink:href=\"#icon-close\"></use></svg>\n  </button>\n  <div class=\"wrapper\">\n    {{content}}\n    <a href=\"countries/FRA\"><h1>France</h1></a> \n    <div class=\"data\">\n      <p>name of the layer you are seeing</p>\n      <p>Last data point: 2014</p>\n    </div>\n    <div class=\"score\">17%</div>\n    <div class=\"links\">\n      <a href=\"/countries/?iso=FRA\">visit country page</a>\n      <a href=\"/compare/?isoA=FRA\">compare to others</a>\n    </div>\n  </div>\n</div>\n";
+
+},{}],44:[function(require,module,exports){
+module.exports = "{{#each targets}}\n  <div class=\"m-dashboard-target\" id=\"target-{{slug}}\">\n    <div class=\"header\">\n      <div class=\"btn-wrapper\">\n        <button class=\"js--open-target btn-open-target\" data-slug={{slug}}>\n          <svg class=\"icon-open\">\n            <use xlink:href=\"#icon-open\"></use>\n          </svg>\n        </button>\n        <button class=\"js--close-target btn-close-target\" data-slug={{slug}}>\n          <svg class=\"icon-minus\">\n            <use xlink:href=\"#icon-minus\"></use>\n          </svg>\n        </button>\n      </div>\n      <input type=\"radio\" name=\"layer-selector\" value={{slug}} id=\"{{slug}}\" class=\"js--layer-selector -target\">\n      <label for={{slug}}><h2 class=\"target-title\">{{title}}</h2></label>\n    </div>\n    <div class=\"m-dashboard-indicators js--indicators\"></div>\n  </div>\n{{/each}}\n";
+
+},{}],45:[function(require,module,exports){
+var _ = require('lodash'),
+  $ = require('jquery'),
+  Backbone = require('backbone'),
+  Handlebars = require('handlebars');
+
+var infoWindowView = require('./infowindow.js');
+
+var tpl = Handlebars.compile(require('../../templates/common/download_tpl.hbs'));
+
+var DownloadView = infoWindowView.extend({
+
+  template: tpl,
+
+  events: {
+    'click .js--download-btn': '_getDownload',
+    'click .js--cancel-btn': '_cancel'
+  },
+
+  initialize: function(settings) {
+    var options = settings && settings.options ? settings.options : settings;
+    this.options = _.extend({}, options);
+
+    _.extend(this.options, {
+      id: window.indicatorId
+    });
+
+    this._setListeners();
+  },
+
+  _setListeners: function() {
+    // Backbone.Events.on('compare:download-data', this._setDownloadData, this);
+  },
+
+  // _setDownloadData: function(countries) {
+  //   this.options.compare = countries;
+  // },
+
+  _getCSV: function() {
+    if (this.options.id) {
+      return this.countriesCollection.downloadCountriesForIndicator(
+        this.options.id, this.options.year, this.options.categoryGroup, this.options.categoryName);
+    } else if (this.options.compare) {
+
+      if (!this.options.compare.length > 0) {
+        return;
+      }
+
+      $('.js--download-btn')
+        .unbind('click')
+        .removeClass('disabled');
+
+      // return this.indicatorsCollection.downloadForCountries({
+      //   countries: this.options.compare
+      // });
+
+    } else {
+
+      // return this.indicatorsCollection.downloadForCountry({
+      //   iso: this.options.iso,
+      //   year: this.options.year
+      // });
+
+    }
+  },
+
+  _cancel: function(e) {
+    e.preventDefault();
+    this.constructor.__super__.close();
+  },
+
+  _checkCompareDownload: function() {
+    if (window.location.pathname !== '/compare') {
+      return;
+    }
+
+    if (this.options.compare && this.options.compare.length > 0) {
+      $('.js--download-btn')
+        .unbind('click')
+        .removeClass('-disabled');
+
+    } else {
+      $('.js--download-btn').on('click', function(e) {
+        e.preventDefault();
+      });
+
+      $('.js--download-btn').addClass('-disabled');
+    }
+  },
+
+  render: function() {
+    this.$el.append(this.template({
+      csv: this._getCSV(),
+      siteURL: SITEURL || null
+    }));
+
+    this._checkCompareDownload();
+  }
+
+});
+
+module.exports = DownloadView;
+
+},{"../../templates/common/download_tpl.hbs":27,"./infowindow.js":46,"backbone":65,"handlebars":98,"jquery":110,"lodash":111}],46:[function(require,module,exports){
 var _ = require('lodash'),
   $ = require('jquery'),
   Backbone = require('backbone'),
@@ -834,7 +960,7 @@ var ModalWindowView = Backbone.View.extend({
 
 module.exports = ModalWindowView;
 
-},{"../../templates/common/modal_window_tpl.hbs":28,"backbone":57,"handlebars":90,"jquery":102,"lodash":103}],42:[function(require,module,exports){
+},{"../../templates/common/modal_window_tpl.hbs":29,"backbone":65,"handlebars":98,"jquery":110,"lodash":111}],47:[function(require,module,exports){
 var _ = require('lodash'),
   $ = require('jquery'),
   Backbone = require('backbone'),
@@ -943,7 +1069,7 @@ var MobileMenuView = Backbone.View.extend({
 
 module.exports = MobileMenuView;
 
-},{"../../templates/common/mobile_menu_tpl.hbs":27,"backbone":57,"enquire.js":59,"handlebars":90,"jquery":102,"lodash":103}],43:[function(require,module,exports){
+},{"../../templates/common/mobile_menu_tpl.hbs":28,"backbone":65,"enquire.js":67,"handlebars":98,"jquery":110,"lodash":111}],48:[function(require,module,exports){
 var $ = require('jquery'),
   _ = require('lodash'),
   Backbone = require('backbone'),
@@ -1021,7 +1147,7 @@ var SearchMobileView = Backbone.View.extend({
 
 module.exports = SearchMobileView;
 
-},{"../../../collections/common/countries.js":2,"../../../helpers/functions.js":6,"../../../templates/common/search/search_mobile_tpl.hbs":29,"backbone":57,"handlebars":90,"jquery":102,"lodash":103}],44:[function(require,module,exports){
+},{"../../../collections/common/countries.js":2,"../../../helpers/functions.js":6,"../../../templates/common/search/search_mobile_tpl.hbs":30,"backbone":65,"handlebars":98,"jquery":110,"lodash":111}],49:[function(require,module,exports){
 var $ = require('jquery'),
   _ = require('lodash');
   Backbone = require('backbone'),
@@ -1316,7 +1442,177 @@ var SearchView = Backbone.View.extend({
 
 module.exports = SearchView;
 
-},{"../../../collections/common/countries.js":2,"../../../templates/common/search/search_suggestions_tpl.hbs":30,"../../../templates/common/search/search_tpl.hbs":31,"backbone":57,"enquire.js":59,"handlebars":90,"jquery":102,"lodash":103}],45:[function(require,module,exports){
+},{"../../../collections/common/countries.js":2,"../../../templates/common/search/search_suggestions_tpl.hbs":31,"../../../templates/common/search/search_tpl.hbs":32,"backbone":65,"enquire.js":67,"handlebars":98,"jquery":110,"lodash":111}],50:[function(require,module,exports){
+var _ = require('lodash');
+  $ = require('jquery'),
+  Backbone = require('backbone'),
+  Handlebars = require('handlebars');
+
+var infoWindowView = require('./infowindow.js');
+
+var sharetemplate = Handlebars.compile(require('../../templates/common/share_tpl.hbs'));
+
+var ShareView = infoWindowView.extend({
+
+  template: sharetemplate,
+
+  events: {
+    'click .btn-copy': '_copyUrl'
+  },
+
+  initialize: function() {},
+
+  _copyUrl: function() {
+    var $parent = this.$el.find('.content.active'),
+      $url = $parent.find('.url');
+      $btn = $parent.find('.btn-copy');
+      parentId = $parent[0].id;
+
+    $url.select();
+
+    try {
+      var successful = document.execCommand('copy');
+      $btn.html('copied');
+    } catch(err) {
+      throw err;
+    }
+  },
+
+  render: function() {
+    this.$el.append(this.template({
+      link: window.location.href
+    }));
+  }
+
+});
+
+module.exports = ShareView;
+
+},{"../../templates/common/share_tpl.hbs":33,"./infowindow.js":46,"backbone":65,"handlebars":98,"jquery":110,"lodash":111}],51:[function(require,module,exports){
+var _ = require('lodash'),
+  $ = require('jquery'),
+  Backbone = require('backbone'),
+  Handlebars = require('handlebars');
+
+var infoWindowView = require('./infowindow.js'),
+  ShareView = require('./share_view.js'),
+  DownloadView = require('./download_view.js');
+
+var shareTemplate = require('../../templates/common/share_window_tpl.hbs');
+
+var ShareWindowView = infoWindowView.extend({
+
+  template: Handlebars.compile(shareTemplate),
+
+  events: {
+    'click .js--download' : '_download',
+    'click .js--print': '_print',
+    'click .js--share': '_share'
+  },
+
+  initialize: function(options) {
+    this.options = options || {};
+
+    _.extend(this.events, this.constructor.__super__.events());
+
+    // Templates
+    this.infoWindowTemplate = Handlebars.compile(this.constructor.__super__.template({isBase: true}));
+
+    // Views
+    this.shareView = new ShareView();
+
+    if (!this.options.noDownload) {
+      this.downloadView = new DownloadView({
+        options: this.options
+      });
+    }
+
+  },
+
+  _print: function() {
+    window.print();
+  },
+
+  _setActive: function(e) {
+    var buttons = document.querySelectorAll('.btn'),
+      current = e.currentTarget;
+
+    $(buttons).removeClass('-active');
+    $(current).addClass('-active');
+  },
+
+  _cleanContent: function() {
+    var content = document.querySelector('#toolbar-content');
+
+    if (content.hasChildNodes()) {
+      $('#toolbar-content').empty();
+    }
+  },
+
+  _share: function(e) {
+
+    if (!e) {
+
+      $('.js--share').addClass('-active');
+
+    } else {
+
+      if (this._isActive(e)) {
+        return;
+      }
+
+      this._cleanContent();
+      this._setActive(e);
+    }
+
+    this.shareView.setElement($('#toolbar-content'));
+    this.shareView.render();
+  },
+
+  _isActive: function(e) {
+    return e && $(e.currentTarget).hasClass('-active');
+  },
+
+  _download: function(e) {
+
+    if (e && this._isActive(e)) {
+      return;
+    }
+
+    this._setActive(e);
+    this._cleanContent();
+
+    this.downloadView.setElement($('#toolbar-content'));
+    this.downloadView.render();
+    this.downloadView.delegateEvents();
+
+  },
+
+  render: function() {
+    // take a look later..
+    this.$el.append(this.infoWindowTemplate());
+    this.$('#content').append(this.template());
+
+    if (this.options.noDownload) {
+      $('.share-toolbar').addClass('-no-download');
+    }
+
+    this.avoidScroll();
+
+    // Share view by default
+    this._share();
+  },
+
+  close: function() {
+    this.constructor.__super__.close();
+    this.undelegateEvents();
+  }
+
+});
+
+module.exports = ShareWindowView;
+
+},{"../../templates/common/share_window_tpl.hbs":34,"./download_view.js":45,"./infowindow.js":46,"./share_view.js":50,"backbone":65,"handlebars":98,"jquery":110,"lodash":111}],52:[function(require,module,exports){
 var $ = require('jquery'),
   _ = require('lodash'),
   Backbone = require('backbone'),
@@ -1440,7 +1736,7 @@ var CompareView = Backbone.View.extend({
 
 module.exports = CompareView;
 
-},{"../../collections/common/countries.js":2,"../../collections/common/targets.js":5,"../../models/compare/status.js":14,"../../templates/compare/index.hbs":32,"./selectors/selectors.js":46,"./targets/target_list.js":48,"backbone":57,"enquire.js":59,"handlebars":90,"jquery":102,"lodash":103}],46:[function(require,module,exports){
+},{"../../collections/common/countries.js":2,"../../collections/common/targets.js":5,"../../models/compare/status.js":14,"../../templates/compare/index.hbs":35,"./selectors/selectors.js":53,"./targets/target_list.js":55,"backbone":65,"enquire.js":67,"handlebars":98,"jquery":110,"lodash":111}],53:[function(require,module,exports){
 (function (global){
 var $ = require('jquery');
 global.$ = $; // for chosen.js
@@ -1593,7 +1889,7 @@ var SelectorsView = Backbone.View.extend({
 module.exports = SelectorsView;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../../../collections/common/countries.js":2,"../../../templates/compare/selectors/selectors.hbs":33,"backbone":57,"chosen-jquery-browserify":58,"handlebars":90,"jquery":102,"lodash":103}],47:[function(require,module,exports){
+},{"../../../collections/common/countries.js":2,"../../../templates/compare/selectors/selectors.hbs":36,"backbone":65,"chosen-jquery-browserify":66,"handlebars":98,"jquery":110,"lodash":111}],54:[function(require,module,exports){
 var $ = require('jquery'),
   _ = require('lodash'),
   Backbone = require('backbone'),
@@ -1708,7 +2004,7 @@ var ScoreCardView = Backbone.View.extend({
 
 module.exports = ScoreCardView;
 
-},{"../../../collections/common/countries.js":2,"../../../collections/common/scores.js":4,"../../../templates/compare/targets/score_table.hbs":34,"../../../templates/compare/targets/target_card.hbs":35,"../../../views/common/infowindow.js":41,"backbone":57,"handlebars":90,"jquery":102,"lodash":103}],48:[function(require,module,exports){
+},{"../../../collections/common/countries.js":2,"../../../collections/common/scores.js":4,"../../../templates/compare/targets/score_table.hbs":37,"../../../templates/compare/targets/target_card.hbs":38,"../../../views/common/infowindow.js":46,"backbone":65,"handlebars":98,"jquery":110,"lodash":111}],55:[function(require,module,exports){
 var $ = require('jquery'),
   Backbone = require('backbone');
 
@@ -1774,7 +2070,7 @@ var TargetListView = Backbone.View.extend({
 
 module.exports = TargetListView;
 
-},{"../../../collections/common/targets.js":5,"./score_card":47,"backbone":57,"jquery":102}],49:[function(require,module,exports){
+},{"../../../collections/common/targets.js":5,"./score_card":54,"backbone":65,"jquery":110}],56:[function(require,module,exports){
 var _ = require('lodash'),
     enquire = require('enquire.js'),
     Backbone = require('backbone'),
@@ -1843,7 +2139,7 @@ var CountriesView = Backbone.View.extend({
 
 module.exports = CountriesView;
 
-},{"../../../collections/common/countries.js":2,"../../common/search/search_mobile_view.js":43,"../../common/search/search_view.js":44,"./countries_list.js":50,"backbone":57,"enquire.js":59,"handlebars":90,"lodash":103}],50:[function(require,module,exports){
+},{"../../../collections/common/countries.js":2,"../../common/search/search_mobile_view.js":48,"../../common/search/search_view.js":49,"./countries_list.js":57,"backbone":65,"enquire.js":67,"handlebars":98,"lodash":111}],57:[function(require,module,exports){
 var _ = require('lodash'),
     Backbone = require('backbone'),
     Handlebars = require('handlebars');
@@ -1927,7 +2223,7 @@ var CountryListView = Backbone.View.extend({
 
 module.exports = CountryListView;
 
-},{"../../../collections/common/countries.js":2,"../../../templates/countries/countries-list/country_list.hbs":36,"backbone":57,"handlebars":90,"lodash":103}],51:[function(require,module,exports){
+},{"../../../collections/common/countries.js":2,"../../../templates/countries/countries-list/country_list.hbs":39,"backbone":65,"handlebars":98,"lodash":111}],58:[function(require,module,exports){
 var $ = require('jquery'),
   Backbone = require('backbone');
 
@@ -1955,7 +2251,34 @@ var CountryView = Backbone.View.extend({
 
 module.exports = CountryView;
 
-},{"../../../models/countries/status.js":15,"backbone":57,"jquery":102}],52:[function(require,module,exports){
+},{"../../../models/countries/status.js":15,"backbone":65,"jquery":110}],59:[function(require,module,exports){
+var Backbone = require('backbone'),
+    Handlebars = require('handlebars');
+
+var template = Handlebars.compile(require('../../templates/data/index.hbs'));
+
+var DataView = Backbone.View.extend({
+
+  id: 'data-container',
+  className: 'l-data',
+
+  events: {
+  },
+
+  initialize: function() {},
+
+  render: function() {
+    this.$el.html(template());
+    return this;
+  },
+
+  show: function() {
+  }
+});
+
+module.exports = DataView;
+
+},{"../../templates/data/index.hbs":40,"backbone":65,"handlebars":98}],60:[function(require,module,exports){
 var $ = require('jquery'),
   _ = require('lodash'),
   Backbone = require('backbone'),
@@ -2128,7 +2451,7 @@ var DashboardView = Backbone.View.extend({
 
 module.exports = DashboardView;
 
-},{"../../collections/common/indicators.js":3,"../../collections/common/targets.js":5,"../../models/common/infowindow.js":13,"../../models/map/status.js":17,"../../templates/map/dashboard.hbs":37,"../../templates/map/indicators.hbs":38,"../../templates/map/targets.hbs":40,"../../views/common/infowindow.js":41,"backbone":57,"enquire.js":59,"handlebars":90,"jquery":102,"lodash":103}],53:[function(require,module,exports){
+},{"../../collections/common/indicators.js":3,"../../collections/common/targets.js":5,"../../models/common/infowindow.js":13,"../../models/map/status.js":17,"../../templates/map/dashboard.hbs":41,"../../templates/map/indicators.hbs":42,"../../templates/map/targets.hbs":44,"../../views/common/infowindow.js":46,"backbone":65,"enquire.js":67,"handlebars":98,"jquery":110,"lodash":111}],61:[function(require,module,exports){
 var $ = require('jquery'),
   _ = require('lodash'),
   enquire = require('enquire.js'),
@@ -2141,7 +2464,8 @@ var targetLayerSQL = Handlebars.compile(require('../../queries/map/layer_target.
     indicatorLayerSQL = Handlebars.compile(require('../../queries/map/layer_indicator.hbs'));
 
 var PopUpView = require('./pop_up.js'),
-    InfoWindowView = require('../common/infowindow.js');
+    InfoWindowView = require('../common/infowindow.js'),
+    ShareWindowView = require('../common/share_window.js');
 
 var status = require ('../../models/map/status.js');
 
@@ -2178,6 +2502,8 @@ var MapView = Backbone.View.extend({
     this._setView();
     this._initMap();
     this._setMapListeners();
+
+    this.shareWindowView = new ShareWindowView();
   },
 
   _setView: function() {
@@ -2318,13 +2644,16 @@ var MapView = Backbone.View.extend({
     return 'SELECT * FROM score_test';
   },
 
-  _share: function() {},
+  _share: function(e) {
+    e && e.preventDefault();
+
+    this.shareWindowView.render();
+    this.shareWindowView.delegateEvents();
+  },
 
   render: function() {
-    console.log('render')
-    debugger
-    this.$el.html('<div class="js--btn-share btn-share>share</div>');
-    console.log(this);
+    this.$el.html('<button class="js--btn-share btn-share"><svg class="icon-share"><use xlink:href="#icon-share"></use></svg></button>');
+
     return this;
   }
 
@@ -2332,7 +2661,7 @@ var MapView = Backbone.View.extend({
 
 module.exports = MapView;
 
-},{"../../../config.json":1,"../../models/map/status.js":17,"../../queries/map/layer_indicator.hbs":22,"../../queries/map/layer_target.hbs":23,"../common/infowindow.js":41,"./pop_up.js":54,"backbone":57,"enquire.js":59,"handlebars":90,"jquery":102,"lodash":103}],54:[function(require,module,exports){
+},{"../../../config.json":1,"../../models/map/status.js":17,"../../queries/map/layer_indicator.hbs":22,"../../queries/map/layer_target.hbs":23,"../common/infowindow.js":46,"../common/share_window.js":51,"./pop_up.js":62,"backbone":65,"enquire.js":67,"handlebars":98,"jquery":110,"lodash":111}],62:[function(require,module,exports){
 var $ = require('jquery'),
   Backbone = require('backbone'),
   Handlebars = require('handlebars');
@@ -2400,7 +2729,7 @@ var PopUpView = Backbone.View.extend({
 
 module.exports = PopUpView;
 
-},{"../../models/map/pop_up.js":16,"../../templates/map/pop_up.hbs":39,"backbone":57,"handlebars":90,"jquery":102}],55:[function(require,module,exports){
+},{"../../models/map/pop_up.js":16,"../../templates/map/pop_up.hbs":43,"backbone":65,"handlebars":98,"jquery":110}],63:[function(require,module,exports){
 var Backbone = require('backbone'),
     Handlebars = require('handlebars');
 
@@ -2424,7 +2753,7 @@ var WelcomeView = Backbone.View.extend({
 
 module.exports = WelcomeView;
 
-},{"backbone":57,"handlebars":90}],56:[function(require,module,exports){
+},{"backbone":65,"handlebars":98}],64:[function(require,module,exports){
 (function (process,__filename){
 /** vim: et:ts=4:sw=4:sts=4
  * @license amdefine 1.0.0 Copyright (c) 2011-2015, The Dojo Foundation All Rights Reserved.
@@ -2729,7 +3058,7 @@ function amdefine(module, requireFn) {
 module.exports = amdefine;
 
 }).call(this,require('_process'),"/node_modules/amdefine/amdefine.js")
-},{"_process":105,"path":104}],57:[function(require,module,exports){
+},{"_process":113,"path":112}],65:[function(require,module,exports){
 (function (global){
 //     Backbone.js 1.3.3
 
@@ -4653,7 +4982,7 @@ module.exports = amdefine;
 });
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"jquery":102,"underscore":106}],58:[function(require,module,exports){
+},{"jquery":110,"underscore":114}],66:[function(require,module,exports){
 (function (global){
 (function() {
   var $, AbstractChosen, Chosen, SelectParser, get_side_border_padding, _ref,
@@ -5733,7 +6062,7 @@ module.exports = amdefine;
 }).call(this);
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],59:[function(require,module,exports){
+},{}],67:[function(require,module,exports){
 /*!
  * enquire.js v2.1.1 - Awesome Media Queries in JavaScript
  * Copyright (c) 2014 Nick Williams - http://wicky.nillia.ms/enquire.js
@@ -6027,9 +6356,9 @@ module.exports = amdefine;
 	return new MediaQueryDispatch();
 
 }));
-},{}],60:[function(require,module,exports){
+},{}],68:[function(require,module,exports){
 
-},{}],61:[function(require,module,exports){
+},{}],69:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -6096,7 +6425,7 @@ exports['default'] = inst;
 module.exports = exports['default'];
 
 
-},{"./handlebars.runtime":62,"./handlebars/compiler/ast":64,"./handlebars/compiler/base":65,"./handlebars/compiler/compiler":67,"./handlebars/compiler/javascript-compiler":69,"./handlebars/compiler/visitor":72,"./handlebars/no-conflict":86}],62:[function(require,module,exports){
+},{"./handlebars.runtime":70,"./handlebars/compiler/ast":72,"./handlebars/compiler/base":73,"./handlebars/compiler/compiler":75,"./handlebars/compiler/javascript-compiler":77,"./handlebars/compiler/visitor":80,"./handlebars/no-conflict":94}],70:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -6164,7 +6493,7 @@ exports['default'] = inst;
 module.exports = exports['default'];
 
 
-},{"./handlebars/base":63,"./handlebars/exception":76,"./handlebars/no-conflict":86,"./handlebars/runtime":87,"./handlebars/safe-string":88,"./handlebars/utils":89}],63:[function(require,module,exports){
+},{"./handlebars/base":71,"./handlebars/exception":84,"./handlebars/no-conflict":94,"./handlebars/runtime":95,"./handlebars/safe-string":96,"./handlebars/utils":97}],71:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -6270,7 +6599,7 @@ exports.createFrame = _utils.createFrame;
 exports.logger = _logger2['default'];
 
 
-},{"./decorators":74,"./exception":76,"./helpers":77,"./logger":85,"./utils":89}],64:[function(require,module,exports){
+},{"./decorators":82,"./exception":84,"./helpers":85,"./logger":93,"./utils":97}],72:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -6303,7 +6632,7 @@ exports['default'] = AST;
 module.exports = exports['default'];
 
 
-},{}],65:[function(require,module,exports){
+},{}],73:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -6353,7 +6682,7 @@ function parse(input, options) {
 }
 
 
-},{"../utils":89,"./helpers":68,"./parser":70,"./whitespace-control":73}],66:[function(require,module,exports){
+},{"../utils":97,"./helpers":76,"./parser":78,"./whitespace-control":81}],74:[function(require,module,exports){
 /* global define */
 'use strict';
 
@@ -6521,7 +6850,7 @@ exports['default'] = CodeGen;
 module.exports = exports['default'];
 
 
-},{"../utils":89,"source-map":91}],67:[function(require,module,exports){
+},{"../utils":97,"source-map":99}],75:[function(require,module,exports){
 /* eslint-disable new-cap */
 
 'use strict';
@@ -7095,7 +7424,7 @@ function transformLiteralToPath(sexpr) {
 }
 
 
-},{"../exception":76,"../utils":89,"./ast":64}],68:[function(require,module,exports){
+},{"../exception":84,"../utils":97,"./ast":72}],76:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -7327,7 +7656,7 @@ function preparePartialBlock(open, program, close, locInfo) {
 }
 
 
-},{"../exception":76}],69:[function(require,module,exports){
+},{"../exception":84}],77:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -8455,7 +8784,7 @@ exports['default'] = JavaScriptCompiler;
 module.exports = exports['default'];
 
 
-},{"../base":63,"../exception":76,"../utils":89,"./code-gen":66}],70:[function(require,module,exports){
+},{"../base":71,"../exception":84,"../utils":97,"./code-gen":74}],78:[function(require,module,exports){
 /* istanbul ignore next */
 /* Jison generated parser */
 "use strict";
@@ -9195,7 +9524,7 @@ var handlebars = (function () {
 exports['default'] = handlebars;
 
 
-},{}],71:[function(require,module,exports){
+},{}],79:[function(require,module,exports){
 /* eslint-disable new-cap */
 'use strict';
 
@@ -9383,7 +9712,7 @@ PrintVisitor.prototype.HashPair = function (pair) {
 /* eslint-enable new-cap */
 
 
-},{"./visitor":72}],72:[function(require,module,exports){
+},{"./visitor":80}],80:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -9525,7 +9854,7 @@ exports['default'] = Visitor;
 module.exports = exports['default'];
 
 
-},{"../exception":76}],73:[function(require,module,exports){
+},{"../exception":84}],81:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -9748,7 +10077,7 @@ exports['default'] = WhitespaceControl;
 module.exports = exports['default'];
 
 
-},{"./visitor":72}],74:[function(require,module,exports){
+},{"./visitor":80}],82:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -9766,7 +10095,7 @@ function registerDefaultDecorators(instance) {
 }
 
 
-},{"./decorators/inline":75}],75:[function(require,module,exports){
+},{"./decorators/inline":83}],83:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -9797,7 +10126,7 @@ exports['default'] = function (instance) {
 module.exports = exports['default'];
 
 
-},{"../utils":89}],76:[function(require,module,exports){
+},{"../utils":97}],84:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -9839,7 +10168,7 @@ exports['default'] = Exception;
 module.exports = exports['default'];
 
 
-},{}],77:[function(require,module,exports){
+},{}],85:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -9887,7 +10216,7 @@ function registerDefaultHelpers(instance) {
 }
 
 
-},{"./helpers/block-helper-missing":78,"./helpers/each":79,"./helpers/helper-missing":80,"./helpers/if":81,"./helpers/log":82,"./helpers/lookup":83,"./helpers/with":84}],78:[function(require,module,exports){
+},{"./helpers/block-helper-missing":86,"./helpers/each":87,"./helpers/helper-missing":88,"./helpers/if":89,"./helpers/log":90,"./helpers/lookup":91,"./helpers/with":92}],86:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -9928,7 +10257,7 @@ exports['default'] = function (instance) {
 module.exports = exports['default'];
 
 
-},{"../utils":89}],79:[function(require,module,exports){
+},{"../utils":97}],87:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -10024,7 +10353,7 @@ exports['default'] = function (instance) {
 module.exports = exports['default'];
 
 
-},{"../exception":76,"../utils":89}],80:[function(require,module,exports){
+},{"../exception":84,"../utils":97}],88:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -10051,7 +10380,7 @@ exports['default'] = function (instance) {
 module.exports = exports['default'];
 
 
-},{"../exception":76}],81:[function(require,module,exports){
+},{"../exception":84}],89:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -10082,7 +10411,7 @@ exports['default'] = function (instance) {
 module.exports = exports['default'];
 
 
-},{"../utils":89}],82:[function(require,module,exports){
+},{"../utils":97}],90:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -10110,7 +10439,7 @@ exports['default'] = function (instance) {
 module.exports = exports['default'];
 
 
-},{}],83:[function(require,module,exports){
+},{}],91:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -10124,7 +10453,7 @@ exports['default'] = function (instance) {
 module.exports = exports['default'];
 
 
-},{}],84:[function(require,module,exports){
+},{}],92:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -10159,7 +10488,7 @@ exports['default'] = function (instance) {
 module.exports = exports['default'];
 
 
-},{"../utils":89}],85:[function(require,module,exports){
+},{"../utils":97}],93:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -10208,7 +10537,7 @@ exports['default'] = logger;
 module.exports = exports['default'];
 
 
-},{"./utils":89}],86:[function(require,module,exports){
+},{"./utils":97}],94:[function(require,module,exports){
 (function (global){
 /* global window */
 'use strict';
@@ -10232,7 +10561,7 @@ module.exports = exports['default'];
 
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],87:[function(require,module,exports){
+},{}],95:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -10526,7 +10855,7 @@ function executeDecorators(fn, prog, container, depths, data, blockParams) {
 }
 
 
-},{"./base":63,"./exception":76,"./utils":89}],88:[function(require,module,exports){
+},{"./base":71,"./exception":84,"./utils":97}],96:[function(require,module,exports){
 // Build out our basic SafeString type
 'use strict';
 
@@ -10543,7 +10872,7 @@ exports['default'] = SafeString;
 module.exports = exports['default'];
 
 
-},{}],89:[function(require,module,exports){
+},{}],97:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -10669,7 +10998,7 @@ function appendContextPath(contextPath, id) {
 }
 
 
-},{}],90:[function(require,module,exports){
+},{}],98:[function(require,module,exports){
 // USAGE:
 // var handlebars = require('handlebars');
 /* eslint-disable no-var */
@@ -10696,7 +11025,7 @@ if (typeof require !== 'undefined' && require.extensions) {
   require.extensions['.hbs'] = extension;
 }
 
-},{"../dist/cjs/handlebars":61,"../dist/cjs/handlebars/compiler/printer":71,"fs":60}],91:[function(require,module,exports){
+},{"../dist/cjs/handlebars":69,"../dist/cjs/handlebars/compiler/printer":79,"fs":68}],99:[function(require,module,exports){
 /*
  * Copyright 2009-2011 Mozilla Foundation and contributors
  * Licensed under the New BSD license. See LICENSE.txt or:
@@ -10706,7 +11035,7 @@ exports.SourceMapGenerator = require('./source-map/source-map-generator').Source
 exports.SourceMapConsumer = require('./source-map/source-map-consumer').SourceMapConsumer;
 exports.SourceNode = require('./source-map/source-node').SourceNode;
 
-},{"./source-map/source-map-consumer":98,"./source-map/source-map-generator":99,"./source-map/source-node":100}],92:[function(require,module,exports){
+},{"./source-map/source-map-consumer":106,"./source-map/source-map-generator":107,"./source-map/source-node":108}],100:[function(require,module,exports){
 /* -*- Mode: js; js-indent-level: 2; -*- */
 /*
  * Copyright 2011 Mozilla Foundation and contributors
@@ -10815,7 +11144,7 @@ define(function (require, exports, module) {
 
 });
 
-},{"./util":101,"amdefine":56}],93:[function(require,module,exports){
+},{"./util":109,"amdefine":64}],101:[function(require,module,exports){
 /* -*- Mode: js; js-indent-level: 2; -*- */
 /*
  * Copyright 2011 Mozilla Foundation and contributors
@@ -10963,7 +11292,7 @@ define(function (require, exports, module) {
 
 });
 
-},{"./base64":94,"amdefine":56}],94:[function(require,module,exports){
+},{"./base64":102,"amdefine":64}],102:[function(require,module,exports){
 /* -*- Mode: js; js-indent-level: 2; -*- */
 /*
  * Copyright 2011 Mozilla Foundation and contributors
@@ -11038,7 +11367,7 @@ define(function (require, exports, module) {
 
 });
 
-},{"amdefine":56}],95:[function(require,module,exports){
+},{"amdefine":64}],103:[function(require,module,exports){
 /* -*- Mode: js; js-indent-level: 2; -*- */
 /*
  * Copyright 2011 Mozilla Foundation and contributors
@@ -11157,7 +11486,7 @@ define(function (require, exports, module) {
 
 });
 
-},{"amdefine":56}],96:[function(require,module,exports){
+},{"amdefine":64}],104:[function(require,module,exports){
 /* -*- Mode: js; js-indent-level: 2; -*- */
 /*
  * Copyright 2014 Mozilla Foundation and contributors
@@ -11245,7 +11574,7 @@ define(function (require, exports, module) {
 
 });
 
-},{"./util":101,"amdefine":56}],97:[function(require,module,exports){
+},{"./util":109,"amdefine":64}],105:[function(require,module,exports){
 /* -*- Mode: js; js-indent-level: 2; -*- */
 /*
  * Copyright 2011 Mozilla Foundation and contributors
@@ -11367,7 +11696,7 @@ define(function (require, exports, module) {
 
 });
 
-},{"amdefine":56}],98:[function(require,module,exports){
+},{"amdefine":64}],106:[function(require,module,exports){
 /* -*- Mode: js; js-indent-level: 2; -*- */
 /*
  * Copyright 2011 Mozilla Foundation and contributors
@@ -12446,7 +12775,7 @@ define(function (require, exports, module) {
 
 });
 
-},{"./array-set":92,"./base64-vlq":93,"./binary-search":95,"./quick-sort":97,"./util":101,"amdefine":56}],99:[function(require,module,exports){
+},{"./array-set":100,"./base64-vlq":101,"./binary-search":103,"./quick-sort":105,"./util":109,"amdefine":64}],107:[function(require,module,exports){
 /* -*- Mode: js; js-indent-level: 2; -*- */
 /*
  * Copyright 2011 Mozilla Foundation and contributors
@@ -12847,7 +13176,7 @@ define(function (require, exports, module) {
 
 });
 
-},{"./array-set":92,"./base64-vlq":93,"./mapping-list":96,"./util":101,"amdefine":56}],100:[function(require,module,exports){
+},{"./array-set":100,"./base64-vlq":101,"./mapping-list":104,"./util":109,"amdefine":64}],108:[function(require,module,exports){
 /* -*- Mode: js; js-indent-level: 2; -*- */
 /*
  * Copyright 2011 Mozilla Foundation and contributors
@@ -13263,7 +13592,7 @@ define(function (require, exports, module) {
 
 });
 
-},{"./source-map-generator":99,"./util":101,"amdefine":56}],101:[function(require,module,exports){
+},{"./source-map-generator":107,"./util":109,"amdefine":64}],109:[function(require,module,exports){
 /* -*- Mode: js; js-indent-level: 2; -*- */
 /*
  * Copyright 2011 Mozilla Foundation and contributors
@@ -13635,7 +13964,7 @@ define(function (require, exports, module) {
 
 });
 
-},{"amdefine":56}],102:[function(require,module,exports){
+},{"amdefine":64}],110:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v2.2.4
  * http://jquery.com/
@@ -23451,7 +23780,7 @@ if ( !noGlobal ) {
 return jQuery;
 }));
 
-},{}],103:[function(require,module,exports){
+},{}],111:[function(require,module,exports){
 (function (global){
 /**
  * @license
@@ -35806,7 +36135,7 @@ return jQuery;
 }.call(this));
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],104:[function(require,module,exports){
+},{}],112:[function(require,module,exports){
 (function (process){
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -36034,7 +36363,7 @@ var substr = 'ab'.substr(-1) === 'b'
 ;
 
 }).call(this,require('_process'))
-},{"_process":105}],105:[function(require,module,exports){
+},{"_process":113}],113:[function(require,module,exports){
 // shim for using process in browser
 
 var process = module.exports = {};
@@ -36130,7 +36459,7 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],106:[function(require,module,exports){
+},{}],114:[function(require,module,exports){
 //     Underscore.js 1.8.3
 //     http://underscorejs.org
 //     (c) 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
@@ -37680,7 +38009,7 @@ process.umask = function() { return 0; };
   }
 }.call(this));
 
-},{}],107:[function(require,module,exports){
+},{}],115:[function(require,module,exports){
 /*!
  * URI.js - Mutating URLs
  * IPv6 Support
@@ -37867,7 +38196,7 @@ process.umask = function() { return 0; };
   };
 }));
 
-},{}],108:[function(require,module,exports){
+},{}],116:[function(require,module,exports){
 /*!
  * URI.js - Mutating URLs
  * Second Level Domain (SLD) Support
@@ -38109,7 +38438,7 @@ process.umask = function() { return 0; };
   return SLD;
 }));
 
-},{}],109:[function(require,module,exports){
+},{}],117:[function(require,module,exports){
 /*!
  * URI.js - Mutating URLs
  *
@@ -40321,7 +40650,7 @@ process.umask = function() { return 0; };
   return URI;
 }));
 
-},{"./IPv6":107,"./SecondLevelDomains":108,"./punycode":110}],110:[function(require,module,exports){
+},{"./IPv6":115,"./SecondLevelDomains":116,"./punycode":118}],118:[function(require,module,exports){
 (function (global){
 /*! https://mths.be/punycode v1.4.0 by @mathias */
 ;(function(root) {

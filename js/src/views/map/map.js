@@ -10,7 +10,8 @@ var targetLayerSQL = Handlebars.compile(require('../../queries/map/layer_target.
     indicatorLayerSQL = Handlebars.compile(require('../../queries/map/layer_indicator.hbs'));
 
 var PopUpView = require('./pop_up.js'),
-    InfoWindowView = require('../common/infowindow.js');
+    InfoWindowView = require('../common/infowindow.js'),
+    ShareWindowView = require('../common/share_window.js');
 
 var status = require ('../../models/map/status.js');
 
@@ -47,6 +48,8 @@ var MapView = Backbone.View.extend({
     this._setView();
     this._initMap();
     this._setMapListeners();
+
+    this.shareWindowView = new ShareWindowView();
   },
 
   _setView: function() {
@@ -187,13 +190,16 @@ var MapView = Backbone.View.extend({
     return 'SELECT * FROM score_test';
   },
 
-  _share: function() {},
+  _share: function(e) {
+    e && e.preventDefault();
+
+    this.shareWindowView.render();
+    this.shareWindowView.delegateEvents();
+  },
 
   render: function() {
-    console.log('render')
-    debugger
-    this.$el.html('<div class="js--btn-share btn-share>share</div>');
-    console.log(this);
+    this.$el.html('<button class="js--btn-share btn-share"><svg class="icon-share"><use xlink:href="#icon-share"></use></svg></button>');
+
     return this;
   }
 

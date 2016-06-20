@@ -3,8 +3,9 @@ var _ = require('lodash'),
   Backbone = require('backbone'),
   Handlebars = require('handlebars');
 
-var infoWindowView = require('./infowindow_view.js'),
-  ShareView = require('./share_view.js');
+var infoWindowView = require('./infowindow.js'),
+  ShareView = require('./share_view.js'),
+  DownloadView = require('./download_view.js');
 
 var shareTemplate = require('../../templates/common/share_window_tpl.hbs');
 
