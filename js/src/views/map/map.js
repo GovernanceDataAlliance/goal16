@@ -101,12 +101,12 @@ var MapView = Backbone.View.extend({
       contentType: 'application/json; charset=UTF-8',
       url: 'http://'+ cartoAccount +'.cartodb.com/api/v1/map/',
       data: JSON.stringify(request),
-    }).done(data => {
-      var tileUrl = 'http://'+ cartoAccount +'.cartodb.com/api/v1/map/'+ data.layergroupid + '/{z}/{x}/{y}.png32';
-      this._removeLayer();
-      this.layer = L.tileLayer(tileUrl, { noWrap: true });
-      return deferred.resolve();
-    });
+    }).done(_.bind(function(data) {
+          var tileUrl = 'http://'+ cartoAccount +'.cartodb.com/api/v1/map/'+ data.layergroupid + '/{z}/{x}/{y}.png32';
+          this._removeLayer();
+          this.layer = L.tileLayer(tileUrl, { noWrap: true });
+          return deferred.resolve();
+        }, this));
 
     return deferred;
   },
