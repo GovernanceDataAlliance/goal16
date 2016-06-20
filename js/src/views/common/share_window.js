@@ -100,7 +100,7 @@ var ShareWindowView = infoWindowView.extend({
   render: function() {
     // take a look later..
     this.$el.append(this.infoWindowTemplate());
-    this.$('#content').append(this.template());
+    this.$('#modal-content').append(this.template());
 
     if (this.options.noDownload) {
       $('.share-toolbar').addClass('-no-download');

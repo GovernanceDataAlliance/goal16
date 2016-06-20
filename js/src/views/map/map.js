@@ -191,7 +191,7 @@ var MapView = Backbone.View.extend({
   },
 
   _share: function(e) {
-    e && e.preventDefault();
+    e && e.stopPropagation();
 
     this.shareWindowView.render();
     this.shareWindowView.delegateEvents();
