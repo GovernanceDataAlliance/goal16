@@ -98,7 +98,7 @@ var MapView = Backbone.View.extend({
 
   _onZoomMap: function() {
     var zoom = this.map.getZoom();
-    this.status.set({ zoom });
+    this.status.set({zoom: zoom});
   },
 
   _initMap: function() {
