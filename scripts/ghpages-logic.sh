@@ -21,7 +21,7 @@ git rebase origin/develop
 echo "Installing dependencies"
 grunt dist
 
-git add -f js/*
+git add -f js/main_bundle.js
 git add -f css/main.css
 
 CHANGED=$(git diff-index --name-only HEAD --)
