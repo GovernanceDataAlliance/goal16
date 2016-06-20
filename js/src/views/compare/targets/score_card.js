@@ -6,7 +6,7 @@ var $ = require('jquery'),
 var CountriesCollection = require('../../../collections/common/countries.js'),
   ScoresCollection = require('../../../collections/common/scores.js');
 
-var InfoWindowView = require('../../../views/common/infowindow_view.js');
+var InfoWindowView = require('../../../views/common/infowindow.js');
 
 var TargetCardTemplate = require('../../../templates/compare/targets/target_card.hbs'),
   IndicatorTableTemplate = require('../../../templates/compare/targets/score_table.hbs');

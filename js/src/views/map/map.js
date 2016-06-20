@@ -1,9 +1,17 @@
 var $ = require('jquery'),
   _ = require('lodash'),
   enquire = require('enquire.js'),
-  Backbone = require('backbone');
+  Backbone = require('backbone'),
+  Handlebars = require('handlebars');
 
 var CONFIG = require('../../../config.json');
+
+var targetLayerSQL = Handlebars.compile(require('../../queries/map/layer_target.hbs')),
+    indicatorLayerSQL = Handlebars.compile(require('../../queries/map/layer_indicator.hbs'));
+
+var PopUpView = require('./pop_up.js'),
+    InfoWindowView = require('../common/infowindow.js'),
+    ShareWindowView = require('../common/share_window.js');
 
 var status = require ('../../models/map/status.js');
 
@@ -11,6 +19,10 @@ var MapView = Backbone.View.extend({
 
   id: 'map-container',
   className: 'l-map',
+
+  events: {
+    'click .js--btn-share': '_share',
+  },
 
   options: {
     basemap: 'https://api.tiles.mapbox.com/v4/goal16.9990f1b9/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZ29hbDE2IiwiYSI6ImNpcGgzaWwzbDAwMW52Mmt3ZG5tMnRwN3gifQ.-e8de3rW2J8gc2Iv3LzMnA',
@@ -35,6 +47,9 @@ var MapView = Backbone.View.extend({
   show: function() {
     this._setView();
     this._initMap();
+    this._setMapListeners();
+
+    this.shareWindowView = new ShareWindowView();
   },
 
   _setView: function() {
@@ -53,6 +68,37 @@ var MapView = Backbone.View.extend({
 
   _setListeners: function() {
     this.status.on('change:layer', _.bind(this._activeLayer, this))
+    Backbone.Events.on('dashboard:change', _.bind(this._refreshMap, this))
+  },
+
+  _setMapListeners: function() {
+    this.map.on('click', this._popUpSetUp.bind(this));
+
+    this.map.on('zoomend', _.bind(this._onZoomMap, this));
+    this.map.on('dragend', _.bind(this._onDragEndMap, this));
+  },
+
+  _popUpSetUp: function(e) {
+    this.popUp = new PopUpView({
+      layer: this.status.get('layer'),
+      latLng: e.latlng,
+      map: this.map,
+      zoom: this.map.getZoom(),
+      mobile: this.mobile
+    });
+  },
+
+  _onDragEndMap: function() {
+    var position = this.map.getCenter();
+    this.status.set({
+      lat: position.lat,
+      lng: position.lng
+    });
+  },
+
+  _onZoomMap: function() {
+    var zoom = this.map.getZoom();
+    this.status.set({ zoom });
   },
 
   _initMap: function() {
@@ -66,6 +112,10 @@ var MapView = Backbone.View.extend({
     this.map.addLayer(baseMap);
 
     return this;
+  },
+
+  _refreshMap: function() {
+    this.map.invalidateSize();
   },
 
   _activeLayer: function() {
@@ -129,12 +179,28 @@ var MapView = Backbone.View.extend({
     var type = this.status.get('layerType');
 
     if (type === 'target') {
-      query = 'SELECT * FROM score_test WHERE indicator_slug=' + layer;
+      query = targetLayerSQL({layer: layer})
     } else {
-      query = 'SELECT * FROM score_test WHERE indicator_slug=' + layer;
+      query = indicatorLayerSQL({layer: layer})
     }
 
+    // return query;
+
+    // We are temporary returning this because we do not have data.
     return 'SELECT * FROM score_test';
+  },
+
+  _share: function(e) {
+    e && e.stopPropagation();
+
+    this.shareWindowView.render();
+    this.shareWindowView.delegateEvents();
+  },
+
+  render: function() {
+    this.$el.html('<button class="js--btn-share btn-share"><svg class="icon-share"><use xlink:href="#icon-share"></use></svg></button>');
+
+    return this;
   }
 
 });
