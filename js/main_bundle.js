@@ -2140,7 +2140,8 @@ var CONFIG = require('../../../config.json');
 var targetLayerSQL = Handlebars.compile(require('../../queries/map/layer_target.hbs')),
     indicatorLayerSQL = Handlebars.compile(require('../../queries/map/layer_indicator.hbs'));
 
-var PopUpView = require('./pop_up.js');
+var PopUpView = require('./pop_up.js'),
+    InfoWindowView = require('../common/infowindow.js');
 
 var status = require ('../../models/map/status.js');
 
@@ -2148,6 +2149,10 @@ var MapView = Backbone.View.extend({
 
   id: 'map-container',
   className: 'l-map',
+
+  events: {
+    'click .js--btn-share': '_share',
+  },
 
   options: {
     basemap: 'https://api.tiles.mapbox.com/v4/goal16.9990f1b9/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZ29hbDE2IiwiYSI6ImNpcGgzaWwzbDAwMW52Mmt3ZG5tMnRwN3gifQ.-e8de3rW2J8gc2Iv3LzMnA',
@@ -2311,13 +2316,23 @@ var MapView = Backbone.View.extend({
 
     // We are temporary returning this because we do not have data.
     return 'SELECT * FROM score_test';
+  },
+
+  _share: function() {},
+
+  render: function() {
+    console.log('render')
+    debugger
+    this.$el.html('<div class="js--btn-share btn-share>share</div>');
+    console.log(this);
+    return this;
   }
 
 });
 
 module.exports = MapView;
 
-},{"../../../config.json":1,"../../models/map/status.js":17,"../../queries/map/layer_indicator.hbs":22,"../../queries/map/layer_target.hbs":23,"./pop_up.js":54,"backbone":57,"enquire.js":59,"handlebars":90,"jquery":102,"lodash":103}],54:[function(require,module,exports){
+},{"../../../config.json":1,"../../models/map/status.js":17,"../../queries/map/layer_indicator.hbs":22,"../../queries/map/layer_target.hbs":23,"../common/infowindow.js":41,"./pop_up.js":54,"backbone":57,"enquire.js":59,"handlebars":90,"jquery":102,"lodash":103}],54:[function(require,module,exports){
 var $ = require('jquery'),
   Backbone = require('backbone'),
   Handlebars = require('handlebars');
