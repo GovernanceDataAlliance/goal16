@@ -14,16 +14,6 @@ var CountryListView = Backbone.View.extend({
 
   initialize: function(options) {
     options = options || {};
-<<<<<<< HEAD:js/src/views/countries/country_list.js
-    this.countries = options.countries;
-    this.listenTo(this.countries, 'sync', this.render);
-
-    if (this.countries.length === 0) {
-      this.countries.getCountriesList();
-    }
-=======
->>>>>>> 22e2b52b23f4657a80e5408a7ce8977eace177f3:js/src/views/countries/countries-list/countries_list.js
-
     this.countriesCollection = CountriesCollection;
   },
 
@@ -75,11 +65,7 @@ var CountryListView = Backbone.View.extend({
   },
 
   _getRegions: function() {
-<<<<<<< HEAD:js/src/views/countries/country_list.js
-    var groupedRegions = this.countries.getCountriesByRegion();
-=======
     var groupedRegions = this.countriesCollection.getCountriesByRegion();
->>>>>>> 22e2b52b23f4657a80e5408a7ce8977eace177f3:js/src/views/countries/countries-list/countries_list.js
     var sortedRegions = _.mapValues(groupedRegions, function(countries, region) {
       return _.sortBy(countries, 'name');
     });

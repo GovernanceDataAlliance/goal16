@@ -3,13 +3,8 @@ var _ = require('lodash'),
     Backbone = require('backbone'),
     Handlebars = require('handlebars');
 
-<<<<<<< HEAD:js/src/views/countries/countries.js
-var countries = require('../../collections/common/countries.js');
-var CountryList = require('./country_list.js');
-=======
 var CountriesCollection = require('../../../collections/common/countries.js');
 var CountryListView = require('./countries_list.js');
->>>>>>> 22e2b52b23f4657a80e5408a7ce8977eace177f3:js/src/views/countries/countries-list/countries.js
 
 var SearchView = require('../../common/search/search_view.js'),
   SearchMobileView = require('../../common/search/search_mobile_view.js');
@@ -20,11 +15,6 @@ var CountriesView = Backbone.View.extend({
   className: 'js--countries-list',
 
   initialize: function() {
-<<<<<<< HEAD:js/src/views/countries/countries.js
-    this.countries = countries;
-=======
->>>>>>> 22e2b52b23f4657a80e5408a7ce8977eace177f3:js/src/views/countries/countries-list/countries.js
-
     // collections
     this.countriesCollection = CountriesCollection;
   },

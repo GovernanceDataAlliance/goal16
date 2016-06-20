@@ -6,14 +6,7 @@ var $ = require('jquery'),
 var template = Handlebars.compile(require('../../../templates/common/search/search_mobile_tpl.hbs'));
 
 var CountriesCollection = require('../../../collections/common/countries.js');
-
-<<<<<<< HEAD:js/src/views/common/search_mobile_view.js
-var searchCollection = require('../../collections/common/countries.js');
-
-var FunctionHelper = require('../../helpers/functions.js');
-=======
 var FunctionHelper = require('../../../helpers/functions.js');
->>>>>>> 22e2b52b23f4657a80e5408a7ce8977eace177f3:js/src/views/common/search/search_mobile_view.js
 
 var SearchMobileView = Backbone.View.extend({
 
@@ -24,11 +17,7 @@ var SearchMobileView = Backbone.View.extend({
   },
 
   initialize: function(settings) {
-<<<<<<< HEAD:js/src/views/common/search_mobile_view.js
-    this.searchCollection = searchCollection;
-=======
     this.countriesCollection = CountriesCollection;
->>>>>>> 22e2b52b23f4657a80e5408a7ce8977eace177f3:js/src/views/common/search/search_mobile_view.js
 
     this.functionHelper = FunctionHelper;
 

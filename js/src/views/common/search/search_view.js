@@ -4,11 +4,7 @@ var $ = require('jquery'),
   Handlebars = require('handlebars'),
   enquire = require('enquire.js');
 
-<<<<<<< HEAD:js/src/views/common/search_view.js
-var searchCollection = require('../../collections/common/countries.js');
-=======
 var SearchCollection = require('../../../collections/common/countries.js');
->>>>>>> 22e2b52b23f4657a80e5408a7ce8977eace177f3:js/src/views/common/search/search_view.js
 
 var template = Handlebars.compile(require('../../../templates/common/search/search_tpl.hbs')),
     templateSuggestions = Handlebars.compile(require('../../../templates/common/search/search_suggestions_tpl.hbs'));
@@ -40,11 +36,7 @@ var SearchView = Backbone.View.extend({
     this.limit = -1;
 
     // collections
-<<<<<<< HEAD:js/src/views/common/search_view.js
-    this.searchCollection = searchCollection;
-=======
     this.searchCollection =  SearchCollection;
->>>>>>> 22e2b52b23f4657a80e5408a7ce8977eace177f3:js/src/views/common/search/search_view.js
 
     // search elements
     this.elContent = this.options.elContent;
@@ -73,19 +65,11 @@ var SearchView = Backbone.View.extend({
     this.$(this.elSearchParent).html(template);
   },
 
-<<<<<<< HEAD:js/src/views/common/search_view.js
-  _getData: function() {
-    this.searchCollection.getCountriesList().done(function() {
-      this.render();
-    }.bind(this));
-  },
-=======
   // _getData: function() {
   //   this.searchCollection.fetch().done(function() {
   //     this.render();
   //   }.bind(this));
   // },
->>>>>>> 22e2b52b23f4657a80e5408a7ce8977eace177f3:js/src/views/common/search/search_view.js
 
   _onSearch: function(ev) {
     var target = ev ? ev.currentTarget : this.$input;
