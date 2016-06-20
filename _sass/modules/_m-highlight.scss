@@ -1,103 +1,29 @@
 .m-highlight {
   //Paddings and layout stuff are here for IE...
   max-width: 100%;
-
-
-  > h2 {
-    color: $font-color-1;
-    font-weight: 400;
-  }
-
-  > p {
-    font-size: rem(16px);
-    line-height: rem(26px);
-
-    + .btn, + ul {
-      margin-top: rem(10px);
-    }
-  }
-
-  .-highlighted {
-
-    @media screen and (min-width: $screen-l) {
-      max-width: 80%;
-    }
-
-    + .btn {
-      margin-top: rem(20px);
-    }
-  }
-
-  > ul, li {
-    list-style-type: disc;
-  }
-
-  ul {
-    padding-left: rem(20px);
-  }
-
-  li {
-    font-size: rem(15px);
-  }
-
-  h2, p, ul, li {
+  h2 {
     color: $font-color-2;
-  }
-
-  .btn.-white {
-    width: 100%;
-  }
-
-  @media screen and (min-width: $screen-s) {
-    .-highlighted {
-      font-size: rem(20px);
-      line-height: rem(34px);
-      letter-spacing: rem(0.4px);
-
-      + .btn {
-        margin-top: rem(75px);
-      }
-    }
-
-    > p {
-      + .btn {
-        margin-top: rem(20px);
-      }
-    }
-
-    .btn.-white {
-      width: auto;
+    margin-bottom: 0px;
+    margin-top: rem(44px);
+    @media screen and (min-width: $screen-s) {
+      margin-top: rem(155px);
     }
   }
-
-  @media screen and (min-width: 768px) {
-    .-highlighted {
-      font-size: rem(20px);
-      line-height: rem(34px);
-      letter-spacing: rem(0.4px);
-
-      + .btn {
-        margin-top: rem(40px);
-      }
+  .text-banner-m{
+    display: block;
+    margin: rem(31px) auto;
+    margin-bottom: 0px;
+    @media screen and (min-width: $screen-s) {
+      margin: rem(40px) auto;
+      margin-bottom: 0px;
     }
   }
-
-
-  @media screen and (min-width: $screen-l) {
-    > p {
-      font-size: rem(15px);
-
-      + .btn, + ul {
-        margin-top: rem(30px);
-      }
-    }
-  }
-
-  @media screen and (min-width: $screen-xl) {
-    > p {
-      + .btn, + ul {
-        margin-top: rem(40px);
-      }
+  .btn-primary {
+    margin: rem(32px) auto;
+    margin-bottom: rem(66px);
+    @media screen and (min-width: $screen-s) {
+      margin: rem(50px) auto;
+      margin-bottom: rem(170px);
     }
   }
 }
