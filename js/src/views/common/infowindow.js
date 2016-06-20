@@ -51,8 +51,6 @@ var ModalWindowView = Backbone.View.extend({
 
   _setView: function() {
     switch(this.type) {
-      case 'legend-infowindow':
-        return { isLegend: true };
 
       case 'share-infowindow':
         return { isShare: true };
