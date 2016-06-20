@@ -76,7 +76,7 @@ var ModalWindowView = Backbone.View.extend({
     }));
 
     // Adds filtered content to base template
-    this.$('#content').append(innerContent);
+    this.$('#modal-content').append(innerContent);
 
     this.toogleState();
   },
