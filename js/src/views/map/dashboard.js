@@ -7,6 +7,10 @@ var $ = require('jquery'),
 var targetsCollection = require('../../collections/common/targets.js');
     IndicatorsCollection = require('../../collections/common/indicators.js');
 
+var InfoWindowModel = require('../../models/common/infowindow.js');
+var ModalWindowView = require('../../views/common/infowindow.js');
+
+
 var status = require ('../../models/map/status.js');
 
 var template = Handlebars.compile(require('../../templates/map/dashboard.hbs')),
@@ -23,6 +27,7 @@ var DashboardView = Backbone.View.extend({
     'click .js--toggle-dashboard-mb': '_toggleDashboard',
     'click .js--open-target': '_showIndicators',
     'click .js--close-target': '_hideIndicators',
+    'click .js--indicator-info': '_showModalWindow',
     'change .js--layer-selector': '_selectLayer',
   },
 
@@ -35,6 +40,7 @@ var DashboardView = Backbone.View.extend({
 
     this.targetsCollection = targetsCollection;
     this.indicatorsCollection = new IndicatorsCollection();
+    this.infoWindowModel = new InfoWindowModel();
 
     this._setView();
   },
@@ -141,7 +147,24 @@ var DashboardView = Backbone.View.extend({
   _setActiveLayer: function(type, layer) {
     this.status.set({layerType: type, layer: layer});
     this._updateRouterParams();
-  }
+  },
+
+  _showModalWindow: function(e) {
+    var indicator = $(e.currentTarget).data('slug');
+    if (!indicator) {
+      return;
+    }
+
+    this.infoWindowModel._getIndicatorInfo(indicator).done(function() {
+
+      new ModalWindowView({
+        'type': 'info-infowindow',
+        'data': this.infoWindowModel.toJSON()
+      });
+
+    }.bind(this));
+
+  },
 
 });
 

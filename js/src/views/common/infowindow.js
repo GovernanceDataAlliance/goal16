@@ -11,7 +11,6 @@ var modalWindowtemplate = require('../../templates/common/modal_window_tpl.hbs')
  * Default type: info
  * Available options:
  * - info-infowindow
- * - legend-infowindow
  * - share-infowindow
 */
 var ModalWindowView = Backbone.View.extend({
