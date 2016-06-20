@@ -1332,7 +1332,7 @@ select {
   top: -70px;
   left: 0;
   right: 0;
-  height: 4.375rem;
+  height: 5rem;
   z-index: 20;
   background-color: #fff; }
   .l-header.hide {
@@ -1345,14 +1345,14 @@ select {
       height: 5rem; } }
   @media screen and (min-width: 1024px) {
     .l-header {
-      height: 5.9375rem; } }
+      height: 5rem; } }
   .l-header .l-brand {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: center;
         justify-content: center;
-    width: 5.9375rem;
-    background-color: #42352b; }
+    background-color: #fff;
+    margin-left: 1.125rem; }
     @media screen and (min-width: 768px) {
       .l-header .l-brand {
         -ms-flex-preferred-size: 37%;
@@ -1363,7 +1363,7 @@ select {
         width: 22.5rem; } }
     @media screen and (min-width: 1024px) {
       .l-header .l-brand {
-        height: 5.9375rem; } }
+        height: 5rem; } }
   .l-header .l-menus {
     display: -ms-flexbox;
     display: flex;
@@ -1395,21 +1395,21 @@ select {
         overflow-y: hidden;
         padding: 0; } }
     .l-header .l-menus .btn-mobile-menu {
-      width: 4.375rem;
-      height: 4.375rem; }
+      width: 5rem;
+      height: 5rem; }
       @media screen and (min-width: 769px) {
         .l-header .l-menus .btn-mobile-menu {
           display: none; } }
       .l-header .l-menus .btn-mobile-menu svg {
-        width: 1.25rem;
-        height: 1.25rem;
-        fill: #19aec4; }
+        width: 1rem;
+        height: 1rem;
+        fill: #82bf72; }
       @media screen and (min-width: 768px) {
         .l-header .l-menus .btn-mobile-menu {
           height: 5rem; } }
       @media screen and (min-width: 1024px) {
         .l-header .l-menus .btn-mobile-menu {
-          height: 5.9375rem; } }
+          height: 5rem; } }
 
 .l-presentation {
   position: relative; }
@@ -1676,16 +1676,7 @@ select {
       background-color: rgba(65, 52, 43, 0.5); }
   @media screen and (min-width: 640px) {
     .l-highlight {
-      padding: 8.125rem 0; } }
-  @media screen and (min-width: 768px) {
-    .l-highlight {
-      padding: 11.5625rem 0; } }
-  @media screen and (min-width: 1024px) {
-    .l-highlight {
-      padding: 7.5rem 0; } }
-  @media screen and (min-width: 1280px) {
-    .l-highlight {
-      padding: 12.8125rem 0; } }
+      padding: 0px; } }
 
 .l-share {
   display: -ms-flexbox;
@@ -1769,13 +1760,14 @@ select {
     .m-site-navigation.-header ul {
       height: 100%; }
       .m-site-navigation.-header ul > .link {
-        height: 100%;
         border-bottom: 1px solid #beb7aa; }
         .m-site-navigation.-header ul > .link > a {
           display: block;
           height: 100%;
           font-size: 10px;
-          font-family: "Merriweather Sans", sans-serif; }
+          font-family: "Merriweather Sans", sans-serif;
+          color: #333;
+          text-transform: uppercase; }
           @media screen and (min-width: 640px) {
             .m-site-navigation.-header ul > .link > a {
               font-size: 12px; } }
@@ -1806,51 +1798,70 @@ select {
         .m-site-navigation.-footer ul li > a:hover {
           color: #fff;
           text-decoration: underline; }
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 640px) {
+    .m-site-navigation.-header {
+      width: calc(100% - 100px); }
+      .m-site-navigation.-header ul {
+        max-width: 34.375rem; }
     .m-site-navigation.-header {
       margin-bottom: 0;
       position: absolute;
       top: 0;
       bottom: 0;
-      right: 5.9375rem;
-      left: 0;
-      display: -ms-flexbox;
+      padding: 0;
+      -ms-flex-align: center;
+          align-items: center;
+      -ms-align-items: center;
+      flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
       display: flex;
-      display: -ms-box;
-      -ms-flex-pack: center;
-          justify-content: center; }
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      -ms-flex-pack: end;
+          justify-content: flex-end; }
       .m-site-navigation.-header ul {
         display: -ms-flexbox;
         display: flex;
-        display: -ms-box;
         -ms-flex-direction: row;
-            flex-direction: row;
+        flex-direction: row;
         -ms-flex-pack: justify;
-            justify-content: space-between;
+        justify-content: space-between;
+        -ms-flex-align: center;
+            align-items: center;
         max-width: 28.125rem;
         width: 100%;
-        padding: 0 0.625rem; }
+        padding-right: 4.25rem; }
+        .m-site-navigation.-header ul > .selected-option-menu:before {
+          display: block;
+          content: "";
+          width: 100%;
+          height: 4px;
+          background-color: #04beb0;
+          position: relative;
+          bottom: 2.0625rem;
+          margin-bottom: -0.25rem; }
         .m-site-navigation.-header ul > .link {
           padding: 0;
           border-bottom: 0; }
-          .m-site-navigation.-header ul > .link.-current > a:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background-color: #49c9de; }
+          .m-site-navigation.-header ul > .link.-current > a {
+            font-size: 12px;
+            letter-spacing: 0.7px; }
+            .m-site-navigation.-header ul > .link.-current > a:before {
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 5px;
+              background-color: #49c9de; }
           .m-site-navigation.-header ul > .link > a {
             font-size: 0.6875rem;
             font-weight: 400; }
             .m-site-navigation.-header ul > .link > a:hover {
               color: #19aec4; } }
   @media screen and (min-width: 1024px) {
-    .m-site-navigation.-header {
-      width: calc(100% - 100px); }
-      .m-site-navigation.-header ul {
-        max-width: 34.375rem; } }
+    .m-site-navigation.-header:after {
+      margin-left: 4.1875rem; } }
   @media screen and (min-width: 640px) {
     .m-site-navigation {
       padding: 0px; } }
@@ -2072,11 +2083,11 @@ select {
   .m-social-share .icon {
     width: 1.25rem;
     height: 1.25rem;
-    fill: #156975;
+    fill: #19aec4;
     transition: all .2s ease-in-out; }
     .m-social-share .icon.-twitter svg:hover {
       transform: scale(1.2);
-      fill: #156975; }
+      fill: #19aec4; }
   .m-social-share ul {
     display: -ms-flexbox;
     display: flex;
@@ -2103,12 +2114,20 @@ select {
     width: 7.5rem;
     margin-top: 1.875rem; }
   @media screen and (min-width: 640px) {
+    .m-social-share.-header {
+      padding: 0px; }
+      .m-social-share.-header:before {
+        content: "";
+        display: block;
+        width: 0.0625rem;
+        height: 2.25rem;
+        background: #e5eaea; }
     .m-social-share.-footer {
       margin-left: 1.25rem;
       padding-right: 0.625rem; }
       .m-social-share.-footer ul {
         height: 100%; } }
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 768px) {
     .m-social-share.-header {
       position: absolute;
       top: 0;
@@ -2120,8 +2139,7 @@ select {
       display: -ms-box;
       -ms-flex-align: center;
           align-items: center;
-      padding: 0 1.25rem;
-      border-left: 1px solid #82bf72; }
+      padding: 0px; }
       .m-social-share.-header ul {
         width: 100%; }
     .m-social-share.-footer {
@@ -2136,8 +2154,7 @@ select {
         margin-top: 0; } }
   @media screen and (min-width: 1024px) {
     .m-social-share.-header {
-      width: 6.25rem;
-      padding: 0 1.25rem; } }
+      width: 6.25rem; } }
 
 .m-markdown {
   max-width: 100%; }
@@ -2460,55 +2477,28 @@ select {
 
 .m-highlight {
   max-width: 100%; }
-  .m-highlight > h2 {
-    color: #073339;
-    font-weight: 400; }
-  .m-highlight > p {
-    font-size: 1rem;
-    line-height: 1.625rem; }
-    .m-highlight > p + .btn, .m-highlight > p + ul {
-      margin-top: 0.625rem; }
-  @media screen and (min-width: 1024px) {
-    .m-highlight .-highlighted {
-      max-width: 80%; } }
-  .m-highlight .-highlighted + .btn {
-    margin-top: 1.25rem; }
-  .m-highlight > ul, .m-highlight li {
-    list-style-type: disc; }
-  .m-highlight ul {
-    padding-left: 1.25rem; }
-  .m-highlight li {
-    font-size: 0.9375rem; }
-  .m-highlight h2, .m-highlight p, .m-highlight ul, .m-highlight li {
-    color: #fff; }
-  .m-highlight .btn.-white {
-    width: 100%; }
-  @media screen and (min-width: 640px) {
-    .m-highlight .-highlighted {
-      font-size: 1.25rem;
-      line-height: 2.125rem;
-      letter-spacing: 0.025rem; }
-      .m-highlight .-highlighted + .btn {
-        margin-top: 4.6875rem; }
-    .m-highlight > p + .btn {
-      margin-top: 1.25rem; }
-    .m-highlight .btn.-white {
-      width: auto; } }
-  @media screen and (min-width: 768px) {
-    .m-highlight .-highlighted {
-      font-size: 1.25rem;
-      line-height: 2.125rem;
-      letter-spacing: 0.025rem; }
-      .m-highlight .-highlighted + .btn {
-        margin-top: 2.5rem; } }
-  @media screen and (min-width: 1024px) {
-    .m-highlight > p {
-      font-size: 0.9375rem; }
-      .m-highlight > p + .btn, .m-highlight > p + ul {
-        margin-top: 1.875rem; } }
-  @media screen and (min-width: 1280px) {
-    .m-highlight > p + .btn, .m-highlight > p + ul {
-      margin-top: 2.5rem; } }
+  .m-highlight h2 {
+    color: #fff;
+    margin-bottom: 0px;
+    margin-top: 2.75rem; }
+    @media screen and (min-width: 640px) {
+      .m-highlight h2 {
+        margin-top: 9.6875rem; } }
+  .m-highlight .text-banner-m {
+    display: block;
+    margin: 1.9375rem auto;
+    margin-bottom: 0px; }
+    @media screen and (min-width: 640px) {
+      .m-highlight .text-banner-m {
+        margin: 2.5rem auto;
+        margin-bottom: 0px; } }
+  .m-highlight .btn-primary {
+    margin: 2rem auto;
+    margin-bottom: 4.125rem; }
+    @media screen and (min-width: 640px) {
+      .m-highlight .btn-primary {
+        margin: 3.125rem auto;
+        margin-bottom: 10.625rem; } }
 
 .text {
   font-family: "Merriweather Sans", sans-serif; }
@@ -2587,6 +2577,16 @@ select {
   background-color: #19aec4;
   margin: 2.5rem auto;
   width: 2.3125rem; }
+
+.text-big-title {
+  font-weight: 400;
+  line-height: 1.20;
+  text-align: center;
+  font-family: "Merriweather Sans", sans-serif;
+  font-size: 45px; }
+  @media screen and (min-width: 640px) {
+    .text-big-title {
+      font-size: 70px; } }
 
 .l-banner {
   position: relative;
