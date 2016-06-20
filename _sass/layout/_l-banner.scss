@@ -4,6 +4,14 @@ $backgrounds: 'promoHome', 'topsection-country', 'topsection-countries', 'topsec
   position: relative;
   padding-top: rem(24px);
   padding-bottom: rem(67px);
+  &.-topsection-countries{
+    padding-top: rem(24px);
+    padding-bottom: rem(116px);
+    @media screen and (min-width: $screen-s) {
+      padding-top: rem(40px);
+      padding-bottom: rem(133px);
+    }
+  }
   @media screen and (min-width: 768px) {
     padding-top: rem(40px);
     padding-bottom: rem(112px);
