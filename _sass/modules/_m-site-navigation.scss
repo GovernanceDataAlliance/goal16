@@ -25,6 +25,7 @@
           font-family: $font-family-primary;
           color: $font-color-6;
           text-transform: uppercase;
+
           @media screen and (min-width: $screen-s) {
             font-size: $font-size-xsmall;
           }
@@ -150,5 +151,8 @@
         margin-left: rem(67px);
       }
     }
+  }
+  @media screen and (min-width: $screen-s) {
+    padding: 0px;
   }
 }
