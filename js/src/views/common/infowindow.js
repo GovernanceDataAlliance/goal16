@@ -11,7 +11,6 @@ var modalWindowtemplate = require('../../templates/common/modal_window_tpl.hbs')
  * Default type: info
  * Available options:
  * - info-infowindow
- * - legend-infowindow
  * - share-infowindow
 */
 var ModalWindowView = Backbone.View.extend({
@@ -52,8 +51,6 @@ var ModalWindowView = Backbone.View.extend({
 
   _setView: function() {
     switch(this.type) {
-      case 'legend-infowindow':
-        return { isLegend: true };
 
       case 'share-infowindow':
         return { isShare: true };
@@ -79,7 +76,7 @@ var ModalWindowView = Backbone.View.extend({
     }));
 
     // Adds filtered content to base template
-    this.$('#content').append(innerContent);
+    this.$('#modal-content').append(innerContent);
 
     this.toogleState();
   },

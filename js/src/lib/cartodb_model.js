@@ -2,9 +2,14 @@ var Backbone = require('backbone'),
     format = require('./format.js'),
     _ = require('lodash');
 
+var CONFIG = require('../../config.json');
+
 var BASE_URL = "http://{0}.cartodb.com/api/v2/sql";
 
 var CartoDBModel = Backbone.Model.extend({
+
+  user_name: CONFIG.cartodb.user_name,
+
   url: function() {
     return format(BASE_URL, this.user_name) + "?q=" + this._getQuery();
   },

@@ -1,0 +1,29 @@
+SELECT score FROM score_test
+
+{{!-- //EJEMPLO FORM CARE
+SELECT                                                             
+ city, country, state, country_iso,                                 
+ SUM(amount) AS total_funds,                                        
+ COUNT(*) AS total_donors,                                          
+ array_agg(                                                         
+   CASE WHEN historical_donation = 't'                              
+   THEN NULL                                                        
+   ELSE nickname || '#{DONORS_SEPARATOR}' || amount ||              
+   '#{DONORS_SEPARATOR}' || date                                    
+   END                                                              
+ ) AS donations,                                                    
+ array_agg(array_to_string(countries, ',')) FILTER (                
+   WHERE countries <> '{}' OR countries IS NOT NULL                 
+ ) AS countries_agg,                                                
+ array_agg(array_to_string(sectors, ',')) FILTER (                  
+   WHERE sectors <> '{}' OR sectors IS NOT NULL                     
+ ) AS sectors_agg                                                   
+ FROM #{DonationsSummary.table_name} AS donors                      
+ WHERE                                                              
+   ST_CONTAINS(                                                     
+     ST_Buffer(ST_SetSRID(ST_MakePoint(#{@lng}, #{@lat}), 4326),    
+     #{get_radius_buffer}),                                         
+     donors.the_geom)                                               
+and date_trunc('month', date) ='#{@date}'                
+ GROUP by city, country, state, country_iso                         
+ ORDER by total_donors DESC, total_funds DESC --}}

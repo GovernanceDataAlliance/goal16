@@ -9,11 +9,12 @@
   "helpers",
   "icons",
 
+  //GOAL16
+  "base/text",
   "base/general",
+
   "base/form",
 
-
-  "layout/grid",
   "layout/l-toolbar",
   "layout/l-aside-content",
   "layout/l-footer",
@@ -25,12 +26,18 @@
   "layout/l-compare-selectors",
 
   // GOAL16
+  "layout/grid",
   "layout/l-map",
   "layout/l-dashboard",
   "layout/l-highlight",
   "layout/l-share",
   "layout/l-target-list",
   "layout/l-welcome",
+  "layout/l-banner",
+  "layout/l-content",
+  "layout/l-grid",
+
+
 
   "modules/m-site-navigation",
   "modules/m-modal-window",
@@ -44,20 +51,16 @@
   "modules/m-highlight",
 
   //GOAL16
-  "base/text",
-
-
-  "layout/l-banner",
-  "layout/l-content",
-  "layout/l-grid",
-
+  "modules/m-dashboard",
   "modules/m-card--indexes",
   "modules/m-dashboard-target",
   "modules/m-dashboard-indicators",
   "modules/m-breadcrumbs",
   "modules/m-selectors",
   "modules/m-target-report",
+  "modules/m-map-controls",
   "modules/m-static-content",
+  "modules/m-pop-up",
 
   "components/c-buttons",
   "components/c-share-shortcut",

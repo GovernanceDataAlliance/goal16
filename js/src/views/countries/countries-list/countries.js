@@ -15,7 +15,6 @@ var CountriesView = Backbone.View.extend({
   className: 'js--countries-list',
 
   initialize: function() {
-
     // collections
     this.countriesCollection = CountriesCollection;
   },

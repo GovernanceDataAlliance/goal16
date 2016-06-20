@@ -1,19 +1,14 @@
 .m-search {
   width: 100%;
-  min-height: rem(65px);
-  background-color: $bg-color-3;
+  background-color: $white;
   transition: opacity .2s;
-
+  background-color: transparent;
   @media screen and (min-width: $screen-s) {
     width: 50%;
-  }
-
-  @media screen and (min-width: $screen-m) {
-    min-height: rem(153px);
-  }
-
-  @media screen and (min-width: $screen-l) {
-    min-height: rem(193px);
+    font-family: $font-family-primary;
+    font-size: $font-size-medium;
+    font-weight: $font-weight-regular;
+    font-style: italic;
   }
 
   .js--search-mobile {
@@ -31,15 +26,8 @@
     }
   }
 
-  .btn-open-search {
-    width: 100%;
-    padding: rem(25px) 0;
-    text-align: center;
-    font-family: $font-family-secondary;
-    font-size: rem(12px);
-    text-transform: uppercase;
-    color: $white;
-
+  .btn-primary {
+    margin-top: rem(80px);
     @media screen and (min-width: $screen-m) {
       display: none;
     }
@@ -48,20 +36,28 @@
   input {
     @extend %clean-button-or-input;
     cursor: pointer;
+    color: $white;
+    border-bottom: 1px solid $color-6;
+    @media screen and (min-width: $screen-s) {
+      padding-bottom: rem(25px);
+    }
   }
 
-  @media screen and (min-width: $screen-m) {
+  @media screen and (min-width: $screen-s) {
     position: relative;
     display: block;
     width: 100%;
     margin: 0;
     padding: rem(50px) rem(80px) rem(60px);
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-top: rem(90px);
 
     input {
       display: block;
       width: 100%;
       height: rem(40px);
-      border-bottom: 1px solid $white;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
       border-radius: 0;
       font-style: italic;
       text-transform: none;
@@ -83,22 +79,25 @@
     }
 
     .search-box.visible {
+      border-top: 1px solid $color-3;
+      border-left: 1px solid $color-3;
+      border-bottom: 1px solid $color-3;
       position: absolute;
-      bottom: rem(40px);
+      bottom: rem(-10px);
       left: rem(100px);
       right: rem(100px);
       // max-height: rem(500px);
       z-index: 2;
-      background-color: $bg-color-1;
-      border: 1px solid $border-1;
+      background-color: $white;
       transform: translatey(100%);
       overflow-y: scroll;
     }
 
     .search-area {
       width: 100%;
-      background-color: #eeedea;
-      border-bottom: 1px solid $border-1;
+      background-color: $white;
+      border-bottom: 1px solid $color-5;
+      transition: 0.2s;
 
       a, &.no-results > span {
         display: inline-block;
@@ -109,22 +108,20 @@
       }
 
       &.highlight {
-        background-color: $bg-color-3;
+        background-color: $white;
       }
 
       span span {
         font-weight: 700;
       }
+      &:hover{
+        background-color: $color-3;
+      }
     }
   }
 
-  @media screen and (min-width: $screen-l) {
-    padding: rem(65px) rem(100px) rem(75px);
-  }
 
   @media screen and (min-width: $screen-xl) {
-    padding: rem(65px) rem(190px) rem(75px);
-
     input {
       height: rem(40px);
     }
@@ -135,7 +132,29 @@
     }
   }
 
+}
+
+.icon-search {
+  @extend %centery;
+  right: 10%;
+  width: rem(20px);
+  height: rem(20px);
+  margin-top: rem(-7px);
+  fill: $white;
+
+  @media screen and (min-width: $screen-m) {
+    right: rem(80px);
+  }
+
+  @media screen and (min-width: $screen-l) {
+    right: rem(100px);
+  }
+
+  @media screen and (min-width: $screen-xl) {
+    right: rem(190px);
+  }
+
   @media screen and (min-width: $screen-xxl) {
-    padding: rem(70px) rem(190px) rem(80px);
+    right: rem(190px);
   }
 }

@@ -2,10 +2,10 @@
   @extend %wrap;
   position: relative;
   text-align: center;
+  display: flex;
   ul{
     list-style: none;
     display: block;
-    width: rem(75px);
     margin: 0 auto;
     li,a,span{
       float:left;

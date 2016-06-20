@@ -3,8 +3,9 @@ var _ = require('lodash'),
   Backbone = require('backbone'),
   Handlebars = require('handlebars');
 
-var infoWindowView = require('./infowindow_view.js'),
-  ShareView = require('./share_view.js');
+var infoWindowView = require('./infowindow.js'),
+  ShareView = require('./share_view.js'),
+  DownloadView = require('./download_view.js');
 
 var shareTemplate = require('../../templates/common/share_window_tpl.hbs');
 
@@ -99,7 +100,7 @@ var ShareWindowView = infoWindowView.extend({
   render: function() {
     // take a look later..
     this.$el.append(this.infoWindowTemplate());
-    this.$('#content').append(this.template());
+    this.$('#modal-content').append(this.template());
 
     if (this.options.noDownload) {
       $('.share-toolbar').addClass('-no-download');
