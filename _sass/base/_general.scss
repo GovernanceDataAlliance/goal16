@@ -18,20 +18,20 @@ html {
 
 body {
   margin: 0;
-  font-family: $font-main, Helvetica, Arial, sans-serif;
+  font-family: $font-family-primary;
   color: $font-color-1;
   font-size: rem(15px);
-  background-color: #eee;
+  background-color: $bg-page;
   -webkit-font-smoothing: antialiased;
   -webkit-overflow-scrolling: touch;
-  color: green;
+  color: $font-color-1;
 
   @media screen and (min-width: $screen-s) {
     font-size: 18px;
   }
 
   @media screen and (min-width: $screen-m) {
-    font-size: $font-size;
+    font-size: $font-size-normal;
   }
 }
 
@@ -58,8 +58,24 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+h1 {
+  font-size: $font-size-xlarge;
+}
+
+h2 {
+  font-size: $font-size-large;
+}
+
+h3 {
+  font-size: $font-size-medium;
+}
+
+h4 {
+  font-size: $font-size-normal;
+}
+
 p {
-  font-size: rem(14px);
+  font-size: $font-size-small;
   line-height: rem(26px);
 
   + .btn {

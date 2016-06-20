@@ -25,9 +25,7 @@
         </div>
       </div>
 
-      {{ content }}
-
-      <div class="js--country-container"></div>
+      <div id="content"></div>
 
       {% include modules/compare_module.html %}
 
@@ -50,7 +48,7 @@
     <script>
       var SITEURL = '{{ site.baseurl }}' || null;
     </script>
-    <script src="{{site.baseurl}}/js/countries_bundle.js"></script>
+    <script src="{{ site.baseurl }}/js/main_bundle.js"></script>
   </body>
 
 </html>

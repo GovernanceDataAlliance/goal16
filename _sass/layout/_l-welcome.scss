@@ -1,0 +1,66 @@
+.l-welcome {
+  background-image: url('#{$baseUrl}/img/fullscreenbg.jpg');
+  background-size: cover;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  .layer-welcome {
+    padding: 0 $wrap-padding-mobile;
+    @media screen and (min-width: 768px) {
+      padding: 0;
+    }
+  }
+  h1 {
+    img {
+      margin: 0 auto;
+      display: block;
+      width: 150px;
+      @media screen and (min-width: $screen-s) {
+        width: 200px;
+      }
+    }
+  }
+  .layer-welcome {
+    background-color: rgba(14, 29, 42, 0.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding-top: rem(115px);
+  }
+  .text-banner-l {
+    margin-top: rem(34px);
+    @media screen and (min-width: 768px) {
+      margin: rem(55px) auto;
+    }
+  }
+  .text-banner-m {
+    display: block;
+    margin: rem(17px) auto;
+    @media screen and (min-width: 768px) {
+      margin: rem(22px) auto;
+    }
+  }
+  .text-banner-title-s {
+    margin-top: rem(25px);
+    @media screen and (min-width: 768px) {
+      margin-top: rem(41px);
+    }
+  }
+  .text-banner-s {
+    width: 100%;
+    display: block;
+    margin: rem(11px) auto;
+    @media screen and (min-width: 768px) {
+      width: rem(736px);
+      margin: rem(16px) auto;
+    }
+  }
+  .btn-primary {
+    margin: rem(27px) auto;
+    @media screen and (min-width: 768px) {
+      margin: rem(52px) auto;
+    }
+  }
+}

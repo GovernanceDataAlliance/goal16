@@ -1,0 +1,24 @@
+{{#if official}}
+<div class="indicators-wrapper official-indicators">
+  <span class="indicator-type">official indicators</span>
+  {{#each official}}
+  <div class="indicator-wrapper">
+    <input type="radio" name="layer-selector" value={{slug}} id={{slug}} class="js--layer-selector -indicator">
+    <label for={{slug}}><h1 class="indicator-title">{{title}}</h1></label>
+    <button class="js--indicator-info" data-slug={{slug}}>i</button>
+  </div>
+  {{/each}}
+</div>
+{{/if}}
+{{#if shadow}}
+<div class="indicators-wrapper shadow-indicators">
+  <span class="indicator-type">shadow indicators</span>
+  {{#each shadow}}
+  <div class="indicator-wrapper">
+    <input type="radio" name="layer-selector" value={{slug}} id={{slug}} class="js--layer-selector -indicator">
+    <label for={{slug}}><h1 class="indicator-title">indicator name</h1></label>
+    <button class="js--indicator-info" data-slug="percentage_of_people_violence">i</button>
+  </div>
+  {{/each}}
+</div>
+{{/if}}

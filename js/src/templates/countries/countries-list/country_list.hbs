@@ -1,0 +1,18 @@
+{{#each countriesByRegion}}
+  <div class="l-content -main">
+    <div class="wrap">
+      <div class="m-list">
+        <h2 class="c-section-title -small">{{@key}}</h2>
+          <div class="lists-container">
+          {{#each this}}
+            <ul>
+            {{#each this}}
+              <li><a href="?iso={{iso}}" title="{{name}}">{{name}}</a></li>
+            {{/each}}
+            </ul>
+          {{/each}}
+          </div>
+      </div>
+    </div>
+  </div>
+{{/each}}

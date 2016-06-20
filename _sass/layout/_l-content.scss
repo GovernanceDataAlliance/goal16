@@ -8,18 +8,18 @@
   }
 
   &:nth-child(2n + 1) {
-    background-color: $bg-color-1;
+    background-color: $white;
   }
 
   &.-main {
-    padding: rem(40px) 0 rem(50px);
+    padding-top: rem(34px);
 
     @media screen and (min-width: $screen-s) {
-      padding: rem(75px) 0 rem(75px);
+      padding-top: rem(70px);
     }
 
     @media screen and (min-width: 768px) {
-      padding: rem(85px) 0 rem(105px);
+
     }
   }
 

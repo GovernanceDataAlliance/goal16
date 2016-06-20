@@ -1,0 +1,53 @@
+{{#if scores}}
+  <div class="c-score-table">
+    <div class="table-header">
+      <div class="table-row">
+        <div class="table-cell -category">
+          <span>official indicators</span>
+        </div>
+
+        {{#each countries}}
+          <div class="table-cell -country">
+            <span>{{ name }}</span>
+          </div>
+        {{/each}}
+
+      </div>
+    </div>
+    <div class="table-body">
+
+      {{#each scores}}
+
+        <div class="table-row">
+          <div class="table-cell -indicator">
+            <span>{{ title }}</span>
+            <span class="indicator-info">Score name  |  % of victims reduced  |  Last data point: 2014</span>
+          </div>
+
+          <div class="table-cell -score">
+            <span> 5% </span>
+            <span class="country-name only-mobile">Country name</span>
+          </div>
+
+          <div class="table-cell -score">
+            <span> 25% </span>
+            <span class="country-name only-mobile">Country name</span>
+          </div>
+
+          <div class="table-cell -score">
+            <span> 100% </span>
+            <span class="country-name only-mobile">Country name</span>
+          </div>
+        </div>
+
+      {{/each}}
+
+    </div>
+
+</div>
+
+{{else}}
+
+  <p>No indicators available for this target</p>
+
+{{/if}}

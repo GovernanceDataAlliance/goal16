@@ -1,0 +1,33 @@
+.m-dashboard-target {
+  padding: rem(25px);
+  border-bottom: 1px solid #e5eaea;
+
+  .header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-right: rem(35px);
+
+    .btn-toggle-target {
+      width: rem(16px);
+      height: rem(16px);
+      border-radius: 50%;
+      border: 2px solid $color-1;
+    }
+
+    .target-title {
+      margin-left: rem(10px);
+      padding: rem(5px);
+      font-size: rem(14px);
+      line-height: rem(25px);
+      color: $font-color-3;
+      font-family: $font-family-primary;
+      font-weight: $font-weight-regular;
+
+      &.is-active {
+        color: $font-color-1;
+        background-color: $white;
+      }
+    }
+  }
+}

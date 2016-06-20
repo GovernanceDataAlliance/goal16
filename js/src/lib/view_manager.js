@@ -1,18 +1,16 @@
-var _ = require('lodash'),
-    Backbone = require('backbone');
+var Backbone = require('backbone');
 
 var ViewManager = Backbone.Model.extend({
+
   defaults: {
     views: {}
   },
 
-  initialize: function(options) {
-    this.$el = options.$el;
-  },
+  el: '#content',
 
   addView: function(viewName, view) {
     var views = this.get('views');
-    views[viewName] = view;
+    views[viewName] = new view();
 
     this.set('views', views);
   },
@@ -22,29 +20,27 @@ var ViewManager = Backbone.Model.extend({
   },
 
   showView: function(viewName) {
-    var view = this.get('views')[viewName];
-    if (view !== undefined) {
-      this.set('currentView', view);
+    var view = this.getView(viewName);
 
-      view.show();
-      this.$el.html(view.el);
-      // this._hideViewsExcept(viewName);
-      view.delegateEvents();
+    if (!view) {
+      return;
     }
+
+    this._renderView(view);
   },
 
   hasView: function(viewName) {
-    return (this.get('views')[viewName] !== undefined);
+    return this.get('views')[viewName] ? true : false;
   },
 
-  // _hideViewsExcept: function(viewName) {
-  //   var views = this.get('views');
-  //   _.each(views, function(view, key) {
-  //     if (key !== viewName) {
-  //       view.hide();
-  //     }
-  //   });
-  // }
+  _renderView: function(view) {
+    //We can do an append because everytime we are changing the #content.
+    $(this.el).append(view.render().el);
+
+    view.show();
+    view.delegateEvents();
+  }
+
 });
 
 
