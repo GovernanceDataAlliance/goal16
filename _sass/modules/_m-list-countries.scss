@@ -28,6 +28,7 @@
         padding-right: rem(25px);
       }
       li {
+        margin-right: rem(10px);
         line-height: 1.46;
         @media screen and (min-width: $screen-s) {
           line-height: 2.13;
