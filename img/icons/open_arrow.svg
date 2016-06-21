@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="10px" height="7px" viewBox="0 0 10 7" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+    <title>flechita</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M5,6.4139293 L3.5860707,5 L0.293235338,1.70716464 C-0.0977451127,1.31618419 -0.0977451127,0.684215789 0.293235338,0.293235338 C0.684215789,-0.0977451127 1.31618419,-0.0977451127 1.70716464,0.293235338 L5,3.5860707 L8.29283536,0.293235338 C8.68381581,-0.0977451127 9.31578421,-0.0977451127 9.70676466,0.293235338 C10.0977451,0.684215789 10.0977451,1.31618419 9.70676466,1.70716464 L6.4139293,5 L5,6.4139293 Z" id="flechita" fill="#000000"></path>
+    </g>
+</svg>
