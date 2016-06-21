@@ -42,22 +42,21 @@
   right: 0;
   z-index: 1;
   //Margin left and bottom are to make click area bigger
-  margin: rem(30px) rem(20px) rem(5px) rem(5px);
+  margin-right: rem(13px);
+  margin-top: rem(28px);
   cursor: pointer;
   font-family: $font-family-primary;
   font-weight: bold;
-  color: $color-4;
-  font-size: rem(20px);
-  width: rem(24px);
-  height: rem(24px);
+  color: $white;
+  font-size: rem(30px);
+  width: rem(34px);
+  height: rem(34px);
   line-height: rem(17px);
   letter-spacing: -1px;
   border-radius: 50%;
   text-align: center;
-  border: 2px solid $color-4;
   &.-color-1 {
-    color: $color-1;
-    border-color: $color-1;
+    color: $white;
   }
   @media screen and (min-width: 768px) {
     margin: rem(40px) rem(30px) 0 0;
