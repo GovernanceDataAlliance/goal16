@@ -25,7 +25,7 @@ var DashboardView = Backbone.View.extend({
   events: {
     'click .js--toggle-dashboard': '_toggleDashboard',
     'click .js--toggle-dashboard-mb': '_toggleDashboard',
-    'click .js--open-target': '_showIndicators',
+    'click .js--open-target': '_showIndicatorsPerTarget',
     'click .js--close-target': '_hideIndicators',
     'click .js--indicator-info': '_showModalWindow',
     'change .js--layer-selector': '_selectLayer',
@@ -43,6 +43,10 @@ var DashboardView = Backbone.View.extend({
     this.infoWindowModel = new InfoWindowModel();
 
     this._setView();
+  },
+
+  _setListeners: function() {
+    this.status.on('change:layer', _.bind(this._setSelectLayer, this));
   },
 
   _setView: function() {
@@ -66,6 +70,7 @@ var DashboardView = Backbone.View.extend({
   show: function() {
     this.targetsCollection.getTargetsList().done(_.bind(function() {
       this._renderTargets();
+      this._setListeners();
     }, this));
   },
 
@@ -84,11 +89,13 @@ var DashboardView = Backbone.View.extend({
     Backbone.Events.trigger('dashboard:change');
   },
 
-  _showIndicators: function(e) {
+  _showIndicatorsPerTarget: function(e) {
+    if (e) {
+      var $currentTarget = $(e.currentTarget);
+      var currentTargetSlug = $currentTarget.data('slug');
+    }
     //1 - Check if the indicator has already been requested.
     //2 - if so, open target. If not, request indicators and open target.
-    var $currentTarget = $(e.currentTarget);
-    var currentTargetSlug = $currentTarget.data('slug');
 
     if ( _.includes(this.requestedTargets, currentTargetSlug) ) {
       this.$targetsWrapper.removeClass('is-open');
@@ -119,6 +126,33 @@ var DashboardView = Backbone.View.extend({
     this.$('#targets-container').append(targetsTemplate({targets: targets}));
 
     this._setVars();
+    this._setSelectLayer();
+  },
+
+  /*
+    This function sets the layer from url if any.
+   */
+  _setSelectLayer: function() {
+    var currentLayer = this.status.get('layer');
+    var currentType = this.status.get('type');
+
+    if (currentLayer) {
+      if (currentType == 'indicator') {
+        this._showIndicatorsPerTarget();
+      } else {
+        this._activateTargetLayer(currentLayer);
+      }
+    }
+  },
+
+  /*
+   This method is only to update the dashboard.
+   As the status is the same for the map and the dashboard, even if we trigger
+   the event to upload status, it wont change into the map because as they share status model it won't update.
+   We need to do it manually.
+   */
+  _activateTargetLayer: function(target) {
+    $('#'+target).attr('checked', true);
   },
 
   _setVars: function() {

@@ -54,6 +54,8 @@ var Router = Backbone.Router.extend({
 
   //MAP
   map: function() {
+    var view;
+
     var uri = new URI(window.location),
         params = uri.search(true);
 
@@ -65,8 +67,26 @@ var Router = Backbone.Router.extend({
       this.viewManager.addView('dashboard', DashboardView);
     }
 
+    /*
+     We are setting two views in this point, but as they are sharing status,
+     I can pick any of them to set the params in.
+    */
+    view = this.viewManager.getView('map');
+    view.status.set(params);
+
+    /*
+     As we need map params before set the map,
+     but we need to set the layer after the map
+     has been created, I have to create two methods for that.
+     One here and the other after the 'showView' method
+     */
+    view.updateMapParams();
+
     this.viewManager.showView('dashboard');
     this.viewManager.showView('map');
+
+    view.setMapLayer();
+    console.log('update params')
   },
 
   //COUNTRIES

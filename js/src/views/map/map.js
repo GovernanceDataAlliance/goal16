@@ -41,12 +41,24 @@ var MapView = Backbone.View.extend({
 
   initialize: function() {
     this.status = status;
-    this._setListeners();
+  },
+
+  updateMapParams: function() {
+    this.options.map.zoom = this.status.get('zoom') || this.options.map.zoom;
+    this.options.map.center = [this.status.get('lat'), this.status.get('lng')] || this.options.map.center;
+  },
+
+  setMapLayer: function() {
+    if (this.status.get('layer')) {
+      this._activeLayer();
+    }
   },
 
   show: function() {
     this._setView();
     this._initMap();
+
+    this._setListeners();
     this._setMapListeners();
 
     this.shareWindowView = new ShareWindowView();
@@ -67,7 +79,10 @@ var MapView = Backbone.View.extend({
   },
 
   _setListeners: function() {
-    this.status.on('change:layer', _.bind(this._activeLayer, this))
+    this.status.on('change:layer', _.bind(this._activeLayer, this));
+    this.status.on('change:zoom', _.bind(this._updateMapZoom, this));
+    this.status.on('change:lat', _.bind(this._updateMapCenter, this));
+    this.status.on('change:lng', _.bind(this._updateMapCenter, this));
     Backbone.Events.on('dashboard:change', _.bind(this._refreshMap, this))
   },
 
@@ -107,6 +122,14 @@ var MapView = Backbone.View.extend({
     this._updateRouterParams();
   },
 
+  _updateMapZoom: function() {
+    this.map.setZoom( this.status.get(this.status.get('zoom')) );
+  },
+
+  _updateMapCenter: function() {
+    this.map.setView( [this.status.get('lat'), this.status.get('lng') ] );
+  },
+
   _initMap: function() {
     /* this is the definition for basemap */
     var baseMap = L.tileLayer(this.options.basemap, {
@@ -125,10 +148,8 @@ var MapView = Backbone.View.extend({
   },
 
   _activeLayer: function() {
+    console.log('_activeLayer')
     this._createLayer().done(_.bind(function() {
-      //We remove the previous layer just when the new one arrive.
-      //This way, we are sure we only have one layer at a time.
-
       this._addLayer();
     }, this));
   },
