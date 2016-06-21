@@ -45,7 +45,7 @@ var MapView = Backbone.View.extend({
 
   updateMapParams: function() {
     this.options.map.zoom = this.status.get('zoom') || this.options.map.zoom;
-    this.options.map.center = [this.status.get('lat'), this.status.get('lng')] || this.options.map.center;
+    this.options.map.center = this.status.get('lat') && this.status.get('lng') ? [this.status.get('lat'), this.status.get('lng')] : this.options.map.center;
   },
 
   setMapLayer: function() {
@@ -135,6 +135,7 @@ var MapView = Backbone.View.extend({
     var baseMap = L.tileLayer(this.options.basemap, {
       attribution: '<a href="https://www.mapzen.com/rights">Attribution.</a>. Data &copy;<a href="https://openstreetmap.org/copyright">OSM</a> contributors.'
     });
+
     /* Here we create the map with Leafleft... */
     this.map = L.map(this.el, this.options.map);
     /* ...and we add the basemap layer with Leaflet as well */
