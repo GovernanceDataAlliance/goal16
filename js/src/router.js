@@ -79,14 +79,13 @@ var Router = Backbone.Router.extend({
      but we need to set the layer after the map
      has been created, I have to create two methods for that.
      One here and the other after the 'showView' method
-     */
+    */
     view.updateMapParams();
 
     this.viewManager.showView('dashboard');
     this.viewManager.showView('map');
 
     view.setMapLayer();
-    console.log('update params')
   },
 
   //COUNTRIES

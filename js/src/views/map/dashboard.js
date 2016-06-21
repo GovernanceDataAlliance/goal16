@@ -90,10 +90,17 @@ var DashboardView = Backbone.View.extend({
   },
 
   _showIndicatorsPerTarget: function(e) {
-    if (e) {
-      var $currentTarget = $(e.currentTarget);
-      var currentTargetSlug = $currentTarget.data('slug');
+    var $currentTarget;
+    var currentTargetSlug;
+
+    if (e && e.currentTarget) {
+      $currentTarget = $(e.currentTarget);
+      currentTargetSlug = $currentTarget.data('slug');
+    } else {
+      $currentTarget = $('.js--open-target[data-slug="'+ e +'"]')
+      currentTargetSlug = e;
     }
+
     //1 - Check if the indicator has already been requested.
     //2 - if so, open target. If not, request indicators and open target.
 
@@ -134,15 +141,21 @@ var DashboardView = Backbone.View.extend({
    */
   _setSelectLayer: function() {
     var currentLayer = this.status.get('layer');
-    var currentType = this.status.get('type');
+    var currentType = this.status.get('layerType');
 
     if (currentLayer) {
       if (currentType == 'indicator') {
-        this._showIndicatorsPerTarget();
+        this._activateIndicatorsLayer(currentLayer);
       } else {
         this._activateTargetLayer(currentLayer);
       }
     }
+  },
+
+  _activateIndicatorsLayer: function(slug) {
+    this.indicatorsCollection.getTargetOfIndicator(slug).done(_.bind(function(slug){
+      this._showIndicatorsPerTarget(slug.rows[0].target_slug);
+    }, this))
   },
 
   /*
@@ -164,7 +177,11 @@ var DashboardView = Backbone.View.extend({
   _renderIndicators: function(targetSlug) {
     var indicatorsGrupedByType = this.indicatorsCollection.groupByType();
 
-    this.$('#target-' + targetSlug).find('.js--indicators').html(indicatorsTemplate(indicatorsGrupedByType))
+    this.$('#target-' + targetSlug).find('.js--indicators').html(indicatorsTemplate(indicatorsGrupedByType));
+
+    if (this.status.get('layer') && this.status.get('layerType') == 'indicator' ) {
+      $('#' + this.status.get('layer')).attr('checked', true);
+    }
   },
 
   _selectLayer: function(e) {

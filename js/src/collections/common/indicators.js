@@ -4,7 +4,8 @@ var Handlebars = require('handlebars'),
 
 var CONFIG = require('../../../config.json');
 
-var indicatorsByTargetSQL = Handlebars.compile(require('../../queries/common/indicators_by_target.hbs'));
+var indicatorsByTargetSQL = Handlebars.compile(require('../../queries/common/indicators_by_target.hbs')),
+    targetOfIndicatorSQL = Handlebars.compile(require('../../queries/common/target_of_indicator.hbs'))
 
 var IndicatorsCollection = CartoDBCollection.extend({
 
@@ -20,6 +21,13 @@ var IndicatorsCollection = CartoDBCollection.extend({
 
   groupByType: function() {
     return _.groupBy(this.toJSON(), 'type');
+  },
+
+  getTargetOfIndicator: function(indicatorSlug) {
+    var query = targetOfIndicatorSQL({ table: this.indicators_table, slug: indicatorSlug }),
+      url = this._urlForQuery(query);
+
+    return this.fetch({ url: url });
   }
 
 });
