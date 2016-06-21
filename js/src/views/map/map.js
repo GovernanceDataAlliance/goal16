@@ -78,6 +78,10 @@ var MapView = Backbone.View.extend({
     this.map.on('dragend', _.bind(this._onDragEndMap, this));
   },
 
+  _updateRouterParams: function() {
+    Backbone.Events.trigger('router:update-params', this.status);
+  },
+
   _popUpSetUp: function(e) {
     this.popUp = new PopUpView({
       layer: this.status.get('layer'),
@@ -94,11 +98,13 @@ var MapView = Backbone.View.extend({
       lat: position.lat,
       lng: position.lng
     });
+    this._updateRouterParams();
   },
 
   _onZoomMap: function() {
     var zoom = this.map.getZoom();
     this.status.set({zoom: zoom});
+    this._updateRouterParams();
   },
 
   _initMap: function() {
