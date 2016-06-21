@@ -19,7 +19,7 @@ var CountryListView = Backbone.View.extend({
 
   _divideCols: function() {
     var regions = this._getRegions(),
-      cols = window.innerWidth > 1400 ? 4 : 3,
+      cols = window.innerWidth > 769 ? 3 : 2,
       list = {};
 
     if (!Object.keys(regions).length > 0) {
@@ -74,7 +74,15 @@ var CountryListView = Backbone.View.extend({
   },
 
   _openList: function(e) {
-    $(e.currentTarget).toggleClass('list-open');
+    if($(e.currentTarget).hasClass('list-no-visible')){
+      $(e.currentTarget).removeClass('list-no-visible');
+      $(e.currentTarget).toggleClass('list-visible');
+      $(".open-menu").attr('xlink:href','#icon-close_x');
+    }else{
+      $(e.currentTarget).removeClass('list-visible');
+      $(e.currentTarget).toggleClass('list-no-visible');
+      $(".open-menu").attr('xlink:href','#icon-open_arrow');
+    }
   }
 });
 

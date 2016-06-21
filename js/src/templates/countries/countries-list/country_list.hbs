@@ -1,11 +1,11 @@
 {{#each countriesByRegion}}
-  <div class="l-content -main">
+  <div class="l-content -countries list-no-visible click js--list-handler"><!-- class list-no-visible -->
     <div class="wrap">
       <div class="m-list">
-        <h2 class="c-section-title -small">{{@key}}</h2>
+        <h2 class="c-section-title -small">{{@key}}<svg class="open-menu"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-open_arrow"></use></svg></h2>
           <div class="lists-container">
           {{#each this}}
-            <ul>
+            <ul class="list-open">
             {{#each this}}
               <li><a href="?iso={{iso}}" title="{{name}}">{{name}}</a></li>
             {{/each}}
