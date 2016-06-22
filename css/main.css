@@ -2236,19 +2236,33 @@ select {
       align-items: flex-start;
   position: absolute;
   width: 100%;
-  padding: 0 11.5625rem;
-  font-size: 0.9375rem;
+  padding: 0 5.75rem;
   overflow: auto; }
   .modal-container h2 {
-    font-size: 1.5rem;
+    font-size: 27px;
     font-weight: 400;
-    margin-bottom: 2.1875rem;
-    text-transform: capitalize; }
+    text-transform: capitalize;
+    margin-top: 5rem; }
+    .modal-container h2:after {
+      content: '';
+      display: block;
+      height: 3px;
+      border: 0px;
+      background-color: #19aec4;
+      width: 37px;
+      margin-top: 1.875rem; }
     @media screen and (min-width: 640px) {
       .modal-container h2 {
-        font-size: 1.875rem;
-        line-height: 2.3125rem;
-        margin-bottom: 1.5625rem; } }
+        font-size: 27px;
+        font-weight: 400;
+        text-transform: capitalize;
+        margin-top: 5rem; } }
+  .modal-container p {
+    font-family: "Merriweather Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.75;
+    margin-top: 1.875rem; }
 
 .btn-close-modal {
   color: #04beb0 !important; }
