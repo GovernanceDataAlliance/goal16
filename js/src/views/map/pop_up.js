@@ -1,4 +1,5 @@
 var $ = require('jquery'),
+  _ = require('lodash'),
   Backbone = require('backbone'),
   Handlebars = require('handlebars');
 
@@ -15,15 +16,15 @@ var PopUpView = Backbone.View.extend({
   },
 
   _initData: function() {
-    this.model.fetch(this.options).done((response) => {
-      //We need to check if response is empty to not draw pop-up in that case.
-      if ( Object.keys(response).length ) {
-        this.options.data = this.model;
-        this.options.mobile ?  this._drawPopUpMobile() : this._drawPopUp();
-      } else {
-        this.model.clear();
-      }
-    });
+    this.model.fetch(this.options).done(_.bind(function(response) {
+          //We need to check if response is empty to not draw pop-up in that case.
+          if ( Object.keys(response).length ) {
+            this.options.data = this.model;
+            this.options.mobile ?  this._drawPopUpMobile() : this._drawPopUp();
+          } else {
+            this.model.clear();
+          }
+        }, this));
   },
 
   _drawPopUpMobile: function() {

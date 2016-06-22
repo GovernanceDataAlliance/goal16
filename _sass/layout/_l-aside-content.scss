@@ -9,8 +9,7 @@
     width: 100%;
     box-shadow: 0 0 60px 0 rgba(7, 51, 56, 0.15);
     margin: 0 auto rem(100px);
-    padding-top: rem(98px);
-    padding-bottom: rem(98px);
+    padding: rem(98px) rem(21px);
     @media screen and (min-width: $screen-s) {
       padding-top: rem(150px);
       padding-bottom: rem(150px);

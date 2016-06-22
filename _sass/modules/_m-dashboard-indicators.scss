@@ -38,6 +38,10 @@
       &:checked {
         border-width: rem(4px);
         border-color: $color-1;
+
+        + label h1 {
+          color: $font-color-1;
+        }
       }
     }
 
