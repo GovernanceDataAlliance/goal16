@@ -15,7 +15,7 @@
   &:hover {
     background-color: darken($color-5, 10% );
   }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $screen-s) {
     font-size: rem(12px);
     letter-spacing: rem(.7px);
     max-width: rem(211px);
