@@ -12,50 +12,50 @@
       display: flex;
       justify-content: center;
     }
-    > .btn {
-      padding: rem(15px) rem(30px);
-      text-transform: uppercase;
-      color: $color-5;
-      border: 1px solid $color-5;
-      font-weight: $font-weight-regular;
-      font-size: $font-size-xsmall;
-      width: 100%;
-      margin-top: rem(25px);
-      @media screen and (min-width: $screen-s) {
-        width: auto;
-        letter-spacing: rem(0.7px);
-        transition: 0.2s;
-        margin-right: rem(25px);
-        margin-top: 0px;
-        &:last-child{
-          margin-right: 0px;
-        }
-      }
-      &:hover{
-        background-color: $color-5;
-        color: $font-color-2;
-      }
-      &.-active {
-        position: relative;
-        color: $font-color-6;
-        background-color: rgba(128, 147, 151, 0.1);
-        border: solid 1px rgba(128, 147, 151, 0.4);
-        > svg {
-          display: none;
-        }
-        .button-literal {
-          color: $font-color-1;
-        }
-        @media screen and (min-width: 768px) {
-          &:after {
-            display: none;
-          }
-          .button-literal {
-            position: relative;
-          }
-        }
-      }
-    }
+    // > .btn {
+    //   padding: rem(15px) rem(30px);
+    //   text-transform: uppercase;
+    //   color: $color-5;
+    //   border: 1px solid $color-5;
+    //   font-weight: $font-weight-regular;
+    //   font-size: $font-size-xsmall;
+    //   width: 100%;
+    //   margin-top: rem(25px);
+    //   @media screen and (min-width: $screen-s) {
+    //     width: auto;
+    //     letter-spacing: rem(0.7px);
+    //     transition: 0.2s;
+    //     margin-right: rem(25px);
+    //     margin-top: 0px;
+    //     &:last-child{
+    //       margin-right: 0px;
+    //     }
+    //   }
+    //   &:hover{
+    //     background-color: $color-5;
+    //     color: $font-color-2;
+    //   }
+    //   &.-active {
+    //     position: relative;
+    //     color: $font-color-6;
+    //     background-color: rgba(128, 147, 151, 0.1);
+    //     border: solid 1px rgba(128, 147, 151, 0.4);
+    //     > svg {
+    //       display: none;
+    //     }
+    //     .button-literal {
+    //       color: $font-color-1;
+    //     }
+    //     @media screen and (min-width: 768px) {
+    //       &:after {
+    //         display: none;
+    //       }
+    //       .button-literal {
+    //         position: relative;
+    //       }
+    //     }
+    //   }
+    // }
     &.-no-download {
       width: 25%;
       min-width: rem(100px);
