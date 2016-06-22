@@ -3,7 +3,6 @@
   width: 100%;
   padding: rem(15px) rem(50px);
   background-color: $color-5;
-
   font-family: $font-family-primary;
   font-size: rem(11px);
   text-align: center;
@@ -11,31 +10,25 @@
   text-transform: uppercase;
   letter-spacing: rem(.6px);
   color: $white;
-
   cursor: pointer;
-  transition: .1s;
-
+  transition: 0.1s;
   &:hover {
     background-color: darken($color-5, 10% );
   }
-
   @media screen and (min-width: 768px) {
     font-size: rem(12px);
     letter-spacing: rem(.7px);
     max-width: rem(211px);
   }
-
   &.-small {
     width: auto;
     padding: rem(15px) rem(45px);
   }
-
   &.-disabled {
-    opacity: .5;
+    opacity: 0.5;
     pointer-events: none;
   }
 }
-
 .btn-close {
   position: absolute;
   top: 0;
@@ -57,6 +50,9 @@
   text-align: center;
   &.-color-1 {
     color: $white;
+  }
+  &.-btn-close-modal{
+    color: $font-color-3;
   }
   @media screen and (min-width: 768px) {
     margin: rem(40px) rem(30px) 0 0;

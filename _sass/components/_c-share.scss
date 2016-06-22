@@ -1,5 +1,8 @@
 .c-share {
-
+    p{
+      text-align: center; /*review*/
+      margin-top: rem(50px);
+    }
   //If changing this, please, check toolbar footer reaction
   .btn {
     flex: 1 1 20%;
@@ -38,29 +41,27 @@
   .link-box {
     position: relative;
     width: 100%;
-    margin-top: rem(35px);
+    margin-top: rem(58px);
     text-align: left;
   }
 
   .url {
     -webkit-appearance: none;
-
     width: 100%;
     margin-bottom: rem(10px);
     padding: rem(16px) rem(10px);
-    font-family: $font-family-secondary;
-    font-size: rem(14px);
-    font-style: italic;
-    color: #5b5b5b;
-    border: rem(1px) solid $beige;
-    border-radius: 0;
-
-
+    font-family:$font-family-primary;
+    color: $font-color-6;
+    font-size: $font-size-xsmall;
+    font-weight: $font-weight-regular;
+    line-height: 1.67;
+    height: rem(65px);
+    border: 1px solid $color-3;
     @include ellipsis-x(100%);
 
     @media screen and (min-width: $screen-s) {
       width: calc(100% - 21%);
-      height: rem(51px);
+      height: rem(65px);
       margin: 0;
       border-right: 0;
     }
@@ -72,14 +73,26 @@
 
   .btn-copy {
     width: 100%;
-    height: rem(51px);
-    font-family: $font-family-secondary;
-    font-size: rem(11px);
+    height: rem(65px);
+    font-family: $font-family-primary;
+    font-size: $font-size-xsmall;
+    font-weight: $font-weight-regular;
+    letter-spacing: 0.7px;
     cursor: pointer;
     text-align: center;
+    background-color: $color-5;
+    text-transform: uppercase;
+    color: $font-color-2;
+    padding-left: rem(46px);
+    padding-right: rem(46px);
+    padding-top: rem(25px);
+    padding-bottom: rem(25px);
 
     &.-secondary {
-      padding: rem(17px);
+      padding-left: rem(46px);
+      padding-right: rem(46px);
+      padding-top: rem(25px);
+      padding-bottom: rem(25px);
     }
 
     @media screen and (min-width: $screen-s) {

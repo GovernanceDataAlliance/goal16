@@ -16,8 +16,8 @@
   right: 0;
   bottom: 0;
   z-index: 11;
-  background: #000;
-  opacity: .5;
+  background: $white;
+  opacity: .9;
 }
 
 .modal-wrapper {
@@ -31,6 +31,7 @@
   margin: auto;
   overflow: auto;
   background-color: $white;
+  box-shadow: 0 0 60px 0 rgba(7, 51, 56, 0.15);
 
   @media screen and (min-width: $screen-s) {
     top: 50%;
@@ -39,17 +40,17 @@
     height: 80%;
     width: 90%;
     max-width: rem(690px);
-    max-height: rem(780px);
+    max-height: rem(446px);
   }
 
   @media screen and (min-width: $screen-l) {
     max-width: rem(750px);
-    max-height: rem(550px);
+    max-height: rem(5446px);
   }
 
   @media screen and (min-width: $screen-l) {
     max-width: rem(1000px);
-    max-height: rem(600px);
+    max-height: rem(446px);
   }
 }
 
@@ -62,26 +63,18 @@
   display: -ms-box;
   align-items: flex-start;
   position: absolute;
-  top: rem(65px);
-  bottom: rem(25px);
-  left: 0;
-  right: 0;
   width: 100%;
-  padding: 0 rem(20px);
+  padding: 0 rem(185px);
   font-size: rem(15px);
   overflow: auto;
 
   @media screen and (min-width: $screen-s) {
-    top: rem(90px);
-    bottom: rem(80px);
-    padding: 0 rem(60px);
   }
 
   @media screen and (min-width: $screen-l) {
     // bottom: rem(115px);
-    padding: 0 rem(100px);
   }
-  
+
   h2 {
     font-size: rem(24px);
     font-weight: 400;
@@ -98,4 +91,5 @@
 
 .btn-close-modal {
   @extend .btn-close;
+  color: $color-7 !important;
 }
