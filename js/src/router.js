@@ -18,6 +18,7 @@ var Router = Backbone.Router.extend({
    * Routes examples:
    * countries: countries?iso=GAB
    * compare: compare?isoA=SPA&isoB=FRA&isoC=ENG
+   * map: map?layer=layer-slug&layerType=layer-type&iso=iso
    */
 
   routes: {
