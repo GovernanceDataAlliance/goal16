@@ -1,5 +1,5 @@
 var $ = require('jquery'),
-  _ = require('underscore'),
+  _ = require('lodash'),
   Backbone = require('backbone'),
   Handlebars = require('handlebars');
 
