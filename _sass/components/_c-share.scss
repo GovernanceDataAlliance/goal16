@@ -87,7 +87,7 @@
     color: $font-color-2;
     padding: rem(25px) rem(46px);
     &.-secondary {
-      padding: rem(25px) rem(46px);
+      padding: rem(25px) rem(0px);
     }
     @media screen and (min-width: $screen-s) {
       position: absolute;
