@@ -1,27 +1,36 @@
 .m-highlight {
   //Paddings and layout stuff are here for IE...
   max-width: 100%;
+
   h2 {
     color: $font-color-2;
     margin-bottom: 0px;
     margin-top: rem(44px);
+
     @media screen and (min-width: $screen-s) {
       margin-top: rem(155px);
     }
   }
+
   .text-banner-m{
     display: block;
     margin: rem(31px) auto;
     margin-bottom: 0px;
+
     @media screen and (min-width: $screen-s) {
       margin: rem(40px) auto;
       margin-bottom: 0px;
     }
   }
-  .btn-primary {
+
+  .c-button {
     margin: rem(32px) auto;
     margin-bottom: rem(66px);
+
     @media screen and (min-width: $screen-s) {
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
       margin: rem(50px) auto;
       margin-bottom: rem(170px);
     }

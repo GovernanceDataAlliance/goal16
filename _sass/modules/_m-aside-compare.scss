@@ -1,4 +1,5 @@
 .m-aside-compare {
+
   .image-compare-banner {
     position: relative;
     background-image: url('#{$baseUrl}/img/crosseling/crosseling-compare.jpg');
@@ -37,18 +38,17 @@
         line-height: 1.92;
       }
     }
+  }
 
-    .btn-primary {
+  .c-button {
+    position: relative;
+    margin: rem(32px) auto 0;
+
+    @media screen and (min-width: $screen-s) {
       position: relative;
-      margin: rem(32px) auto 0;
-
-      @media screen and (min-width: $screen-s) {
-        width: rem(264px);
-        max-width: rem(264px);
-        padding-left: rem(0px);
-        padding-right: rem(0px);
-        margin: rem(46px) auto 0;
-      }
+      left: 50%;
+      transform: translateX(-50%);
+      margin: rem(46px) auto 0;
     }
   }
 }

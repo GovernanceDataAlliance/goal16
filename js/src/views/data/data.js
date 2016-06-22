@@ -4,7 +4,7 @@ var Backbone = require('backbone'),
 
 var template = Handlebars.compile(require('../../templates/data/index.hbs')),
     targetsTemplate = Handlebars.compile(require('../../templates/data/targets.hbs'));
-    indicatorsTemplate = Handlebars.compile(require('../../templates/data/indicators.hbs'));data
+    indicatorsTemplate = Handlebars.compile(require('../../templates/data/indicators.hbs'));
 
 var DataView = Backbone.View.extend({
 
