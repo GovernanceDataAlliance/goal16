@@ -41,12 +41,24 @@ var MapView = Backbone.View.extend({
 
   initialize: function() {
     this.status = status;
-    this._setListeners();
+  },
+
+  updateMapParams: function() {
+    this.options.map.zoom = this.status.get('zoom') || this.options.map.zoom;
+    this.options.map.center = this.status.get('lat') && this.status.get('lng') ? [this.status.get('lat'), this.status.get('lng')] : this.options.map.center;
+  },
+
+  setMapLayer: function() {
+    if (this.status.get('layer')) {
+      this._activeLayer();
+    }
   },
 
   show: function() {
     this._setView();
     this._initMap();
+
+    this._setListeners();
     this._setMapListeners();
 
     this.shareWindowView = new ShareWindowView();
@@ -67,7 +79,10 @@ var MapView = Backbone.View.extend({
   },
 
   _setListeners: function() {
-    this.status.on('change:layer', _.bind(this._activeLayer, this))
+    this.status.on('change:layer', _.bind(this._activeLayer, this));
+    this.status.on('change:zoom', _.bind(this._updateMapZoom, this));
+    this.status.on('change:lat', _.bind(this._updateMapCenter, this));
+    this.status.on('change:lng', _.bind(this._updateMapCenter, this));
     Backbone.Events.on('dashboard:change', _.bind(this._refreshMap, this))
   },
 
@@ -76,6 +91,10 @@ var MapView = Backbone.View.extend({
 
     this.map.on('zoomend', _.bind(this._onZoomMap, this));
     this.map.on('dragend', _.bind(this._onDragEndMap, this));
+  },
+
+  _updateRouterParams: function() {
+    Backbone.Events.trigger('router:update-params', this.status);
   },
 
   _popUpSetUp: function(e) {
@@ -94,11 +113,21 @@ var MapView = Backbone.View.extend({
       lat: position.lat,
       lng: position.lng
     });
+    this._updateRouterParams();
   },
 
   _onZoomMap: function() {
     var zoom = this.map.getZoom();
     this.status.set({zoom: zoom});
+    this._updateRouterParams();
+  },
+
+  _updateMapZoom: function() {
+    this.map.setZoom( this.status.get(this.status.get('zoom')) );
+  },
+
+  _updateMapCenter: function() {
+    this.map.setView( [this.status.get('lat'), this.status.get('lng') ] );
   },
 
   _initMap: function() {
@@ -106,6 +135,7 @@ var MapView = Backbone.View.extend({
     var baseMap = L.tileLayer(this.options.basemap, {
       attribution: '<a href="https://www.mapzen.com/rights">Attribution.</a>. Data &copy;<a href="https://openstreetmap.org/copyright">OSM</a> contributors.'
     });
+
     /* Here we create the map with Leafleft... */
     this.map = L.map(this.el, this.options.map);
     /* ...and we add the basemap layer with Leaflet as well */
@@ -120,9 +150,6 @@ var MapView = Backbone.View.extend({
 
   _activeLayer: function() {
     this._createLayer().done(_.bind(function() {
-      //We remove the previous layer just when the new one arrive.
-      //This way, we are sure we only have one layer at a time.
-
       this._addLayer();
     }, this));
   },
