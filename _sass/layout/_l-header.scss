@@ -37,6 +37,11 @@ $header-height: rem(80px);
     background-color: $white;
     margin-left: rem(18px);
 
+    .logo-link {
+      display: flex;
+      justify-content: center;
+    }
+
     @media screen and (min-width: 768px) {
       flex-basis: 37%;
       width: rem(270px);
