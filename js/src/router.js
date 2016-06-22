@@ -135,8 +135,6 @@ var Router = Backbone.Router.extend({
     //   return;
     // }
 
-    console.log('incoming params');
-    console.log(view.status.toJSON());
   },
 
   // Receives the status (Backbone Model only) of the current view.

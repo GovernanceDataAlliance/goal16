@@ -62,7 +62,6 @@ var CompareView = Backbone.View.extend({
 
   _setVars: function() {
     this.$shareSection = $('.l-share');
-    console.log(this.$shareSection);
   },
 
   _updateRouterParams: function() {

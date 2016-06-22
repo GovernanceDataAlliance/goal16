@@ -15,8 +15,6 @@ var IndicatorCardView = Backbone.View.extend({
   initialize: function(settings) {
     this.options = settings || {};
 
-    console.log(this.options);
-
     this.status = this.options.status;
     this.id = this.options.target.slug;
   },
@@ -45,9 +43,6 @@ var IndicatorCardView = Backbone.View.extend({
       officialIndicators = indicatorsByType[0],
       shadowIndicators = indicatorsByType[1],
       iso = this.status.get('iso');
-
-    console.log(officialIndicators);
-    console.log(shadowIndicators);
 
     this.$el.html(this.template({
       iso: iso,
