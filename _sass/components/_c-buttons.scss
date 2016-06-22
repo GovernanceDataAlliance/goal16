@@ -4,7 +4,7 @@
   padding: rem(15px) rem(50px);
   background-color: $color-5;
   font-family: $font-family-primary;
-  font-size: rem(11px);
+  font-size: $font-size-xsmall;
   text-align: center;
   font-weight: $font-weight-regular;
   text-transform: uppercase;
@@ -41,9 +41,9 @@
   font-family: $font-family-primary;
   font-weight: bold;
   color: $white;
-  font-size: rem(30px);
-  width: rem(34px);
-  height: rem(34px);
+  font-size: rem(40px);
+  width: rem(44px);
+  height: rem(44px);
   line-height: rem(17px);
   letter-spacing: -1px;
   border-radius: 50%;

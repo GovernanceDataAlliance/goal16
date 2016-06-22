@@ -3,26 +3,33 @@
     display: none;
   }
   .share-toolbar {
-    display: flex;
-    justify-content: center;
     width: 100%;
     margin-top: rem(56px);
     svg {
       display: none;
     }
+    @media screen and (min-width: $screen-s) {
+      display: flex;
+      justify-content: center;
+    }
     > .btn {
-      width: auto;
       padding: rem(15px) rem(30px);
       text-transform: uppercase;
       color: $color-5;
       border: 1px solid $color-5;
-      font-size: $font-size-xsmall;
       font-weight: $font-weight-regular;
-      letter-spacing: rem(0.7px);
-      transition: 0.2s;
-      margin-right: 25px;
-      &:last-child{
-        margin-right: 0px;
+      font-size: $font-size-xsmall;
+      width: 100%;
+      margin-top: rem(25px);
+      @media screen and (min-width: $screen-s) {
+        width: auto;
+        letter-spacing: rem(0.7px);
+        transition: 0.2s;
+        margin-right: rem(25px);
+        margin-top: 0px;
+        &:last-child{
+          margin-right: 0px;
+        }
       }
       &:hover{
         background-color: $color-5;

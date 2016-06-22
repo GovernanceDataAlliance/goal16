@@ -8,7 +8,6 @@
   left: 0;
   z-index: 100;
 }
-
 .modal-background {
   position: fixed;
   left: 0;
@@ -17,22 +16,25 @@
   bottom: 0;
   z-index: 11;
   background: $white;
-  opacity: .9;
+  opacity: 0.9;
 }
-
 .modal-wrapper {
   box-sizing: border-box;
-  display: flex; display: -ms-box;
+  display: flex;
+  display: -ms-box;
   position: absolute;
   right: 0;
   left: 0;
-  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 90%;
+  width: 90%;
   z-index: 14;
   margin: auto;
   overflow: auto;
   background-color: $white;
   box-shadow: 0 0 60px 0 rgba(7, 51, 56, 0.15);
-
   @media screen and (min-width: $screen-s) {
     top: 50%;
     left: 50%;
@@ -42,53 +44,46 @@
     max-width: rem(690px);
     max-height: rem(446px);
   }
-
   @media screen and (min-width: $screen-l) {
     max-width: rem(750px);
     max-height: rem(5446px);
   }
-
   @media screen and (min-width: $screen-l) {
     max-width: rem(1000px);
     max-height: rem(446px);
   }
 }
-
 .modal-content {
   width: 100%;
 }
-
 .modal-container {
   display: flex;
   display: -ms-box;
   align-items: flex-start;
   position: absolute;
   width: 100%;
-  padding: 0 rem(92px);
+  padding: 0 rem(20px);
   overflow: auto;
-
   @media screen and (min-width: $screen-s) {
+    padding: 0 rem(92px);
   }
-
   @media screen and (min-width: $screen-l) {
     // bottom: rem(115px);
   }
-
   h2 {
-    font-size: $font-size-large;
+    font-size: $font-size-medium;
     font-weight: $font-weight-regular;
     text-transform: capitalize;
     margin-top: rem(80px);
-    &:after{
+    &:after {
       content: '';
       display: block;
       height: 3px;
-      border: 0px;
+      border: 0;
       background-color: $color-1;
       width: 37px;
       margin-top: rem(30px);
     }
-
     @media screen and (min-width: $screen-s) {
       font-size: $font-size-large;
       font-weight: $font-weight-regular;
@@ -96,15 +91,22 @@
       margin-top: rem(80px);
     }
   }
-  p{
-  font-family: $font-family-primary;
-  font-size: $font-size-normal;
-  font-weight: $font-weight-regular;
-  line-height: 1.75;
-  margin-top: rem(30px);
+  p {
+    font-family: $font-family-primary;
+    font-size: $font-size-xsmall;
+    font-weight: $font-weight-regular;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+    margin-top: rem(30px);
+    a{
+      font-size: $font-size-xsmall;
+    }
+    @media screen and (min-width: $screen-s) {
+      font-size: $font-size-normal;
+      line-height: 1.75;
+    }
   }
 }
-
 .btn-close-modal {
   @extend .btn-close;
   color: $color-7 !important;
