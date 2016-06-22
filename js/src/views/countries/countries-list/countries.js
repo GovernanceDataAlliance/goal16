@@ -20,14 +20,14 @@ var CountriesView = Backbone.View.extend({
   },
 
   _setViews: function() {
-    enquire.register("screen and (max-width:769px)", {
+    enquire.register("screen and (max-width:768px)", {
       match: _.bind(function(){
         this.mobile = true;
          this.initViews();
       },this)
     });
 
-    enquire.register("screen and (min-width:770px)", {
+    enquire.register("screen and (min-width:769px)", {
       match: _.bind(function(){
         this.mobile = false;
          this.initViews();
