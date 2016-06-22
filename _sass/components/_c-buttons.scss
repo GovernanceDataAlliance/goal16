@@ -34,22 +34,16 @@
   top: 0;
   right: 0;
   z-index: 1;
-  //Margin left and bottom are to make click area bigger
-  margin-right: rem(13px);
-  margin-top: rem(28px);
+  margin-right: rem(20px);
+  margin-top: rem(20px);
   cursor: pointer;
-  font-family: $font-family-primary;
-  font-weight: bold;
-  color: $white;
-  font-size: rem(40px);
-  width: rem(44px);
-  height: rem(44px);
-  line-height: rem(17px);
-  letter-spacing: -1px;
-  border-radius: 50%;
-  text-align: center;
+  width: rem(13px);
+  height: rem(13px);
+
   &.-color-1 {
-    color: $white;
+    svg {
+      fill: $color-6;
+    }
   }
   &.-btn-close-modal{
     color: $font-color-3;
@@ -57,8 +51,9 @@
   @media screen and (min-width: 768px) {
     margin: rem(40px) rem(30px) 0 0;
   }
-  @media screen and (min-width: $screen-l) {
+  @media screen and (min-width: $screen-s) {
     position: absolute;
-    margin: rem(40px) rem(40px) 0 0;
+    width: rem(16px);
+    height: rem(16px);
   }
 }
