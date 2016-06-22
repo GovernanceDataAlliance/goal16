@@ -4,11 +4,7 @@ title: Goal16
 description: Goal16 dashboard
 
 url: "http://vizzuality.github.io/goal16"
-<<<<<<< HEAD
 # baseurl: '/goal16'
-=======
-#baseurl: '/goal16'
->>>>>>> 096f94deab74b6ef35739624548bbc1b89498562
 baseurl: ''
 
 gems: [jekyll-paginate]
