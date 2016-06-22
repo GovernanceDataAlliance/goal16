@@ -1,5 +1,5 @@
 .c-button {
-  padding: rem(15px) rem(30px);
+  padding: rem(15px) rem(45px);
 
   font-family: $font-family-primary;
   font-size: $font-size-xsmall;
@@ -33,10 +33,11 @@
     }
   }
 
-  &.-small {
-    width: auto;
-    padding: rem(15px) rem(45px);
-  }
+  // &.-small {
+  //   width: auto;
+  //   padding: rem(15px) rem(45px);
+  // }
+
   &.-disabled {
     opacity: .5;
     pointer-events: none;
