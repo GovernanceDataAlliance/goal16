@@ -5,14 +5,10 @@
   left: 0;
   right: 0;
   z-index: 100;
-  background-color: $bg-color-3;
+  background-color: $color-5;
 
-  .btn-close-modal {
-    display: block;
-    color: $white;
-    border-color: $white;
-    pointer-events: all;
-    z-index: 999;
+  .icon-close {
+    fill: $white;
   }
 
   select {
