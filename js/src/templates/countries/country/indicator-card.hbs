@@ -1,0 +1,56 @@
+<div class="wrap">
+
+  <div class="target-title">
+    <h2 > {{ target.title }}</h2>
+  </div>
+
+  <div class="card-container">
+
+    <div class="m-card--indicators">
+      <h3 class="card-title">IAEG Global Indicator</h3>
+
+      {{#if officialIndicators}}
+        <ul class="indicator-list">
+          {{#each officialIndicators}}
+            <li class="indicator-item">
+              <span class="indicator-score"> {{ score }}{{ units_abbr }}</span>
+              <h4 class="indicator-title">{{ indicator_title }}</h4>
+              <div class="indicator-metadata">
+                <span class="indicator-source"> {{ source_title }} </span>
+                <span class="indicator-year"> Last update: {{ year }} </span>
+              </div>
+            </li>
+          {{/each}}
+        </ul>
+      {{else}}
+        <span class="no-indicators">No indicators available</span>
+      {{/if}}
+
+    </div>
+
+    <div class="m-card--indicators">
+      <h3 class="card-title">Complementary Global Indicator</h3>
+
+      {{#if shadowIndicators}}
+        <ul class="indicator-list">
+          {{#each shadowIndicators}}
+            <li class="indicator-item">
+              <span class="indicator-score"> {{ score }} </span>
+              <h4 class="indicator-title">{{ indicator_title }}</h4>
+              <span class="indicator-source"> {{ source_name }}</span>
+            </li>
+          {{/each}}
+        </ul>
+      {{else}}
+        <span class="no-indicators">No indicators available</span>
+      {{/if}}
+    </div>
+
+  </div>
+
+  <div class="button-container">
+    <a class="c-button -secondary" href="/map?layer={{ target.slug }}&layerType=target-type&iso={{ iso }}"> map view </a>
+    <a class="c-button -secondary" href="/compare/?isoA={{ iso }}"> compare </a>
+  </div>
+
+</div>

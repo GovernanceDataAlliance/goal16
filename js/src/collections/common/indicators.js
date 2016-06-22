@@ -5,11 +5,29 @@ var Handlebars = require('handlebars'),
 var CONFIG = require('../../../config.json');
 
 var indicatorsByTargetSQL = Handlebars.compile(require('../../queries/common/indicators_by_target.hbs')),
-    targetOfIndicatorSQL = Handlebars.compile(require('../../queries/common/target_of_indicator.hbs'))
+    targetOfIndicatorSQL = Handlebars.compile(require('../../queries/common/target_of_indicator.hbs')),
+    indicatorsByCountrytSQL = Handlebars.compile(require('../../queries/indicators/indicators_by_country.hbs'));
 
 var IndicatorsCollection = CartoDBCollection.extend({
 
+  targets_table: CONFIG.cartodb.targets_table,
   indicators_table: CONFIG.cartodb.indicators_table,
+  scores_table: CONFIG.cartodb.scores_table,
+  sources_table: CONFIG.cartodb.sources_table,
+
+  // Get all indicators for a country
+  getAllIndicatorsByCountry: function(iso) {
+    var query = indicatorsByCountrytSQL({
+      iso: iso,
+      indicators_table: this.indicators_table,
+      scores_table: this.scores_table,
+      sources_table: this.sources_table,
+      targets_table: this.targets_table
+    }),
+    url = this._urlForQuery(query);
+
+    return this.fetch({ url: url });
+  },
 
   // list of all indicators for a target
   getInidcatorsByTarget: function(targetSlug) {
@@ -21,6 +39,10 @@ var IndicatorsCollection = CartoDBCollection.extend({
 
   groupByType: function() {
     return _.groupBy(this.toJSON(), 'type');
+  },
+
+  groupByTarget: function() {
+    return _.groupBy(this.toJSON(), 'target_slug');
   },
 
   getTargetOfIndicator: function(indicatorSlug) {

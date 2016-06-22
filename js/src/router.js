@@ -108,8 +108,8 @@ var Router = Backbone.Router.extend({
 
       view = this.viewManager.getView('country');
 
-      this.viewManager.showView('country');
       view.status.set({ iso: iso });
+      this.viewManager.showView('country');
     }
   },
 
