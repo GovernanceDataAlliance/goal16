@@ -149,7 +149,6 @@ var MapView = Backbone.View.extend({
   },
 
   _activeLayer: function() {
-    console.log('_activeLayer')
     this._createLayer().done(_.bind(function() {
       this._addLayer();
     }, this));
