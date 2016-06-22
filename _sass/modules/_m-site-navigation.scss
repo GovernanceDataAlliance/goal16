@@ -26,7 +26,7 @@
           color: $font-color-6;
           text-transform: uppercase;
 
-          @media screen and (min-width: $screen-s) {
+          @media screen and (min-width: 768) {
             font-size: $font-size-xsmall;
           }
         }
@@ -69,7 +69,8 @@
       }
     }
   }
-  @media screen and (min-width: $screen-s) {
+
+  @media screen and (min-width: 768px) {
     &.-header {
       width: calc(100% - 100px);
       ul {
@@ -101,8 +102,8 @@
         justify-content: space-between;
         align-items: center;
         max-width: rem(450px);
-        width: 100%;
-        padding-right: rem(68px);
+        width: 90%;
+        padding-right: rem(20px);
         > .selected-option-menu {
           &:before {
             display: block;
@@ -149,6 +150,10 @@
     &.-header {
       &:after {
         margin-left: rem(67px);
+      }
+
+      ul {
+        padding-right: rem(70px);
       }
     }
   }

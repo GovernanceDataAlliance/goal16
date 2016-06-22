@@ -3,7 +3,8 @@
   background-color: $white;
   transition: opacity .2s;
   background-color: transparent;
-  @media screen and (min-width: $screen-s) {
+
+  @media screen and (min-width: $screen-m) {
     width: 50%;
     font-family: $font-family-primary;
     font-size: $font-size-medium;
@@ -28,6 +29,12 @@
 
   .js--open-search-mb {
     margin-top: rem(80px);
+
+    @media screen and (min-width: $screen-s) {
+      width: 100%;
+      margin: rem(80px) auto;
+    }
+
     @media screen and (min-width: $screen-m) {
       display: none;
     }
@@ -38,12 +45,13 @@
     cursor: pointer;
     color: $white;
     border-bottom: 1px solid $color-6;
-    @media screen and (min-width: $screen-s) {
+
+    @media screen and (min-width: $screen-m) {
       padding-bottom: rem(25px);
     }
   }
 
-  @media screen and (min-width: $screen-s) {
+  @media screen and (min-width: $screen-m) {
     position: relative;
     display: block;
     width: 100%;
