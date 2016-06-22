@@ -1,7 +1,10 @@
 var Backbone = require('backbone'),
+    _ = require('lodash'),
     Handlebars = require('handlebars');
 
-var template = Handlebars.compile(require('../../templates/data/index.hbs'));
+var template = Handlebars.compile(require('../../templates/data/index.hbs')),
+    targetsTemplate = Handlebars.compile(require('../../templates/data/targets.hbs'));
+    indicatorsTemplate = Handlebars.compile(require('../../templates/data/indicators.hbs'));data
 
 var DataView = Backbone.View.extend({
 
