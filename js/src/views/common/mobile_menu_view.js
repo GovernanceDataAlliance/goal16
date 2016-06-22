@@ -74,7 +74,7 @@ var MobileMenuView = Backbone.View.extend({
   },
 
   render: function() {
-    $('body').append(tpl());
+    $('body').append(tpl({baseulr: SITEURL}));
   },
 
   _retractableMenuOn: function() {
