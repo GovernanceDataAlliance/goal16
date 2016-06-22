@@ -32,18 +32,14 @@ var SearchMobileView = Backbone.View.extend({
   },
 
   render: function() {
+    console.log('render mobile');
     var countries = this.countriesCollection.toJSON();
-    var orderedCollection = _.sortByOrder(countries.rows, ['name']);
 
     $('body').append(template({
-      countries: orderedCollection
+      countries: countries
     }));
 
     this.setEvents();
-    // this.searchCollection.fetch().done(function(countries) {
-
-    // }.bind(this));
-
   },
 
   setEvents: function() {
