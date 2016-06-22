@@ -7,6 +7,13 @@ $backgrounds-highlight: 'crosseling-map', 'crosseling-compare', 'crosseling-abou
   padding: rem(50px) 0;
   background-color: #ccc;
   // min-height: rem(600px);
+  .wrap{
+    padding-left: rem(21px);
+    padding-right: rem(21px);
+    @media screen and (min-width: $screen-s) {
+      padding: 0px;
+    }
+  }
 
 
   @for $i from 1 through length($backgrounds-highlight) {

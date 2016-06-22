@@ -8,6 +8,7 @@
     top: 10px;
     fill: $color-1;
   }
+
   .lists-container {
     &:after {
       content: "";
@@ -20,6 +21,7 @@
       text-align: left;
       width: 50%;
       margin-top: rem(15px);
+
       @media screen and (min-width: $screen-s) {
         width: 33%;
         text-align: center;
@@ -27,6 +29,7 @@
         padding-left: rem(25px);
         padding-right: rem(25px);
       }
+
       li {
         margin-right: rem(10px);
         line-height: 1.46;
@@ -43,32 +46,8 @@
       }
     }
   }
-  h2{
-    color: $font-color-6;
-    text-align: left;
-    font-weight: font-weight-regular;
-    font-size: $font-size-medium;
-    line-height: 1.4;
-    letter-spacing: 0.3px;
-    margin-top: rem(14px);
-    margin-bottom: rem(0px);
-    @media screen and (min-width: $screen-s) {
-      font-size: $font-size-large;
-      font-weight: font-weight-regular;
-      margin-top: rem(95px);
-      margin-bottom: rem(0px);
-      text-align: center;
-      &:after {
-        content: "";
-        display: block;
-        height: rem(3px);
-        background-color: $blue-topaz;
-        margin: rem(40px) auto 0;
-        width: rem(37px);
-      }
-    }
-  }
 }
+
 .list-visible {
   .wrap {
     .m-list {

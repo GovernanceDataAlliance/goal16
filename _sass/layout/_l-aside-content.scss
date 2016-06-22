@@ -1,21 +1,71 @@
 .l-aside-content {
-  padding: rem(60px) 0;
-  background-color: $bg-color-1;
-
+  background-color: $white;
+  .wrap {
+    padding: 0;
+  }
+  .image-compare-banner {
+    background-image: url('#{$baseUrl}/img/crosseling/crosseling-compare.jpg');
+    max-width: rem(1106px);
+    width: 100%;
+    box-shadow: 0 0 60px 0 rgba(7, 51, 56, 0.15);
+    margin: 0 auto rem(100px);
+    padding: rem(98px) rem(21px);
+    @media screen and (min-width: $screen-s) {
+      padding-top: rem(150px);
+      padding-bottom: rem(150px);
+    }
+    p {
+      font-size: $font-size-xsmall;
+      font-weight: $font-weight-regular;
+      line-height: 1.75;
+      text-align: center;
+      color: $white;
+      display: block;
+      @media screen and (min-width: $screen-s) {
+        font-size: $font-size-normal;
+        line-height: 1.92;
+      }
+    }
+    .btn-primary {
+      margin: rem(32px) auto 0;
+      @media screen and (min-width: $screen-s) {
+        width: rem(264px);
+        max-width: rem(264px);
+        padding-left: rem(0px);
+        padding-right: rem(0px);
+        margin: rem(46px) auto 0;
+      }
+    }
+  }
   .btn.-secondary {
     margin-top: rem(30px);
   }
-
-  @media screen and (min-width: 768px) {
-    padding: rem(95px) 0 rem(100px);
+  h3 {
+    text-align: center;
+    color: $font-color-6;
+    font-family: $font-family-secondary;
+    font-size: $font-size-medium;
+    letter-spacing: 0.2;
+    margin-top: rem(37px);
+    @media screen and (min-width: $screen-s) {
+      font-size: $font-size-large;
+      font-weight: $font-weight-regular;
+      letter-spacing: 0.3px;
+      margin-top: rem(100px);
+    }
+    &:after {
+      content: "";
+      display: block;
+      margin: 0 auto;
+      width: 1.875rem;
+      height: 0.1875rem;
+      background-color: #19aec4;
+      margin: rem(23px) auto rem(30px);
+      @media screen and (min-width: $screen-s) {
+        margin: rem(34px) auto rem(50px);
+      }
+    }
   }
-
-  @media screen and (min-width: $screen-m) {
-    padding: rem(95px) 0 rem(100px);
-    border-top: 1px solid $border-1;
-  }
-
-  @media screen and (min-width: $screen-l) {
-    padding: rem(95px) 0  rem(120px);
-  }
+  @media screen and (min-width: 768px) {}
+  @media screen and (min-width: $screen-l) {}
 }
