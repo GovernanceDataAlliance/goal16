@@ -14,7 +14,7 @@ var ModalWindowView = require('../../views/common/infowindow.js');
 var status = require ('../../models/map/status.js');
 
 var template = Handlebars.compile(require('../../templates/map/dashboard.hbs')),
-    targetsTemplate = Handlebars.compile(require('../../templates/map/targets.hbs'));
+    targetsTemplate = Handlebars.compile(require('../../templates/map/targets.hbs')),
     indicatorsTemplate = Handlebars.compile(require('../../templates/map/indicators.hbs'));
 
 var DashboardView = Backbone.View.extend({
