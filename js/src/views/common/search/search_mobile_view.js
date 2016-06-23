@@ -32,7 +32,6 @@ var SearchMobileView = Backbone.View.extend({
   },
 
   render: function() {
-    console.log('render mobile');
     var countries = this.countriesCollection.toJSON();
 
     $('body').append(template({
