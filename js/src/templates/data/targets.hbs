@@ -1,13 +1,18 @@
 {{#each targets}}
-  <div class="m-table-target" id="{{slug}}">
-    <div class="header">
-      <h2>{{code}} {{title}}</h2>
+  <div class="l-target-target" id="{{slug}}">
+    <div class="target-title">
+      <h3>{{code}} {{title}}</h2>
     </div>
     <div class="m-table-indicators js--indicators">
       {{#each indicators}}
       <div class="m-table-indicator">
         <div class="header">
           <h1>{{title}} <span>{{type}}</span></h1>
+          <button>
+            <svg class="icon icon-open_arrow">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-open_bigarrow">
+            </svg>
+          </button>
         </div>
         <div class="indicator-info">
           <p>{{desciption}}</p>
