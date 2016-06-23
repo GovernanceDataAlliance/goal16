@@ -13,6 +13,10 @@
   cursor: pointer;
   transition: 0.1s;
 
+  @media screen and (min-width: 768px) {
+    width: auto;
+  }
+
   &.-primary {
     color: $font-color-2;
 

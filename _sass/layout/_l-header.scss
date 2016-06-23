@@ -89,7 +89,7 @@ $header-height: rem(80px);
     }
 
     .btn-mobile-menu {
-      width: $header-height;
+      width: rem(70px);
       height: $header-height;
 
       @media screen and (min-width: $screen-m) {
