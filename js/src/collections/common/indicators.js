@@ -6,6 +6,7 @@ var CONFIG = require('../../../config.json');
 
 var indicatorsByTargetSQL = Handlebars.compile(require('../../queries/common/indicators_by_target.hbs')),
     targetOfIndicatorSQL = Handlebars.compile(require('../../queries/common/target_of_indicator.hbs')),
+    allIndicatorsSQL = Handlebars.compile(require('../../queries/indicators/all_indicators.hbs')),
     indicatorsByCountrytSQL = Handlebars.compile(require('../../queries/indicators/indicators_by_country.hbs'));
 
 var IndicatorsCollection = CartoDBCollection.extend({
@@ -32,6 +33,13 @@ var IndicatorsCollection = CartoDBCollection.extend({
   // list of all indicators for a target
   getInidcatorsByTarget: function(targetSlug) {
     var query = indicatorsByTargetSQL({ table: this.indicators_table, slug: targetSlug }),
+      url = this._urlForQuery(query);
+
+    return this.fetch({ url: url });
+  },
+
+  getAllIndicators: function() {
+    var query = allIndicatorsSQL({ table: this.indicators_table }),
       url = this._urlForQuery(query);
 
     return this.fetch({ url: url });

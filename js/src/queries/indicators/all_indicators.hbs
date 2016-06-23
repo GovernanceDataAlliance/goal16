@@ -1,0 +1,13 @@
+SELECT
+  i.title, 
+  i.description, 
+  i.link, 
+  i.max_score, 
+  i.min_score, 
+  i.slug as indicator_slug, 
+  i.title as indicator_title, 
+  i.type,
+  i.target_slug 
+FROM 
+  {{ table }} as i
+
