@@ -15,43 +15,30 @@
     width: rem(37px);
   }
 
+  &.-mobile {
+    text-align: left;
+
+    &:after {
+      display: none;
+    }
+  }
+
   @media screen and (min-width: $screen-s) {
     font-size: $font-size-large;
     font-weight: $font-weight-regular;
     margin-top: rem(95px);
     margin-bottom: rem(50px);
+
     &:after {
       margin: rem(40px) auto rem(60px);
     }
-  }
-}
 
-
-.c-title-nounderline-mobile {
-    text-align: left;
-    font-size: $font-size-medium;
-    line-height: 1.4;
-    letter-spacing: 0.3px;
-    margin-top: rem(14px);
-    margin-bottom: 0;
-    &:after {
-      content: "";
-      display: none;
-      height: rem(3px);
-      background-color: $blue-topaz;
-      margin: rem(25px) auto rem(20px);
-      width: rem(37px);
-    }
-    
-    @media screen and (min-width: $screen-s) {
-      font-size: $font-size-large;
-      font-weight: $font-weight-regular;
-      margin-top: rem(95px);
-      margin-bottom: rem(50px);
+    &.-mobile {
       text-align: center;
+
       &:after {
         display: block;
-        margin: rem(40px) auto rem(60px);
       }
     }
   }
+}
