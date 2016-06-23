@@ -8,8 +8,6 @@ url: "http://vizzuality.github.io/goal16"
 # baseurl: '/goal16'
 baseurl: ''
 
-
-
 gems: [jekyll-paginate]
 paginate: 2
 paginate_path: "blog/page:num"

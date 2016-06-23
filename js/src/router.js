@@ -109,8 +109,8 @@ var Router = Backbone.Router.extend({
 
       view = this.viewManager.getView('country');
 
-      this.viewManager.showView('country');
       view.status.set({ iso: iso });
+      this.viewManager.showView('country');
     }
   },
 
@@ -135,8 +135,6 @@ var Router = Backbone.Router.extend({
     //   return;
     // }
 
-    console.log('incoming params');
-    console.log(view.status.toJSON());
   },
 
   // Receives the status (Backbone Model only) of the current view.

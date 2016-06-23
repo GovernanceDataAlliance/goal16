@@ -25,6 +25,8 @@
         </div>
       </div>
 
+      {% include modules/share_module.html %}
+
       <div id="content"></div>
 
       {% include modules/compare_module.html %}
@@ -38,12 +40,13 @@
             <p class="-highlighted text-banner-m">
               {{ page.crosseling-module-text }}
             </p>
-            <a href="{{ site.baseurl }}/about" class="btn-primary">find out more</a>
+            <a href="{{ site.baseurl }}/about" class="c-button -primary">find out more</a>
           </div>
         </div>
       </div>
 
       {% include footer.html %}
+
     </div>
     <script>
       var SITEURL = '{{ site.baseurl }}' || null;

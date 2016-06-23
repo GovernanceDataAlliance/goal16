@@ -74,21 +74,21 @@
     }
   }
   .btn-copy {
-    width: 100%;
-    height: rem(65px);
-    font-family: $font-family-primary;
-    font-size: $font-size-xsmall;
-    font-weight: $font-weight-regular;
-    letter-spacing: 0.7px;
-    cursor: pointer;
-    text-align: center;
-    background-color: $color-5;
-    text-transform: uppercase;
-    color: $font-color-2;
+    // width: 100%;
+    // height: rem(65px);
+    // font-family: $font-family-primary;
+    // font-size: $font-size-xsmall;
+    // font-weight: $font-weight-regular;
+    // letter-spacing: 0.7px;
+    // cursor: pointer;
+    // text-align: center;
+    // background-color: $color-5;
+    // text-transform: uppercase;
+    // color: $font-color-2;
     padding: rem(25px) rem(46px);
-    &.-secondary {
-      padding: rem(25px) rem(0px);
-    }
+    // &.-secondary {
+    //   padding: rem(25px) rem(0px);
+    // }
     @media screen and (min-width: $screen-s) {
       position: absolute;
       top: 0;

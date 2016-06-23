@@ -20,8 +20,7 @@ var CompareView = Backbone.View.extend({
   className: 'compare-container',
 
   events: {
-    'click #compare-countries' : '_compareCountries',
-    'click #js--share' : '_share'
+    'click #compare-countries' : '_compareCountries'
   },
 
   initialize: function(settings) {
@@ -48,6 +47,9 @@ var CompareView = Backbone.View.extend({
   show: function() {
     this._setView();
     this._setVars();
+    this._setListeners();
+
+    this.$shareSection.toggleClass('is-hidden');
 
     $.when(
       this.countriesCollection.getCountriesList(),
@@ -59,11 +61,15 @@ var CompareView = Backbone.View.extend({
   },
 
   _setVars: function() {
-    this.$shareSection = this.$el.find('.l-share');
+    this.$shareSection = $('.l-share');
   },
 
   _updateRouterParams: function() {
     Backbone.Events.trigger('router:update-params', this.status);
+  },
+
+  _setListeners: function() {
+    $('#js--share').on('click', this._share);
   },
 
   _setView: function() {

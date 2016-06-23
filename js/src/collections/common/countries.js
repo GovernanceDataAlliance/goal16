@@ -21,18 +21,24 @@ var CountriesCollection = CartoDBCollection.extend({
 
   // get country information, once collection is loaded previously,
   // through an iso array
-  getCountryData: function(isoArray) {
+  getCountryData: function(isos) {
     var countries = [];
 
-    isoArray.forEach(function(iso) {
-      if (!iso) {
-        return;
-      }
+    if (isos.hasOwnProperty('length')) {
 
-      var countryData = this.findWhere({ iso: iso });
-      countries.push(countryData.toJSON());
+      isos.forEach(function(iso) {
+        if (!iso) {
+          return;
+        }
 
-    }.bind(this));
+        var countryData = this.findWhere({ iso: iso });
+        countries.push(countryData.toJSON());
+
+      }.bind(this));
+
+    } else {
+      countries = this.findWhere({ iso: isos.iso }).toJSON();
+    }
 
     return countries;
   },

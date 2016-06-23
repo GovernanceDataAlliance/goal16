@@ -4,7 +4,8 @@
     "countries_table": "countries",
     "indicators_table": "indicators",
     "organizations_table": "organizations",
-    "scores_table": "score_test",
+    "scores_table": "scores",
+    "sources_table": "sources",
     "targets_table": "targets"
   }
 }
