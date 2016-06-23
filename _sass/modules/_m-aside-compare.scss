@@ -1,0 +1,54 @@
+.m-aside-compare {
+
+  .image-compare-banner {
+    position: relative;
+    background-image: url('#{$baseUrl}/img/crosseling/crosseling-compare.jpg');
+    max-width: rem(1106px);
+    width: 100%;
+    box-shadow: 0 0 60px 0 rgba(7, 51, 56, 0.15);
+    margin: 0 auto rem(100px);
+    padding: rem(98px) rem(21px);
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(65, 52, 43, 0.5);
+    }
+
+    @media screen and (min-width: $screen-s) {
+      padding-top: rem(150px);
+      padding-bottom: rem(150px);
+    }
+
+    p {
+      position: relative;
+      font-size: $font-size-xsmall;
+      font-weight: $font-weight-regular;
+      line-height: 1.75;
+      text-align: center;
+      color: $white;
+      display: block;
+
+      @media screen and (min-width: $screen-s) {
+        font-size: $font-size-normal;
+        line-height: 1.92;
+      }
+    }
+  }
+
+  .c-button {
+    position: relative;
+    margin: rem(32px) auto 0;
+
+    @media screen and (min-width: $screen-s) {
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      margin: rem(46px) auto 0;
+    }
+  }
+}

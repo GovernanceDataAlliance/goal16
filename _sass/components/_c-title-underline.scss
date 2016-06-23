@@ -12,8 +12,9 @@
     font-size: $font-size-large;
     font-weight: $font-weight-regular;
     margin-top: rem(95px);
-    margin-bottom: rem(0px);
+    margin-bottom: rem(50px);
     text-align: center;
+
     &:after {
       content: "";
       display: block;
