@@ -65,12 +65,6 @@ var SearchView = Backbone.View.extend({
     this.$(this.elSearchParent).html(template);
   },
 
-  // _getData: function() {
-  //   this.searchCollection.fetch().done(function() {
-  //     this.render();
-  //   }.bind(this));
-  // },
-
   _onSearch: function(ev) {
     var target = ev ? ev.currentTarget : this.$input;
       value = $(target).val(),

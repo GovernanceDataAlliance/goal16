@@ -1,6 +1,7 @@
 .c-button {
   display: inline-block;
   padding: rem(15px) rem(45px);
+  width: 100%;
 
   font-family: $font-family-primary;
   font-size: $font-size-xsmall;
@@ -34,10 +35,15 @@
     }
   }
 
-  // &.-small {
-  //   width: auto;
-  //   padding: rem(15px) rem(45px);
-  // }
+  // margin given by every button but first one
+  & + & {
+    margin: rem(25px) 0 0;
+  }
+
+  &.-small {
+    width: auto;
+    margin: 0 0 0 rem(25px);
+  }
 
   &.-disabled {
     opacity: .5;
@@ -51,15 +57,11 @@
     border: solid rem(1px) rgba(128, 147, 151, .4);
   }
 
-  // margin given by every button but first one
-  & + & {
-    margin-left: rem(25px);
-  }
+  @media screen and (min-width: $screen-s) {
+    & + & {
+      margin: 0 0 0 rem(25px);
+    }
 
-  @media screen and (min-width: 768px) {
-    // max-width: rem(211px);
-
-    // font-size: rem($font-size-xsmall);
     letter-spacing: rem(.7px);
   }
 }
