@@ -4,14 +4,32 @@
   @media screen and (min-width: screen-m) {
 
     .c-title-underline {
-      max-width: 80%;
+      max-width: 70%;
     }
 
   }
 }
 
-.m-data-indicators {
+.m-data-indicator {
+  padding-bottom: rem(50px);
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: rem(15px);
+    border-bottom: rem(1px) solid $border-2;
+  }
+
   h1 {
-    font-size:
+    max-width: 85%;
+    font-size: $font-size-medium;
+    font-weight: $font-weight-regular;
+    line-height: rem(32px);
+  }
+
+  p {
+    max-width: 80%;
+    margin: rem(30px) auto 0;
   }
 }

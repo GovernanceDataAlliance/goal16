@@ -15,8 +15,7 @@ var DataView = Backbone.View.extend({
   className: 'l-data',
 
   events: {
-    'click .js--open-target': '_showIndicatorsPerTarget',
-    'click .js--close-target': '_hideIndicators'
+    'click .js--toggle-indicator': '_toggleIndicator'
   },
 
   initialize: function() {
@@ -32,7 +31,15 @@ var DataView = Backbone.View.extend({
   },
 
   _setVars: function() {
-    this.$targetsWrapper = $('.m-dashboard-target');
+  },
+
+  _toggleIndicator: function(e) {
+    var $current = $(e.currentTarget);
+    $current.find('.js--icon-open').toggleClass('is-hidden');
+    $current.find('.js--icon-close').toggleClass('is-hidden');
+
+    var $inidcatorsTable = $current.next('.indicator-info');
+    $inidcatorsTable.toggleClass('is-hidden');
   },
 
   render: function() {
@@ -50,15 +57,14 @@ var DataView = Backbone.View.extend({
   },
 
   _matchIndicatorsWithTarget: function() {
-    var targets = this.targetsCollection.toJSON();
+    var targets = this.targetsCollection;
 
-    $.each(targets, _.bind(function(i, target){
-      var indicatorsPerTarget = _.where(this.indicatorsCollection.toJSON(), {'target_slug': target.slug});
-      target.indicators = indicatorsPerTarget;
+    this.targetsCollection.each(_.bind(function(target){
+      var indicatorsPerTarget = _.where(this.indicatorsCollection.toJSON(), { 'target_slug': target.get('slug') });
+      target.set({'indicators': indicatorsPerTarget});
     }, this));
 
-    console.log(targets)
-    this.$('#targets-container').html(targetsTemplate({'targets': targets}));
+    this.$('#targets-container').html(targetsTemplate({'targets': targets.toJSON()}));
   }
 
 });
