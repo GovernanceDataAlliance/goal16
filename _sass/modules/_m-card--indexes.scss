@@ -17,6 +17,7 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    
     > .name {
       cursor: pointer;
       font-size: rem(30px);
@@ -29,14 +30,17 @@
       line-height: 1.4;
       letter-spacing: 0.3px;
       margin-top: rem(22px);
+
       @media screen and (min-width: $screen-s) {
         font-size: $font-size-large;
         margin-top: rem(28px);
       }
     }
+
     > .description {
       font-size: rem(15px);
     }
+
     > .organization {
       font-family: $font-family-primary;
       font-size: $font-size-small;
@@ -44,12 +48,14 @@
       line-height: 1.90;
       margin-top: rem(11px);
       color: $font-color-6;
+
       @media screen and (min-width: $screen-s) {
         font-size: $font-size-normal;
         line-height: 1.75;
         margin-top: rem(12px);
       }
     }
+
     span {
       display: flex;
       height: rem(60px);
@@ -57,12 +63,14 @@
       background-position: top left;
       background-size: contain;;
       background-repeat: no-repeat;
+
       @media screen and (min-width: 768px) {
         height: rem(100px);
         background-position: 50%;
         width: 100%;
       }
     }
+
     &:hover {
       .name {
         color: $color-4;
