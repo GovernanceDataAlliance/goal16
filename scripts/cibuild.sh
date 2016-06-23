@@ -4,7 +4,7 @@ set -e
 if [[ $TRAVIS_PULL_REQUEST == "false" ]]; then
 
 git config user.name "Travis CI"
-git config user.email "adam.mulligan@vizzuality.com"
+git config user.email "clara.linos@vizzuality.com"
 
 git checkout -b gh-pages
 
