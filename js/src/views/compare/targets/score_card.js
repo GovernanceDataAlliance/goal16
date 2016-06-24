@@ -22,7 +22,7 @@ var ScoreCardView = Backbone.View.extend({
   template: Handlebars.compile(TargetCardTemplate),
 
   events: {
-    'click .js--toggle-card' : '_toggleCard'
+    'click .js--target-info': '_toggleCard'
   },
 
   initialize: function(settings) {
