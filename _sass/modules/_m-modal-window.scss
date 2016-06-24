@@ -70,27 +70,6 @@
   @media screen and (min-width: $screen-l) {
     // bottom: rem(115px);
   }
-  h2 {
-    font-size: $font-size-medium;
-    font-weight: $font-weight-regular;
-    text-transform: capitalize;
-    margin-top: rem(80px);
-    &:after {
-      content: '';
-      display: block;
-      height: 3px;
-      border: 0;
-      background-color: $color-1;
-      width: 37px;
-      margin-top: rem(30px);
-    }
-    @media screen and (min-width: $screen-s) {
-      font-size: $font-size-large;
-      font-weight: $font-weight-regular;
-      text-transform: capitalize;
-      margin-top: rem(80px);
-    }
-  }
   p {
     font-family: $font-family-primary;
     font-size: $font-size-xsmall;

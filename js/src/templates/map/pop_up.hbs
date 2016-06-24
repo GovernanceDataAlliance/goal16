@@ -1,18 +1,38 @@
 <div class="m-popup">
   <button class="btn-close">
-    <svg class="icon icon-close"><use xlink:href="#icon-close"></use></svg>
+    <svg class="icon icon-close">
+      <use xlink:href="#icon-close"></use>
+    </svg>
   </button>
   <div class="wrapper">
-    {{content}}
-    <a href="countries/FRA"><h1>France</h1></a> 
+
+    <!-- {{content}}
+    <a href="countries/FRA"><h1 class="c-title-popup -small">France</h1></a>
     <div class="data">
       <p>name of the layer you are seeing</p>
       <p>Last data point: 2014</p>
     </div>
-    <div class="score">17%</div>
+    <div class="score c-score-popup">17%</div>
     <div class="links">
-      <a href="/countries/?iso=FRA">visit country page</a>
-      <a href="/compare/?isoA=FRA">compare to others</a>
+      <a href="/countries/?iso=FRA">visit country page > </a>
+      <a href="/compare/?isoA=FRA">compare to others > </a> -->
+
+    {{content}}
+    <a href="countries/FRA"><h1 class="c-title-popup -subtitle">France</h1></a>
+    <p class="c-subtitle-popup">OFFICIAL INDICATORS</p>
+    <div class="data-numbers">
+      <span class="data-numbers-text">NUMBER OF VICTIMS OF INTERNATIONAL HOMICIDE PER 100,000</span>
+      <span class="c-score-popup -small">17%</span>
+    </div>
+    <div class="data-numbers">
+      <span class="data-numbers-text">NUMBER OF VICTIMS OF INTERNATIONAL HOMICIDE PER 100,000</span>
+      <span class="c-score-popup -small">17%</span>
+    </div>
+    <div class="links">
+      <a href="/countries/?iso=FRA">visit country page > </a>
+      <a href="/compare/?isoA=FRA">compare to others > </a>
+
     </div>
   </div>
 </div>
+<div id="popup-background"></div>

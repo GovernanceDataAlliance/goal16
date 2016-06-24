@@ -29,8 +29,8 @@ var PopUpView = Backbone.View.extend({
 
   _drawPopUpMobile: function() {
     this.popUp = this._getContent(this.options);
-
     $('body').append(this.popUp);
+    $("#popup-background").css("display","block");
     $('.btn-close').on('click', this._closeInfowindow.bind(this));
   },
 
@@ -55,6 +55,7 @@ var PopUpView = Backbone.View.extend({
   _closeInfowindow: function() {
     $('.btn-close').off('click');
     $('.m-popup').remove();
+    $("#popup-background").css("display","none");
   },
 
   _getContent: function(options) {
