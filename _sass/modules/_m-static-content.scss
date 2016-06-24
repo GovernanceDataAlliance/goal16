@@ -40,31 +40,30 @@
 
   // Headings
   h2 {
-    font-size: $font-size-medium;
-    font-weight: $font-weight-regular;
-    color: $font-color-6;
     font-family: $font-family-secondary;
+    color: $font-color-6;
+    font-weight: $font-weight-regular;
+    font-size: $font-size-medium;
     letter-spacing: 0.2px;
     text-align: center;
+
     &:after {
       content: "";
       display: block;
-      margin: 0 auto;
-      width: rem(30px);
       height: rem(3px);
-      background-color: $color-1;
-      margin: rem(25px) auto;
-      @media screen and (min-width: $screen-s) {
-        margin: rem(34px) auto;
-      }
+      background-color: $blue-topaz;
+      margin: rem(25px) auto rem(20px);
+      width: rem(37px);
     }
 
     @media screen and (min-width: $screen-s) {
       font-size: $font-size-large;
-      letter-spacing: 0.3px;
-    }
+      font-weight: $font-weight-regular;
+      margin-bottom: rem(50px);
 
-    @media screen and (min-width: 768px) {
+      &:after {
+        margin: rem(40px) auto rem(60px);
+      }
     }
   }
 
