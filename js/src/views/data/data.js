@@ -6,8 +6,7 @@ var targetsCollection = require('../../collections/common/targets.js'),
     IndicatorsCollection = require('../../collections/common/indicators.js');
 
 var template = Handlebars.compile(require('../../templates/data/index.hbs')),
-    targetsTemplate = Handlebars.compile(require('../../templates/data/targets.hbs')),
-    indicatorsTemplate = Handlebars.compile(require('../../templates/data/indicators.hbs'));
+    targetsTemplate = Handlebars.compile(require('../../templates/data/targets.hbs'));
 
 var DataView = Backbone.View.extend({
 

@@ -1,26 +1,43 @@
 .c-title-underline {
-  color: $font-color-6;
-  text-align: left;
   font-family: $font-family-secondary;
+  color: $font-color-6;
   font-weight: $font-weight-regular;
   font-size: $font-size-medium;
-  line-height: 1.4;
-  letter-spacing: 0.3px;
-  margin-bottom: 0;
+  letter-spacing: 0.2px;
+  text-align: center;
+
+  &:after {
+    content: "";
+    display: block;
+    height: rem(3px);
+    background-color: $blue-topaz;
+    margin: rem(25px) auto rem(20px);
+    width: rem(37px);
+  }
+
+  &.-mobile {
+    text-align: left;
+
+    &:after {
+      display: none;
+    }
+  }
 
   @media screen and (min-width: $screen-s) {
     font-size: $font-size-large;
     font-weight: $font-weight-regular;
-    margin-bottom: rem(60px);
-    text-align: center;
+    margin-bottom: rem(50px);
 
     &:after {
-      content: "";
-      display: block;
-      height: rem(3px);
-      background-color: $blue-topaz;
-      margin: rem(30px) auto 0;
-      width: rem(37px);
+      margin: rem(40px) auto rem(60px);
+    }
+
+    &.-mobile {
+      text-align: center;
+
+      &:after {
+        display: block;
+      }
     }
   }
 }
