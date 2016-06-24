@@ -8,7 +8,7 @@
 
         {{#each countries}}
           <div class="table-cell -country">
-            <span>{{ name }}</span>
+            <span>{{#if name }} {{name}} {{else}} - {{/if}}</span>
           </div>
         {{/each}}
 
@@ -25,17 +25,17 @@
           </div>
 
           <div class="table-cell -score">
-            <span>{{ scoreA }}</span>
+            <span>{{#if scoreA}} {{ scoreA }} {{else}} - {{/if}}</span>
             <span class="country-name only-mobile">{{ countryA }}</span>
           </div>
 
           <div class="table-cell -score">
-            <span>{{ scoreB }}</span>
+            <span>{{#if scoreB}} {{ scoreB }} {{else}} - {{/if}}</span>
             <span class="country-name only-mobile">{{ countryB }}</span>
           </div>
 
           <div class="table-cell -score">
-            <span>{{ scoreC }}</span>
+            <span>{{#if scoreC}} {{ scoreC }} {{else}} - {{/if}}</span>
             <span class="country-name only-mobile">{{ countryC }}</span>
           </div>
         </div>
@@ -78,17 +78,17 @@
           </div>
 
           <div class="table-cell -score">
-            <span>{{ scoreA }}</span>
+            <span>{{#if scoreA}} {{ scoreA }} {{else}} - {{/if}}</span>
             <span class="country-name only-mobile">{{ countryA }}</span>
           </div>
 
           <div class="table-cell -score">
-            <span>{{ scoreB }}</span>
+            <span>{{#if scoreB}} {{ scoreB }} {{else}} - {{/if}}</span>
             <span class="country-name only-mobile">{{ countryB }}</span>
           </div>
 
           <div class="table-cell -score">
-            <span>{{ scoreC }}</span>
+            <span>{{#if scoreC}} {{ scoreC }} {{else}} - {{/if}}</span>
             <span class="country-name only-mobile">{{ countryC }}</span>
           </div>
         </div>
