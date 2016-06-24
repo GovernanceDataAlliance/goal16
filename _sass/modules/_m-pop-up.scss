@@ -8,15 +8,19 @@
   background-color: $white;
   transform: translate3d(0) !important;
 
-  @media screen and (min-width: $screen-m) {
+  @media screen and (min-width: $screen-s) {
     position: relative;
     right: auto;
     height: auto;
     min-height: rem(100px);
+    min-width: rem(430px);
+    padding-top: rem(24px);
+    padding-bottom: rem(35px);
 
     &:after {
       content: "";
       position: absolute;
+      display: none; /*triangle are not on zepplin*/
      left: 50%;
      transform: translateX(-50%);
       bottom: rem(-10px);
@@ -28,23 +32,79 @@
     }
   }
 
-  .btn-close {
-    @extend %clean-button-or-input;
-    width: rem(15px);
-    height: rem(15px);
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: rem(20px);
-
-    .icon-close {
-      width: 100%;
-      height: 100%;
-      fill: $color-1;
-
-      &:hover {
-        transform: scale(1.1);
+  // .btn-close {
+  //   @extend %clean-button-or-input;
+  //   width: rem(15px);
+  //   height: rem(15px);
+  //   position: absolute;
+  //   top: 0;
+  //   right: 0;
+  //   margin: rem(20px);
+  //
+  //   .icon-close {
+  //     width: 100%;
+  //     height: 100%;
+  //     fill: $color-1;
+  //
+  //     &:hover {
+  //       transform: scale(1.1);
+  //     }
+  //   }
+  // }
+  .data{
+    @media screen and (min-width: $screen-s) {
+      margin-bottom: rem(40px);
+    }
+    p{
+      text-align: center;
+      font-family: $font-family-primary;
+      color: $color-3;
+      font-weight: $font-weight-regular;
+      @media screen and (min-width: $screen-s) {
+      line-height: 1.42;
+      margin: 0px;
+      font-size: $font-size-xsmall !important;
+    }
+    }
+  }
+  .data-numbers{
+    display: flex;
+    .data-numbers-text{
+      display: block;;
+      font-family: $font-family-primary;
+      line-height: 1.8;
+      letter-spacing: rem(0.5px);
+      font-weight: $font-weight-regular;
+      font-size: $font-size-xxsmall;
+    }
+    .data-numbers-number{
+      display: block;
+      font-family: $font-family-secondary;
+      font-size: $font-size-medium;
+      font-weight: $font-weight-regular;
+      letter-spacing: rem(0.3px);
+      color: $font-color-9;
+    }
+    @media screen and (min-width: $screen-s) {
+      margin-bottom: rem(14px);
+      padding-left: rem(30px);
+      padding-right: rem(30px);
+    }
+  }
+  .links{
+    display: flex;
+    justify-content: space-around;
+    a{
+      text-transform: uppercase;
+      font-weight: $font-weight-regular;
+      @media screen and (min-width: $screen-s) {
+        font-size: $font-size-xsmall;
+        letter-spacing: rem(0.7px);
+        color: $font-color-8;
       }
+    }
+    @media screen and (min-width: $screen-s) {
+      margin-top: rem(40px);
     }
   }
 }

@@ -50,4 +50,7 @@
   @media screen and (min-width: $screen-l) {
     top:$header-height-desktop;
   }
+  .leaflet-popup-tip-container{
+    display: none;
+  }
 }

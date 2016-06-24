@@ -1,0 +1,10 @@
+.c-score-popup{
+  text-align: center;
+  color: $font-color-9;
+  font-weight: $font-weight-regular;
+  font-family: $font-family-secondary;
+  @media screen and (min-width: $screen-s) {
+    font-size: $font-size-xlarge;
+    letter-spacing: rem(0.6px);
+  }
+}
