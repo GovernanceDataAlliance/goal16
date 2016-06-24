@@ -3,6 +3,8 @@
   font-weight: $font-weight-regular;
   text-align: center;
   color: $font-color-6;
+  font-size: $font-size-medium;
+  letter-spacing: rem(0.2px);
   @media screen and (min-width: $screen-s) {
     letter-spacing: rem(0.3px);
     font-size: $font-size-large;
@@ -10,10 +12,13 @@
   &.-small {
     margin-bottom: rem(10px);
   }
-  &.-subtitle{
-    margin-bottom: rem(28px);
+  &.-subtitle {
+    margin-bottom: rem(19px);
+    @media screen and (min-width: $screen-s) {
+      margin-bottom: rem(28px);
+    }
   }
-  &.-big-modal{
+  &.-big-modal {
     font-size: $font-size-medium;
     font-weight: $font-weight-regular;
     text-transform: capitalize;
@@ -37,22 +42,30 @@
     }
   }
 }
-
-.c-subtitle-popup{
+.c-subtitle-popup {
   text-align: center;
   font-family: $font-family-primary;
   color: $font-color-6;
+  letter-spacing: rem(0.5px);
+  font-size: $font-size-xxsmall;
+  &:after {
+    content: "";
+    display: block;
+    height: rem(3px);
+    background-color: $blue-topaz;
+    margin: rem(13px) auto rem(21px);
+    width: rem(37px);
+  }
   @media screen and (min-width: $screen-s) {
     letter-spacing: 0.5px;
     font-size: $font-size-xxsmall;
-    margin-top: 0px !important;
+    margin-top: 0 !important;
     &:after {
       content: "";
       display: block;
       height: rem(3px);
       background-color: $blue-topaz;
-      margin: rem(8px) auto;
-      margin-bottom: rem(14px);
+      margin: rem(8px) auto rem(14px);
       width: rem(37px);
     }
   }

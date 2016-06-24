@@ -1,37 +1,42 @@
 .m-popup {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 90%;
+  width: 90%;
+  box-shadow: 0 0 60px 0 rgba(7, 51, 56, 0.15);
   right: 0;
-  height: 100vh;
   z-index: 30;
   background-color: $white;
-  transform: translate3d(0) !important;
-
-  @media screen and (min-width: $screen-s) {
+  padding-top: rem(40px);
+  @media screen and (min-width: $screen-m) {
     position: relative;
+    top: 0;
+    height: 100vh;
+    transform: translate(0%, 0%);
+    left: 0;
     right: auto;
     height: auto;
     min-height: rem(100px);
     min-width: rem(430px);
     padding-top: rem(24px);
     padding-bottom: rem(35px);
-
     &:after {
       content: "";
       position: absolute;
-      display: none; /*triangle are not on zepplin*/
-     left: 50%;
-     transform: translateX(-50%);
+      display: block;
+      /*triangle are not on zepplin*/
+      left: 50%;
+      transform: translateX(-50%);
       bottom: rem(-10px);
       width: 0;
       height: 0;
       border-left: rem(10px) solid transparent;
       border-right: rem(10px) solid transparent;
-      border-top: rem(10px) solid $color-2;
+      border-top: rem(10px) solid $white;
     }
   }
-
   // .btn-close {
   //   @extend %clean-button-or-input;
   //   width: rem(15px);
@@ -51,109 +56,140 @@
   //     }
   //   }
   // }
-  .data{
+  .btn-close{
+    margin-top: rem(13px);
+    margin-right: rem(13px);
     @media screen and (min-width: $screen-s) {
-      margin-bottom: rem(40px);
-    }
-    p{
-      text-align: center;
-      font-family: $font-family-primary;
-      color: $color-3;
-      font-weight: $font-weight-regular;
-      @media screen and (min-width: $screen-s) {
-      line-height: 1.42;
-      margin: 0px;
-      font-size: $font-size-xsmall !important;
-    }
-    }
+    margin-top: rem(20px);
+    margin-right: rem(20px);
   }
-  .data-numbers{
-    display: flex;
-    .data-numbers-text{
-      display: block;;
-      font-family: $font-family-primary;
-      line-height: 1.8;
-      letter-spacing: rem(0.5px);
-      font-weight: $font-weight-regular;
-      font-size: $font-size-xxsmall;
+  }
+  .c-score-popup {
+    text-align: center;
+    color: $font-color-9;
+    font-weight: $font-weight-regular;
+    font-family: $font-family-secondary;
+    font-size: $font-size-xlarge;
+    letter-spacing: rem(0.7px);
+    margin-top: rem(62px);
+    margin-bottom: rem(76px);
+    @media screen and (min-width: $screen-s) {
+      font-size: $font-size-xlarge;
+      letter-spacing: rem(0.6px);
     }
-    .data-numbers-number{
+    &.-small {
       display: block;
       font-family: $font-family-secondary;
       font-size: $font-size-medium;
       font-weight: $font-weight-regular;
       letter-spacing: rem(0.3px);
       color: $font-color-9;
+      display: block;
+      text-align: left;
+      margin-top: rem(0px);
+      margin-bottom: rem(0px);
+      @media screen and (min-width: $screen-s) {
+        font-size: $font-size-medium;
+      }
+    }
+  }
+  .data {
+    @media screen and (min-width: $screen-s) {
+      margin-bottom: rem(40px);
+    }
+    p {
+      text-align: center;
+      font-family: $font-family-primary;
+      color: $color-3;
+      font-weight: $font-weight-regular;
+      font-size: $font-size-xsmall;
+      margin: 0;
+      line-height: 1.42;
+      @media screen and (min-width: $screen-s) {
+        margin: 0;
+        font-size: $font-size-xsmall !important;
+      }
+    }
+  }
+  .data-numbers {
+    padding-left: rem(18px);
+    padding-right: rem(18px);
+    margin-top: rem(13px);
+    .data-numbers-text {
+      display: block;
+      font-family: $font-family-primary;
+      line-height: 1.8;
+      letter-spacing: rem(0.5px);
+      font-weight: $font-weight-regular;
+      font-size: $font-size-xxsmall;
+      margin-bottom: rem(5px);
+      @media screen and (min-width: $screen-s) {
+        margin-bottom: rem(0px);
+      }
     }
     @media screen and (min-width: $screen-s) {
       margin-bottom: rem(14px);
       padding-left: rem(30px);
       padding-right: rem(30px);
+      display: flex;
     }
   }
-  .links{
-    display: flex;
-    justify-content: space-around;
-    a{
+  .links {
+    a {
       text-transform: uppercase;
       font-weight: $font-weight-regular;
+      display: block;
+      text-align: center;
+      margin-top: rem(20px);
+      font-size: $font-size-xxsmall;
+      letter-spacing: rem(0.6px);
       @media screen and (min-width: $screen-s) {
         font-size: $font-size-xsmall;
         letter-spacing: rem(0.7px);
         color: $font-color-8;
+        margin-top: rem(0px);
       }
     }
     @media screen and (min-width: $screen-s) {
       margin-top: rem(40px);
+      display: flex;
+      justify-content: space-around;
     }
   }
 }
-
 .leaflet-popup {
-
   @media screen and (min-width: $screen-m) {
     width: auto;
   }
 }
-
 .leaflet-popup-content-wrapper {
   border: 0;
   padding: 0;
 }
-
 .leaflet-popup-content {
   padding: 0 !important;
   width: auto !important;
   background-color: transparent;
 }
-
 .leaflet-popup-tip {
   border-top-color: transparent;
 }
-
 .leaflet-popup-close-button {
   width: rem(15px);
   height: rem(15px);
   margin: rem(15px);
   z-index: 10;
-
   // background-image: url('../../images/close.svg');
   background-size: 100%;
   background-position: 0;
-
   @media screen and (min-width: $screen-m) {
     margin: rem(30px);
   }
-
   &:hover {
     background-color: transparent;
   }
 }
-
-.leaflet-popup-tip-container {
-
-}
-
+.leaflet-popup-tip-container {}
 .leaflet-popup-content-wrapper {
   background-color: transparent;
   box-shadow: none;
