@@ -4,7 +4,7 @@ var $ = require('jquery'),
   enquire = require('enquire.js'),
   Handlebars = require('handlebars');
 
-var targetsCollection = require('../../collections/common/targets.js');
+var targetsCollection = require('../../collections/common/targets.js'),
     IndicatorsCollection = require('../../collections/common/indicators.js');
 
 var InfoWindowModel = require('../../models/common/infowindow.js');

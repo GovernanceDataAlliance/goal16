@@ -1,10 +1,9 @@
-
-select 
+SELECT 
   code, 
   slug, 
   title,
   type, 
   target_slug 
-from 
+FROM 
   {{ table }} 
-where target_slug = '{{ slug }}'
+WHERE target_slug = '{{ slug }}'

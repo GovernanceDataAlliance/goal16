@@ -30,6 +30,13 @@ Handlebars.registerHelper('beautifullStrign', function(options) {
   return options.replace('_', ' ');
 });
 
+Handlebars.registerHelper('typeOfIndicator', function(type) {
+  if (type === 'official') {
+    return 'IAEG Global Indicator'
+  }
+  return 'Complementary Global Indicator'
+});
+
 Handlebars.registerHelper('ordinalNumber', function(number) {
   var sufix = 'th';
 

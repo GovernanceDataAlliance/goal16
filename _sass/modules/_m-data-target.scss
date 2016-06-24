@@ -1,0 +1,57 @@
+.m-data-target {
+
+  @media screen and (min-width: $screen-l) {
+    padding: 0 rem(90px);
+
+    .c-title-underline {
+      max-width: 70%;
+      margin: 0 auto rem(60px);
+    }
+  }
+}
+
+.m-data-indicator {
+  padding-bottom: rem(20px);
+
+  @media screen and (min-width: $screen-m) {
+    padding-bottom: rem(50px);
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: rem(5px);
+    border-bottom: rem(1px) solid $border-2;
+    cursor: pointer;
+
+    @media screen and (min-width: $screen-m) {
+      padding-bottom: rem(15px);
+    }
+  }
+
+  h1 {
+    max-width: 85%;
+    line-height: rem(23px);
+    font-size: $font-size-normal;
+    font-weight: $font-weight-regular;
+
+    span {
+      color: $font-color-7;
+    }
+
+    @media screen and (min-width: $screen-m) {
+      font-size: $font-size-medium;
+      line-height: rem(32px);
+    }
+  }
+
+  .indicator-info {
+    margin-bottom: rem(10px);
+  }
+
+  p {
+    max-width: 80%;
+    margin: rem(30px) auto 0;
+  }
+}

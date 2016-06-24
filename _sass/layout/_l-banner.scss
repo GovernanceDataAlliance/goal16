@@ -1,17 +1,20 @@
-$backgrounds: 'promoHome', 'topsection-country', 'topsection-countries', 'topsection-compare', 'topsection-about', 'promoInteriores-Blog';
+$backgrounds: 'promoHome', 'topsection-country', 'topsection-countries', 'topsection-compare', 'topsection-data', 'topsection-about';
 
 .l-banner {
   position: relative;
   padding-top: rem(24px);
   padding-bottom: rem(67px);
+
   &.-topsection-countries{
     padding-top: rem(24px);
     padding-bottom: rem(116px);
+
     @media screen and (min-width: $screen-s) {
       padding-top: rem(40px);
       padding-bottom: rem(133px);
     }
   }
+
   @media screen and (min-width: 768px) {
     padding-top: rem(40px);
     padding-bottom: rem(112px);
@@ -31,7 +34,7 @@ $backgrounds: 'promoHome', 'topsection-country', 'topsection-countries', 'topsec
         bottom: 0;
         left: 0;
         right: 0;
-        background-color: rgba(65, 52, 43, 0.5);
+        background-color: rgba(14, 29, 42, 0.4);
       }
     }
 
@@ -41,6 +44,7 @@ $backgrounds: 'promoHome', 'topsection-country', 'topsection-countries', 'topsec
   .text-banner-m{
     margin:rem(21px) auto;
     margin-bottom: rem(0px);
+
     @media screen and (min-width: 768px) {
       margin:rem(33px) auto;
       margin-bottom: rem(0px);
