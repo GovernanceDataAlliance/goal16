@@ -4,7 +4,7 @@
 
   @media screen and (min-width: $screen-m) {
     width: rem(310px);
-    margin: 0;
+    margin: 0 rem(20px) 0 0;
   }
 
   &:last-child {

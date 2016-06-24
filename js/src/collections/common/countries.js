@@ -28,6 +28,7 @@ var CountriesCollection = CartoDBCollection.extend({
 
       isos.forEach(function(iso) {
         if (!iso) {
+          countries.push(null);
           return;
         }
 

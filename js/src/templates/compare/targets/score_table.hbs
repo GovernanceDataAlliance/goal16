@@ -1,9 +1,62 @@
-{{#if scores}}
+{{#if officialIndicators}}
   <div class="c-score-table">
     <div class="table-header">
       <div class="table-row">
         <div class="table-cell -category">
-          <span>official indicators</span>
+          <span>IAEG Global Indicator</span>
+        </div>
+
+        {{#each countries}}
+          <div class="table-cell -country">
+            <span>{{#if name }} {{name}} {{else}} - {{/if}}</span>
+          </div>
+        {{/each}}
+
+      </div>
+    </div>
+    <div class="table-body">
+
+      {{#each officialIndicators}}
+
+        <div class="table-row">
+          <div class="table-cell -indicator">
+            <span>{{ indicator_title }}</span>
+            <span class="indicator-info">{{ source_title }} {{#if year }} | Last data point: {{ year }} {{/if}}</span>
+          </div>
+
+          <div class="table-cell -score">
+            <span>{{#if scoreA}} {{ scoreA }} {{else}} - {{/if}}</span>
+            <span class="country-name only-mobile">{{ countryA }}</span>
+          </div>
+
+          <div class="table-cell -score">
+            <span>{{#if scoreB}} {{ scoreB }} {{else}} - {{/if}}</span>
+            <span class="country-name only-mobile">{{ countryB }}</span>
+          </div>
+
+          <div class="table-cell -score">
+            <span>{{#if scoreC}} {{ scoreC }} {{else}} - {{/if}}</span>
+            <span class="country-name only-mobile">{{ countryC }}</span>
+          </div>
+        </div>
+
+      {{/each}}
+
+    </div>
+</div>
+
+{{else}}
+
+  <p class="no-indicators">No indicators available for this target</p>
+
+{{/if}}
+
+{{#if shadowIndicators}}
+  <div class="c-score-table">
+    <div class="table-header">
+      <div class="table-row">
+        <div class="table-cell -category">
+          <span>Complementary Global Indicator</span>
         </div>
 
         {{#each countries}}
@@ -16,38 +69,37 @@
     </div>
     <div class="table-body">
 
-      {{#each scores}}
+      {{#each shadowIndicators}}
 
         <div class="table-row">
           <div class="table-cell -indicator">
-            <span>{{ title }}</span>
-            <span class="indicator-info">Score name  |  % of victims reduced  |  Last data point: 2014</span>
+            <span>{{ indicator_title }}</span>
+            <span class="indicator-info">{{ source_title }} {{#if year }} | Last data point: {{ year }} {{/if}}</span>
           </div>
 
           <div class="table-cell -score">
-            <span> 5% </span>
-            <span class="country-name only-mobile">Country name</span>
+            <span>{{#if scoreA}} {{ scoreA }} {{else}} - {{/if}}</span>
+            <span class="country-name only-mobile">{{ countryA }}</span>
           </div>
 
           <div class="table-cell -score">
-            <span> 25% </span>
-            <span class="country-name only-mobile">Country name</span>
+            <span>{{#if scoreB}} {{ scoreB }} {{else}} - {{/if}}</span>
+            <span class="country-name only-mobile">{{ countryB }}</span>
           </div>
 
           <div class="table-cell -score">
-            <span> 100% </span>
-            <span class="country-name only-mobile">Country name</span>
+            <span>{{#if scoreC}} {{ scoreC }} {{else}} - {{/if}}</span>
+            <span class="country-name only-mobile">{{ countryC }}</span>
           </div>
         </div>
 
       {{/each}}
 
     </div>
-
 </div>
 
 {{else}}
 
-  <p>No indicators available for this target</p>
+  <p class="no-indicators">No indicators available for this target</p>
 
 {{/if}}

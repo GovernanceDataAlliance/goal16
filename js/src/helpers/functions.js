@@ -18,32 +18,32 @@ var FunctionHelper = {
     };
   },
 
-  concatenateCountries: function(array) {
+  arrayToString: function(array) {
     var string = '',
       compactedArray = _.compact(array),
       arrayLength = compactedArray.length;
 
-    if (arrayLength == 0) {
+    if (!arrayLength) {
       return;
     }
 
     if (arrayLength == 1) {
       if(array[0]) {
-        string = " iso='" + array[0] + "'";
+        string = "'" + array[0] + "'";
+        return string;
       }
     }
 
     compactedArray.forEach(function(elem, index) {
-
       if (arrayLength - 1 == index) {
-        string += "iso='" + elem + "'";
+        string += "'" + elem + "'";
       } else {
-        string += " iso='" + elem + "' or ";
+        string += "'" + elem + "',";
       }
-
     });
 
     return string;
+
   },
 
   scrollTop: function() {

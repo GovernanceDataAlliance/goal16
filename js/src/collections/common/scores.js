@@ -7,15 +7,17 @@ var ScoresGroupByTargetSQL = Handlebars.compile(require('../../queries/scores/sc
 
 var ScoresCollection = CartoDBCollection.extend({
 
-  scores_table: CONFIG.cartodb.scores_table,
   indicators_table: CONFIG.cartodb.indicators_table,
+  scores_table: CONFIG.cartodb.scores_table,
+  sources_table: CONFIG.cartodb.sources_table,
 
   getScoresGroupByTarget: function(settings) {
     var query = ScoresGroupByTargetSQL({
+      countries_conditional: settings.countries_conditional,
       indicators_table: this.indicators_table,
       scores_table: this.scores_table,
-      countries_conditional: null,
-      target_slug: settings.target_slug,
+      sources_table: this.sources_table,
+      target_slug: settings.target_slug
     }),
     url = this._urlForQuery(query);
 
