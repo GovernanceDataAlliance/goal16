@@ -2,6 +2,8 @@ var Backbone = require('backbone'),
     _ = require('lodash'),
     Handlebars = require('handlebars');
 
+var Status = require ('../../models/data/status.js');
+
 var targetsCollection = require('../../collections/common/targets.js'),
     IndicatorsCollection = require('../../collections/common/indicators.js');
 
@@ -18,6 +20,7 @@ var DataView = Backbone.View.extend({
   },
 
   initialize: function() {
+    this.status =  new Status();
     this.targetsCollection = targetsCollection;
     this.indicatorsCollection = new IndicatorsCollection();
   },
@@ -64,7 +67,21 @@ var DataView = Backbone.View.extend({
     }, this));
 
     this.$('#targets-container').html(targetsTemplate({'targets': targets.toJSON()}));
+
+    var currentInd = this.status.get('indicator')
+    currentInd && this._setSelectedIndicator(currentInd);
+  },
+
+  _setSelectedIndicator: function(currentInd) {
+    var $indicator = $('#indicator-'+currentInd);
+    var top = $indicator.position().top;
+
+
+    $indicator.find('indicator-info').removeClass('is-hidden');
+    $('body').animate({'scrollTop': top}, 200)
   }
+
+
 
 });
 
