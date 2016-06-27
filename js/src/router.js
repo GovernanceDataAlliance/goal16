@@ -143,7 +143,7 @@ var Router = Backbone.Router.extend({
   _updateParams: function(status) {
     var params = status.toJSON(),
       uri = new URI(window.location),
-      path = uri.path().split('/')[1];
+      path = uri.path().split('/');
 
     // omit null values
     params = _.omit(params, function(val) {
