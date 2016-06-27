@@ -2,6 +2,8 @@ var Backbone = require('backbone'),
     _ = require('lodash'),
     Handlebars = require('handlebars');
 
+var Status = require ('../../models/data/status.js');
+
 var targetsCollection = require('../../collections/common/targets.js'),
     IndicatorsCollection = require('../../collections/common/indicators.js');
 
@@ -18,6 +20,7 @@ var DataView = Backbone.View.extend({
   },
 
   initialize: function() {
+    this.status =  new Status();
     this.targetsCollection = targetsCollection;
     this.indicatorsCollection = new IndicatorsCollection();
   },
@@ -39,6 +42,14 @@ var DataView = Backbone.View.extend({
 
     var $inidcatorsTable = $current.next('.indicator-info');
     $inidcatorsTable.toggleClass('is-hidden');
+
+    this.status.set({ 'indicator': $current.data('slug') })
+
+    this._updateRouterParams();
+  },
+
+  _updateRouterParams: function() {
+    Backbone.Events.trigger('router:update-params', this.status);
   },
 
   render: function() {
@@ -50,9 +61,9 @@ var DataView = Backbone.View.extend({
     var targetsCollection = this.targetsCollection.getTargetsList();
     var indicatorsCollection = this.indicatorsCollection.getAllIndicators()
 
-    $.when(targetsCollection, indicatorsCollection).then(_.bind(function() {
-      var targetsWithIndicators = this._matchIndicatorsWithTarget();
-    }, this));
+    $.when(targetsCollection, indicatorsCollection).then(function() {
+      this._matchIndicatorsWithTarget();
+    }.bind(this));
   },
 
   _matchIndicatorsWithTarget: function() {
@@ -64,6 +75,20 @@ var DataView = Backbone.View.extend({
     }, this));
 
     this.$('#targets-container').html(targetsTemplate({'targets': targets.toJSON()}));
+
+    var currentInd = this.status.get('indicator')
+    currentInd && this._setSelectedIndicator(currentInd);
+  },
+
+  _setSelectedIndicator: function(currentInd) {
+    var $indicator = $('#indicator-'+currentInd);
+    var top = $indicator.offset().top - 30;
+
+    $indicator.find('.indicator-info').removeClass('is-hidden');
+    $('body, html').animate({'scrollTop': top}, 200);
+
+    $indicator.find('.js--icon-open').toggleClass('is-hidden');
+    $indicator.find('.js--icon-close').toggleClass('is-hidden');
   }
 
 });

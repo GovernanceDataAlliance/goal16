@@ -6,8 +6,8 @@
           <h3 class="c-title-underline">{{code}} {{title}}</h2>
         </div>
         {{#each indicators}}
-        <div class="m-data-indicator">
-          <div class="header js--toggle-indicator">
+        <div id="indicator-{{slug}}" class="m-data-indicator">
+          <div class="header js--toggle-indicator" data-slug={{slug}}>
             <h1>{{title}} <span>({{#typeOfIndicator type}}{{/typeOfIndicator}})</span></h1>
             <div class="buttons">
               <button class="js--icon-open">
@@ -23,7 +23,7 @@
             </div>
           </div>
           <div class="indicator-info is-hidden">
-            <p>{{desciption}}</p>
+            <p>{{description}}</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo est, architecto pariatur, eligendi rem omnis quia facilis debitis enim explicabo, officia, vitae dolore? Vitae pariatur quos adipisci, delectus ipsa eveniet?</p>
           </div>
         </div>

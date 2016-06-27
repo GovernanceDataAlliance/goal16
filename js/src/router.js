@@ -19,6 +19,7 @@ var Router = Backbone.Router.extend({
    * countries: countries?iso=GAB
    * compare: compare?isoA=SPA&isoB=FRA&isoC=ENG
    * map: map?layer=layer-slug&layerType=layer-type&iso=iso
+   * data: data?indicator=indicator-slug
    */
 
   routes: {
@@ -26,7 +27,7 @@ var Router = Backbone.Router.extend({
     "map(/)(?layerType=:type)(&layer=:layer)(&zoom=:zoom)(&center=:center)": "map",
     "countries(/)(?iso=:iso)": "countries",
     "compare(/)": "compare",
-    "data(/)(?target=:target)": "data"
+    "data(/)(?indicator=:indicator)": "data"
   },
 
   initialize: function() {
@@ -160,9 +161,17 @@ var Router = Backbone.Router.extend({
 
   //DATA
   data: function() {
+    var view;
+
+    var uri = new URI(window.location),
+        params = uri.search(true);
+
     if (!this.viewManager.hasView('data')) {
       this.viewManager.addView('data', DataView);
     }
+
+    view = this.viewManager.getView('data');
+    view.status.set(params);
 
     this.viewManager.showView('data');
   },
