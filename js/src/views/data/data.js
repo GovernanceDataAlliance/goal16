@@ -74,15 +74,11 @@ var DataView = Backbone.View.extend({
 
   _setSelectedIndicator: function(currentInd) {
     var $indicator = $('#indicator-'+currentInd);
-    var top = $indicator.position().top;
-    var height = $('body').height();
-    var scroll = height - top;
+    var top = $indicator.offset().top - 30;
+
     $indicator.find('.indicator-info').removeClass('is-hidden');
-    // $('body, html').animate({'scrollTop': scroll}, 200);
-    $('body, html').scrollTop(scroll)
+    $('body, html').animate({'scrollTop': top}, 200);
   }
-
-
 
 });
 
