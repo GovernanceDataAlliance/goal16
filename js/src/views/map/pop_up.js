@@ -5,7 +5,8 @@ var $ = require('jquery'),
 
 var PopUpModel = require('../../models/map/pop_up.js');
 
-var popUpTemplate = Handlebars.compile(require('../../templates/map/pop_up.hbs'));
+var popUpTargetTemplate = Handlebars.compile(require('../../templates/map/pop_up_target.hbs')),
+    popUpIndicatorTemplate = Handlebars.compile(require('../../templates/map/pop_up_indicator.hbs'));
 
 var PopUpView = Backbone.View.extend({
 
@@ -18,9 +19,9 @@ var PopUpView = Backbone.View.extend({
   _initData: function() {
     this.model._getPopUpInfo(this.options).done(_.bind(function(response) {
       //We need to check if response is empty to not draw pop-up in that case.
-      if ( Object.keys(response).length ) {
-        console.log(response)
+      if ( response.rows.length > 0) {
         this.options.data = this.model;
+        this.template = this.options.layerType === 'target' ? popUpTargetTemplate : popUpIndicatorTemplate;
         this.options.mobile ?  this._drawPopUpMobile() : this._drawPopUp();
       } else {
         this.model.clear();
@@ -60,7 +61,7 @@ var PopUpView = Backbone.View.extend({
   },
 
   _getContent: function(options) {
-    return popUpTemplate();
+    return this.template(options);
   },
 
 
