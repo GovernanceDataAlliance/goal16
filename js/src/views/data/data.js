@@ -42,6 +42,14 @@ var DataView = Backbone.View.extend({
 
     var $inidcatorsTable = $current.next('.indicator-info');
     $inidcatorsTable.toggleClass('is-hidden');
+
+    this.status.set({ 'indicator': $current.data('slug') })
+
+    this._updateRouterParams();
+  },
+
+  _updateRouterParams: function() {
+    Backbone.Events.trigger('router:update-params', this.status);
   },
 
   render: function() {
@@ -78,6 +86,9 @@ var DataView = Backbone.View.extend({
 
     $indicator.find('.indicator-info').removeClass('is-hidden');
     $('body, html').animate({'scrollTop': top}, 200);
+
+    $indicator.find('.js--icon-open').toggleClass('is-hidden');
+    $indicator.find('.js--icon-close').toggleClass('is-hidden');
   }
 
 });
