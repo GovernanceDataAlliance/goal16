@@ -15,11 +15,11 @@
       <div class="scroll-wrapper">
         <nav class="m-site-navigation -header">
           <ul>
-            <li class='link {% if page.url == "{{ site.baseurl }}/map/" %} selected-option-menu {% endif %}'><a href="{{ site.baseurl }}/map/">explore</a></li>
-            <li class='link {% if page.url == "{{ site.baseurl }}/data/" %} selected-option-menu {% endif %}'><a href="{{ site.baseurl }}/data/">data</a></li>
-            <li class='link {% if page.url == "{{ site.baseurl }}/countries/" %} selected-option-menu {% endif %}'><a href="{{ site.baseurl }}/countries/">countries</a></li>
-            <li class='link {% if page.url == "{{ site.baseurl }}/compare/" %} selected-option-menu {% endif %}' ><a href="{{ site.baseurl }}/compare/">compare</a></li>
-            <li class='link {% if page.url == "{{ site.baseurl }}/about/" %} selected-option-menu  {% endif %}'><a href="{{ site.baseurl }}/about/">about</a></li>
+            <li class='link {% if page.page-name == "map" %} selected-option-menu {% endif %}'><a href="{{ site.baseurl }}/map/">explore</a></li>
+            <li class='link {% if page.page-name == "data" %} selected-option-menu {% endif %}'><a href="{{ site.baseurl }}/data/">data</a></li>
+            <li class='link {% if page.page-name == "countries" %} selected-option-menu {% endif %}'><a href="{{ site.baseurl }}/countries/">countries</a></li>
+            <li class='link {% if page.page-name == "compare" %} selected-option-menu {% endif %}' ><a href="{{ site.baseurl }}/compare/">compare</a></li>
+            <li class='link {% if page.page-name == "about" %} selected-option-menu  {% endif %}'><a href="{{ site.baseurl }}/about/">about</a></li>
           </ul>
         </nav>
 

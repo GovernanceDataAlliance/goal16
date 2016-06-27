@@ -1,5 +1,5 @@
 ---
 layout: data
 title: Data
-page-name: Data
+page-name: data
 ---
