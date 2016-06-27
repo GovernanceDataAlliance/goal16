@@ -1,0 +1,5 @@
+SELECT code, title, target_slug, slug, iso, score,year FROM {{indicators_table}} left join scores on slug=indicator_slug 
+WHERE target_slug = '{{slug}}' 
+and 
+iso like (SELECT iso FROM countries WHERE st_intersects(the_geom, st_setSrid(ST_MakePoint({{lng}}, {{lat}}),4326))) 
+

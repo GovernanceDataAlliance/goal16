@@ -1,8 +1,6 @@
-SELECT * FROM score_test WHERE indicator_slug={{layer}}
-
-//Example changing projection
-SELECT 
-cartodb_id, cartodb_georef_status, indicator_slug, iso, score, 
-st_transform(st_makevalid(the_geom_webmercator),954030) as the_geom_webmercator
-
-FROM  score_test
+select 
+  c.the_geom_webmercator, 
+  s.iso, 
+  s.score 
+FROM scores as s JOIN countries as c on c.iso = s.iso 
+WHERE indicator_slug='{{slug}}'

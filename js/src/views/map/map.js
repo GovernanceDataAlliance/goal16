@@ -35,7 +35,10 @@ var MapView = Backbone.View.extend({
     cartodb: {
       user_name: CONFIG.cartodb.user_name,
       noWrap: true,
-      css: '#score_test{ polygon-fill: #82bf72; polygon-opacity: 0.7; line-color: #f6faf9; line-width: 0.5; line-opacity: 1; }'
+      cartocss: {
+        indicator: '#score{ polygon-fill: #82bf72; polygon-opacity: 0.7; line-color: #f6faf9; line-width: 0.5; line-opacity: 1;}',
+        target: '#indicators{ polygon-fill: #EDF8FB; polygon-opacity: 0.8; line-color: #FFF; line-width: 0.5; line-opacity: 1; } #indicators [ score <= 100] { polygon-fill: #006D2C; } #indicators [ score <= 100] { polygon-fill: #2CA25F; } #indicators [ score <= 67] { polygon-fill: #66C2A4; } #indicators [ score <= 67] { polygon-fill: #B2E2E2; } #indicators [ score <= 33] { polygon-fill: #EDF8FB; }'
+      }
     }
   },
 
@@ -100,6 +103,7 @@ var MapView = Backbone.View.extend({
   _popUpSetUp: function(e) {
     this.popUp = new PopUpView({
       layer: this.status.get('layer'),
+      layerType: this.status.get('layerType'),
       latLng: e.latlng,
       map: this.map,
       zoom: this.map.getZoom(),
@@ -157,7 +161,8 @@ var MapView = Backbone.View.extend({
   _createLayer: function() {
     var sql = this._getLayerQuery();
     var cartoAccount = this.options.cartodb.user_name;
-    var cartoCss = this.options.cartodb.css || '#table_score_test{ polygon-fill: #FF6600; polygon-opacity: 0.7; line-color: #FFF; line-width: 0.5; line-opacity: 1; }';
+    var type = this.status.get('layerType');
+    var cartoCss = this.options.cartodb.cartocss[type];
     var deferred = $.Deferred();
 
     var request = {
@@ -201,20 +206,15 @@ var MapView = Backbone.View.extend({
   },
 
   _getLayerQuery: function() {
-    var query;
     var layer = this.status.get('layer');
     var type = this.status.get('layerType');
+    var options = {
+      slug: layer
+    };
 
-    if (type === 'target') {
-      query = targetLayerSQL({layer: layer})
-    } else {
-      query = indicatorLayerSQL({layer: layer})
-    }
+    var query = type === 'target' ? targetLayerSQL(options) : indicatorLayerSQL(options);
 
-    // return query;
-
-    // We are temporary returning this because we do not have data.
-    return 'SELECT * FROM score_test';
+    return query;
   },
 
   _share: function(e) {
