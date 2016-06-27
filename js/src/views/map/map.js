@@ -219,14 +219,12 @@ var MapView = Backbone.View.extend({
 
   _share: function(e) {
     e && e.stopPropagation();
-
     this.shareWindowView.render();
     this.shareWindowView.delegateEvents();
   },
 
   render: function() {
     this.$el.html('<button class="js--btn-share btn-share"><svg class="icon-share"><use xlink:href="#icon-share"></use></svg></button>');
-
     return this;
   }
 
