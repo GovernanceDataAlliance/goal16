@@ -1,0 +1,6 @@
+SELECT name, score, year, indicator_slug FROM scores s 
+inner join countries c on s.iso=c.iso
+where 
+s.iso like (SELECT iso FROM countries where st_intersects(the_geom, st_setSrid(ST_MakePoint({{lat}}, {{lng}}),4326))) 
+and 
+indicator_slug like '{{slug}}'

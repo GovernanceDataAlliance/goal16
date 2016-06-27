@@ -1,8 +1,1 @@
-SELECT * FROM score_test WHERE indicator_slug={{layer}}
-
-//Example changing projection
-SELECT 
-cartodb_id, cartodb_georef_status, indicator_slug, iso, score, 
-st_transform(st_makevalid(the_geom_webmercator),954030) as the_geom_webmercator
-
-FROM  score_test
+SELECT score FROM scores WHERE indicator_slug='small_arms_trade'

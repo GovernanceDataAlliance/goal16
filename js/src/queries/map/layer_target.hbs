@@ -1,1 +1,7 @@
-SELECT * FROM score_test WHERE indicator_slug={{layer}}
+with r as (SELECT count(target_slug) base, target_slug FROM indicators group by target_slug),
+s as (SELECT distinct on (target_slug, iso) target_slug, iso, count(iso) over (PARTITION BY iso, target_slug ORDER BY iso DESC) FROM indicators
+inner join scores on slug=indicator_slug
+order by iso desc)
+select c.the_geom_webmercator, s.iso, s.target_slug, round((count::numeric/base::numeric)*100) score from s left join r on r.target_slug=s.target_slug 
+inner join countries c on c.iso=s.iso
+where s.target_slug ='{{slug}}'

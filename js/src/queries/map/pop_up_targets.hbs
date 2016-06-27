@@ -1,0 +1,5 @@
+SELECT code, title, target_slug, slug, iso, score,year FROM indicators left join scores on slug=indicator_slug 
+WHERE target_slug = 'reduce_corruption_bribery' 
+and 
+iso like (SELECT iso FROM countries where st_intersects(the_geom, st_setSrid(ST_MakePoint(-71.1043443253471, 42.3150676015829),4326))) 
+
