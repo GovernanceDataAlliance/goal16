@@ -1,1 +1,6 @@
-SELECT score FROM scores WHERE indicator_slug='small_arms_trade'
+select 
+  c.the_geom_webmercator, 
+  s.iso, 
+  s.score 
+FROM scores as s JOIN countries as c on c.iso = s.iso 
+WHERE indicator_slug='{{slug}}'

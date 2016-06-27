@@ -206,16 +206,14 @@ var MapView = Backbone.View.extend({
   },
 
   _getLayerQuery: function() {
-    var query;
     var layer = this.status.get('layer');
     var type = this.status.get('layerType');
+    var options = {
+      slug: layer
+    };
 
-    if (type === 'target') {
-      query = targetLayerSQL({slug: layer})
-    } else {
-      query = indicatorLayerSQL({layer: layer})
-    }
-    console.log(query)
+    var query = type === 'target' ? targetLayerSQL(options) : indicatorLayerSQL(options);
+
     return query;
   },
 

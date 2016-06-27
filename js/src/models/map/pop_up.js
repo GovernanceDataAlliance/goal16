@@ -8,7 +8,7 @@ var CartoDBModel = require('../../lib/cartodb_model.js');
 var CONFIG = require('../../../config.json');
 
 var popUpTargetsSQL = Handlebars.compile(require('../../queries/map/pop_up_targets.hbs')),
-    popUpIndicatorsSQL = Handlebars.compile(require('../../queries/map/pop_up_targets.hbs'));
+    popUpIndicatorsSQL = Handlebars.compile(require('../../queries/map/pop_up_indicators.hbs'));
 
 var PopUp = CartoDBModel.extend({
 
@@ -31,6 +31,8 @@ var PopUp = CartoDBModel.extend({
       lat: options.latLng.lat,
       lng: options.latLng.lng
     });
+
+    console.log(query)
 
     var url = this._url(query);
 
