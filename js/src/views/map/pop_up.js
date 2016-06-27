@@ -61,7 +61,7 @@ var PopUpView = Backbone.View.extend({
   },
 
   _getContent: function(options) {
-    return this.template(options);
+    return this.template(options.data.toJSON());
   },
 
 
