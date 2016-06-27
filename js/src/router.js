@@ -156,6 +156,7 @@ var Router = Backbone.Router.extend({
       .setSearch(params);
 
     // updates url
+    console.log(path)
     this.navigate(path + uri.search());
   },
 
