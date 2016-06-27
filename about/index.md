@@ -1,7 +1,7 @@
 ---
 layout: about
 title: About
-page-name: About
+page-name: about
 "intro-text": "Quisque eu odio vitae leo aliquet fermentum in sit amet quam. Morbi dapibus nibh et congue convallis. Nulla malesuada leo et volutpat rhoncus. Aliquam sagittis rhoncus tellus quis placerat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia."
 published: true
 ---
