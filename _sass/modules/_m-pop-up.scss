@@ -10,7 +10,7 @@
   z-index: 30;
   background-color: $white;
   padding-top: rem(40px);
-  @media screen and (min-width: $screen-m) {
+  @media screen and (min-width: 768px) {
     position: relative;
     top: 0;
     height: 100vh;
@@ -158,7 +158,7 @@
   }
 }
 .leaflet-popup {
-  @media screen and (min-width: $screen-m) {
+  @media screen and (min-width: 768px) {
     width: auto;
   }
 }
@@ -182,7 +182,7 @@
   // background-image: url('../../images/close.svg');
   background-size: 100%;
   background-position: 0;
-  @media screen and (min-width: $screen-m) {
+  @media screen and (min-width: 768px) {
     margin: rem(30px);
   }
   &:hover {
