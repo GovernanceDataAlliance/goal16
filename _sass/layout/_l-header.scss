@@ -22,7 +22,7 @@ $header-height: rem(80px);
     transform: translatey(70px);
   }
 
-  @media screen and (min-width: $screen-m) {
+  @media screen and (min-width: 768px) {
     position: relative;
     height: rem(80px);
   }
@@ -47,7 +47,7 @@ $header-height: rem(80px);
       width: rem(270px);
     }
 
-    @media screen and (min-width: $screen-m) {
+    @media screen and (min-width: 768px) {
       width: rem(360px);
     }
 
@@ -61,14 +61,14 @@ $header-height: rem(80px);
     align-items: stretch;
     justify-content: flex-end;
 
-    @media screen and (min-width: $screen-m) {
+    @media screen and (min-width: 768px) {
       width: 100%;
     }
 
     .menus-wrapper {
       display: none;
 
-      @media screen and (min-width: $screen-m) {
+      @media screen and (min-width: 768px) {
         width: 100%;
         position: static;
         display: flex;
@@ -78,7 +78,7 @@ $header-height: rem(80px);
     }
 
     .scroll-wrapper {
-      @media screen and (min-width: $screen-m) {
+      @media screen and (min-width: 768px) {
         position: static;
         display: flex;
         flex-direction: row;
@@ -92,7 +92,7 @@ $header-height: rem(80px);
       width: rem(70px);
       height: $header-height;
 
-      @media screen and (min-width: $screen-m) {
+      @media screen and (min-width: 768px) {
         display: none;
       }
 

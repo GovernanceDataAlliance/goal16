@@ -6,6 +6,10 @@
   right: 0;
   background-color: $bg-color-1;
 
+  .leaflet-bar{
+    border: 0px;
+  }
+
   .btn-share {
     position: absolute;
     top: rem(135px);

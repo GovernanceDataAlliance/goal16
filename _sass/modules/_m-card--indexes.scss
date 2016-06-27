@@ -17,7 +17,7 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    
+
     > .name {
       cursor: pointer;
       font-size: rem(30px);
@@ -83,7 +83,7 @@
     float: left;
     justify-content: space-between;
   }
-  @media screen and (min-width: $screen-m) {
+  @media screen and (min-width: 768px) {
     .img {
       height: rem(40px);
     }
