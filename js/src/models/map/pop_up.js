@@ -22,10 +22,14 @@ var PopUp = CartoDBModel.extend({
 
   _getPopUpInfo: function(options) {
     console.log(options)
-    var query = popUpTargetsSQL({
+    var template = options.layerType === 'target' ? popUpTargetsSQL : popUpIndicatorsSQL;
+
+    var query = template({
       indicators_table: this.indicators_table,
       targets_table: this.targets_table,
-      indicator_slug: options.layer
+      slug: options.layer,
+      lat: options.latLng.lat,
+      lng: options.latLng.lng
     });
 
     var url = this._url(query);
