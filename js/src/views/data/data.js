@@ -54,7 +54,7 @@ var DataView = Backbone.View.extend({
     var indicatorsCollection = this.indicatorsCollection.getAllIndicators()
 
     $.when(targetsCollection, indicatorsCollection).then(_.bind(function() {
-      var targetsWithIndicators = this._matchIndicatorsWithTarget();
+      this._matchIndicatorsWithTarget();
     }, this));
   },
 
@@ -75,10 +75,11 @@ var DataView = Backbone.View.extend({
   _setSelectedIndicator: function(currentInd) {
     var $indicator = $('#indicator-'+currentInd);
     var top = $indicator.position().top;
-
-
-    $indicator.find('indicator-info').removeClass('is-hidden');
-    $('body').animate({'scrollTop': top}, 200)
+    var height = $('body').height();
+    var scroll = height - top;
+    $indicator.find('.indicator-info').removeClass('is-hidden');
+    // $('body, html').animate({'scrollTop': scroll}, 200);
+    $('body, html').scrollTop(scroll)
   }
 
 
