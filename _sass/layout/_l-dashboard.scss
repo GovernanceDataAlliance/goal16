@@ -8,6 +8,7 @@
   background-color: $white;
   transition: .2s ease;
   transform: translatey(0);
+  border-top: 1px solid $light-grey;
 
   .is-dashboard-close & {
     transform: translatey(100%);

@@ -18,6 +18,12 @@
   @media screen and (min-width: $screen-m) {
     margin-top: 0;
   }
+  &.is-map{
+    border-right: 0px;
+    border-left: 0px;
+    max-width: 100%;
+    border-bottom: 1px solid $light-grey;
+  }
 }
 
 
