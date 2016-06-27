@@ -21,7 +21,7 @@
   > .js--search-desktop {
     display: none;
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: $screen-m) {
       display: block;
       cursor: pointer;
     }
@@ -30,7 +30,7 @@
   .js--open-search-mb {
     margin-top: rem(80px);
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: $screen-s) {
       width: 100%;
       margin: rem(80px) auto;
     }
