@@ -61,9 +61,9 @@ var DataView = Backbone.View.extend({
     var targetsCollection = this.targetsCollection.getTargetsList();
     var indicatorsCollection = this.indicatorsCollection.getAllIndicators()
 
-    $.when(targetsCollection, indicatorsCollection).then(_.bind(function() {
+    $.when(targetsCollection, indicatorsCollection).then(function() {
       this._matchIndicatorsWithTarget();
-    }, this));
+    }.bind(this));
   },
 
   _matchIndicatorsWithTarget: function() {
