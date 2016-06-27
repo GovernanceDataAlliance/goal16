@@ -143,7 +143,8 @@ var Router = Backbone.Router.extend({
   _updateParams: function(status) {
     var params = status.toJSON(),
       uri = new URI(window.location),
-      path = uri.path().split('/')[2];
+      //Careful with this. In pro we have extra params into the path that we should avoid re-append to the url.
+      path = SITEURL ? uri.path().split('/')[2] : uri.path().split('/')[1];
 
     // omit null values
     params = _.omit(params, function(val) {
@@ -156,7 +157,6 @@ var Router = Backbone.Router.extend({
       .setSearch(params);
 
     // updates url
-    console.log(path)
     this.navigate(path + '/' + uri.search());
   },
 

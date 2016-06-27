@@ -1,0 +1,13 @@
+SELECT   
+  code, 
+  title, 
+  target_slug, 
+  slug, 
+  s.iso, 
+  score, 
+  type, 
+  year, 
+  units_abbr  
+FROM {{indicators_table}} LEFT JOIN scores as s ON slug=indicator_slug 
+WHERE target_slug = '{{slug}}' AND iso='{{iso}}'
+

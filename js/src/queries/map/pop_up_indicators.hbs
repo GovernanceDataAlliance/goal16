@@ -1,6 +1,12 @@
-SELECT name, score, year, indicator_slug FROM scores s 
-inner join countries c on s.iso=c.iso 
-where  
-s.iso like (SELECT iso FROM countries where st_intersects(the_geom, st_setSrid(ST_MakePoint({{lng}}, {{lat}}),4326))) 
-and 
-indicator_slug like '{{slug}}'
+SELECT 
+  name, 
+  score, 
+  year, 
+  indicator_slug,
+  units_abbr 
+FROM scores s 
+INNER JOIN countries c ON s.iso=c.iso INNER JOIN indicators i ON i.slug=s.indicator_slug 
+WHERE  
+s.iso LIKE (SELECT iso FROM countries WHERE st_intersects(the_geom, st_setSrid(ST_MakePoint({{lng}}, {{lat}}),4326))) 
+AND 
+indicator_slug LIKE '{{slug}}'
