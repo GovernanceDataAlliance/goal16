@@ -143,8 +143,8 @@ var Router = Backbone.Router.extend({
   _updateParams: function(status) {
     var params = status.toJSON(),
       uri = new URI(window.location),
-      path = uri.path().split('/');
-      console.log(uri.path())
+      path = uri.path().split('/')[2];
+
     // omit null values
     params = _.omit(params, function(val) {
       return !val || val == '';
@@ -157,7 +157,7 @@ var Router = Backbone.Router.extend({
 
     // updates url
     console.log(path)
-    this.navigate(path + uri.search());
+    this.navigate(path + '/' + uri.search());
   },
 
   //DATA
