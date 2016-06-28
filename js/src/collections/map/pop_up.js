@@ -13,7 +13,8 @@ var popUpTargetsSQL = Handlebars.compile(require('../../queries/map/pop_up_targe
 var PopUp = CartoDBCollection.extend({
 
   indicators_table: CONFIG.cartodb.indicators_table,
-  target_table: CONFIG.cartodb.targets_table,
+  countries_table: CONFIG.cartodb.countries_table,
+  scores_table: CONFIG.cartodb.scores_table,
   user_name: CONFIG.cartodb.user_name,
 
   _url: function(query) {
@@ -25,7 +26,8 @@ var PopUp = CartoDBCollection.extend({
 
     var query = template({
       indicators_table: this.indicators_table,
-      targets_table: this.targets_table,
+      countries_table: this.countries_table,
+      scores_table: this.scores_table,
       slug: options.layer,
       lat: options.latLng.lat,
       lng: options.latLng.lng

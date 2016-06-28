@@ -50,7 +50,7 @@ var CountriesCollection = CartoDBCollection.extend({
   },
 
   getCountryByIso: function(iso) {
-
+    return _.find(this.toJSON(), {'iso': iso});
   }
 
 });

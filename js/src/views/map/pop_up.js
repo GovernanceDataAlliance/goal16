@@ -3,7 +3,7 @@ var $ = require('jquery'),
   Backbone = require('backbone'),
   Handlebars = require('handlebars');
 
-var PopUpModel = require('../../models/map/pop_up.js');
+var PopUpModel = require('../../collections/map/pop_up.js');
 var countriesCollection = require('../../collections/common/countries.js');
 
 var popUpTargetTemplate = Handlebars.compile(require('../../templates/map/pop_up_target.hbs')),
@@ -13,7 +13,9 @@ var PopUpView = Backbone.View.extend({
 
   initialize: function(options) {
     this.options = options;
+    this.options.data = {};
     this.indicatorsCollection = new PopUpModel();
+    this.countriesCollection = countriesCollection;
     this._initData();
   },
 
@@ -21,11 +23,19 @@ var PopUpView = Backbone.View.extend({
     this.indicatorsCollection.getPopUpInfo(this.options).done(function(response) {
       //We need to check if response is empty to not draw pop-up in that case.
       if ( response.rows.length > 0) {
-        this.options.indicators = this.indicatorsCollection.toJSON();
-        this.template = this.options.layerType === 'target' ? popUpTargetTemplate : popUpIndicatorTemplate;
-          this.options.mobile ? this._drawPopUpMobile() : this._drawPopUp();
+        var type = this.options.layerType;
 
-        this.options.iso = this.options.indicators[0].iso;
+        this.options.data.indicators = type === 'target' ? _.groupBy(this.indicatorsCollection.toJSON(), 'type') : this.indicatorsCollection.toJSON();
+
+        this.template = type === 'target' ? popUpTargetTemplate : popUpIndicatorTemplate;
+
+        this.options.iso = this.indicatorsCollection.toJSON()[0].iso;
+
+        this.countriesCollection.getCountriesList().done(function(){
+          this.options.data.country = this.countriesCollection.getCountryByIso(this.options.iso);
+          this.options.mobile ? this._drawPopUpMobile() : this._drawPopUp();
+        }.bind(this));
+
       } else {
         this.indicatorsCollection.clear();
       }
@@ -64,9 +74,9 @@ var PopUpView = Backbone.View.extend({
   },
 
   _getContent: function(options) {
-    this.options.url = SITEURL;
+    this.options.data.url = SITEURL;
     return this.template(this.options.data);
-  },
+  }
 
 
 });
