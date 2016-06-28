@@ -6,6 +6,9 @@ var $ = require('jquery'),
 
 var template = require('../../../templates/countries/country/indicator-card.hbs');
 
+require('../../common/slick.min');
+
+
 var IndicatorCardView = Backbone.View.extend({
 
   className: 'l-target-card',
@@ -35,6 +38,17 @@ var IndicatorCardView = Backbone.View.extend({
     }
 
     return [officialIndicators, shadowIndicators];
+  },
+
+  setSlick: function() {
+    this.$('.slider-indicator').slick({
+      dots: true,
+      arrows:false,
+      infinite: true,
+      speed: 500,
+      fade: true
+      // appendDots: $(".slick-list")
+    });
   },
 
   render: function() {
