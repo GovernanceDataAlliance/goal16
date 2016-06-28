@@ -3,7 +3,8 @@ var $ = require('jquery'),
   Backbone = require('backbone'),
   Handlebars = require('handlebars');
 
-var PopUpModel = require('../../models/map/pop_up.js');
+var PopUpModel = require('../../collections/map/pop_up.js');
+var countriesCollection = require('../../collections/common/countries.js');
 
 var popUpTargetTemplate = Handlebars.compile(require('../../templates/map/pop_up_target.hbs')),
     popUpIndicatorTemplate = Handlebars.compile(require('../../templates/map/pop_up_indicator.hbs'));
@@ -12,34 +13,46 @@ var PopUpView = Backbone.View.extend({
 
   initialize: function(options) {
     this.options = options;
-    this.model = new PopUpModel();
+    this.options.data = {};
+    this.indicatorsCollection = new PopUpModel();
+    this.countriesCollection = countriesCollection;
     this._initData();
   },
 
   _initData: function() {
-    this.model._getPopUpInfo(this.options).done(_.bind(function(response) {
+    this.indicatorsCollection.getPopUpInfo(this.options).done(function(response) {
       //We need to check if response is empty to not draw pop-up in that case.
       if ( response.rows.length > 0) {
-        this.options.data = this.model;
-        this.template = this.options.layerType === 'target' ? popUpTargetTemplate : popUpIndicatorTemplate;
-        this.options.mobile ?  this._drawPopUpMobile() : this._drawPopUp();
+        var type = this.options.layerType;
+
+        this.options.data.indicators = type === 'target' ? _.groupBy(this.indicatorsCollection.toJSON(), 'type') : this.indicatorsCollection.toJSON();
+
+        this.template = type === 'target' ? popUpTargetTemplate : popUpIndicatorTemplate;
+
+        this.options.iso = this.indicatorsCollection.toJSON()[0].iso;
+
+        this.countriesCollection.getCountriesList().done(function(){
+          this.options.data.country = this.countriesCollection.getCountryByIso(this.options.iso);
+          this.options.mobile ? this._drawPopUpMobile() : this._drawPopUp();
+        }.bind(this));
+
       } else {
-        this.model.clear();
+        this.indicatorsCollection.clear();
       }
-    }, this));
+    }.bind(this));
   },
 
   _drawPopUpMobile: function() {
-    this.popUp = this._getContent(this.options);
+    this.popUp = this._getContent();
     $('body').append(this.popUp);
-    $("#popup-background").css("display","block");
+    $('#popup-background').css('display','block');
     $('.btn-close').on('click', this._closeInfowindow.bind(this));
   },
 
   _drawPopUp: function() {
     this.popUp = L.popup({closeButton: false})
       .setLatLng(this.options.latLng)
-      .setContent(this._getContent(this.options))
+      .setContent(this._getContent())
       .openOn(this.options.map);
 
     this.setEvents();
@@ -57,12 +70,13 @@ var PopUpView = Backbone.View.extend({
   _closeInfowindow: function() {
     $('.btn-close').off('click');
     $('.m-popup').remove();
-    $("#popup-background").css("display","none");
+    $('#popup-background').css('display' ,'none');
   },
 
   _getContent: function(options) {
-    return this.template(options.data.toJSON());
-  },
+    this.options.data.url = SITEURL;
+    return this.template(this.options.data);
+  }
 
 
 });
