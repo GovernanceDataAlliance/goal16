@@ -36,8 +36,8 @@ var MapView = Backbone.View.extend({
       user_name: CONFIG.cartodb.user_name,
       noWrap: true,
       cartocss: {
-        indicator: '#score{ polygon-fill: #006D2C; polygon-opacity: 0.7; line-color: #f6faf9; line-width: 0.5; line-opacity: 1;}',
-        target: '#indicators{ polygon-fill: #EDF8FB; polygon-opacity: 0.8; line-color: #FFF; line-width: 0.5; line-opacity: 1; } #indicators [ score <= 100] { polygon-fill: #006D2C; } #indicators [ score <= 100] { polygon-fill: #2CA25F; } #indicators [ score <= 67] { polygon-fill: #66C2A4; } #indicators [ score <= 67] { polygon-fill: #B2E2E2; } #indicators [ score <= 33] { polygon-fill: #EDF8FB; }'
+        indicator: '#score{ polygon-fill: #121c12; polygon-opacity: 0.7; line-color: #f6faf9; line-width: 0.5; line-opacity: 1;}',
+        target: '#indicators{ polygon-fill: #EDF8FB; polygon-opacity: 0.8; line-color: #FFF; line-width: 0.5; line-opacity: 1; } #indicators [ score <= 100] { polygon-fill: #121c12; } #indicators [ score <= 80] { polygon-fill: #345335; } #indicators [ score <= 60] { polygon-fill: #557b57; } #indicators [ score <= 40] { polygon-fill: #85c088; } #indicators [ score <= 20] { polygon-fill: #cce5ca; }'
       }
     }
   },
