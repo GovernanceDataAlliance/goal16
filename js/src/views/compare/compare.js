@@ -89,7 +89,7 @@ var CompareView = Backbone.View.extend({
   _renderSelectors: function() {
     this.$el.find('#selectors-container').html(this.selectorsView.render().el);
 
-    this.selectorsView.setChosen();
+    this.selectorsView.setView();
   },
 
   _compareCountries: function() {
