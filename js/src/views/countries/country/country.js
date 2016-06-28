@@ -58,7 +58,7 @@ var CountryView = Backbone.View.extend({
     this.shareWindowView.render();
     this.shareWindowView.delegateEvents();
   },
-  
+
   _setBanner: function() {
     var iso = this.status.get('iso'),
       country = this._getCountryInfo(iso),
@@ -87,16 +87,7 @@ var CountryView = Backbone.View.extend({
       });
 
       this.$el.append(targetCard.render().el);
-
-      // this.$(".slider-indicator").each(function() {
-      //   $(this).slick({
-      //     dots: true,
-      //     arrows: false,
-      //     infinite: true,
-      //     speed: 500,
-      //     fade: true
-      //   });
-      // });
+      targetCard.setSlick();
     }
   },
 

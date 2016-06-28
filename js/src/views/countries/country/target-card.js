@@ -40,6 +40,17 @@ var IndicatorCardView = Backbone.View.extend({
     return [officialIndicators, shadowIndicators];
   },
 
+  setSlick: function() {
+    this.$('.slider-indicator').slick({
+      dots: true,
+      arrows:false,
+      infinite: true,
+      speed: 500,
+      fade: true
+      // appendDots: $(".slick-list")
+    });
+  },
+
   render: function() {
     var target = this.options.target,
       indicatorsByType = this._getIndicatorsByType(),
@@ -53,25 +64,6 @@ var IndicatorCardView = Backbone.View.extend({
       shadowIndicators: shadowIndicators,
       target: target
     }));
-
-    this.$('.slider-indicator').slick({
-      dots: true,
-      arrows:false,
-      infinite: true,
-      speed: 500,
-      fade: true
-      // appendDots: $(".slick-list")
-    });
-
-    // $(".slider-indicator").each(function() {
-    //   $(this).slick({
-    //     dots: true,
-    //     arrows: false,
-    //     infinite: true,
-    //     speed: 500,
-    //     fade: true
-    //   });
-    // });
 
     return this;
   }
