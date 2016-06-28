@@ -1,0 +1,33 @@
+$buckets: 'bucket-1', 'bucket-2', 'bucket-3', 'bucket-4', 'bucket-5';
+$colors: $bucket-1, $bucket-2, $bucket-3, $bucket-4, $bucket-5;
+
+.m-legend {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .text {
+    font-size: rem($font-size-xxsmall);
+    font-family: $font-family-primary;
+    text-transform: uppercase;
+    margin-right: rem(10px);
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .bucket {
+    display: inline-block;
+    width: rem(25px);
+    height: rem(25px);
+    border-radius: 50%;
+    margin-right: rem(10px);
+
+    @for $i from 1 through length($buckets) {
+      &.#{nth($buckets, $i)} {
+        background-color: #{nth($colors, $i)};
+      }
+    }
+  }
+}
