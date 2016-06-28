@@ -37,7 +37,10 @@
             <li class="indicator-item">
               <span class="indicator-score"> {{ score }} </span>
               <h4 class="indicator-title">{{ indicator_title }}</h4>
-              <span class="indicator-source"> {{ source_name }}</span>
+              <div class="indicator-metadata">
+                <span class="indicator-source"> {{ source_title }} </span>
+                <span class="indicator-year"> Last update: {{ year }} </span>
+              </div>
             </li>
           {{/each}}
         </ul>
