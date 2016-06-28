@@ -47,6 +47,10 @@ var CountriesCollection = CartoDBCollection.extend({
   // list of countries by region
   getCountriesByRegion: function() {
     return _.groupBy(_.sortBy(this.toJSON(), 'region_name'), 'region_name');
+  },
+
+  getCountryByIso: function(iso) {
+
   }
 
 });

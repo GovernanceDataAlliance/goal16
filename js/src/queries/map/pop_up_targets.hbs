@@ -1,9 +1,9 @@
-SELECT DISTINCT ON(t.code)
-  t.title, 
-  t.slug, 
-  c.name, 
-  s.iso   
-FROM targets t JOIN indicators i ON t.slug=target_slug JOIN scores s ON s.indicator_slug=i.slug JOIN countries c ON c.iso=s.iso 
-WHERE t.slug = '{{slug}}' 
+SELECT 
+  i.slug,
+  i.title,
+  s.score, 
+  s.iso 
+FROM indicators i JOIN scores s ON s.indicator_slug=i.slug 
+WHERE i.target_slug = '{{slug}}' 
 AND 
 s.iso LIKE (SELECT iso FROM countries WHERE st_intersects(the_geom, st_setSrid(ST_MakePoint({{lng}}, {{lat}}),4326))) 

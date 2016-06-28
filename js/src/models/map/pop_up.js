@@ -3,15 +3,14 @@ var Backbone = require('backbone'),
   format = require('../../lib/format.js');
 
 var BASE_URL = "http://{0}.cartodb.com/api/v2/sql";
-var CartoDBModel = require('../../lib/cartodb_model.js');
+var CartoDBCollection = require('../../lib/cartodb_model.js');
 
 var CONFIG = require('../../../config.json');
 
 var popUpTargetsSQL = Handlebars.compile(require('../../queries/map/pop_up_targets.hbs')),
-    popUpIndicatorsSQL = Handlebars.compile(require('../../queries/map/pop_up_indicators.hbs')),
-    popUpIndicatorsPerTargetSQL = Handlebars.compile(require('../../queries/map/pop_up_indicators_per_target.hbs'));
+    popUpIndicatorsSQL = Handlebars.compile(require('../../queries/map/pop_up_indicators.hbs'));
 
-var PopUp = CartoDBModel.extend({
+var PopUp = CartoDBCollection.extend({
 
   indicators_table: CONFIG.cartodb.indicators_table,
   target_table: CONFIG.cartodb.targets_table,
@@ -37,16 +36,8 @@ var PopUp = CartoDBModel.extend({
     return this.fetch({url: url});
   },
 
-  getIndicatorsPerTarget: function(iso, target_slug) {
-    var query = popUpIndicatorsPerTargetSQL({
-      iso: iso, 
-      slug: target_slug, 
-      indicators_table: this.indicators_table
-    });
-
-    var url = this._url(query);
-
-    return this.fetch({url: url});
+  parse: function(data) {
+    return data.rows;
   }
 
 });
