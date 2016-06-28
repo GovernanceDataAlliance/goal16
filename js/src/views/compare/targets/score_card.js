@@ -187,10 +187,12 @@ var ScoreCardView = Backbone.View.extend({
   },
 
   render: function() {
-    var target = this.options.target;
+    var target = this.options.target,
+      siteurl = window.SITEURL;
 
     this.$el.html(this.template({
-      target: target
+      target: target,
+      siteurl: siteurl
     }));
 
     this._setVars();
