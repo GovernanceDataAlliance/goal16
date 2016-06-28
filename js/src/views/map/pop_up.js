@@ -17,22 +17,30 @@ var PopUpView = Backbone.View.extend({
   },
 
   _initData: function() {
-    this.model._getPopUpInfo(this.options).done(_.bind(function(response) {
+    this.model.getPopUpInfo(this.options).done(function(response) {
       //We need to check if response is empty to not draw pop-up in that case.
       if ( response.rows.length > 0) {
         this.options.data = this.model;
         this.template = this.options.layerType === 'target' ? popUpTargetTemplate : popUpIndicatorTemplate;
-        this.options.mobile ?  this._drawPopUpMobile() : this._drawPopUp();
+
+        if (this.options.layerType === 'target') {
+          this.model.getIndicatorsPerTarget(this.options.data.get('iso'), this.options.data.get('slug')).done(function(indicators){
+            this.options.data.set({indicators: _.groupBy(indicators.rows, 'type')})
+            this.options.mobile ? this._drawPopUpMobile() : this._drawPopUp();
+          }.bind(this))
+        } else {
+          this.options.mobile ? this._drawPopUpMobile() : this._drawPopUp();
+        }
       } else {
         this.model.clear();
       }
-    }, this));
+    }.bind(this));
   },
 
   _drawPopUpMobile: function() {
     this.popUp = this._getContent(this.options);
     $('body').append(this.popUp);
-    $("#popup-background").css("display","block");
+    $('#popup-background').css('display','block');
     $('.btn-close').on('click', this._closeInfowindow.bind(this));
   },
 
@@ -57,11 +65,13 @@ var PopUpView = Backbone.View.extend({
   _closeInfowindow: function() {
     $('.btn-close').off('click');
     $('.m-popup').remove();
-    $("#popup-background").css("display","none");
+    $('#popup-background').css('display' ,'none');
   },
 
   _getContent: function(options) {
-    return this.template(options.data.toJSON());
+    var data = options.data.toJSON();
+    data.url = SITEURL;
+    return this.template(data);
   },
 
 

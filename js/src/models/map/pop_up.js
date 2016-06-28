@@ -8,7 +8,8 @@ var CartoDBModel = require('../../lib/cartodb_model.js');
 var CONFIG = require('../../../config.json');
 
 var popUpTargetsSQL = Handlebars.compile(require('../../queries/map/pop_up_targets.hbs')),
-    popUpIndicatorsSQL = Handlebars.compile(require('../../queries/map/pop_up_indicators.hbs'));
+    popUpIndicatorsSQL = Handlebars.compile(require('../../queries/map/pop_up_indicators.hbs')),
+    popUpIndicatorsPerTargetSQL = Handlebars.compile(require('../../queries/map/pop_up_indicators_per_target.hbs'));
 
 var PopUp = CartoDBModel.extend({
 
@@ -20,7 +21,7 @@ var PopUp = CartoDBModel.extend({
     return format(BASE_URL, this.user_name) + "?q=" + query;
   },
 
-  _getPopUpInfo: function(options) {
+  getPopUpInfo: function(options) {
     var template = options.layerType === 'target' ? popUpTargetsSQL : popUpIndicatorsSQL;
 
     var query = template({
@@ -29,6 +30,18 @@ var PopUp = CartoDBModel.extend({
       slug: options.layer,
       lat: options.latLng.lat,
       lng: options.latLng.lng
+    });
+
+    var url = this._url(query);
+
+    return this.fetch({url: url});
+  },
+
+  getIndicatorsPerTarget: function(iso, target_slug) {
+    var query = popUpIndicatorsPerTargetSQL({
+      iso: iso, 
+      slug: target_slug, 
+      indicators_table: this.indicators_table
     });
 
     var url = this._url(query);
