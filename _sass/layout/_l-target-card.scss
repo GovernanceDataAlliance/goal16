@@ -7,8 +7,13 @@
   }
 
   .target-title {
-    width: 60%;
-    margin: 0 auto rem(30px);
+    margin: 0px;
+    width: 100%;
+    margin-bottom: rem(20px);
+    @media screen and (min-width: 768px) {
+      width: 60%;
+      margin: 0 auto rem(30px);
+    }
   }
 
   .target-title > h2 {
@@ -17,20 +22,25 @@
     font-weight: $font-weight-regular;
     line-height: 1.4;
     letter-spacing: rem(.3px);
-    text-align: center;
+    text-align: left;
     color: $font-color-8;
+    @media screen and (min-width: 768px) {
+      text-align: center;
+    }
   }
 
   .card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: none;
+    @media screen and (min-width: 768px) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
   }
 
   .button-container {
     display: flex;
     justify-content: center;
-
     margin: rem(50px) 0 rem(30px);
   }
 }
