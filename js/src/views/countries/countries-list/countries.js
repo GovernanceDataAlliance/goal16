@@ -9,6 +9,8 @@ var CountryListView = require('./countries_list.js');
 var SearchView = require('../../common/search/search_view.js'),
   SearchMobileView = require('../../common/search/search_mobile_view.js');
 
+require('../../common/slick.min');
+
 
 var CountriesView = Backbone.View.extend({
 
@@ -56,7 +58,6 @@ var CountriesView = Backbone.View.extend({
 
   render: function() {
     this.$el.html();
-
     return this;
   }
 

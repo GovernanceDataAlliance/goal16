@@ -67,6 +67,16 @@ var CountryView = Backbone.View.extend({
       });
 
       this.$el.append(targetCard.render().el);
+
+      // this.$(".slider-indicator").each(function() {
+      //   $(this).slick({
+      //     dots: true,
+      //     arrows: false,
+      //     infinite: true,
+      //     speed: 500,
+      //     fade: true
+      //   });
+      // });
     }
   },
 

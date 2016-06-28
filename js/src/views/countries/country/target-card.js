@@ -6,6 +6,9 @@ var $ = require('jquery'),
 
 var template = require('../../../templates/countries/country/indicator-card.hbs');
 
+require('../../common/slick.min');
+
+
 var IndicatorCardView = Backbone.View.extend({
 
   className: 'l-target-card',
@@ -50,6 +53,25 @@ var IndicatorCardView = Backbone.View.extend({
       shadowIndicators: shadowIndicators,
       target: target
     }));
+
+    this.$('.slider-indicator').slick({
+      dots: true,
+      arrows:false,
+      infinite: true,
+      speed: 500,
+      fade: true
+      // appendDots: $(".slick-list")
+    });
+
+    // $(".slider-indicator").each(function() {
+    //   $(this).slick({
+    //     dots: true,
+    //     arrows: false,
+    //     infinite: true,
+    //     speed: 500,
+    //     fade: true
+    //   });
+    // });
 
     return this;
   }
