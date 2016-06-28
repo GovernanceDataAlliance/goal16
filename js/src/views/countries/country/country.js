@@ -39,12 +39,16 @@ var CountryView = Backbone.View.extend({
       this.countriesCollection.getCountriesList(),
       this.indicatorsCollection.getAllIndicatorsByCountry(iso)
     ).done(function() {
+      this._setBanner();
       this._renderData();
     }.bind(this))
 
   },
 
-  _setVars: function() {},
+  _setVars: function() {
+    this.$banner = $('.l-banner');
+    this.$bannerTitle = this.$banner.find('.c-section-title');
+  },
 
   _getCountryInfo: function(iso) {
     return this.countriesCollection.getCountryData({iso: iso});
@@ -53,6 +57,15 @@ var CountryView = Backbone.View.extend({
   _share: function() {
     this.shareWindowView.render();
     this.shareWindowView.delegateEvents();
+  },
+  
+  _setBanner: function() {
+    var iso = this.status.get('iso'),
+      country = this._getCountryInfo(iso),
+      regionClass = '-' + country.region_name.toLowerCase();
+
+    this.$banner.addClass(regionClass);
+    this.$bannerTitle.text(country.name);
   },
 
   _renderData: function() {
@@ -79,6 +92,8 @@ var CountryView = Backbone.View.extend({
 
   render: function() {
     this.$el.html();
+
+    this._setVars();
 
     return this;
   }
