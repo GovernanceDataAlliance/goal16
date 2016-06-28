@@ -13,7 +13,7 @@
         <ul class="indicator-list" data-iso="{{ iso }}">
           {{#each officialIndicators}}
             <li class="indicator-item">
-              <span class="indicator-score"> {{ score }}{{ units_abbr }}</span>
+              <span class="indicator-score"> {{ comma score }}{{ units_abbr }}</span>
               <h4 class="indicator-title">{{ indicator_title }}</h4>
               <div class="indicator-metadata">
                 <span class="indicator-source"> {{ source_title }} </span>
@@ -35,7 +35,7 @@
         <ul class="indicator-list" data-iso="{{ iso }}">
           {{#each shadowIndicators}}
             <li class="indicator-item">
-              <span class="indicator-score"> {{ score }} </span>
+              <span class="indicator-score"> {{ comma score }} </span>
               <h4 class="indicator-title">{{ indicator_title }}</h4>
               <div class="indicator-metadata">
                 <span class="indicator-source"> {{ source_title }} </span>
