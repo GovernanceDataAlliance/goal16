@@ -6,7 +6,8 @@ var Status = require('../../../models/countries/status.js');
 var CountriesCollection = require('../../../collections/common/countries.js'),
   IndicatorsCollection = require('../../../collections/common/indicators');
 
-var TargetCardView = require('./target-card.js'),
+var BannerView = require('./banner.js'),
+  TargetCardView = require('./target-card.js'),
   ShareWindowView = require('../../common/share_window.js');
 
 var CountryView = Backbone.View.extend({
@@ -39,13 +40,14 @@ var CountryView = Backbone.View.extend({
       this.countriesCollection.getCountriesList(),
       this.indicatorsCollection.getAllIndicatorsByCountry(iso)
     ).done(function() {
-      this._setBanner();
+      this._renderBanner();
       this._renderData();
     }.bind(this))
 
   },
 
   _setVars: function() {
+    this.$header = $('.l-header');
     this.$banner = $('.l-banner');
     this.$bannerTitle = this.$banner.find('.c-section-title');
   },
@@ -59,13 +61,20 @@ var CountryView = Backbone.View.extend({
     this.shareWindowView.delegateEvents();
   },
 
-  _setBanner: function() {
+  _renderBanner: function() {
     var iso = this.status.get('iso'),
       country = this._getCountryInfo(iso),
       regionClass = '-' + country.region_name.toLowerCase();
 
-    this.$banner.addClass(regionClass);
-    this.$bannerTitle.text(country.name);
+    var viewOptions = {
+      country: country,
+      regionClass: regionClass
+    };
+
+    $('.l-banner').remove();
+
+    var bannerView = new BannerView(viewOptions);
+    this.$header.after(bannerView.render().el);
   },
 
   _renderData: function() {
