@@ -35,6 +35,10 @@ var CountriesView = Backbone.View.extend({
     });
   },
 
+  _setVars: function() {
+    this.$share = $('.l-share');
+  },
+
   renderCountryList: function() {
     this.countriesCollection.getCountriesList().done(function() {
       this.$el.html(new CountryListView().render().el);
@@ -56,6 +60,10 @@ var CountriesView = Backbone.View.extend({
 
   render: function() {
     this.$el.html();
+    this._setVars();
+
+    this.$share.toggleClass('is-hidden');
+
 
     return this;
   }
