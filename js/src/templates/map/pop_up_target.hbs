@@ -6,18 +6,34 @@
   </button>
   <div class="wrapper">
 
-    <a href="countries/FRA"><h1 class="c-title-popup -subtitle">{{name}}</h1></a>
-    <p class="c-subtitle-popup">OFFICIAL INDICATORS</p>
-    {{#each indicators}}
-    <div class="data-numbers">
-      <span class="data-numbers-text">{{title}}</span>
-      <span class="c-score-popup -small">{{score}} {{units_abbr}}</span>
+    <a href="countries/FRA"><h1 class="c-title-popup -small">{{name}}</h1></a>
+    
+    <div class="scroll-wrapper">
+      {{#if indicators}}
+        {{#if indicators.official}}
+        <p class="c-subtitle-popup">OFFICIAL INDICATORS</p>
+          {{#each indicators.official}}
+            <div class="data-numbers">
+              <span class="data-numbers-text">{{title}}</span>
+              <span class="c-score-popup -small">{{score}} {{units_abbr}}</span>
+            </div>
+          {{/each}}
+        {{/if}}
+        {{#if indicators.shadow}}
+        <p class="c-subtitle-popup -shadow">SHADOW INDICATORS</p>
+          {{#each indicators.shadow}}
+            <div class="data-numbers">
+              <span class="data-numbers-text">{{title}}</span>
+              <span class="c-score-popup -small">{{score}} {{units_abbr}}</span>
+            </div>
+          {{/each}}
+        {{/if}}
+      {{/if}}
     </div>
-    {{/each}}
+
     <div class="links">
       <a href="{{url}}/countries/?iso={{iso}}">visit country page > </a>
       <a href="{{url}}/compare/?isoA={{iso}}">compare to others > </a>
-
     </div>
   </div>
 </div>

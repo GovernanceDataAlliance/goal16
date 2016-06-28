@@ -24,12 +24,10 @@ var PopUpView = Backbone.View.extend({
         this.template = this.options.layerType === 'target' ? popUpTargetTemplate : popUpIndicatorTemplate;
 
         if (this.options.layerType === 'target') {
-          console.log(this.options)
           this.model.getIndicatorsPerTarget(this.options.data.get('iso'), this.options.data.get('slug')).done(function(indicators){
-            console.log('review')
-            this.options.data.set({indicators: _.groupBy(indicators, 'type')})
+            this.options.data.set({indicators: _.groupBy(indicators.rows, 'type')})
             this.options.mobile ? this._drawPopUpMobile() : this._drawPopUp();
-          }.bind(this)) 
+          }.bind(this))
         } else {
           this.options.mobile ? this._drawPopUpMobile() : this._drawPopUp();
         }
@@ -71,8 +69,9 @@ var PopUpView = Backbone.View.extend({
   },
 
   _getContent: function(options) {
-    console.log(options)
-    return this.template(options.data.toJSON());
+    var data = options.data.toJSON();
+    data.url = SITEURL;
+    return this.template(data);
   },
 
 
