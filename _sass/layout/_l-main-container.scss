@@ -10,7 +10,6 @@
   }
 }
 
-
 .l-main-container {
   @extend %l-main-container;
   margin-top: $header-height;
@@ -18,7 +17,14 @@
   @media screen and (min-width: 768px) {
     margin-top: 0;
   }
+
   &.is-map{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
     border-right: 0px;
     border-left: 0px;
     max-width: 100%;
@@ -26,12 +32,3 @@
   }
 }
 
-
-// .js--countries,
-// .compare-container {
-//   min-height: rem(500px);
-// }
-
-.js--indicators-container {
-  min-height: rem(900px);
-}

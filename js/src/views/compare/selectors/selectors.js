@@ -34,7 +34,20 @@ var SelectorsView = Backbone.View.extend({
       this._checkSelectors();
       this._checkCompareButton();
     }.bind(this));
+  },
 
+  setView: function() {
+    enquire.register("screen and (max-width:767px)", {
+      match: _.bind(function(){
+        this._destroyChosen();
+      },this)
+    });
+
+    enquire.register("screen and (min-width:768px)", {
+      match: _.bind(function(){
+        this._setChosen();
+      },this)
+    });
   },
 
   _setVars: function() {
@@ -125,9 +138,17 @@ var SelectorsView = Backbone.View.extend({
     }
   },
 
-  setChosen: function() {
-    this.$selectors.each(function(i, selector) {
-      $(selector).chosen();
+  _setChosen: function() {
+    this.$selectors.each(function() {
+      $(this).chosen();
+    });
+  },
+
+  _destroyChosen: function() {
+    this.$selectors.each(function() {
+      $(this).removeClass('chzn-done')
+      $(this).siblings('.chzn-container').remove();
+      $(this).removeAttr('style');
     });
   },
 

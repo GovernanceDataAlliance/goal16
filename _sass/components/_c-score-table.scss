@@ -80,9 +80,13 @@
     &.-indicator {
       flex-direction: column;
 
-
-      font-size: $font-size-xxsmall;
-      text-transform: uppercase;
+      > .indicator-name {
+        font-size: $font-size-xxsmall;
+        color: $font-color-1;
+        text-transform: uppercase;
+        line-height: 1.8;
+        letter-spacing: rem(.5px);
+      }
 
       > .indicator-info {
         margin: rem(5px) 0;

@@ -6,7 +6,8 @@ var Status = require('../../../models/countries/status.js');
 var CountriesCollection = require('../../../collections/common/countries.js'),
   IndicatorsCollection = require('../../../collections/common/indicators');
 
-var TargetCardView = require('./target-card.js');
+var TargetCardView = require('./target-card.js'),
+  ShareWindowView = require('../../common/share_window.js');
 
 var CountryView = Backbone.View.extend({
 
@@ -19,10 +20,13 @@ var CountryView = Backbone.View.extend({
     // collections
     this.countriesCollection = CountriesCollection;
     this.indicatorsCollection = new IndicatorsCollection();
+
+    // views
+    this.shareWindowView = new ShareWindowView();
   },
 
   _setListeners: function() {
-    $('#js--share').on('click', this._share);
+    $('#js--share').on('click', this._share.bind(this));
   },
 
   show: function() {
@@ -35,18 +39,34 @@ var CountryView = Backbone.View.extend({
       this.countriesCollection.getCountriesList(),
       this.indicatorsCollection.getAllIndicatorsByCountry(iso)
     ).done(function() {
+      this._setBanner();
       this._renderData();
     }.bind(this))
 
   },
 
-  _setVars: function() {},
+  _setVars: function() {
+    this.$banner = $('.l-banner');
+    this.$bannerTitle = this.$banner.find('.c-section-title');
+  },
 
   _getCountryInfo: function(iso) {
     return this.countriesCollection.getCountryData({iso: iso});
   },
 
-  _share: function() {},
+  _share: function() {
+    this.shareWindowView.render();
+    this.shareWindowView.delegateEvents();
+  },
+  
+  _setBanner: function() {
+    var iso = this.status.get('iso'),
+      country = this._getCountryInfo(iso),
+      regionClass = '-' + country.region_name.toLowerCase();
+
+    this.$banner.addClass(regionClass);
+    this.$bannerTitle.text(country.name);
+  },
 
   _renderData: function() {
     var iso = this.status.get('iso'),
@@ -82,6 +102,8 @@ var CountryView = Backbone.View.extend({
 
   render: function() {
     this.$el.html();
+
+    this._setVars();
 
     return this;
   }
