@@ -6,7 +6,8 @@ var Status = require('../../../models/countries/status.js');
 var CountriesCollection = require('../../../collections/common/countries.js'),
   IndicatorsCollection = require('../../../collections/common/indicators');
 
-var TargetCardView = require('./target-card.js');
+var TargetCardView = require('./target-card.js'),
+  ShareWindowView = require('../../common/share_window.js');
 
 var CountryView = Backbone.View.extend({
 
@@ -19,10 +20,13 @@ var CountryView = Backbone.View.extend({
     // collections
     this.countriesCollection = CountriesCollection;
     this.indicatorsCollection = new IndicatorsCollection();
+
+    // views
+    this.shareWindowView = new ShareWindowView();
   },
 
   _setListeners: function() {
-    $('#js--share').on('click', this._share);
+    $('#js--share').on('click', this._share.bind(this));
   },
 
   show: function() {
@@ -46,7 +50,10 @@ var CountryView = Backbone.View.extend({
     return this.countriesCollection.getCountryData({iso: iso});
   },
 
-  _share: function() {},
+  _share: function() {
+    this.shareWindowView.render();
+    this.shareWindowView.delegateEvents();
+  },
 
   _renderData: function() {
     var iso = this.status.get('iso'),
