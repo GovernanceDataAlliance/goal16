@@ -10,7 +10,8 @@ var TargetsCollection = require('../../collections/common/targets.js');
 var Status = require ('../../models/compare/status.js');
 
 var SelectorsView = require('./selectors/selectors.js'),
-  TargetListView = require('./targets/target_list.js');
+  TargetListView = require('./targets/target_list.js'),
+  ShareWindowView = require('../common/share_window.js');
 
 var template = Handlebars.compile(require('../../templates/compare/index.hbs'));
 
@@ -37,6 +38,8 @@ var CompareView = Backbone.View.extend({
     this.selectorsView = new SelectorsView({
       status: this.status
     });
+
+    this.shareWindowView = new ShareWindowView();
 
     this.targetListView = new TargetListView({
       status: this.status
@@ -69,7 +72,7 @@ var CompareView = Backbone.View.extend({
   },
 
   _setListeners: function() {
-    $('#js--share').on('click', this._share);
+    $('#js--share').on('click', this._share.bind(this));
   },
 
   _setView: function() {
@@ -93,10 +96,6 @@ var CompareView = Backbone.View.extend({
   },
 
   _compareCountries: function() {
-
-    // Think about a way to avoid clicking on compare
-    // when countries haven't been modified
-
     this._updateRouterParams();
     this.targetListView.resetScores();
 
@@ -104,7 +103,10 @@ var CompareView = Backbone.View.extend({
     this.$shareSection.removeClass('is-hidden');
   },
 
-  _share: function() {},
+  _share: function() {
+    this.shareWindowView.render();
+    this.shareWindowView.delegateEvents();
+  },
 
   _renderTargetList: function() {
     var countries = _.compact(_.values(this.status.toJSON()));
