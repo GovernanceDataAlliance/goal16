@@ -16,28 +16,17 @@
     </div>
     <div class="table-body">
 
-        {{#each officialIndicators}}
+      {{#each officialIndicators}}
 
-          <div class="table-row">
-            <div class="table-cell -indicator">
-              <a href="{{ siteurl }}/data/?indicator={{ indicator_slug }}" class="indicator-name">{{ indicator_title }}</a>
-              <span class="indicator-info">{{ source_title }} {{#if year }} | Last data point: {{ year }} {{/if}}</span>
-            </div>
+        <div class="table-row">
+          <div class="table-cell -indicator">
+            <a href="{{ siteurl }}/data/?indicator={{ indicator_slug }}" class="indicator-name">{{indicator_code}} {{ indicator_title }}</a>
+            <span class="indicator-info">{{ source_title }} {{#if year }} | Last data point: {{ year }} {{/if}}</span>
+          </div>
 
-            <div class="table-cell -score">
-              <span>{{comma scoreA }}</span>
-              <span class="country-name only-mobile">{{ countryA }}</span>
-            </div>
-
-            <div class="table-cell -score">
-              <span>{{comma scoreB }}</span>
-              <span class="country-name only-mobile">{{ countryB }}</span>
-            </div>
-
-            <div class="table-cell -score">
-              <span>{{comma scoreC }}</span>
-              <span class="country-name only-mobile">{{ countryC }}</span>
-            </div>
+          <div class="table-cell -score">
+            <span>{{#if scoreA}} {{ scoreA }} {{else}} - {{/if}}</span>
+            <span class="country-name only-mobile">{{ countryA }}</span>
           </div>
 
         {{else}}
@@ -77,7 +66,7 @@
 
         <div class="table-row">
           <div class="table-cell -indicator">
-            <a href="{{ siteurl }}/data/?indicator={{ indicator_slug }}" class="indicator-name">{{ indicator_title }}</a>
+            <a href="{{ siteurl }}/data/?indicator={{ indicator_slug }}" class="indicator-name">{{indicator_code}} {{ indicator_title }}</a>
             <span class="indicator-info">{{ source_title }} {{#if year }} | Last data point: {{ year }} {{/if}}</span>
           </div>
 
