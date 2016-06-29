@@ -43,9 +43,15 @@
   font-size: rem(25px);
 }
 
+.leaflet-control-attribution {
+  padding: 0;
+}
+
 .leaflet-bottom {
   bottom: rem(50px);
+
   z-index: 1;
+
   font-size: rem($font-size-xxsmall);
 
   a {
@@ -53,6 +59,8 @@
   }
 
   @media screen and (min-width: 768px) {
+    right: rem(30px);
+    padding: 0;
     bottom: rem(10px);
   }
 }
