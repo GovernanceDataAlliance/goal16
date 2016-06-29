@@ -1,9 +1,11 @@
-SELECT 
-  code, 
-  slug, 
+SELECT
+  code as indicator_code, 
+  slug,
   title,
-  type, 
+  type,
   target_slug 
 FROM 
   {{ table }} 
-WHERE target_slug = '{{ slug }}'
+WHERE target_slug = '{{ slug }}' 
+order by 
+  code

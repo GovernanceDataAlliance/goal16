@@ -3,6 +3,7 @@ select
   t.slug as target_slug, 
   t.title as target_title,
 
+  i.code as indicator_code, 
   i.description, 
   i.link, 
   i.max_score, 
@@ -34,4 +35,7 @@ on
 join 
   {{ sources_table}} as so 
 on 
-  i.source_slug = so.slug
+  i.source_slug = so.slug 
+order by 
+  i.code
+

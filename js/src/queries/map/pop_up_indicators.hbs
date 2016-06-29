@@ -1,5 +1,6 @@
 SELECT 
   name, 
+  i.code as indicator_code, 
   i.title,  
   score, 
   year, 
@@ -12,4 +13,7 @@ INNER JOIN {{countries_table}} c ON s.iso=c.iso INNER JOIN {{indicators_table}} 
 WHERE  
 s.iso LIKE (SELECT iso FROM {{countries_table}} WHERE st_intersects(the_geom, st_setSrid(ST_MakePoint({{lng}}, {{lat}}),4326))) 
 AND 
-indicator_slug LIKE '{{slug}}'
+indicator_slug LIKE '{{slug}}' 
+order by 
+  i.code
+

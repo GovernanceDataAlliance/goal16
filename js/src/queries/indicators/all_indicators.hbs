@@ -1,4 +1,5 @@
 SELECT
+  i.code as indicator_code, 
   i.slug, 
   i.title, 
   i.description, 
@@ -10,5 +11,7 @@ SELECT
   i.type,
   i.target_slug 
 FROM 
-  {{ table }} as i
+  {{ table }} as i 
+order by 
+  i.code
 
