@@ -68,6 +68,7 @@
       height: rem(65px);
       margin: 0;
       border-right: 0;
+      border-radius: 0px;
     }
     @media screen and (min-width: 768px) {
       margin: 0;
@@ -89,11 +90,15 @@
     // &.-secondary {
     //   padding: rem(25px) rem(0px);
     // }
+    @media screen and (min-width: $screen-l) {
+      // padding: rem(25px) rem(0px);
+    }
     @media screen and (min-width: $screen-s) {
       position: absolute;
       top: 0;
       right: 0;
       width: 21%;
+      padding: rem(25px) rem(0px);
     }
   }
 }

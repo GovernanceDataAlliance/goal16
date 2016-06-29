@@ -50,6 +50,9 @@
     display: none;
 
     @media screen and (min-width: 768px) {
+      display: -webkit-flex;
+      display: -moz-box;
+      display: -ms-flexbox;
       display: flex;
     }
   }
@@ -64,8 +67,8 @@
 
 .btn-toogle-dashboard {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  // justify-content: center;
+  // align-items: center;
   position: absolute;
   right: rem(-32px);
   top: 0;
@@ -78,11 +81,15 @@
     content: "";
     @include arrow(5px, $white, 2px, -45deg);
     transition: .2s ease;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    position: absolute;
   }
 
   .is-dashboard-close & {
     &:after {
-      transform: rotate(-225deg);
+      transform: translate(-50%, -50%) rotate(-225deg);
     }
   }
 }
