@@ -43,10 +43,12 @@
     bottom: rem(80px);
     padding: 0 rem(20px);
     overflow: scroll;
-
+    
     @media screen and (min-width: 768px) {
       bottom: rem(75px);
       padding: 0 rem(25px);
+      overflow-x: hidden;
+      max-width: rem(430px);
     }
   }
 
@@ -116,7 +118,7 @@
 
   .data-numbers {
     margin-top: rem(13px);
-
+    width: 100%;
     @media screen and (min-width: $screen-s) {
       display: flex;
       justify-content: space-between;

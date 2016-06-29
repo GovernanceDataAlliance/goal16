@@ -1,5 +1,6 @@
 .m-card--indicators {
   flex-basis: calc(50% - 35px);
+  -ms-flex-basis: calc(50% - 35px);
   padding: rem(40px) rem(65px) rem(55px);
   box-shadow: 0 0 rem(40px) 0 rgba(7, 51, 56, 0.07);
 
