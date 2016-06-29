@@ -12,7 +12,7 @@
         <p class="c-subtitle-popup">OFFICIAL INDICATORS</p>
           {{#each indicators.official}}
             <div class="data-numbers">
-              <span class="data-numbers-text">{{title}}</span>
+              <span class="data-numbers-text">{{indicator_code}} {{title}}</span>
               <span class="c-score-popup -small">{{score}} {{units_abbr}}</span>
             </div>
           {{/each}}
@@ -21,7 +21,7 @@
         <p class="c-subtitle-popup -shadow">SHADOW INDICATORS</p>
           {{#each indicators.shadow}}
             <div class="data-numbers">
-              <span class="data-numbers-text">{{title}}</span>
+              <span class="data-numbers-text">{{indicator_code}} {{title}}</span>
               <span class="c-score-popup -small">{{score}} {{units_abbr}}</span>
             </div>
           {{/each}}
