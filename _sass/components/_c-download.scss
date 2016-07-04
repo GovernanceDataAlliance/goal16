@@ -20,18 +20,23 @@
         background-color: darken($color-5, 10% );
       }
         @media screen and (min-width: $screen-s) {
+        // font-size: $font-size-xsmall;
+        // letter-spacing: rem(.7px);
+        // max-width: rem(211px);
+        // margin-top: rem(0px);
+        // display: inline-block;
+        // margin-right: rem(10px);
+        // &:last-child{
+        //   margin-right: rem(0px);
+        // }
+      }
+      @media screen and (min-width: 768px) {
         font-size: $font-size-xsmall;
         letter-spacing: rem(.7px);
         max-width: rem(211px);
         margin-top: rem(0px);
         display: inline-block;
         margin-right: rem(10px);
-        &:last-child{
-          margin-right: rem(0px);
-        }
-      }
-      @media screen and (min-width: 768px) {
-        margin-right: rem(25px);
         &:last-child{
           margin-right: rem(0px);
         }
