@@ -26,6 +26,10 @@
     text-transform: none;
     color: $font-color-2;
     text-align: left;
+    cursor: pointer;
+    option{
+      color: $font-color-6;
+    }
   }
 
 }
