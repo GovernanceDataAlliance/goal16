@@ -87,6 +87,13 @@ $footer-height: rem(375px);
     padding-right: $wrap-padding-mobile;
     padding-left: $wrap-padding-mobile;
     padding-bottom: rem(40px);
+    .footer-logo-gda{
+      width: rem(25px);
+      height: rem(30px);
+      left: rem(10px);
+      top: rem(10px);
+      position: relative;
+    }
     @media screen and (min-width: $screen-s) {
       padding: 0;
     }
