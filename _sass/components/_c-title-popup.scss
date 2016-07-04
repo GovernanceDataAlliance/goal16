@@ -44,11 +44,12 @@
 }
 
 .c-subtitle-popup {
-  text-align: center;
   font-family: $font-family-primary;
-  color: $font-color-6;
-  letter-spacing: rem(0.5px);
   font-size: $font-size-xxsmall;
+  text-align: center;
+  text-transform: uppercase;
+  color: $font-color-6;
+  letter-spacing: rem(.5px);
 
   &:after {
     content: "";

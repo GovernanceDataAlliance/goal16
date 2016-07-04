@@ -1,6 +1,6 @@
 {{#if official}}
 <div class="indicators-type-wrapper official-indicators">
-  <span class="indicator-type">official indicators</span>
+  <span class="indicator-type">IAEG global indicator</span>
   {{#each official}}
   <div class="indicator-wrapper">
     <input type="radio" name="layer-selector" value={{slug}} id={{slug}} class="js--layer-selector -indicator">
@@ -16,7 +16,7 @@
 {{/if}}
 {{#if shadow}}
 <div class="indicators-type-wrapper shadow-indicators">
-  <span class="indicator-type">shadow indicators</span>
+  <span class="indicator-type">complementary global indicator</span>
   {{#each shadow}}
   <div class="indicator-wrapper">
     <input type="radio" name="layer-selector" value={{slug}} id={{slug}} class="js--layer-selector -indicator">
