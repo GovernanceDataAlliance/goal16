@@ -38,12 +38,13 @@
             <span>{{comma scoreC }}</span>
             <span class="country-name only-mobile">{{ countryC }}</span>
           </div>
+        </div>
 
         {{else}}
           <div class="table-row">
             <span class="no-indicators">No indicators available</span>
           </div>
-      {{/each}}
+        {{/each}}
     </div>
 
 {{else}}
@@ -65,9 +66,9 @@
             <span>{{ name }}</span>
           </div>
         {{/each}}
-
       </div>
     </div>
+
     <div class="table-body">
 
       {{#each shadowIndicators}}
