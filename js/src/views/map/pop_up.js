@@ -75,6 +75,7 @@ var PopUpView = Backbone.View.extend({
 
   _getContent: function(options) {
     this.options.data.url = SITEURL;
+
     return this.template(this.options.data);
   }
 

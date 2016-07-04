@@ -1,10 +1,11 @@
 SELECT 
-  i.slug,
-  i.title,
+  i.code as indicator_code, 
+  i.slug, 
+  i.title, 
   s.score, 
-  s.iso,  
-  i.type, 
-  i.units_abbr   
+  s.iso, 
+  i.type,  
+  i.units_abbr 
 FROM {{indicators_table}} i JOIN {{scores_table}} s ON s.indicator_slug=i.slug 
 WHERE i.target_slug = '{{slug}}' 
 AND 
