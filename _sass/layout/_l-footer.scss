@@ -21,8 +21,12 @@ $footer-height: rem(375px);
   .footer-info {
     padding-right: $wrap-padding-mobile;
     padding-left: $wrap-padding-mobile;
+    border-bottom: 1px solid $color-3;
+    padding-bottom: rem(45px);
     @media screen and (min-width: $screen-s) {
       padding: 0;
+      padding-bottom: rem(45px);
+      margin-bottom: rem(35px);
     }
     .text-creative-license {
       text-align: center;
@@ -75,6 +79,16 @@ $footer-height: rem(375px);
         width: rem(120px);
         margin-bottom: rem(70px);
       }
+    }
+  }
+
+  .footer-info-second{
+    text-align: center;
+    padding-right: $wrap-padding-mobile;
+    padding-left: $wrap-padding-mobile;
+    padding-bottom: rem(40px);
+    @media screen and (min-width: $screen-s) {
+      padding: 0;
     }
   }
 }
