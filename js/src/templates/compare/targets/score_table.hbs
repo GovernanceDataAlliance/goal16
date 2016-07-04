@@ -25,9 +25,20 @@
           </div>
 
           <div class="table-cell -score">
-            <span>{{#if scoreA}} {{ scoreA }} {{else}} - {{/if}}</span>
+            <span>{{comma scoreA }}</span>
             <span class="country-name only-mobile">{{ countryA }}</span>
           </div>
+
+          <div class="table-cell -score">
+            <span>{{comma scoreB }}</span>
+            <span class="country-name only-mobile">{{ countryB }}</span>
+          </div>
+
+          <div class="table-cell -score">
+            <span>{{comma scoreC }}</span>
+            <span class="country-name only-mobile">{{ countryC }}</span>
+          </div>
+        </div>
 
         {{else}}
           <div class="table-row">
@@ -35,7 +46,6 @@
           <div>
         {{/each}}
 
-    </div>
 </div>
 
 {{else}}
