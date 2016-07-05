@@ -3,22 +3,13 @@ var _ = require('lodash'),
   Backbone = require('backbone'),
   Handlebars = require('handlebars');
 
-var modalWindowtemplate = require('../../templates/common/modal_window_tpl.hbs');
+var disclaimertemplate = require('../../templates/common/disclaimer_tpl.hbs');
 
-/*
- * Creates modal infowindow.
- * It should recieve type option to generate template.
- * Default type: info
- * Available options:
- * - info-infowindow
- * - share-infowindow
- * - map-disclaimer
-*/
-var ModalWindowView = Backbone.View.extend({
+var MapDisclaimerView = Backbone.View.extend({
 
   el: 'body',
 
-  template: Handlebars.compile(modalWindowtemplate),
+  template: Handlebars.compile(disclaimertemplate),
 
   events: function() {
     if (window.ontouchstart) {
@@ -33,13 +24,9 @@ var ModalWindowView = Backbone.View.extend({
     };
   },
 
-  initialize: function(options) {
-    this.type = options && options.type ? options.type : 'info-infowindow';
-    this.data = options && options.data ? options.data : null;
-
-    this._setListeners();
-
+  initialize: function() {
     this.render();
+    this._setListeners();
   },
 
   _setListeners: function() {
@@ -50,38 +37,11 @@ var ModalWindowView = Backbone.View.extend({
     $(this.el).find('#infowindow-base').remove();
   },
 
-  _setView: function() {
-    switch(this.type) {
-
-      case 'share-infowindow':
-        return { isShare: true };
-
-      case 'map-disclaimer':
-        return { mapDisclaimer: true };
-
-      default:
-        return { isIndicator: true };
-    }
-  },
-
   render: function() {
     this.fixed = true;
 
-    var params = _.extend({
-      data: this.data
-    }, this._setView());
-
-    // Filters content depending on the data
-    var innerContent = this.template(params);
-
     // Renders base template
-    this.$el.append(this.template({
-      isBase: true
-    }));
-
-    // Adds filtered content to base template
-    this.$('#modal-content').append(innerContent);
-
+    this.$el.append(this.template());
     this.toogleState();
   },
 
@@ -115,6 +75,7 @@ var ModalWindowView = Backbone.View.extend({
     $('html').addClass('is-inmobile');
     $('body').addClass('is-inmobile');
   }
+
 });
 
-module.exports = ModalWindowView;
+module.exports = MapDisclaimerView;
