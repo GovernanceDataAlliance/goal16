@@ -23,7 +23,7 @@ Handlebars.registerHelper('comma', function(number) {
     }
   }
 
-  return number === 0 ? number.toString() : '-';
+  return number || number === 0 ? number.toString() : '-';
 });
 
 Handlebars.registerHelper('beautifullStrign', function(options) {
