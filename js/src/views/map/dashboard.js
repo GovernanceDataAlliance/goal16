@@ -130,6 +130,7 @@ var DashboardView = Backbone.View.extend({
 
   _renderTargets: function() {
     var targets = this.targetsCollection.toJSON();
+
     this.$('#targets-container').append(targetsTemplate({targets: targets}));
 
     this._setVars();

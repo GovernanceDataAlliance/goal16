@@ -85,6 +85,7 @@ var CountryView = Backbone.View.extend({
     for (var targetSlug in indicatorsByTarget) {
       var indicators =  indicatorsByTarget[targetSlug],
         target = {
+          code: indicators[0].target_code,
           title: indicators[0].target_title,
           slug: indicators[0].target_slug
         };
