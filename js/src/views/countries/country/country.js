@@ -103,7 +103,8 @@ var CountryView = Backbone.View.extend({
         target: target
       });
 
-      this.$targetList.append(targetCard.render().el);
+      this.$targetList.find('> .wrap').append(targetCard.render().el);
+
       targetCard.setSlick();
     }
   },

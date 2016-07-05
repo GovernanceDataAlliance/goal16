@@ -85,11 +85,11 @@ var IndicatorCardView = Backbone.View.extend({
       cardView: this
     };
 
-    var targetCardHeaderView = new TargetCardHeaderView(optionsView);
+    this.targetCardHeaderView = new TargetCardHeaderView(optionsView);
 
-    this.$el.append(targetCardHeaderView.render().el);
+    this.$el.append(this.targetCardHeaderView.render().el);
 
-    this.$el.find('.js--score-container').append(this.template({
+    this.$el.find('.js--score-container').html(this.template({
       iso: iso,
       officialIndicators: officialIndicators,
       shadowIndicators: shadowIndicators
