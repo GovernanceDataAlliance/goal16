@@ -39,8 +39,11 @@ var IndicatorsCollection = CartoDBCollection.extend({
   },
 
   getAllIndicators: function() {
-    var query = allIndicatorsSQL({ table: this.indicators_table }),
-      url = this._urlForQuery(query);
+    var query = allIndicatorsSQL({
+      indicators_table: this.indicators_table ,
+      sources_table: this.sources_table
+    }),
+    url = this._urlForQuery(query);
 
     return this.fetch({ url: url });
   },

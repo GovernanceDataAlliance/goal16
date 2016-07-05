@@ -63,7 +63,7 @@
 
         {{#each countries}}
           <div class="table-cell -country">
-            <span>{{ name }}</span>
+            <span>{{#if name }} {{name}} {{else}} - {{/if}}</span>
           </div>
         {{/each}}
       </div>
