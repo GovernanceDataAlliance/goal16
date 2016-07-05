@@ -29,10 +29,12 @@
 
   .js--open-search-mb {
     margin-top: rem(80px);
+    display: block;
 
     @media screen and (min-width: $screen-s) {
       width: 100%;
       margin: rem(80px) auto;
+      display: block;
     }
 
     @media screen and (min-width: $screen-m) {
