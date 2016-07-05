@@ -1,8 +1,12 @@
 .m-card--indicators {
-  width: 45%;
+  width: 100%;
   padding: rem(40px) rem(65px) rem(55px);
+
   box-shadow: 0 0 rem(40px) 0 rgba(7, 51, 56, 0.07);
-  float: left;
+
+  @media screen and (min-width: 768px) {
+    width: 45%;
+  }
 
   > .card-title {
     position: relative;
@@ -83,36 +87,5 @@
     margin: rem(25px) 0;
 
     text-align: center;
-  }
-}
-
-.slider-indicator{
-  .m-card--indicators{
-    background-color: $white;
-    box-shadow: 0 0 40px 0 rgba(7, 51, 56, 0.07);
-    padding-bottom: rem(20px);
-    padding-bottom: rem(20px);
-  }
-  .slick-dots{
-    position: relative;
-    li{
-
-      button{
-        &:before{
-          font-size: rem(40px);
-        }
-      }
-    }
-    li.slick-active{
-      button{
-        &:before{
-          color: $color-5;
-        }
-      }
-    }
-  }
-  display: block;
-  @media screen and (min-width: 768px) {
-    display: none;
   }
 }
