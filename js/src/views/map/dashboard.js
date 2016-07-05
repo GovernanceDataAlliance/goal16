@@ -119,6 +119,7 @@ var DashboardView = Backbone.View.extend({
   },
 
   _hideIndicators: function(e) {
+    e && e.stopPropagation();
     var $currentTarget = $(e.currentTarget);
     $currentTarget.parents('.m-dashboard-target').removeClass('is-open');
   },
