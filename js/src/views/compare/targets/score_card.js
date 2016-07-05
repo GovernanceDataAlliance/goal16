@@ -6,24 +6,18 @@ var $ = require('jquery'),
 var CountriesCollection = require('../../../collections/common/countries.js'),
   ScoresCollection = require('../../../collections/common/scores.js');
 
-var InfoWindowView = require('../../../views/common/infowindow.js');
+var InfoWindowView = require('../../../views/common/infowindow.js'),
+  TargetCardHeaderView = require('../../../views/common/target-card/header.js');
 
-var TargetCardTemplate = require('../../../templates/compare/targets/target_card.hbs'),
-  IndicatorTableTemplate = require('../../../templates/compare/targets/score_table.hbs');
+var IndicatorTableTemplate = require('../../../templates/compare/targets/score_table.hbs');
 
 var FunctionHelper = require('../../../helpers/functions.js');
 
 var ScoreCardView = Backbone.View.extend({
 
-  tagName: 'article',
-
   className: 'c-score-card',
 
-  template: Handlebars.compile(TargetCardTemplate),
-
-  events: {
-    'click .js--target-info': '_toggleCard'
-  },
+  tagName: 'article',
 
   initialize: function(settings) {
     this.options = settings || {};
@@ -46,10 +40,17 @@ var ScoreCardView = Backbone.View.extend({
     this.scoresCollection = new ScoresCollection();
   },
 
+  _setListeners: function() {
+    this.targetCardHeaderView.on('toggle:card', function() {
+      if (this.isFirstTime) {
+        this._getInfo();
+      }
+
+    }.bind(this));
+  },
+
   _setVars: function() {
-    this.$scoresTable = this.$el.find('#js--score-container');
-    this.$openBtn = this.$el.find('.icon-open_arrow')
-    this.$closeBtn = this.$el.find('.icon-close');
+    this.$scoresTable = this.$el.find('.js--score-container');
   },
 
   _getInfo: function() {
@@ -162,9 +163,7 @@ var ScoreCardView = Backbone.View.extend({
   },
 
   resetCard: function() {
-    this.$openBtn.removeClass('is-hidden');
-    this.$closeBtn.addClass('is-hidden');
-    this.$scoresTable.addClass('is-hidden');
+    this.trigger('card:reset');
   },
 
   resetScores: function() {
@@ -174,28 +173,21 @@ var ScoreCardView = Backbone.View.extend({
     this.isFirstTime = true;
   },
 
-  _toggleCard: function() {
-    this.$openBtn.toggleClass('is-hidden');
-    this.$closeBtn.toggleClass('is-hidden');
-    this.$scoresTable.toggleClass('is-hidden');
-
-
-    if (this.isFirstTime) {
-      this._getInfo();
-    }
-
-  },
-
   render: function() {
     var target = this.options.target,
       siteurl = window.SITEURL;
 
-    this.$el.html(this.template({
+    var viewOptions = {
       target: target,
-      siteurl: siteurl
-    }));
+      cardView: this
+    };
+
+    this.targetCardHeaderView = new TargetCardHeaderView(viewOptions);
+
+    this.$el.html(this.targetCardHeaderView.render().el);
 
     this._setVars();
+    this._setListeners();
 
     return this;
   }

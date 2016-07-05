@@ -23,11 +23,9 @@
 
     .only-mobile {
       display: block;
-      visibility: visible;
 
       @media screen and (min-width: $screen-m) {
         display: none;
-        visibility: hidden;
       }
     }
 
