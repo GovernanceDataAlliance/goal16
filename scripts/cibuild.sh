@@ -8,7 +8,7 @@ git config user.email "clara.linos@vizzuality.com"
 
 git checkout -b gh-pages
 
-git rebase develop
+git rebase master
 
 grunt dist
 

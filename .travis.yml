@@ -9,7 +9,7 @@ script: npm build
 after_success: bash ./scripts/cibuild.sh
 branches:
   only:
-  - develop
+  - master
 git:
   depth: 1
 env:
