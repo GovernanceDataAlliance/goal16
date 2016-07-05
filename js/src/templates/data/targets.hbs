@@ -6,9 +6,9 @@
           <h3 class="c-title-underline">{{code}} {{title}}</h2>
         </div>
         {{#each indicators}}
-        <div id="indicator-{{slug}}" class="m-data-indicator">
+        <div id="indicator-{{indicator_slug}}" class="m-data-indicator">
           <div class="header js--toggle-indicator" data-slug={{slug}}>
-            <h1>{{indicator_code}} {{title}} <span>({{#typeOfIndicator type}}{{/typeOfIndicator}})</span></h1>
+            <h1>{{indicator_code}} {{indicator_title}} <span>({{#typeOfIndicator type}}{{/typeOfIndicator}})</span></h1>
             <div class="buttons">
               <button class="js--icon-open">
                 <svg class="icon">
@@ -23,9 +23,25 @@
             </div>
           </div>
           <div class="indicator-info is-hidden">
-            <p>{{description}}</p>
+            <p>{{ description }}</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo est, architecto pariatur, eligendi rem omnis quia facilis debitis enim explicabo, officia, vitae dolore? Vitae pariatur quos adipisci, delectus ipsa eveniet?</p>
+
+            <div class="indicator-metadata">
+              <ul>
+                <li>
+                  <span class="key-item">Source: </span>{{#if source_link }} <a target="_blank" href="{{ source_link }}">{{ source_name }} {{else}}-{{/if}}</a>
+                </li>
+                <li>
+                  <span class="key-item">Max score: </span><span>{{ comma max_score }}</span>
+                  <span class="key-item">Min score: </span><span>{{ comma min_score }}</span>
+                  <span class="key-item">Units: </span><span>{{#if units }}{{ units }}{{ else }}-{{/if}}</span>
+                </li>
+              </ul>
+
+
+            </div>
           </div>
+
         </div>
         {{/each}}
       </div>
