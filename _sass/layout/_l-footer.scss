@@ -21,8 +21,13 @@ $footer-height: rem(375px);
   .footer-info {
     padding-right: $wrap-padding-mobile;
     padding-left: $wrap-padding-mobile;
+    border-bottom: 1px solid $color-9;
+    padding-bottom: rem(38px);
+    margin-bottom: rem(30px);
     @media screen and (min-width: $screen-s) {
       padding: 0;
+      padding-bottom: rem(38px);
+      margin-bottom: rem(35px);
     }
     .text-creative-license {
       text-align: center;
@@ -75,6 +80,41 @@ $footer-height: rem(375px);
         width: rem(120px);
         margin-bottom: rem(70px);
       }
+    }
+  }
+
+  .footer-powered-info{
+    font-family: $font-family-primary;
+    font-size: $font-size-small;
+    font-weight: $font-weight-regular;
+    line-height: 2;
+    &:after {
+      margin: rem(30px) auto;
+      margin-bottom: rem(27px);
+      content: "";
+      display: block;
+      height: rem(3px);
+      background-color: $color-11;
+      width: rem(37px);
+      @media screen and (min-width: $screen-s) {
+      margin-bottom: rem(38px);
+    }
+    }
+  }
+
+  .footer-info-second{
+    text-align: center;
+    padding-right: $wrap-padding-mobile;
+    padding-left: $wrap-padding-mobile;
+    padding-bottom: rem(40px);
+    .footer-logo-gda{
+      width: rem(25px);
+      height: rem(30px);
+      left: rem(10px);
+      top: rem(10px);
+      position: relative;
+    }
+    @media screen and (min-width: $screen-s) {
     }
   }
 }
