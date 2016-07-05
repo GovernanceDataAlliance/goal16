@@ -23,7 +23,10 @@
 
     @media screen and (min-width: $screen-m) {
       display: block;
+      position: relative;
       cursor: pointer;
+      width: 80%;
+      margin: 0 auto;
     }
   }
 
@@ -46,10 +49,10 @@
     @extend %clean-button-or-input;
     cursor: pointer;
     color: $white;
-    border-bottom: 1px solid $color-6;
+    border: 1px solid rgba(#fff, .2);
 
     @media screen and (min-width: $screen-m) {
-      padding-bottom: rem(25px);
+      padding: rem(25px) rem(20px);
     }
   }
 
@@ -66,25 +69,28 @@
     input {
       display: block;
       width: 100%;
-      height: rem(40px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
       border-radius: 0;
       font-style: italic;
       text-transform: none;
       line-height: 1.8em;
-      font-size: rem(24px);
+      font-size: rem(18px);
       font-family: $font-family-primary;
+      font-weight: $font-weight-light;
       text-align: left;
+
       &::-ms-clear {
         display: none;
       }
 
       @include placeholder() {
-        color: $font-color-2;
-        font-size: rem(24px);
+        color: #fefffb;
+        font-size: rem(18px);
         text-transform: none;
         text-align: left;
         text-style: italic;
+        font-weight: $font-weight-light;
+        opacity: .5;
+        font-family: $font-family-primary;
       }
     }
 
@@ -153,18 +159,21 @@
   fill: $white;
 
   @media screen and (min-width: $screen-m) {
-    right: rem(80px);
+    right: rem(-5px);
+    margin-top: 0;
+    width: rem(25px);
+    height: rem(25px);
   }
 
-  @media screen and (min-width: $screen-l) {
-    right: rem(100px);
-  }
+  // @media screen and (min-width: $screen-l) {
+  //   right: rem(100px);
+  // }
 
-  @media screen and (min-width: $screen-xl) {
-    right: rem(190px);
-  }
+  // @media screen and (min-width: $screen-xl) {
+  //   right: rem(190px);
+  // }
 
-  @media screen and (min-width: $screen-xxl) {
-    right: rem(190px);
-  }
+  // @media screen and (min-width: $screen-xxl) {
+  //   right: rem(190px);
+  // }
 }
