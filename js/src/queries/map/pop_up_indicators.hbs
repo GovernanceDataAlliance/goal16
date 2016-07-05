@@ -1,11 +1,11 @@
-SELECT 
+SELECT distinct on (year) 
   name, 
   i.code as indicator_code, 
   i.title,  
   score, 
   year, 
-  s.iso, 
-  indicator_slug,
+  s.iso,
+  indicator_slug,  
   units_abbr, 
   type  
 FROM {{scores_table}} s 
@@ -15,5 +15,5 @@ s.iso LIKE (SELECT iso FROM {{countries_table}} WHERE st_intersects(the_geom, st
 AND 
 indicator_slug LIKE '{{slug}}' 
 order by 
-  i.code
+  year ASC
 
