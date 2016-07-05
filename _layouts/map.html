@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html>
   {% include head.html %}
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css" />
   <body>
     {% include icons.html %}
-    <div class="l-main-container">
+    <div class="l-main-container is-{{page.page-name}}">
       {% include header.html %}
-      <div class="l-map js--map-container"></div>
+
+      <div id="content"></div>
+
     </div>
     <script>
       var SITEURL = '{{ site.baseurl }}' || null;
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
-    <script src="{{site.baseurl}}/js/map_bundle.js"></script>
+     <script src="{{ site.baseurl }}/js/main_bundle.js"></script>
   </body>
 
 </html>

@@ -23,11 +23,18 @@ Handlebars.registerHelper('comma', function(number) {
     }
   }
 
-  return number;
+  return number === 0 ? number.toString() : '-';
 });
 
 Handlebars.registerHelper('beautifullStrign', function(options) {
   return options.replace('_', ' ');
+});
+
+Handlebars.registerHelper('typeOfIndicator', function(type) {
+  if (type === 'official') {
+    return 'IAEG Global Indicator'
+  }
+  return 'Complementary Global Indicator'
 });
 
 Handlebars.registerHelper('ordinalNumber', function(number) {
@@ -43,7 +50,6 @@ Handlebars.registerHelper('ordinalNumber', function(number) {
 
   return number + sufix;
 });
-
 
 Handlebars.registerHelper('unlessPercentage', function(max_score) {
   if (this.units_abbr != '%' && this.units != "yes/no" && this.short_name != "doing_business" && this.short_name != "illicit_financial_flows" ) {

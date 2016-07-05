@@ -1,0 +1,109 @@
+{{#if officialIndicators}}
+  <div class="c-score-table">
+    <div class="table-header">
+      <div class="table-row">
+        <div class="table-cell -category">
+          <span>IAEG Global Indicator</span>
+        </div>
+
+        {{#each countries}}
+          <div class="table-cell -country">
+            <span>{{#if name }} {{name}} {{else}} - {{/if}}</span>
+          </div>
+        {{/each}}
+
+      </div>
+    </div>
+    <div class="table-body">
+
+      {{#each officialIndicators}}
+
+        <div class="table-row">
+          <div class="table-cell -indicator">
+            <a href="{{ siteurl }}/data/?indicator={{ indicator_slug }}" class="indicator-name">{{indicator_code}} {{ indicator_title }}</a>
+            <span class="indicator-info">{{ source_title }} {{#if year }} | Last data point: {{ year }} {{/if}}</span>
+          </div>
+
+          <div class="table-cell -score">
+            <span>{{comma scoreA }}</span>
+            <span class="country-name only-mobile">{{ countryA }}</span>
+          </div>
+
+          <div class="table-cell -score">
+            <span>{{comma scoreB }}</span>
+            <span class="country-name only-mobile">{{ countryB }}</span>
+          </div>
+
+          <div class="table-cell -score">
+            <span>{{comma scoreC }}</span>
+            <span class="country-name only-mobile">{{ countryC }}</span>
+          </div>
+        </div>
+
+        {{else}}
+          <div class="table-row">
+            <span class="no-indicators">No indicators available</span>
+          </div>
+        {{/each}}
+    </div>
+
+{{else}}
+
+  <p class="no-indicators">No indicators available for this target</p>
+
+{{/if}}
+
+{{#if shadowIndicators}}
+  <div class="c-score-table">
+    <div class="table-header">
+      <div class="table-row">
+        <div class="table-cell -category">
+          <span>Complementary Global Indicator</span>
+        </div>
+
+        {{#each countries}}
+          <div class="table-cell -country">
+            <span>{{ name }}</span>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+
+    <div class="table-body">
+
+      {{#each shadowIndicators}}
+
+        <div class="table-row">
+          <div class="table-cell -indicator">
+            <a href="{{ siteurl }}/data/?indicator={{ indicator_slug }}" class="indicator-name">{{indicator_code}} {{ indicator_title }}</a>
+            <span class="indicator-info">{{ source_title }} {{#if year }} | Last data point: {{ year }} {{/if}}</span>
+          </div>
+
+          <div class="table-cell -score">
+            <span>{{comma scoreA }}</span>
+            <span class="country-name only-mobile">{{ countryA }}</span>
+          </div>
+
+          <div class="table-cell -score">
+            <span>{{comma scoreB }}</span>
+            <span class="country-name only-mobile">{{ countryB }}</span>
+          </div>
+
+          <div class="table-cell -score">
+            <span>{{comma scoreC }}</span>
+            <span class="country-name only-mobile">{{ countryC }}</span>
+          </div>
+        </div>
+
+      {{else}}
+        <div class="table-row">
+          <span class="no-indicators">No indicators available</span>
+        <div>
+      {{/each}}
+    </div>
+
+{{else}}
+
+  <p class="no-indicators">No indicators available for this target</p>
+
+{{/if}}

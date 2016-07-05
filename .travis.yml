@@ -5,11 +5,13 @@ before_script:
 - npm install
 - npm install -g grunt-cli
 - gem install sass
-script: npm test
+script: npm build
 after_success: bash ./scripts/cibuild.sh
 branches:
   only:
-  - develop
+  - master
+git:
+  depth: 1
 env:
   global:
     - GH_REF: github.com/Vizzuality/goal16.git

@@ -1,0 +1,55 @@
+.icon {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	fill: $color-1;
+}
+
+.icon-minus {
+	width: 4.3330078125em;
+}
+
+.icon-open_arrow {
+	width: 1.4287109375em;
+}
+
+.icon-open_bigarrow {
+	width: 1.599609375em;
+}
+
+.icon-right_arrow {
+	width: 0.7001953125em;
+}
+
+.icon-share {
+	width: 1.142578125em;
+}
+
+.icon-twitter {
+	width: 1.1767578125em;
+}
+
+.icon-search {
+  @extend %centery;
+  right: 10%;
+  width: rem(20px);
+  height: rem(20px);
+  margin-top: rem(-7px);
+  fill: $white;
+
+  @media screen and (min-width: $screen-m) {
+    right: rem(80px);
+  }
+
+  @media screen and (min-width: $screen-l) {
+    right: rem(100px);
+  }
+
+  @media screen and (min-width: $screen-xl) {
+    right: rem(190px);
+  }
+
+  @media screen and (min-width: $screen-xxl) {
+    right: rem(190px);
+  }
+}

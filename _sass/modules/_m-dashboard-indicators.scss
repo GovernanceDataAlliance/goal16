@@ -1,0 +1,78 @@
+.m-dashboard-indicators {
+  display: none;
+
+  .is-open & {
+    display: block;
+    margin-top: rem(30px);
+    padding-left: rem(35px);
+
+  }
+
+  .shadow-indicators {
+    margin-top: rem(20px);
+  }
+
+  .indicator-type {
+    display: block;
+    padding-bottom: rem(7px);
+    border-bottom: rem(2px) solid rgba($color-3, .3);
+    margin-bottom: rem(20px);
+    font-size: rem($font-size-xxsmall);
+    font-weight: $font-weight-regular;
+    text-transform: uppercase;
+  }
+
+  .indicator-wrapper {
+    margin-bottom: rem(10px);
+    overflow: hidden;
+
+    input {
+      @extend %clean-button-or-input;
+      float: left;
+      width: rem(16px);
+      height: rem(16px);
+      border-radius: 50%;
+      background-color: $bg-color-1;
+      border: rem(1px) solid $color-4;
+
+      &:checked {
+        border-width: rem(4px);
+        border-color: $color-1;
+
+        + label h1 {
+          color: $font-color-1;
+        }
+      }
+    }
+
+    label {
+      float: left;
+      margin-left: rem(10px);
+      max-width: 80%;
+    }
+
+    .indicator-title {
+      font-weight: $font-weight-regular;
+      font-size: rem(12px);
+      line-height: rem(20px);
+      color: $font-color-3;
+    }
+
+    .btn-info {
+      float: right;
+      margin-left: rem(10px);
+      width: rem(16px);
+      height: rem(16px);
+      border-radius: 50%;
+      align-self: flex-end;
+    }
+  }
+
+  .icon-info {
+    fill: $color-5;
+    width: rem(16px);
+    height: rem(16px);
+  }
+}
+
+

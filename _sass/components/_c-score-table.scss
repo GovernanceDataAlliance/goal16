@@ -1,0 +1,132 @@
+.c-score-table {
+
+  > .table-header {
+    padding: rem(15px) 0;
+  }
+
+  .table-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: rem(20px) 0;
+
+    border-bottom: rem(1px) dashed $border-3;
+
+
+    @media screen and (min-width: $screen-m) {
+      justify-content: flex-start;
+    }
+  }
+
+  .table-cell {
+    display: inline-flex;
+
+    .only-mobile {
+      display: block;
+      visibility: visible;
+
+      @media screen and (min-width: $screen-m) {
+        display: none;
+        visibility: hidden;
+      }
+    }
+
+    &.-score:last-child {
+      margin-right: 0;
+    }
+
+    &.-category,
+    &.-indicator {
+      flex-basis: 100%;
+
+      @media screen and (min-width: $screen-m) {
+        flex-basis: 60%;
+      }
+    }
+
+    &.-country,
+    &.-score {
+
+      @media screen and (min-width: $screen-m) {
+        flex-basis: calc(13.33% - 20px);
+        justify-content: flex-end;
+
+        margin: 0 rem(10px);
+      }
+    }
+
+    &.-category,
+    &.-country {
+      font-size: $font-size-xxsmall;
+      letter-spacing: rem(.5px);
+      color: $font-color-7;
+      text-transform: uppercase;
+    }
+
+    &.-country {
+      display: none;
+
+      @media screen and (min-width: $screen-m) {
+        display: flex;
+        text-align: right;
+
+        &:nth-of-type(2) {
+          margin-left: 0;
+        }
+      }
+    }
+
+
+    &.-indicator {
+      flex-direction: column;
+
+      > .indicator-name {
+        font-size: $font-size-xxsmall;
+        color: $font-color-1;
+        text-transform: uppercase;
+        line-height: 1.8;
+        letter-spacing: rem(.5px);
+      }
+
+      > .indicator-info {
+        margin: rem(5px) 0;
+
+        font-size: $font-size-xsmall;
+        color: $font-color-7;
+        text-transform: none;
+
+        @media screen and (min-width: $screen-m) {
+          margin-top: 0;
+        }
+      }
+    }
+
+    &.-score {
+      flex-direction: column;
+      margin: 0 rem(10px);
+
+      font-family: $font-family-secondary;
+      font-size: rem(22px);
+      color: $font-color-3;
+      letter-spacing: rem(.2px);
+      flex-basis: calc(33.33% - 20px);
+
+      &:nth-of-type(2) {
+        margin-left: 0;
+      }
+
+      .country-name {
+        font-family: $font-family-primary;
+        font-size: rem(9px);
+        text-transform: uppercase;
+        letter-spacing: rem(.5px);
+        color: $font-color-7;
+      }
+
+      @media screen and (min-width: $screen-m) {
+        flex-direction: row;
+        flex-basis: calc(13.33% - 20px);
+      }
+    }
+  }
+}

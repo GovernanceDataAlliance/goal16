@@ -1,0 +1,95 @@
+.l-dashboard {
+  position: absolute;
+  top: $button-height;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 25;
+  background-color: $white;
+  transition: .2s ease;
+  transform: translatey(0);
+  border-top: rem(1px) solid $light-grey;
+
+  .is-dashboard-close & {
+    transform: translatey(100%);
+  }
+
+  @media screen and (min-width: 768px) {
+    top: $header-height-desktop;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    width: $dashboard-width;
+    background-color: #fff;
+    transition: .2s ease;
+
+    .is-dashboard-close & {
+      transform: translatex(-100%);
+    }
+  }
+
+  .btn-toogle-dashboard-mobile {
+    position: absolute;
+    top: rem(-40px);
+    left: 0;
+    width: 100%;
+    height: $button-height;
+    background-color: $color-5;
+    color: $white;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: rem($font-size-xxsmall);
+    box-shadow: 0 0 rem(60px) 0 rgba(7, 56, 35, 0.1);
+
+    @media screen and (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  .btn-toogle-dashboard {
+    display: none;
+
+    @media screen and (min-width: 768px) {
+      display: -webkit-flex;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: flex;
+    }
+  }
+
+  .is-dashboard-close & {
+    .btn-toogle-dashboard-mobile {
+      background-color: $white;
+      color: $font-color-3;
+    }
+  }
+}
+
+.btn-toogle-dashboard {
+  display: flex;
+  // justify-content: center;
+  // align-items: center;
+  position: absolute;
+  right: rem(-32px);
+  top: 0;
+  z-index: 2;
+  width: rem(32px);
+  height: rem(32px);
+  background-color: $color-1;
+
+  &:after {
+    content: "";
+    @include arrow(5px, $white, 2px, -45deg);
+    transition: .2s ease;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    position: absolute;
+  }
+
+  .is-dashboard-close & {
+    &:after {
+      transform: translate(-50%, -50%) rotate(-225deg);
+    }
+  }
+}

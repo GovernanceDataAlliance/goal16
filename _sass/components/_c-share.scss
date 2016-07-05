@@ -1,92 +1,104 @@
 .c-share {
-
+  p {
+    margin-top: rem(25px);
+    font-size: $font-size-xsmall;
+    font-weight: $font-weight-regular;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+    text-align: center;
+    /*review*/
+    @media screen and (min-width: $screen-s) {
+      margin-top: rem(50px);
+    }
+  }
   //If changing this, please, check toolbar footer reaction
   .btn {
     flex: 1 1 20%;
     padding: 0;
     text-align: right;
-  //  width: 50px;
-  //  text-align: right;
-  //
-  //   @media screen and (min-width: $screen-s) {
-  //     width: 90px;
-  //   }
+    //  width: 50px;
+    //  text-align: right;
+    //
+    //   @media screen and (min-width: $screen-s) {
+    //     width: 90px;
+    //   }
   }
-
   .l-compare-selectors & {
     display: flex;
     flex: 1 1 100px;
     margin-right: rem(10px);
-
     @media screen and (min-width: 768px) {
       margin-right: rem(20px);
     }
   }
-
   .l-toolbar.-pagination & {
     .btn {
       width: 100%;
       text-align: center;
-
       @media screen and (min-width: 768px) {
         width: auto;
       }
     }
   }
   ////
-
   .link-box {
     position: relative;
     width: 100%;
-    margin-top: rem(35px);
+    margin-top: rem(25px);
     text-align: left;
+    @media screen and (min-width: $screen-s) {
+      margin-top: rem(58px);
+    }
   }
-
   .url {
     -webkit-appearance: none;
-
     width: 100%;
     margin-bottom: rem(10px);
     padding: rem(16px) rem(10px);
-    font-family: $font-secondary;
-    font-size: rem(14px);
-    font-style: italic;
-    color: #5b5b5b;
-    border: rem(1px) solid $beige;
-    border-radius: 0;
-
-
+    font-family: $font-family-primary;
+    color: $font-color-6;
+    font-size: $font-size-xsmall;
+    font-weight: $font-weight-regular;
+    line-height: 1.67;
+    height: rem(65px);
+    border: 1px solid $color-3;
     @include ellipsis-x(100%);
-
     @media screen and (min-width: $screen-s) {
       width: calc(100% - 21%);
-      height: rem(51px);
+      height: rem(65px);
       margin: 0;
       border-right: 0;
+      border-radius: 0;
     }
-
     @media screen and (min-width: 768px) {
       margin: 0;
     }
   }
-
   .btn-copy {
-    width: 100%;
-    height: rem(51px);
-    font-family: $font-secondary;
-    font-size: rem(11px);
-    cursor: pointer;
-    text-align: center;
-
-    &.-secondary {
-      padding: rem(17px);
+    // width: 100%;
+    // height: rem(65px);
+    // font-family: $font-family-primary;
+    // font-size: $font-size-xsmall;
+    // font-weight: $font-weight-regular;
+    // letter-spacing: 0.7px;
+    // cursor: pointer;
+    // text-align: center;
+    // background-color: $color-5;
+    // text-transform: uppercase;
+    // color: $font-color-2;
+    padding: rem(25px) rem(46px);
+    // &.-secondary {
+    //   padding: rem(25px) rem(0px);
+    // }
+    @media screen and (min-width: $screen-l) {
+      // padding: rem(25px) rem(0px);
     }
-
     @media screen and (min-width: $screen-s) {
       position: absolute;
       top: 0;
       right: 0;
       width: 21%;
+      padding: rem(25px) 0;
     }
   }
 }

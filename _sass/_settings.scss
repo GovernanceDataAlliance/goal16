@@ -2,6 +2,11 @@
  * Add here values that
  * affect the whole proyect
  */
+
+$header-height-desktop: 80px;
+$header-height: 70px;
+$button-height: 40px;
+
 ////////////////////
 //**** Screen ****//
 ////////////////////
@@ -20,24 +25,42 @@ $grid-max-width: 1400px;
 $wrap-padding-mobile: 20px;
 $wrap-padding-tablet: 30px;
 $wrap-padding-desktop: 40px;
-$wrap-padding-desktop-xl: 80px;
+$wrap-padding-desktop-xl: 90px;
 $content-width: 80%;
 $content-width-xl: 90%;
 
 ////////////////////
+//**** Layout ****//
+////////////////////
+$dashboard-width: 400px;
+
+////////////////////
 //**** Fonts ****//
 ////////////////////
-$font-main: 'Lora', sans-serif;
-$font-secondary: 'Montserrat';
+$font-family-primary: 'Merriweather Sans', sans-serif;
+$font-family-secondary: 'Lora',  serif;
 
-//Font sizes
-$font-size: 20px;
+$font-size-xxlarge: 70px;
+$font-size-xlarge: 55px;
+$font-size-large: 27px;
+$font-size-medium: 19px;
+$font-size-normal: 16px;
+$font-size-small: 14px;
+$font-size-xsmall: 12px;
+$font-size-xxsmall: 10px;
+
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-semi: 600;
+$font-weight-bold: 700;
 
 
 ////////////////////
 //**** Colors ****//
 ////////////////////
-$white: #fff;
+
+
+// delete these colors
 $beige: #beb7aa;
 $beige-medium: #eceae8;
 $beige-light: #f4f3f2;
@@ -51,43 +74,76 @@ $celeste: #49c9de;
 $orange: #cd8200;
 $blue: #5883b4;
 $dark-sky-blue: #55cee2;
+$black: #333;
 
+// GOAL16
+$blue-topaz: #19aec4;
+$blue-topaz-two: #11b6ce;
+$seafoam-blue:#87d0da;
+$blue-evergreen: #073339;
+$blue-grey: #a1babd;
+$blue-green: #156975;
+$pale-grey: #f6faf9;
+$soft-green: #82bf72;
+$turquoise: #04beb0;
+$bluish-grey: #809497;
+$silver: #e5eaea;
+$light-grey: #edf2f1;
+
+$white: #fff;
 
 $dark-grey: #9b9b9b;
 $grey: #b4b6b6;
-$light-grey: #d6d8d9;
+$light-grey: #e5eaea;
 $light-grey-two: #eeedea;
 
-//Theme colors
-$color-1: $brown;
-$color-2: $turquoise;
-$color-3: $magenta;
-$color-4: $celeste;
+//Legend
+$bucket-1: #1f301f;
+$bucket-2: #345335;
+$bucket-3: #557b57;
+$bucket-4: #85c088;
+$bucket-5: #cce5ca;
 
-$bg-color-1: $beige-light;
+$bucket-border-1: #121c12;
+$bucket-border-2: #243b24;
+$bucket-border-3: #466748;
+$bucket-border-4: #7bb67d;
+$bucket-border-5: #c2dac0;
+
+//Theme colors
+$color-1: $blue-topaz;
+$color-2: $blue-evergreen;
+$color-3: $blue-grey;
+$color-4: $blue-green;
+$color-5: $soft-green;
+$color-6: $pale-grey;
+$color-7: $turquoise;
+$color-8: $silver;
+$color-9: $light-grey;
+$color-10: $white;
+
+// background colors
+$bg-page: #F7FAF9;
+$bg-color-1: $pale-grey;
 $bg-color-2: $brown;
 $bg-color-3: $beige;
 $bg-color-4: $beige-medium;
-
-$excellent: $dark-green;
-$good: $green;
-$moderate: $yellow;
-$fair: $orange;
-$poor: $magenta;
+$bg-color-5: $light-grey;
 
 //Font colors
-$font-color-1: $brown;
+$font-color-1: $blue-evergreen;
 $font-color-2: $white;
-$font-color-3: $turquoise;
+$font-color-3: $blue-topaz;
 $font-color-4: $dark-grey;
-$font-color-hover: $turquoise;
+$font-color-5: $color-5;
+$font-color-6: $black;
+$font-color-7: $bluish-grey;
+$font-color-8: $blue-topaz-two;
+$font-color-9: $turquoise;
 
-//bprder-colors
-$border-1: $light-grey;
 
-//Rank colors
-$rank-1: $green;
-
-////////////////////
-//**** Margins ***//
-////////////////////
+//border-colors
+$border-1: $color-5;
+$border-2: $bluish-grey;
+$border-3: $silver;
+$border-4: $seafoam-blue;

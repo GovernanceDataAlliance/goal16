@@ -1,18 +1,45 @@
 .c-download {
-
   .buttons {
     margin-top: rem(30px);
     > a {
       display: block;
-      padding: rem(20px) rem(60px);
+      width: 100%;
+      padding: rem(15px) rem(50px);
+      background-color: $color-5;
+      font-family: $font-family-primary;
       font-size: rem(11px);
-      letter-spacing: rem(0.6px);
-      &:last-child {
-        border: 0;
+      text-align: center;
+      font-weight: $font-weight-regular;
+      text-transform: uppercase;
+      letter-spacing: rem(.6px);
+      color: $white;
+      cursor: pointer;
+      transition: 0.1s;
+      margin-top: rem(25px);
+      &:hover {
+        background-color: darken($color-5, 10% );
       }
-
-      @media screen and (min-width: $screen-s) {
+        @media screen and (min-width: $screen-s) {
+        // font-size: $font-size-xsmall;
+        // letter-spacing: rem(.7px);
+        // max-width: rem(211px);
+        // margin-top: rem(0px);
+        // display: inline-block;
+        // margin-right: rem(10px);
+        // &:last-child{
+        //   margin-right: rem(0px);
+        // }
+      }
+      @media screen and (min-width: 768px) {
+        font-size: $font-size-xsmall;
+        letter-spacing: rem(.7px);
+        max-width: rem(211px);
+        margin-top: rem(0px);
         display: inline-block;
+        margin-right: rem(10px);
+        &:last-child{
+          margin-right: rem(0px);
+        }
       }
     }
   }

@@ -9,15 +9,15 @@
     <div class="l-main-container">
       {% include header.html %}
 
-      <div class="l-banner -section-1 {{ page.image }} js--index-banner">
+      <div class="l-banner -section-1 -topsection-countries js--index-banner is-hidden">
 
         {% include breadcrumbs.html %}
 
         <div class="wrap">
-          <h3 class="c-title -medium">{{ page.page-name }}</h3>
+          <h1 class="c-section-title -light">{{ page.page-name }}</h1>
 
           <div class="m-search js--search">
-            <button class="btn-open-search js--open-search-mb">Search country</button>
+            <button class="c-button -primary js--open-search-mb">Search country</button>
             <div class="js--search-mobile"></div>
             <div class="js--search-desktop" id="searchBox"></div>
           </div>
@@ -25,32 +25,33 @@
         </div>
       </div>
 
-      {{ content }}
+      {% include modules/share_module.html %}
 
-      <div class="js--country-container"></div>
+      <div id="content"></div>
 
       {% include modules/compare_module.html %}
 
-      <div class="l-highlight distribuidorDestacado-About02">
+      <div class="l-highlight -crosseling-about">
         <div class="wrap">
           <div class="m-highlight">
-            <h2 class="c-block-title">
+            <h2 class="c-block-title text-big-title">
               {{ page.crosseling-module-title }}
             </h2>
-            <p class="-highlighted">
+            <p class="-highlighted text-banner-m">
               {{ page.crosseling-module-text }}
             </p>
-            <a href="{{ site.baseurl }}/about" class="btn -white">find out more</a>
+            <a href="{{ site.baseurl }}/about" class="c-button -primary">find out more</a>
           </div>
         </div>
       </div>
 
       {% include footer.html %}
+
     </div>
     <script>
       var SITEURL = '{{ site.baseurl }}' || null;
     </script>
-    <script src="/js/countries_bundle.js"></script>
+    <script src="{{ site.baseurl }}/js/main_bundle.js"></script>
   </body>
 
 </html>

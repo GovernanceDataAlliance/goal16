@@ -1,118 +1,39 @@
+$buckets: 'bucket-1', 'bucket-2', 'bucket-3', 'bucket-4', 'bucket-5';
+$colors: $bucket-1, $bucket-2, $bucket-3, $bucket-4, $bucket-5;
+$bucket-border: $bucket-border-1, $bucket-border-2, $bucket-border-3, $bucket-border-4, $bucket-border-5;
+
 .m-legend {
-  display: flex; display: -ms-box;
+  display: flex;
   align-items: center;
+  justify-content: space-between;
 
-  > ul {
-    display: flex;
-    display: -ms-box;
+  .text {
+    font-size: rem($font-size-xxsmall);
+    font-family: $font-family-primary;
+    text-transform: uppercase;
+    margin-right: rem(10px);
 
-    li {
-      display: flex;
-      display: -ms-box;
-      align-items: center;
-      justify-content: center;
-      margin-right: rem(2px);
-
-      &:before {
-        content: '';
-        display: inline-block;
-        width: 7px;
-        height: 7px;
-      }
-
-      &.-excellent:before {
-        background: $excellent;
-      }
-
-      &.-good:before {
-        background: $good;
-      }
-
-      &.-moderate:before {
-        background: $moderate;
-      }
-
-      &.-fair:before {
-        background: $fair;
-      }
-
-      &.-poor:before {
-        background: $poor;
-      }
-
-      &.literal {
-        font-family: $font-secondary;
-        font-size: rem(11px);
-        text-transform: uppercase;
-        color: $font-color-3;
-        margin-right: rem(4px);
-
-        &:before {
-          display: none;
-        }
-      }
-    }
-
-    .legend-item {
-      display: none;
-      font-family: "Montserrat";
-      font-size: rem(10px);
-      letter-spacing: rem(0.2px);
-      color: $brown;
-      text-transform: uppercase;
-      white-space: nowrap;
+    &:last-child {
+      margin-right: 0;
     }
   }
 
-  @media screen and (min-width: $screen-s) {
-    > ul {
-      li {
+  .bucket {
+    display: inline-block;
+    width: rem(25px);
+    height: rem(25px);
+    border-radius: 50%;
+    margin-right: rem(10px);
 
-        &:before {
-          width: 14px;
-          height: 14px;
-          margin-right: rem(10px);
-        }
-
-        &.literal {
-          display: none;
-        }
-      }
-    }
-  }
-
-  @media screen and (min-width: 768px) {
-    .-footer & {
-      > ul {
-        li {
-          margin-right: rem(20px);
-        }
-      }
-
-      .legend-item {
-        display: inline-block;
-      }
-    }
-  }
-
-  @media screen and (min-width: $screen-l) {
-    > ul {
-      li {
-        margin-right: rem(20px);
-      }
-
-      .legend-item {
-        display: inline-block;
+    @for $i from 1 through length($buckets) {
+      &.#{nth($buckets, $i)} {
+        background-color: #{nth($colors, $i)};
+        border: 1px solid #{nth($bucket-border, $i)}
       }
     }
 
-  }
-
-  .l-compare-selectors & {
-    margin-left: rem(10px);
-
-    @media screen and (min-width: $screen-l) {
-      margin-left: rem(20px);
+    &.bucket-5 {
+      background-image: url('#{$baseUrl}/img/patterns/p5_green.png');
     }
   }
 }

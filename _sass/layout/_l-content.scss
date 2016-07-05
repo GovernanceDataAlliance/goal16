@@ -1,26 +1,31 @@
 .l-content {
   //Countries list
   padding: rem(60px) 0;
-  min-height: rem(500px);
+
+  @media screen and (min-width: $screen-l) {
+    padding: rem(95px) 0 rem(120px);
+  }
+
+  @media screen and (min-width: $screen-xl) {
+    padding: rem(120px) 0;
+  }
 
   .btn.-secondary {
     margin-top: rem(30px);
   }
 
   &:nth-child(2n + 1) {
-    background-color: $bg-color-1;
+    background-color: $white;
   }
 
   &.-main {
-    padding: rem(40px) 0 rem(50px);
+    padding-top: rem(34px);
 
     @media screen and (min-width: $screen-s) {
-      padding: rem(75px) 0 rem(75px);
+      padding-top: rem(70px);
     }
 
-    @media screen and (min-width: 768px) {
-      padding: rem(85px) 0 rem(105px);
-    }
+    @media screen and (min-width: 768px) {}
   }
 
   &.-fullscreen {
@@ -46,28 +51,19 @@
     margin-top: rem(70px);
   }
 
-  @media screen and (min-width: $screen-s) {
-    padding: rem(95px) 0;
-    &.-countries {
-      padding: 0;
+  &.-countries {
+    border-bottom: 1px solid $color-3;
+    padding: rem(15px) 0;
+
+    @media screen and (min-width: $screen-s) {
+      padding: rem(100px) 0 rem(90px);
+
+      &:last-child {
+        margin-bottom: rem(95px);
+        border-bottom: 0;
+        padding-bottom: 0;
+      }
     }
-  }
-
-  @media screen and (min-width: 768px) {
-    &.-countries {
-      padding: rem(85px) 0 rem(120px);
-    }
-  }
-
-  @media screen and (min-width: $screen-l) {
-    padding: rem(95px) 0 rem(120px);
-  }
-
-  @media screen and (min-width: $screen-xl) {
-    padding: rem(120px) 0;
   }
 }
 
-#compareSlider {
-  overflow-x: hidden;
-}

@@ -1,7 +1,7 @@
 select {
   @extend %clean-button-or-input;
   color: $font-color-3;
-  font-family: $font-secondary;
+  font-family: $font-family-secondary;
   font-size: 16px;
 
   @media screen and (min-width: 768px) {
@@ -14,14 +14,14 @@ select {
  * chosen.js.
  */
 .chzn-container-single .chzn-single {
-  color: $font-color-3;
+  color: $font-color-5;
   background-image: none;
   background-color: transparent;
   border: none;
   box-shadow: none;
   font-size: 11px;
   height: auto;
-  font-family: $font-secondary;
+  font-family: $font-family-secondary;
 }
 
 .chzn-container-single .chzn-drop {
@@ -31,7 +31,7 @@ select {
   border-radius: 0;
   background-color: $light-grey-two;
   transform: translate(-5%, 1px);
-  font-family: $font-secondary;
+  font-family: $font-family-secondary;
 }
 
 .chzn-container-single .chzn-single span {
@@ -40,9 +40,14 @@ select {
 
 .chzn-container {
   width: 100% !important;
+  height: 100%;
 }
 
 .chzn-container-single .chzn-single {
+  display: flex;
+  align-items: center;
+  height: 100%;
+
   line-height: 28px;
 }
 
@@ -54,8 +59,8 @@ select {
   width: 100% !important;
   padding: 8px 30px 8px 5px;
   border-color: $bg-color-3;
-  color: $font-color-3;
-  background: url('../img/search.svg') no-repeat  95% 50%;
+  color: $font-color-5;
+  background: url('#{$baseUrl}/img/miscellaneous/search.svg') no-repeat  95% 50%;
   background-size: 15px 15px;
 }
 
@@ -65,19 +70,19 @@ select {
 }
 
 .chzn-container .chzn-results .active-result {
-  font-family: $font-main;
-  color: $font-color-3;
+  font-family: $font-family-primary;
+  color: $font-color-5;
   padding: rem(5px) 5%;
   font-size: rem(14px);
 
   &.result-selected {
-    color: $font-color-3;
+    color: $font-color-5;
     background: none;
     background-color: rgba(190, 183, 170, .2);
   }
 
   &.highlighted {
-    color: $font-color-hover;
+    // color: $font-color-hover;
     font-weight: 700;
     text-decoration: underline;
     background: none;
@@ -98,6 +103,7 @@ select {
 }
 
 .chzn-container-single .chzn-single span {
+  font-family: $font-family-primary;
+  color: $font-color-5;
   text-transform: uppercase;
-  color: $font-color-3;
 }

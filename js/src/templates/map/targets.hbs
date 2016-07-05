@@ -1,0 +1,21 @@
+{{#each targets}}
+  <div class="m-dashboard-target" id="target-{{slug}}">
+    <div class="header">
+      <div class="btn-wrapper">
+        <button class="js--open-target btn-open-target" data-slug={{slug}}>
+          <svg class="icon-open">
+            <use xlink:href="#icon-open_plus"></use>
+          </svg>
+        </button>
+        <button class="js--close-target btn-close-target" data-slug={{slug}}>
+          <svg class="icon-minus">
+            <use xlink:href="#icon-open_plus"></use>
+          </svg>
+        </button>
+      </div>
+      <input type="radio" name="layer-selector" value={{ slug }} id="{{ slug }}" class="js--layer-selector -target">
+      <label for="{{ slug }}"><h2 class="target-title">{{ code }} {{title}}</h2></label>
+    </div>
+    <div class="m-dashboard-indicators js--indicators"></div>
+  </div>
+{{/each}}

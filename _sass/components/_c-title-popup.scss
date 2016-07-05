@@ -1,0 +1,81 @@
+.c-title-popup {
+  font-family: $font-family-secondary;
+  font-weight: $font-weight-regular;
+  text-align: center;
+  color: $font-color-6;
+  font-size: $font-size-medium;
+  letter-spacing: rem(0.2px);
+  @media screen and (min-width: $screen-s) {
+    letter-spacing: rem(0.3px);
+    font-size: $font-size-large;
+  }
+  &.-small {
+    margin-bottom: rem(10px);
+  }
+  &.-subtitle {
+    margin-bottom: rem(19px);
+    @media screen and (min-width: $screen-s) {
+      margin-bottom: rem(28px);
+    }
+  }
+  &.-big-modal {
+    font-size: $font-size-medium;
+    font-weight: $font-weight-regular;
+    text-transform: capitalize;
+    margin-top: rem(80px);
+    text-align: left;
+    font-family: $font-family-primary;
+    &:after {
+      content: '';
+      display: block;
+      height: 3px;
+      border: 0;
+      background-color: $color-1;
+      width: 37px;
+      margin-top: rem(30px);
+    }
+    @media screen and (min-width: $screen-s) {
+      font-size: $font-size-large;
+      font-weight: $font-weight-regular;
+      text-transform: capitalize;
+      margin-top: rem(80px);
+    }
+  }
+}
+
+.c-subtitle-popup {
+  font-family: $font-family-primary;
+  font-size: $font-size-xxsmall;
+  text-align: center;
+  text-transform: uppercase;
+  color: $font-color-6;
+  letter-spacing: rem(.5px);
+
+  &:after {
+    content: "";
+    display: block;
+    height: rem(3px);
+    background-color: $blue-topaz;
+    margin: rem(13px) auto rem(21px);
+    width: rem(37px);
+  }
+
+  @media screen and (min-width: $screen-s) {
+    letter-spacing: 0.5px;
+    font-size: $font-size-xxsmall;
+    margin-top: 0 !important;
+
+    &:after {
+      content: "";
+      display: block;
+      height: rem(3px);
+      background-color: $blue-topaz;
+      margin: rem(8px) auto rem(14px);
+      width: rem(37px);
+    }
+
+    &.-shadow {
+      margin-top: rem(10px) !important;
+    }
+  }
+}

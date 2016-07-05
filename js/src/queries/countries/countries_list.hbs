@@ -1,0 +1,8 @@
+select
+  iso,
+  name, 
+  region_name 
+from 
+  {{ countries_table }} 
+order by 
+  name

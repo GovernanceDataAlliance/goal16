@@ -5,12 +5,12 @@
   .icon {
     width: rem(20px);
     height: rem(20px);
-    fill: $color-4;
+    fill: $color-1;
     transition: all .2s ease-in-out;
 
     &.-twitter svg:hover {
       transform: scale(1.2);
-      fill: $color-4;
+      fill: $color-1;
     }
   }
 
@@ -45,18 +45,28 @@
     }
   }
 
-  @media screen and (min-width: $screen-s) {
-    &.-footer {
-      margin-left: rem(20px);
-      padding-right: rem($wrap-padding-mobile / 2);
+  // @media screen and (min-width: $screen-s) {
+  //   &.-header{
+  //     padding: 0px;
+  //     &:before{
+  //       content: "";
+  //       display: block;
+  //       width: 0.0625rem;
+  //       height: 2.25rem;
+  //       background: #e5eaea;
+  //     }
+  //   }
+  //   &.-footer {
+  //     margin-left: rem(20px);
+  //     padding-right: rem($wrap-padding-mobile / 2);
 
-      ul {
-        height: 100%;
-      }
-    }
-  }
+  //     ul {
+  //       height: 100%;
+  //     }
+  //   }
+  // }
 
-  @media screen and (min-width: $screen-m) {
+  @media screen and (min-width: 768px) {
     &.-header {
       position: absolute;
       top: 0;
@@ -65,8 +75,15 @@
       width: rem(95px);
       display: flex; display: -ms-box;
       align-items: center;
-      padding: 0 rem(20px);
-      border-left: 1px solid $border-1;
+      padding: 0px;
+
+      &:before{
+        content: "";
+        display: block;
+        width: 0.0625rem;
+        height: 2.25rem;
+        background: #e5eaea;
+      }
 
       ul {
         width: 100%;
@@ -88,7 +105,6 @@
   @media screen and (min-width: $screen-l) {
     &.-header {
       width: rem(100px);
-      padding: 0 rem(20px);
     }
   }
 }

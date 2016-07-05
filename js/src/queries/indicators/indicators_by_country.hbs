@@ -1,0 +1,42 @@
+select
+
+  t.code as target_code, 
+  t.slug as target_slug, 
+  t.title as target_title,
+
+  i.code as indicator_code, 
+  i.description, 
+  i.link, 
+  i.max_score, 
+  i.min_score, 
+  i.slug as indicator_slug, 
+  i.title as indicator_title, 
+  i.type, 
+  i.units, 
+  i.units_abbr, 
+
+  sc.score, 
+  sc.iso, 
+  sc.year, 
+
+  so.name as source_title, 
+  so.slug as source_slug 
+
+from 
+  {{ scores_table }} as sc 
+join 
+  {{ indicators_table }} as i 
+on 
+  i.slug = sc.indicator_slug 
+  and sc.iso = '{{ iso }}' 
+join 
+ {{ targets_table }} as t 
+on 
+  i.target_slug = t.slug 
+join 
+  {{ sources_table}} as so 
+on 
+  i.source_slug = so.slug 
+order by 
+  i.code
+

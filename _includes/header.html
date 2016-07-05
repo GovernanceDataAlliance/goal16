@@ -1,7 +1,7 @@
-<header class="l-header show">
+<header class="l-header show is-{{page.page-name}}">
   <div class="l-brand">
-    <a class="c-brand" href="{{ site.baseurl }}/">
-      GOAL 16
+    <a class="logo-link" href="{{site.baseurl}}/map">
+      <img src="{{site.baseurl}}/img/logo/goal16_logo.svg" alt="logo Goal16" class="header-logo-goal">
     </a>
   </div>
 
@@ -15,31 +15,23 @@
       <div class="scroll-wrapper">
         <nav class="m-site-navigation -header">
           <ul>
-            <li class='link {% if page.url == "/countries/" %} -current {% endif %}'><a href="{{ site.baseurl }}/countries/">Countries</a></li>
-            <li class='link {% if page.url == "/map/" %} -current {% endif %}'><a href="{{ site.baseurl }}/map/">Map</a></li>
-            <li class='link {% if page.url == "/data/" %} -current {% endif %}'><a href="{{ site.baseurl }}/data/">Data</a></li>
-            <li class='link {% if page.url == "/compare/" %} -current {% endif %}'><a href="{{ site.baseurl }}/compare/">Compare</a></li>
-            <li class='link {% if page.url == "/about/" %} -current {% endif %}'><a href="{{ site.baseurl }}/about/">About</a></li>
-            <li class='link {% if page.isBlog or page.layout == "blog/post" %} -current {% endif %}'><a href="{{ site.baseurl }}/blog/">Blog</a></li>
+            <li class='link {% if page.page-name == "map" %} selected-option-menu {% endif %}'><a href="{{ site.baseurl }}/map/">explore</a></li>
+            <li class='link {% if page.page-name == "data" %} selected-option-menu {% endif %}'><a href="{{ site.baseurl }}/data/">data</a></li>
+            <li class='link {% if page.page-name == "countries" %} selected-option-menu {% endif %}'><a href="{{ site.baseurl }}/countries/">countries</a></li>
+            <li class='link {% if page.page-name == "compare" %} selected-option-menu {% endif %}' ><a href="{{ site.baseurl }}/compare/">compare</a></li>
+            <li class='link {% if page.page-name == "about" %} selected-option-menu  {% endif %}'><a href="{{ site.baseurl }}/about/">about</a></li>
           </ul>
         </nav>
 
         <div class="m-social-share -header">
           <ul>
             <li class="icon -twitter">
-              <a href="https://twitter.com/@GovDataAlliance">
+              <a href="https://twitter.com">
                 <svg class="icon">
                   <use xlink:href="#icon-twitter"></use>
                 </svg>
               </a>
             </li>
-            <!-- <li class="icon -facebook">
-              <a href="https://www.facebook.com">
-                <svg class="icon">
-                  <use xlink:href="#icon-facebook"></use>
-                </svg>
-              </a>
-            </li> -->
           </ul>
         </div>
       </div>

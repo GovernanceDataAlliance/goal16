@@ -1,0 +1,118 @@
+.m-card--indicators {
+  width: 45%;
+  padding: rem(40px) rem(65px) rem(55px);
+  box-shadow: 0 0 rem(40px) 0 rgba(7, 51, 56, 0.07);
+  float: left;
+
+  > .card-title {
+    position: relative;
+    padding-bottom: rem(30px);
+
+    font-family: $font-family-secondary;
+    font-size: rem($font-size-large);
+    font-weight: $font-weight-regular;
+    letter-spacing: rem(.3px);
+    text-align: center;
+
+    &:after {
+      content: '';
+
+      position: absolute;
+      top: auto;
+      right: 0;
+      bottom: 0;
+      left: 50%;
+
+      width: rem(35px);
+      height: rem(3px);
+
+      background-color: $border-4;
+
+      transform: translate(-50%, 0);
+    }
+  }
+
+  .indicator-list > .indicator-item {
+    display: flex;
+    flex-direction: column;
+
+    margin: rem(20px) 0;
+
+    &:first-child {
+      margin-top: rem(35px);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    > .indicator-score {
+      font-family: $font-family-secondary;
+      font-size: rem(22px);
+      letter-spacing: rem(.2px);
+      color: $font-color-9;
+    }
+
+    > .indicator-title {
+      display: inline-block;
+
+      font-size: rem($font-size-xxsmall);
+      line-height: 1.8;
+      font-weight: $font-weight-regular;
+      letter-spacing: rem(.5px);
+      text-transform: uppercase;
+    }
+
+    > .indicator-metadata {
+      display: flex;
+      flex-direction: column;
+
+      margin-top: rem(5px);
+
+      > .indicator-source,
+      .indicator-year {
+        font-size: rem($font-size-xsmall);
+        color: $font-color-7;
+      }
+    }
+  }
+
+  .no-indicators {
+    display: inline-block;
+    width: 100%;
+    margin: rem(25px) 0;
+
+    text-align: center;
+  }
+}
+
+.slider-indicator{
+  .m-card--indicators{
+    background-color: $white;
+    box-shadow: 0 0 40px 0 rgba(7, 51, 56, 0.07);
+    padding-bottom: rem(20px);
+    padding-bottom: rem(20px);
+  }
+  .slick-dots{
+    position: relative;
+    li{
+
+      button{
+        &:before{
+          font-size: rem(40px);
+        }
+      }
+    }
+    li.slick-active{
+      button{
+        &:before{
+          color: $color-5;
+        }
+      }
+    }
+  }
+  display: block;
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}

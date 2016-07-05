@@ -1,0 +1,38 @@
+<div class="m-popup">
+  <button class="btn-close">
+    <svg class="icon icon-close">
+      <use xlink:href="#icon-close"></use>
+    </svg>
+  </button>
+  <div class="wrapper">
+    <a href="countries/FRA"><h1 class="c-title-popup -small">{{country.name}}</h1></a>
+    <div class="scroll-wrapper">
+      {{#if indicators}}
+        {{#if indicators.official}}
+        <p class="c-subtitle-popup">IAEG global indicator</p>
+          {{#each indicators.official}}
+            <div class="data-numbers">
+              <span class="data-numbers-text">{{indicator_code}} {{title}}</span>
+              <span class="c-score-popup -small">{{score}} {{units_abbr}}</span>
+            </div>
+          {{/each}}
+        {{/if}}
+        {{#if indicators.shadow}}
+        <p class="c-subtitle-popup -shadow">complementary global indicator</p>
+          {{#each indicators.shadow}}
+            <div class="data-numbers">
+              <span class="data-numbers-text">{{indicator_code}} {{title}}</span>
+              <span class="c-score-popup -small">{{score}} {{units_abbr}}</span>
+            </div>
+          {{/each}}
+        {{/if}}
+      {{/if}}
+    </div>
+
+    <div class="links">
+      <a href="{{url}}/countries/?iso={{country.iso}}">visit country page > </a>
+      <a href="{{url}}/compare/?isoA={{country.iso}}">compare to others > </a>
+    </div>
+  </div>
+</div>
+<div id="popup-background"></div>

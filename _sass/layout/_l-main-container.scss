@@ -1,6 +1,3 @@
-$header-height-desktop: rem(95px);
-$header-height: rem(70px);
-
 %l-main-container {
   max-width: $grid-max-width;
   width: 100%;
@@ -13,22 +10,25 @@ $header-height: rem(70px);
   }
 }
 
-
 .l-main-container {
   @extend %l-main-container;
   margin-top: $header-height;
-  
-  @media screen and (min-width: $screen-m) {
+
+  @media screen and (min-width: 768px) {
     margin-top: 0;
+  }
+
+  &.is-map{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    border-right: 0px;
+    border-left: 0px;
+    max-width: 100%;
+    border-bottom: rem(1px) solid $light-grey;
   }
 }
 
-
-.js--countries,
-.js--compare-container {
-  min-height: rem(500px);
-}
-
-.js--indicators-container {
-  min-height: rem(900px);
-}

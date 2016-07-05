@@ -1,0 +1,121 @@
+.m-list {
+
+  .open-menu {
+    width: 10px;
+    float: right;
+    height: 10px;
+    margin-left: auto;
+    position: relative;
+    top: 10px;
+    fill: $color-1;
+  }
+
+  .lists-container {
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    ul {
+      float: left;
+      display: block;
+      text-align: left;
+      width: 50%;
+      margin-top: rem(15px);
+
+      @media screen and (min-width: $screen-s) {
+        width: 33%;
+        text-align: center;
+        margin-top: 0;
+        padding-left: rem(25px);
+        padding-right: rem(25px);
+      }
+
+      li {
+        margin-right: rem(10px);
+        line-height: 1.46;
+        @media screen and (min-width: $screen-s) {
+          line-height: 2.13;
+        }
+        a {
+          font-size: $font-size-xsmall;
+          color: $font-color-3;
+          @media screen and (min-width: $screen-s) {
+            font-size: $font-size-normal;
+          }
+        }
+      }
+    }
+  }
+}
+
+.list-visible {
+  .wrap {
+    .m-list {
+      h2 {
+        .open-menu {
+          display: block;
+        }
+      }
+      .lists-container {
+        ul {
+          display: block;
+        }
+      }
+    }
+  }
+  @media screen and (min-width: $screen-s) {
+    .wrap {
+      .m-list {
+        h2 {
+          .open-menu {
+            display: none;
+          }
+        }
+        .lists-container {
+          ul {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
+
+.list-no-visible {
+  cursor: pointer;
+  padding-bottom: rem(14px) !important;
+  .wrap {
+    .m-list {
+      h2 {
+        .open-menu {
+          display: block;
+        }
+      }
+      .lists-container {
+        ul {
+          display: none;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: $screen-s) {
+    padding: 0 0 rem(90px);
+    .wrap {
+      .m-list {
+        h2 {
+          .open-menu {
+            display: none;
+          }
+        }
+        .lists-container {
+          ul {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}

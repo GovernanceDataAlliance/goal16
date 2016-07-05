@@ -3,10 +3,7 @@ var _ = require('lodash'),
   Backbone = require('backbone'),
   Handlebars = require('handlebars');
 
-var indicators = require('../../collections/indicators'),
-  countries = require('../../collections/countries');
-
-var infoWindowView = require('./infowindow_view.js');
+var infoWindowView = require('./infowindow.js');
 
 var tpl = Handlebars.compile(require('../../templates/common/download_tpl.hbs'));
 
@@ -27,44 +24,16 @@ var DownloadView = infoWindowView.extend({
       id: window.indicatorId
     });
 
-    if (window.location.pathname == '/countries') {
-      _.extend(this.options, {
-        iso: window.location.hash.split('&')[0].slice(1)
-      });
-    }
-
-    this.indicatorsCollection = new indicators();
-    this.countriesCollection  = new countries();
-
     this._setListeners();
   },
 
   _setListeners: function() {
-    Backbone.Events.on('rankGroup:chosen', this._setCohortInfo, this);
-    Backbone.Events.on('compare:download-data', this._setDownloadData, this);
-    Backbone.Events.on('year:selected', this._setYear, this);
+    // Backbone.Events.on('compare:download-data', this._setDownloadData, this);
   },
 
-  _setCohortInfo: function() {
-    _.extend(this.options, {
-      categoryGroup: arguments[0],
-      categoryName: arguments[1] ? arguments[1] : 'global'
-    });
-
-    if (this.options.categoryName == 'globally') {
-      this.options.categoryGroup = null;
-    }
-  },
-
-  _setDownloadData: function(countries) {
-    this.options.compare = countries;
-  },
-
-  _setYear: function(year) {
-    _.extend(this.options, {
-      year: year
-    });
-  },
+  // _setDownloadData: function(countries) {
+  //   this.options.compare = countries;
+  // },
 
   _getCSV: function() {
     if (this.options.id) {
@@ -80,16 +49,16 @@ var DownloadView = infoWindowView.extend({
         .unbind('click')
         .removeClass('disabled');
 
-      return this.indicatorsCollection.downloadForCountries({
-        countries: this.options.compare
-      });
+      // return this.indicatorsCollection.downloadForCountries({
+      //   countries: this.options.compare
+      // });
 
     } else {
 
-      return this.indicatorsCollection.downloadForCountry({
-        iso: this.options.iso,
-        year: this.options.year
-      });
+      // return this.indicatorsCollection.downloadForCountry({
+      //   iso: this.options.iso,
+      //   year: this.options.year
+      // });
 
     }
   },
