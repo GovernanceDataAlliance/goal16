@@ -1,83 +1,101 @@
 .l-welcome {
-  background-image: url('#{$baseUrl}/img/fullscreenbg.jpg');
+  position: relative;
+
   background-size: cover;
-  height: 100%;
-  position: absolute;
-  width: 100%;
+  background-image: url('#{$baseUrl}/img/fullscreenbg.jpg');
 
-  .layer-welcome {
-    padding: 0 $wrap-padding-mobile;
-
-    @media screen and (min-width: 768px) {
-      padding: 0;
-    }
-  }
-
-  h1 {
-    img {
-      margin: 0 auto;
-      display: block;
-      width: 150px;
-
-      @media screen and (min-width: $screen-s) {
-        width: 200px;
-      }
-    }
-  }
-
-  .layer-welcome {
-    background-color: rgba(14, 29, 42, 0.6);
+  @media screen and (min-width: $screen-s) {
     position: absolute;
     top: 0;
+    right: 0;
+    bottom: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    padding-top: rem(115px);
   }
 
-  .text-banner-l {
-    margin-top: rem(34px);
+  // veil
+  &:before {
+    content: '';
 
-    @media screen and (min-width: 768px) {
-      margin: rem(55px) auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    background-color: $bg-veil;
+  }
+
+  .welcome-content {
+    position: relative;
+
+    padding: rem(45px) $wrap-padding-mobile rem(20px);
+
+    @media screen and (min-width: $screen-s) {
+      padding: rem(90px) $wrap-padding-tablet 0;
     }
-  }
-
-  .text-banner-m {
-    display: block;
-    margin: rem(17px) auto;
 
     @media screen and (min-width: 768px) {
-      margin: rem(22px) auto;
+      padding: rem(90px) $wrap-padding-desktop 0;
     }
-  }
 
-  .text-banner-title-s {
-    margin-top: rem(25px);
-
-    @media screen and (min-width: 768px) {
-      margin-top: rem(41px);
+    @media screen and (min-width: $screen-l) {
+      padding: rem(180px) $wrap-padding-desktop-xl 0;
     }
-  }
 
-  .text-banner-s {
-    width: 100%;
-    display: block;
-    margin: rem(10px) auto;
+    .text-heading-underline > img{
+      display: block;
+      width: rem(150px);
+      margin: 0 auto;
 
-    @media screen and (min-width: 768px) {
-      width: rem(736px);
-      margin: rem(16px) auto;
+      @media screen and (min-width: $screen-s) {
+        width: rem(200px);
+      }
     }
-  }
 
-  .c-button {
-    display: inline-block;
-    margin: rem(30px) auto;
-    @extend %centerx;
+    .text-banner-l {
+      margin-top: rem(34px);
 
-    @media screen and (min-width: 768px) {
-      margin: rem(50px) auto;
+      @media screen and (min-width: 768px) {
+        margin: rem(55px) auto;
+      }
+    }
+
+    .text-banner-m {
+      display: block;
+      margin: rem(17px) auto;
+
+      @media screen and (min-width: 768px) {
+        margin: rem(22px) auto;
+      }
+    }
+
+    .text-banner-title-s {
+      margin-top: rem(25px);
+
+      @media screen and (min-width: 768px) {
+        margin-top: rem(41px);
+      }
+    }
+
+    .text-banner-s {
+      width: 100%;
+      display: block;
+      margin: rem(10px) auto;
+
+      @media screen and (min-width: 768px) {
+        width: rem(736px);
+        margin: rem(16px) auto;
+      }
+    }
+
+    .link-container {
+      margin-top: rem(30px);
+
+      @media screen and (min-width: $screen-s) {
+        display: flex;
+        justify-content: center;
+        margin-top: rem(50px);
+      }
     }
   }
 }
