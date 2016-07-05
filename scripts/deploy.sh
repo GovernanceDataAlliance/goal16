@@ -3,7 +3,7 @@ set -e
 
 git fetch
 
-git checkout develop
+git checkout master
 
 exists=`git show-ref refs/heads/gh-pages`
 if [ -n "$exists" ]; then
@@ -11,7 +11,7 @@ if [ -n "$exists" ]; then
 fi
 git checkout -b gh-pages
 
-git rebase develop
+git rebase master
 
 ORIGINAL_NAME="$(git config user.name)"
 ORIGINAL_EMAIL="$(git config user.email)"
@@ -31,4 +31,4 @@ git push --force --quiet origin gh-pages:gh-pages
 git config user.name $ORIGINAL_NAME
 git config user.email $ORIGINAL_EMAIL
 
-git checkout develop
+git checkout master
