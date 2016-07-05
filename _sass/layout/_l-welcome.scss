@@ -86,6 +86,10 @@
         width: rem(736px);
         margin: rem(16px) auto;
       }
+
+      &.-italic {
+        font-style: italic;
+      }
     }
 
     .link-container {
