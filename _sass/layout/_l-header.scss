@@ -2,6 +2,8 @@ $header-height-desktop: rem(80px);
 $header-height: rem(80px);
 
 .l-header {
+  z-index: 20;
+
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -16,20 +18,19 @@ $header-height: rem(80px);
   top: -70px;
   left: 0;
   right: 0;
+
+  max-width: $grid-max-width;
   height: $header-height;
-  z-index: 20;
+  margin: 0 auto;
+
   background-color: $white;
 
-  &.is-map{
-
-  }
-
   &.hide {
-    transform: translatey(0);
+    transform: translate(0, 0);
   }
 
   &.show {
-    transform: translatey(70px);
+    transform: translate(0, 70px);
   }
 
   @media screen and (min-width: 768px) {

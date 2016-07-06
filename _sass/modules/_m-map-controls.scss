@@ -25,17 +25,24 @@
 
 .leaflet-bar a:first-child,
 .leaflet-bar a:last-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   width: rem(40px);
   height: rem(40px);
-  line-height: rem(35px);
+
   font-size: rem(20px);
+  color: $color-5;
+
+  border: 0;
   border-radius: 50%;
   border-top-left-radius: 50%;
   border-top-right-radius: 50%;
-  border: 0;
+
   background-color: $white;
   box-shadow: 0 0 rem(8px) 0 rgba(7, 51, 56, 0.3);
-  color: $color-5;
+
 }
 
 .leaflet-bar a:last-child {
@@ -64,5 +71,3 @@
     bottom: rem(10px);
   }
 }
-
-
