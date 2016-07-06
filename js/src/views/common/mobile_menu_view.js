@@ -33,14 +33,14 @@ var MobileMenuView = Backbone.View.extend({
   },
 
   cacheVars: function() {
+
     this.$background = $('.menu-background');
     this.$menu = $('.m-mobile-menu');
-    this.$btnClose = $('.btn-close');
+    this.$btnClose = this.$menu.find('.btn-close');
     this$btnOpen = this.$('.btn-mobile-menu');
 
     this.$body = $('body');
     this.$html = $('html');
-
   },
 
   _setListeners: function() {

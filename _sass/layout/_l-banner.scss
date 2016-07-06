@@ -31,7 +31,7 @@ $regions: 'africa', 'americas', 'asia', 'europe', 'oceania';
 
   &.-topsection-countries {
     padding-top: rem(24px);
-    padding-bottom: rem(116px); 
+    padding-bottom: rem(88px);
 
     // keep commented meanwhile there's no images available, otherwise
     // you will see an ugly gray background!
@@ -44,7 +44,7 @@ $regions: 'africa', 'americas', 'asia', 'europe', 'oceania';
 
     @media screen and (min-width: $screen-s) {
       padding-top: rem(40px);
-      padding-bottom: rem(133px);
+      padding-bottom: rem(74px);
     }
   }
 

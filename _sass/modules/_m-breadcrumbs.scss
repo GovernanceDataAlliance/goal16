@@ -7,6 +7,9 @@
     list-style: none;
     display: block;
     margin: 0 auto;
+
+
+
     li,a,span{
       float:left;
       color: #fff;
@@ -15,6 +18,10 @@
       letter-spacing: 0.5px;
       text-align: center;
       text-transform: uppercase;
+    }
+
+    > li:nth-child(even) {
+      margin: 0 rem(5px);
     }
   }
   a{

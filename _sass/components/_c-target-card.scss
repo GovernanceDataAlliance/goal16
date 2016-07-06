@@ -1,13 +1,15 @@
 .c-target-card {
-  padding-bottom: rem(50px);
+  padding-bottom: rem(40px);
 
   > .js--target-info {
     display: flex;
     justify-content: space-between;
-
-    padding-bottom: rem(15px);
+    padding-bottom: rem(4px);
     border-bottom: rem(1px) solid rgba($border-2, .7);
     cursor: pointer;
+    @media screen and (min-width: $screen-m) {
+    padding-bottom: rem(15px);
+  }
   }
 
   > .js--target-info > .target-title {
