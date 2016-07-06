@@ -8,8 +8,9 @@
     <a href="countries/FRA"><h1 class="c-title-popup -small">{{country.name}}</h1></a>
     {{#each indicators}}
       <div class="data">
-        {{!-- <p>{{title}}</p> --}}
-        <p>Last data point: {{year}}</p>
+        <p>Score range: {{max_score}} - {{min_score}}</p>
+        <p>Units: {{units}}</p>
+        <p>Last update: {{year}}</p>
       </div>
       <div class="score c-score-popup">{{comma score}}<span class="units">{{ units_abbr }}</span></div>
     {{/each}}
