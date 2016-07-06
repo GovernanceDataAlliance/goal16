@@ -1,6 +1,19 @@
 .l-legend {
   position: absolute;
-  bottom: rem(40px);
-  right: rem(30px);
+  bottom: rem(80px);
+  left: rem($wrap-padding-mobile);
+  right: rem($wrap-padding-mobile);
   z-index: 1;
+  background-color: rgba($white, .6);
+  padding: rem(6px) rem(6px) rem(30px);
+
+  @media screen and (min-width: 768px) {
+    right: rem(30px);
+    bottom: rem(40px);
+    left: $dashboard-width + 35px;
+  }
+
+  @media screen and (min-width: $screen-l) {
+    padding: rem(6px) rem(6px) rem(10px);
+  }
 }
