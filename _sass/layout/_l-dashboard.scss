@@ -32,13 +32,17 @@
     position: absolute;
     top: rem(-40px);
     left: 0;
+
     width: 100%;
     height: $button-height;
-    background-color: $color-5;
+
+    font-size: rem(11px);
+    letter-spacing: rem(.4px);
     color: $white;
     text-transform: uppercase;
     text-align: center;
-    font-size: rem($font-size-xxsmall);
+
+    background-color: $color-5;
     box-shadow: 0 0 rem(60px) 0 rgba(7, 56, 35, 0.1);
 
     @media screen and (min-width: 768px) {
@@ -60,6 +64,7 @@
   .is-dashboard-close & {
     .btn-toogle-dashboard-mobile {
       background-color: $white;
+      
       color: $font-color-3;
     }
   }
