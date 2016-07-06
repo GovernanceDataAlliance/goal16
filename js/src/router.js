@@ -12,6 +12,7 @@ var ViewManager = require('./lib/view_manager.js'),
   DataView = require('./views/data/data.js'),
   CountriesListView = require('./views/countries/countries-list/countries.js'),
   CountryView = require('./views/countries/country/country.js');
+  InfowindowView = require('./views/common/infowindow.js');
 
 var Router = Backbone.Router.extend({
 
@@ -89,11 +90,23 @@ var Router = Backbone.Router.extend({
     */
     view.updateMapParams();
 
+    this._setMapDisclaimer();
+
     this.viewManager.showView('dashboard');
     this.viewManager.showView('mapLegend');
     this.viewManager.showView('map');
 
     view.setMapLayer();
+  },
+
+  _setMapDisclaimer: function() {
+    if (!sessionStorage.getItem('alreadyBeenHere')) {
+      var options = {
+        type: 'map-disclaimer'
+      }
+      this.disclaimer = new InfowindowView(options);
+      sessionStorage.setItem('alreadyBeenHere', true);
+    }
   },
 
   //COUNTRIES
