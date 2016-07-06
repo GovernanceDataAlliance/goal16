@@ -22,9 +22,9 @@
           <div class="table-cell -indicator">
             <a href="{{ siteurl }}/data/?indicator={{ indicator_slug }}" class="indicator-name">{{indicator_code}} {{ indicator_title }}</a>
             <span class="indicator-info">
-              {{#if source_title }}<span>{{ source_title }}</span>{{/if}}
-              {{#if year }}<span>Last data point: {{ year }}</span>{{/if}}
-              {{#if units_abbr}}<span>{{ units_abbr }}</span>{{/if}}
+              {{#if max_score }}<span>Score range: {{ min_score }} -  {{ max_score }}</span>{{/if}}
+              {{#if units}}<span>Units: {{ units }}</span>{{/if}}
+              {{#if year }}<span>Last update: {{ year }}</span>{{/if}}
             </span>
           </div>
 
@@ -81,9 +81,9 @@
           <div class="table-cell -indicator">
             <a href="{{ siteurl }}/data/?indicator={{ indicator_slug }}" class="indicator-name">{{indicator_code}} {{ indicator_title }}</a>
             <span class="indicator-info">
-              {{#if source_title }}<span>{{ source_title }}</span>{{/if}}
-              {{#if year }}<span>Last data point: {{ year }}</span>{{/if}}
-              {{#if units_abbr}}<span>{{ units_abbr }}</span>{{/if}}
+              {{#if max_score }}<span>Score range: {{ min_score }} -  {{ max_score }}</span>{{/if}}
+              {{#if units}}<span>Units: {{ units }}</span>{{/if}}
+              {{#if year }}<span>Last update: {{ year }}</span>{{/if}}
             </span>
           </div>
 

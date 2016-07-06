@@ -77,7 +77,8 @@
 
       margin-top: rem(5px);
 
-      > .indicator-source,
+      > .indicator-score-range,
+      .indicator-units,
       .indicator-year {
         font-size: rem($font-size-xsmall);
         color: $font-color-7;
