@@ -42,11 +42,20 @@ var PopUpView = Backbone.View.extend({
     }.bind(this));
   },
 
+  _cacheVars: function() {
+    this.$popup = $('.m-popup');
+    this.$btnClose = this.$popup.find('.btn-close');
+    this.$bgPopub = $('#popup-background');
+  },
+
   _drawPopUpMobile: function() {
     this.popUp = this._getContent();
     $('body').append(this.popUp);
-    $('#popup-background').css('display','block');
-    $('.btn-close').on('click', this._closeInfowindow.bind(this));
+
+    this._cacheVars();
+
+    this.$bgPopub.css('display','block');
+    this.$btnClose.on('click', this._closeInfowindow.bind(this));
   },
 
   _drawPopUp: function() {
@@ -55,11 +64,12 @@ var PopUpView = Backbone.View.extend({
       .setContent(this._getContent())
       .openOn(this.options.map);
 
+    this._cacheVars();
     this.setEvents();
   },
 
   setEvents: function() {
-    $('.btn-close').on('click', this.closePopUp.bind(this))
+    this.$btnClose.on('click', this.closePopUp.bind(this))
   },
 
   closePopUp: function() {
@@ -68,9 +78,9 @@ var PopUpView = Backbone.View.extend({
   },
 
   _closeInfowindow: function() {
-    $('.btn-close').off('click');
-    $('.m-popup').remove();
-    $('#popup-background').css('display' ,'none');
+    this.$btnClose.off('click');
+    this.$popup.remove();
+    this.$bgPopub.css('display' ,'none');
   },
 
   _getContent: function(options) {
