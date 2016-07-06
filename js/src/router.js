@@ -6,7 +6,6 @@ var ViewManager = require('./lib/view_manager.js'),
   MobileMenuView = require('./views/common/mobile_menu_view.js'),
   WelcomeView = require('./views/welcome/welcome.js'),
   MapView = require('./views/map/map.js'),
-  MapLegendview = require('./views/map/map_legend.js'),
   DashboardView = require('./views/map/dashboard.js'),
   CompareView = require('./views/compare/compare.js'),
   DataView = require('./views/data/data.js'),
@@ -71,10 +70,6 @@ var Router = Backbone.Router.extend({
       this.viewManager.addView('dashboard', DashboardView);
     }
 
-    if (!this.viewManager.hasView('mapLegend')) {
-      this.viewManager.addView('mapLegend', MapLegendview);
-    }
-
     /*
      We are setting two views in this point, but as they are sharing status,
      I can pick any of them to set the params in.
@@ -93,7 +88,6 @@ var Router = Backbone.Router.extend({
     this._setMapDisclaimer();
 
     this.viewManager.showView('dashboard');
-    this.viewManager.showView('mapLegend');
     this.viewManager.showView('map');
 
     view.setMapLayer();
