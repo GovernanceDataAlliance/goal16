@@ -5,6 +5,7 @@ $bucket-border: $bucket-border-1, $bucket-border-2, $bucket-border-3, $bucket-bo
 .m-legend {
   display: flex;
   align-items: center;
+  flex-direction: column;
   justify-content: space-between;
 
   .text {
@@ -13,17 +14,54 @@ $bucket-border: $bucket-border-1, $bucket-border-2, $bucket-border-3, $bucket-bo
     text-transform: uppercase;
     margin-right: rem(10px);
 
+    @media screen and (min-width: $screen-l) {
+      margin-right: rem(40px);
+    }
+
     &:last-child {
       margin-right: 0;
+      margin-left: rem(10px);
+
+      @media screen and (min-width: $screen-l) {
+        margin-right: rem(40px);
+      }
     }
+  }
+
+  p {
+    color: $font-color-7;
+    font-size: rem($font-size-xsmall);
+
+    @media screen and (min-width: 768px) {
+      font-size: rem($font-size-xxsmall);
+    }
+  }
+
+  .buckets {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   .bucket {
     display: inline-block;
-    width: rem(25px);
-    height: rem(25px);
+    width: rem(15px);
+    height: rem(15px);
     border-radius: 50%;
-    margin-right: rem(10px);
+    margin-right: rem(5px);
+    line-height: rem(45px);
+    color: $font-color-7;
+    font-size: rem($font-size-xxsmall);
+    text-align: center;
+
+    @media screen and (min-width: $screen-l) {
+      width: rem(40px);
+      height: rem(40px);
+      margin-right: rem(10px);
+      line-height: rem(37px);
+      color: $white;
+      font-size: rem($font-size-xsmall);
+    }
 
     @for $i from 1 through length($buckets) {
       &.#{nth($buckets, $i)} {
@@ -33,7 +71,19 @@ $bucket-border: $bucket-border-1, $bucket-border-2, $bucket-border-3, $bucket-bo
     }
 
     &.bucket-5 {
+      margin-right: 0;
       background-image: url('#{$baseUrl}/img/patterns/p5_green.png');
+
+      @media screen and (min-width: 768px) {
+        color: $font-color-7;
+      }
+    }
+  }
+
+  .literal {
+
+    @media screen and (min-width: 768px) {
+      display: none;
     }
   }
 }

@@ -23,6 +23,14 @@
     }
   }
 
+  &.-left {
+    text-align: left;
+
+    &:after {
+      margin: rem(25px) 0 rem(20px);
+    }
+  }
+
   @media screen and (min-width: $screen-s) {
     font-size: $font-size-large;
     font-weight: $font-weight-regular;
