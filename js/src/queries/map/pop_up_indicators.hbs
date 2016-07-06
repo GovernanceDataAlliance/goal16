@@ -1,4 +1,4 @@
-SELECT distinct on (year) 
+SELECT distinct on (indicator_slug) 
   name, 
   i.code as indicator_code, 
   i.title,  
@@ -11,9 +11,9 @@ SELECT distinct on (year)
 FROM {{scores_table}} s 
 INNER JOIN {{countries_table}} c ON s.iso=c.iso INNER JOIN {{indicators_table}} i ON i.slug=s.indicator_slug 
 WHERE  
-s.iso IN (SELECT iso FROM {{countries_table}} WHERE st_intersects(the_geom, st_setSrid(ST_MakePoint({{lng}}, {{lat}}),4326))) 
+  s.iso IN (SELECT iso FROM {{countries_table}} WHERE st_intersects(the_geom, st_setSrid(ST_MakePoint({{lng}}, {{lat}}),4326))) 
 AND 
-indicator_slug LIKE '{{slug}}' 
-order by 
-  year ASC
+  indicator_slug LIKE '{{slug}}' 
+ORDER BY 
+  indicator_slug, year DESC
 
