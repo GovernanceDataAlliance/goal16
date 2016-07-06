@@ -1,7 +1,8 @@
 var _ = require('lodash'),
   $ = require('jquery'),
   Backbone = require('backbone'),
-  Handlebars = require('handlebars');
+  Handlebars = require('handlebars'),
+  enquire = require('enquire.js');
 
 var disclaimertemplate = require('../../templates/common/disclaimer_tpl.hbs');
 
@@ -25,6 +26,7 @@ var MapDisclaimerView = Backbone.View.extend({
   },
 
   initialize: function() {
+    this._setView();
     this.render();
     this._setListeners();
   },
@@ -33,15 +35,28 @@ var MapDisclaimerView = Backbone.View.extend({
     $(document).keyup(_.bind(this.onKeyUp, this));
   },
 
+   _setView: function() {
+    enquire.register("screen and (max-width:767px)", {
+      match: _.bind(function(){
+        this.mobile = true;
+      },this)
+    });
+
+    enquire.register("screen and (min-width:768px)", {
+      match: _.bind(function(){
+        this.mobile = false;
+      },this)
+    });
+  },
+
   _remove: function() {
     $(this.el).find('#infowindow-base').remove();
   },
 
   render: function() {
     this.fixed = true;
-
     // Renders base template
-    this.$el.append(this.template());
+    this.$el.append(this.template({isMobile: this.mobile}));
     this.toogleState();
   },
 

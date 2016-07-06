@@ -5,7 +5,11 @@
       <div class="modal-container">
         <div id="modal-content" class="modal-content">
           <h3 class="c-title-underline -left">Get started</h3>
-          <p>Click on a target or an indicator to the left side to see which countries have data over the map</p>
+          {{#if isMobile}}
+            <p>Click on the “Explore and select the targets” button below to see which countries have data over the map</p>
+          {{else}}
+            <p>Click on a target or an indicator to the left side to see which countries have data over the map</p>
+          {{/if}}
         </div>
       </div>
     </div>
