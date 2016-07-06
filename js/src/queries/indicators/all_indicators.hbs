@@ -1,17 +1,24 @@
 SELECT
+
   i.code as indicator_code, 
-  i.slug, 
-  i.title, 
   i.description, 
-  i.link, 
+
   i.max_score, 
   i.min_score, 
   i.slug as indicator_slug, 
+  i.target_slug, 
   i.title as indicator_title, 
-  i.type,
-  i.target_slug 
+  i.type, 
+  i.units,  
+
+  s.link as source_link, 
+  s.name as source_name 
+
 FROM 
-  {{ table }} as i 
+  {{ indicators_table }} as i 
+left join 
+  {{ sources_table }} as s 
+on 
+ source_slug = s.slug 
 order by 
   i.code
-

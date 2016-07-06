@@ -1,0 +1,94 @@
+.c-target-card {
+  padding-bottom: rem(40px);
+
+  > .js--target-info {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: rem(4px);
+    border-bottom: rem(1px) solid rgba($border-2, .7);
+    cursor: pointer;
+    @media screen and (min-width: $screen-m) {
+    padding-bottom: rem(15px);
+  }
+  }
+
+  > .js--target-info > .target-title {
+    flex-basis: 70%;
+
+    font-size: $font-size-normal;
+    line-height: 1.4;
+    color: $font-color-1;
+
+    @media screen and (min-width: $screen-m) {
+      flex-basis: 75%;
+
+      font-size: $font-size-medium;
+    }
+  }
+
+  > .js--target-info > .card-options {
+    > .js--toggle-card {
+      transform: translate(0, rem(5px));
+      cursor: pointer;
+    }
+  }
+
+  .js--score-container {
+    width: 100%;
+    height: 100%;
+
+    &.is-closed {
+      height: 0;
+
+      visibility: hidden;
+    }
+  }
+
+  // maybe split these ones
+  .card-container {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    @media screen and (min-width: 768px) {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      padding-top: rem(30px);
+    }
+
+    &.slick-slider {
+      .slick-dots {
+        position: relative;
+
+        li {
+          button:before {
+            font-size: rem(40px);
+          }
+
+          &.slick-active {
+            button:before {
+              color: $color-5;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin: rem(50px) 0 rem(30px);
+  }
+
+  .icon-open_arrow,
+  .icon-close {
+    width: rem(16px);
+  }
+}

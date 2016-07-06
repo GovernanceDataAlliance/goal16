@@ -1,9 +1,10 @@
 .c-title-underline {
   font-family: $font-family-secondary;
-  color: $font-color-6;
-  font-weight: $font-weight-regular;
   font-size: $font-size-medium;
-  letter-spacing: 0.2px;
+  font-weight: $font-weight-regular;
+  color: $font-color-6;
+  letter-spacing: rem(.2px);
+  line-height: 1.3;
   text-align: center;
 
   &:after {
@@ -20,6 +21,14 @@
 
     &:after {
       display: none;
+    }
+  }
+
+  &.-left {
+    text-align: left;
+
+    &:after {
+      margin: rem(25px) 0 rem(20px);
     }
   }
 

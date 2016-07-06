@@ -1,8 +1,8 @@
 {{#each targets}}
   <div class="m-dashboard-target" id="target-{{slug}}">
-    <div class="header">
+    <div class="header js--open-target" data-slug={{slug}}>
       <div class="btn-wrapper">
-        <button class="js--open-target btn-open-target" data-slug={{slug}}>
+        <button class="btn-open-target">
           <svg class="icon-open">
             <use xlink:href="#icon-open_plus"></use>
           </svg>

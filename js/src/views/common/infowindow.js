@@ -12,6 +12,7 @@ var modalWindowtemplate = require('../../templates/common/modal_window_tpl.hbs')
  * Available options:
  * - info-infowindow
  * - share-infowindow
+ * - map-disclaimer
 */
 var ModalWindowView = Backbone.View.extend({
 
@@ -36,9 +37,23 @@ var ModalWindowView = Backbone.View.extend({
     this.type = options && options.type ? options.type : 'info-infowindow';
     this.data = options && options.data ? options.data : null;
 
-    this._setListeners();
-
+    this._setView();
     this.render();
+    this._setListeners();
+  },
+
+   _setView: function() {
+    enquire.register("screen and (max-width:767px)", {
+      match: _.bind(function(){
+        this.mobile = true;
+      },this)
+    });
+
+    enquire.register("screen and (min-width:768px)", {
+      match: _.bind(function(){
+        this.mobile = false;
+      },this)
+    });
   },
 
   _setListeners: function() {
@@ -54,6 +69,9 @@ var ModalWindowView = Backbone.View.extend({
 
       case 'share-infowindow':
         return { isShare: true };
+
+      case 'map-disclaimer':
+        return { isMapDisclaimer: true };
 
       default:
         return { isIndicator: true };
@@ -72,7 +90,9 @@ var ModalWindowView = Backbone.View.extend({
 
     // Renders base template
     this.$el.append(this.template({
-      isBase: true
+      isBase: true,
+      isMobile: this.mobile,
+      isMapDisclaimer: params.isMapDisclaimer
     }));
 
     // Adds filtered content to base template
@@ -110,8 +130,7 @@ var ModalWindowView = Backbone.View.extend({
   avoidScroll: function() {
     $('html').addClass('is-inmobile');
     $('body').addClass('is-inmobile');
-  },
-
+  }
 });
 
 module.exports = ModalWindowView;

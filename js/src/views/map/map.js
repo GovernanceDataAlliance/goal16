@@ -11,6 +11,7 @@ var targetLayerSQL = Handlebars.compile(require('../../queries/map/layer_target.
 
 var PopUpView = require('./pop_up.js'),
     InfoWindowView = require('../common/infowindow.js'),
+    MapLegendview = require('./map_legend.js'),
     ShareWindowView = require('../common/share_window.js');
 
 var status = require ('../../models/map/status.js');
@@ -25,6 +26,7 @@ var MapView = Backbone.View.extend({
   },
 
   options: {
+    legend: false,
     basemap: 'https://api.tiles.mapbox.com/v4/goal16.9990f1b9/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZ29hbDE2IiwiYSI6ImNpcGgzaWwzbDAwMW52Mmt3ZG5tMnRwN3gifQ.-e8de3rW2J8gc2Iv3LzMnA',
     map: {
       center: [39.1, 4.5],
@@ -195,6 +197,11 @@ var MapView = Backbone.View.extend({
 
   _addLayer: function() {
     this.layer.addTo(this.map);
+
+    if (!this.options.legend) {
+      this.legend = new MapLegendview();
+      this.options.legend = !this.options.legend;
+    }
   },
 
   _removeLayer: function() {

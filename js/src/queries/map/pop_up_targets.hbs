@@ -1,12 +1,19 @@
-SELECT 
+SELECT distinct on (i.slug)
   i.code as indicator_code, 
-  i.slug, 
   i.title, 
   s.score, 
-  s.iso, 
+  s.iso,
+  s.year,  
   i.type,  
-  i.units_abbr 
-FROM {{indicators_table}} i JOIN {{scores_table}} s ON s.indicator_slug=i.slug 
-WHERE i.target_slug = '{{slug}}' 
+  i.units_abbr,
+  i.units,
+  i.max_score, 
+  i.min_score    
+FROM 
+  {{indicators_table}} i JOIN {{scores_table}} s ON s.indicator_slug=i.slug 
+WHERE 
+  i.target_slug = '{{slug}}' 
 AND 
-s.iso LIKE (SELECT iso FROM {{countries_table}} WHERE st_intersects(the_geom, st_setSrid(ST_MakePoint({{lng}}, {{lat}}),4326))) 
+  s.iso IN (SELECT iso FROM {{countries_table}} WHERE st_intersects(the_geom, st_setSrid(ST_MakePoint({{lng}}, {{lat}}),4326))) 
+ORDER BY 
+  i.slug, s.year DESC

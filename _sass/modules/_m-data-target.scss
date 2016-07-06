@@ -1,7 +1,8 @@
 .m-data-target {
+  padding: rem(45px) 0 0;
 
   @media screen and (min-width: $screen-l) {
-    padding: 0 rem(90px);
+    padding: rem(45px) rem(90px) 0;
 
     .c-title-underline {
       max-width: 70%;
@@ -14,7 +15,7 @@
   padding-bottom: rem(20px);
 
   @media screen and (min-width: $screen-m) {
-    padding-bottom: rem(50px);
+    padding-bottom: rem(30px);
   }
 
   .header {
@@ -47,11 +48,38 @@
   }
 
   .indicator-info {
-    margin-bottom: rem(10px);
+    padding: rem(30px);
+
+    @media screen and (min-width: 768px) {
+      padding: rem(30px) rem(100px);
+    }
+
+    p + p {
+      margin-top: rem(30px);
+    }
   }
 
-  p {
-    max-width: 80%;
-    margin: rem(30px) auto 0;
+  .indicator-info > .indicator-metadata {
+    margin-top: rem(30px);
+
+    font-size: $font-size-xsmall;
+    line-height: 1.7;
+
+
+    ul > li > .key-item {
+      color: $font-color-7;
+
+      & + span  {
+        margin-right: rem(35px);
+
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
+
+    ul > li a {
+      font-size: $font-size-xsmall;
+    }
   }
 }

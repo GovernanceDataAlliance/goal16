@@ -7,15 +7,15 @@ var template = Handlebars.compile(require('../../templates/map/legend.hbs'))
 
 var MapLegendView = Backbone.View.extend({
 
-  className: 'l-legend',
+  el: '#content',
 
   initialize: function(options) {
     this.options = options;
+    this.render()
   },
 
   render: function() {
-    this.$el.html(template());
-    return this;
+    this.$el.append(template());
   },
 
   show: function() {

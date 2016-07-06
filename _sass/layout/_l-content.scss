@@ -1,6 +1,7 @@
 .l-content {
   //Countries list
-  padding: rem(60px) 0;
+  padding: rem(14px) 0;
+
 
   @media screen and (min-width: $screen-l) {
     padding: rem(95px) 0 rem(120px);
@@ -52,18 +53,17 @@
   }
 
   &.-countries {
-    border-bottom: 1px solid $color-3;
-    padding: rem(15px) 0;
+    border-bottom: rem(1px) solid $color-9;
+    padding-top: rem(15px);
+    padding-bottom: rem(28px);
 
     @media screen and (min-width: $screen-s) {
-      padding: rem(100px) 0 rem(90px);
+      padding-top: rem(96px);
+      padding-bottom: rem(90px);
 
       &:last-child {
         margin-bottom: rem(95px);
-        border-bottom: 0;
-        padding-bottom: 0;
       }
     }
   }
 }
-

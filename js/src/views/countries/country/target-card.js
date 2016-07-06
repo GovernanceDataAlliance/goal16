@@ -3,6 +3,7 @@ var $ = require('jquery'),
   Backbone = require('backbone'),
   Handlebars = require('handlebars');
 
+var TargetCardHeaderView = require('../../../views/common/target-card/header.js');
 
 var template = require('../../../templates/countries/country/indicator-card.hbs');
 
@@ -11,7 +12,9 @@ require('../../common/slick.min');
 
 var IndicatorCardView = Backbone.View.extend({
 
-  className: 'l-target-card',
+  className: 'c-score-card',
+
+  tagName: 'article',
 
   template: Handlebars.compile(template),
 
@@ -20,6 +23,20 @@ var IndicatorCardView = Backbone.View.extend({
 
     this.status = this.options.status;
     this.id = this.options.target.slug;
+  },
+
+  _setViews: function() {
+    enquire.register("screen and (max-width:768px)", {
+      match: _.bind(function(){
+        this.mobile = true;
+      },this)
+    });
+
+    enquire.register("screen and (min-width:769px)", {
+      match: _.bind(function(){
+        this.mobile = false;
+      },this)
+    });
   },
 
   _getIndicatorsByType: function() {
@@ -41,7 +58,12 @@ var IndicatorCardView = Backbone.View.extend({
   },
 
   setSlick: function() {
-    this.$('.slider-indicator').slick({
+
+    if (!this.mobile) {
+      return;
+    }
+
+    this.$('.card-container').slick({
       dots: true,
       arrows:false,
       infinite: true,
@@ -58,12 +80,22 @@ var IndicatorCardView = Backbone.View.extend({
       shadowIndicators = indicatorsByType[1],
       iso = this.status.get('iso');
 
-    this.$el.html(this.template({
+    var optionsView = {
+      target: target,
+      cardView: this
+    };
+
+    this.targetCardHeaderView = new TargetCardHeaderView(optionsView);
+
+    this.$el.append(this.targetCardHeaderView.render().el);
+
+    this.$el.find('.js--score-container').html(this.template({
       iso: iso,
       officialIndicators: officialIndicators,
-      shadowIndicators: shadowIndicators,
-      target: target
+      shadowIndicators: shadowIndicators
     }));
+
+    this._setViews();
 
     return this;
   }

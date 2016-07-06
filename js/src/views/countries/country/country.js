@@ -1,10 +1,13 @@
 var $ = require('jquery'),
-  Backbone = require('backbone');
+  Backbone = require('backbone'),
+  Handlebars = require('handlebars');
 
 var Status = require('../../../models/countries/status.js');
 
 var CountriesCollection = require('../../../collections/common/countries.js'),
   IndicatorsCollection = require('../../../collections/common/indicators');
+
+var template = require('../../../templates/countries/country/index.hbs');
 
 var BannerView = require('./banner.js'),
   TargetCardView = require('./target-card.js'),
@@ -13,6 +16,8 @@ var BannerView = require('./banner.js'),
 var CountryView = Backbone.View.extend({
 
   id: 'js--country',
+
+  template: Handlebars.compile(template),
 
   initialize: function() {
     // models
@@ -50,6 +55,8 @@ var CountryView = Backbone.View.extend({
     this.$header = $('.l-header');
     this.$banner = $('.l-banner');
     this.$bannerTitle = this.$banner.find('.c-section-title');
+
+    this.$targetList = this.$el.find('#js--target-list');
   },
 
   _getCountryInfo: function(iso) {
@@ -96,13 +103,14 @@ var CountryView = Backbone.View.extend({
         target: target
       });
 
-      this.$el.append(targetCard.render().el);
+      this.$targetList.find('> .wrap').append(targetCard.render().el);
+
       targetCard.setSlick();
     }
   },
 
   render: function() {
-    this.$el.html();
+    this.$el.html(this.template());
 
     this._setVars();
 
