@@ -12,7 +12,7 @@ var ViewManager = require('./lib/view_manager.js'),
   DataView = require('./views/data/data.js'),
   CountriesListView = require('./views/countries/countries-list/countries.js'),
   CountryView = require('./views/countries/country/country.js');
-  MapDisclaimerView = require('./views/common/map-disclaimer.js');
+  InfowindowView = require('./views/common/infowindow.js');
 
 var Router = Backbone.Router.extend({
 
@@ -101,7 +101,10 @@ var Router = Backbone.Router.extend({
 
   _setMapDisclaimer: function() {
     if (!sessionStorage.getItem('alreadyBeenHere')) {
-      this.disclaimer = new MapDisclaimerView();
+      var options = {
+        type: 'map-disclaimer'
+      }
+      this.disclaimer = new InfowindowView(options);
       sessionStorage.setItem('alreadyBeenHere', true);
     }
   },
