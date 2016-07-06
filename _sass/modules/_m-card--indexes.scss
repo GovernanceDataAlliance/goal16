@@ -15,6 +15,7 @@
     flex-direction: column;
     justify-content: center;
 
+
     > .name {
       cursor: pointer;
       font-size: rem(30px);
@@ -86,8 +87,7 @@
     flex: 1 1 auto;
     justify-content: center;
     align-items: center;
-  }
-  @media screen and (min-width: 768px) {
+    height: rem(800px);
     .img {
       height: rem(40px);
     }
@@ -116,5 +116,9 @@
     }
   }
   @media screen and (min-width: $screen-l) {
+    height: rem(500px);
   }
+  @media screen and (min-width: $screen-xl) {
+
+    }
 }
