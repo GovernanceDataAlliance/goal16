@@ -16,7 +16,7 @@ SELECT
 
 FROM 
   {{ indicators_table }} as i 
-inner join 
+left join 
   {{ sources_table }} as s 
 on 
  source_slug = s.slug 
