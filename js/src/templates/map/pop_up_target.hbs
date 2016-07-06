@@ -9,7 +9,7 @@
     <div class="scroll-wrapper">
       {{#if indicators}}
         {{#if indicators.official}}
-        <p class="c-subtitle-popup">IAEG global indicator</p>
+        <p class="c-subtitle-popup">IAEG global indicators</p>
           {{#each indicators.official}}
             <div class="data-numbers">
               <span class="data-numbers-text">{{indicator_code}} {{title}}</span>
@@ -18,7 +18,7 @@
           {{/each}}
         {{/if}}
         {{#if indicators.shadow}}
-        <p class="c-subtitle-popup -shadow">complementary global indicator</p>
+        <p class="c-subtitle-popup -shadow">complementary global indicators</p>
           {{#each indicators.shadow}}
             <div class="data-numbers">
               <span class="data-numbers-text">{{indicator_code}} {{title}}</span>
