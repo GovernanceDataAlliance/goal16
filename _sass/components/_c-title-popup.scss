@@ -59,14 +59,19 @@
     display: block;
     height: rem(3px);
     background-color: $blue-topaz;
-    margin: rem(13px) auto rem(21px);
+    margin: 0 auto rem(21px);
     width: rem(37px);
+  }
+
+  &.-shadow {
+    margin-top: rem(15px) !important;
   }
 
   @media screen and (min-width: $screen-s) {
     letter-spacing: 0.5px;
     font-size: $font-size-xxsmall;
     margin-top: 0 !important;
+    margin-bottom: rem(15px) !important;
 
     &:after {
       content: "";
@@ -75,10 +80,6 @@
       background-color: $blue-topaz;
       margin: rem(8px) auto rem(14px);
       width: rem(37px);
-    }
-
-    &.-shadow {
-      margin-top: rem(10px) !important;
     }
   }
 }
