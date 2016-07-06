@@ -1,9 +1,13 @@
 
 <div class="m-breadcrumbs -light">
   <ul>
-    <li><a href="/">home </a></li>
+    <li><a href="/">home</a></li>
     <li><span> / </span></li>
-    <li> countries </li>
+    <li><a href="/countries">countries</a></li>
+    {{#if countryName}}
+      <li>/</li>
+      <li>{{ countryName }}</li>
+    {{/if}}
   </ul>
 </div>
 
