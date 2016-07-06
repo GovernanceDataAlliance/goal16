@@ -18,7 +18,8 @@ sc.score,
 sc.iso,   
 sc.year,   
 so.name as source_title,   
-so.slug as source_slug 
+so.slug as source_slug,
+t.target_order  
 from   r as sc   
 right join   {{ indicators_table }} as i  
 on   i.slug = sc.indicator_slug   
@@ -26,4 +27,4 @@ right join  {{ targets_table }} as t
 on   i.target_slug = t.slug 
 left join   {{ sources_table}} as so 
 on   i.source_slug = so.slug 
-order by   i.code
+order by t.target_order

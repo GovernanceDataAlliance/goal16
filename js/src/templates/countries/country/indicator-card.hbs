@@ -7,7 +7,7 @@
       <ul class="indicator-list" data-iso="{{ iso }}">
         {{#each officialIndicators}}
           <li class="indicator-item">
-            <span class="indicator-score"> {{ comma score }}{{ units_abbr }}</span>
+            <span class="indicator-score"> {{comma score }}{{ units_abbr }}</span>
             <h4 class="indicator-title">{{ indicator_code }} {{ indicator_title }}</h4>
             <div class="indicator-metadata">
               <span class="indicator-source"> {{ source_title }} </span>
@@ -17,7 +17,7 @@
         {{/each}}
       </ul>
     {{else}}
-      <span class="no-indicators">No indicators available</span>
+      <span class="no-indicators">No IAEG Global indicators for this target</span>
     {{/if}}
   </div>
 
@@ -28,7 +28,7 @@
       <ul class="indicator-list" data-iso="{{ iso }}">
         {{#each shadowIndicators}}
           <li class="indicator-item">
-            <span class="indicator-score"> {{ comma score }} </span>
+            <span class="indicator-score"> {{comma score }} </span>
             <h4 class="indicator-title">{{ indicator_code }} {{ indicator_title }}</h4>
             <div class="indicator-metadata">
               <span class="indicator-source"> {{ source_title }} </span>
@@ -38,7 +38,7 @@
         {{/each}}
       </ul>
     {{else}}
-      <span class="no-indicators">No indicators available</span>
+      <span class="no-indicators">No Complementary Global Indicator for this target</span>
     {{/if}}
 
   </div>

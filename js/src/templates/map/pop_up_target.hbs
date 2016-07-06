@@ -13,7 +13,7 @@
           {{#each indicators.official}}
             <div class="data-numbers">
               <span class="data-numbers-text">{{indicator_code}} {{title}}</span>
-              <span class="c-score-popup -small">{{#comma score}}{{/comma}} <span class="units">{{units_abbr}}</span></span>
+              <span class="c-score-popup -small">{{comma score}}<span class="units">{{units_abbr}}</span></span>
             </div>
           {{/each}}
         {{/if}}
@@ -22,7 +22,7 @@
           {{#each indicators.shadow}}
             <div class="data-numbers">
               <span class="data-numbers-text">{{indicator_code}} {{title}}</span>
-              <span class="c-score-popup -small">{{#comma score}}{{/comma}} <span class="units">{{units_abbr}}</span></span>
+              <span class="c-score-popup -small">{{comma score}}<span class="units">{{units_abbr}}</span></span>
             </div>
           {{/each}}
         {{/if}}

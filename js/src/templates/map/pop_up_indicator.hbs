@@ -11,7 +11,7 @@
         {{!-- <p>{{title}}</p> --}}
         <p>Last data point: {{year}}</p>
       </div>
-      <div class="score c-score-popup">{{#comma score}}{{/comma}}<span class="units">{{ units_abbr }}</span></div>
+      <div class="score c-score-popup">{{comma score}}<span class="units">{{ units_abbr }}</span></div>
     {{/each}}
     <div class="links">
       <a href="{{url}}/countries/?iso={{country.iso}}">visit country page > </a>
