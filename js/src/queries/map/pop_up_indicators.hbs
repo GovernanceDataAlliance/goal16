@@ -1,4 +1,4 @@
-SELECT distinct on (year) 
+SELECT distinct on (indicator_slug) 
   name, 
   i.code as indicator_code, 
   i.title,  
@@ -15,5 +15,5 @@ s.iso IN (SELECT iso FROM {{countries_table}} WHERE st_intersects(the_geom, st_s
 AND 
 indicator_slug LIKE '{{slug}}' 
 order by 
-  year ASC
+  indicator_slug, year ASC
 
