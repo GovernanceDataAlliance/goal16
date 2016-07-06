@@ -39,7 +39,12 @@
     }
 
     @media screen and (min-width: $screen-l) {
-      padding: rem(180px) $wrap-padding-desktop-xl 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      padding: 0 $wrap-padding-desktop-xl;
     }
 
     .text-heading-underline > img{
