@@ -39,7 +39,7 @@ var DownloadView = infoWindowView.extend({
 
   _setListeners: function() {},
 
-  updateParams(settings) {
+  updateParams: function(settings) {
     _.extend(this.options, settings);
   },
 

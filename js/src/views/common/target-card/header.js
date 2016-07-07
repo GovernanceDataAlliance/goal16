@@ -42,6 +42,8 @@ var TargetCardHeaderView = Backbone.View.extend({
   },
 
   _resetCard: function() {
+    this.$scoresTable.addClass('is-closed');
+
     this.$closeBtn.addClass('is-hidden');
     this.$openBtn.removeClass('is-hidden');
   },
