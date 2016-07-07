@@ -3,23 +3,12 @@ $header-height: rem(80px);
 
 .l-header {
   z-index: 20;
-
-  // display: -webkit-box;
-  // display: -ms-flexbox;
-  // display: flex;
-  // -webkit-box-align: stretch;
-  // -ms-flex-align: stretch;
-  // align-items: stretch;
-  // -webkit-box-pack: justify;
-  // -ms-flex-pack: justify;
-  // justify-content: space-between;
   transition: transform 0.5s ease;
   position: fixed;
   top: -70px;
   left: 0;
   right: 0;
 
-  // max-width: $grid-max-width;
   padding-left: rem(90px);
   height: $header-height;
   margin: 0 auto;
@@ -51,7 +40,6 @@ $header-height: rem(80px);
     -ms-flex-pack: center;
     justify-content: center;
     background-color: $white;
-    // margin-left: rem(18px);
     float: left;
     max-width: rem(200px);
     width: rem(200px);
@@ -65,15 +53,6 @@ $header-height: rem(80px);
         max-height: rem(80px);
       }
     }
-
-    // @media screen and (min-width: 768px) {
-    //   flex-basis: 37%;
-    //   width: rem(270px);
-    // }
-    //
-    // @media screen and (min-width: 768px) {
-    //   width: rem(360px);
-    // }
 
     @media screen and (min-width: $screen-l) {
       height: $header-height-desktop;
