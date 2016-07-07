@@ -1,8 +1,13 @@
-SELECT 
-  title, 
-  description, 
-  slug 
-FROM
-  {{table}} 
-WHERE 
-  slug='{{indicator_slug}}'
+SELECT   
+  i.title,   
+  i.description,   
+  i.slug,  
+  max_score,   
+  min_score,   
+  units,   
+  s.name as source_name,
+  s.link as source_link 
+FROM  
+  {{table}} i JOIN sources s on i.source_slug=s.slug 
+WHERE   
+  i.slug='{{indicator_slug}}'
