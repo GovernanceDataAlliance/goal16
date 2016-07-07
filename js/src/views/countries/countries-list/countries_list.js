@@ -74,13 +74,13 @@ var CountryListView = Backbone.View.extend({
   },
 
   _openList: function(e) {
-    if($(e.currentTarget).hasClass('list-no-visible')){
-      $(e.currentTarget).removeClass('list-no-visible');
-      $(e.currentTarget).toggleClass('list-visible');
+    if($(e.currentTarget).hasClass('-list-no-visible')){
+      $(e.currentTarget).removeClass('-list-no-visible');
+      $(e.currentTarget).toggleClass('-list-visible');
       $(".open-menu").attr('xlink:href','#icon-close_x');
     }else{
-      $(e.currentTarget).removeClass('list-visible');
-      $(e.currentTarget).toggleClass('list-no-visible');
+      $(e.currentTarget).removeClass('-list-visible');
+      $(e.currentTarget).toggleClass('-list-no-visible');
       $(".open-menu").attr('xlink:href','#icon-open_arrow');
     }
   }

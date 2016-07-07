@@ -52,10 +52,12 @@
     margin-top: rem(70px);
   }
 
+
+
   &.-countries {
     border-bottom: rem(1px) solid $color-9;
     padding-top: rem(15px);
-    padding-bottom: rem(28px);
+    // padding-bottom: rem(28px);
 
     @media screen and (min-width: $screen-s) {
       padding-top: rem(96px);

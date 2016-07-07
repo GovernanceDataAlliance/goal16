@@ -62,7 +62,7 @@
   }
 }
 
-.list-visible {
+.-list-visible {
   .wrap {
     .m-list {
       h2 {
@@ -95,9 +95,9 @@
   }
 }
 
-.list-no-visible {
+.-list-no-visible {
   cursor: pointer;
-  padding-bottom: rem(14px) !important;
+  padding-bottom: rem(14px);
   .wrap {
     .m-list {
       h2 {
@@ -115,6 +115,7 @@
 
   @media screen and (min-width: $screen-s) {
     padding: 0 0 rem(90px);
+    padding-bottom: rem(90px);
     .wrap {
       .m-list {
         h2 {
