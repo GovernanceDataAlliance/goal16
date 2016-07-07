@@ -115,7 +115,7 @@ var ScoreCardView = Backbone.View.extend({
         parsedScore = {};
 
       // we create a new object with the common indicator's info
-      Object.assign(parsedScore, indicator[0]);
+      _.extend(parsedScore, indicator[0]);
 
       // loop in every score in the current indicator
       for (var i in indicator) {
@@ -144,7 +144,7 @@ var ScoreCardView = Backbone.View.extend({
 
             params[scoreKey] = indicator[i].score;
 
-            Object.assign(parsedScore, params);
+            _.extend(parsedScore, params);
           }
         }
       }

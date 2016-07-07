@@ -43,6 +43,9 @@ var MapView = Backbone.View.extend({
         indicator: '#score{ polygon-fill: #1f301f; line-color: #eee; line-width: 0.5; line-opacity: 1;}',
         target: '#indicators{ polygon-fill: #1f301f; line-color: #eee; line-width: 0.5; line-opacity: 1; } #indicators [ score <= 100] { polygon-fill: #1f301f; line-color: #eee; } #indicators [ score <= 75] { polygon-fill: #345335; line-color: #eee } #indicators [ score <= 50] { polygon-fill: #557b57; line-color: #eee } #indicators [ score <= 25] { polygon-fill: #85c088; line-color: #eee }'
       }
+    },
+    shareWindow: {
+      isMap: true
     }
   },
 
@@ -68,7 +71,8 @@ var MapView = Backbone.View.extend({
     this._setListeners();
     this._setMapListeners();
 
-    this.shareWindowView = new ShareWindowView();
+    // views
+    this.shareWindowView;
   },
 
   _setView: function() {
@@ -230,11 +234,23 @@ var MapView = Backbone.View.extend({
 
     var query = type === 'target' ? targetLayerSQL(options) : indicatorLayerSQL(options);
 
+
     return query;
   },
 
   _share: function(e) {
     e && e.stopPropagation();
+
+    var shareOptions = this.options.shareWindow,
+      layerType = this.status.get('layerType'),
+      layer = this.status.get('layer');
+
+    _.extend(shareOptions, {
+      type: layerType,
+      layer: layer
+    });
+
+    this.shareWindowView =  new ShareWindowView(shareOptions)
     this.shareWindowView.render();
     this.shareWindowView.delegateEvents();
   },

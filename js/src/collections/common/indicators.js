@@ -30,6 +30,22 @@ var IndicatorsCollection = CartoDBCollection.extend({
     return this.fetch({ url: url });
   },
 
+  getAllIndicatorsByCountryonCSV: function(iso) {
+    var query = indicatorsByCountrytSQL({
+      iso: iso,
+      indicators_table: this.indicators_table,
+      scores_table: this.scores_table,
+      sources_table: this.sources_table,
+      targets_table: this.targets_table
+    }),
+    queryOptions = '&format=csv&filename=indicators_for_' + iso,
+    url = this._urlForQuery(query);
+
+    url+=queryOptions;
+
+    return url;
+  },
+
   // list of all indicators for a target
   getInidcatorsByTarget: function(targetSlug) {
     var query = indicatorsByTargetSQL({ table: this.indicators_table, slug: targetSlug }),
