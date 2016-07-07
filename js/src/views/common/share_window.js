@@ -51,8 +51,8 @@ var ShareWindowView = infoWindowView.extend({
   },
 
   _setActive: function(e) {
-    var buttons = document.querySelectorAll('.c-button');
-      current = e.currentTarget;
+    var buttons = document.querySelectorAll('.share-toolbar .c-button');
+    current = e.currentTarget;
 
     $(buttons).removeClass('-active');
     $(buttons).addClass('-secondary');
@@ -61,7 +61,6 @@ var ShareWindowView = infoWindowView.extend({
 
   _cleanContent: function() {
     var content = document.querySelector('#toolbar-content');
-
     if (content.hasChildNodes()) {
       $('#toolbar-content').empty();
     }
