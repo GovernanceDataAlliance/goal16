@@ -43,11 +43,11 @@ var ShareWindowView = infoWindowView.extend({
   },
 
   _setActive: function(e) {
-    var buttons = document.querySelectorAll('.c-button');
-      current = e.currentTarget;
+    var buttons = document.querySelectorAll('.share-toolbar .c-button');
+    current = e.currentTarget;
 
-    $(".share-toolbar .c-button").removeClass('-active');
-    $(".share-toolbar .c-button").addClass('-secondary');
+    $(buttons).removeClass('-active');
+    $(buttons).addClass('-secondary');
     $(current).addClass('-active');
   },
 
