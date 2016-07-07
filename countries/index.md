@@ -2,6 +2,6 @@
 layout: countries
 page-name: countries
 title: Countries
-crosseling-module-title: The Governance Data Alliance
-crosseling-module-text: We're a group of NGOs, governments, firms, and donors who are serious about improving the quality, availability, breadth, and use of governance data. We identify and spread good practices for data production, we build feedback loops between data users and data producers, and we drive down the time and cost to produce data.
+crosseling-module-title: Lorem ipsum dolor sit amet
+crosseling-module-text: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta beatae voluptatum atque, autem in. Eveniet, harum? Qui culpa ullam placeat fugiat pariatur porro sint. Architecto deserunt impedit commodi, facilis nesciunt..
 ---

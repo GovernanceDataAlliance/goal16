@@ -7,6 +7,9 @@ SELECT distinct on (indicator_slug)
   s.iso,
   indicator_slug,  
   units_abbr, 
+  units, 
+  max_score, 
+  min_score, 
   type  
 FROM {{scores_table}} s 
 INNER JOIN {{countries_table}} c ON s.iso=c.iso INNER JOIN {{indicators_table}} i ON i.slug=s.indicator_slug 
