@@ -32,7 +32,8 @@ var MapView = Backbone.View.extend({
       center: [39.1, 4.5],
       zoom: 2,
       scrollWheelZoom: false,
-      worldCopyJump: true
+      worldCopyJump: true,
+      noWrap: true
     },
     cartodb: {
       user_name: CONFIG.cartodb.user_name,
@@ -139,6 +140,7 @@ var MapView = Backbone.View.extend({
   _initMap: function() {
     /* this is the definition for basemap */
     var baseMap = L.tileLayer(this.options.basemap, {
+      noWrap: true,
       attribution: '<a href="https://www.mapzen.com/rights">Attribution.</a>. Data &copy;<a href="https://openstreetmap.org/copyright">OSM</a> contributors.'
     });
 
