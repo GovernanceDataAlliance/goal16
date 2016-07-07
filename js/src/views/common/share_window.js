@@ -46,8 +46,8 @@ var ShareWindowView = infoWindowView.extend({
     var buttons = document.querySelectorAll('.c-button');
       current = e.currentTarget;
 
-    $(buttons).removeClass('-active');
-    $(buttons).addClass('-secondary');
+    $(".share-toolbar .c-button").removeClass('-active');
+    $(".share-toolbar .c-button").addClass('-secondary');
     $(current).addClass('-active');
   },
 
