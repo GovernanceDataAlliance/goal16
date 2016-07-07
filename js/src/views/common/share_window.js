@@ -53,7 +53,6 @@ var ShareWindowView = infoWindowView.extend({
 
   _cleanContent: function() {
     var content = document.querySelector('#toolbar-content');
-
     if (content.hasChildNodes()) {
       $('#toolbar-content').empty();
     }
