@@ -7,7 +7,7 @@
       <ul class="indicator-list" data-iso="{{ iso }}">
         {{#each officialIndicators}}
           <li class="indicator-item">
-            <span class="indicator-score"> {{comma score }} {{ units_abbr }}</span>
+            <span class="indicator-score"> {{comma score }} {{#if score}}{{ units_abbr }} {{/if}}</span>
             <h4 class="indicator-title">{{ indicator_code }} {{ indicator_title }}</h4>
             <div class="indicator-metadata">
               {{#if max_score }}<span class="indicator-score-range">Score range: {{ min_score }} -  {{ max_score }}</span>{{/if}}
@@ -29,7 +29,7 @@
       <ul class="indicator-list" data-iso="{{ iso }}">
         {{#each shadowIndicators}}
           <li class="indicator-item">
-            <span class="indicator-score"> {{comma score }} </span>
+            <span class="indicator-score"> {{comma score }} {{#if score}}{{ units_abbr }} {{/if}}</span>
             <h4 class="indicator-title">{{ indicator_code }} {{ indicator_title }}</h4>
             <div class="indicator-metadata">
               {{#if max_score }}<span class="indicator-score-range">Score range: {{ min_score }} -  {{ max_score }}</span>{{/if}}
