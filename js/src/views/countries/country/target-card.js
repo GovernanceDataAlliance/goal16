@@ -92,7 +92,8 @@ var IndicatorCardView = Backbone.View.extend({
     this.$el.find('.js--score-container').html(this.template({
       iso: iso,
       officialIndicators: officialIndicators,
-      shadowIndicators: shadowIndicators
+      shadowIndicators: shadowIndicators,
+      baseulr: SITEURL
     }));
 
     this._setViews();
