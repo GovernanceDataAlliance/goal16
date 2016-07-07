@@ -5,6 +5,11 @@ var _ = require('lodash'),
 
 var infoWindowView = require('./infowindow.js');
 
+var IndicatorsCollection = require('../../collections/common/indicators'),
+  ScoresCollection =require('../../collections/common/scores');
+
+var FunctionHelper = require('../../helpers/functions.js');
+
 var tpl = Handlebars.compile(require('../../templates/common/download_tpl.hbs'));
 
 var DownloadView = infoWindowView.extend({
@@ -20,46 +25,37 @@ var DownloadView = infoWindowView.extend({
     var options = settings && settings.options ? settings.options : settings;
     this.options = _.extend({}, options);
 
-    _.extend(this.options, {
-      id: window.indicatorId
-    });
+    // helpers
+    this.functionHelper = FunctionHelper;
+
+    // collections
+    this.indicatorsCollection = new IndicatorsCollection();
+    this.scoresCollection = new ScoresCollection();
 
     this._setListeners();
   },
 
-  _setListeners: function() {
-    // Backbone.Events.on('compare:download-data', this._setDownloadData, this);
+  _setListeners: function() {},
+
+  updateParams(settings) {
+    _.extend(this.options, settings);
   },
 
-  // _setDownloadData: function(countries) {
-  //   this.options.compare = countries;
-  // },
-
   _getCSV: function() {
-    if (this.options.id) {
-      return this.countriesCollection.downloadCountriesForIndicator(
-        this.options.id, this.options.year, this.options.categoryGroup, this.options.categoryName);
-    } else if (this.options.compare) {
+    if (this.options.isCountry) {
+      var iso = this.options.iso;
+      return this.indicatorsCollection.getAllIndicatorsByCountryonCSV(iso);
+    }
 
-      if (!this.options.compare.length > 0) {
-        return;
-      }
+    if (this.options.isCompare) {
+      var countries = _.compact(_.values(this.options.countries)),
+        countriesConditional = this.functionHelper.arrayToString(countries);
 
-      $('.js--download-btn')
-        .unbind('click')
-        .removeClass('disabled');
+      var queryOptions = {
+        countries_conditional : countriesConditional
+      };
 
-      // return this.indicatorsCollection.downloadForCountries({
-      //   countries: this.options.compare
-      // });
-
-    } else {
-
-      // return this.indicatorsCollection.downloadForCountry({
-      //   iso: this.options.iso,
-      //   year: this.options.year
-      // });
-
+      return this.scoresCollection.getScoresGroupByTargetbyCSV(queryOptions);
     }
   },
 
@@ -68,32 +64,31 @@ var DownloadView = infoWindowView.extend({
     this.constructor.__super__.close();
   },
 
-  _checkCompareDownload: function() {
-    if (window.location.pathname !== '/compare') {
-      return;
-    }
-
-    if (this.options.compare && this.options.compare.length > 0) {
-      $('.js--download-btn')
-        .unbind('click')
-        .removeClass('-disabled');
-
-    } else {
-      $('.js--download-btn').on('click', function(e) {
-        e.preventDefault();
-      });
-
-      $('.js--download-btn').addClass('-disabled');
-    }
-  },
+  // _checkCompareDownload: function() {
+  //   if (window.location.pathname !== '/compare') {
+  //     return;
+  //   }
+  //
+  //   if (this.options.compare && this.options.compare.length > 0) {
+  //     $('.js--download-btn')
+  //       .unbind('click')
+  //       .removeClass('-disabled');
+  //
+  //   } else {
+  //     $('.js--download-btn').on('click', function(e) {
+  //       e.preventDefault();
+  //     });
+  //
+  //     $('.js--download-btn').addClass('-disabled');
+  //   }
+  // },
 
   render: function() {
     this.$el.append(this.template({
-      csv: this._getCSV(),
-      siteURL: SITEURL || null
+      csv: this._getCSV()
     }));
 
-    this._checkCompareDownload();
+    // this._checkCompareDownload();
   }
 
 });
