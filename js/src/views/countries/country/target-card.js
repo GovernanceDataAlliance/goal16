@@ -93,7 +93,7 @@ var IndicatorCardView = Backbone.View.extend({
       iso: iso,
       officialIndicators: officialIndicators,
       shadowIndicators: shadowIndicators,
-      baseulr: SITEURL
+      siteurl: SITEURL
     }));
 
     this._setViews();
