@@ -6,7 +6,8 @@ var _ = require('lodash'),
 var infoWindowView = require('./infowindow.js');
 
 var IndicatorsCollection = require('../../collections/common/indicators'),
-  ScoresCollection =require('../../collections/common/scores');
+  ScoresCollection = require('../../collections/common/scores'),
+  GeometriesCollection = require('../../collections/map/geometries');
 
 var FunctionHelper = require('../../helpers/functions.js');
 
@@ -31,6 +32,7 @@ var DownloadView = infoWindowView.extend({
     // collections
     this.indicatorsCollection = new IndicatorsCollection();
     this.scoresCollection = new ScoresCollection();
+    this.geometriesCollection = new GeometriesCollection();
 
     this._setListeners();
   },
@@ -42,6 +44,19 @@ var DownloadView = infoWindowView.extend({
   },
 
   _getCSV: function() {
+
+    if (this.options.isMap) {
+      if (!!this.options.type && !!this.options.layer) {
+        var layer = this.options.layer,
+          options = {
+          layer: layer
+        };
+
+        return this.options.type == 'target' ?
+          this.geometriesCollection.getGeomsQueryByTarget(options) : this.geometriesCollection.getGeomsQueryByIndicator(options);
+      }
+    }
+
     if (this.options.isCountry) {
       var iso = this.options.iso;
       return this.indicatorsCollection.getAllIndicatorsByCountryonCSV(iso);
@@ -64,31 +79,33 @@ var DownloadView = infoWindowView.extend({
     this.constructor.__super__.close();
   },
 
-  // _checkCompareDownload: function() {
-  //   if (window.location.pathname !== '/compare') {
-  //     return;
-  //   }
-  //
-  //   if (this.options.compare && this.options.compare.length > 0) {
-  //     $('.js--download-btn')
-  //       .unbind('click')
-  //       .removeClass('-disabled');
-  //
-  //   } else {
-  //     $('.js--download-btn').on('click', function(e) {
-  //       e.preventDefault();
-  //     });
-  //
-  //     $('.js--download-btn').addClass('-disabled');
-  //   }
-  // },
+  _checkCompareDownload: function() {
+    if (this.options.isMap) {
+      if (! (!!this.options.type && !!this.options.layer)) {
+        $('.js--download-btn').addClass('-disabled');
+      }
+    }
+
+    // if (this.options.compare && this.options.compare.length > 0) {
+    //   $('.js--download-btn')
+    //     .unbind('click')
+    //     .removeClass('-disabled');
+    //
+    // } else {
+    //   $('.js--download-btn').on('click', function(e) {
+    //     e.preventDefault();
+    //   });
+    //
+    //   $('.js--download-btn').addClass('-disabled');
+    // }
+  },
 
   render: function() {
     this.$el.append(this.template({
       csv: this._getCSV()
     }));
 
-    // this._checkCompareDownload();
+    this._checkCompareDownload();
   }
 
 });
