@@ -96,6 +96,22 @@
         @media screen and (min-width: $screen-m) {
           margin-top: 0;
         }
+
+        > span:nth-child(even) {
+          &:before {
+            content: '|';
+            display: inline-block;
+            margin: 0 rem(3px);
+          }
+
+          & + span {
+            &:before {
+              content: '|';
+              display: inline-block;
+              margin: 0 rem(3px);
+            }
+          }
+        }
       }
     }
 
