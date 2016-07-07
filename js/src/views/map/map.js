@@ -28,11 +28,13 @@ var MapView = Backbone.View.extend({
   options: {
     legend: false,
     basemap: 'https://api.tiles.mapbox.com/v4/goal16.9990f1b9/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZ29hbDE2IiwiYSI6ImNpcGgzaWwzbDAwMW52Mmt3ZG5tMnRwN3gifQ.-e8de3rW2J8gc2Iv3LzMnA',
+    labelsBasemap: 'https://api.tiles.mapbox.com/v4/goal16-labels.d9258038/{z}/{x}/{y}.png?access_token=sk.eyJ1IjoiZ29hbDE2LWxhYmVscyIsImEiOiJjaXExMGkzdHQwMDJqaHJuZG94bjAxZ2U4In0.Kdmmeqv8zSGz6F4NJ6bh5w',
     map: {
       center: [39.1, 4.5],
       zoom: 2,
       scrollWheelZoom: false,
-      worldCopyJump: true
+      worldCopyJump: true,
+      noWrap: true
     },
     cartodb: {
       user_name: CONFIG.cartodb.user_name,
@@ -139,13 +141,20 @@ var MapView = Backbone.View.extend({
   _initMap: function() {
     /* this is the definition for basemap */
     var baseMap = L.tileLayer(this.options.basemap, {
+      noWrap: true,
       attribution: '<a href="https://www.mapzen.com/rights">Attribution.</a>. Data &copy;<a href="https://openstreetmap.org/copyright">OSM</a> contributors.'
+    });
+
+    var labelsBasemap = L.tileLayer(this.options.labelsBasemap, {
+      noWrap: true
     });
 
     /* Here we create the map with Leafleft... */
     this.map = L.map(this.el, this.options.map);
     /* ...and we add the basemap layer with Leaflet as well */
     this.map.addLayer(baseMap);
+    this.map.addLayer(labelsBasemap);
+    labelsBasemap.setZIndex(2000);
 
     return this;
   },

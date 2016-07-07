@@ -82,6 +82,48 @@
   .-disclaimer & {
     margin-top: rem(80px);
   }
+
+   .-indicator {
+    margin: rem(30px) 0;
+
+    .indicator-metadata {
+      display: flex;
+      flex-direction: column;
+
+      margin-top: rem(5px);
+
+      .indicator-score-range,
+      .indicator-units,
+      .indicator-year {
+        font-size: rem($font-size-xsmall);
+        color: $font-color-7;
+      }
+    }
+
+    .indicator-metadata {
+      margin-top: rem(30px);
+
+      font-size: $font-size-xsmall;
+      line-height: 1.7;
+
+
+      ul > li > .key-item {
+        color: $font-color-7;
+
+        & + span  {
+          margin-right: rem(35px);
+
+          &:last-child {
+            margin: 0;
+          }
+        }
+      }
+
+      ul > li a {
+        font-size: $font-size-xsmall;
+      }
+    }
+  }
 }
 
 .modal-container {

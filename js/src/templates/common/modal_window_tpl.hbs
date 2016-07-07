@@ -17,10 +17,25 @@
 {{#if isIndicator}}
   <div id="info-infowindow info-window-secondary">
     <div class="-indicator">
-      <h2 class="c-title-popup -big-modal">Indicator name</h2>
       <div class="info-wrapper">
+        <h2 class="c-title-popup -big-modal">{{data.title}}</h2>
+        <p>{{data.description}}</p>
+
+        <div class="indicator-metadata">
+          <ul>
+            <li>
+              <span class="key-item">Source: </span>{{#if data.source_link }} <a target="_blank" href="{{ data.source_link }}">{{ data.source_name }} {{else}}-{{/if}}</a>
+            </li>
+            <li>
+              <span class="key-item">Max score: </span><span>{{ comma data.max_score }}</span>
+              <span class="key-item">Min score: </span><span>{{ comma data.min_score }}</span>
+              <span class="key-item">Units: </span><span>{{#if data.units }}{{ data.units }}{{ else }}-{{/if}}</span>
+            </li>
+          </ul>
+          
+        </div>
+        
       </div>
-      <p>description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis optio, pariatur natus, molestias atque assumenda accusantium, tempore ab, sunt asperiores neque corrupti perferendis sit non laudantium quo fugiat? Officiis, quibusdam.</p>
     </div>
   </div>
 {{/if}}
