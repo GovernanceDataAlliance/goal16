@@ -1,6 +1,7 @@
 SELECT distinct on (i.slug)
   i.code as indicator_code, 
   i.title, 
+  i.slug, 
   s.score, 
   s.iso,
   s.year,  

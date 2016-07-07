@@ -209,14 +209,11 @@ var DashboardView = Backbone.View.extend({
     }
 
     this.infoWindowModel._getIndicatorInfo(indicator).done(function() {
-
       new ModalWindowView({
         'type': 'info-infowindow',
         'data': this.infoWindowModel.toJSON()
       });
-
     }.bind(this));
-
   },
 
 });

@@ -13,6 +13,9 @@
 
 .m-data-indicator {
   padding-bottom: rem(20px);
+  p{
+    word-break: break-word;
+  }
 
   @media screen and (min-width: $screen-m) {
     padding-bottom: rem(30px);
@@ -25,9 +28,11 @@
     padding-bottom: rem(5px);
     border-bottom: rem(1px) solid $border-2;
     cursor: pointer;
+    align-items: baseline;
 
     @media screen and (min-width: $screen-m) {
       padding-bottom: rem(15px);
+      align-items: center;
     }
   }
 

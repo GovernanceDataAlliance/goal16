@@ -87,12 +87,12 @@ var ModalWindowView = Backbone.View.extend({
 
     // Filters content depending on the data
     var innerContent = this.template(params);
-
     // Renders base template
     this.$el.append(this.template({
       isBase: true,
       isMobile: this.mobile,
-      isMapDisclaimer: params.isMapDisclaimer
+      isMapDisclaimer: params.isMapDisclaimer,
+      data: this.data
     }));
 
     // Adds filtered content to base template

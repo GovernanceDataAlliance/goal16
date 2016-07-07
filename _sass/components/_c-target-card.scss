@@ -90,6 +90,12 @@
     display: flex;
     justify-content: center;
     margin: rem(50px) 0 rem(30px);
+    a{
+      margin-left: rem(14px);
+      &:first-child{
+        margin-left: 0;
+      }
+    }
   }
 
   .icon-open_arrow,

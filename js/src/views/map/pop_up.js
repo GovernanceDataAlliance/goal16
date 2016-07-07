@@ -83,9 +83,9 @@ var PopUpView = Backbone.View.extend({
     this.$bgPopub.css('display' ,'none');
   },
 
-  _getContent: function(options) {
-    this.options.data.url = SITEURL;
-
+  _getContent: function() {
+    this.options.data.siteurl = SITEURL;
+    this.options.data.iso = this.options.iso;
     return this.template(this.options.data);
   }
 

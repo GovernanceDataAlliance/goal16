@@ -3,7 +3,8 @@ var Handlebars = require('handlebars');
 
 var CONFIG = require('../../../config.json');
 
-var ScoresGroupByTargetSQL = Handlebars.compile(require('../../queries/scores/scores_by_target.hbs'));
+var ScoresGroupByTargetSQL = Handlebars.compile(require('../../queries/scores/scores_by_target.hbs')),
+  scoresCSV = Handlebars.compile(require('../../queries/scores/scores_csv.hbs'));
 
 var ScoresCollection = CartoDBCollection.extend({
 
@@ -22,6 +23,25 @@ var ScoresCollection = CartoDBCollection.extend({
     url = this._urlForQuery(query);
 
     return this.fetch({ url: url });
+  },
+
+  getScoresGroupByTargetbyCSV: function(settings) {
+    var fileName = settings.countries_conditional.replace(/'/g, "");
+      fileName = fileName.replace(/,/g, "_");
+
+    var query = scoresCSV({
+      countries_conditional: settings.countries_conditional,
+      indicators_table: this.indicators_table,
+      scores_table: this.scores_table,
+      sources_table: this.sources_table,
+      target_slug: settings.target_slug
+    }),
+    queryOptions = '&format=csv&filename=indicators_for_' + fileName,
+    url = this._urlForQuery(query);
+
+    url+=queryOptions;
+
+    return url;
   }
 
 });
