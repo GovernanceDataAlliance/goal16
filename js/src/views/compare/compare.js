@@ -39,7 +39,7 @@ var CompareView = Backbone.View.extend({
       status: this.status
     });
 
-    this.shareWindowView = new ShareWindowView();
+    this.shareWindowView;
 
     this.targetListView = new TargetListView({
       status: this.status
@@ -51,6 +51,15 @@ var CompareView = Backbone.View.extend({
     this._setView();
     this._setVars();
     this._setListeners();
+
+    var countries = this.status.toJSON();
+
+    var shareOptions = {
+      isCompare: true,
+      countries: countries
+    };
+
+    this.shareWindowView = new ShareWindowView(shareOptions);
 
     this.$shareSection.toggleClass('is-hidden');
 
@@ -72,6 +81,8 @@ var CompareView = Backbone.View.extend({
   },
 
   _setListeners: function() {
+    this.status.on('change', this._updateDownload.bind(this));
+
     $('#js--share').on('click', this._share.bind(this));
   },
 
@@ -106,6 +117,14 @@ var CompareView = Backbone.View.extend({
   _share: function() {
     this.shareWindowView.render();
     this.shareWindowView.delegateEvents();
+  },
+
+  _updateDownload: function() {
+    var newOptions = {
+      countries: this.status.toJSON()
+    };
+
+    this.shareWindowView.updateOptions(newOptions);
   },
 
   _renderTargetList: function() {

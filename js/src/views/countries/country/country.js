@@ -28,7 +28,7 @@ var CountryView = Backbone.View.extend({
     this.indicatorsCollection = new IndicatorsCollection();
 
     // views
-    this.shareWindowView = new ShareWindowView();
+    this.shareWindowView;
   },
 
   _setListeners: function() {
@@ -37,6 +37,13 @@ var CountryView = Backbone.View.extend({
 
   show: function() {
     var iso = this.status.get('iso');
+
+    var shareOptions = {
+      isCountry: true,
+      iso: iso
+    };
+
+    this.shareWindowView = new ShareWindowView(shareOptions);
 
     this._setVars();
     this._setListeners();

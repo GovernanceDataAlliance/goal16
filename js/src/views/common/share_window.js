@@ -42,6 +42,14 @@ var ShareWindowView = infoWindowView.extend({
     window.print();
   },
 
+  updateOptions: function(settings) {
+    if (!this.downloadView) {
+      return;
+    }
+
+    this.downloadView.updateParams(settings);
+  },
+
   _setActive: function(e) {
     var buttons = document.querySelectorAll('.c-button');
       current = e.currentTarget;
