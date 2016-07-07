@@ -21,21 +21,25 @@
         <div class="table-row">
           <div class="table-cell -indicator">
             <a href="{{ siteurl }}/data/?indicator={{ indicator_slug }}" class="indicator-name">{{indicator_code}} {{ indicator_title }}</a>
-            <span class="indicator-info">{{ source_title }} {{#if year }} | Last data point: {{ year }} {{/if}}</span>
+            <span class="indicator-info">
+              {{#if max_score }}<span>Score range: {{ min_score }} -  {{ max_score }}</span>{{/if}}
+              {{#if units}}<span>Units: {{ units }}</span>{{/if}}
+              {{#if year }}<span>Last update: {{ year }}</span>{{/if}}
+            </span>
           </div>
 
           <div class="table-cell -score">
-            <span>{{comma scoreA }}</span>
+            <span> {{comma scoreA }} {{#if scoreA}}{{ units_abbr }} {{/if}}</span>
             <span class="country-name only-mobile">{{ countryA }}</span>
           </div>
 
           <div class="table-cell -score">
-            <span>{{comma scoreB }}</span>
+            <span> {{comma scoreB }} {{#if scoreB}}{{ units_abbr }} {{/if}}</span>
             <span class="country-name only-mobile">{{ countryB }}</span>
           </div>
 
           <div class="table-cell -score">
-            <span>{{comma scoreC }}</span>
+            <span> {{comma scoreC }} {{#if scoreC}}{{ units_abbr }} {{/if}}</span>
             <span class="country-name only-mobile">{{ countryC }}</span>
           </div>
         </div>
@@ -76,21 +80,25 @@
         <div class="table-row">
           <div class="table-cell -indicator">
             <a href="{{ siteurl }}/data/?indicator={{ indicator_slug }}" class="indicator-name">{{indicator_code}} {{ indicator_title }}</a>
-            <span class="indicator-info">{{ source_title }} {{#if year }} | Last data point: {{ year }} {{/if}}</span>
+            <span class="indicator-info">
+              {{#if max_score }}<span>Score range: {{ min_score }} -  {{ max_score }}</span>{{/if}}
+              {{#if units}}<span>Units: {{ units }}</span>{{/if}}
+              {{#if year }}<span>Last update: {{ year }}</span>{{/if}}
+            </span>
           </div>
 
           <div class="table-cell -score">
-            <span>{{comma scoreA }}</span>
+            <span> {{comma scoreA }} {{#if scoreA}}{{ units_abbr }} {{/if}}</span>
             <span class="country-name only-mobile">{{ countryA }}</span>
           </div>
 
           <div class="table-cell -score">
-            <span>{{comma scoreB }}</span>
+            <span> {{comma scoreB }} {{#if scoreB}}{{ units_abbr }} {{/if}}</span>
             <span class="country-name only-mobile">{{ countryB }}</span>
           </div>
 
           <div class="table-cell -score">
-            <span>{{comma scoreC }}</span>
+            <span> {{comma scoreC }} {{#if scoreC}}{{ units_abbr }} {{/if}}</span>
             <span class="country-name only-mobile">{{ countryC }}</span>
           </div>
         </div>

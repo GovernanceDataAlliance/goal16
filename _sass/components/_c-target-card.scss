@@ -63,6 +63,11 @@
     }
 
     &.slick-slider {
+      padding-bottom: rem(50px);
+      margin-top: rem(30px);
+
+      background: $white;
+
       .slick-dots {
         position: relative;
 
