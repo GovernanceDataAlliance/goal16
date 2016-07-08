@@ -8,8 +8,9 @@ $header-height: rem(80px);
   top: -70px;
   left: 0;
   right: 0;
+  padding-left: rem(18px);
+  padding-right: rem(18px);
 
-  padding-left: rem(90px);
   height: $header-height;
   margin: 0 auto;
 
@@ -26,6 +27,8 @@ $header-height: rem(80px);
   @media screen and (min-width: 768px) {
     position: relative;
     height: rem(80px);
+    padding-left: rem(90px);
+    padding-right: rem(0px);
   }
 
   @media screen and (min-width: $screen-l) {
@@ -93,7 +96,6 @@ $header-height: rem(80px);
     }
 
     .btn-mobile-menu {
-      width: rem(70px);
       height: $header-height;
 
       @media screen and (min-width: 768px) {
