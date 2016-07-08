@@ -16,7 +16,13 @@
                 <a class="title" href="{{ siteurl }}/data/?indicator={{ slug }}"><p class="title">{{indicator_code}} {{title}}</p></a>
                 <span class="info">Score range: {{max_score}} - {{min_score}}</span><span class="info"> | Units: {{units}}</span><span class="info"> | Last update: {{year}}</span>
               </div>
-              <span class="c-score-popup -small">{{comma score}}<span class="units">{{units_abbr}}</span></span>
+              <span class="c-score-popup -small">
+                {{#if literalScore}}
+                  {{ literalScore }}
+                {{else}}
+                  {{comma score }} {{#if score}} <span class="units">{{ units_abbr }}</span> {{/if}}
+                {{/if}}
+              </span>
             </div>
           {{/each}}
         {{/if}}
@@ -28,7 +34,13 @@
                 <a class="title" href="{{ siteurl }}/data/?indicator={{ slug }}"><p class="title">{{indicator_code}} {{title}}</p></a>
                 <span class="info">Score range: {{max_score}} - {{min_score}}</span><span class="info"> | Units: {{units}}</span><span class="info"> | Last update: {{year}}</span>
               </div>
-              <span class="c-score-popup -small">{{comma score}}<span class="units">{{units_abbr}}</span></span>
+              <span class="c-score-popup -small">
+                {{#if literalScore}}
+                  {{ literalScore }}
+                {{else}}
+                  {{comma score }} {{#if score}} <span class="units">{{ units_abbr }}</span> {{/if}}
+                {{/if}}
+              </span>
             </div>
           {{/each}}
         {{/if}}
