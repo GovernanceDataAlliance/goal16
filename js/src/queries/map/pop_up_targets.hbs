@@ -1,5 +1,6 @@
-SELECT distinct on (i.slug)
+SELECT 
   i.code as indicator_code, 
+  i.slug, 
   i.title, 
   i.slug, 
   s.score, 
@@ -17,4 +18,4 @@ WHERE
 AND 
   s.iso IN (SELECT iso FROM {{countries_table}} WHERE st_intersects(the_geom, st_setSrid(ST_MakePoint({{lng}}, {{lat}}),4326))) 
 ORDER BY 
-  i.slug, s.year DESC
+  i.code
