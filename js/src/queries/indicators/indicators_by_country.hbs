@@ -27,4 +27,4 @@ right join  {{ targets_table }} as t
 on   i.target_slug = t.slug 
 left join   {{ sources_table}} as so 
 on   i.source_slug = so.slug 
-order by t.target_order
+order by t.target_order, i.code
