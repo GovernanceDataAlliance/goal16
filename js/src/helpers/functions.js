@@ -46,7 +46,7 @@ var FunctionHelper = {
 
   },
 
-  isLiteralScore: function(indicators) {
+  setLiteralScore: function(indicators) {
     if (indicators && indicators.length > 0) {
 
       for (var i = 0; i < indicators.length; i++) {

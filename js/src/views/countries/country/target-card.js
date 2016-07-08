@@ -84,16 +84,20 @@ var IndicatorCardView = Backbone.View.extend({
       officialIndicators = indicatorsByType[0],
       shadowIndicators = indicatorsByType[1],
       iso = this.status.get('iso'),
-      isLiteralScoreFnc = this.functionHelper.isLiteralScore;
+      setLiteralScore = this.functionHelper.setLiteralScore;
 
     var optionsView = {
       target: target,
       cardView: this
     };
 
+
+    console.log(officialIndicators);
+    console.log(shadowIndicators);
+
     // finds if there are indicators with literal scores
-    isLiteralScoreFnc(officialIndicators);
-    isLiteralScoreFnc(shadowIndicators);
+    setLiteralScore(officialIndicators);
+    setLiteralScore(shadowIndicators);
 
     this.targetCardHeaderView = new TargetCardHeaderView(optionsView);
 
