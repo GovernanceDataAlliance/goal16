@@ -2,20 +2,20 @@
   max-width: $grid-max-width;
   width: 100%;
   margin: 0 auto;
+
   background-color: $white;
 
   @media screen and (min-width: $screen-xl) {
-    border-left: 1px solid $light-grey;
-    border-right: 1px solid $light-grey;
+    border-left: rem(1px) solid $light-grey;
+    border-right: rem(1px) solid $light-grey;
   }
 }
 
 .l-main-container {
   @extend %l-main-container;
-  margin-top: $header-height;
 
-  @media screen and (min-width: 768px) {
-    margin-top: 0;
+  .is-dashboard-close & {
+    margin-top: $header-height;
   }
 
   &.is-map{
@@ -31,4 +31,3 @@
     border-bottom: rem(1px) solid $light-grey;
   }
 }
-

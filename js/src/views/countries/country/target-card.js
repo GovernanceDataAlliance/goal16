@@ -5,6 +5,8 @@ var $ = require('jquery'),
 
 var TargetCardHeaderView = require('../../../views/common/target-card/header.js');
 
+var FunctionHelper = require('../../../helpers/functions.js');
+
 var template = require('../../../templates/countries/country/indicator-card.hbs');
 
 require('../../common/slick.min');
@@ -23,6 +25,9 @@ var IndicatorCardView = Backbone.View.extend({
 
     this.status = this.options.status;
     this.id = this.options.target.slug;
+
+
+    this.functionHelper = FunctionHelper;
   },
 
   _setViews: function() {
@@ -78,12 +83,17 @@ var IndicatorCardView = Backbone.View.extend({
       indicatorsByType = this._getIndicatorsByType(),
       officialIndicators = indicatorsByType[0],
       shadowIndicators = indicatorsByType[1],
-      iso = this.status.get('iso');
+      iso = this.status.get('iso'),
+      setLiteralScore = this.functionHelper.setLiteralScore;
 
     var optionsView = {
       target: target,
       cardView: this
     };
+
+    // finds if there are indicators with literal scores
+    setLiteralScore(officialIndicators);
+    setLiteralScore(shadowIndicators);
 
     this.targetCardHeaderView = new TargetCardHeaderView(optionsView);
 
@@ -93,7 +103,7 @@ var IndicatorCardView = Backbone.View.extend({
       iso: iso,
       officialIndicators: officialIndicators,
       shadowIndicators: shadowIndicators,
-      baseulr: SITEURL
+      siteurl: SITEURL
     }));
 
     this._setViews();

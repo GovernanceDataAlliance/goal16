@@ -68,12 +68,19 @@ var ScoreCardView = Backbone.View.extend({
 
       var indicators = this.scoresCollection.toJSON();
       var parsedScores = this._parseScores(indicators);
-      var indicatorsByType = this._getIndicatorsByType(parsedScores);
+      var indicatorsByType = this._getIndicatorsByType(parsedScores),
+        officialIndicators = indicatorsByType['official'],
+        shadowIndicators = indicatorsByType['shadow'],
+        setLiteralScoreCompare = this.functionHelper.setLiteralScoreCompare;
+
+      setLiteralScoreCompare(officialIndicators);
+      setLiteralScoreCompare(shadowIndicators);
 
       this.$scoresTable.html(this.indicatorTableTemplate({
         countries: countries,
-        officialIndicators: indicatorsByType['official'],
-        shadowIndicators: indicatorsByType['shadow']
+        officialIndicators: officialIndicators,
+        shadowIndicators: shadowIndicators,
+        siteurl: SITEURL
       }));
 
     }.bind(this));

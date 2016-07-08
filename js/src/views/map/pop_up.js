@@ -6,6 +6,8 @@ var $ = require('jquery'),
 var PopUpModel = require('../../collections/map/pop_up.js');
 var countriesCollection = require('../../collections/common/countries.js');
 
+var FunctionHelper = require('../../helpers/functions.js');
+
 var popUpTargetTemplate = Handlebars.compile(require('../../templates/map/pop_up_target.hbs')),
     popUpIndicatorTemplate = Handlebars.compile(require('../../templates/map/pop_up_indicator.hbs'));
 
@@ -16,10 +18,15 @@ var PopUpView = Backbone.View.extend({
     this.options.data = {};
     this.indicatorsCollection = new PopUpModel();
     this.countriesCollection = countriesCollection;
+
+    this.functionHelper = FunctionHelper;
+
     this._initData();
   },
 
   _initData: function() {
+    var setLiteralScore = this.functionHelper.setLiteralScore;
+
     this.indicatorsCollection.getPopUpInfo(this.options).done(function(response) {
       //We need to check if response is empty to not draw pop-up in that case.
       if ( response.rows.length > 0) {
@@ -35,6 +42,16 @@ var PopUpView = Backbone.View.extend({
           this.options.data.country = this.countriesCollection.getCountryByIso(this.options.iso);
           this.options.mobile ? this._drawPopUpMobile() : this._drawPopUp();
         }.bind(this));
+
+        if (type == 'indicator') {
+          setLiteralScore(this.options.data.indicators[0])
+        } else {
+          var officialIndicators = this.options.data.indicators['official'],
+            shadowIndicators = this.options.data.indicators['shadow'];
+
+          setLiteralScore(officialIndicators);
+          setLiteralScore(shadowIndicators);
+        }
 
       } else {
         this.indicatorsCollection.clear();

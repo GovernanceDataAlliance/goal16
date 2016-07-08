@@ -82,11 +82,12 @@
     justify-content: space-between;
     float: left;
     width: 50%;
-    height: rem(800px);
+    height: rem(870px);
     padding: rem(50px) rem(76px) rem(72px)rem(74px);
 
     .img {
       height: rem(40px);
+      margin-bottom: rem(25px);
     }
 
     &:nth-child(2n) {
@@ -115,7 +116,7 @@
     }
   }
   @media screen and (min-width: $screen-l) {
-    height: rem(500px);
+    height: rem(570px);
   }
   @media screen and (min-width: $screen-xl) {
 
