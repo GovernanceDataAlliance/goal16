@@ -30,17 +30,35 @@
           </div>
 
           <div class="table-cell -score">
-            <span> {{comma scoreA }} {{#if scoreA}}{{ units_abbr }} {{/if}}</span>
+            <span>
+              {{#if literalScoreA}}
+                {{ literalScoreA }}
+              {{else}}
+                {{comma scoreA }} {{#if scoreA}}{{ units_abbr }} {{/if}}
+              {{/if}}
+            </span>
             <span class="country-name only-mobile">{{ countryA }}</span>
           </div>
 
           <div class="table-cell -score">
-            <span> {{comma scoreB }} {{#if scoreB}}{{ units_abbr }} {{/if}}</span>
+            <span>
+              {{#if literalScoreB}}
+                {{ literalScoreB }}
+              {{else}}
+                {{comma scoreB }} {{#if scoreB}}{{ units_abbr }} {{/if}}
+              {{/if}}
+            </span>
             <span class="country-name only-mobile">{{ countryB }}</span>
           </div>
 
           <div class="table-cell -score">
-            <span> {{comma scoreC }} {{#if scoreC}}{{ units_abbr }} {{/if}}</span>
+            <span>
+              {{#if literalScoreC}}
+                {{ literalScoreC }}
+              {{else}}
+                {{comma scoreC }} {{#if scoreC}}{{ units_abbr }} {{/if}}
+              {{/if}}
+            </span>
             <span class="country-name only-mobile">{{ countryC }}</span>
           </div>
         </div>
@@ -89,17 +107,35 @@
           </div>
 
           <div class="table-cell -score">
-            <span> {{comma scoreA }} {{#if scoreA}}{{ units_abbr }} {{/if}}</span>
+            <span>
+              {{#if literalScoreA}}
+                {{ literalScoreA }}
+              {{else}}
+                {{comma scoreA }} {{#if scoreA}}{{ units_abbr }} {{/if}}
+              {{/if}}
+            </span>
             <span class="country-name only-mobile">{{ countryA }}</span>
           </div>
 
           <div class="table-cell -score">
-            <span> {{comma scoreB }} {{#if scoreB}}{{ units_abbr }} {{/if}}</span>
+            <span>
+              {{#if literalScoreB}}
+                {{ literalScoreB }}
+              {{else}}
+                {{comma scoreB }} {{#if scoreB}}{{ units_abbr }} {{/if}}
+              {{/if}}
+            </span>
             <span class="country-name only-mobile">{{ countryB }}</span>
           </div>
 
           <div class="table-cell -score">
-            <span> {{comma scoreC }} {{#if scoreC}}{{ units_abbr }} {{/if}}</span>
+            <span>
+              {{#if literalScoreC}}
+                {{ literalScoreC }}
+              {{else}}
+                {{comma scoreC }} {{#if scoreC}}{{ units_abbr }} {{/if}}
+              {{/if}}
+            </span>
             <span class="country-name only-mobile">{{ countryC }}</span>
           </div>
         </div>

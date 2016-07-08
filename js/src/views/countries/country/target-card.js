@@ -91,10 +91,6 @@ var IndicatorCardView = Backbone.View.extend({
       cardView: this
     };
 
-
-    console.log(officialIndicators);
-    console.log(shadowIndicators);
-
     // finds if there are indicators with literal scores
     setLiteralScore(officialIndicators);
     setLiteralScore(shadowIndicators);

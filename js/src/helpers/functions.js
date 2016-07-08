@@ -47,24 +47,80 @@ var FunctionHelper = {
   },
 
   setLiteralScore: function(indicators) {
+    if (!indicators) {
+      return;
+    }
+
+    // Array
+    if (_.isArray(indicators)) {
+      if (indicators.length > 0) {
+        for (var i = 0; i < indicators.length; i++) {
+          var indicator = indicators[i];
+
+          if (!!indicator['units'] && indicator['units'] == 'Yes/No') {
+
+            if (indicator.score !== null) {
+              var score = indicator.score.toString();
+
+              if (score) {
+                indicator.literalScore = score === '1' ? 'Yes' : 'No';
+              }
+            }
+          }
+        }
+      }
+    // Object
+    } else {
+
+      if (!!indicators['units'] && indicators['units'] == 'Yes/No') {
+        if (indicators.score !== null) {
+          var score = indicators.score.toString();
+
+          if (score) {
+            indicators.literalScore = score === '1' ? 'Yes' : 'No';
+          }
+        }
+      }
+    }
+  },
+
+  setLiteralScoreCompare: function(indicators) {
     if (indicators && indicators.length > 0) {
 
       for (var i = 0; i < indicators.length; i++) {
+
         var indicator = indicators[i];
 
         if (!!indicator['units'] && indicator['units'] == 'Yes/No') {
 
-          if (!!indicator.score) {
-            indicator.literalScore = indicator.score  === 1 ? 'Yes' : 'No';
-            console.log(indicator);
+          if (indicator.hasOwnProperty('scoreA') && indicator.scoreA !== null) {
+
+            var score = indicator.scoreA.toString();
+
+            if (score) {
+              indicator.literalScoreA = score === '1' ? 'Yes' : 'No';
+            }
           }
 
-        } else {
-          return;
+          if (indicator.hasOwnProperty('scoreB') && indicator.scoreB !== null) {
+
+            var score = indicator.scoreB.toString();
+
+            if (score) {
+              indicator.literalScoreB = score === '1' ? 'Yes' : 'No';
+            }
+          }
+
+          if (indicator.hasOwnProperty('scoreC') && indicator.scoreC !== null) {
+
+            var score = indicator.scoreC.toString();
+
+            if (score) {
+              indicator.literalScoreC = score === '1' ? 'Yes' : 'No';
+            }
+          }
         }
       }
-    } else {
-      return;
     }
   },
 
