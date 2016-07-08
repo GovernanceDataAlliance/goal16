@@ -73,7 +73,8 @@ var ScoreCardView = Backbone.View.extend({
       this.$scoresTable.html(this.indicatorTableTemplate({
         countries: countries,
         officialIndicators: indicatorsByType['official'],
-        shadowIndicators: indicatorsByType['shadow']
+        shadowIndicators: indicatorsByType['shadow'],
+        siteurl: SITEURL
       }));
 
     }.bind(this));

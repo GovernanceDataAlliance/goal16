@@ -6,6 +6,16 @@ $regions: 'africa', 'americas', 'asia', 'europe', 'oceania';
   padding-top: rem(24px);
   padding-bottom: rem(67px);
 
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(14, 29, 42, .5);
+  }
+
   @media screen and (min-width: 768px) {
     padding-top: rem(40px);
     padding-bottom: rem(112px);
@@ -17,30 +27,17 @@ $regions: 'africa', 'americas', 'asia', 'europe', 'oceania';
       background-size: cover;
       background-position: center;
     }
-
-    &:before {
-      content: "";
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background-color: rgba(14, 29, 42, .4);
-    }
   }
 
   &.-topsection-countries {
     padding-top: rem(24px);
     padding-bottom: rem(88px);
 
-    // keep commented meanwhile there's no images available, otherwise
-    // you will see an ugly gray background!
-
-    // @for $region from 1 through length($regions) {
-    //   &.-#{nth($regions, $region)} {
-    //     background-image: url('#{$baseUrl}/img/cover-pages/regions/#{nth($regions, $region)}.jpg');
-    //   }
-    // }
+    @for $region from 1 through length($regions) {
+      &.-#{nth($regions, $region)} {
+        background-image: url('#{$baseUrl}/img/cover-pages/regions/#{nth($regions, $region)}.jpg');
+      }
+    }
 
     @media screen and (min-width: $screen-s) {
       padding-top: rem(40px);

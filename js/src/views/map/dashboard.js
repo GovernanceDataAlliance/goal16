@@ -112,7 +112,9 @@ var DashboardView = Backbone.View.extend({
         this._renderIndicators(currentTargetSlug);
         this.requestedTargets.push(currentTargetSlug);
 
-        this.$targetsWrapper.removeClass('is-open');
+        // Allows having multiple targets opened at the same time.
+        // Uncomment in case you want the opposite.
+        // this.$targetsWrapper.removeClass('is-open');
         $currentTarget.parents('.m-dashboard-target').addClass('is-open');
       }, this))
     }
