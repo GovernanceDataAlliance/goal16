@@ -2,6 +2,7 @@
 .bundle
 .gems
 .rbenv-gemsets
+.travis.yml
 _site
 .sass-cache
 .grunt
@@ -12,3 +13,4 @@ js/main_bundle.js
 /css/main.css
 css/main.css
 _config_dev.yml
+CNAME
