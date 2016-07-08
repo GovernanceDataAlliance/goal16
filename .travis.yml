@@ -14,4 +14,5 @@ git:
   depth: 1
 env:
   global:
-    - GH_REF: github.com/GovernanceDataAlliance/goal16.git
+  - GH_REF: github.com/GovernanceDataAlliance/goal16.git
+  - secure: aL3zWNNn3sjmgt/Ct+4Jfr8V6K56g9GMR6/xG2ENymlv2p321pgYLmr8AbuXtI/WVkSxdhZp3iIJ0+RGRkFzFx9u/gnC/NRHVuzUHpEaVx1efmcg0Pl+OtqgCP0ZaT3O5Dn15sYY/KhqXVpJMcR9eilHKLKbvYp7SIUgn0OV/bTaoERgy+mtX+gB8rdclNgSCGLgvgQH5R6XqJD2nHEvZesIAUE3HH7qpG7SrifqTqq5K5uvloOQv3L3EJ5fqO7qmnPD2c6BQr1ii7wZ50teDsn09IDt9RgQc04rHgbvMpdwrvV3P/3CEwmaKCQej96Ph/ewf5N6Y+mcwB9z+x/8C/iatt47w6eq34wugAR6H1zNh3oAF9enH06qPRiDpy0dl8FaZhKHI5np62udcI/XhR4FGU0lhPFnGeOI5w6iDx3tVhsetTU45KI9gKdRhPmhY99JxDuKNQ9ktPd8wd7fCEbHVlaPTDYEYdpcwHF0tAOjemShw3dtL8mJFBZUHFz0xmfaxNsL+FE7MOzG8CyWfBj56EIMx6ru9+UfnB3p90AMvt1QZz5Dlya9VtU4WsyqajaHb6o2rj71TGiq2zHADXXhwod1L196byGNke+6RJFI21dXTXZIRXCOFvOfHIvumVDk24ucWt+QhoX/EGJWi/Q+ijP+q8SSOGuJNdcCbog=
