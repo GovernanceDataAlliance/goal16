@@ -9,10 +9,10 @@
           <li class="indicator-item">
             <span class="indicator-score"> {{comma score }} {{#if score}}{{ units_abbr }} {{/if}}</span>
             <a class="indicator-title" href="{{ ../siteurl }}/data/?indicator={{ indicator_slug }}"><h4 class="indicator-title">{{ indicator_code }} {{ indicator_title }}</h4></a>
-            <div class="indicator-metadata">
-              {{#if max_score }}<span class="indicator-score-range">Score range: {{ min_score }} -  {{ max_score }}</span>{{/if}}
-              {{#if units}}<span class="indicator-units">Units: {{ units }}</span>{{/if}}
-              {{#if year }}<span class="indicator-year">Last update: {{ year }}</span>{{/if}}
+            <div class="c-indicator-metadata">
+              {{#if max_score }}<span>Score range: {{ min_score }} -  {{ max_score }}</span>{{/if}}
+              {{#if units}}<span>Units: {{ units }}</span>{{/if}}
+              {{#if year }}<span>Last update: {{ year }}</span>{{/if}}
             </div>
           </li>
         {{/each}}
@@ -31,10 +31,10 @@
           <li class="indicator-item">
             <span class="indicator-score"> {{comma score }} {{#if score}}{{ units_abbr }} {{/if}}</span>
             <a class="indicator-title" href="{{ ../siteurl }}/data/?indicator={{ indicator_slug }}"><h4 class="indicator-title">{{ indicator_code }} {{ indicator_title }}</h4></a>
-            <div class="indicator-metadata">
-              {{#if max_score }}<span class="indicator-score-range">Score range: {{ min_score }} -  {{ max_score }}</span>{{/if}}
-              {{#if units}}<span class="indicator-units">Units: {{ units }}</span>{{/if}}
-              {{#if year }}<span class="indicator-year">Last update: {{ year }}</span>{{/if}}
+            <div class="c-indicator-metadata">
+              {{#if max_score }}<span>Score range: {{ min_score }} -  {{ max_score }}</span>{{/if}}
+              {{#if units}}<span>Units: {{ units }}</span>{{/if}}
+              {{#if year }}<span>Last update: {{ year }}</span>{{/if}}
             </div>
           </li>
         {{/each}}

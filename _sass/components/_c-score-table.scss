@@ -85,34 +85,6 @@
         line-height: 1.8;
         letter-spacing: rem(.5px);
       }
-
-      > .indicator-info {
-        margin: rem(5px) 0;
-
-        font-size: $font-size-xsmall;
-        color: $font-color-7;
-        text-transform: none;
-
-        @media screen and (min-width: $screen-m) {
-          margin-top: 0;
-        }
-
-        > span:nth-child(even) {
-          &:before {
-            content: '|';
-            display: inline-block;
-            margin: 0 rem(3px);
-          }
-
-          & + span {
-            &:before {
-              content: '|';
-              display: inline-block;
-              margin: 0 rem(3px);
-            }
-          }
-        }
-      }
     }
 
     &.-score {
