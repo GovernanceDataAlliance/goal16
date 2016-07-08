@@ -46,6 +46,28 @@ var FunctionHelper = {
 
   },
 
+  isLiteralScore: function(indicators) {
+    if (indicators && indicators.length > 0) {
+
+      for (var i = 0; i < indicators.length; i++) {
+        var indicator = indicators[i];
+
+        if (!!indicator['units'] && indicator['units'] == 'Yes/No') {
+
+          if (!!indicator.score) {
+            indicator.literalScore = indicator.score  === 1 ? 'Yes' : 'No';
+            console.log(indicator);
+          }
+
+        } else {
+          return;
+        }
+      }
+    } else {
+      return;
+    }
+  },
+
   scrollTop: function() {
     document.querySelector('body').scrollTop = 0;
   }
