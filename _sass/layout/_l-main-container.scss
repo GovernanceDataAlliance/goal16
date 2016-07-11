@@ -13,17 +13,27 @@
 
 .l-main-container {
   @extend %l-main-container;
+  margin-top: $header-height;
 
-  .is-dashboard-close & {
-    margin-top: $header-height;
+  @media screen and (min-width: 768px) {
+    margin-top: 0;
   }
 
-  &.is-map{
+  .is-dashboard-close &.is-map {
+    margin-top: $header-height;
+
+    @media screen and (min-width: 768px) {
+      margin-top: 0;
+    }
+  }
+
+  &.is-map {
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
+    margin-top: 0;
     overflow: hidden;
     border-right: 0px;
     border-left: 0px;
