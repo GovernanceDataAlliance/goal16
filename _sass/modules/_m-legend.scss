@@ -23,7 +23,7 @@ $bucket-border: $bucket-border-1, $bucket-border-2, $bucket-border-3, $bucket-bo
       margin-left: rem(10px);
 
       @media screen and (min-width: $screen-l) {
-        margin-right: rem(40px);
+        margin-left: rem(40px);
       }
     }
   }
