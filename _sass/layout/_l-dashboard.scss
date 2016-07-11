@@ -32,7 +32,7 @@
     position: absolute;
     top: rem(-40px);
     left: 0;
-
+    z-index: 10;
     width: 100%;
     height: $button-height;
 
@@ -64,7 +64,7 @@
   .is-dashboard-close & {
     .btn-toogle-dashboard-mobile {
       background-color: $white;
-      
+
       color: $font-color-3;
     }
   }

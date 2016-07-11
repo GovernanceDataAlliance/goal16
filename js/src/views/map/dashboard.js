@@ -79,6 +79,7 @@ var DashboardView = Backbone.View.extend({
   },
 
   _toggleDashboard: function(e) {
+    e && e.stopPropagation();
     this.dashboardClose = !this.dashboardClose;
     this.$body.toggleClass('is-dashboard-close', this.dashboardClose);
 
