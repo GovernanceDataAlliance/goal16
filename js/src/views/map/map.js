@@ -40,8 +40,8 @@ var MapView = Backbone.View.extend({
       user_name: CONFIG.cartodb.user_name,
       noWrap: true,
       cartocss: {
-        indicator: '#score{ polygon-fill: #1f301f; line-color: #eee; line-width: 0.5; line-opacity: 1;}',
-        target: '#indicators{ polygon-fill: #1f301f; line-color: #eee; line-width: 0.5; line-opacity: 1; } #indicators [ score <= 100] { polygon-fill: #1f301f; line-color: #eee; } #indicators [ score <= 75] { polygon-fill: #345335; line-color: #eee } #indicators [ score <= 50] { polygon-fill: #557b57; line-color: #eee } #indicators [ score <= 25] { polygon-fill: #85c088; line-color: #eee }'
+        indicator: '#score{ polygon-pattern-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/goal16/assets/20160711093427color100.png); line-color: #eee; line-width: 0.5; line-opacity: 1;}',
+        target: "@100: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/goal16/assets/20160711134917color100%20%281%29.png); @75: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/goal16/assets/20160711134906color75%20%281%29.png); @50:url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/goal16/assets/20160711134858color50%20%281%29.png); @25: url(http://s3.amazonaws.com/com.cartodb.users-assets.production/production/goal16/assets/20160711134847green25%20%281%29.png); #indicators{ polygon-fill: transparent; line-color: #eee; line-width: 1.5; line-opacity: 1; [ score <= 100] { polygon-pattern-file: @100;} [ score <= 75] { polygon-pattern-file: @75;} [ score <= 50] { polygon-pattern-file: @50;} [ score <= 25] { polygon-pattern-file: @25;}}"
       }
     },
     shareWindow: {
