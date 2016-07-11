@@ -72,7 +72,7 @@
     margin-bottom: rem(76px);
 
     @media screen and (min-width: $screen-s) {
-      margin: rem(40px) 0;
+      margin: rem(20px) 0 rem(20px);
       font-size: $font-size-xlarge;
       letter-spacing: rem(0.6px);
     }
