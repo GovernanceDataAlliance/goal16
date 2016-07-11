@@ -40,12 +40,20 @@
   }
 
   // margin given by every button but first one
-  & + & {
-    margin: rem(25px) 0 0;
+  @media screen and (min-width: 768px) {
+    & + & {
+      margin: rem(25px) 0 0;
+    }
   }
 
   &.-small {
-    width: auto;
+    width: 50%;
+    padding: rem(15px) 0;
+
+    @media screen and (min-width: 768px) {
+      width: auto;
+      padding: rem(15px) rem(45px);
+    }
   }
 
   &.-disabled {
