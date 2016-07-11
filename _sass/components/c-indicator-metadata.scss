@@ -1,28 +1,19 @@
 .c-indicator-metadata {
-  margin: rem(5px) 0;
+  margin-top: rem(5px);
 
   font-size: $font-size-xsmall;
   color: $font-color-7;
-  text-transform: none;
-
-  @media screen and (min-width: $screen-m) {
-    margin-top: 0;
-  }
+  line-height: 1.5;
 
   // separators
   > span:nth-child(even) {
+
     &:before {
-      content: '|';
-      display: inline-block;
-      margin: 0 rem(3px);
+      @extend %separator;
     }
 
-    & + span {
-      &:before {
-        content: '|';
-        display: inline-block;
-        margin: 0 rem(3px);
-      }
+    & + span:before {
+      @extend %separator;
     }
   }
 }

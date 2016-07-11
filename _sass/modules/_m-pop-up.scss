@@ -125,30 +125,23 @@
 
     .data-info {
       display: block;
-      font-family: $font-family-primary;
-      line-height: 1.8;
-      letter-spacing: rem(0.5px);
-      font-weight: $font-weight-regular;
-      font-size: $font-size-xxsmall;
       margin-bottom: rem(5px);
 
+      font-family: $font-family-primary;
+      font-size: $font-size-xxsmall;
+      font-weight: $font-weight-regular;
+      letter-spacing: rem(.5px);
+
       @media screen and (min-width: $screen-s) {
-        margin-bottom: rem(0px);
+        margin-bottom: 0;
       }
 
       .title {
+        margin: 0;
+        font-size: $font-size-xxsmall;
         text-transform: uppercase;
         line-height: 1.5;
-        font-size: $font-size-xxsmall;
-        margin: 0;
         color: $font-color-1;
-      }
-
-      .info {
-        font-size: rem($font-size-xxsmall);
-        line-height: .5;
-        color: $font-color-7;
-        margin: 0;
       }
     }
   }

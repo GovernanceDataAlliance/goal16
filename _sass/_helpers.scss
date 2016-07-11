@@ -84,6 +84,12 @@
   }
 }
 
+%separator {
+  content: '|';
+  display: inline-block;
+  margin: 0 rem(3px);
+}
+
 
 ////////////////////
 //**** Mixins ****//

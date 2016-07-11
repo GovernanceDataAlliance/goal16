@@ -16,9 +16,9 @@
             </span>
             <a class="indicator-title" href="{{ ../siteurl }}/data/?indicator={{ indicator_slug }}"><h4 class="indicator-title">{{ indicator_code }} {{ indicator_title }}</h4></a>
             <div class="c-indicator-metadata">
-              {{#if max_score }}<span>Score range: {{ min_score }} -  {{ max_score }}</span>{{/if}}
-              {{#if units}}<span>Units: {{ units }}</span>{{/if}}
-              {{#if year }}<span>Last update: {{ year }}</span>{{/if}}
+              {{#if max_score }}<span>Score range: {{ min_score }} - {{ max_score }}</span>{{/if}}
+              {{#if units}}<span> {{ units }}</span>{{/if}}
+              {{#if year }}<span> Last update {{ year }}</span>{{/if}}
             </div>
           </li>
         {{/each}}
@@ -44,9 +44,9 @@
             </span>
             <a class="indicator-title" href="{{ ../siteurl }}/data/?indicator={{ indicator_slug }}"><h4 class="indicator-title">{{ indicator_code }} {{ indicator_title }}</h4></a>
             <div class="c-indicator-metadata">
-              {{#if max_score }}<span>Score range: {{ min_score }} -  {{ max_score }}</span>{{/if}}
-              {{#if units}}<span>Units: {{ units }}</span>{{/if}}
-              {{#if year }}<span>Last update: {{ year }}</span>{{/if}}
+              {{#if max_score }}<span>Score range: {{ min_score }} - {{ max_score }}</span>{{/if}}
+              {{#if units}}<span> {{ units }}</span>{{/if}}
+              {{#if year }}<span> Last update {{ year }}</span>{{/if}}
             </div>
           </li>
         {{/each}}
