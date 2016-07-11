@@ -88,20 +88,23 @@
   margin-right: rem(20px);
   margin-top: rem(20px);
   cursor: pointer;
-  width: rem(13px);
-  height: rem(13px);
+  width: rem(16px);
+  height: rem(16px);
 
   &.-color-1 {
     svg {
       fill: $color-6;
     }
   }
+
   &.-btn-close-modal{
     color: $font-color-3;
   }
+
   @media screen and (min-width: 768px) {
     margin: rem(40px) rem(30px) 0 0;
   }
+  
   @media screen and (min-width: $screen-s) {
     position: absolute;
     width: rem(16px);

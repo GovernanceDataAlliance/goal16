@@ -15,6 +15,10 @@
     margin-bottom: rem(10px);
     //This is to avoid excesive space when two lines
     line-height: 1.2em;
+
+    @media screen and (min-width: 768px) {
+      margin-bottom: rem(30px);
+    }
   }
 
   &.-subtitle {
@@ -76,7 +80,7 @@
     letter-spacing: 0.5px;
     font-size: $font-size-xxsmall;
     margin-top: 0 !important;
-    margin-bottom: rem(15px) !important;
+    margin-bottom: rem(10px) !important;
 
     &:after {
       content: "";
