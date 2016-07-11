@@ -55,40 +55,11 @@
     input {
       visibility: hidden;
 
-      &:checked + label .target-title {
+      &:checked + label .c-target-name {
         background-color: $white;
         color: $font-color-1;
       }
     }
-
-    .target-title {
-      margin-left: rem(26px);
-      padding: rem(5px);
-      font-size: rem($font-size-xsmall);
-      line-height: rem(19px);
-      color: $font-color-3;
-      font-family: $font-family-primary;
-      font-weight: $font-weight-regular;
-      cursor: pointer;
-      width: 100%;
-      @media screen and (min-width: $screen-s) {
-      word-wrap: break-word;/*IE10 FIX*/
-      white-space: pre-line;/*IE10 FIX*/
-      max-width: rem(296px);/*IE10 FIX*/
-      width: rem(296px);/*IE10 FIX*/
-    }
-
-      &.is-active {
-        color: $font-color-1;
-        background-color: $white;
-      }
-
-      @media screen and (min-width: 768px) {
-        font-size: rem($font-size-small);
-        line-height: rem(25px);
-      }
-    }
-
   }
 
   &.is-open {
