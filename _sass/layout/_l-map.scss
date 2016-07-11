@@ -32,19 +32,23 @@
     color: $color-5;
 
     svg {
-      width: rem(15px);
-      height: rem(15px);
-      fill: $color-5;
-      // top: 50%;
-      // left: 50%;
-      // transform: translate(-50%, -50%);
-      // position: absolute;
       position: absolute;
       top: 0;
       left: 0;
       bottom: 0;
       right: 0;
+
+      width: rem(15px);
+      height: rem(15px);
       margin: auto;
+
+      fill: $color-5;
+    }
+
+    &:hover {
+      > svg {
+        fill: $font-color-11;
+      }
     }
 
     @media screen and (min-width: 768px) {
