@@ -55,15 +55,22 @@
       display: flex;
       height: rem(60px);
       width: 50%;
+      max-width: rem(183px);
       background-position: top left;
       background-size: contain;;
       background-repeat: no-repeat;
+      display: block;
+      margin-bottom: rem(18px);
       // display: none;/*Img organizations*/
 
       @media screen and (min-width: 768px) {
         height: rem(100px);
         background-position: 50%;
-        width: 100%;
+        width: rem(183px);
+        max-width: rem(183px);
+        display: block;
+        margin: 0 auto;
+        margin-bottom: rem(18px);
       }
     }
 
@@ -87,7 +94,7 @@
 
     .img {
       height: rem(40px);
-      margin-bottom: rem(25px);
+      margin-bottom: rem(28px);
     }
 
     &:nth-child(2n) {
