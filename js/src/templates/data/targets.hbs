@@ -8,7 +8,7 @@
         {{#each indicators}}
         <div id="indicator-{{indicator_slug}}" class="m-data-indicator">
           <div class="header js--toggle-indicator" data-slug={{slug}}>
-            <h1>{{indicator_code}} {{indicator_title}} <span>({{#typeOfIndicator type}}{{/typeOfIndicator}})</span></h1>
+            <h1 class="c-indicator-name -data">{{indicator_code}} {{indicator_title}} <span>({{#typeOfIndicator type}}{{/typeOfIndicator}})</span></h1>
             <div class="buttons">
               <button class="js--icon-open">
                 <svg class="icon">
@@ -35,7 +35,7 @@
                   <span class="key-item">Units: </span><span>{{#if units }}{{ units }}{{ else }}-{{/if}}</span>
                 </li>
               </ul>
-              
+
             </div>
           </div>
 
