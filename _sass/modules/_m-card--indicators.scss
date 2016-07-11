@@ -61,16 +61,6 @@
       color: $font-color-9;
     }
 
-    > .indicator-title > a {
-      display: inline-block;
-
-      font-size: rem($font-size-xsmall);
-      font-weight: $font-weight-regular;
-      letter-spacing: rem(.5px);
-      line-height: 1.6;
-      color: $font-color-1;
-    }
-
     > .indicator-metadata {
       display: flex;
       flex-direction: column;
