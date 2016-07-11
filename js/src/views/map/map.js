@@ -21,10 +21,6 @@ var MapView = Backbone.View.extend({
   id: 'map-container',
   className: 'l-map',
 
-  events: {
-    'click .js--btn-share': '_share',
-  },
-
   options: {
     legend: false,
     basemap: 'https://api.tiles.mapbox.com/v4/goal16.9990f1b9/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZ29hbDE2IiwiYSI6ImNpcGgzaWwzbDAwMW52Mmt3ZG5tMnRwN3gifQ.-e8de3rW2J8gc2Iv3LzMnA',
@@ -256,7 +252,8 @@ var MapView = Backbone.View.extend({
   },
 
   render: function() {
-    this.$el.append('<button class="js--btn-share btn-share"><svg class="icon-share"><use xlink:href="#icon-share"></use></svg></button>');
+    $('#content').append('<button class="js--btn-share c-btn-share"><svg class="icon-share"><use xlink:href="#icon-share"></use></svg></button>');
+    $('.js--btn-share').on('click', this._share.bind(this));
     return this;
   }
 

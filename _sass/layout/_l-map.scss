@@ -8,57 +8,11 @@
   border-top: rem(1px) solid $light-grey;
 
   @media screen and (min-width: $screen-m) {
-    top: $header-height;
-  }
-
-  .leaflet-bar {
-    border: 0px;
-  }
-
-  .btn-share {
-    position: absolute;
-    top: rem(135px);
-    right: rem(15px);
-    z-index: 20;
-    width: rem(40px);
-    height: rem(40px);
-    line-height: rem(35px);
-    border-radius: 50%;
-    border-top-left-radius: 50%;
-    border-top-right-radius: 50%;
-    border: 0;
-    background-color: $white;
-    box-shadow: 0 0 rem(8px) 0 rgba(7, 51, 56, 0.3);
-    color: $color-5;
-
-    svg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-
-      width: rem(15px);
-      height: rem(15px);
-      margin: auto;
-
-      fill: $color-5;
-    }
-
-    &:hover {
-      > svg {
-        fill: $font-color-11;
-      }
-    }
-
-    @media screen and (min-width: 768px) {
-      top: rem(140px);
-      right: rem(30px);
-    }
+    top: 0;
   }
 
   @media screen and (min-width: 768px) {
-    top: $header-height-desktop;
+    top: 0;
     left: $dashboard-width;
     transition: .2s ease;
 
@@ -68,8 +22,13 @@
   }
 
   @media screen and (min-width: $screen-l) {
-    top:$header-height-desktop;
+    top: 0;
   }
+
+  .leaflet-bar {
+    border: 0px;
+  }
+
   .leaflet-popup-tip-container{
     display: none;
   }
