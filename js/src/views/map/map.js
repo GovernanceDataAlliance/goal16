@@ -214,6 +214,7 @@ var MapView = Backbone.View.extend({
   },
 
   _removeLayer: function() {
+    Backbone.Events.trigger('popUp:close');
     //TODO - Use something to be sure we are appending the right
     //layer. TimeStamp, loader...
     if (this.layer) {
