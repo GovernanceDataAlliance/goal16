@@ -22,6 +22,7 @@ var PopUpView = Backbone.View.extend({
     this.functionHelper = FunctionHelper;
 
     this._initData();
+    this._setListeners();
   },
 
   _initData: function() {
@@ -59,6 +60,10 @@ var PopUpView = Backbone.View.extend({
     }.bind(this));
   },
 
+  _setListeners: function() {
+    Backbone.Events.on('popUp:close', this.closePopUp.bind(this));
+  },
+
   _cacheVars: function() {
     this.$popup = $('.m-popup');
     this.$btnClose = this.$popup.find('.btn-close');
@@ -91,7 +96,6 @@ var PopUpView = Backbone.View.extend({
 
   closePopUp: function() {
     this.options.map.closePopup();
-    Backbone.Events.trigger('popUp:close');
   },
 
   _closeInfowindow: function() {
