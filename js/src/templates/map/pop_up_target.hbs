@@ -12,10 +12,6 @@
         <p class="c-subtitle-popup">IAEG global indicators</p>
           {{#each indicators.official}}
             <div class="data-numbers">
-              <div class="data-info">
-                <a class="title" href="{{ siteurl }}/data/?indicator={{ slug }}"><p class="title">{{indicator_code}} {{title}}</p></a>
-                <span class="info">Score range: {{max_score}} - {{min_score}}</span><span class="info"> | Units: {{units}}</span><span class="info"> | Last update: {{year}}</span>
-              </div>
               <span class="c-score-popup -small">
                 {{#if literalScore}}
                   {{ literalScore }}
@@ -23,6 +19,14 @@
                   {{comma score }} {{#if score}} <span class="units">{{ units_abbr }}</span> {{/if}}
                 {{/if}}
               </span>
+              <div class="data-info">
+                <a class="title" href="{{ siteurl }}/data/?indicator={{ slug }}">{{indicator_code}} {{title}}</a>
+                <div class="c-indicator-metadata">
+                  {{#if max_score }}<span>Score range: {{ min_score }} - {{ max_score }}</span>{{/if}}
+                  {{#if units}}<span> {{ units }}</span>{{/if}}
+                  {{#if year }}<span> Last update {{ year }}</span>{{/if}}
+                </div>
+              </div>
             </div>
           {{/each}}
         {{/if}}
@@ -30,10 +34,6 @@
         <p class="c-subtitle-popup -shadow">complementary global indicators</p>
           {{#each indicators.shadow}}
             <div class="data-numbers">
-              <div class="data-info">
-                <a class="title" href="{{ siteurl }}/data/?indicator={{ slug }}"><p class="title">{{indicator_code}} {{title}}</p></a>
-                <span class="info">Score range: {{max_score}} - {{min_score}}</span><span class="info"> | Units: {{units}}</span><span class="info"> | Last update: {{year}}</span>
-              </div>
               <span class="c-score-popup -small">
                 {{#if literalScore}}
                   {{ literalScore }}
@@ -41,6 +41,14 @@
                   {{comma score }} {{#if score}} <span class="units">{{ units_abbr }}</span> {{/if}}
                 {{/if}}
               </span>
+              <div class="data-info">
+                <a class="title" href="{{ siteurl }}/data/?indicator={{ slug }}">{{indicator_code}} {{title}}</a>
+                <div class="c-indicator-metadata">
+                  {{#if max_score }}<span>Score range: {{ min_score }} - {{ max_score }}</span>{{/if}}
+                  {{#if units}}<span> {{ units }}</span>{{/if}}
+                  {{#if year }}<span> Last update {{ year }}</span>{{/if}}
+                </div>
+              </div>
             </div>
           {{/each}}
         {{/if}}
