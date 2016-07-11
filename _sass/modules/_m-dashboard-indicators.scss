@@ -56,19 +56,6 @@
       }
     }
 
-    .indicator-title {
-      font-weight: $font-weight-regular;
-      font-size: rem(12px);
-      line-height: rem(20px);
-      color: $font-color-3;
-
-      cursor: pointer;
-
-      &:hover {
-        color: $color-4;
-      }
-    }
-
     .btn-info {
       float: right;
       align-self: flex-end;
