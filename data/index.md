@@ -12,4 +12,4 @@ The [Inter-agency Expert Group on SDG Indicators](http://unstats.un.org/sdgs/iae
 
 Data for all the indicators are based on both official data sources, such as the World Bank or UN agencies that compile country statistics, and unofficial data sources, including civil society and polling organizations. Data sources have been selected that cover the most countries and which are from respected data providers with robust methodologies.
 
-This page will be updated as new data become available and new indicators are added to the dashboard. We welcome your thoughts! Please send comments and suggestions to SDG16DataInitiative@gmail.com.
+This page will be updated as new data become available and new indicators are added to the dashboard. We welcome your thoughts! Please send comments and suggestions to [SDG16DataInitiative@gmail.com](SDG16DataInitiative@gmail.com).
