@@ -22,7 +22,18 @@
               <div class="data-info">
                 <a class="c-indicator-name -pop-up" href="{{ siteurl }}/data/?indicator={{ slug }}">{{indicator_code}} {{title}}</a>
                 <div class="c-indicator-metadata">
-                  {{#if max_score }}<span>Score range: {{ min_score }} - {{ max_score }}</span>{{/if}}
+                  <span>Score range:
+                    {{#if worst_score }}
+                      {{ worst_score }} (worst) -
+                    {{else}}
+                      {{#unless best_score}}
+                        -
+                      {{/unless}}
+                    {{/if}}
+                    {{#if best_score }}
+                      {{ best_score }} (best)
+                    {{/if}}
+                  </span>
                   {{#if units}}<span> {{ units }}</span>{{/if}}
                   {{#if year }}<span> Last update {{ year }}</span>{{/if}}
                 </div>
