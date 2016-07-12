@@ -43,6 +43,7 @@ var ScoreCardView = Backbone.View.extend({
   _setListeners: function() {
     this.targetCardHeaderView.on('toggle:card', function() {
       if (this.isFirstTime) {
+        this.$toggleCard.addClass('is-loading -compare');
         this._getInfo();
       }
 
@@ -51,6 +52,7 @@ var ScoreCardView = Backbone.View.extend({
 
   _setVars: function() {
     this.$scoresTable = this.$el.find('.js--score-container');
+    this.$toggleCard = this.$el.find('.js--toggle-card');
   },
 
   _getInfo: function() {
@@ -75,6 +77,8 @@ var ScoreCardView = Backbone.View.extend({
 
       setLiteralScoreCompare(officialIndicators);
       setLiteralScoreCompare(shadowIndicators);
+
+      this.$toggleCard.removeClass('is-loading -compare');
 
       this.$scoresTable.html(this.indicatorTableTemplate({
         countries: countries,

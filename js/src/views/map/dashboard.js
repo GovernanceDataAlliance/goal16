@@ -175,6 +175,7 @@ var DashboardView = Backbone.View.extend({
   _setVars: function() {
     this.$body = $('body');
     this.$dashToggler = $('.js--toggle-dashboard-mb');
+    this.$map = $('#map-container');
     this.$targetsWrapper = $('.m-dashboard-target');
   },
 
@@ -201,6 +202,7 @@ var DashboardView = Backbone.View.extend({
 
   _setActiveLayer: function(type, layer) {
     this.status.set({layerType: type, layer: layer});
+    this.$map.addClass('is-loading -map');
     this._updateRouterParams();
   },
 
