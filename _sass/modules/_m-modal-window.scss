@@ -46,49 +46,29 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 90%;
-  width: 90%;
   z-index: 14;
+  width: 90%;
+  max-height: 90%;
+  padding-top: rem(45px);
+  padding-bottom: rem(50px);
   margin: auto;
+  box-shadow: 0 0 60px 0 rgba(7, 51, 56, 0.15);
   overflow: auto;
   background-color: $white;
-  box-shadow: 0 0 60px 0 rgba(7, 51, 56, 0.15);
-
-  @media screen and (min-width: $screen-s) {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 80%;
-    width: 90%;
-    max-width: rem(690px);
-    max-height: rem(346px);
-  }
 
   @media screen and (min-width: $screen-l) {
-    max-width: rem(1000px);
-    max-height: rem(346px);
+    width: 80%;
+    padding: rem(80px) 0;
   }
 
   .-disclaimer & {
-    @media screen and (min-width: $screen-s) {
-      max-height: 70%;
-    }
-
-    @media screen and (min-width: $screen-l) {
-      width: 80%;
-    }
   }
 }
 
 .modal-content {
   width: 100%;
 
-  .-disclaimer & {
-    margin-top: rem(80px);
-  }
-
    .-indicator {
-    margin: rem(30px) 0;
 
     .indicator-metadata {
       display: flex;
@@ -134,34 +114,28 @@
   display: flex;
   display: -ms-box;
   align-items: flex-start;
-  position: absolute;
   width: 100%;
   padding: 0 rem(20px);
   overflow: auto;
 
-  @media screen and (min-width: $screen-s) {
-    padding: 0 rem(92px);
-  }
-
   @media screen and (min-width: $screen-l) {
-    // bottom: rem(115px);
+    padding: 0 rem(90px);
   }
 
   p {
     font-family: $font-family-primary;
     font-size: $font-size-xsmall;
     font-weight: $font-weight-regular;
-    line-height: 1.6;
-    letter-spacing: 0.5px;
+    line-height: rem(25px);
     margin-top: rem(30px);
 
-    a{
+    a {
       font-size: $font-size-xsmall;
     }
 
-    @media screen and (min-width: $screen-s) {
+    @media screen and (min-width: 768px) {
       font-size: $font-size-normal;
-      line-height: 1.75;
+      line-height: rem(28px);
     }
   }
 }
@@ -169,4 +143,8 @@
 .btn-close-modal {
   @extend .btn-close;
   color: $color-7 !important;
+
+  @media screen and (min-width: 768px) {
+    margin: rem(40px);
+  }
 }
