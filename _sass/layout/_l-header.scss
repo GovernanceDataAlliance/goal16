@@ -16,6 +16,10 @@ $header-height: rem(80px);
 
   background-color: $white;
 
+  &.is-map{
+    max-width: rem(1402px);
+  }
+
   &.hide {
     transform: translate(0, 0);
   }
