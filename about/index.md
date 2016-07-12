@@ -21,7 +21,7 @@ ___
 *   For more information on data and methodologies of each indicator, visit the the link under the indicator source.
 *   In cases where two years have been provided for a data source (e.g. 2014/2015) we have used the last year (e.g. 2015).
 *   Please note that the map on this site,  based on the GADM database of Global Administrative Areas, is  used for navigational purposes only and may not conform with United Nations cartographic standards. Our map is for illustrative purposes only.
-*   Our country list is based on the World Bank country coding (for more information, see full list here: http://wits.worldbank.org/wits/wits/witshelp/content/codes/country_codes.htm).
+*   Our country list is based on the World Bank country coding (for more information, see full list here: [http://wits.worldbank.org/wits/wits/witshelp/content/codes/country_codes.htm](http://wits.worldbank.org/wits/wits/witshelp/content/codes/country_codes.htm)).
 *   This website is a beta version which will be further developed and improved.
 
 
