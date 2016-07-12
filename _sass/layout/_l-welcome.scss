@@ -46,19 +46,19 @@
     margin: auto;
     overflow: auto;
     z-index: 1;
-    padding: rem(10px) rem(17px);
+    padding: rem(45px) rem(17px);
     // padding: rem(45px) $wrap-padding-mobile rem(20px);
 
     @media screen and (min-width: $screen-s) {
-      padding: rem(10px) rem(17px);
+      padding: rem(45px) rem(17px);
     }
 
     @media screen and (min-width: 768px) {
-      padding: rem(10px) 0;
+      padding: rem(50px) 0;
     }
 
     @media screen and (min-width: $screen-l) {
-      padding: rem(10px) 0;
+      padding: rem(100px) 0;
     }
 
     .text-heading-underline > img{
