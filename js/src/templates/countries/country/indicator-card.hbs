@@ -16,7 +16,18 @@
             </span>
             <a class="c-indicator-name" href="{{ ../siteurl }}/data/?indicator={{ indicator_slug }}">{{ indicator_code }} {{ indicator_title }}</a>
             <div class="c-indicator-metadata">
-              {{#if max_score }}<span>Score range: {{ min_score }} - {{ max_score }}</span>{{/if}}
+              <span>Score range:
+                {{#if worst_score }}
+                  {{ worst_score }} (worst) -
+                {{else}}
+                  {{#unless best_score}}
+                    -
+                  {{/unless}}
+                {{/if}}
+                {{#if best_score }}
+                  {{ best_score }} (best)
+                {{/if}}
+              </span>
               {{#if units}}<span> {{ units }}</span>{{/if}}
               {{#if year }}<span> Last update {{ year }}</span>{{/if}}
             </div>
@@ -44,7 +55,18 @@
             </span>
             <a class="c-indicator-name" href="{{ ../siteurl }}/data/?indicator={{ indicator_slug }}">{{ indicator_code }} {{ indicator_title }}</a>
             <div class="c-indicator-metadata">
-              {{#if max_score }}<span>Score range: {{ min_score }} - {{ max_score }}</span>{{/if}}
+              <span>Score range:
+                {{#if worst_score }}
+                  {{ worst_score }} (worst) -
+                {{else}}
+                  {{#unless best_score}}
+                    -
+                  {{/unless}}
+                {{/if}}
+                {{#if best_score }}
+                  {{ best_score }} (best)
+                {{/if}}
+              </span>
               {{#if units}}<span> {{ units }}</span>{{/if}}
               {{#if year }}<span> Last update {{ year }}</span>{{/if}}
             </div>

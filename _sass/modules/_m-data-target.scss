@@ -55,10 +55,10 @@
     line-height: 1.7;
 
 
-    ul > li > .key-item {
+    ul > li > span {
       color: $font-color-7;
 
-      & + span  {
+      &:not(.key-item) {
         margin-right: rem(35px);
 
         &:last-child {
