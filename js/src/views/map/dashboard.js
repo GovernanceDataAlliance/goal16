@@ -175,6 +175,7 @@ var DashboardView = Backbone.View.extend({
   _setVars: function() {
     this.$body = $('body');
     this.$dashToggler = $('.js--toggle-dashboard-mb');
+    this.$map = $('#map-container');
     this.$targetsWrapper = $('.m-dashboard-target');
   },
 
@@ -201,23 +202,28 @@ var DashboardView = Backbone.View.extend({
 
   _setActiveLayer: function(type, layer) {
     this.status.set({layerType: type, layer: layer});
+    this.$map.addClass('is-loading -map');
     this._updateRouterParams();
   },
 
   _showModalWindow: function(e) {
     var indicator = $(e.currentTarget).data('slug');
-
     if (!indicator) {
       return;
-    }
+    } else {
+      this.infoWindowModel._getIndicatorInfo(indicator).done(function(res) {
 
-    this.infoWindowModel._getIndicatorInfo(indicator).done(function() {
-      new ModalWindowView({
-        'type': 'info-infowindow',
-        'data': this.infoWindowModel.toJSON()
-      });
-    }.bind(this));
-  },
+        if (res.rows.length === 0) {
+          this.infoWindowModel.clear();
+        }
+
+        new ModalWindowView({
+          'type': 'info-infowindow',
+          'data': this.infoWindowModel.toJSON()
+        });
+      }.bind(this));
+    }
+  }
 
 });
 
