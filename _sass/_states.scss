@@ -39,7 +39,24 @@
 }
 
 .is-loading {
-  @include spinner(40px, 5px);
+
+  &.-map {
+    @include spinner(40px, 4px, $color-5);
+    &:after {
+
+    }
+  }
+
+  &.-compare:after {
+    @include spinner(12px, 4px, $color-1);
+    &:after {
+      top: rem(-2px);
+      left: rem(-30px);
+
+      margin: 0;
+    }
+  }
+
 }
 
 .has-no-scroll {

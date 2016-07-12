@@ -28,6 +28,8 @@
 
   > .js--target-info > .card-options {
     > .js--toggle-card {
+      position: relative;
+      
       transform: translate(0, rem(5px));
       cursor: pointer;
     }

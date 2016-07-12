@@ -56,6 +56,7 @@ var MapView = Backbone.View.extend({
 
   setMapLayer: function() {
     if (this.status.get('layer')) {
+      this.$el.addClass('is-loading -map');
       this._activeLayer();
     }
   },
@@ -206,6 +207,8 @@ var MapView = Backbone.View.extend({
 
   _addLayer: function() {
     this.layer.addTo(this.map);
+
+    this.$el.removeClass('is-loading -map');
 
     if (!this.options.legend) {
       this.legend = new MapLegendview();
