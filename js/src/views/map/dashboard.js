@@ -208,18 +208,22 @@ var DashboardView = Backbone.View.extend({
 
   _showModalWindow: function(e) {
     var indicator = $(e.currentTarget).data('slug');
-
     if (!indicator) {
       return;
-    }
+    } else {
+      this.infoWindowModel._getIndicatorInfo(indicator).done(function(res) {
 
-    this.infoWindowModel._getIndicatorInfo(indicator).done(function() {
-      new ModalWindowView({
-        'type': 'info-infowindow',
-        'data': this.infoWindowModel.toJSON()
-      });
-    }.bind(this));
-  },
+        if (res.rows.length === 0) {
+          this.infoWindowModel.clear();
+        }
+
+        new ModalWindowView({
+          'type': 'info-infowindow',
+          'data': this.infoWindowModel.toJSON()
+        });
+      }.bind(this));
+    }
+  }
 
 });
 
