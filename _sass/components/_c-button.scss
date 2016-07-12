@@ -13,8 +13,16 @@
   cursor: pointer;
   transition: 0.1s;
 
+  & + & {
+    margin-top: rem(10px);
+  }
+
   @media screen and (min-width: 768px) {
     width: auto;
+
+    & + & {
+      margin-top: 0;
+    }
   }
 
   &.-primary {
@@ -52,6 +60,7 @@
   &.-small {
     width: 50%;
     padding: rem(15px) 0;
+    margin-top: 0;
 
     @media screen and (min-width: 768px) {
       width: auto;
@@ -88,8 +97,8 @@
   margin-right: rem(20px);
   margin-top: rem(20px);
   cursor: pointer;
-  width: rem(16px);
-  height: rem(16px);
+  width: rem(18px);
+  height: rem(18px);
 
   &.-color-1 {
     svg {
@@ -102,17 +111,9 @@
   }
 
   @media screen and (min-width: 768px) {
-    margin: rem(40px) rem(30px) 0 0;
-  }
-  
-  @media screen and (min-width: $screen-s) {
-    position: absolute;
-    width: rem(16px);
-    height: rem(16px);
+    margin: rem(40px);
   }
 }
-
-
 
 .c-btn-share {
   position: absolute;
