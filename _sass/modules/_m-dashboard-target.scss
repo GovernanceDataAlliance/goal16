@@ -60,35 +60,38 @@
         color: $font-color-1;
       }
     }
+  }
 
-    .target-title {
-      margin-left: rem(26px);
-      padding: rem(5px);
-      font-size: rem($font-size-xsmall);
-      line-height: rem(19px);
-      color: $font-color-3;
-      font-family: $font-family-primary;
-      font-weight: $font-weight-regular;
-      cursor: pointer;
-      width: 100%;
-      @media screen and (min-width: $screen-s) {
-      word-wrap: break-word;/*IE10 FIX*/
-      white-space: pre-line;/*IE10 FIX*/
-      max-width: rem(296px);/*IE10 FIX*/
-      width: rem(296px);/*IE10 FIX*/
+  .target-title {
+    width: 100%;
+    padding: rem(5px);
+    margin-left: rem(25px);
+
+    font-size: rem($font-size-xsmall);
+    font-weight: $font-weight-regular;
+    color: $font-color-3;
+    line-height: 1.6;
+
+    &.is-active {
+      color: $font-color-1;
+
+      background-color: $color-10;
     }
 
-      &.is-active {
-        color: $font-color-1;
-        background-color: $white;
-      }
+    // check if this really works, actually it affects
+    // every browser, not only IE10
+    @media screen and (min-width: $screen-s) {
+      max-width: rem(296px); /*IE10 FIX*/
+      width: rem(296px); /*IE10 FIX*/
 
-      @media screen and (min-width: 768px) {
-        font-size: rem($font-size-small);
-        line-height: rem(25px);
-      }
+      word-wrap: break-word; /*IE10 FIX*/
+      white-space: pre-line; /*IE10 FIX*/
     }
 
+    @media screen and (min-width: 768px) {
+      font-size: rem($font-size-small);
+      line-height: 1.8;
+    }
   }
 
   &.is-open {

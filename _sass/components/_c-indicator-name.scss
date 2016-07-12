@@ -1,5 +1,5 @@
 .c-indicator-name {
-  font-size: $font-size-xsmall;
+  font-size: rem($font-size-xsmall);
   font-weight: $font-weight-regular;
   color: $font-color-1;
   line-height: 1.6;
@@ -19,15 +19,14 @@
     max-width: 85%;
 
     font-size: $font-size-normal;
-    line-height: rem(23px);
+    line-height: 1.7;
 
-    span {
+    > span {
       color: $font-color-7;
     }
 
     @media screen and (min-width: $screen-m) {
       font-size: $font-size-medium;
-      line-height: rem(32px);
     }
   }
 
