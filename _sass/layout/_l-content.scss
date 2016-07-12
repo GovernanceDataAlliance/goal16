@@ -29,6 +29,10 @@
     @media screen and (min-width: 768px) {}
   }
 
+  &.-no_padding_bottom{
+    padding-bottom: rem(32px);
+  }
+
   &.-fullscreen {
     padding: 0;
     background-color: transparent;
