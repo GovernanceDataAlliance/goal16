@@ -4,7 +4,7 @@
   {{#each official}}
   <div class="indicator-wrapper">
     <input type="radio" name="layer-selector" value={{slug}} id={{slug}} class="js--layer-selector -indicator">
-    <label for="{{ slug }}"><h1 class="indicator-title">{{ indicator_code }} {{ title }}</h1></label>
+    <label for="{{ slug }}"><h1 class="c-indicator-name -dashboard">{{ indicator_code }} {{ title }}</h1></label>
     <button class="js--indicator-info btn-info" data-slug={{ slug }}>
       <svg class="icon-info">
         <use xlink:href="#icon-info"></use>
@@ -20,7 +20,7 @@
   {{#each shadow}}
   <div class="indicator-wrapper">
     <input type="radio" name="layer-selector" value={{slug}} id={{slug}} class="js--layer-selector -indicator">
-    <label for={{slug}}><h1 class="indicator-title">{{ indicator_code }} {{title}}</h1></label>
+    <label for={{slug}}><h1 class="c-indicator-name -dashboard">{{ indicator_code }} {{title}}</h1></label>
     <button class="js--indicator-info btn-info" data-slug="percentage_of_people_violence">
       <svg class="icon-info">
         <use xlink:href="#icon-info"></use>

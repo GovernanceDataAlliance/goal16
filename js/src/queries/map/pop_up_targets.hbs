@@ -1,4 +1,5 @@
 SELECT 
+  i.best_score, 
   i.code as indicator_code, 
   i.slug, 
   i.title, 
@@ -7,10 +8,9 @@ SELECT
   s.iso,
   s.year,  
   i.type,  
-  i.units_abbr,
-  i.units,
-  i.max_score, 
-  i.min_score    
+  i.units_abbr, 
+  i.units, 
+  i.worst_score 
 FROM 
   {{indicators_table}} i JOIN {{scores_table}} s ON s.indicator_slug=i.slug 
 WHERE 

@@ -36,22 +36,6 @@
     }
   }
 
-  h1 {
-    max-width: 85%;
-    line-height: rem(23px);
-    font-size: $font-size-normal;
-    font-weight: $font-weight-regular;
-
-    span {
-      color: $font-color-7;
-    }
-
-    @media screen and (min-width: $screen-m) {
-      font-size: $font-size-medium;
-      line-height: rem(32px);
-    }
-  }
-
   .indicator-info {
     padding: rem(30px) 0;
     max-width: 100%;
@@ -78,10 +62,10 @@
     line-height: 1.7;
 
 
-    ul > li > .key-item {
+    ul > li > span {
       color: $font-color-7;
 
-      & + span  {
+      &:not(.key-item) {
         margin-right: rem(35px);
 
         &:last-child {

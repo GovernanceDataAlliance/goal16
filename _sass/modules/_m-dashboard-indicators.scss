@@ -30,9 +30,11 @@
       float: left;
       width: rem(16px);
       height: rem(16px);
+
+      border: rem(1px) solid $color-4;
       border-radius: 50%;
       background-color: $bg-color-1;
-      border: rem(1px) solid $color-4;
+      cursor:pointer;
 
       &:checked {
         border-width: rem(4px);
@@ -54,28 +56,26 @@
       }
     }
 
-    .indicator-title {
-      font-weight: $font-weight-regular;
-      font-size: rem(12px);
-      line-height: rem(20px);
-      color: $font-color-3;
-    }
-
     .btn-info {
       float: right;
-      margin-left: rem(10px);
+      align-self: flex-end;
+
       width: rem(16px);
       height: rem(16px);
+      margin-left: rem(10px);
+
       border-radius: 50%;
-      align-self: flex-end;
     }
   }
 
   .icon-info {
-    fill: $color-5;
     width: rem(16px);
     height: rem(16px);
+
+    fill: $color-5;
+
+    &:hover {
+      fill: $tree-green;
+    }
   }
 }
-
-

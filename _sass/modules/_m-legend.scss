@@ -1,5 +1,5 @@
 $buckets: 'bucket-1', 'bucket-2', 'bucket-3', 'bucket-4', 'bucket-5';
-$colors: $bucket-1, $bucket-2, $bucket-3, $bucket-4, $bucket-5;
+$colors: color100, color75, color50, color25, color0;
 $bucket-border: $bucket-border-1, $bucket-border-2, $bucket-border-3, $bucket-border-4, $bucket-border-5;
 
 .m-legend {
@@ -23,7 +23,7 @@ $bucket-border: $bucket-border-1, $bucket-border-2, $bucket-border-3, $bucket-bo
       margin-left: rem(10px);
 
       @media screen and (min-width: $screen-l) {
-        margin-right: rem(40px);
+        margin-left: rem(40px);
       }
     }
   }
@@ -66,13 +66,13 @@ $bucket-border: $bucket-border-1, $bucket-border-2, $bucket-border-3, $bucket-bo
     @for $i from 1 through length($buckets) {
       &.#{nth($buckets, $i)} {
         background-color: #{nth($colors, $i)};
+        background-image: url('#{$baseUrl}/img/patterns/#{nth($colors, $i)}.png');
         border: 1px solid #{nth($bucket-border, $i)}
       }
     }
 
     &.bucket-5 {
       margin-right: 0;
-      background-image: url('#{$baseUrl}/img/patterns/p5_green.png');
 
       @media screen and (min-width: 768px) {
         color: $font-color-7;

@@ -1,4 +1,5 @@
 SELECT distinct on (indicator_slug) 
+  best_score, 
   name, 
   i.code as indicator_code, 
   i.title,  
@@ -8,9 +9,8 @@ SELECT distinct on (indicator_slug)
   indicator_slug,  
   units_abbr, 
   units, 
-  max_score, 
-  min_score, 
-  type  
+  type, 
+  worst_score 
 FROM {{scores_table}} s 
 INNER JOIN {{countries_table}} c ON s.iso=c.iso INNER JOIN {{indicators_table}} i ON i.slug=s.indicator_slug 
 WHERE  

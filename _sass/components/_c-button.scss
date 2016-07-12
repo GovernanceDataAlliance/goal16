@@ -18,12 +18,14 @@
   }
 
   &.-primary {
-    color: $font-color-2;
+    color: $font-color-10;
 
     background-color: $color-5;
 
     &:hover {
-      background-color: darken($color-5, 10%);
+      color: $font-color-11;
+
+      background-color: $pale-olive-green;
     }
   }
 
@@ -33,19 +35,28 @@
     border: rem(1px) solid $border-1;
 
     &:hover{
-      color: $font-color-2;
+      color: $font-color-10;
 
+      border-color: transparent;
       background-color: $color-5;
     }
   }
 
   // margin given by every button but first one
-  & + & {
-    margin: rem(25px) 0 0;
+  @media screen and (min-width: 768px) {
+    & + & {
+      margin: rem(25px) 0 0;
+    }
   }
 
   &.-small {
-    width: auto;
+    width: 50%;
+    padding: rem(15px) 0;
+
+    @media screen and (min-width: 768px) {
+      width: auto;
+      padding: rem(15px) rem(45px);
+    }
   }
 
   &.-disabled {
@@ -69,89 +80,6 @@
   }
 }
 
-// primary
-// .btn-primary {
-//   display: block;
-//   width: 100%;
-//   padding: rem(15px) rem(50px);
-//   background-color: $color-5;
-//   font-family: $font-family-primary;
-//   font-size: $font-size-xsmall;
-//   text-align: center;
-//   font-weight: $font-weight-regular;
-//   text-transform: uppercase;
-//   letter-spacing: rem(.6px);
-//   color: $white;
-//   cursor: pointer;
-//   transition: 0.1s;
-//   &:hover {
-//     background-color: darken($color-5, 10% );
-//   }
-//   @media screen and (min-width: 768px) {
-//     font-size: rem(12px);
-//     letter-spacing: rem(.7px);
-//     max-width: rem(211px);
-//   }
-//   &.-small {
-//     width: auto;
-//     padding: rem(15px) rem(45px);
-//   }
-//   &.-disabled {
-//     opacity: 0.5;
-//     pointer-events: none;
-//   }
-// }
-
-// secondary
-// .btn {
-//   padding: rem(15px) rem(30px);
-//   text-transform: uppercase;
-//   color: $color-5;
-//   border: 1px solid $color-5;
-//   font-weight: $font-weight-regular;
-//   font-size: $font-size-xsmall;
-//   width: 100%;
-//   margin-top: rem(25px);
-//   @media screen and (min-width: $screen-s) {
-//     width: auto;
-//     letter-spacing: rem(0.7px);
-//     transition: 0.2s;
-//     margin-right: rem(25px);
-//     margin-top: 0px;
-//     &:last-child{
-//       margin-right: 0px;
-//     }
-//   }
-//   &:hover{
-//     background-color: $color-5;
-//     color: $font-color-2;
-//   }
-//   &.-active {
-//     position: relative;
-//     color: $font-color-6;
-//     background-color: rgba(128, 147, 151, 0.1);
-//     border: solid 1px rgba(128, 147, 151, 0.4);
-//     > svg {
-//       display: none;
-//     }
-//     .button-literal {
-//       color: $font-color-1;
-//     }
-//     @media screen and (min-width: 768px) {
-//       &:after {
-//         display: none;
-//       }
-//       .button-literal {
-//         position: relative;
-//       }
-//     }
-//   }
-// }
-
-
-
-
-
 .btn-close {
   position: absolute;
   top: 0;
@@ -160,23 +88,70 @@
   margin-right: rem(20px);
   margin-top: rem(20px);
   cursor: pointer;
-  width: rem(13px);
-  height: rem(13px);
+  width: rem(16px);
+  height: rem(16px);
 
   &.-color-1 {
     svg {
       fill: $color-6;
     }
   }
+
   &.-btn-close-modal{
     color: $font-color-3;
   }
+
   @media screen and (min-width: 768px) {
     margin: rem(40px) rem(30px) 0 0;
   }
+  
   @media screen and (min-width: $screen-s) {
     position: absolute;
     width: rem(16px);
     height: rem(16px);
+  }
+}
+
+
+
+.c-btn-share {
+  position: absolute;
+  top: rem(135px);
+  right: rem(15px);
+  z-index: 20;
+  width: rem(40px);
+  height: rem(40px);
+  line-height: rem(35px);
+  border-radius: 50%;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  border: 0;
+  background-color: $white;
+  box-shadow: 0 0 rem(8px) 0 rgba(7, 51, 56, 0.3);
+  color: $color-5;
+
+  svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    width: rem(15px);
+    height: rem(15px);
+    margin: auto;
+
+    fill: $color-5;
+  }
+
+  &:hover {
+    > svg {
+      fill: $font-color-11;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    top: rem(140px);
+    right: rem(30px);
   }
 }
