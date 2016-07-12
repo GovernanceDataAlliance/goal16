@@ -3,13 +3,12 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 90%;
   width: 90%;
   box-shadow: 0 0 rem(60px) 0 rgba(7, 51, 56, 0.15);
   right: 0;
   z-index: 30;
   background-color: $white;
-  padding-top: rem(40px);
+  padding: rem(40px) 0;
 
   @media screen and (min-width: 768px) {
     position: relative;
@@ -17,9 +16,9 @@
     transform: translate(0%, 0%);
     left: 0;
     right: auto;
-    min-height: rem(330px);
+    min-height: rem(300px);
     min-width: rem(430px);
-    padding: rem(30px) 0 rem(25px);
+    padding: rem(25px) 0;
 
     &:after {
       content: "";
@@ -37,14 +36,12 @@
   }
 
   .scroll-wrapper {
-    position: absolute;
-    top: rem(75px);
-    bottom: rem(75px);
+    max-height: 80%;
     padding: 0 rem(20px);
     overflow: scroll;
 
     @media screen and (min-width: 768px) {
-      bottom: rem(65px);
+      max-height: rem(200px);
       padding: 0 rem(25px);
       overflow-x: hidden;
       max-width: rem(430px);
@@ -68,11 +65,10 @@
     font-family: $font-family-secondary;
     font-size: $font-size-xlarge;
     letter-spacing: rem(0.7px);
-    margin-top: rem(62px);
-    margin-bottom: rem(76px);
+    margin-bottom: rem(50px);
 
     @media screen and (min-width: $screen-s) {
-      margin: rem(40px) 0;
+      margin-bottom: rem(15px);
       font-size: $font-size-xlarge;
       letter-spacing: rem(0.6px);
     }
@@ -95,8 +91,9 @@
   }
 
   .data {
+    margin-bottom: rem(45px);
     @media screen and (min-width: $screen-s) {
-      margin-bottom: rem(40px);
+      margin-bottom: rem(20px);
     }
 
     p {
@@ -125,44 +122,26 @@
 
     .data-info {
       display: block;
-      font-family: $font-family-primary;
-      line-height: 1.8;
-      letter-spacing: rem(0.5px);
-      font-weight: $font-weight-regular;
-      font-size: $font-size-xxsmall;
       margin-bottom: rem(5px);
 
+      font-family: $font-family-primary;
+      font-size: $font-size-xxsmall;
+      font-weight: $font-weight-regular;
+      letter-spacing: rem(.5px);
+
       @media screen and (min-width: $screen-s) {
-        margin-bottom: rem(0px);
-      }
-
-      .title {
-        text-transform: uppercase;
-        line-height: 1.5;
-        font-size: $font-size-xxsmall;
-        margin: 0;
-        color: $font-color-1;
-      }
-
-      .info {
-        font-size: rem($font-size-xxsmall);
-        line-height: .5;
-        color: $font-color-7;
-        margin: 0;
+        margin-bottom: 0;
       }
     }
   }
 
   .links {
-    position: absolute;
-    bottom: rem(25px);
-    left: 0;
-    right: 0;
+    padding: rem(25px);
+    padding-bottom: 0;
 
     @media screen and (min-width: $screen-s) {
       display: flex;
       justify-content: space-between;
-      padding: 0 rem(25px);
     }
 
     a {

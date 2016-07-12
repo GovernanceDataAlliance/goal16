@@ -8,7 +8,7 @@
         {{#each indicators}}
         <div id="indicator-{{indicator_slug}}" class="m-data-indicator">
           <div class="header js--toggle-indicator" data-slug={{slug}}>
-            <h1>{{indicator_code}} {{indicator_title}} <span>({{#typeOfIndicator type}}{{/typeOfIndicator}})</span></h1>
+            <h1 class="c-indicator-name -data">{{indicator_code}} {{indicator_title}} <span>({{#typeOfIndicator type}}{{/typeOfIndicator}})</span></h1>
             <div class="buttons">
               <button class="js--icon-open">
                 <svg class="icon">
@@ -27,15 +27,15 @@
             <div class="indicator-metadata">
               <ul>
                 <li>
-                  <span class="key-item">Source: </span>{{#if source_link }} <a target="_blank" href="{{ source_link }}">{{ source_name }} {{else}}-{{/if}}</a>
+                  <span class="key-item">Source: </span>{{#if source_link }} <a target="_blank" href="{{ source_link }}">{{ source_name }}</a>{{else}}<span> - </span>{{/if}}
                 </li>
                 <li>
-                  <span class="key-item">Max score: </span><span>{{ comma max_score }}</span>
-                  <span class="key-item">Min score: </span><span>{{ comma min_score }}</span>
+                  <span class="key-item">Worst score: </span><span>{{#if  worst_score }} {{ worst_score}} {{else}}  - {{/if}}</span>
+                  <span class="key-item">Best score: </span><span>{{#if  best_score }} {{ best_score}} {{else}}  - {{/if}}</span>
                   <span class="key-item">Units: </span><span>{{#if units }}{{ units }}{{ else }}-{{/if}}</span>
                 </li>
               </ul>
-              
+
             </div>
           </div>
 

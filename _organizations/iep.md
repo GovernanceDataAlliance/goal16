@@ -1,7 +1,7 @@
 ---
 published: true
 name: Institute for Economics and Peace (IEP)
-logo: partners_unodc.jpg
+logo: iep.png
 link: "http://economicsandpeace.org/"
 description: "The Institute for Economics and Peace is the world’s leading think tank dedicated to developing metrics to analyse peace and to quantify its economic value. It does this by developing global and national indices, calculating the economic cost of violence, analysing country level risk and understanding positive peace."
 ---

@@ -43,6 +43,10 @@
   background-color: $white;
   box-shadow: 0 0 rem(8px) 0 rgba(7, 51, 56, 0.3);
 
+  &:hover {
+    color: $font-color-11;
+  }
+
 }
 
 .leaflet-bar a:last-child {

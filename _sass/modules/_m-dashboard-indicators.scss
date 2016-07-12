@@ -5,7 +5,6 @@
     display: block;
     margin-top: rem(30px);
     padding-left: rem(35px);
-
   }
 
   .shadow-indicators {
@@ -31,9 +30,11 @@
       float: left;
       width: rem(16px);
       height: rem(16px);
+
+      border: rem(1px) solid $color-4;
       border-radius: 50%;
       background-color: $bg-color-1;
-      border: rem(1px) solid $color-4;
+      cursor:pointer;
 
       &:checked {
         border-width: rem(4px);
@@ -48,31 +49,33 @@
     label {
       float: left;
       margin-left: rem(10px);
-      max-width: 80%;
-    }
+      max-width: 75%;
 
-    .indicator-title {
-      font-weight: $font-weight-regular;
-      font-size: rem(12px);
-      line-height: rem(20px);
-      color: $font-color-3;
+      @media screen and (min-width: 768px) {
+        max-width: 80%;
+      }
     }
 
     .btn-info {
       float: right;
-      margin-left: rem(10px);
+      align-self: flex-end;
+
       width: rem(16px);
       height: rem(16px);
+      margin-left: rem(10px);
+
       border-radius: 50%;
-      align-self: flex-end;
     }
   }
 
   .icon-info {
-    fill: $color-5;
     width: rem(16px);
     height: rem(16px);
+
+    fill: $color-5;
+
+    &:hover {
+      fill: $tree-green;
+    }
   }
 }
-
-

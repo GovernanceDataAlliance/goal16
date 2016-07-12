@@ -1,0 +1,19 @@
+.c-indicator-metadata {
+  margin-top: rem(5px);
+
+  font-size: $font-size-xsmall;
+  color: $font-color-7;
+  line-height: 1.5;
+
+  // separators
+  > span:nth-child(even) {
+
+    &:before {
+      @extend %separator;
+    }
+
+    & + span:before {
+      @extend %separator;
+    }
+  }
+}
