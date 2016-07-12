@@ -10,7 +10,6 @@ var targetsCollection = require('../../collections/common/targets.js'),
 var InfoWindowModel = require('../../models/common/infowindow.js');
 var ModalWindowView = require('../../views/common/infowindow.js');
 
-
 var status = require ('../../models/map/status.js');
 
 var template = Handlebars.compile(require('../../templates/map/dashboard.hbs')),
@@ -207,6 +206,7 @@ var DashboardView = Backbone.View.extend({
 
   _showModalWindow: function(e) {
     var indicator = $(e.currentTarget).data('slug');
+
     if (!indicator) {
       return;
     }
