@@ -1,0 +1,37 @@
+.c-indicator-name {
+  font-size: rem($font-size-xsmall);
+  font-weight: $font-weight-regular;
+  color: $font-color-1;
+  line-height: 1.6;
+  letter-spacing: normal;
+
+  &.-dashboard {
+    color: $font-color-3;
+
+    cursor: pointer;
+
+    &:hover {
+      color: $color-4;
+    }
+  }
+
+  &.-data {
+    max-width: 85%;
+
+    font-size: $font-size-normal;
+    line-height: 1.7;
+
+    > span {
+      color: $font-color-7;
+    }
+
+    @media screen and (min-width: $screen-m) {
+      font-size: $font-size-medium;
+    }
+  }
+
+  &.-pop-up {
+    // !important rule added because of Leaflet's inheritance
+    color: $font-color-1 !important;
+  }
+}

@@ -4,7 +4,7 @@
   left: rem($wrap-padding-mobile);
   right: rem($wrap-padding-mobile);
   z-index: 1;
-  background-color: rgba($white, .6);
+  background-color: rgba($white, .8);
   padding: rem(6px) rem(6px) rem(30px);
 
   @media screen and (min-width: 768px) {

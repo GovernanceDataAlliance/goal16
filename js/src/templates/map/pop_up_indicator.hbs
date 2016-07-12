@@ -9,7 +9,18 @@
     <a href="{{ siteurl }}/countries/?iso={{iso}}"><h1 class="c-title-popup -small">{{country.name}}</h1></a>
     {{#each indicators}}
       <div class="data">
-        <p>Score range: {{max_score}} - {{min_score}}</p>
+        <p>Score range:
+          {{#if worst_score }}
+            {{ worst_score }} (worst) -
+          {{else}}
+            {{#unless best_score}}
+              -
+            {{/unless}}
+          {{/if}}
+          {{#if best_score }}
+            {{ best_score }} (best)
+          {{/if}}
+        </p>
         <p>Units: {{units}}</p>
         <p>Last update: {{year}}</p>
       </div>

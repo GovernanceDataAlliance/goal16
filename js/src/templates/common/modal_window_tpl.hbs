@@ -32,19 +32,22 @@
               <span class="key-item">Units: </span><span>{{#if data.units }}{{ data.units }}{{ else }}-{{/if}}</span>
             </li>
           </ul>
-          
+
         </div>
-        
+
       </div>
     </div>
   </div>
 {{/if}}
 
 {{#if isMapDisclaimer}}
-  <h3 class="c-title-underline -left">Get started</h3>
+  <h3 class="c-title-underline -left">Explore available data</h3>
   {{#if isMobile}}
     <p>Click on the “Explore and select the targets” button below to see which countries have data over the map</p>
   {{else}}
-    <p>Click on a target or an indicator to the left side to see which countries have data over the map</p>
+    <p>Click on a target or an indicator in the menu on the left side to see which countries have data. Map shading refers to data availability and coverage, not actual values, whether positive or negative.</p>
+    <p>You can then click on a specific country to see more information and available data.</p>
+    <p>For more information about the indicators and data sources, click on the DATA tab in the top menu.</p>
+    <p>To explore all available data for a specific country, click on the COUNTRIES tab in the top menu.</p>
   {{/if}}
 {{/if}}

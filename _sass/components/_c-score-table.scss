@@ -74,17 +74,8 @@
       }
     }
 
-
     &.-indicator {
       flex-direction: column;
-
-      > .indicator-name {
-        font-size: $font-size-xxsmall;
-        color: $font-color-1;
-        text-transform: uppercase;
-        line-height: 1.8;
-        letter-spacing: rem(.5px);
-      }
     }
 
     &.-score {
