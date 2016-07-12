@@ -70,6 +70,10 @@
   }
 
   .-disclaimer & {
+    @media screen and (min-width: $screen-s) {
+      max-height: 70%;
+    }
+
     @media screen and (min-width: $screen-l) {
       width: 80%;
     }
