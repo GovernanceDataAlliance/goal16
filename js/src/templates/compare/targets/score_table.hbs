@@ -47,8 +47,7 @@
                 {{comma scoreA }} {{#if scoreA}}{{ units_abbr }} {{/if}}
               {{/if}}
             </span>
-            <!-- <span>{{#lookup ../countries }}</span> -->
-            <span class="country-name only-mobile"></span>
+            <span class="country-name only-mobile">{{lookup (lookup ../countries 0) 'name' }}</span>
           </div>
 
           <div class="table-cell -score">
@@ -59,7 +58,7 @@
                 {{comma scoreB }} {{#if scoreB}}{{ units_abbr }} {{/if}}
               {{/if}}
             </span>
-            <!-- <span class="country-name only-mobile">{{ countries.2.name }}</span> -->
+            <span class="country-name only-mobile">{{lookup (lookup ../countries 1) 'name' }}</span>
           </div>
 
           <div class="table-cell -score">
@@ -70,7 +69,7 @@
                 {{comma scoreC }} {{#if scoreC}}{{ units_abbr }} {{/if}}
               {{/if}}
             </span>
-            <!-- <span class="country-name only-mobile">{{ countries.3.name }}</span> -->
+            <span class="country-name only-mobile">{{lookup (lookup ../countries 2) 'name' }}</span>
           </div>
         </div>
 
@@ -136,7 +135,7 @@
                 {{comma scoreA }} {{#if scoreA}}{{ units_abbr }} {{/if}}
               {{/if}}
             </span>
-            <!-- <span class="country-name only-mobile">{{ countries.1.name }}</span> -->
+            <span class="country-name only-mobile">{{lookup (lookup ../countries 0) 'name' }}</span>
           </div>
 
           <div class="table-cell -score">
@@ -147,7 +146,7 @@
                 {{comma scoreB }} {{#if scoreB}}{{ units_abbr }} {{/if}}
               {{/if}}
             </span>
-            <!-- <span class="country-name only-mobile">{{ countries.2.name }}</span> -->
+            <span class="country-name only-mobile">{{lookup (lookup ../countries 1) 'name' }}</span>
           </div>
 
           <div class="table-cell -score">
@@ -158,7 +157,7 @@
                 {{comma scoreC }} {{#if scoreC}}{{ units_abbr }} {{/if}}
               {{/if}}
             </span>
-            <!-- <span class="country-name only-mobile">{{ countries.3.name }}</span> -->
+            <span class="country-name only-mobile">{{lookup (lookup ../countries 2) 'name' }}</span>
           </div>
         </div>
 
