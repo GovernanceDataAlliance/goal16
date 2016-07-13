@@ -125,38 +125,6 @@
       }
     }
 
-    .text-banner-m {
-      display: block;
-      margin: rem(17px) auto;
-
-      @media screen and (min-width: 768px) {
-        margin: rem(22px) auto;
-      }
-    }
-
-    .text-banner-title-s {
-      margin-top: rem(25px);
-
-      @media screen and (min-width: 768px) {
-        margin-top: rem(41px);
-      }
-    }
-
-    .text-banner-s {
-      width: 100%;
-      display: block;
-      margin: rem(10px) auto;
-
-      @media screen and (min-width: 768px) {
-        width: rem(736px);
-        margin: rem(16px) auto;
-      }
-
-      &.-italic {
-        font-style: italic;
-      }
-    }
-
     .link-container {
       margin-top: rem(30px);
 
