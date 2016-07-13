@@ -116,6 +116,7 @@
       overflow-y: scroll;
     }
 
+
     .search-area {
       width: 100%;
       background-color: $white;
@@ -131,7 +132,7 @@
       }
 
       &.highlight {
-        background-color: $white;
+        background-color: $color-3;
       }
 
       span span {
