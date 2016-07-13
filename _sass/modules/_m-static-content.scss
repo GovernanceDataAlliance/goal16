@@ -1,6 +1,10 @@
 .m-static-content {
   max-width: 100%;
 
+  > .visible-text {
+    line-height: 1.7;
+  }
+
   @media screen and (min-width: $screen-xl) {
     max-width: $content-width;
   }

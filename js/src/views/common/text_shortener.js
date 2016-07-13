@@ -1,7 +1,7 @@
 var _ = require('lodash'),
   $ = require('jquery'),
   Backbone = require('backbone');
-    
+
 var TextShortener = Backbone.View.extend({
 
   events: {
@@ -9,50 +9,83 @@ var TextShortener = Backbone.View.extend({
     'click .read-less' : '_onShortText'
   },
 
-  initialize: function(options) {
-    this._shortDescription()
+  defaultOptions: {
+    'maxLength': 350
   },
 
-  _shortDescription: function() {
-    var $descriptions = $('.description'),
-      charLimit = 250,
-      textShow, textHide, readMore, readLess;
-
-    readMore = '<span class="read-more">continue reading</span>';
-    readLess = '<span class="read-less">read less</span>';
-
-    _.each($descriptions, function(d) {
-      if ($(d).text().length > charLimit) {
-
-        textShow = $(d).text().substr(0, charLimit) + '<span class="ellipsis">...</span>';
-        textHide = $(d).text().substr(charLimit, $(d).text().length);
-
-        var hiddenText = $(document.createElement('span')).html(textHide);
-        $(hiddenText).addClass('is-hidden').append(readLess);
-
-        $(d).html(textShow);
-        $(d).append(readMore);
-        $(d).append(hiddenText);
-      }
-    });
+  initialize: function(settings) {
+    this.options = settings ?
+      _.extend(this.defaultOptions, settings) : this.defaultOptions;
   },
 
-  _onExpandText: function(e) {
-    var $btn = $(e.currentTarget);
-    $btn.parent().addClass('-expand');
-    $btn.next('span').removeClass('is-hidden');
-    $btn.parent().find('.ellipsis').addClass('is-hidden');
-    $btn.addClass('is-hidden');
+  _setVars: function() {
+    this.$ellipsis = this.$el.find('.ellipsis');
+    this.$hiddenText = this.$el.find('.hidden-text');
+    this.$readLessBtn = this.$el.find('.read-less');
+    this.$readMoreBtn = this.$el.find('.read-more');
   },
 
-  _onShortText: function(e) {
-    var $btn = $(e.currentTarget),
-    $description = $btn.closest('.description');
+  short: function() {
+    var maxLength = this.options.maxLength,
+      textLength = this.el.innerText.length,
+      readMore = document.createElement('span'),
+      readLess = document.createElement('span'),
+      ellipsis = document.createElement('span'),
+      textShow, textHide, hiddenHTML, showHTML;
 
-    $btn.parent().addClass('is-hidden');
-    $description.removeClass('-expand');
-    $description.find('.ellipsis').removeClass('is-hidden');
-    $description.find('.read-more').removeClass('is-hidden');
+    readMore.innerText = ' read more';
+    readMore.className = 'c-shortener-button read-more';
+
+    readLess.innerText = 'read less';
+    readLess.className = 'c-shortener-button read-less';
+
+    ellipsis.innerText = '...';
+    ellipsis.className = 'ellipsis';
+
+
+    if (textLength <= maxLength) {
+      return;
+    }
+
+    textShow = this.el.innerHTML.substr(0, maxLength);
+    textShow = textShow.replace(/<p>/g, '<span>');
+    textShow = textShow.replace(/<\/p>/g, '</span>');
+
+    textHide = this.el.innerHTML.substr(maxLength, this.el.innerText.length);
+
+    textHide = textHide.replace(/<p>/g, '<span>');
+    textHide = textHide.replace(/<\/p>/g, '</span>');
+
+    showHTML = document.createElement('span');
+    hiddenHTML = document.createElement('span');
+
+    showHTML.innerHTML = textShow;
+    showHTML.className = 'visible-text';
+
+    hiddenHTML.innerHTML = textHide;
+    hiddenHTML.className = 'hidden-text is-hidden';
+
+    $(readLess).appendTo(hiddenHTML);
+    $(ellipsis).appendTo(showHTML);
+    $(hiddenHTML).appendTo(showHTML);
+
+    $(this.el)
+      .html(showHTML)
+      .append(readMore);
+
+    this._setVars();
+  },
+
+  _onExpandText: function() {
+    this.$hiddenText.removeClass('is-hidden');
+    this.$ellipsis.addClass('is-hidden');
+    this.$readMoreBtn.addClass('is-hidden');
+  },
+
+  _onShortText: function() {
+    this.$readLessBtn.parent().addClass('is-hidden');
+    this.$ellipsis.removeClass('is-hidden');
+    this.$readMoreBtn.removeClass('is-hidden');
   },
 
 });
