@@ -1,22 +1,24 @@
 
 var _ = require('lodash');
 
-var FunctionHelper = {
+// used only for indicators with a letter as score
+var _setLetterScore = function(score) {
+  if (score) {
 
-  debounce: function (func, wait, immediate) {
-    var timeout;
-    return function() {
-      var context = this, args = arguments;
-      var later = function() {
-        timeout = null;
-        if (!immediate) func.apply(context, args);
-      };
-      var callNow = immediate && !timeout;
-      clearTimeout(timeout);
-      timeout = setTimeout(later, wait);
-      if (callNow) func.apply(context, args);
-    };
-  },
+    switch(score) {
+      case '1':
+        return 'A';
+
+      case '2':
+        return 'B';
+
+      case '3':
+        return 'C';
+    }
+  }
+};
+
+var FunctionHelper =  {
 
   arrayToString: function(array) {
     var string = '',
@@ -57,14 +59,17 @@ var FunctionHelper = {
         for (var i = 0; i < indicators.length; i++) {
           var indicator = indicators[i];
 
-          if (!!indicator['units'] && indicator['units'] == 'Yes/No') {
+          if (!!indicator['units'] && indicator.score !== null) {
+            var score = indicator.score.toString();
 
-            if (indicator.score !== null) {
-              var score = indicator.score.toString();
+            if (indicator['units'] == 'Yes/No') {
 
-              if (score) {
-                indicator.literalScore = score === '1' ? 'Yes' : 'No';
-              }
+              indicator.literalScore = score === '1' ? 'Yes' : 'No';
+            }
+
+            if (indicator['units'] == 'grade') {
+
+              indicator.literalScore = _setLetterScore(score);
             }
           }
         }
@@ -72,13 +77,17 @@ var FunctionHelper = {
     // Object
     } else {
 
-      if (!!indicators['units'] && indicators['units'] == 'Yes/No') {
-        if (indicators.score !== null) {
-          var score = indicators.score.toString();
+      if (!!indicators['units'] && indicators.score !== null) {
+        var score = indicators.score.toString();
 
-          if (score) {
-            indicators.literalScore = score === '1' ? 'Yes' : 'No';
-          }
+        if (indicators['units'] == 'Yes/No') {
+
+          indicators.literalScore = score === '1' ? 'Yes' : 'No';
+        }
+
+        if (indicators['units'] == 'grade') {
+
+          indicators.literalScore = _setLetterScore(score);
         }
       }
     }
@@ -91,32 +100,48 @@ var FunctionHelper = {
 
         var indicator = indicators[i];
 
-        if (!!indicator['units'] && indicator['units'] == 'Yes/No') {
+        if (!!indicator['units']) {
 
           if (indicator.hasOwnProperty('scoreA') && indicator.scoreA !== null) {
-
             var score = indicator.scoreA.toString();
 
             if (score) {
-              indicator.literalScoreA = score === '1' ? 'Yes' : 'No';
+
+              if (indicator['units'] == 'Yes/No') {
+                indicator.literalScoreA = score === '1' ? 'Yes' : 'No';
+              }
+
+              if (indicator['units'] == 'grade') {
+                indicator.literalScoreA = _setLetterScore(score);
+              }
             }
           }
 
           if (indicator.hasOwnProperty('scoreB') && indicator.scoreB !== null) {
-
             var score = indicator.scoreB.toString();
 
             if (score) {
-              indicator.literalScoreB = score === '1' ? 'Yes' : 'No';
+              if (indicator['units'] == 'Yes/No') {
+                indicator.literalScoreB = score === '1' ? 'Yes' : 'No';
+              }
+
+              if (indicator['units'] == 'grade') {
+                indicator.literalScoreB = _setLetterScore(score);
+              }
             }
           }
 
           if (indicator.hasOwnProperty('scoreC') && indicator.scoreC !== null) {
-
             var score = indicator.scoreC.toString();
 
             if (score) {
-              indicator.literalScoreC = score === '1' ? 'Yes' : 'No';
+              if (indicator['units'] == 'Yes/No') {
+                indicator.literalScoreC = score === '1' ? 'Yes' : 'No';
+              }
+
+              if (indicator['units'] == 'grade') {
+                indicator.literalScoreC = _setLetterScore(score);
+              }
             }
           }
         }

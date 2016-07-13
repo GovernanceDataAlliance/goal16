@@ -1,0 +1,33 @@
+.c-shortener-button {
+  position: relative;
+
+  color: $font-color-3;
+  font-size: rem($font-size-xsmall);
+  letter-spacing: rem(.3px);
+  text-transform: uppercase;
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  &.read-less:after,
+  &.read-more:after {
+    content: '';
+    position: absolute;
+  }
+
+  &.read-less:after {
+    top: 50%;
+    right: rem(-10px);
+    @include arrow (rem(5px), $color-1, rem(2px), 45deg);
+
+    transform: rotate(45deg) translate(0, -50%);
+  }
+
+  &.read-more:after {
+    top: 0;
+    right: rem(-15px);
+    @include arrow (rem(5px), $color-1, rem(2px), 225deg);
+
+    transform: rotate(225deg) translate(0, -50%);
+  }
+}

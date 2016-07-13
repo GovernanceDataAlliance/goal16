@@ -7,6 +7,8 @@ var Status = require ('../../models/data/status.js');
 var targetsCollection = require('../../collections/common/targets.js'),
     IndicatorsCollection = require('../../collections/common/indicators.js');
 
+var TextShortener = require('../../views/common/text_shortener.js');
+
 var template = Handlebars.compile(require('../../templates/data/index.hbs')),
     targetsTemplate = Handlebars.compile(require('../../templates/data/targets.hbs'));
 
@@ -23,6 +25,21 @@ var DataView = Backbone.View.extend({
     this.status =  new Status();
     this.targetsCollection = targetsCollection;
     this.indicatorsCollection = new IndicatorsCollection();
+  },
+
+  _setViews: function() {
+    enquire.register("screen and (max-width:768px)", {
+      match: _.bind(function(){
+        this.mobile = true;
+        this._shortTexts();
+      },this)
+    });
+
+    enquire.register("screen and (min-width:769px)", {
+      match: _.bind(function(){
+        this.mobile = false;
+      },this)
+    });
   },
 
   _renderTargets: function() {
@@ -52,8 +69,18 @@ var DataView = Backbone.View.extend({
     Backbone.Events.trigger('router:update-params', this.status);
   },
 
+  _shortTexts: function() {
+    var elem = document.querySelector('.m-static-content');
+
+    new TextShortener({
+      el: elem
+    }).short();
+  },
+
   render: function() {
     this.$el.html(template());
+    this._setViews();
+
     return this;
   },
 
