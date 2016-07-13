@@ -7,7 +7,7 @@ published: true
 ---
 ##The SDG16 Data Initiative
 
-###The Sustainable Development Goals (SDGs) were adopted unanimously by the 193 United Nations Member States in September 2015 to guide global and national development policies to 2030.
+The Sustainable Development Goals (SDGs) were adopted unanimously by the 193 United Nations Member States in September 2015 to guide global and national development policies to 2030.
 
 **SDG16 commits all countries to:**
 
