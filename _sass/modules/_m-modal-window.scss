@@ -56,6 +56,12 @@
   overflow: auto;
   background-color: $white;
 
+  &.-share_window{
+    @media screen and (min-width: 768px) {
+      max-width: rem(920px);
+    }
+  }
+
   @media screen and (min-width: $screen-l) {
     width: 80%;
     padding: rem(80px) 0;

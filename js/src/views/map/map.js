@@ -253,6 +253,7 @@ var MapView = Backbone.View.extend({
     this.shareWindowView =  new ShareWindowView(shareOptions)
     this.shareWindowView.render();
     this.shareWindowView.delegateEvents();
+    $("#infowindow-base > .m-modal-window .modal-wrapper").addClass("-share_window");
   },
 
   render: function() {
