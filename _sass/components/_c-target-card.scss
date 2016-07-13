@@ -1,6 +1,8 @@
 .c-target-card {
-  padding-bottom: rem(40px);
-
+  padding-bottom: rem(22px);
+  @media screen and (min-width: 768px) {
+    padding-bottom: rem(40px);
+  }
   > .js--target-info {
     display: flex;
     justify-content: space-between;

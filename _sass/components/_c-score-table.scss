@@ -1,20 +1,26 @@
 .c-score-table {
 
   > .table-header {
-    padding: rem(15px) 0;
+    padding-top: rem(22px);
+    @media screen and (min-width: 768px) {
+      padding: rem(15px) 0;
+    }
   }
 
   .table-row {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: rem(20px) 0;
-
+    padding: 0;
+    padding-bottom: rem(8px);
     border-bottom: rem(1px) dashed $border-3;
-
-
+    margin-top: rem(16px);
+    &:first-child{
+      margin-top: 0;
+    }
     @media screen and (min-width: $screen-m) {
       justify-content: flex-start;
+      padding: rem(20px) 0;
     }
   }
 
@@ -36,10 +42,15 @@
     &.-category,
     &.-indicator {
       flex-basis: 100%;
+      margin-top: rem(16px);
 
       @media screen and (min-width: $screen-m) {
         flex-basis: 60%;
       }
+    }
+
+    &.-category{
+      margin-top: 0;
     }
 
     &.-country,
@@ -80,7 +91,7 @@
 
     &.-score {
       flex-direction: column;
-      margin: 0 rem(10px);
+      margin: rem(6px) rem(10px);
 
       font-family: $font-family-secondary;
       font-size: rem(22px);
