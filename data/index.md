@@ -2,8 +2,8 @@
 layout: data
 title: Data
 page-name: data
-crosseling-module-title: Explore the map
-crosseling-module-text: Use the map to explore SDG16 data on a global level - and see where the major data gaps are.
+crosseling-module-title: About this project
+crosseling-module-text: The SDG16 Data Initiative gathers existing global data that can help track progress towards the achievement of SDG16. Official and complementary indicators are listed for each target. We have included a variety of data sources and sought to highlight gaps and limitations.
 published: true
 ---
 This page provides detailed information on all of the indicators and sources used in the SDG16 Data Initiative.
