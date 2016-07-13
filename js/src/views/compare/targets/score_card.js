@@ -128,7 +128,6 @@ var ScoreCardView = Backbone.View.extend({
       var indicator = indicatorsGroup[indicator] || null,
           parsedScore = {};
 
-
       // we create a new object with the common indicator's info
       _.extend(parsedScore, indicator[0]);
 
