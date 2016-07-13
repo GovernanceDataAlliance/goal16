@@ -89,6 +89,7 @@ var ScoreCardView = Backbone.View.extend({
         siteurl: SITEURL
       }));
 
+
     }.bind(this));
   },
 
@@ -185,11 +186,16 @@ var ScoreCardView = Backbone.View.extend({
     this.removeScores();
 
     this.isFirstTime = true;
+
+    if (this.options.openFirst) {
+      this.targetCardHeaderView.toggleCard();
+    }
   },
 
   render: function() {
     var target = this.options.target,
-      siteurl = window.SITEURL;
+      siteurl = window.SITEURL,
+      arrayIso = _.compact(_.values(this.status.toJSON()));
 
     var viewOptions = {
       target: target,
@@ -202,6 +208,11 @@ var ScoreCardView = Backbone.View.extend({
 
     this._setVars();
     this._setListeners();
+
+
+    if (this.options.openFirst && arrayIso.length > 0) {
+      this.targetCardHeaderView.toggleCard();
+    }
 
     return this;
   }
