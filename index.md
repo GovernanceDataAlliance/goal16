@@ -9,7 +9,7 @@ published: true
 
 ###The Sustainable Development Goals (SDGs) were adopted unanimously by the 193 United Nations Member States in September 2015 to guide global and national development policies to 2030.
 
-SDG16 COMMITS ALL COUNTRIES TO:
+**SDG16 commits all countries to:**
 
 “Promote peaceful and inclusive societies for sustainable development, provide access to justice for all, and build effective, accountable and inclusive institutions at all levels”
 
