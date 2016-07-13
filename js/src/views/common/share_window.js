@@ -25,7 +25,7 @@ var ShareWindowView = infoWindowView.extend({
     _.extend(this.events, this.constructor.__super__.events());
 
     // Templates
-    this.infoWindowTemplate = Handlebars.compile(this.constructor.__super__.template({isBase: true}));
+    this.infoWindowTemplate = Handlebars.compile(this.constructor.__super__.template({isBase: true, isShare: true}));
 
     // Views
     this.shareView = new ShareView();
