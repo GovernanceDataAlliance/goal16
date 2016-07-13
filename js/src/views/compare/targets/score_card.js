@@ -128,18 +128,6 @@ var ScoreCardView = Backbone.View.extend({
       var indicator = indicatorsGroup[indicator] || null,
           parsedScore = {};
 
-      this.countries.map(function(country) {
-        var myiso = _.find(indicator, {iso: country.iso});
-
-        if(!myiso) {
-          var params = {
-            iso: country.iso,
-          }
-          indicator.push(params);
-        }
-
-      });
-
 
       // we create a new object with the common indicator's info
       _.extend(parsedScore, indicator[0]);
