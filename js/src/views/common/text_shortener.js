@@ -48,13 +48,11 @@ var TextShortener = Backbone.View.extend({
     }
 
     textShow = this.el.innerHTML.substr(0, maxLength);
-    textShow = textShow.replace(/<p>/g, '<span>');
-    textShow = textShow.replace(/<\/p>/g, '</span>');
+    textShow = textShow.replace(/(<\/?)p(>)/g, '$1span$2');
 
     textHide = this.el.innerHTML.substr(maxLength, this.el.innerText.length);
 
-    textHide = textHide.replace(/<p>/g, '<span>');
-    textHide = textHide.replace(/<\/p>/g, '</span>');
+    textHide = textHide.replace(/(<\/?)p(>)/g, '$1span$2');
 
     showHTML = document.createElement('span');
     hiddenHTML = document.createElement('span');
