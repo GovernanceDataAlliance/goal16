@@ -56,6 +56,9 @@ var TargetListView = Backbone.View.extend({
 
     this.toggleList();
 
+    // Open first card
+    this.scoreCardViews[0].targetCardHeaderView.toggleCard();
+
     return this;
   }
 
