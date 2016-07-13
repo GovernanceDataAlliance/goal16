@@ -44,7 +44,7 @@
               {{#if literalScoreA}}
                 {{ literalScoreA }}
               {{else}}
-                {{comma scoreA }} {{#if scoreA}}{{ units_abbr }} {{/if}}
+                {{comma scoreA }}{{#if scoreA}}<span class="units">{{ units_abbr }}</span>{{/if}}
               {{/if}}
             </span>
             <span class="country-name only-mobile">{{lookup (lookup ../countries 0) 'name' }}</span>
@@ -55,7 +55,7 @@
               {{#if literalScoreB}}
                 {{ literalScoreB }}
               {{else}}
-                {{comma scoreB }} {{#if scoreB}}{{ units_abbr }} {{/if}}
+                {{comma scoreB }}{{#if scoreB}}<span class="units">{{ units_abbr }}</span>{{/if}}
               {{/if}}
             </span>
             <span class="country-name only-mobile">{{lookup (lookup ../countries 1) 'name' }}</span>
@@ -66,7 +66,7 @@
               {{#if literalScoreC}}
                 {{ literalScoreC }}
               {{else}}
-                {{comma scoreC }} {{#if scoreC}}{{ units_abbr }} {{/if}}
+                {{comma scoreC }}{{#if scoreC}}<span class="units">{{ units_abbr }}</span>{{/if}}
               {{/if}}
             </span>
             <span class="country-name only-mobile">{{lookup (lookup ../countries 2) 'name' }}</span>
@@ -132,7 +132,7 @@
               {{#if literalScoreA}}
                 {{ literalScoreA }}
               {{else}}
-                {{comma scoreA }} {{#if scoreA}}{{ units_abbr }} {{/if}}
+                {{comma scoreA }}{{#if scoreA}}<span class="units">{{ units_abbr }}</span>{{/if}}
               {{/if}}
             </span>
             <span class="country-name only-mobile">{{lookup (lookup ../countries 0) 'name' }}</span>
@@ -143,7 +143,7 @@
               {{#if literalScoreB}}
                 {{ literalScoreB }}
               {{else}}
-                {{comma scoreB }} {{#if scoreB}}{{ units_abbr }} {{/if}}
+                {{comma scoreB }}{{#if scoreB}}<span class="units">{{ units_abbr }}</span>{{/if}}
               {{/if}}
             </span>
             <span class="country-name only-mobile">{{lookup (lookup ../countries 1) 'name' }}</span>
@@ -154,7 +154,7 @@
               {{#if literalScoreC}}
                 {{ literalScoreC }}
               {{else}}
-                {{comma scoreC }} {{#if scoreC}}{{ units_abbr }} {{/if}}
+                {{comma scoreC }}{{#if scoreC}}<span class="units">{{ units_abbr }}</span>{{/if}}
               {{/if}}
             </span>
             <span class="country-name only-mobile">{{lookup (lookup ../countries 2) 'name' }}</span>
