@@ -56,6 +56,12 @@
   overflow: auto;
   background-color: $white;
 
+  &.-share_window{
+    @media screen and (min-width: 768px) {
+      max-width: rem(920px);
+    }
+  }
+
   @media screen and (min-width: $screen-l) {
     width: 80%;
     padding: rem(80px) 0;
@@ -69,6 +75,9 @@
   width: 100%;
 
    .-indicator {
+     .info-wrapper{
+       word-break: break-all;
+     }
 
     .indicator-metadata {
       display: flex;
@@ -117,6 +126,7 @@
   width: 100%;
   padding: 0 rem(20px);
   overflow: auto;
+  margin-top: rem(18px);
 
   @media screen and (min-width: $screen-l) {
     padding: 0 rem(90px);
@@ -128,6 +138,9 @@
     font-weight: $font-weight-regular;
     line-height: rem(25px);
     margin-top: rem(30px);
+    word-wrap: break-word;
+    word-break: break-all;
+    width: 100%;
 
     a {
       font-size: $font-size-xsmall;

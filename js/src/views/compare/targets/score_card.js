@@ -58,8 +58,9 @@ var ScoreCardView = Backbone.View.extend({
   _getInfo: function() {
     var targetSlug = this.target['slug'],
       arrayIso = _.values(this.status.toJSON()),
-      countries = this.countriesCollection.getCountryData(arrayIso),
       countriesConditional = this.functionHelper.arrayToString(arrayIso);
+
+      this.countries = this.countriesCollection.getCountryData(arrayIso);
 
     this.scoresCollection.getScoresGroupByTarget({
       countries_conditional: countriesConditional,
@@ -70,6 +71,7 @@ var ScoreCardView = Backbone.View.extend({
 
       var indicators = this.scoresCollection.toJSON();
       var parsedScores = this._parseScores(indicators);
+
       var indicatorsByType = this._getIndicatorsByType(parsedScores),
         officialIndicators = indicatorsByType['official'],
         shadowIndicators = indicatorsByType['shadow'],
@@ -81,7 +83,7 @@ var ScoreCardView = Backbone.View.extend({
       this.$toggleCard.removeClass('is-loading -compare');
 
       this.$scoresTable.html(this.indicatorTableTemplate({
-        countries: countries,
+        countries: this.countries,
         officialIndicators: officialIndicators,
         shadowIndicators: shadowIndicators,
         siteurl: SITEURL
@@ -122,8 +124,10 @@ var ScoreCardView = Backbone.View.extend({
 
     // Loop in every indicator slug available
     for (var indicator in indicatorsGroup) {
+
       var indicator = indicatorsGroup[indicator] || null,
-        parsedScore = {};
+          parsedScore = {};
+
 
       // we create a new object with the common indicator's info
       _.extend(parsedScore, indicator[0]);
