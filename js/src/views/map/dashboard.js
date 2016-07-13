@@ -103,9 +103,7 @@ var DashboardView = Backbone.View.extend({
 
     //1 - Check if the indicator has already been requested.
     //2 - if so, open target. If not, request indicators and open target.
-
     if ( _.includes(this.requestedTargets, currentTargetSlug) ) {
-      this.$targetsWrapper.removeClass('is-open');
       $currentTarget.parents('.m-dashboard-target').addClass('is-open');
     } else {
       this.indicatorsCollection.getInidcatorsByTarget(currentTargetSlug).done(_.bind(function() {
