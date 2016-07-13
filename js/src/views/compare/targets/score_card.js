@@ -128,6 +128,19 @@ var ScoreCardView = Backbone.View.extend({
       var indicator = indicatorsGroup[indicator] || null,
           parsedScore = {};
 
+      //If a country has no score, at least, keep an object with it iso
+      //to fullfill the grid
+      this.countries.map(function(country) {
+        var myiso = _.find(indicator, {iso: country.iso});
+
+        if(!myiso) {
+          var params = {
+            iso: country.iso,
+          }
+          indicator.push(params);
+        }
+
+      });
 
       // we create a new object with the common indicator's info
       _.extend(parsedScore, indicator[0]);
