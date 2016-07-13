@@ -69,6 +69,9 @@
   width: 100%;
 
    .-indicator {
+     .info-wrapper{
+       word-break: break-all;
+     }
 
     .indicator-metadata {
       display: flex;
@@ -128,6 +131,9 @@
     font-weight: $font-weight-regular;
     line-height: rem(25px);
     margin-top: rem(30px);
+    word-wrap: break-word;
+    word-break: break-all;
+    width: 100%;
 
     a {
       font-size: $font-size-xsmall;
