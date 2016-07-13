@@ -38,7 +38,7 @@
 
 
   .welcome-content {
-    position: static;
+    position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
@@ -46,19 +46,61 @@
     margin: auto;
     overflow: auto;
     z-index: 1;
-    padding: rem(45px) rem(17px);
+    padding: rem(35px) rem(17px);
+
+    h2{
+      color: $font-color-2;
+      font-family: $font-family-secondary;
+      font-size: $font-size-normal;
+      font-weight: $font-weight-regular;
+      line-height: 1.36;
+      text-align: center;
+      display: block;
+      margin: 0 auto;
+      margin-bottom: rem(32px);
+      @media screen and (min-width: 768px) {
+        font-size: $font-size-large;
+        width: rem(736px);
+        letter-spacing: 0.3px;
+        margin-bottom: rem(22px);
+      }
+    }
+
+    p{
+      color: $font-color-2;
+      font-family: $font-family-primary;
+      font-size: $font-size-small;
+      font-weight: $font-weight-regular;
+      line-height: 1.79;
+      width: 100%;
+      display: block;
+      text-align: center;
+      margin: rem(22px) auto;
+      @media screen and (min-width: 768px) {
+        width: rem(736px);
+        line-height: 1.75;
+        font-size: $font-size-normal;
+        margin-top: rem(16px);
+      }
+      &.-advise{
+        margin-top: rem(32px);
+        font-style: italic;
+        font-size: $font-size-xsmall;
+      }
+    }
+
     // padding: rem(45px) $wrap-padding-mobile rem(20px);
 
     @media screen and (min-width: $screen-s) {
-      padding: rem(45px) rem(17px);
+      padding: rem(35px) rem(17px);
     }
 
     @media screen and (min-width: 768px) {
-      padding: rem(50px) 0;
+      padding: rem(35px) 0;
     }
 
     @media screen and (min-width: $screen-l) {
-      padding: rem(100px) 0;
+      padding: rem(35px) 0;
     }
 
     .text-heading-underline > img{
@@ -71,53 +113,13 @@
       }
     }
 
-    .text-banner-l {
-      margin-top: rem(34px);
-
-      @media screen and (min-width: 768px) {
-        margin: rem(55px) auto;
-      }
-    }
-
-    .text-banner-m {
-      display: block;
-      margin: rem(17px) auto;
-
-      @media screen and (min-width: 768px) {
-        margin: rem(22px) auto;
-      }
-    }
-
-    .text-banner-title-s {
-      margin-top: rem(25px);
-
-      @media screen and (min-width: 768px) {
-        margin-top: rem(41px);
-      }
-    }
-
-    .text-banner-s {
-      width: 100%;
-      display: block;
-      margin: rem(10px) auto;
-
-      @media screen and (min-width: 768px) {
-        width: rem(736px);
-        margin: rem(16px) auto;
-      }
-
-      &.-italic {
-        font-style: italic;
-      }
-    }
-
     .link-container {
       margin-top: rem(30px);
 
       @media screen and (min-width: $screen-s) {
         display: flex;
         justify-content: center;
-        margin-top: rem(50px);
+        margin-top: rem(32px);
       }
     }
   }

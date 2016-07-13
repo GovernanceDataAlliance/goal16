@@ -29,6 +29,9 @@ ___
 
 ## Comments?
 How can we improve the Initiative? Did we get something wrong? Have we missed something?
-Please send your thoughts to SDG16DataInitiative@gmail.com
+Please send your thoughts to [SDG16DataInitiative@gmail.com](mailto:SDG16DataInitiative@gmail.com)
 
-"We the Peoples" are the celebrated opening words of the UN Charter. It is "We the Peoples" who are embarking today on the road to 2030. Our journey will involve Governments as well as Parliaments, the UN system and other international institutions, local authorities, indigenous peoples, civil society, business and the private sector, the scientific and academic community – and all people. Millions have already engaged with, and will own, this Agenda. It is an Agenda of the people, by the people, and for the people – and this, we believe, will ensure its success.” - [Transforming our world: the 2030 Agenda for Sustainable Development](https://sustainabledevelopment.un.org/post2015/transformingourworld)
+___
+
+## "We the People's" 
+"We the People's" are the celebrated opening words of the UN Charter. It is "We the People's" who are embarking today on the road to 2030. Our journey will involve Governments as well as Parliaments, the UN system and other international institutions, local authorities, indigenous peoples, civil society, business and the private sector, the scientific and academic community – and all people. Millions have already engaged with, and will own, this Agenda. It is an Agenda of the people, by the people, and for the people – and this, we believe, will ensure its success.” - [Transforming our world: the 2030 Agenda for Sustainable Development](https://sustainabledevelopment.un.org/post2015/transformingourworld)
