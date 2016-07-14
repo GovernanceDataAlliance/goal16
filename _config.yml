@@ -3,7 +3,7 @@
 title: Goal16
 description: Goal16 dashboard
 
-url: "//github.com/GovernanceDataAlliance/goal16"
+url: "http://www.sdg16.org/"
 
 baseurl: ''
 
@@ -22,7 +22,7 @@ exclude: ['scripts', 'node_modules', 'vendor']
 # prose.io
 prose:
   rooturl: ''
-  siteurl: 'http://github.com/GovernanceDataAlliance/goal16'
+  siteurl: 'http://www.sdg16.org/'
   media: 'css/img'
   ignore:
     - _config.yml
