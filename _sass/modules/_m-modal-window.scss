@@ -13,7 +13,7 @@
     bottom: 20%;
 
     @media screen and (min-width: 768px) {
-      top: 0;
+      top: $header-height-desktop;
       bottom: 0;
       right: 0;
       left: $dashboard-width;
@@ -160,6 +160,11 @@
 .btn-close-modal {
   @extend .btn-close;
   color: $color-7 !important;
+
+  svg {
+    width: rem(16px);
+    height: rem(18px);
+  }
 
   @media screen and (min-width: 768px) {
     margin: rem(40px);
