@@ -1,8 +1,8 @@
 .m-data-target {
   padding: rem(45px) 0 0;
 
-  @media screen and (min-width: $screen-l) {
-    padding: rem(45px) rem(90px) 0;
+  @media screen and (min-width: 768px) {
+    padding: rem(50px) rem(180px) rem(80px);
 
     .c-title-underline {
       max-width: 70%;
