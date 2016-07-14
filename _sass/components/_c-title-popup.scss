@@ -17,7 +17,7 @@
     line-height: 1.2em;
 
     @media screen and (min-width: 768px) {
-      margin-bottom: rem(30px);
+      margin-bottom: rem(11px);
     }
   }
 
@@ -83,7 +83,7 @@
   @media screen and (min-width: $screen-s) {
     letter-spacing: 0.5px;
     font-size: $font-size-xxsmall;
-    margin-top: 0 !important;
+    margin-top: rem(17px) !important;
     margin-bottom: rem(10px) !important;
 
     &:after {
