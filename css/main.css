@@ -2484,7 +2484,7 @@ select {
     bottom: 20%; }
     @media screen and (min-width: 768px) {
       .m-modal-window.-disclaimer {
-        top: 0;
+        top: 5rem;
         bottom: 0;
         right: 0;
         left: 400px; } }
@@ -2590,6 +2590,9 @@ select {
 
 .btn-close-modal {
   color: #04beb0 !important; }
+  .btn-close-modal svg {
+    width: 1rem;
+    height: 1.125rem; }
   @media screen and (min-width: 768px) {
     .btn-close-modal {
       margin: 2.5rem; } }
@@ -3387,16 +3390,9 @@ select {
     .m-dashboard-target .target-title.is-active {
       color: #073339;
       background-color: #fff; }
-    @media screen and (min-width: 640px) {
-      .m-dashboard-target .target-title {
-        width: 90%;
-        /*IE10 FIX*/
-        word-wrap: break-word;
-        /*IE10 FIX*/
-        white-space: pre-line;
-        /*IE10 FIX*/ } }
     @media screen and (min-width: 768px) {
       .m-dashboard-target .target-title {
+        width: 18.75rem;
         font-size: 0.875rem;
         line-height: 1.8; } }
   .m-dashboard-target.is-open {
