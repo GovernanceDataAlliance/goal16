@@ -8,6 +8,6 @@ SELECT
   s.name as source_name,
   s.link as source_link 
 FROM  
-  {{table}} i JOIN sources s on i.source_slug=s.slug 
+  {{table}} i LEFT JOIN sources s on i.source_slug=s.slug 
 WHERE   
   i.slug='{{indicator_slug}}'
