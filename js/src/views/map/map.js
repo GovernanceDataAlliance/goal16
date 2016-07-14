@@ -162,7 +162,7 @@ var MapView = Backbone.View.extend({
 
   _refreshMap: function() {
     var timer;
-    this.map.options.
+
     clearTimeout(timer);
     timer = setTimeout(function(){
       this.map.invalidateSize();
