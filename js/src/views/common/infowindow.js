@@ -36,7 +36,7 @@ var ModalWindowView = Backbone.View.extend({
   initialize: function(options) {
     this.type = options && options.type ? options.type : 'info-infowindow';
     this.data = options && options.data ? options.data : null;
-
+    debugger
     this._setView();
     this.render();
     this._setListeners();
