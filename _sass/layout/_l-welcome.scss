@@ -96,11 +96,16 @@
     }
 
     @media screen and (min-width: 768px) {
-      padding: rem(35px) 0;
+      padding: rem(60px) 0;
     }
 
     @media screen and (min-width: $screen-l) {
-      padding: rem(35px) 0;
+      padding: rem(60px) 0;
+    }
+
+    @media screen and (min-width: $screen-xxl) {
+      padding: rem(90px) 0;
+      padding-bottom: 0;
     }
 
     .text-heading-underline > img{
