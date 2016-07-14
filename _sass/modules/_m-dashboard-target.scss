@@ -89,7 +89,7 @@
     }
 
     @media screen and (min-width: 768px) {
-      width: (300px);
+      width: rem(300px);
       font-size: rem($font-size-small);
       line-height: 1.8;
     }
