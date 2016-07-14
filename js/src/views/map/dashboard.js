@@ -210,7 +210,7 @@ var DashboardView = Backbone.View.extend({
       return;
     } else {
       this.infoWindowModel._getIndicatorInfo(indicator).done(function(res) {
-
+        console.log(indicator);
         if (res.rows.length === 0) {
           this.infoWindowModel.clear();
         }
