@@ -28,7 +28,7 @@
 
     > .name {
       margin-top: rem(20px);
-
+      max-width: 90%;
       font-family: $font-family-secondary;
       font-size: rem(20px);
       font-weight: $font-weight-regular;
@@ -70,12 +70,17 @@
   @media screen and (min-width: 768px) {
     @include col(6);
     display: flex;
-    justify-content: center;
     justify-content: space-between;
     width: calc(50% - 1px);
     padding: rem(50px) rem(85px);
-
+    max-width: 50%;
+    padding: rem(50px) rem(76px) rem(72px)rem(74px);
     border-bottom: rem(1px) solid $border-3;
+
+    .img {
+      height: rem(40px);
+      margin-bottom: rem(28px);
+    }
 
     &:nth-child(odd) {
       border-right: rem(1px) solid $border-3;
@@ -83,6 +88,9 @@
 
     &:last-child {
       border-bottom: 0;
+      border-right: rem(1px) solid #e5eaea;
+      justify-content: flex-start;
+      max-width: 50%;
     }
   }
 }
