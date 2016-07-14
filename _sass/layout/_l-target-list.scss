@@ -1,12 +1,20 @@
 .l-target-list {
 
   > .target-list {
-    margin-top: rem(36px);
+    margin-top: rem(35px);
+
+    @media screen and (min-width: 768px) {
+      margin-top: rem(40px);
+    }
 
     &.-country {
       padding-top: rem(25px);
       margin-top: 0;
       background-color: $bg-color-1;
+
+      @media screen and (min-width: 768px) {
+        padding-top: rem(70px);
+      }
     }
   }
 }

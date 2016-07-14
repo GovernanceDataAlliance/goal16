@@ -86,10 +86,13 @@ var DashboardView = Backbone.View.extend({
       this.dashboardClose ? this.$dashToggler.html('explore and select targets') : this.$dashToggler.html('go back to map');
     }
 
+    Backbone.Events.trigger('close:infowindow');
     Backbone.Events.trigger('dashboard:change');
   },
 
   _showIndicatorsPerTarget: function(e) {
+    Backbone.Events.trigger('close:infowindow');
+
     var $currentTarget;
     var currentTargetSlug;
 
@@ -210,7 +213,7 @@ var DashboardView = Backbone.View.extend({
       return;
     } else {
       this.infoWindowModel._getIndicatorInfo(indicator).done(function(res) {
-
+        console.log(indicator);
         if (res.rows.length === 0) {
           this.infoWindowModel.clear();
         }

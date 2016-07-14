@@ -9,7 +9,6 @@
     font-family: $font-family-primary;
     font-size: $font-size-medium;
     font-weight: $font-weight-regular;
-    font-style: italic;
   }
 
   .js--search-mobile {
@@ -53,8 +52,6 @@
     border: 1px solid rgba(#fff, .2);
 
     @media screen and (min-width: $screen-m) {
-      // padding-top: rem(24px);
-      // padding-bottom: rem(24px);
       padding-left: rem(20px);
       padding-right: rem(20px);
       height: rem(73px);
@@ -70,14 +67,14 @@
     padding: rem(50px) rem(80px) rem(60px);
     padding-top: 0px;
     padding-bottom: 0px;
-    margin-top: rem(90px);
+    margin-top: rem(50px);
 
     input {
       display: block;
       width: 100%;
+      box-sizing: border-box;
       max-width: rem(736px);
       border-radius: 0;
-      font-style: italic;
       text-transform: none;
       line-height: 1.8em;
       font-size: rem(18px);
@@ -94,7 +91,7 @@
         font-size: rem(18px);
         text-transform: none;
         text-align: left;
-        text-style: italic;
+        font-style: italic;
         font-weight: $font-weight-light;
         opacity: .5;
         font-family: $font-family-primary;
@@ -102,56 +99,47 @@
     }
 
     .search-box.visible {
-      border-top: 1px solid $color-3;
-      border-left: 1px solid $color-3;
-      border-bottom: 1px solid $color-3;
+      border-top: 1px solid $color-8;
+      border-left: 1px solid $color-8;
+      border-bottom: 1px solid $color-8;
       position: absolute;
       bottom: rem(-10px);
-      left: rem(100px);
-      right: rem(100px);
-      // max-height: rem(500px);
+      left: 0;
+      right: 0;
       z-index: 2;
       background-color: $white;
       transform: translatey(100%);
       overflow-y: scroll;
     }
 
+
     .search-area {
       width: 100%;
       background-color: $white;
-      border-bottom: 1px solid $color-5;
+      border-bottom: 1px solid $color-8;
       transition: 0.2s;
 
       a, &.no-results > span {
         display: inline-block;
         width: 100%;
-        padding: rem(20px) rem(90px);
-        color: $font-color-1;
-        font-size: rem(20px);
+        padding: rem(20px) rem(40px);
+        color: $font-color-3;
+        font-size: rem(16px);
       }
 
       &.highlight {
-        background-color: $white;
+        background-color: $color-6;
       }
 
       span span {
         font-weight: 700;
       }
+
       &:hover{
-        background-color: $color-3;
+        background-color: $color-6;
       }
     }
   }
-
-
-  @media screen and (min-width: $screen-xl) {
-
-    .search-box.visible {
-      left: rem(180px);
-      right: rem(180px);
-    }
-  }
-
 }
 
 .icon-search {
@@ -163,21 +151,9 @@
   fill: $white;
 
   @media screen and (min-width: $screen-m) {
-    right: rem(-5px);
+    right: rem(20px);
     margin-top: 0;
     width: rem(25px);
     height: rem(25px);
   }
-
-  // @media screen and (min-width: $screen-l) {
-  //   right: rem(100px);
-  // }
-
-  // @media screen and (min-width: $screen-xl) {
-  //   right: rem(190px);
-  // }
-
-  // @media screen and (min-width: $screen-xxl) {
-  //   right: rem(190px);
-  // }
 }

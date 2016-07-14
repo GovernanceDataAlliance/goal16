@@ -94,9 +94,11 @@ var CountryView = Backbone.View.extend({
   _renderData: function() {
     var iso = this.status.get('iso'),
       country = this._getCountryInfo(iso),
-      indicatorsByTarget = this.indicatorsCollection.groupByTarget();
+      indicatorsByTarget = this.indicatorsCollection.groupByTarget(),
+      openFirst = true;
 
     for (var targetSlug in indicatorsByTarget) {
+
       var indicators =  indicatorsByTarget[targetSlug],
         target = {
           code: indicators[0].target_code,
@@ -110,9 +112,15 @@ var CountryView = Backbone.View.extend({
         target: target
       });
 
+
       this.$targetList.find('> .wrap').append(targetCard.render().el);
 
       targetCard.setSlick();
+
+      if (openFirst) {
+        targetCard.targetCardHeaderView.toggleCard();
+        openFirst = !openFirst;
+      }
     }
   },
 

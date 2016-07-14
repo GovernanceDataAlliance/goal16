@@ -13,7 +13,7 @@
     bottom: 20%;
 
     @media screen and (min-width: 768px) {
-      top: 0;
+      top: $header-height-desktop;
       bottom: 0;
       right: 0;
       left: $dashboard-width;
@@ -56,7 +56,11 @@
   overflow: auto;
   background-color: $white;
 
-  &.-share_window{
+  @media screen and (min-width: 768px) {
+    max-width: rem(920px);
+  }
+
+  &.-share_window {
     @media screen and (min-width: 768px) {
       max-width: rem(920px);
     }
@@ -76,7 +80,7 @@
 
    .-indicator {
      .info-wrapper{
-       word-break: break-all;
+        word-break: break-word;
      }
 
     .indicator-metadata {
@@ -139,7 +143,7 @@
     line-height: rem(25px);
     margin-top: rem(30px);
     word-wrap: break-word;
-    word-break: break-all;
+    // word-break: break-all;
     width: 100%;
 
     a {
@@ -156,6 +160,11 @@
 .btn-close-modal {
   @extend .btn-close;
   color: $color-7 !important;
+
+  svg {
+    width: rem(16px);
+    height: rem(18px);
+  }
 
   @media screen and (min-width: 768px) {
     margin: rem(40px);

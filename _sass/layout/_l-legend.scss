@@ -11,6 +11,11 @@
     right: rem(30px);
     bottom: rem(40px);
     left: $dashboard-width + 35px;
+    transition: .2s ease;
+
+    .is-dashboard-close & {
+      left: rem(30px);
+    }
   }
 
   @media screen and (min-width: $screen-l) {
