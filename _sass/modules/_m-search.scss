@@ -70,7 +70,7 @@
     padding: rem(50px) rem(80px) rem(60px);
     padding-top: 0px;
     padding-bottom: 0px;
-    margin-top: rem(90px);
+    margin-top: rem(50px);
 
     input {
       display: block;
@@ -116,6 +116,7 @@
       overflow-y: scroll;
     }
 
+
     .search-area {
       width: 100%;
       background-color: $white;
@@ -131,7 +132,7 @@
       }
 
       &.highlight {
-        background-color: $white;
+        background-color: $color-3;
       }
 
       span span {

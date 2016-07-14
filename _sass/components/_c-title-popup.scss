@@ -34,8 +34,8 @@
     margin-top: 0;
     text-align: left;
     font-family: $font-family-secondary;
-    line-height: rem(28px);
-    
+    line-height: rem(30px);
+
 
     &:after {
       content: '';
@@ -54,7 +54,6 @@
     @media screen and (min-width: 768px) {
       font-size: $font-size-large;
       font-weight: $font-weight-regular;
-      text-transform: capitalize;
       margin-top: 0;
     }
   }

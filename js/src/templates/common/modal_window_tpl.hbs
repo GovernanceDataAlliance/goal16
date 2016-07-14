@@ -30,11 +30,11 @@
         <div class="indicator-metadata">
           <ul>
             <li>
-              <span class="key-item">Source: </span>{{#if data.source_link }} <a target="_blank" href="{{ data.source_link }}">{{ data.source_name }} {{else}}-{{/if}}</a>
+              <span class="key-item">Source: </span>{{#if data.source_name }} <a target="_blank" href="{{ data.source_link }}">{{ data.source_name }} {{else}}-{{/if}}</a>
             </li>
             <li>
-              <span class="key-item">Max score: </span><span>{{ comma data.max_score }}</span>
-              <span class="key-item">Min score: </span><span>{{ comma data.min_score }}</span>
+              <span class="key-item">Worst score: </span><span>{{#if data.worst_score}}{{ comma data.worst_score }}{{ else }} - {{/if}}</span>
+              <span class="key-item">Best score: </span><span>{{#if data.best_score}}{{ comma data.best_score }}{{ else }} - {{/if}}</span>
               <span class="key-item">Units: </span><span>{{#if data.units }}{{ data.units }}{{ else }}-{{/if}}</span>
             </li>
           </ul>
