@@ -86,10 +86,13 @@ var DashboardView = Backbone.View.extend({
       this.dashboardClose ? this.$dashToggler.html('explore and select targets') : this.$dashToggler.html('go back to map');
     }
 
+    Backbone.Events.trigger('close:infowindow');
     Backbone.Events.trigger('dashboard:change');
   },
 
   _showIndicatorsPerTarget: function(e) {
+    Backbone.Events.trigger('close:infowindow');
+
     var $currentTarget;
     var currentTargetSlug;
 

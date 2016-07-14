@@ -88,16 +88,8 @@
       background-color: $color-10;
     }
 
-    // check if this really works, actually it affects
-    // every browser, not only IE10
-    @media screen and (min-width: $screen-s) {
-      width: 90%; /*IE10 FIX*/
-
-      word-wrap: break-word; /*IE10 FIX*/
-      white-space: pre-line; /*IE10 FIX*/
-    }
-
     @media screen and (min-width: 768px) {
+      width: rem(300px);
       font-size: rem($font-size-small);
       line-height: 1.8;
     }
