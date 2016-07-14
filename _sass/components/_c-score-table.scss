@@ -1,7 +1,7 @@
 .c-score-table {
 
   > .table-header {
-    padding-top: rem(22px);
+    padding-top: rem(25px);
     @media screen and (min-width: 768px) {
       padding: rem(15px) 0;
     }
@@ -11,16 +11,18 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 0;
+
     padding-bottom: rem(8px);
+
     border-bottom: rem(1px) dashed $border-3;
-    margin-top: rem(16px);
     &:first-child{
       margin-top: 0;
     }
     @media screen and (min-width: $screen-m) {
       justify-content: flex-start;
+
       padding: rem(20px) 0;
+      margin-top: rem(16px);
     }
   }
 
@@ -42,14 +44,17 @@
     &.-category,
     &.-indicator {
       flex-basis: 100%;
-      margin-top: rem(16px);
+
+      margin: rem(15px) 0 rem(5px);
 
       @media screen and (min-width: $screen-m) {
         flex-basis: 60%;
+
+        margin: 0;
       }
     }
 
-    &.-category{
+    &.-category {
       margin-top: 0;
     }
 
@@ -91,7 +96,8 @@
 
     &.-score {
       flex-direction: column;
-      margin: rem(6px) rem(10px);
+
+      margin: 0 rem(10px);
 
       font-family: $font-family-secondary;
       font-size: rem(22px);
@@ -114,22 +120,16 @@
       @media screen and (min-width: $screen-m) {
         flex-direction: row;
         flex-basis: calc(13.33% - 20px);
+        align-items: center;
       }
     }
   }
-  &.compare_table{
-    .table-header{
-      padding-top: 0;
-      padding-bottom: 0;
-      .table-row{
-        padding-top: rem(32px);
-        padding-bottom: rem(16px);
-      }
-    }
-    .table-cell{
-      &.-indicator{
-        margin-top: 0;
-      }
+
+  .no-indicators {
+    margin: rem(20px) 0 rem(11px);
+
+    @media screen and (min-width: 768px) {
+      margin: 0;
     }
   }
 }
