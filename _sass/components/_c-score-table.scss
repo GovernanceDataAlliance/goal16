@@ -117,4 +117,19 @@
       }
     }
   }
+  &.-compare_table{
+    .table-header{
+      padding-top: 0;
+      padding-bottom: 0;
+      .table-row{
+        padding-top: rem(32px);
+        padding-bottom: rem(16px);
+      }
+    }
+    .table-cell{
+      &.-indicator{
+        margin-top: 0;
+      }
+    }
+  }
 }
