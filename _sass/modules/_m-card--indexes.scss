@@ -84,11 +84,12 @@
     display: flex;
     flex: 1 1 auto;
     justify-content: center;
+    max-width: 50%;
     // align-items: center;
     justify-content: space-between;
     float: left;
     width: 50%;
-    height: rem(870px);
+    // height: rem(870px);
     padding: rem(50px) rem(76px) rem(72px)rem(74px);
 
     .img {
@@ -119,10 +120,12 @@
     &:last-child {
       border-bottom: 0;
       border-right: rem(1px) solid #e5eaea;
+      justify-content: flex-start;
+      max-width: 50%;
     }
   }
   @media screen and (min-width: $screen-l) {
-    height: rem(570px);
+    // height: rem(570px);
   }
   @media screen and (min-width: $screen-xl) {
 

@@ -9,4 +9,9 @@
     border-bottom: 1px solid $border-3;
     background-color: $color-6;
   }
+  @media screen and (min-width: $screen-s) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }
