@@ -166,7 +166,7 @@ var MapView = Backbone.View.extend({
     clearTimeout(timer);
     timer = setTimeout(function(){
       this.map.invalidateSize();
-    }.bind(this), 200);
+    }.bind(this), 150);
   },
 
   _activeLayer: function() {
