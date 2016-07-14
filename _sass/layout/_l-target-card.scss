@@ -1,6 +1,6 @@
 .l-target-card {
   &:nth-child(even) {
     background-color: $color-6;
-    border-top: 1px solid $color-9;
+    border-top: rem(1px) solid $color-9;
   }
 }
