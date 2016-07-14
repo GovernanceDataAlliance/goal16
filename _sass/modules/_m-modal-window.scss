@@ -76,7 +76,7 @@
 
    .-indicator {
      .info-wrapper{
-       word-break: break-all;
+        word-break: break-word;
      }
 
     .indicator-metadata {
@@ -139,7 +139,7 @@
     line-height: rem(25px);
     margin-top: rem(30px);
     word-wrap: break-word;
-    word-break: break-all;
+    // word-break: break-all;
     width: 100%;
 
     a {

@@ -9,7 +9,7 @@ var TargetCardHeaderView = Backbone.View.extend({
   className: 'c-target-card',
 
   events: {
-    'click .js--target-info': '_toggleCard'
+    'click .js--target-info': 'toggleCard'
   },
 
   template: Handlebars.compile(template),
@@ -32,7 +32,7 @@ var TargetCardHeaderView = Backbone.View.extend({
     this.$scoresTable = this.$el.find('.js--score-container');
   },
 
-  _toggleCard: function() {
+  toggleCard: function() {
     this.$scoresTable.toggleClass('is-closed');
 
     this.$closeBtn.toggleClass('is-hidden');

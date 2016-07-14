@@ -1,4 +1,5 @@
 var $ = require('jquery'),
+  _ = require('lodash'),
   Backbone = require('backbone');
 
 var ScoreCardView = require('./score_card');
@@ -22,11 +23,19 @@ var TargetListView = Backbone.View.extend({
   _getTargetList: function() {
     var targets = this.targetsCollection.toArray();
 
-    targets.forEach(function(target) {
-      var cardView = new ScoreCardView({
+    targets.forEach(function(target, index) {
+      var cardOptions = {
         status: this.status,
         target: target.toJSON()
-      });
+      };
+
+      if (index == 0) {
+        _.extend(cardOptions, {
+          openFirst: true
+        });
+      }
+
+      var cardView = new ScoreCardView(cardOptions);
 
       this.scoreCardViews.push(cardView);
 
