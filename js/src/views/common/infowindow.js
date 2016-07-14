@@ -58,10 +58,18 @@ var ModalWindowView = Backbone.View.extend({
 
   _setListeners: function() {
     $(document).keyup(_.bind(this.onKeyUp, this));
+    Backbone.Events.on('close:infowindow', this._closeDisclaimer.bind(this));
   },
 
   _remove: function() {
     $(this.el).find('#infowindow-base').remove();
+  },
+
+  _closeDisclaimer: function() {
+    if (this.disclaimer) {
+      this.close();
+      this.disclaimer = false;
+    }
   },
 
   _setView: function() {
@@ -71,6 +79,7 @@ var ModalWindowView = Backbone.View.extend({
         return { isShare: true };
 
       case 'map-disclaimer':
+        this.disclaimer = true;
         return { isMapDisclaimer: true };
 
       default:

@@ -61,6 +61,8 @@ var MobileMenuView = Backbone.View.extend({
     this.$menu.addClass('is-open');
     this.$background.addClass('is-open');
     this._avoidScroll();
+
+    Backbone.Events.trigger('close:infowindow');
   },
 
   _avoidScroll: function() {
