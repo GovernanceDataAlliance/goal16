@@ -15,6 +15,15 @@ var CountryListView = Backbone.View.extend({
   initialize: function(options) {
     options = options || {};
     this.countriesCollection = CountriesCollection;
+    this._setViews();
+  },
+
+  _setViews: function() {
+    enquire.register("screen and (min-width:768px)", {
+      match: _.bind(function(){
+        this.render();
+      },this)
+    });
   },
 
   _divideCols: function() {
@@ -47,6 +56,10 @@ var CountryListView = Backbone.View.extend({
     });
 
     return list;
+  },
+
+  show: function() {
+
   },
 
   render: function() {
