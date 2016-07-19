@@ -1,4 +1,5 @@
 .c-share {
+
   p {
     margin-top: rem(25px);
     font-size: $font-size-xsmall;
@@ -11,36 +12,7 @@
       margin-top: rem(50px);
     }
   }
-  //If changing this, please, check toolbar footer reaction
-  .btn {
-    flex: 1 1 20%;
-    padding: 0;
-    text-align: right;
-    //  width: 50px;
-    //  text-align: right;
-    //
-    //   @media screen and (min-width: $screen-s) {
-    //     width: 90px;
-    //   }
-  }
-  .l-compare-selectors & {
-    display: flex;
-    flex: 1 1 100px;
-    margin-right: rem(10px);
-    @media screen and (min-width: 768px) {
-      margin-right: rem(20px);
-    }
-  }
-  .l-toolbar.-pagination & {
-    .btn {
-      width: 100%;
-      text-align: center;
-      @media screen and (min-width: 768px) {
-        width: auto;
-      }
-    }
-  }
-  ////
+
   .link-box {
     position: relative;
     width: 100%;
@@ -50,7 +22,9 @@
       margin-top: rem(58px);
     }
   }
+
   .url {
+    @include ellipsis-x(100%);
     -webkit-appearance: none;
     width: 100%;
     margin-bottom: rem(10px);
@@ -62,37 +36,26 @@
     line-height: 1.67;
     height: rem(65px);
     border: 1px solid $color-3;
-    @include ellipsis-x(100%);
+    //To avoid zoom behaviour
+    font-size: rem(16px);
+
     @media screen and (min-width: $screen-s) {
       width: calc(100% - 21%);
       height: rem(65px);
       margin: 0;
       border-right: 0;
       border-radius: 0;
+      font-size: $font-size-xsmall;
     }
+
     @media screen and (min-width: 768px) {
       margin: 0;
     }
   }
+
   .btn-copy {
-    // width: 100%;
-    // height: rem(65px);
-    // font-family: $font-family-primary;
-    // font-size: $font-size-xsmall;
-    // font-weight: $font-weight-regular;
-    // letter-spacing: 0.7px;
-    // cursor: pointer;
-    // text-align: center;
-    // background-color: $color-5;
-    // text-transform: uppercase;
-    // color: $font-color-2;
-    padding: rem(25px) rem(46px);
-    // &.-secondary {
-    //   padding: rem(25px) rem(0px);
-    // }
-    @media screen and (min-width: $screen-l) {
-      // padding: rem(25px) rem(0px);
-    }
+    padding: rem(25px) rem(45px);
+
     @media screen and (min-width: $screen-s) {
       position: absolute;
       top: 0;
