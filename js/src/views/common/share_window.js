@@ -57,6 +57,7 @@ var ShareWindowView = infoWindowView.extend({
     $(buttons).removeClass('-active');
     $(buttons).addClass('-secondary');
     $(current).addClass('-active');
+    $(current).removeClass('-secondary');
   },
 
   _cleanContent: function() {
