@@ -10,6 +10,8 @@
   .icon-close,
   .icon-open_arrow,
   .c-button,
+  .js--icon-open,
+  .js--icon-close,
   .btn-drop-down:after {
     display: none !important;
   }
@@ -32,6 +34,18 @@
 
   .m-card--indicators {
     width: 48%;
+  }
+
+  .l-grid.-partners {
+    display: flex;
+    flex-wrap: wrap;
+    border-top: 0.0625rem solid #e5eaea;
+    border-bottom: 0.0625rem solid #e5eaea;
+  }
+
+  .m-card--indexes {
+    max-width: 50%;
+    border-left: 0.0625rem solid #e5eaea;
   }
 
 
