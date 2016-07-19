@@ -14,14 +14,19 @@
       justify-content: center;
     }
 
+    &.-no-print {
+      .js--print {
+        display: none;
+      }
+    }
+
     &.-no-download {
       width: 25%;
       min-width: rem(100px);
+
       .js--download {
         display: none;
       }
-      @media screen and (min-width: 768px) {}
     }
-    @media screen and (min-width: 768px) {}
   }
 }

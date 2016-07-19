@@ -115,6 +115,10 @@ var ShareWindowView = infoWindowView.extend({
       $('.share-toolbar').addClass('-no-download');
     }
 
+    if (this.options.noPrint) {
+      $('.share-toolbar').addClass('-no-print');
+    }
+
     this.avoidScroll();
 
     // Share view by default

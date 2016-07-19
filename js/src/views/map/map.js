@@ -253,7 +253,8 @@ var MapView = Backbone.View.extend({
 
     _.extend(shareOptions, {
       type: layerType,
-      layer: layer
+      layer: layer,
+      noPrint: true
     });
 
     this.shareWindowView =  new ShareWindowView(shareOptions)
