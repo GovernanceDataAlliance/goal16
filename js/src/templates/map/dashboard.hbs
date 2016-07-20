@@ -1,4 +1,10 @@
 <button class="js--toggle-dashboard btn-toogle-dashboard"></button>
-<button class="js--toggle-dashboard-mb btn-toogle-dashboard-mobile">explore and select targets</button>
+<div class="m-dashboard-mb-handlers">
+  <button class="js--open-dashboard-mb c-button -primary btn-open-dashboard-mobile">explore and select targets</button>
+  <div class="js--map-handlers is-hidden map-handler">
+    <button class="js--cancel c-button -primary -small btn-cancel">cancel</button>
+    <button class="js--apply c-button -primary -small -disabled btn-apply">apply</button>
+  </div>
+</div>
 <div class="m-dashboard" id="targets-container">
 </div>

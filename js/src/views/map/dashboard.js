@@ -23,7 +23,9 @@ var DashboardView = Backbone.View.extend({
 
   events: {
     'click .js--toggle-dashboard': '_toggleDashboard',
-    'click .js--toggle-dashboard-mb': '_toggleDashboard',
+    'click .js--open-dashboard-mb': '_toggleDashboard',
+    'click .js--cancel': '_cancelChanges',
+    'click .js--apply': '_applyChanges',
     'click .js--open-target': '_showIndicatorsPerTarget',
     'click .js--close-target': '_hideIndicators',
     'click .js--indicator-info': '_showModalWindow',
@@ -83,11 +85,45 @@ var DashboardView = Backbone.View.extend({
     this.$body.toggleClass('is-dashboard-close', this.dashboardClose);
 
     if (this.mobile) {
-      this.dashboardClose ? this.$dashToggler.html('explore and select targets') : this.$dashToggler.html('go back to map');
+      this.$dashOpenner.toggleClass('is-hidden', !this.dashboardClose);
+      this.$mapHandler.toggleClass('is-hidden', this.dashboardClose);
     }
 
     Backbone.Events.trigger('close:infowindow');
     Backbone.Events.trigger('dashboard:change');
+  },
+
+  _applyChanges: function() {
+    this._setActiveLayer();
+    this._closeDashboard();
+  },
+
+  _cancelChanges: function() {
+    //Keep previus layer
+    if (this.temporalLayer) {
+      Backbone.Events.trigger('map:removeLayer');
+    }
+
+    this._resetDashboarState();
+    this._closeDashboard();
+  },
+
+  _resetDashboarState: function() {
+    if (this.temporalLayer) {
+      $('#'+this.temporalLayer.layer).attr('checked', false);
+      this.$targetsWrapper.removeClass('is-open');
+    }
+  },
+
+  _closeDashboard: function() {
+    this.dashboardClose = true;
+
+    this.$body.addClass('is-dashboard-close');
+    this.$dashOpenner.removeClass('is-hidden');
+    this.$mapHandler.addClass('is-hidden');
+
+    //and cancel layer
+    this.temporalLayer = null;
   },
 
   _showIndicatorsPerTarget: function(e) {
@@ -115,7 +151,6 @@ var DashboardView = Backbone.View.extend({
 
         // Allows having multiple targets opened at the same time.
         // Uncomment in case you want the opposite.
-        // this.$targetsWrapper.removeClass('is-open');
         $currentTarget.parents('.m-dashboard-target').addClass('is-open');
       }, this))
     }
@@ -175,9 +210,12 @@ var DashboardView = Backbone.View.extend({
 
   _setVars: function() {
     this.$body = $('body');
-    this.$dashToggler = $('.js--toggle-dashboard-mb');
+    this.$dashOpenner = $('.js--open-dashboard-mb');
+    this.$mapHandler = $('.js--map-handlers');
     this.$map = $('#map-container');
     this.$targetsWrapper = $('.m-dashboard-target');
+    this.$applyBtn = $('.js--apply');
+    this.$cancelBtn = $('.js--cancel');
   },
 
   _renderIndicators: function(targetSlug) {
@@ -202,9 +240,29 @@ var DashboardView = Backbone.View.extend({
   },
 
   _setActiveLayer: function(type, layer) {
-    this.status.set({layerType: type, layer: layer});
-    this.$map.addClass('is-loading -map');
-    this._updateRouterParams();
+    if (!this.mobile) {
+      this.status.set({ layerType: type, layer: layer });
+      this.$map.addClass('is-loading -map');
+      this._updateRouterParams();
+    } else if (this.mobile && !this.temporalLayer) {
+      //keep temporal values to apply when hit apply btn
+      this.temporalLayer = {
+        layer: layer,
+        type: type
+      }
+      //Activate apply btn
+      this.$applyBtn.removeClass('-disabled');
+    } else if (this.mobile && this.temporalLayer) {
+      this.status.set({ layerType: this.temporalLayer.type, layer: this.temporalLayer.layer });
+      this.$map.addClass('is-loading -map');
+      this._updateRouterParams();
+
+      this._closeDashboard();
+      this.$applyBtn.addClass('-disabled');
+      this.temporalLayer = null;
+    }
+
+    console.log(this.temporalLayer);
   },
 
   _showModalWindow: function(e) {
