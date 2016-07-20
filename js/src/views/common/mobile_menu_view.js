@@ -18,6 +18,8 @@ var MobileMenuView = Backbone.View.extend({
         this.mobile = true;
         this._retractableMenuOn();
         this.render();
+        this.cacheVars();
+        this._setListeners();
       },this)
     });
 
