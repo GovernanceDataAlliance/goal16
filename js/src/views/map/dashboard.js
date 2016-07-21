@@ -118,7 +118,7 @@ var DashboardView = Backbone.View.extend({
   _setMapBreadcrubms: function() {
     this.layerNameModel.getTitle(this.status.get('layer')).done(function(res) {
       $('#content').append(mapBreadcrumbsTemplate({
-        title: this.layerNameModel.toJSON().title,
+        title: this._shortTitle(),
         slug: this.status.get('layer')
       }));
 
@@ -126,6 +126,18 @@ var DashboardView = Backbone.View.extend({
 
       this.$dashHandler.addClass('-layer-selected');
     }.bind(this))
+  },
+
+  _shortTitle: function() {
+    var shortTitle;
+    var fullTitle = this.layerNameModel.get('title')
+    var length = fullTitle.length;
+
+    if (length > 75) {
+      return fullTitle.substr(0, 75) + '...';
+    }
+
+    return fullTitle;
   },
 
   _cancelChanges: function() {
