@@ -204,12 +204,12 @@ var MapView = Backbone.View.extend({
       type: 'POST',
       dataType: 'json',
       contentType: 'application/json; charset=UTF-8',
-      url: 'http://'+ cartoAccount +'.cartodb.com/api/v1/map/',
+      url: 'https://'+ cartoAccount +'.cartodb.com/api/v1/map/',
       data: JSON.stringify(request),
     }).done(_.bind(function(data) {
-          var tileUrl = 'http://'+ cartoAccount +'.cartodb.com/api/v1/map/'+ data.layergroupid + '/{z}/{x}/{y}.png32';
+          var tileUrl = 'https://'+ cartoAccount +'.cartodb.com/api/v1/map/'+ data.layergroupid + '/{z}/{x}/{y}.png32';
           this._removeLayer();
-          this.layer = L.tileLayer(tileUrl, { noWrap: true });
+          this.layer = L.tileLayer(tileUrl, { noWrap: true, https: true });
           return deferred.resolve();
         }, this));
 
