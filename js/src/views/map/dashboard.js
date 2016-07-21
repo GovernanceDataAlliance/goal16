@@ -75,6 +75,16 @@ var DashboardView = Backbone.View.extend({
     }, this));
   },
 
+  _setVars: function() {
+    this.$body = $('body');
+    this.$dashOpenner = $('.js--open-dashboard-mb');
+    this.$mapHandler = $('.js--map-handlers');
+    this.$map = $('#map-container');
+    this.$targetsWrapper = $('.m-dashboard-target');
+    this.$applyBtn = $('.js--apply');
+    this.$cancelBtn = $('.js--cancel');
+  },
+
   _updateRouterParams: function() {
     Backbone.Events.trigger('router:update-params', this.status);
   },
@@ -101,18 +111,21 @@ var DashboardView = Backbone.View.extend({
   _cancelChanges: function() {
     //Keep previus layer
     if (this.temporalLayer) {
+      //Reset mad and dashboard and discard changes;
+      this._resetDashboarState();
       Backbone.Events.trigger('map:removeLayer');
+
+      this.temporalLayer = null;
     }
 
-    this._resetDashboarState();
     this._closeDashboard();
   },
 
   _resetDashboarState: function() {
-    if (this.temporalLayer) {
-      $('#'+this.temporalLayer.layer).attr('checked', false);
-      this.$targetsWrapper.removeClass('is-open');
-    }
+    $('#'+this.temporalLayer.layer).attr('checked', false);
+    this.$targetsWrapper.removeClass('is-open');
+
+    this.$applyBtn.addClass('-disabled');
   },
 
   _closeDashboard: function() {
@@ -208,16 +221,6 @@ var DashboardView = Backbone.View.extend({
     $('#'+target).attr('checked', true);
   },
 
-  _setVars: function() {
-    this.$body = $('body');
-    this.$dashOpenner = $('.js--open-dashboard-mb');
-    this.$mapHandler = $('.js--map-handlers');
-    this.$map = $('#map-container');
-    this.$targetsWrapper = $('.m-dashboard-target');
-    this.$applyBtn = $('.js--apply');
-    this.$cancelBtn = $('.js--cancel');
-  },
-
   _renderIndicators: function(targetSlug) {
     var indicatorsGrupedByType = this.indicatorsCollection.groupByType();
 
@@ -259,10 +262,10 @@ var DashboardView = Backbone.View.extend({
 
       this._closeDashboard();
       this.$applyBtn.addClass('-disabled');
+
+      //because we have already apply changes
       this.temporalLayer = null;
     }
-
-    console.log(this.temporalLayer);
   },
 
   _showModalWindow: function(e) {
@@ -271,7 +274,6 @@ var DashboardView = Backbone.View.extend({
       return;
     } else {
       this.infoWindowModel._getIndicatorInfo(indicator).done(function(res) {
-        console.log(indicator);
         if (res.rows.length === 0) {
           this.infoWindowModel.clear();
         }
