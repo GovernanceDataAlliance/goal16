@@ -7,6 +7,10 @@
   background-color: rgba($white, .8);
   padding: rem(6px) rem(6px) rem(30px);
 
+  &.-up {
+    bottom: rem(95px);
+  }
+
   @media screen and (min-width: 768px) {
     right: rem(30px);
     bottom: rem(40px);

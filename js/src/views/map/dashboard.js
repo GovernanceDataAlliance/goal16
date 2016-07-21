@@ -125,7 +125,9 @@ var DashboardView = Backbone.View.extend({
       $('.m-map-breadcrumbs .js--indicator-info').on('click', this._showModalWindow.bind(this));
 
       this.$dashHandler.addClass('-layer-selected');
-    }.bind(this))
+    }.bind(this));
+
+    $('.l-legend').addClass('-up');
   },
 
   _shortTitle: function() {
@@ -158,6 +160,10 @@ var DashboardView = Backbone.View.extend({
     this._updateRouterParams();
 
     this.$applyBtn.addClass('-disabled');
+    $('.l-legend').removeClass('-up');
+
+    this.$dashHandler.removeClass('-layer-selected');
+    $('.m-map-breadcrumbs').remove();
   },
 
   _closeDashboard: function() {
