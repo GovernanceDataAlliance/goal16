@@ -34,4 +34,13 @@
     // !important rule added because of Leaflet's inheritance
     color: $font-color-1 !important;
   }
+
+  &.-map-breadcrumbs {
+    color: $font-color-1;
+    float: left;
+
+    &:hover {
+      color: $font-color-1;
+    }
+  }
 }

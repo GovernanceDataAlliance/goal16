@@ -14,7 +14,8 @@ var status = require ('../../models/map/status.js');
 
 var template = Handlebars.compile(require('../../templates/map/dashboard.hbs')),
     targetsTemplate = Handlebars.compile(require('../../templates/map/targets.hbs')),
-    indicatorsTemplate = Handlebars.compile(require('../../templates/map/indicators.hbs'));
+    indicatorsTemplate = Handlebars.compile(require('../../templates/map/indicators.hbs')),
+    mapBreadcrumbsTemplate = Handlebars.compile(require('../../templates/map/map-breadcrumbs.hbs'));
 
 var DashboardView = Backbone.View.extend({
 
@@ -83,6 +84,7 @@ var DashboardView = Backbone.View.extend({
     this.$targetsWrapper = $('.m-dashboard-target');
     this.$applyBtn = $('.js--apply');
     this.$cancelBtn = $('.js--cancel');
+    this.$dashHandler = $('.js--dashboard-mb-handlers');
   },
 
   _updateRouterParams: function() {
@@ -105,7 +107,19 @@ var DashboardView = Backbone.View.extend({
 
   _applyChanges: function() {
     this._setActiveLayer();
+    this._setMapBreadcrubms();
     this._closeDashboard();
+  },
+
+  _setMapBreadcrubms: function() {
+    $('#content').append(mapBreadcrumbsTemplate({
+      title: 'my-layer',
+      slug: this.status.get('layer')
+    }));
+
+    $('.m-map-breadcrumbs .js--indicator-info').on('click', this._showModalWindow.bind(this));
+
+    this.$dashHandler.addClass('-layer-selected');
   },
 
   _cancelChanges: function() {
