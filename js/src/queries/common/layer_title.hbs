@@ -1,0 +1,15 @@
+SELECT   
+  i.title, 
+  i.slug as slug 
+FROM  
+  {{indicators_table}} i 
+WHERE   
+  slug='{{slug}}' 
+UNION 
+SELECT 
+  t.title, 
+  t.slug as slug 
+FROM 
+ {{targets_table}} t 
+WHERE   
+  slug='{{slug}}'

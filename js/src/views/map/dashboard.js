@@ -10,6 +10,8 @@ var targetsCollection = require('../../collections/common/targets.js'),
 var InfoWindowModel = require('../../models/common/infowindow.js');
 var ModalWindowView = require('../../views/common/infowindow.js');
 
+var LayerNameModel = require ('../../models/common/layer_name.js');
+
 var status = require ('../../models/map/status.js');
 
 var template = Handlebars.compile(require('../../templates/map/dashboard.hbs')),
@@ -43,6 +45,8 @@ var DashboardView = Backbone.View.extend({
     this.targetsCollection = targetsCollection;
     this.indicatorsCollection = new IndicatorsCollection();
     this.infoWindowModel = new InfoWindowModel();
+
+    this.layerNameModel = new LayerNameModel();
 
     this._setView();
   },
@@ -112,14 +116,16 @@ var DashboardView = Backbone.View.extend({
   },
 
   _setMapBreadcrubms: function() {
-    $('#content').append(mapBreadcrumbsTemplate({
-      title: 'my-layer',
-      slug: this.status.get('layer')
-    }));
+    this.layerNameModel.getTitle(this.status.get('layer')).done(function(res) {
+      $('#content').append(mapBreadcrumbsTemplate({
+        title: this.layerNameModel.toJSON().title,
+        slug: this.status.get('layer')
+      }));
 
-    $('.m-map-breadcrumbs .js--indicator-info').on('click', this._showModalWindow.bind(this));
+      $('.m-map-breadcrumbs .js--indicator-info').on('click', this._showModalWindow.bind(this));
 
-    this.$dashHandler.addClass('-layer-selected');
+      this.$dashHandler.addClass('-layer-selected');
+    }.bind(this))
   },
 
   _cancelChanges: function() {
