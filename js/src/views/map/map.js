@@ -93,7 +93,7 @@ var MapView = Backbone.View.extend({
     this.status.on('change:lat', _.bind(this._updateMapCenter, this));
     this.status.on('change:lng', _.bind(this._updateMapCenter, this));
     Backbone.Events.on('dashboard:change', _.bind(this._refreshMap, this))
-    Backbone.Events.on('map:removeLayer', _.bind(this._removeLayer, this))
+    // Backbone.Events.on('map:removeLayer', _.bind(this._removeLayer, this))
   },
 
   _setMapListeners: function() {
@@ -172,9 +172,13 @@ var MapView = Backbone.View.extend({
   },
 
   _activeLayer: function() {
-    this._createLayer().done(_.bind(function() {
-      this._addLayer();
-    }, this));
+    if (this.status.get('layer')) {
+      this._createLayer().done(_.bind(function() {
+        this._addLayer();
+      }, this));
+    } else {
+      this._removeLayer();
+    }
   },
 
   _createLayer: function() {
@@ -240,7 +244,6 @@ var MapView = Backbone.View.extend({
     };
 
     var query = type === 'target' ? targetLayerSQL(options) : indicatorLayerSQL(options);
-
 
     return query;
   },

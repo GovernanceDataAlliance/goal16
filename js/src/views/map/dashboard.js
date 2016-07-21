@@ -109,12 +109,9 @@ var DashboardView = Backbone.View.extend({
   },
 
   _cancelChanges: function() {
-    //Keep previus layer
     if (this.temporalLayer) {
       //Reset mad and dashboard and discard changes;
       this._resetDashboarState();
-      Backbone.Events.trigger('map:removeLayer');
-
       this.temporalLayer = null;
     }
 
@@ -124,6 +121,9 @@ var DashboardView = Backbone.View.extend({
   _resetDashboarState: function() {
     $('#'+this.temporalLayer.layer).attr('checked', false);
     this.$targetsWrapper.removeClass('is-open');
+
+    this.status.set({ layerType: null, layer: null });
+    this._updateRouterParams();
 
     this.$applyBtn.addClass('-disabled');
   },
