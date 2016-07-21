@@ -5,7 +5,7 @@ var  $ = require('jquery'),
 
 var CONFIG = require('../../config.json');
 
-var BASE_URL = "http://{0}.cartodb.com/api/v2/sql";
+var BASE_URL = "https://{0}.cartodb.com/api/v2/sql";
 
 var CartoDBCollection = Backbone.Collection.extend({
 

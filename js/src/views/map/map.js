@@ -93,6 +93,7 @@ var MapView = Backbone.View.extend({
     this.status.on('change:lat', _.bind(this._updateMapCenter, this));
     this.status.on('change:lng', _.bind(this._updateMapCenter, this));
     Backbone.Events.on('dashboard:change', _.bind(this._refreshMap, this))
+    // Backbone.Events.on('map:removeLayer', _.bind(this._removeLayer, this))
   },
 
   _setMapListeners: function() {
@@ -171,9 +172,13 @@ var MapView = Backbone.View.extend({
   },
 
   _activeLayer: function() {
-    this._createLayer().done(_.bind(function() {
-      this._addLayer();
-    }, this));
+    if (this.status.get('layer')) {
+      this._createLayer().done(_.bind(function() {
+        this._addLayer();
+      }, this));
+    } else {
+      this._removeLayer();
+    }
   },
 
   _createLayer: function() {
@@ -199,12 +204,12 @@ var MapView = Backbone.View.extend({
       type: 'POST',
       dataType: 'json',
       contentType: 'application/json; charset=UTF-8',
-      url: 'http://'+ cartoAccount +'.cartodb.com/api/v1/map/',
+      url: 'https://'+ cartoAccount +'.cartodb.com/api/v1/map/',
       data: JSON.stringify(request),
     }).done(_.bind(function(data) {
-          var tileUrl = 'http://'+ cartoAccount +'.cartodb.com/api/v1/map/'+ data.layergroupid + '/{z}/{x}/{y}.png32';
+          var tileUrl = 'https://'+ cartoAccount +'.cartodb.com/api/v1/map/'+ data.layergroupid + '/{z}/{x}/{y}.png32';
           this._removeLayer();
-          this.layer = L.tileLayer(tileUrl, { noWrap: true });
+          this.layer = L.tileLayer(tileUrl, { noWrap: true, https: true });
           return deferred.resolve();
         }, this));
 
@@ -239,7 +244,6 @@ var MapView = Backbone.View.extend({
     };
 
     var query = type === 'target' ? targetLayerSQL(options) : indicatorLayerSQL(options);
-
 
     return query;
   },

@@ -23,7 +23,9 @@ var DashboardView = Backbone.View.extend({
 
   events: {
     'click .js--toggle-dashboard': '_toggleDashboard',
-    'click .js--toggle-dashboard-mb': '_toggleDashboard',
+    'click .js--open-dashboard-mb': '_toggleDashboard',
+    'click .js--cancel': '_cancelChanges',
+    'click .js--apply': '_applyChanges',
     'click .js--open-target': '_showIndicatorsPerTarget',
     'click .js--close-target': '_hideIndicators',
     'click .js--indicator-info': '_showModalWindow',
@@ -73,6 +75,16 @@ var DashboardView = Backbone.View.extend({
     }, this));
   },
 
+  _setVars: function() {
+    this.$body = $('body');
+    this.$dashOpenner = $('.js--open-dashboard-mb');
+    this.$mapHandler = $('.js--map-handlers');
+    this.$map = $('#map-container');
+    this.$targetsWrapper = $('.m-dashboard-target');
+    this.$applyBtn = $('.js--apply');
+    this.$cancelBtn = $('.js--cancel');
+  },
+
   _updateRouterParams: function() {
     Backbone.Events.trigger('router:update-params', this.status);
   },
@@ -83,11 +95,48 @@ var DashboardView = Backbone.View.extend({
     this.$body.toggleClass('is-dashboard-close', this.dashboardClose);
 
     if (this.mobile) {
-      this.dashboardClose ? this.$dashToggler.html('explore and select targets') : this.$dashToggler.html('go back to map');
+      this.$dashOpenner.toggleClass('is-hidden', !this.dashboardClose);
+      this.$mapHandler.toggleClass('is-hidden', this.dashboardClose);
     }
 
     Backbone.Events.trigger('close:infowindow');
     Backbone.Events.trigger('dashboard:change');
+  },
+
+  _applyChanges: function() {
+    this._setActiveLayer();
+    this._closeDashboard();
+  },
+
+  _cancelChanges: function() {
+    if (this.temporalLayer) {
+      //Reset mad and dashboard and discard changes;
+      this._resetDashboarState();
+      this.temporalLayer = null;
+    }
+
+    this._closeDashboard();
+  },
+
+  _resetDashboarState: function() {
+    $('#'+this.temporalLayer.layer).attr('checked', false);
+    this.$targetsWrapper.removeClass('is-open');
+
+    this.status.set({ layerType: null, layer: null });
+    this._updateRouterParams();
+
+    this.$applyBtn.addClass('-disabled');
+  },
+
+  _closeDashboard: function() {
+    this.dashboardClose = true;
+
+    this.$body.addClass('is-dashboard-close');
+    this.$dashOpenner.removeClass('is-hidden');
+    this.$mapHandler.addClass('is-hidden');
+
+    //and cancel layer
+    this.temporalLayer = null;
   },
 
   _showIndicatorsPerTarget: function(e) {
@@ -115,7 +164,6 @@ var DashboardView = Backbone.View.extend({
 
         // Allows having multiple targets opened at the same time.
         // Uncomment in case you want the opposite.
-        // this.$targetsWrapper.removeClass('is-open');
         $currentTarget.parents('.m-dashboard-target').addClass('is-open');
       }, this))
     }
@@ -173,13 +221,6 @@ var DashboardView = Backbone.View.extend({
     $('#'+target).attr('checked', true);
   },
 
-  _setVars: function() {
-    this.$body = $('body');
-    this.$dashToggler = $('.js--toggle-dashboard-mb');
-    this.$map = $('#map-container');
-    this.$targetsWrapper = $('.m-dashboard-target');
-  },
-
   _renderIndicators: function(targetSlug) {
     var indicatorsGrupedByType = this.indicatorsCollection.groupByType();
 
@@ -202,9 +243,29 @@ var DashboardView = Backbone.View.extend({
   },
 
   _setActiveLayer: function(type, layer) {
-    this.status.set({layerType: type, layer: layer});
-    this.$map.addClass('is-loading -map');
-    this._updateRouterParams();
+    if (!this.mobile) {
+      this.status.set({ layerType: type, layer: layer });
+      this.$map.addClass('is-loading -map');
+      this._updateRouterParams();
+    } else if (this.mobile && !this.temporalLayer) {
+      //keep temporal values to apply when hit apply btn
+      this.temporalLayer = {
+        layer: layer,
+        type: type
+      }
+      //Activate apply btn
+      this.$applyBtn.removeClass('-disabled');
+    } else if (this.mobile && this.temporalLayer) {
+      this.status.set({ layerType: this.temporalLayer.type, layer: this.temporalLayer.layer });
+      this.$map.addClass('is-loading -map');
+      this._updateRouterParams();
+
+      this._closeDashboard();
+      this.$applyBtn.addClass('-disabled');
+
+      //because we have already apply changes
+      this.temporalLayer = null;
+    }
   },
 
   _showModalWindow: function(e) {
@@ -213,7 +274,6 @@ var DashboardView = Backbone.View.extend({
       return;
     } else {
       this.infoWindowModel._getIndicatorInfo(indicator).done(function(res) {
-        console.log(indicator);
         if (res.rows.length === 0) {
           this.infoWindowModel.clear();
         }
