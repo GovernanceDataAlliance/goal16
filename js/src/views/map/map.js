@@ -93,7 +93,6 @@ var MapView = Backbone.View.extend({
     this.status.on('change:lat', _.bind(this._updateMapCenter, this));
     this.status.on('change:lng', _.bind(this._updateMapCenter, this));
     Backbone.Events.on('dashboard:change', _.bind(this._refreshMap, this))
-    // Backbone.Events.on('map:removeLayer', _.bind(this._removeLayer, this))
   },
 
   _setMapListeners: function() {
@@ -178,6 +177,8 @@ var MapView = Backbone.View.extend({
       }, this));
     } else {
       this._removeLayer();
+      this.options.legend = !this.options.legend;
+      this.legend.hide();
     }
   },
 

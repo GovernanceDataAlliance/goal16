@@ -10,11 +10,14 @@ var targetsCollection = require('../../collections/common/targets.js'),
 var InfoWindowModel = require('../../models/common/infowindow.js');
 var ModalWindowView = require('../../views/common/infowindow.js');
 
+var LayerNameModel = require ('../../models/common/layer_name.js');
+
 var status = require ('../../models/map/status.js');
 
 var template = Handlebars.compile(require('../../templates/map/dashboard.hbs')),
     targetsTemplate = Handlebars.compile(require('../../templates/map/targets.hbs')),
-    indicatorsTemplate = Handlebars.compile(require('../../templates/map/indicators.hbs'));
+    indicatorsTemplate = Handlebars.compile(require('../../templates/map/indicators.hbs')),
+    mapBreadcrumbsTemplate = Handlebars.compile(require('../../templates/map/map-breadcrumbs.hbs'));
 
 var DashboardView = Backbone.View.extend({
 
@@ -42,6 +45,8 @@ var DashboardView = Backbone.View.extend({
     this.targetsCollection = targetsCollection;
     this.indicatorsCollection = new IndicatorsCollection();
     this.infoWindowModel = new InfoWindowModel();
+
+    this.layerNameModel = new LayerNameModel();
 
     this._setView();
   },
@@ -83,6 +88,7 @@ var DashboardView = Backbone.View.extend({
     this.$targetsWrapper = $('.m-dashboard-target');
     this.$applyBtn = $('.js--apply');
     this.$cancelBtn = $('.js--cancel');
+    this.$dashHandler = $('.js--dashboard-mb-handlers');
   },
 
   _updateRouterParams: function() {
@@ -108,6 +114,32 @@ var DashboardView = Backbone.View.extend({
     this._closeDashboard();
   },
 
+  _setMapBreadcrubms: function() {
+    this.layerNameModel.getTitle(this.status.get('layer')).done(function(res) {
+      $('.js--map-breadcrumbs').html(mapBreadcrumbsTemplate({
+        code: this.layerNameModel.get('code'),
+        title: this._shortTitle(),
+        slug: this.status.get('layer')
+      }));
+      $('.js--map-breadcrumbs').removeClass('is-hidden');
+      $('.js--map-breadcrumbs .js--indicator-info').on('click', this._showModalWindow.bind(this));
+
+      this.$dashHandler.addClass('-layer-selected');
+    }.bind(this));
+  },
+
+  _shortTitle: function() {
+    var shortTitle;
+    var fullTitle = this.layerNameModel.get('title')
+    var length = fullTitle.length;
+
+    if (length > 70) {
+      return fullTitle.substr(0, 70) + '...';
+    }
+
+    return fullTitle;
+  },
+
   _cancelChanges: function() {
     if (this.temporalLayer) {
       //Reset mad and dashboard and discard changes;
@@ -126,6 +158,10 @@ var DashboardView = Backbone.View.extend({
     this._updateRouterParams();
 
     this.$applyBtn.addClass('-disabled');
+    $('.l-legend').removeClass('-up');
+
+    this.$dashHandler.removeClass('-layer-selected');
+    $('.js--map-breadcrumbs').addClass('is-hidden');
   },
 
   _closeDashboard: function() {
@@ -177,6 +213,7 @@ var DashboardView = Backbone.View.extend({
 
   render: function() {
     this.$el.html(template());
+    $('#content').append('<div class="m-map-breadcrumbs js--map-breadcrumbs is-hidden"></div>')
     return this;
   },
 
@@ -201,6 +238,10 @@ var DashboardView = Backbone.View.extend({
         this._activateIndicatorsLayer(currentLayer);
       } else {
         this._activateTargetLayer(currentLayer);
+      }
+
+      if (this.mobile) {
+        this._setMapBreadcrubms();
       }
     }
   },
@@ -259,7 +300,7 @@ var DashboardView = Backbone.View.extend({
       this.status.set({ layerType: this.temporalLayer.type, layer: this.temporalLayer.layer });
       this.$map.addClass('is-loading -map');
       this._updateRouterParams();
-
+      this._setMapBreadcrubms();
       this._closeDashboard();
       this.$applyBtn.addClass('-disabled');
 
