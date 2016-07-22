@@ -117,12 +117,14 @@ var DashboardView = Backbone.View.extend({
 
   _setMapBreadcrubms: function() {
     this.layerNameModel.getTitle(this.status.get('layer')).done(function(res) {
-      $('#content').append(mapBreadcrumbsTemplate({
+      $('.js--map-breadcrumbs').html(mapBreadcrumbsTemplate({
+        code: this.layerNameModel.get('code'),
         title: this._shortTitle(),
         slug: this.status.get('layer')
       }));
+      $('.js--map-breadcrumbs').removeClass('is-hidden');
 
-      $('.m-map-breadcrumbs .js--indicator-info').on('click', this._showModalWindow.bind(this));
+      $('.js--map-breadcrumbs .js--indicator-info').on('click', this._showModalWindow.bind(this));
 
       this.$dashHandler.addClass('-layer-selected');
     }.bind(this));
@@ -135,8 +137,8 @@ var DashboardView = Backbone.View.extend({
     var fullTitle = this.layerNameModel.get('title')
     var length = fullTitle.length;
 
-    if (length > 75) {
-      return fullTitle.substr(0, 75) + '...';
+    if (length > 70) {
+      return fullTitle.substr(0, 70) + '...';
     }
 
     return fullTitle;
@@ -163,7 +165,7 @@ var DashboardView = Backbone.View.extend({
     $('.l-legend').removeClass('-up');
 
     this.$dashHandler.removeClass('-layer-selected');
-    $('.m-map-breadcrumbs').remove();
+    $('.js--map-breadcrumbs').addClass('is-hidden');
   },
 
   _closeDashboard: function() {
@@ -215,6 +217,7 @@ var DashboardView = Backbone.View.extend({
 
   render: function() {
     this.$el.html(template());
+    $('#content').append('<div class="m-map-breadcrumbs js--map-breadcrumbs is-hidden"></div>')
     return this;
   },
 

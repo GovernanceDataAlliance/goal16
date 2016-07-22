@@ -1,6 +1,7 @@
 SELECT   
   i.title, 
-  i.slug as slug 
+  i.slug as slug, 
+  i.code  
 FROM  
   {{indicators_table}} i 
 WHERE   
@@ -8,7 +9,8 @@ WHERE
 UNION 
 SELECT 
   t.title, 
-  t.slug as slug 
+  t.slug as slug,
+  t.code  
 FROM 
  {{targets_table}} t 
 WHERE   
