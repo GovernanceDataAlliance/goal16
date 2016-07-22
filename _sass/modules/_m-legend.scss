@@ -15,6 +15,8 @@ $bucket-border: $bucket-border-1, $bucket-border-2, $bucket-border-3, $bucket-bo
     margin-right: rem(5px);
 
     @media screen and (min-width: $screen-l) {
+      display: inherit;
+      font-size: rem($font-size-xxsmall);
       margin-right: rem(40px);
     }
 
@@ -26,6 +28,10 @@ $bucket-border: $bucket-border-1, $bucket-border-2, $bucket-border-3, $bucket-bo
         margin-left: rem(40px);
       }
     }
+
+    span {
+      margin-right: rem(5px);
+    }
   }
 
   p {
@@ -33,7 +39,7 @@ $bucket-border: $bucket-border-1, $bucket-border-2, $bucket-border-3, $bucket-bo
     font-size: rem(10px);
 
     @media screen and (min-width: 768px) {
-      font-size: rem($font-size-xxsmall);
+      font-size: rem($font-size-xsmall);
     }
   }
 
@@ -54,10 +60,17 @@ $bucket-border: $bucket-border-1, $bucket-border-2, $bucket-border-3, $bucket-bo
     font-size: rem($font-size-xxsmall);
     text-align: center;
 
+    @media screen and (min-width: 768px) {
+      width: rem(35px);
+      height: rem(35px);
+      line-height: rem(35px);
+      margin-right: rem(10px);
+    }
+
     @media screen and (min-width: $screen-l) {
       width: rem(40px);
       height: rem(40px);
-      margin-right: rem(10px);
+      margin-right: rem(15px);
       line-height: rem(37px);
       color: $white;
       font-size: rem($font-size-xsmall);
