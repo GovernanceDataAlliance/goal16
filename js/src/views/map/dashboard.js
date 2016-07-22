@@ -111,7 +111,6 @@ var DashboardView = Backbone.View.extend({
 
   _applyChanges: function() {
     this._setActiveLayer();
-    this._setMapBreadcrubms();
     this._closeDashboard();
   },
 
@@ -123,13 +122,10 @@ var DashboardView = Backbone.View.extend({
         slug: this.status.get('layer')
       }));
       $('.js--map-breadcrumbs').removeClass('is-hidden');
-
       $('.js--map-breadcrumbs .js--indicator-info').on('click', this._showModalWindow.bind(this));
 
       this.$dashHandler.addClass('-layer-selected');
     }.bind(this));
-
-    $('.l-legend').addClass('-up');
   },
 
   _shortTitle: function() {
@@ -243,6 +239,10 @@ var DashboardView = Backbone.View.extend({
       } else {
         this._activateTargetLayer(currentLayer);
       }
+
+      if (this.mobile) {
+        this._setMapBreadcrubms();
+      }
     }
   },
 
@@ -300,7 +300,7 @@ var DashboardView = Backbone.View.extend({
       this.status.set({ layerType: this.temporalLayer.type, layer: this.temporalLayer.layer });
       this.$map.addClass('is-loading -map');
       this._updateRouterParams();
-
+      this._setMapBreadcrubms();
       this._closeDashboard();
       this.$applyBtn.addClass('-disabled');
 

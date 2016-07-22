@@ -17,6 +17,11 @@
     left: $dashboard-width + 35px;
     transition: .2s ease;
 
+    &.-up {
+      bottom: rem(40px);
+    }
+
+
     .is-dashboard-close & {
       left: rem(30px);
     }
