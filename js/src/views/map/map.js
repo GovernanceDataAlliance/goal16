@@ -2,7 +2,8 @@ var $ = require('jquery'),
   _ = require('lodash'),
   enquire = require('enquire.js'),
   Backbone = require('backbone'),
-  Handlebars = require('handlebars');
+  Handlebars = require('handlebars'),
+  cartodbProj = require('../../lib/cartodb.proj');
 
 var CONFIG = require('../../../config.json');
 
@@ -29,9 +30,7 @@ var MapView = Backbone.View.extend({
     map: {
       center: [39.1, 4.5],
       zoom: 2,
-      scrollWheelZoom: false,
-      worldCopyJump: true,
-      noWrap: true
+      scrollWheelZoom: false
     },
     cartodb: {
       user_name: CONFIG.cartodb.user_name,
@@ -150,6 +149,9 @@ var MapView = Backbone.View.extend({
     var labelsBasemap = L.tileLayer(this.options.labelsBasemap, {
       noWrap: true
     });
+
+    // use proj4 text for desired SRID
+    this.options.map.crs =  cartodbProj('+proj=eqc +lat_ts=0 +lat_0=0 +lon_0=0 +x_0=0 +y_0=0 +a=6371007 +b=6371007 +units=m +no_defs');
 
     /* Here we create the map with Leafleft... */
     this.map = L.map(this.el, this.options.map);

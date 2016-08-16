@@ -20,7 +20,7 @@ with r as (
 
 select 
   c.the_geom, 
-  st_transform(st_makevalid(c.the_geom_webmercator),4035) as the_geom_webmercator, 
+  st_transform(st_makevalid(c.the_geom_webmercator),3786) as the_geom_webmercator, 
   s.iso, 
   s.target_slug, 
   round((count::numeric/base::numeric)*100) score 
