@@ -2270,13 +2270,17 @@ select {
   right: 1.25rem;
   z-index: 1;
   background-color: rgba(255, 255, 255, 0.8);
-  padding: 0.375rem 0.375rem 1.875rem; }
+  padding: 0.375rem 0.375rem 0.625rem; }
+  .l-legend.-up {
+    bottom: 5.9375rem; }
   @media screen and (min-width: 768px) {
     .l-legend {
       right: 1.875rem;
       bottom: 2.5rem;
       left: 435px;
       transition: .2s ease; }
+      .l-legend.-up {
+        bottom: 2.5rem; }
       .is-dashboard-close .l-legend {
         left: 1.875rem; } }
   @media screen and (min-width: 1024px) {
@@ -3127,6 +3131,16 @@ select {
         margin: 3.125rem auto;
         margin-bottom: 10.625rem; } }
 
+.m-map-breadcrumbs {
+  position: absolute;
+  bottom: 2.4375rem;
+  right: 0;
+  left: 0;
+  z-index: 10;
+  padding: 0.625rem 1.25rem 0;
+  background-color: white;
+  box-shadow: 0 0 3.75rem 0 rgba(7, 56, 35, 0.1); }
+
 .m-aside-compare .image-compare-banner {
   position: relative;
   background-image: url("/img/crosseling/crosseling-compare.jpg");
@@ -3425,20 +3439,6 @@ select {
       @media screen and (min-width: 768px) {
         .m-dashboard-indicators .indicator-wrapper label {
           max-width: 80%; } }
-    .m-dashboard-indicators .indicator-wrapper .btn-info {
-      float: right;
-      -ms-flex-item-align: end;
-          align-self: flex-end;
-      width: 1rem;
-      height: 1rem;
-      margin-left: 0.625rem;
-      border-radius: 50%; }
-  .m-dashboard-indicators .icon-info {
-    width: 1rem;
-    height: 1rem;
-    fill: #82bf72; }
-    .m-dashboard-indicators .icon-info:hover {
-      fill: #31871b; }
 
 .m-breadcrumbs {
   position: relative;
@@ -3987,25 +3987,29 @@ select {
   -ms-flex-pack: justify;
       justify-content: space-between; }
   .m-legend .text {
-    font-size: 0.625rem;
+    font-size: 0.5rem;
     font-family: "Merriweather Sans", sans-serif;
     text-transform: uppercase;
-    margin-right: 0.625rem; }
+    margin-right: 0.3125rem; }
     @media screen and (min-width: 1024px) {
       .m-legend .text {
+        display: inherit;
+        font-size: 0.625rem;
         margin-right: 2.5rem; } }
     .m-legend .text:last-child {
       margin-right: 0;
-      margin-left: 0.625rem; }
+      margin-left: 0.3125rem; }
       @media screen and (min-width: 1024px) {
         .m-legend .text:last-child {
           margin-left: 2.5rem; } }
+    .m-legend .text span {
+      margin-right: 0.3125rem; }
   .m-legend p {
     color: #809497;
-    font-size: 0.75rem; }
+    font-size: 0.625rem; }
     @media screen and (min-width: 768px) {
       .m-legend p {
-        font-size: 0.625rem; } }
+        font-size: 0.75rem; } }
   .m-legend .buckets {
     display: -ms-flexbox;
     display: flex;
@@ -4015,19 +4019,25 @@ select {
         justify-content: space-between; }
   .m-legend .bucket {
     display: inline-block;
-    width: 0.9375rem;
-    height: 0.9375rem;
+    width: 1.5625rem;
+    height: 1.5625rem;
     border-radius: 50%;
-    margin-right: 0.3125rem;
-    line-height: 2.8125rem;
+    margin-right: 0.1875rem;
+    line-height: 1.5625rem;
     color: #809497;
     font-size: 0.625rem;
     text-align: center; }
+    @media screen and (min-width: 768px) {
+      .m-legend .bucket {
+        width: 2.1875rem;
+        height: 2.1875rem;
+        line-height: 2.1875rem;
+        margin-right: 0.625rem; } }
     @media screen and (min-width: 1024px) {
       .m-legend .bucket {
         width: 2.5rem;
         height: 2.5rem;
-        margin-right: 0.625rem;
+        margin-right: 0.9375rem;
         line-height: 2.3125rem;
         color: #fff;
         font-size: 0.75rem; } }
@@ -4070,8 +4080,16 @@ select {
   background-color: #fff; }
   .m-dashboard-mb-handlers .btn-open-dashboard-mobile.-primary {
     color: #e5f1e1;
-    background-color: #82bf72;
-    box-shadow: 0 0 3.75rem 0 rgba(7, 56, 35, 0.1); }
+    background-color: #82bf72; }
+    .m-dashboard-mb-handlers .btn-open-dashboard-mobile.-primary.-selected {
+      display: none;
+      text-align: left;
+      margin: 0;
+      padding-left: 1.25rem; }
+  .m-dashboard-mb-handlers.-layer-selected .btn-open-dashboard-mobile {
+    display: none; }
+    .m-dashboard-mb-handlers.-layer-selected .btn-open-dashboard-mobile.-selected {
+      display: block; }
   .m-dashboard-mb-handlers .map-handler {
     display: -ms-flexbox;
     display: flex;
@@ -4193,6 +4211,23 @@ select {
     .c-btn-share {
       top: 8.75rem;
       right: 1.875rem; } }
+
+.btn-info {
+  float: right;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  width: 1rem;
+  height: 1rem;
+  margin-left: 0.625rem;
+  border-radius: 50%; }
+  .btn-info .icon-info {
+    width: 1rem;
+    height: 1rem;
+    fill: #82bf72; }
+    .btn-info .icon-info:hover {
+      fill: #31871b; }
+  .btn-info.-right {
+    float: right; }
 
 .c-share-shortcut {
   position: absolute;
@@ -4982,6 +5017,12 @@ select {
         font-size: 19px; } }
   .c-indicator-name.-pop-up {
     color: #073339 !important; }
+  .c-indicator-name.-map-breadcrumbs {
+    max-width: 90%;
+    color: #073339;
+    float: left; }
+    .c-indicator-name.-map-breadcrumbs:hover {
+      color: #073339; }
 
 /*
  * States are modes that can change
