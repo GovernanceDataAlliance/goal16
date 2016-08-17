@@ -8,7 +8,8 @@ var $ = require('jquery'),
 var CONFIG = require('../../../config.json');
 
 var targetLayerSQL = Handlebars.compile(require('../../queries/map/layer_target.hbs')),
-    indicatorLayerSQL = Handlebars.compile(require('../../queries/map/layer_indicator.hbs'));
+    indicatorLayerSQL = Handlebars.compile(require('../../queries/map/layer_indicator.hbs')),
+    baseMapSQL = Handlebars.compile(require('../../queries/map/basemap.hbs'));
 
 var PopUpView = require('./pop_up.js'),
     InfoWindowView = require('../common/infowindow.js'),
@@ -28,7 +29,7 @@ var MapView = Backbone.View.extend({
     // basemap: 'http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
     labelsBasemap: 'https://api.tiles.mapbox.com/v4/goal16-labels.d9258038/{z}/{x}/{y}.png?access_token=sk.eyJ1IjoiZ29hbDE2LWxhYmVscyIsImEiOiJjaXExMGkzdHQwMDJqaHJuZG94bjAxZ2U4In0.Kdmmeqv8zSGz6F4NJ6bh5w',
     map: {
-      center: [39.1, 4.5],
+      center: [11, 4.5],
       zoom: 2,
       scrollWheelZoom: false
     },
@@ -36,6 +37,8 @@ var MapView = Backbone.View.extend({
       user_name: CONFIG.cartodb.user_name,
       noWrap: true,
       cartocss: {
+        basemap: '#countries{ polygon-pattern-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/goal16/assets/20160817151317p5_green.png); line-color: #eee; line-width: 0.5; line-opacity: 1;}',
+
         indicator: '#score{ polygon-pattern-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/goal16/assets/20160711093427color100.png); line-color: #eee; line-width: 0.5; line-opacity: 1;}',
         target: "@100: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/goal16/assets/20160711134917color100%20%281%29.png); @75: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/goal16/assets/20160711134906color75%20%281%29.png); @50:url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/goal16/assets/20160711134858color50%20%281%29.png); @25: url(http://s3.amazonaws.com/com.cartodb.users-assets.production/production/goal16/assets/20160711134847green25%20%281%29.png); #indicators{ polygon-fill: transparent; line-color: #eee; line-width: 1.5; line-opacity: 1; [ score <= 100] { polygon-pattern-file: @100;} [ score <= 75] { polygon-pattern-file: @75;} [ score <= 50] { polygon-pattern-file: @50;} [ score <= 25] { polygon-pattern-file: @25;}}"
       }
@@ -140,27 +143,57 @@ var MapView = Backbone.View.extend({
   },
 
   _initMap: function() {
-    /* this is the definition for basemap */
-    var baseMap = L.tileLayer(this.options.basemap, {
-      noWrap: true,
-      attribution: '<a href="https://www.mapzen.com/rights">Attribution.</a>. Data &copy;<a href="https://openstreetmap.org/copyright">OSM</a> contributors.'
-    });
-
-    var labelsBasemap = L.tileLayer(this.options.labelsBasemap, {
-      noWrap: true
-    });
-
     // use proj4 text for desired SRID
     this.options.map.crs =  cartodbProj('+proj=eqc +lat_ts=0 +lat_0=0 +lon_0=0 +x_0=0 +y_0=0 +a=6371007 +b=6371007 +units=m +no_defs');
 
     /* Here we create the map with Leafleft... */
     this.map = L.map(this.el, this.options.map);
+
+    this._getBasemapLayer().done(function(){
+      this.map.addLayer(this.baseMap);
+    }.bind(this));
+
     /* ...and we add the basemap layer with Leaflet as well */
-    this.map.addLayer(baseMap);
+    var labelsBasemap = L.tileLayer(this.options.labelsBasemap, {
+      noWrap: true
+    });
     this.map.addLayer(labelsBasemap);
     labelsBasemap.setZIndex(2000);
 
     return this;
+  },
+
+  _getBasemapLayer: function() {
+    var sql = baseMapSQL();
+    var cartoAccount = this.options.cartodb.user_name;
+    var cartoCss = this.options.cartodb.cartocss['basemap'];
+    var deferred = $.Deferred();
+
+    var request = {
+      layers: [{
+        'user_name': cartoAccount,
+        'type': 'cartodb',
+        'options': {
+          'sql': sql,
+          'cartocss': cartoCss,
+          'cartocss_version': '2.3.0'
+        }
+      }]
+    };
+
+    $.ajax({
+      type: 'POST',
+      dataType: 'json',
+      contentType: 'application/json; charset=UTF-8',
+      url: 'https://'+ cartoAccount +'.cartodb.com/api/v1/map/',
+      data: JSON.stringify(request),
+    }).done(_.bind(function(data) {
+          var tileUrl = 'https://'+ cartoAccount +'.cartodb.com/api/v1/map/'+ data.layergroupid + '/{z}/{x}/{y}.png32';
+          this.baseMap = L.tileLayer(tileUrl, { noWrap: true, https: true });
+          return deferred.resolve();
+        }, this));
+
+    return deferred;
   },
 
   _refreshMap: function() {
