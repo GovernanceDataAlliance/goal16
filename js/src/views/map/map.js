@@ -9,7 +9,8 @@ var CONFIG = require('../../../config.json');
 
 var targetLayerSQL = Handlebars.compile(require('../../queries/map/layer_target.hbs')),
     indicatorLayerSQL = Handlebars.compile(require('../../queries/map/layer_indicator.hbs')),
-    baseMapSQL = Handlebars.compile(require('../../queries/map/basemap.hbs'));
+    baseMapSQL = Handlebars.compile(require('../../queries/map/basemap.hbs')),
+    baseMapLabelsSQL = Handlebars.compile(require('../../queries/map/labels.hbs'));
 
 var PopUpView = require('./pop_up.js'),
     InfoWindowView = require('../common/infowindow.js'),
@@ -38,7 +39,7 @@ var MapView = Backbone.View.extend({
       noWrap: true,
       cartocss: {
         basemap: '#countries{ polygon-pattern-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/goal16/assets/20160817151317p5_green.png); line-color: #eee; line-width: 0.5; line-opacity: 1;}',
-
+        labels: '@sans: "Open Sans Regular"; @sans_bold: "Open Sans Regular"; @name:"[name]"; @halo_light:#96bf93; @text_light:#e4f2f0; #country_label::countries_labels[zoom>=3][type="countries"] { text-name: @name; text-face-name: @sans; text-size: 11; text-transform: capitalize; text-wrap-width: 50; text-halo-radius: 0.4; text-halo-fill: @halo_light; text-fill: @text_light; text-align:center;  text-clip: false;  text-character-spacing: 1.5; [zoom>=3] { text-size: 14; } [zoom>=4]{ text-size: 16; } [zoom>=6]{ text-size: 16; } } #ne_110m_geography_marine_polys::marine_labels[scalerank = 0][type="marine"]{ text-name: @name; text-face-name: @sans; text-placement: point; text-wrap-width: 50; text-wrap-before: true; text-fill: rgba(128, 147, 151, 0.15); [zoom = 3] { text-size: 16; text-character-spacing: 8; text-line-spacing: 16; } [zoom = 4] { text-size: 16; text-character-spacing: 16; text-line-spacing: 24; } [zoom = 5] { text-size: 16; text-character-spacing: 20; text-line-spacing: 32; } }',
         indicator: '#score{ polygon-pattern-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/goal16/assets/20160711093427color100.png); line-color: #eee; line-width: 0.5; line-opacity: 1;}',
         target: "@100: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/goal16/assets/20160711134917color100%20%281%29.png); @75: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/goal16/assets/20160711134906color75%20%281%29.png); @50:url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/goal16/assets/20160711134858color50%20%281%29.png); @25: url(http://s3.amazonaws.com/com.cartodb.users-assets.production/production/goal16/assets/20160711134847green25%20%281%29.png); #indicators{ polygon-fill: transparent; line-color: #eee; line-width: 1.5; line-opacity: 1; [ score <= 100] { polygon-pattern-file: @100;} [ score <= 75] { polygon-pattern-file: @75;} [ score <= 50] { polygon-pattern-file: @50;} [ score <= 25] { polygon-pattern-file: @25;}}"
       }
@@ -153,21 +154,26 @@ var MapView = Backbone.View.extend({
       this.map.addLayer(this.baseMap);
     }.bind(this));
 
-    /* ...and we add the basemap layer with Leaflet as well */
-    var labelsBasemap = L.tileLayer(this.options.labelsBasemap, {
-      noWrap: true
-    });
-    this.map.addLayer(labelsBasemap);
-    labelsBasemap.setZIndex(2000);
+    this._getBasemapLayer('labels').done(function(){
+      this.map.addLayer(this.baseMapLabels);
+      this.baseMapLabels.setZIndex(2000);
+    }.bind(this));
 
     return this;
   },
 
-  _getBasemapLayer: function() {
-    var sql = baseMapSQL();
+  _getBasemapLayer: function(labels) {
+    var sql, cartoCss;
     var cartoAccount = this.options.cartodb.user_name;
-    var cartoCss = this.options.cartodb.cartocss['basemap'];
     var deferred = $.Deferred();
+
+    if (labels) {
+      sql = baseMapLabelsSQL();
+      cartoCss = this.options.cartodb.cartocss['labels'];
+    } else {
+      sql = baseMapSQL();
+      cartoCss = this.options.cartodb.cartocss['basemap'];
+    }
 
     var request = {
       layers: [{
@@ -189,7 +195,11 @@ var MapView = Backbone.View.extend({
       data: JSON.stringify(request),
     }).done(_.bind(function(data) {
           var tileUrl = 'https://'+ cartoAccount +'.cartodb.com/api/v1/map/'+ data.layergroupid + '/{z}/{x}/{y}.png32';
-          this.baseMap = L.tileLayer(tileUrl, { noWrap: true, https: true });
+          if (labels) {
+            this.baseMapLabels = L.tileLayer(tileUrl, { noWrap: true, https: true });
+          } else {
+            this.baseMap = L.tileLayer(tileUrl, { noWrap: true, https: true });
+          }
           return deferred.resolve();
         }, this));
 
