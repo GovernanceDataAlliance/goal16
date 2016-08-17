@@ -9,31 +9,37 @@ $bucket-border: $bucket-border-1, $bucket-border-2, $bucket-border-3, $bucket-bo
   justify-content: space-between;
 
   .text {
-    font-size: rem($font-size-xxsmall);
+    font-size: rem(8px);
     font-family: $font-family-primary;
     text-transform: uppercase;
-    margin-right: rem(10px);
+    margin-right: rem(5px);
 
     @media screen and (min-width: $screen-l) {
+      display: inherit;
+      font-size: rem($font-size-xxsmall);
       margin-right: rem(40px);
     }
 
     &:last-child {
       margin-right: 0;
-      margin-left: rem(10px);
+      margin-left: rem(5px);
 
       @media screen and (min-width: $screen-l) {
         margin-left: rem(40px);
       }
     }
+
+    span {
+      margin-right: rem(5px);
+    }
   }
 
   p {
     color: $font-color-7;
-    font-size: rem($font-size-xsmall);
+    font-size: rem(10px);
 
     @media screen and (min-width: 768px) {
-      font-size: rem($font-size-xxsmall);
+      font-size: rem($font-size-xsmall);
     }
   }
 
@@ -45,19 +51,26 @@ $bucket-border: $bucket-border-1, $bucket-border-2, $bucket-border-3, $bucket-bo
 
   .bucket {
     display: inline-block;
-    width: rem(15px);
-    height: rem(15px);
+    width: rem(25px);
+    height: rem(25px);
     border-radius: 50%;
-    margin-right: rem(5px);
-    line-height: rem(45px);
+    margin-right: rem(3px);
+    line-height: rem(25px);
     color: $font-color-7;
     font-size: rem($font-size-xxsmall);
     text-align: center;
 
+    @media screen and (min-width: 768px) {
+      width: rem(35px);
+      height: rem(35px);
+      line-height: rem(35px);
+      margin-right: rem(10px);
+    }
+
     @media screen and (min-width: $screen-l) {
       width: rem(40px);
       height: rem(40px);
-      margin-right: rem(10px);
+      margin-right: rem(15px);
       line-height: rem(37px);
       color: $white;
       font-size: rem($font-size-xsmall);

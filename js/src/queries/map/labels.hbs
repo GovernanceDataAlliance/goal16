@@ -1,0 +1,6 @@
+SELECT
+  st_transform(st_makevalid(the_geom_webmercator), 3786) as the_geom_webmercator,
+  name,
+  scalerank, 
+  type
+FROM labels
