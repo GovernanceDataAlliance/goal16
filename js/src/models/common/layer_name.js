@@ -8,21 +8,23 @@ var CartoDBModel = require('../../lib/cartodb_model.js');
 
 var CONFIG = require('../../../config.json');
 
-var infoIndicatorSQL = Handlebars.compile(require('../../queries/common/indicator_info.hbs'));
+var layerTitleSQL = Handlebars.compile(require('../../queries/common/layer_title.hbs'));
 
-var InfowindowModel = CartoDBModel.extend({
+var LayerNameModel = CartoDBModel.extend({
 
   indicators_table: CONFIG.cartodb.indicators_table,
+  targets_table: CONFIG.cartodb.targets_table,
   user_name: CONFIG.cartodb.user_name,
 
   _url: function(query) {
     return format(BASE_URL, this.user_name) + "?q=" + query;
   },
 
-  _getIndicatorInfo: function(slug) {
-    var query = infoIndicatorSQL({
-      table: this.indicators_table,
-      indicator_slug: slug
+  getTitle: function(slug) {
+    var query = layerTitleSQL({
+      indicators_table: this.indicators_table,
+      targets_table: this.targets_table,
+      slug: slug
     });
 
     var url = this._url(query);
@@ -32,4 +34,4 @@ var InfowindowModel = CartoDBModel.extend({
 
 });
 
-module.exports = InfowindowModel;
+module.exports = LayerNameModel;

@@ -5,13 +5,22 @@
   right: rem($wrap-padding-mobile);
   z-index: 1;
   background-color: rgba($white, .8);
-  padding: rem(6px) rem(6px) rem(30px);
+  padding: rem(6px) rem(6px) rem(10px);
+
+  &.-up {
+    bottom: rem(95px);
+  }
 
   @media screen and (min-width: 768px) {
     right: rem(30px);
     bottom: rem(40px);
     left: $dashboard-width + 35px;
     transition: .2s ease;
+
+    &.-up {
+      bottom: rem(40px);
+    }
+
 
     .is-dashboard-close & {
       left: rem(30px);
