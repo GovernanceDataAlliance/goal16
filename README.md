@@ -20,6 +20,17 @@ npm start
 
 [Go go go!](http://localhost:4000)
 
+###Important note: 
+
+This project includes a map with a geographic projection different than WebMercator. 
+The new projection is the Equidistant_Cylindrical. (http://spatialreference.org/ref/epsg/3786)
+For this purpose, we set some statments in cartoDB in order to be able to make the geometric transformation. 
+
+There is a chance, minimal, but there is, that if cartoDB updates it system, this projection'd stop working. 
+
+If that happens, you'd only need to run the query you will find here: http://spatialreference.org/ref/epsg/3786/postgis in the cartoDB account to have it working back.
+
+
 
 ## Jekyll
 
