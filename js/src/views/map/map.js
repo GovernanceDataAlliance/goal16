@@ -264,10 +264,16 @@ var MapView = Backbone.View.extend({
   },
 
   _addLayer: function() {
+    var timeOut;
+
     this.layer.addTo(this.map);
     this.layer.setZIndex(100);
 
-    this.$el.removeClass('is-loading -map');
+    clearTimeout(timeOut);
+    timeOut = setTimeout(function(){
+      this.$el.removeClass('is-loading -map');
+    }.bind(this), 400)
+
 
     if (!this.options.legend) {
       this.legend = new MapLegendview();
