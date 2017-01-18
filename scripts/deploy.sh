@@ -1,23 +1,5 @@
 #!/bin/bash
-set -e
-
-git fetch
-
-git checkout master
-
-exists=`git show-ref refs/heads/gh-pages`
-if [ -n "$exists" ]; then
-  git branch -D gh-pages
-fi
-git checkout -b gh-pages
-
-git rebase master
-
-ORIGINAL_NAME="$(git config user.name)"
-ORIGINAL_EMAIL="$(git config user.email)"
-
-git config user.name "Travis CI"
-git config user.email "clara.linos@vizzuality.com"
+git checkout gh-pages
 
 grunt dist
 
@@ -27,8 +9,3 @@ git add -f css/main.css
 git commit -m 'Automatic Travis Build'
 
 git push --force --quiet origin gh-pages:gh-pages
-
-git config user.name $ORIGINAL_NAME
-git config user.email $ORIGINAL_EMAIL
-
-git checkout master
