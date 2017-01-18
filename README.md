@@ -52,6 +52,10 @@ will automatically deploy to Github Pages if they pass. Take a look at
 
 ### Staging
 
+Don't forget to set the correct env var at Gruntfile.js
+- `/goal16` for staging
+- `''` for production
+
 As said, the app is staged on Github Pages automatically, here are some commands to run it manualy
 
 ```
@@ -66,7 +70,7 @@ git push --force --quiet origin gh-pages:gh-pages
 ```
 
 Github Pages handles all the building, etc. for you. [Check it
-out!](http://vizzuality.github.io/GDA-Dashboard)
+out!](http://vizzuality.github.io/goal16)
 
 A note on what this command doing: so that we don't have to constantly commit
 compiled files (like js/bundle.js), we ignore them in Git and then force
