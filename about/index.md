@@ -1,6 +1,6 @@
 ---
 layout: about
-title: About
+title: About us
 page-name: about
 "intro-text": ""
 published: true
