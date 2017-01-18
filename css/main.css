@@ -2072,7 +2072,7 @@ select {
   -ms-flex-align: center;
       align-items: center;
   background-image: url("/img/fullscreenbg.jpg");
-  z-index: 9999999999; }
+  z-index: 2; }
   @media screen and (min-width: 640px) {
     .l-welcome {
       position: fixed;
@@ -2100,7 +2100,7 @@ select {
     margin: auto;
     overflow: auto;
     z-index: 1;
-    padding: 2.1875rem 1.0625rem; }
+    padding: 3.125rem 1.0625rem; }
     .l-welcome .welcome-content h2 {
       color: #fff;
       font-family: "Lora", serif;
@@ -5023,6 +5023,16 @@ select {
     float: left; }
     .c-indicator-name.-map-breadcrumbs:hover {
       color: #073339; }
+
+#google_translate_element {
+  position: relative;
+  z-index: 10; }
+
+.goog-te-gadget-simple {
+  float: right; }
+  @media screen and (min-width: 769px) {
+    .goog-te-gadget-simple {
+      margin-right: 1.25rem; } }
 
 /*
  * States are modes that can change
