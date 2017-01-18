@@ -14,16 +14,17 @@
           <h1 class="c-section-title -light">{{ page.title }}</h1>
           <p class="text text-banner-m">{{ page.intro-text }}</p>
         </div>
-        <div class="l-about-menu">
-          <div class="wrap">
-            <ul>
-              <li><button class="js-about-link" data-section="take-note">Take Note!</button></li>
-              <li><button class="js-about-link" data-section="comments">Comments?</button></li>
-              <li><button class="js-about-link" data-section="we-the-peoples">"We the People's"</button></li>
-              <li><button class="js-about-link" data-section="resources">Resources</button></li>
-              <li><button class="js-about-link" data-section="partners">Partners</button></li>
-            </ul>
-          </div>
+      </div>
+
+      <div class="l-about-menu">
+        <div class="wrap">
+          <ul>
+            <li><button class="js-about-link" data-section="take-note">Take Note!</button></li>
+            <li><button class="js-about-link" data-section="comments">Comments?</button></li>
+            <li><button class="js-about-link" data-section="we-the-peoples">"We the People's"</button></li>
+            <li><button class="js-about-link" data-section="resources">Resources</button></li>
+            <li><button class="js-about-link" data-section="partners">Partners</button></li>
+          </ul>
         </div>
       </div>
 
@@ -35,8 +36,11 @@
         </div>
       </div>
 
-      <div class="l-content -fullscreen">
-        <div id="partners" class="l-grid -partners">
+      <div id="partners" class="l-content -fullscreen -partners">
+        <div class="wrap">
+          <h2 class="c-title-underline">Partners</h2>
+        </div>
+        <div class="l-grid -partners">
           {% assign organizations = site.organizations | sort: 'name' %}
           {% for organization in organizations %}
             <div class="m-card--indexes">

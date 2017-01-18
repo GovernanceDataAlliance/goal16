@@ -2251,7 +2251,6 @@ select {
     display: flex;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    border-top: 0.0625rem solid #e5eaea;
     border-bottom: 0.0625rem solid #e5eaea;
     background-color: #f6faf9; }
   @media screen and (min-width: 640px) {
@@ -2309,6 +2308,9 @@ select {
   .l-content.-fullscreen {
     padding: 0;
     background-color: transparent; }
+  .l-content.-partners {
+    padding-top: 60px;
+    background-color: #f6faf9; }
   .l-content.-compare .wrap {
     padding: 0 0.625rem; }
     @media screen and (min-width: 1024px) {
@@ -2340,31 +2342,31 @@ select {
       align-items: center;
   -ms-flex-pack: center;
       justify-content: center;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 4.375rem;
   background-color: #e5eaea; }
+  @media screen and (min-width: 768px) {
+    .l-about-menu {
+      height: 4.375rem; } }
   .l-about-menu ul {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: justify;
-        justify-content: space-between;
-    -ms-flex-align: center;
-        align-items: center;
     max-width: 100%;
     margin: 0 auto; }
     @media screen and (min-width: 640px) {
       .l-about-menu ul {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+        -ms-flex-align: center;
+            align-items: center;
         max-width: 46rem; } }
     @media screen and (min-width: 1280px) {
       .l-about-menu ul {
         max-width: 80%; } }
-  .l-about-menu li + li {
-    margin-left: 0.625rem; }
-    @media screen and (min-width: 769px) {
+  .l-about-menu li {
+    margin: 20px;
+    float: left; }
+    @media screen and (min-width: 768px) {
       .l-about-menu li + li {
+        margin: 0;
         margin-left: 1.25rem; } }
 
 .m-site-navigation {
@@ -3290,8 +3292,6 @@ select {
   width: 100%;
   padding: 2.5rem 0.9375rem 2.1875rem;
   background-color: #f6faf9; }
-  .m-card--indexes + .m-card--indexes {
-    border-bottom: 0.0625rem solid #e5eaea; }
   .m-card--indexes .index-description {
     display: -ms-flexbox;
     display: flex;
@@ -3346,16 +3346,12 @@ select {
       width: calc(50% - 1px);
       padding: 3.125rem 5.3125rem;
       max-width: 50%;
-      padding: 3.125rem 4.75rem 4.5rem 4.625rem;
-      border-bottom: 0.0625rem solid #e5eaea; }
+      padding: 3.125rem 4.75rem 4.5rem 4.625rem; }
       .m-card--indexes .img {
         height: 2.5rem;
         margin-bottom: 1.75rem; }
-      .m-card--indexes:nth-child(odd) {
-        border-right: 0.0625rem solid #e5eaea; }
       .m-card--indexes:last-child {
         border-bottom: 0;
-        border-right: 0.0625rem solid #e5eaea;
         -ms-flex-pack: start;
             justify-content: flex-start;
         max-width: 50%; } }
