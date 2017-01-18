@@ -10,7 +10,7 @@
   justify-content: center;
   align-items: center;
   background-image: url('#{$baseUrl}/img/fullscreenbg.jpg');
-  z-index: 9999999999;
+  z-index: 2;
 
   @media screen and (min-width: $screen-s) {
     position: fixed;
@@ -36,7 +36,6 @@
     background-color: $bg-veil;
   }
 
-
   .welcome-content {
     position: absolute;
     top: 0;
@@ -46,7 +45,7 @@
     margin: auto;
     overflow: auto;
     z-index: 1;
-    padding: rem(35px) rem(17px);
+    padding: rem(50px) rem(17px);
 
     h2{
       color: $font-color-2;

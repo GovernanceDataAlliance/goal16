@@ -1,0 +1,12 @@
+#google_translate_element {
+  position: relative;
+  z-index: 10;
+}
+
+.goog-te-gadget-simple {
+  float: right;
+
+  @media screen and (min-width: $screen-m) {
+    margin-right: rem(20px);
+  }
+}
