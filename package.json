@@ -23,6 +23,7 @@
     "handlebars": "^4.0.4",
     "jquery": "^2.1.4",
     "lodash": "^3.10.1",
+    "proj4": "^2.3.15",
     "serve-static": "^1.10.0",
     "sinon": "^1.17.2",
     "slick-carousel-browserify": "^1.6.12",

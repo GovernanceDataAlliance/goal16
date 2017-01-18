@@ -39,7 +39,7 @@ var MapView = Backbone.View.extend({
       noWrap: true,
       cartocss: {
         basemap: '#countries{ polygon-pattern-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/goal16/assets/20160817151317p5_green.png); line-color: #eee; line-width: 0.5; line-opacity: 1;}',
-        labels: '@sans: "Open Sans Regular"; @sans_bold: "Open Sans Regular"; @name:"[name]"; @halo_light:#96bf93; @text_light:#e4f2f0; #country_label::countries_labels[zoom>=3][type="countries"] { text-name: @name; text-face-name: @sans; text-size: 11; text-transform: capitalize; text-wrap-width: 50; text-halo-radius: 0.4; text-halo-fill: @halo_light; text-fill: @text_light; text-align:center;  text-clip: false;  text-character-spacing: 1.5; [zoom>=3] { text-size: 14; } [zoom>=4]{ text-size: 16; } [zoom>=6]{ text-size: 16; } } #ne_110m_geography_marine_polys::marine_labels[scalerank = 0][type="marine"]{ text-name: @name; text-face-name: @sans; text-placement: point; text-wrap-width: 50; text-wrap-before: true; text-fill: rgba(128, 147, 151, 0.15); [zoom = 3] { text-size: 16; text-character-spacing: 8; text-line-spacing: 16; } [zoom = 4] { text-size: 16; text-character-spacing: 16; text-line-spacing: 24; } [zoom = 5] { text-size: 16; text-character-spacing: 20; text-line-spacing: 32; } }',
+        labels: '@sans: "Open Sans Semibold"; @sans_bold: "Open Sans Bold";@name:"[name]"; @halo_light:#96bf93; @text_light:#FFFFFF; #country_label::countries_labels[zoom>=3][type="countries"] {text-name: @name;text-face-name: @sans;  text-size: 10; text-transform: capitalize; text-wrap-width: 50; text-halo-radius: 0.85; text-halo-fill: @halo_light; text-fill: @text_light; text-align: center; text-clip: false; text-character-spacing: 2;text-opacity: 1; [zoom<=3] [width<500000]{ text-size: 10; text-name: [code];} [zoom<=4] [width<400000]{ text-size: 12; text-name: [code];}[zoom>=5]{text-size: 14;}[zoom>=6]{ text-size: 16; } [zoom>=7]{ text-size: 18; } } #ne_110m_geography_marine_polys::marine_labels[scalerank = 0][type="marine"]{ text-name: @name; text-face-name: @sans_bold; text-placement: point; text-wrap-width: 50; text-transform: capitalize; text-wrap-before: true; text-fill: rgba(128, 147, 151, 0.15); text-opacity: 1; [zoom = 3] { text-size: 20; text-character-spacing: 8; text-line-spacing: 8; } [zoom = 4] { text-size: 25; text-character-spacing: 16; text-line-spacing: 16; } [zoom = 5] { text-size: 30; text-character-spacing: 20; text-line-spacing: 32; }}',
         indicator: '#score{ polygon-pattern-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/goal16/assets/20160711093427color100.png); line-color: #eee; line-width: 0.5; line-opacity: 1;}',
         target: "@100: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/goal16/assets/20160711134917color100%20%281%29.png); @75: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/goal16/assets/20160711134906color75%20%281%29.png); @50:url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/goal16/assets/20160711134858color50%20%281%29.png); @25: url(http://s3.amazonaws.com/com.cartodb.users-assets.production/production/goal16/assets/20160711134847green25%20%281%29.png); #indicators{ polygon-fill: transparent; line-color: #eee; line-width: 1.5; line-opacity: 1; [ score <= 100] { polygon-pattern-file: @100;} [ score <= 75] { polygon-pattern-file: @75;} [ score <= 50] { polygon-pattern-file: @50;} [ score <= 25] { polygon-pattern-file: @25;}}"
       }
@@ -152,6 +152,7 @@ var MapView = Backbone.View.extend({
 
     this._getBasemapLayer().done(function(){
       this.map.addLayer(this.baseMap);
+      this.baseMap.setZIndex(1);
     }.bind(this));
 
     this._getBasemapLayer('labels').done(function(){
@@ -263,9 +264,16 @@ var MapView = Backbone.View.extend({
   },
 
   _addLayer: function() {
-    this.layer.addTo(this.map);
+    var timeOut;
 
-    this.$el.removeClass('is-loading -map');
+    this.layer.addTo(this.map);
+    this.layer.setZIndex(100);
+
+    clearTimeout(timeOut);
+    timeOut = setTimeout(function(){
+      this.$el.removeClass('is-loading -map');
+    }.bind(this), 400)
+
 
     if (!this.options.legend) {
       this.legend = new MapLegendview();
