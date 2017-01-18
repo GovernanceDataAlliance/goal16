@@ -4,8 +4,6 @@
   {% include head.html %}
 
   <body>
-    <div id="google_translate_element"></div>
-
     <div id="welcome-container" class="l-welcome">
       <div class="welcome-content">
         <h1 class="text-heading-underline">
@@ -14,6 +12,7 @@
         {{ content }}
         <div class="link-container">
           <a href="{{ site.baseurl }}/map" class="c-button -primary">get started</a>
+          <div id="google_translate_element"></div>
         </div>
         <p class="-advise">{{ page.advise }}</p>
       </div>
