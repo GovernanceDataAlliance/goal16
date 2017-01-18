@@ -2,16 +2,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  // position: absolute;
-  // bottom: 0;
-  // left: 0;
-  // right: 0;
-  // transform: translatey(100%);
   background-color: #e5eaea;
 
   @media screen and (min-width: 768px) {
     height: rem(70px);
-    // transform: translatey(0);
   }
 
   ul {
