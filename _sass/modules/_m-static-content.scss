@@ -5,15 +5,16 @@
     line-height: 1.7;
   }
 
-  @media screen and (min-width: $screen-xl) {
-    max-width: $content-width;
-  }
-
   @media screen and (min-width: $screen-s) {
     width: 100%;
     max-width: rem(736px);
     margin: 0 auto;
   }
+
+  @media screen and (min-width: $screen-xl) {
+    max-width: $content-width;
+  }
+
   // Links, paragraphs
   p, a, h6 {
     font-family: $font-family-primary;
@@ -24,10 +25,6 @@
     @media screen and (min-width: $screen-s) {
       font-size: $font-size-normal;
       line-height: 1.75;
-    }
-
-    @media screen and (min-width: $screen-xl) {
-
     }
   }
 

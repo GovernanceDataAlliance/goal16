@@ -3,7 +3,7 @@
   {% include head.html %}
   <body>
     {% include icons.html %}
-    <div class="l-main-container">
+    <div class="l-main-container" id="l-about">
       {% include header.html %}
 
       <div class="l-banner -section-2 -about -topsection-about">
@@ -13,6 +13,17 @@
         <div class="wrap">
           <h1 class="c-section-title -light">{{ page.title }}</h1>
           <p class="text text-banner-m">{{ page.intro-text }}</p>
+        </div>
+        <div class="l-about-menu">
+          <div class="wrap">
+            <ul>
+              <li><button class="js-about-link" data-section="take-note">Take Note!</button></li>
+              <li><button class="js-about-link" data-section="comments">Comments?</button></li>
+              <li><button class="js-about-link" data-section="we-the-peoples">"We the People's"</button></li>
+              <li><button class="js-about-link" data-section="resources">Resources</button></li>
+              <li><button class="js-about-link" data-section="partners">Partners</button></li>
+            </ul>
+          </div>
         </div>
       </div>
 

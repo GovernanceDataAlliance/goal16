@@ -1,0 +1,37 @@
+.l-about-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: rem(70px);
+  background-color: #e5eaea;
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    margin: 0 auto;
+
+    @media screen and (min-width: $screen-s) {
+      max-width: rem(736px);
+    }
+
+    @media screen and (min-width: $screen-xl) {
+      max-width: $content-width;
+    }
+  }
+
+  li {
+    & + li {
+      margin-left: rem(10px);
+
+      @media screen and (min-width: $screen-m) {
+        margin-left: rem(20px);
+      }
+    }
+  }
+}

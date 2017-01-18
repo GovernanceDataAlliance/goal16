@@ -2333,6 +2333,40 @@ select {
   background-color: #f6faf9;
   border-top: 0.0625rem solid #e5eaea; }
 
+.l-about-menu {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4.375rem;
+  background-color: #e5eaea; }
+  .l-about-menu ul {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    -ms-flex-align: center;
+        align-items: center;
+    max-width: 100%;
+    margin: 0 auto; }
+    @media screen and (min-width: 640px) {
+      .l-about-menu ul {
+        max-width: 46rem; } }
+    @media screen and (min-width: 1280px) {
+      .l-about-menu ul {
+        max-width: 80%; } }
+  .l-about-menu li + li {
+    margin-left: 0.625rem; }
+    @media screen and (min-width: 769px) {
+      .l-about-menu li + li {
+        margin-left: 1.25rem; } }
+
 .m-site-navigation {
   padding-left: 1rem;
   padding-right: 1rem; }
@@ -3536,14 +3570,14 @@ select {
   max-width: 100%; }
   .m-static-content > .visible-text {
     line-height: 1.7; }
-  @media screen and (min-width: 1280px) {
-    .m-static-content {
-      max-width: 80%; } }
   @media screen and (min-width: 640px) {
     .m-static-content {
       width: 100%;
       max-width: 46rem;
       margin: 0 auto; } }
+  @media screen and (min-width: 1280px) {
+    .m-static-content {
+      max-width: 80%; } }
   .m-static-content p, .m-static-content a, .m-static-content h6 {
     font-family: "Merriweather Sans", sans-serif;
     font-size: 14px;

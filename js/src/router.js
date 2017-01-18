@@ -9,6 +9,7 @@ var ViewManager = require('./lib/view_manager.js'),
   DashboardView = require('./views/map/dashboard.js'),
   CompareView = require('./views/compare/compare.js'),
   DataView = require('./views/data/data.js'),
+  AboutView = require('./views/about/about.js'),
   CountriesListView = require('./views/countries/countries-list/countries.js'),
   CountryView = require('./views/countries/country/country.js');
   InfowindowView = require('./views/common/infowindow.js');
@@ -28,7 +29,8 @@ var Router = Backbone.Router.extend({
     "map(/)(?layerType=:type)(&layer=:layer)(&zoom=:zoom)(&center=:center)": "map",
     "countries(/)(?iso=:iso)": "countries",
     "compare(/)": "compare",
-    "data(/)(?indicator=:indicator)": "data"
+    "data(/)(?indicator=:indicator)": "data",
+    "about(/)": "about"
   },
 
   initialize: function() {
@@ -189,6 +191,17 @@ var Router = Backbone.Router.extend({
 
     this.viewManager.showView('data');
   },
+
+  // ABOUT
+  about: function() {
+    if (!this.viewManager.hasView('about')) {
+      this.viewManager.addView('about', AboutView);
+    }
+
+    view = this.viewManager.getView('about');
+
+    this.viewManager.showView('about');
+  }
 
 });
 

@@ -33,10 +33,12 @@ Please send your thoughts to [SDG16DataInitiative@gmail.com](mailto:SDG16DataIni
 
 ___
 
+
 ## "We the People's" 
 "We the People's" are the celebrated opening words of the UN Charter. It is "We the People's" who are embarking today on the road to 2030. Our journey will involve Governments as well as Parliaments, the UN system and other international institutions, local authorities, indigenous peoples, civil society, business and the private sector, the scientific and academic community – and all people. Millions have already engaged with, and will own, this Agenda. It is an Agenda of the people, by the people, and for the people – and this, we believe, will ensure its success.” - [Transforming our world: the 2030 Agenda for Sustainable Development](https://sustainabledevelopment.un.org/post2015/transformingourworld)
 
 ___
+
 
 ## Resources
 
@@ -58,4 +60,9 @@ Reports:
 + TAP Network. "Goal 16 Advocacy Toolkit". [https://sustainabledevelopment.un.org/content/documents/9935TAP%20Network%20Goal%2016%20Advocacy%20Toolkit.pdf](https://sustainabledevelopment.un.org/content/documents/9935TAP%20Network%20Goal%2016%20Advocacy%20Toolkit.pdf){:target="_blank"}
 + European Center for Development Policy Management. "The Challenge of Measuring SDG 16: What role for African Region Frameworks". [http://ecdpm.org/wp-content/uploads/DP175-Challenge-Measuring-SDG16-May-2015.pdf](http://ecdpm.org/wp-content/uploads/DP175-Challenge-Measuring-SDG16-May-2015.pdf){:target="_blank"}
 + Safeworld. "Greater than the sum of our parts: Global partnership for Goal 16". [http://www.saferworld.org.uk/resources/view-resource/1057-greater-than-the-sum-of-our-parts-global-partnerships-for-goal-16](http://www.saferworld.org.uk/resources/view-resource/1057-greater-than-the-sum-of-our-parts-global-partnerships-for-goal-16){:target="_blank"}
+
+___
+
+
+## Partners
  
