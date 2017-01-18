@@ -38,6 +38,11 @@
     background-color: transparent;
   }
 
+  &.-partners {
+    padding-top: 60px;
+    background-color: $color-6;
+  }
+
   &.-compare {
     .wrap {
       padding: 0 rem(10px);

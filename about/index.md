@@ -33,5 +33,32 @@ Please send your thoughts to [SDG16DataInitiative@gmail.com](mailto:SDG16DataIni
 
 ___
 
+
 ## "We the People's" 
 "We the People's" are the celebrated opening words of the UN Charter. It is "We the People's" who are embarking today on the road to 2030. Our journey will involve Governments as well as Parliaments, the UN system and other international institutions, local authorities, indigenous peoples, civil society, business and the private sector, the scientific and academic community – and all people. Millions have already engaged with, and will own, this Agenda. It is an Agenda of the people, by the people, and for the people – and this, we believe, will ensure its success.” - [Transforming our world: the 2030 Agenda for Sustainable Development](https://sustainabledevelopment.un.org/post2015/transformingourworld)
+
+___
+
+
+## Resources
+
+Websites:
+
++ Global Partnership for Sustainable Development Data. [http://www.data4sdgs.org/](http://www.data4sdgs.org/){:target="_blank"}
++ SDG Indicators. [http://unstats.un.org/sdgs/](http://unstats.un.org/sdgs/){:target="_blank"}
++ The World Bank. Sustainable Development Goals. [http://data.worldbank.org/data-catalog/sustainable-development-goals](http://data.worldbank.org/data-catalog/sustainable-development-goals){:target="_blank"}
++ TAP Network. SDG (Goal 16) Indicators. [http://tapnetwork2030.org/our-work/sdg-goal-16-indicators/](http://tapnetwork2030.org/our-work/sdg-goal-16-indicators/){:target="_blank"}
+ 
+Blogs:
+
++ Center for Global Development. SDG Indicators: Serius Gaps abound data availability. [http://www.cgdev.org/blog/sdg-indicators-serious-gaps-abound-data-availability](http://www.cgdev.org/blog/sdg-indicators-serious-gaps-abound-data-availability){:target="_blank"}
++ Safeworld. Peaceful approaches to global challenges. [http://www.saferworld.org.uk/news-and-views/comment/223-peaceful-approaches-to-global-challenges-on-international-day-of-peace-2016](http://www.saferworld.org.uk/news-and-views/comment/223-peaceful-approaches-to-global-challenges-on-international-day-of-peace-2016){:target="_blank"}
+  
+Reports:
+
++ The Institute for Economics and Peace. "From now to 2030: What is neede to measure Goal 16". [http://economicsandpeace.org/wp-content/uploads/2016/09/Goal16_2016_webfile.pdf](http://economicsandpeace.org/wp-content/uploads/2016/09/Goal16_2016_webfile.pdf){:target="_blank"}
++ TAP Network. "Goal 16 Advocacy Toolkit". [https://sustainabledevelopment.un.org/content/documents/9935TAP%20Network%20Goal%2016%20Advocacy%20Toolkit.pdf](https://sustainabledevelopment.un.org/content/documents/9935TAP%20Network%20Goal%2016%20Advocacy%20Toolkit.pdf){:target="_blank"}
++ European Center for Development Policy Management. "The Challenge of Measuring SDG 16: What role for African Region Frameworks". [http://ecdpm.org/wp-content/uploads/DP175-Challenge-Measuring-SDG16-May-2015.pdf](http://ecdpm.org/wp-content/uploads/DP175-Challenge-Measuring-SDG16-May-2015.pdf){:target="_blank"}
++ Safeworld. "Greater than the sum of our parts: Global partnership for Goal 16". [http://www.saferworld.org.uk/resources/view-resource/1057-greater-than-the-sum-of-our-parts-global-partnerships-for-goal-16](http://www.saferworld.org.uk/resources/view-resource/1057-greater-than-the-sum-of-our-parts-global-partnerships-for-goal-16){:target="_blank"}
+
+ 
