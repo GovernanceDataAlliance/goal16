@@ -118,7 +118,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('envVar', function (env) {
       //This task will add the base url to css files when needed.
-      var baseUrl = env === 'dist' ? '' : '';
+      var baseUrl = env === 'dist' ? 'goal16' : '';
       grunt.file.write('_sass/_env.scss', '$baseUrl:"' + baseUrl + '";');
   });
 
