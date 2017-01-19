@@ -3176,6 +3176,42 @@ select {
   background-color: white;
   box-shadow: 0 0 3.75rem 0 rgba(7, 56, 35, 0.1); }
 
+.m-year-selector {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex: 1 1 100%;
+      flex: 1 1 100%;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: center;
+      justify-content: center; }
+  .m-year-selector + .m-year-selector {
+    margin-top: 0.625rem; }
+    @media screen and (min-width: 640px) {
+      .m-year-selector + .m-year-selector {
+        margin-top: 0;
+        margin-left: 1.25rem; } }
+  @media screen and (min-width: 640px) {
+    .m-year-selector {
+      max-width: 23.5%; } }
+  @media screen and (min-width: 1024px) {
+    .m-year-selector {
+      max-width: 10rem; }
+      .m-year-selector.-compare {
+        max-width: 23.5%; } }
+  .m-year-selector .selector-literal {
+    display: none;
+    margin-right: 0.625rem;
+    font-size: 11px; }
+    @media screen and (min-width: 800px) {
+      .m-year-selector .selector-literal {
+        display: inline-block; } }
+  @media screen and (min-width: 768px) {
+    .m-year-selector .selector-wrapper {
+      width: 23.33%; }
+      .m-year-selector .selector-wrapper .btn-drop-down {
+        margin: 0.75rem 6%; } }
+
 .m-aside-compare .image-compare-banner {
   position: relative;
   background-image: url("/img/crosseling/crosseling-compare.jpg");
