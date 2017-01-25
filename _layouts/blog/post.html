@@ -36,7 +36,14 @@
             {{ page.author }}
           </span>
         </div>
+      </div>
 
+      <div class="l-toolbar -blog -center">
+        <div class="wrap">
+
+          {% include modules/share_module.html %}
+
+        </div>
       </div>
 
       <div class="l-post">
@@ -61,20 +68,10 @@
               {% endif %}
             </div>
           </div>
-
-          <div class="m-controls -full -centered">
-            <button class="js--view-share btn">
-              <svg class="icon -regular">
-                <use xlink:href="#icon-share"></use>
-              </svg>
-              <span class="button-literal">share</span>
-            </button>
-          </div>
-
         </div>
       </div>
 
-      {% include modules/tag_cloud.html %}
+      <!-- {% include modules/tag_cloud.html %} -->
 
       {% include footer.html %}
 

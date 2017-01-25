@@ -31,6 +31,14 @@ $sections-padding: .5rem .5rem .5rem 0;
     color: inherit;
   }
 
+  .c-title-underline {
+    @media screen and (min-width: $screen-m) {
+      max-width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
   //  .properties {
   //   display: flex; display: -ms-box;
   //   flex-direction: column;

@@ -45,12 +45,7 @@
             </div>
           </div>
 
-          <button class="js--view-share btn">
-            <svg class="icon -regular">
-              <use xlink:href="#icon-share"></use>
-            </svg>
-            <span class="button-literal">share</span>
-          </button>
+          {% include modules/share_module.html %}
 
         </div>
       </div>
@@ -71,21 +66,9 @@
            </div>
          {% endfor %}
 
-
-      <div class="l-toolbar -footer">
-        <div class="wrap">
-          <div class="c-share">
-            <button class="js--view-share btn">
-              <svg class="icon -regular">
-                <use xlink:href="#icon-share"></use>
-              </svg>
-              <span class="button-literal">share</span>
-            </button>
-          </div>
-        </div>
       </div>
 
-      {% include modules/tag_cloud.html %}
+      <!-- {% include modules/tag_cloud.html %} -->
 
       {% include footer.html %}
 
