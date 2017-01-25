@@ -3212,6 +3212,106 @@ select {
       .m-year-selector .selector-wrapper .btn-drop-down {
         margin: 0.75rem 6%; } }
 
+.m-post .title h3, .-list .m-post .title h3 a {
+  font-family: "Merriweather Sans", sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  color: #073339;
+  font-weight: 500; }
+  @media screen and (min-width: 768px) {
+    .m-post .title h3, .-list .m-post .title h3 a {
+      font-size: 1.875rem; } }
+
+.m-post {
+  padding: 0;
+  text-align: center;
+  padding: 4.375rem 0; }
+  .m-post a {
+    font-size: inherit;
+    color: inherit; }
+  .m-post .details {
+    margin-bottom: 1.5625rem; }
+    @media screen and (min-width: 769px) {
+      .m-post .details {
+        margin-bottom: 0.625rem; } }
+    .m-post .details .author {
+      font-family: "Merriweather Sans", sans-serif;
+      font-size: 0.75rem;
+      line-height: 1;
+      color: #19aec4; }
+    .m-post .details .date {
+      font-family: "Merriweather Sans", sans-serif;
+      font-size: 0.75rem;
+      line-height: 1;
+      color: #809497; }
+  .m-post .title {
+    margin-bottom: 1.5625rem; }
+    .m-post .title h3 {
+      position: relative;
+      display: inline-block;
+      font-size: 1.5rem; }
+    .m-post .title.-underlined {
+      padding-bottom: 1.5rem;
+      position: relative; }
+      .m-post .title.-underlined:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 3rem;
+        height: 3px;
+        background-color: #156975; }
+    @media screen and (min-width: 769px) {
+      .m-post .title {
+        margin-bottom: 1.875rem; } }
+    .m-post .title h3 {
+      font-size: 1.875rem; }
+  .m-post .image {
+    height: 24rem;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    margin: 1.25rem 0; }
+    .m-post .image::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(66, 53, 43, 0.45); }
+    @media screen and (min-width: 769px) {
+      .m-post .image {
+        margin: 3.125rem 0 1.875rem; } }
+  @media screen and (min-width: 769px) {
+    .m-post .content {
+      max-width: 80%;
+      margin: 0 auto; } }
+  .-list .m-post .title h3 {
+    line-height: inherit;
+    font-size: inherit; }
+    .-list .m-post .title h3 a {
+      color: #19aec4;
+      text-decoration: none; }
+      .-list .m-post .title h3 a:hover {
+        color: #156975; }
+  .m-post.-light .properties .category,
+  .m-post.-light .details .author,
+  .m-post.-light .details .date,
+  .m-post.-light .title h3 a,
+  .m-post.-light .content p {
+    color: #fff; }
+  .m-post.-light .title a:hover {
+    color: #fff !important;
+    text-decoration: underline; }
+  @media screen and (min-width: 769px) {
+    .m-post .properties {
+      -ms-flex-direction: row;
+          flex-direction: row;
+      -ms-flex-align: center;
+          -ms-grid-row-align: center;
+          align-items: center; } }
+
 .m-aside-compare .image-compare-banner {
   position: relative;
   background-image: url("/img/crosseling/crosseling-compare.jpg");

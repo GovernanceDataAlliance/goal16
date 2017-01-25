@@ -11,3 +11,10 @@
     }
   }
 }
+
+
+.l-post {
+  &.-list {
+    border-bottom: rem(1) solid #e5eaea;
+  }
+}
