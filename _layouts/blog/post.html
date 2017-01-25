@@ -23,6 +23,20 @@
             <li> {{ page.title }} </li>
           </ul>
         </div>
+        <div class="wrap">
+          <h1 class="c-section-title -light">
+            {{page.title}}
+          </h1>
+        </div>
+        <div class="details">
+          <span class="date">
+            <time>{{ page.date | date: '%d %b, %Y'}}</time> -
+          </span>
+          <span class="author">
+            {{ page.author }}
+          </span>
+        </div>
+
       </div>
 
       <div class="l-post">
