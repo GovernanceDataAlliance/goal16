@@ -12,7 +12,6 @@ var BlogView = Backbone.View.extend({
   },
 
   initialize: function() {
-
     this.FunctionHelper = FunctionHelper;
 
     if (! !!$('body').hasClass('is-post-page')) {
@@ -26,6 +25,9 @@ var BlogView = Backbone.View.extend({
     new CategorySelector({
       el: '#categorySelector'
     });
+  },
+
+  show: function() {
   }
 
 });

@@ -208,7 +208,7 @@ var Router = Backbone.Router.extend({
   // BLOG
   blog: function() {
     if (!this.viewManager.hasView('blog')) {
-      this.viewManager.addView('blog', AboutView);
+      this.viewManager.addView('blog', BlogView);
     }
 
     view = this.viewManager.getView('blog');

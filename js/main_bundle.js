@@ -1162,7 +1162,7 @@ var Router = Backbone.Router.extend({
   // BLOG
   blog: function() {
     if (!this.viewManager.hasView('blog')) {
-      this.viewManager.addView('blog', AboutView);
+      this.viewManager.addView('blog', BlogView);
     }
 
     view = this.viewManager.getView('blog');
@@ -1298,7 +1298,6 @@ var BlogView = Backbone.View.extend({
   },
 
   initialize: function() {
-
     this.FunctionHelper = FunctionHelper;
 
     if (! !!$('body').hasClass('is-post-page')) {
@@ -1312,6 +1311,9 @@ var BlogView = Backbone.View.extend({
     new CategorySelector({
       el: '#categorySelector'
     });
+  },
+
+  show: function() {
   }
 
 });
@@ -1400,7 +1402,6 @@ var CategorySelector = Backbone.View.extend({
   },
 
   onChangeSelect: function(e) {
-    
     var category = e.currentTarget.value;
     window.location.href = category.length > 0 ?
        'categories#' + category :  'categories';
