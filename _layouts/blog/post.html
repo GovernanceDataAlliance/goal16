@@ -23,6 +23,27 @@
             <li> {{ page.title }} </li>
           </ul>
         </div>
+        <div class="wrap">
+          <h1 class="c-section-title -light">
+            {{page.title}}
+          </h1>
+        </div>
+        <div class="details">
+          <span class="date">
+            <time>{{ page.date | date: '%d %b, %Y'}}</time> -
+          </span>
+          <span class="author">
+            {{ page.author }}
+          </span>
+        </div>
+      </div>
+
+      <div class="l-toolbar -blog -center">
+        <div class="wrap">
+
+          {% include modules/share_module.html %}
+
+        </div>
       </div>
 
       <div class="l-post">
@@ -47,20 +68,10 @@
               {% endif %}
             </div>
           </div>
-
-          <div class="m-controls -full -centered">
-            <button class="js--view-share btn">
-              <svg class="icon -regular">
-                <use xlink:href="#icon-share"></use>
-              </svg>
-              <span class="button-literal">share</span>
-            </button>
-          </div>
-
         </div>
       </div>
 
-      {% include modules/tag_cloud.html %}
+      <!-- {% include modules/tag_cloud.html %} -->
 
       {% include footer.html %}
 
@@ -68,7 +79,7 @@
     <script>
       var SITEURL = '{{ site.baseurl }}' || null;
     </script>
-    <script src="{{site.baseurl}}/js/blog_bundle.js"></script>
+    <script src="{{ site.baseurl }}/js/main_bundle.js"></script>
   </body>
 
 </html>

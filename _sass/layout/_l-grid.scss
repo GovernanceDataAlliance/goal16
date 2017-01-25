@@ -1,17 +1,20 @@
 .l-grid {
   @extend %clearfix;
   margin: 0 auto;
+
   &.is-dashboard-layout {
     background-color: $beige-light;
   }
+
   &.-partners {
     display: flex;
     flex-wrap: wrap;
 
-    border-top: rem(1px) solid $border-3;
+    // border-top: rem(1px) solid $border-3;
     border-bottom: rem(1px) solid $border-3;
     background-color: $color-6;
   }
+
   @media screen and (min-width: $screen-s) {
     display: flex;
     flex-direction: row;

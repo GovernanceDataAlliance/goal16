@@ -5,7 +5,11 @@ description: Goal16 dashboard
 
 url: "http://www.sdg16.org/"
 
-baseurl: '/goal16'
+# Develop and Production
+baseurl: ''
+
+# Staging
+# baseurl: '/goal16'
 
 gems: [jekyll-paginate]
 paginate: 2
