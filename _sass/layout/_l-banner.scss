@@ -56,4 +56,17 @@ $regions: 'africa', 'americas', 'asia', 'europe', 'oceania';
       margin:rem(33px) auto 0;
     }
   }
+
+  &.-section-3 {
+    .details {
+      position: absolute;
+      bottom: rem(40px);
+      left: 0;
+      right: 0;
+      text-align: center;
+
+      font-size: rem(12px);
+      color: $font-color-2;
+    }
+  }
 }

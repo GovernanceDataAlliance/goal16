@@ -10,6 +10,7 @@ var ViewManager = require('./lib/view_manager.js'),
   CompareView = require('./views/compare/compare.js'),
   DataView = require('./views/data/data.js'),
   AboutView = require('./views/about/about.js'),
+  BlogView = require('./views/blog/blog.js'),
   CountriesListView = require('./views/countries/countries-list/countries.js'),
   CountryView = require('./views/countries/country/country.js');
   InfowindowView = require('./views/common/infowindow.js');
@@ -30,7 +31,8 @@ var Router = Backbone.Router.extend({
     "countries(/)(?iso=:iso)": "countries",
     "compare(/)": "compare",
     "data(/)(?indicator=:indicator)": "data",
-    "about(/)": "about"
+    "about(/)": "about",
+    "blog(/)": "blog"
   },
 
   initialize: function() {
@@ -201,6 +203,17 @@ var Router = Backbone.Router.extend({
     view = this.viewManager.getView('about');
 
     this.viewManager.showView('about');
+  },
+
+  // BLOG
+  blog: function() {
+    if (!this.viewManager.hasView('blog')) {
+      this.viewManager.addView('blog', BlogView);
+    }
+
+    view = this.viewManager.getView('blog');
+
+    this.viewManager.showView('blog');
   }
 
 });

@@ -1,14 +1,10 @@
 <div class="m-post m-markdown">
 
-  <h1 class="c-section-title">
-    {{ page.title }}
-  </h1>
-
   {% unless page.image == '' %}
   <div class="image" style="background-image:url({{site.baseurl}}/img/blog/{{page.image}})"></div>
   {%endunless%}
 
-  <div class="properties">
+  <!-- <div class="properties">
     {% unless page.category == nil %}
     <a class="category" href="{{site.baseurl}}/blog/categories#{{ page.category }}"> {{page.category}} </a>
     {%endunless%}
@@ -19,16 +15,7 @@
       {% endfor %}
     </div>
     {%endunless%}
-  </div>
-
-  <div class="details">
-    <span class="author">
-      Author: {{ page.author }}
-    </span>
-    <span class="date">
-      <time>{{ page.date | date: '%B %d, %Y'}}</time>
-    </span>
-  </div>
+  </div> -->
 
   <div class="content">
     {{ content }}
