@@ -42,6 +42,25 @@
           </div>
           {% endunless %}
 
+          <div class="c-selector">
+            <div class="btn-drop-down" id="dateSelector" data-url="{{ site.baseurl }}">
+              <select>
+                <option value="">All dates</option>
+                {% for post in site.posts %}
+                  {% assign currentdate = post.date | date: "%B, %Y" %}
+                  {% if currentdate != date %}
+
+                    <option value="{{ post.date | date: '%B%Y' }}">{{ currentdate }}</option>
+
+                    {% assign date = currentdate %}
+                  {% endif %}
+                {% endfor %}
+              </select>
+            </div>
+          </div>
+
+          <button class="c-button -primary -small" id="js--share" type="button" name="share"> share</button>
+
         </div>
       </div>
 

@@ -26,6 +26,10 @@ $sections-padding: .5rem .5rem .5rem 0;
   text-align: center;
   padding: rem(70px) 0;
 
+  &.-list {
+    text-align: center;
+  }
+
   a {
     font-size: inherit;
     color: inherit;
@@ -131,6 +135,7 @@ $sections-padding: .5rem .5rem .5rem 0;
   }
 
   .content {
+
     @media screen and (min-width: $screen-m) {
       max-width: 80%;
       margin: 0 auto;

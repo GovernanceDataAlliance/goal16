@@ -1868,15 +1868,45 @@ select {
     border-bottom: 0.0625rem solid #e5eaea; }
 
 .l-blog {
+  position: relative;
   border-left: 0;
-  border-right: 0; }
+  border-right: 0;
+  min-height: 18.75rem; }
+  .l-blog:after {
+    content: "sorry, no post for your -webkit-filter options", "sorry, no post for your filter options";
+    content: "sorry, no post for your filter options";
+    display: block;
+    position: absolute;
+    top: 100px;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    right: 0;
+    color: #809497;
+    font-size: 1.6875rem; }
   .l-blog .blog-filter {
     display: none; }
     .l-blog .blog-filter.-active {
       display: block; }
+  .l-blog.-filtering-cat .l-post {
+    display: none; }
+    .l-blog.-filtering-cat .l-post.-cat-active {
+      display: block; }
+  .l-blog.-filtering-date .l-post {
+    display: none; }
+    .l-blog.-filtering-date .l-post.-date-active {
+      display: block; }
+  .l-blog.-filtering-date.-filtering-cat .l-post {
+    display: none; }
+    .l-blog.-filtering-date.-filtering-cat .l-post.-date-active.-cat-active {
+      display: block; }
 
-.l-post.-list {
-  border-bottom: 0.0625rem solid #e5eaea; }
+.l-post {
+  position: relative;
+  z-index: 1;
+  background-color: #fff; }
+  .l-post.-list {
+    border-bottom: 0.0625rem solid #e5eaea; }
 
 .l-selectors {
   padding: 1.875rem 0;
@@ -2891,14 +2921,15 @@ select {
       color: #073339;
       letter-spacing: 0.01875rem; }
     .m-markdown > .content h2 {
+      text-align: center;
       font-size: 1.875rem;
       line-height: 2.3125rem; }
     .m-markdown > .content h3 {
-      font-size: 0.75rem;
-      text-transform: uppercase; }
-    .m-markdown > .content h4 {
       font-size: 1.25rem;
       line-height: 2.6875rem; }
+    .m-markdown > .content h4 {
+      font-size: 0.75rem;
+      text-transform: uppercase; }
     .m-markdown > .content h5 {
       font-weight: 400; }
     .m-markdown > .content h6 {
@@ -3260,6 +3291,8 @@ select {
   padding: 0;
   text-align: center;
   padding: 4.375rem 0; }
+  .m-post.-list {
+    text-align: center; }
   .m-post a {
     font-size: inherit;
     color: inherit; }
