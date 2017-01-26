@@ -32,7 +32,7 @@ var Router = Backbone.Router.extend({
     "compare(/)": "compare",
     "data(/)(?indicator=:indicator)": "data",
     "about(/)": "about",
-    "blog(/)": "blog"
+    "blog(/)(*actions)": "blog"
   },
 
   initialize: function() {
@@ -147,12 +147,6 @@ var Router = Backbone.Router.extend({
     view.status.set(params);
 
     this.viewManager.showView('compare');
-
-    // set a valid function to avoid more than X params
-    // if (!view.status.isValid()) {
-    //   return;
-    // }
-
   },
 
   // Receives the status (Backbone Model only) of the current view.
