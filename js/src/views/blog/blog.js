@@ -2,6 +2,7 @@ var $ = require('jquery'),
   Backbone = require('backbone');
 
 var CategorySelector = require('./category_selector.js');
+var DateSelector = require('./date_selector.js');
 var ShareWindowView = require('../common/share_window.js');
 var FunctionHelper = require('../../helpers/functions.js');
 
@@ -18,6 +19,7 @@ var BlogView = Backbone.View.extend({
 
     if (! !!$('body').hasClass('is-post-page')) {
       this._category();
+      this._year();
     };
 
     this.shareOptions = {
@@ -34,6 +36,12 @@ var BlogView = Backbone.View.extend({
   _category: function() {
     new CategorySelector({
       el: '#categorySelector'
+    });
+  },
+
+  _year: function() {
+    new DateSelector({
+      el: '#dateSelector'
     });
   },
 
