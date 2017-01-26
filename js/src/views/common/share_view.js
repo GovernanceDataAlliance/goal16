@@ -15,7 +15,7 @@ var ShareView = infoWindowView.extend({
     'click .btn-copy': '_copyUrl'
   },
 
-  initialize: function() {},
+  initialize: function(opt) {},
 
   _copyUrl: function() {
     var $parent = this.$el.find('.content.active'),
@@ -33,9 +33,10 @@ var ShareView = infoWindowView.extend({
     }
   },
 
-  render: function() {
+  render: function(opt) {
     this.$el.append(this.template({
-      link: window.location.href
+      link: window.location.href,
+      blog: this.isBlog
     }));
   }
 
