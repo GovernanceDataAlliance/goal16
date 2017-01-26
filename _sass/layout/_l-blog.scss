@@ -1,7 +1,22 @@
 .l-blog {
+  position: relative;
   @extend %l-main-container;
   border-left: 0;
   border-right: 0;
+  min-height: rem(300px);
+
+  &:after {
+    content: "sorry, no post for your filter options";
+    display: block;
+    position: absolute;
+    top: 100px;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    right: 0;
+    color: $font-color-7;
+    font-size: rem(27px);
+  }
 
   .blog-filter {
     display: none;
@@ -10,10 +25,47 @@
       display: block;
     }
   }
+
+  &.-filtering-cat {
+
+    .l-post {
+      display: none;
+
+      &.-cat-active {
+        display: block;
+      }
+    }
+  }
+
+  &.-filtering-date {
+
+    .l-post {
+      display: none;
+
+      &.-date-active {
+        display: block;
+      }
+    }
+  }
+
+  &.-filtering-date.-filtering-cat {
+
+    .l-post {
+      display: none;
+
+      &.-date-active.-cat-active {
+        display: block;
+      }
+    }
+  }
 }
 
 
 .l-post {
+  position: relative;
+  z-index: 1;
+  background-color: $white;
+
   &.-list {
     border-bottom: rem(1px) solid #e5eaea;
   }
