@@ -39,17 +39,17 @@ var CategorySelector = Backbone.View.extend({
 
   setActive: function(cat) {
     if (cat === 'all' || cat === '' || !cat) {
-      this.blog.removeClass('-filtering-cat');
+      this.blog.removeClass('-filtering-date');
       this.posts.each(function() {
-        $(this).removeClass('-cat-active');
+        $(this).removeClass('-date-active');
       })
     } else {
-      this.blog.addClass('-filtering-cat');
+      this.blog.addClass('-filtering-date');
       this.posts.each(function(index, category) {
-        if ($(this).data('category') === cat){
-          $(this).addClass('-cat-active');
+        if ($(this).data('date') === cat){
+          $(this).addClass('-date-active');
         } else {
-          $(this).removeClass('-cat-active');
+          $(this).removeClass('-date-active');
         }
       });
     }
