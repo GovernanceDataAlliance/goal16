@@ -119,6 +119,11 @@ var ShareWindowView = infoWindowView.extend({
       $('.share-toolbar').addClass('-no-print');
     }
 
+    if (this.options.onlyShare) {
+       $('.share-toolbar').addClass('is-hidden');
+       $('.title').css({'display': 'block'});
+    }
+
     this.avoidScroll();
 
     // Share view by default
