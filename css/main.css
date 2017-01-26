@@ -1402,14 +1402,18 @@ select {
   .l-toolbar.-blog {
     border: 0; }
     .l-toolbar.-blog .wrap {
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
       min-height: 2.5rem; }
       .l-toolbar.-blog .wrap .btn {
         width: auto; }
         @media screen and (min-width: 768px) {
           .l-toolbar.-blog .wrap .btn {
             margin-left: auto; } }
+      @media screen and (min-width: 768px) {
+        .l-toolbar.-blog .wrap {
+          -ms-flex-direction: row;
+              flex-direction: row; } }
     .l-toolbar.-blog.-center .wrap {
       -ms-flex-pack: center;
           justify-content: center; }
