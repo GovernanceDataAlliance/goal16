@@ -3064,7 +3064,8 @@ select {
         font-size: 0.75rem; } }
 
 .m-share-window h2 {
-  display: none; }
+  display: none;
+  text-align: center; }
 .m-share-window .share-toolbar {
   width: 100%; }
   .m-share-window .share-toolbar svg {

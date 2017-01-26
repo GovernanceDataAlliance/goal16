@@ -986,7 +986,7 @@ var Router = Backbone.Router.extend({
     "compare(/)": "compare",
     "data(/)(?indicator=:indicator)": "data",
     "about(/)": "about",
-    "blog(/)": "blog"
+    "blog(/)(*actions)": "blog"
   },
 
   initialize: function() {
@@ -1101,12 +1101,6 @@ var Router = Backbone.Router.extend({
     view.status.set(params);
 
     this.viewManager.showView('compare');
-
-    // set a valid function to avoid more than X params
-    // if (!view.status.isValid()) {
-    //   return;
-    // }
-
   },
 
   // Receives the status (Backbone Model only) of the current view.
@@ -1196,7 +1190,7 @@ module.exports = "<input id=\"searchMap\" placeholder=\"Search country\" type=\"
 module.exports = "<div class=\"c-share no-printable\">\n  <div class=\"content active\" id=\"share-link\">\n    <p>Copy the link below to share it</p>\n    <div class=\"link-box\">\n      <input class=\"url\" value=\"{{link}}\" />\n      <div class=\"c-button -primary btn-copy\">Copy</div>\n    </div>\n  </div>\n\n  <div class=\"m-social-share -share-window\">\n    <ul>\n      <li>\n        <div class=\"btn-social twitter\">\n          <a class=\"icon -twitter\" href=\"https://twitter.com/share?url={{link}}\" target=\"_blank\">\n            <svg class=\"icon\">\n              <use xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"#icon-twitter\"></use>\n            </svg>\n          </a>\n        </div>\n      </li>\n    </ul>\n  </div>\n</div>\n";
 
 },{}],46:[function(require,module,exports){
-module.exports = "<div class=\"m-share-window\">\n  <h2>Share</h2>\n  <div class=\"share-toolbar\">\n    <!-- share -->\n    <button class=\"c-button js--share \">\n      share\n    </button>\n\n    <!-- download -->\n    <button class=\"c-button -secondary js--download\">\n      download data\n    </button>\n\n    <!-- print -->\n    <button class=\"c-button -secondary js--print\">\n      print\n    </button>\n  </div>\n  <div id=\"toolbar-content\"></div>\n</div>\n";
+module.exports = "<div class=\"m-share-window\">\n  <h2 class=\"title\">Share</h2>\n  <div class=\"share-toolbar\">\n    <!-- share -->\n    <button class=\"c-button js--share \">\n      share\n    </button>\n\n    <!-- download -->\n    <button class=\"c-button -secondary js--download\">\n      download data\n    </button>\n\n    <!-- print -->\n    <button class=\"c-button -secondary js--print\">\n      print\n    </button>\n  </div>\n  <div id=\"toolbar-content\"></div>\n</div>\n";
 
 },{}],47:[function(require,module,exports){
 module.exports = "<header class=\"js--target-info\">\n  <h3 class=\"c-target-name\">{{ target.code }} {{ target.title }}</h3>\n  <div class=\"card-options\">\n    <div class=\"js--toggle-card\">\n      <svg class=\"icon icon-open_arrow\">\n        <use xlink:href=\"#icon-open_bigarrow\"></use>\n      </svg>\n      <svg class=\"icon icon-close is-hidden\">\n        <use xlink:href=\"#icon-close\"></use>\n      </svg>\n    </div>\n  </div>\n</header>\n\n<div class=\"js--score-container is-closed\"></div>\n";
@@ -1288,6 +1282,7 @@ var $ = require('jquery'),
   Backbone = require('backbone');
 
 var CategorySelector = require('./category_selector.js');
+var ShareWindowView = require('../common/share_window.js');
 var FunctionHelper = require('../../helpers/functions.js');
 
 var BlogView = Backbone.View.extend({
@@ -1295,6 +1290,7 @@ var BlogView = Backbone.View.extend({
   el: '.js-blog',
 
   events: {
+    'click #js--share' : '_share'
   },
 
   initialize: function() {
@@ -1303,6 +1299,14 @@ var BlogView = Backbone.View.extend({
     if (! !!$('body').hasClass('is-post-page')) {
       this._category();
     };
+
+    this.shareOptions = {
+      noDownload: true,
+      noPrint: true,
+      onlyShare: true
+    };
+
+    this.shareWindowView = new ShareWindowView(this.shareOptions);
 
     this.FunctionHelper.scrollTop();
   },
@@ -1313,6 +1317,11 @@ var BlogView = Backbone.View.extend({
     });
   },
 
+  _share: function() {
+    this.shareWindowView.render(this.shareOptions);
+    this.shareWindowView.delegateEvents();
+  },
+
   show: function() {
   }
 
@@ -1320,7 +1329,7 @@ var BlogView = Backbone.View.extend({
 
 module.exports = BlogView;
 
-},{"../../helpers/functions.js":8,"./category_selector.js":66,"backbone":93,"jquery":138}],66:[function(require,module,exports){
+},{"../../helpers/functions.js":8,"../common/share_window.js":73,"./category_selector.js":66,"backbone":93,"jquery":138}],66:[function(require,module,exports){
 (function (global){
 var $ = require('jquery');
 global.$ = $; // for chosen.js
@@ -2167,7 +2176,7 @@ var ShareView = infoWindowView.extend({
     'click .btn-copy': '_copyUrl'
   },
 
-  initialize: function() {},
+  initialize: function(opt) {},
 
   _copyUrl: function() {
     var $parent = this.$el.find('.content.active'),
@@ -2185,9 +2194,10 @@ var ShareView = infoWindowView.extend({
     }
   },
 
-  render: function() {
+  render: function(opt) {
     this.$el.append(this.template({
-      link: window.location.href
+      link: window.location.href,
+      blog: this.isBlog
     }));
   }
 
@@ -2315,6 +2325,11 @@ var ShareWindowView = infoWindowView.extend({
 
     if (this.options.noPrint) {
       $('.share-toolbar').addClass('-no-print');
+    }
+
+    if (this.options.onlyShare) {
+       $('.share-toolbar').addClass('is-hidden');
+       $('.title').css({'display': 'block'});
     }
 
     this.avoidScroll();
