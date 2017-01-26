@@ -97,7 +97,7 @@
     border: 0;
 
     .wrap {
-      flex-direction: row;
+      flex-direction: column;
       min-height: rem(40px);
 
       .btn {
@@ -106,6 +106,10 @@
         @media screen and (min-width: 768px) {
           margin-left: auto;
         }
+      }
+
+      @media screen and (min-width: 768px) {
+        flex-direction: row;
       }
     }
 
