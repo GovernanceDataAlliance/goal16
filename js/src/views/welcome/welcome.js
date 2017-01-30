@@ -9,13 +9,28 @@ var WelcomeView = Backbone.View.extend({
   events: {
   },
 
-  initialize: function() {},
+  initialize: function() {
+    console.log('hola')
+  },
 
   render: function() {
     return this;
   },
 
   show: function() {
+    console.log('shoe')
+    this.getLocale();
+  },
+
+  getLocale: function() {
+    var language = window.navigator.userLanguage || window.navigator.language;
+    console.log(language);
+
+    // switch(language) {
+    //   case 'en-US':
+    //     window.location.href = '/es';
+    //     break
+    // }
   }
 });
 
