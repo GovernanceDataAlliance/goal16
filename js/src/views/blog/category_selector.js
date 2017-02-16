@@ -29,59 +29,35 @@ var CategorySelector = Backbone.View.extend({
       },this)
     });
 
-    this.title = document.getElementById('categoryTitle');
-    this.post = $('.blog-filter');
-    this.render();
-  },
-
-  render: function() {
-    this.hash = window.location.hash;
-
-    if (this.hash) {
-      var category = this.hash.substring(1);
-      this.setTitle(category);
-      this.setActive(category);
-      this.$('select').val(category);
-    } else {
-      this.post.removeClass('-active');
-      $('#blog').addClass('-active');
-    }
+    this.blog = $('.l-blog');
+    this.posts = $('.l-post');
 
     if (!this.mobile) {
       this.$('select').chosen();
     }
   },
 
-  setTitle: function(title) {
-    if (title === 'all') {
-      this.title.innerHTML = this.defaults && this.defaults.title ? this.defaults.title + ' ' + title + ' ' + this.title.getAttribute('data-type') : null;
+  setActive: function(cat) {
+    if (cat === 'all' || cat === '' || !cat) {
+      this.blog.removeClass('-filtering-cat');
+      this.posts.each(function() {
+        $(this).removeClass('-cat-active');
+      })
     } else {
-      this.title.innerHTML = this.defaults && this.defaults.title ? this.defaults.title + ' ' + title : null;
-    }
-  },
-
-  setActive: function(id) {
-    if (id === 'all' ) {
-      this.post.removeClass('-active');
-      $('#blog').addClass('-active');
-    } else {
-      this.post.each(function(index, category) {
-        if (category.id === id){
-          category.classList.add('-active');
+      this.blog.addClass('-filtering-cat');
+      this.posts.each(function(index, category) {
+        if ($(this).data('category') === cat){
+          $(this).addClass('-cat-active');
         } else {
-          category.classList.remove('-active');
+          $(this).removeClass('-cat-active');
         }
       });
     }
-
-    this.$('select').val(id);
   },
 
   onChangeSelect: function(e) {
-    
     var category = e.currentTarget.value;
-    window.location.href = category.length > 0 ?
-       'categories#' + category :  'categories';
+    this.setActive(category);
   }
 
 });

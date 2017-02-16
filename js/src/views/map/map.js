@@ -2,12 +2,15 @@ var $ = require('jquery'),
   _ = require('lodash'),
   enquire = require('enquire.js'),
   Backbone = require('backbone'),
-  Handlebars = require('handlebars');
+  Handlebars = require('handlebars'),
+  cartodbProj = require('../../lib/cartodb.proj');
 
 var CONFIG = require('../../../config.json');
 
 var targetLayerSQL = Handlebars.compile(require('../../queries/map/layer_target.hbs')),
-    indicatorLayerSQL = Handlebars.compile(require('../../queries/map/layer_indicator.hbs'));
+    indicatorLayerSQL = Handlebars.compile(require('../../queries/map/layer_indicator.hbs')),
+    baseMapSQL = Handlebars.compile(require('../../queries/map/basemap.hbs')),
+    baseMapLabelsSQL = Handlebars.compile(require('../../queries/map/labels.hbs'));
 
 var PopUpView = require('./pop_up.js'),
     InfoWindowView = require('../common/infowindow.js'),
@@ -24,18 +27,19 @@ var MapView = Backbone.View.extend({
   options: {
     legend: false,
     basemap: 'https://api.tiles.mapbox.com/v4/goal16.9990f1b9/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZ29hbDE2IiwiYSI6ImNpcGgzaWwzbDAwMW52Mmt3ZG5tMnRwN3gifQ.-e8de3rW2J8gc2Iv3LzMnA',
+    // basemap: 'http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
     labelsBasemap: 'https://api.tiles.mapbox.com/v4/goal16-labels.d9258038/{z}/{x}/{y}.png?access_token=sk.eyJ1IjoiZ29hbDE2LWxhYmVscyIsImEiOiJjaXExMGkzdHQwMDJqaHJuZG94bjAxZ2U4In0.Kdmmeqv8zSGz6F4NJ6bh5w',
     map: {
-      center: [39.1, 4.5],
+      center: [11, 4.5],
       zoom: 2,
-      scrollWheelZoom: false,
-      worldCopyJump: true,
-      noWrap: true
+      scrollWheelZoom: false
     },
     cartodb: {
       user_name: CONFIG.cartodb.user_name,
       noWrap: true,
       cartocss: {
+        basemap: '#countries{ polygon-pattern-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/goal16/assets/20160817151317p5_green.png); line-color: #eee; line-width: 0.5; line-opacity: 1;}',
+        labels: '@sans: "Open Sans Semibold"; @sans_bold: "Open Sans Bold";@name:"[name]"; @halo_light:#96bf93; @text_light:#FFFFFF; #country_label::countries_labels[zoom>=3][type="countries"] {text-name: @name;text-face-name: @sans;  text-size: 10; text-transform: capitalize; text-wrap-width: 50; text-halo-radius: 0.85; text-halo-fill: @halo_light; text-fill: @text_light; text-align: center; text-clip: false; text-character-spacing: 2;text-opacity: 1; [zoom<=3] [width<500000]{ text-size: 10; text-name: [code];} [zoom<=4] [width<400000]{ text-size: 12; text-name: [code];}[zoom>=5]{text-size: 14;}[zoom>=6]{ text-size: 16; } [zoom>=7]{ text-size: 18; } } #ne_110m_geography_marine_polys::marine_labels[scalerank = 0][type="marine"]{ text-name: @name; text-face-name: @sans_bold; text-placement: point; text-wrap-width: 50; text-transform: capitalize; text-wrap-before: true; text-fill: rgba(128, 147, 151, 0.15); text-opacity: 1; [zoom = 3] { text-size: 20; text-character-spacing: 8; text-line-spacing: 8; } [zoom = 4] { text-size: 25; text-character-spacing: 16; text-line-spacing: 16; } [zoom = 5] { text-size: 30; text-character-spacing: 20; text-line-spacing: 32; }}',
         indicator: '#score{ polygon-pattern-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/goal16/assets/20160711093427color100.png); line-color: #eee; line-width: 0.5; line-opacity: 1;}',
         target: "@100: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/goal16/assets/20160711134917color100%20%281%29.png); @75: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/goal16/assets/20160711134906color75%20%281%29.png); @50:url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/goal16/assets/20160711134858color50%20%281%29.png); @25: url(http://s3.amazonaws.com/com.cartodb.users-assets.production/production/goal16/assets/20160711134847green25%20%281%29.png); #indicators{ polygon-fill: transparent; line-color: #eee; line-width: 1.5; line-opacity: 1; [ score <= 100] { polygon-pattern-file: @100;} [ score <= 75] { polygon-pattern-file: @75;} [ score <= 50] { polygon-pattern-file: @50;} [ score <= 25] { polygon-pattern-file: @25;}}"
       }
@@ -140,24 +144,67 @@ var MapView = Backbone.View.extend({
   },
 
   _initMap: function() {
-    /* this is the definition for basemap */
-    var baseMap = L.tileLayer(this.options.basemap, {
-      noWrap: true,
-      attribution: '<a href="https://www.mapzen.com/rights">Attribution.</a>. Data &copy;<a href="https://openstreetmap.org/copyright">OSM</a> contributors.'
-    });
-
-    var labelsBasemap = L.tileLayer(this.options.labelsBasemap, {
-      noWrap: true
-    });
+    // use proj4 text for desired SRID
+    this.options.map.crs =  cartodbProj('+proj=eqc +lat_ts=0 +lat_0=0 +lon_0=0 +x_0=0 +y_0=0 +a=6371007 +b=6371007 +units=m +no_defs');
 
     /* Here we create the map with Leafleft... */
     this.map = L.map(this.el, this.options.map);
-    /* ...and we add the basemap layer with Leaflet as well */
-    this.map.addLayer(baseMap);
-    this.map.addLayer(labelsBasemap);
-    labelsBasemap.setZIndex(2000);
+
+    this._getBasemapLayer().done(function(){
+      this.map.addLayer(this.baseMap);
+      this.baseMap.setZIndex(1);
+    }.bind(this));
+
+    this._getBasemapLayer('labels').done(function(){
+      this.map.addLayer(this.baseMapLabels);
+      this.baseMapLabels.setZIndex(2000);
+    }.bind(this));
 
     return this;
+  },
+
+  _getBasemapLayer: function(labels) {
+    var sql, cartoCss;
+    var cartoAccount = this.options.cartodb.user_name;
+    var deferred = $.Deferred();
+
+    if (labels) {
+      sql = baseMapLabelsSQL();
+      cartoCss = this.options.cartodb.cartocss['labels'];
+    } else {
+      sql = baseMapSQL();
+      cartoCss = this.options.cartodb.cartocss['basemap'];
+    }
+
+    var request = {
+      layers: [{
+        'user_name': cartoAccount,
+        'type': 'cartodb',
+        'options': {
+          'sql': sql,
+          'cartocss': cartoCss,
+          'cartocss_version': '2.3.0'
+        }
+      }]
+    };
+
+    $.ajax({
+      type: 'POST',
+      dataType: 'json',
+      contentType: 'application/json; charset=UTF-8',
+      url: 'https://'+ cartoAccount +'.cartodb.com/api/v1/map/',
+      data: JSON.stringify(request),
+    }).done(_.bind(function(data) {
+          var tileUrl = 'https://'+ cartoAccount +'.cartodb.com/api/v1/map/'+ data.layergroupid + '/{z}/{x}/{y}.png32';
+          if (labels) {
+            this.baseMapLabels = L.tileLayer(tileUrl, { noWrap: true, https: true });
+          } else {
+            this.baseMap = L.tileLayer(tileUrl, { noWrap: true, https: true });
+          }
+          return deferred.resolve();
+        }, this));
+
+    return deferred;
   },
 
   _refreshMap: function() {
@@ -170,9 +217,15 @@ var MapView = Backbone.View.extend({
   },
 
   _activeLayer: function() {
-    this._createLayer().done(_.bind(function() {
-      this._addLayer();
-    }, this));
+    if (this.status.get('layer')) {
+      this._createLayer().done(_.bind(function() {
+        this._addLayer();
+      }, this));
+    } else {
+      this._removeLayer();
+      this.options.legend = !this.options.legend;
+      this.legend.hide();
+    }
   },
 
   _createLayer: function() {
@@ -198,12 +251,12 @@ var MapView = Backbone.View.extend({
       type: 'POST',
       dataType: 'json',
       contentType: 'application/json; charset=UTF-8',
-      url: 'http://'+ cartoAccount +'.cartodb.com/api/v1/map/',
+      url: 'https://'+ cartoAccount +'.cartodb.com/api/v1/map/',
       data: JSON.stringify(request),
     }).done(_.bind(function(data) {
-          var tileUrl = 'http://'+ cartoAccount +'.cartodb.com/api/v1/map/'+ data.layergroupid + '/{z}/{x}/{y}.png32';
+          var tileUrl = 'https://'+ cartoAccount +'.cartodb.com/api/v1/map/'+ data.layergroupid + '/{z}/{x}/{y}.png32';
           this._removeLayer();
-          this.layer = L.tileLayer(tileUrl, { noWrap: true });
+          this.layer = L.tileLayer(tileUrl, { noWrap: true, https: true });
           return deferred.resolve();
         }, this));
 
@@ -211,9 +264,16 @@ var MapView = Backbone.View.extend({
   },
 
   _addLayer: function() {
-    this.layer.addTo(this.map);
+    var timeOut;
 
-    this.$el.removeClass('is-loading -map');
+    this.layer.addTo(this.map);
+    this.layer.setZIndex(100);
+
+    clearTimeout(timeOut);
+    timeOut = setTimeout(function(){
+      this.$el.removeClass('is-loading -map');
+    }.bind(this), 400)
+
 
     if (!this.options.legend) {
       this.legend = new MapLegendview();
@@ -238,7 +298,6 @@ var MapView = Backbone.View.extend({
     };
 
     var query = type === 'target' ? targetLayerSQL(options) : indicatorLayerSQL(options);
-
 
     return query;
   },

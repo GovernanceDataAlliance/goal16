@@ -20,8 +20,11 @@ var MapLegendView = Backbone.View.extend({
 
   show: function() {
     this.render();
-  }
+  },
 
+  hide: function() {
+    this.$('.l-legend').remove();
+  }
 
 });
 

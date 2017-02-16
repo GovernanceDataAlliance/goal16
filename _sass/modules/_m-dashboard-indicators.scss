@@ -55,27 +55,5 @@
         max-width: 80%;
       }
     }
-
-    .btn-info {
-      float: right;
-      align-self: flex-end;
-
-      width: rem(16px);
-      height: rem(16px);
-      margin-left: rem(10px);
-
-      border-radius: 50%;
-    }
-  }
-
-  .icon-info {
-    width: rem(16px);
-    height: rem(16px);
-
-    fill: $color-5;
-
-    &:hover {
-      fill: $tree-green;
-    }
   }
 }

@@ -1,0 +1,10 @@
+.m-map-breadcrumbs {
+  position: absolute;
+  bottom: rem(39px);
+  right: 0;
+  left: 0;
+  z-index: 10;
+  padding: rem(10px) rem($wrap-padding-mobile) 0;
+  background-color: white;
+  box-shadow: 0 0 rem(60px) 0 rgba(7, 56, 35, 0.1);
+}

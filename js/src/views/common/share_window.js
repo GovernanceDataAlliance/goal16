@@ -57,6 +57,7 @@ var ShareWindowView = infoWindowView.extend({
     $(buttons).removeClass('-active');
     $(buttons).addClass('-secondary');
     $(current).addClass('-active');
+    $(current).removeClass('-secondary');
   },
 
   _cleanContent: function() {
@@ -112,6 +113,15 @@ var ShareWindowView = infoWindowView.extend({
 
     if (this.options.noDownload) {
       $('.share-toolbar').addClass('-no-download');
+    }
+
+    if (this.options.noPrint) {
+      $('.share-toolbar').addClass('-no-print');
+    }
+
+    if (this.options.onlyShare) {
+       $('.share-toolbar').addClass('is-hidden');
+       $('.title').css({'display': 'block'});
     }
 
     this.avoidScroll();

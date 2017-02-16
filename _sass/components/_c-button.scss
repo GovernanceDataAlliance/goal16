@@ -27,14 +27,15 @@
 
   &.-primary {
     color: $font-color-10;
-
     background-color: $color-5;
 
-    &:hover {
-      color: $font-color-11;
-
-      background-color: $pale-olive-green;
+    @media screen and (min-width: 768px) {
+      &:hover {
+        color: $font-color-11;
+        background-color: $pale-olive-green;
+      }
     }
+
   }
 
   &.-secondary {
@@ -42,11 +43,12 @@
 
     border: rem(1px) solid $border-1;
 
-    &:hover{
-      color: $font-color-10;
-
-      border-color: transparent;
-      background-color: $color-5;
+    @media screen and (min-width: 768px) {
+      &:hover {
+        color: $font-color-10;
+        border-color: transparent;
+        background-color: $color-5;
+      }
     }
   }
 
@@ -75,7 +77,6 @@
 
   &.-active {
     color: $font-color-6;
-
     background-color: rgba(128, 147, 151, .1);
     border: solid rem(1px) rgba(128, 147, 151, .4);
   }
@@ -155,5 +156,31 @@
   @media screen and (min-width: 768px) {
     top: rem(140px);
     right: rem(30px);
+  }
+}
+
+.btn-info {
+  float: right;
+  align-self: flex-end;
+
+  width: rem(16px);
+  height: rem(16px);
+  margin-left: rem(10px);
+
+  border-radius: 50%;
+
+  .icon-info {
+    width: rem(16px);
+    height: rem(16px);
+
+    fill: $color-5;
+
+    &:hover {
+      fill: $tree-green;
+    }
+  }
+
+  &.-right {
+    float: right;
   }
 }

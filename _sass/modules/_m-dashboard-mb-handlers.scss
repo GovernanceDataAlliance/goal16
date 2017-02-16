@@ -1,0 +1,52 @@
+.m-dashboard-mb-handlers {
+  position: absolute;
+  top: rem(-40px);
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: $button-height;
+  background-color: $white;
+
+  .btn-open-dashboard-mobile.-primary {
+    color: $font-color-10;
+    background-color: $color-5;
+
+    &.-selected {
+      display: none;
+      text-align: left;
+      margin: 0;
+      padding-left: rem($wrap-padding-mobile);
+    }
+  }
+
+  &.-layer-selected {
+    .btn-open-dashboard-mobile {
+      display: none;
+
+      &.-selected {
+        display: block;
+      }
+    }
+  }
+
+  .map-handler {
+    display: flex;
+    width: 100%;
+  }
+
+  .btn-apply:not(.-disabled) {
+    border-left: 1px solid #73ae63;
+  }
+
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+
+  .is-dashboard-close & {
+    .btn-open-dashboard-mobile {
+      background-color: $white;
+      color: $font-color-3;
+    }
+  }
+}
