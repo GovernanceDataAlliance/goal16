@@ -75,6 +75,10 @@ prose:
     - apple-icon-180x180.png
     - apple-icon-precomposed.png
     - apple-icon.png
+    - ms-icon-144x144.png
+    - ms-icon-150x150.png
+    - ms-icon-310x310.png
+    - ms-icon-70x70.png
     - favicon-16x16.png
     - favicon-32x32.png
     - favicon-96x96.png
