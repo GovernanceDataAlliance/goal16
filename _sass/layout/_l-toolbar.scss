@@ -94,18 +94,28 @@
   }
 
   &.-blog {
+    border: 0;
 
     .wrap {
-      flex-direction: row;
+      flex-direction: column;
       min-height: rem(40px);
 
       .btn {
         width: auto;
-        // margin-left: rem(20px);
 
         @media screen and (min-width: 768px) {
           margin-left: auto;
         }
+      }
+
+      @media screen and (min-width: 768px) {
+        flex-direction: row;
+      }
+    }
+
+    &.-center {
+      .wrap {
+        justify-content: center;
       }
     }
   }
@@ -114,6 +124,7 @@
   &.-pagination {
     padding: rem(10px) 0;
     height: auto;
+    border: none;
 
     @media screen and (min-width: $screen-s) {
       height: rem(56px);
@@ -227,6 +238,18 @@
     .wrap {
       min-height: 0;
       flex-direction: row;
+    }
+
+    &.-pagination {
+      border: 0;
+
+      .wrap {
+        justify-content: center;
+      }
+
+      @media screen and (min-width: 768px) {
+        padding: rem(90px) 0;
+      }
     }
   }
 

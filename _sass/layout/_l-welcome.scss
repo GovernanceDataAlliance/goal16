@@ -10,7 +10,7 @@
   justify-content: center;
   align-items: center;
   background-image: url('#{$baseUrl}/img/fullscreenbg.jpg');
-  z-index: 9999999999;
+  z-index: 2;
 
   @media screen and (min-width: $screen-s) {
     position: fixed;
@@ -20,7 +20,8 @@
     left: 0;
     overflow: auto;
   }
-  &:after{
+
+  &:after {
     content: '';
   }
   // veil
@@ -36,7 +37,6 @@
     background-color: $bg-veil;
   }
 
-
   .welcome-content {
     position: absolute;
     top: 0;
@@ -46,7 +46,7 @@
     margin: auto;
     overflow: auto;
     z-index: 1;
-    padding: rem(35px) rem(17px);
+    padding: rem(50px) rem(17px);
 
     h2{
       color: $font-color-2;
@@ -120,34 +120,15 @@
 
     .link-container {
       margin-top: rem(30px);
+      text-align: center;
+
+      .c-button {
+        margin-bottom: rem(20px);
+      }
 
       @media screen and (min-width: $screen-s) {
-        display: flex;
-        justify-content: center;
         margin-top: rem(32px);
       }
     }
   }
 }
-
-// .img_bg {
-//   /* Set rules to fill background */
-//   min-height: 100%;
-//   min-width: 1024px;
-//
-//   /* Set up proportionate scaling */
-//   width: 100%;
-//   height: auto;
-//
-//   /* Set up positioning */
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-// }
-//
-// @media screen and (max-width: 1024px) { /* Specific to this particular image */
-//   .img_bg {
-//     left: 50%;
-//     margin-left: -512px;   /* 50% */
-//   }
-// }

@@ -1,0 +1,38 @@
+.l-about-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e5eaea;
+
+  @media screen and (min-width: 768px) {
+    height: rem(70px);
+  }
+
+  ul {
+    max-width: 100%;
+    margin: 0 auto;
+
+    @media screen and (min-width: $screen-s) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: rem(736px);
+    }
+
+    @media screen and (min-width: $screen-xl) {
+      max-width: $content-width;
+    }
+  }
+
+  li {
+    margin: 20px;
+    float: left;
+
+    @media screen and (min-width: 768px) {
+      & + li {
+        margin: 0;
+        margin-left: rem(20px);
+      }
+    }
+  }
+}
