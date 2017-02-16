@@ -6,13 +6,13 @@ description: Goal16 dashboard
 url: "http://www.sdg16.org/"
 
 # Develop and Production
-baseurl: ''
+# baseurl: ''
 
 # Staging
-# baseurl: '/goal16'
+baseurl: '/goal16'
 
 gems: [jekyll-paginate]
-paginate: 20
+paginate: 25
 paginate_path: "blog/page:num"
 
 collections:
@@ -27,7 +27,7 @@ exclude: ['scripts', 'node_modules', 'vendor']
 prose:
   rooturl: ''
   siteurl: 'http://www.sdg16.org/'
-  media: 'css/img'
+  media: 'img'
   ignore:
     - _config.yml
     - _config_dev.yml
