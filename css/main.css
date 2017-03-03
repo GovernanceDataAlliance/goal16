@@ -1785,7 +1785,6 @@ select {
     @media screen and (min-width: 1280px) {
       .l-presentation > .intro.-left {
         -ms-flex-align: end;
-            -ms-grid-row-align: flex-end;
             align-items: flex-end; }
       .l-presentation > .intro.-dark {
         padding: 10.625rem 0; } }
@@ -2896,7 +2895,6 @@ select {
       margin-left: 1.25rem; }
       .m-social-share.-footer ul {
         -ms-flex-align: baseline;
-            -ms-grid-row-align: baseline;
             align-items: baseline;
         -ms-flex-pack: justify;
             justify-content: space-between;
@@ -3389,7 +3387,6 @@ select {
       -ms-flex-direction: row;
           flex-direction: row;
       -ms-flex-align: center;
-          -ms-grid-row-align: center;
           align-items: center; } }
 
 .m-aside-compare .image-compare-banner {
@@ -3466,7 +3463,6 @@ select {
       .m-data-indicator .header {
         padding-bottom: 0.9375rem;
         -ms-flex-align: center;
-            -ms-grid-row-align: center;
             align-items: center; } }
   .m-data-indicator .indicator-info {
     padding: 1.875rem 0;
@@ -5026,7 +5022,6 @@ select {
         -ms-flex-preferred-size: calc(13.33% - 20px);
             flex-basis: calc(13.33% - 20px);
         -ms-flex-align: center;
-            -ms-grid-row-align: center;
             align-items: center; } }
 .c-score-table .no-indicators {
   margin: 1.25rem 0 0.6875rem; }
