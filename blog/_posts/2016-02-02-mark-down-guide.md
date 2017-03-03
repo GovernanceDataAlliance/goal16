@@ -1,14 +1,10 @@
 ---
-published: true
+published: false
 layout: blog/post
-date: "2016-03-11"
+date: '2016-03-11'
 author: Vizzuality
-image: ""
-category:
-tags: ""
 title: A markdown guide
-summary: Here you will find a guide of styles available for your text. Enjoy! 
-
+summary: Here you will find a guide of styles available for your text. Enjoy!
 ---
 
 ## Welcome!
