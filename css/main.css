@@ -2265,6 +2265,10 @@ select {
     background-image: url("/img/cover-pages/topsection-about.jpg");
     background-size: cover;
     background-position: center; }
+  .l-banner.-promoInteriores-Blog {
+    background-image: url("/img/cover-pages/promoInteriores-Blog.jpg");
+    background-size: cover;
+    background-position: center; }
   .l-banner.-topsection-countries {
     padding-top: 1.5rem;
     padding-bottom: 5.5rem; }
@@ -5265,14 +5269,6 @@ select {
     float: left; }
     .c-indicator-name.-map-breadcrumbs:hover {
       color: #073339; }
-
-#google_translate_element {
-  position: relative;
-  z-index: 10;
-  margin-bottom: 1.25rem; }
-  @media screen and (min-width: 1024px) {
-    #google_translate_element {
-      margin-bottom: 0; } }
 
 /*
  * States are modes that can change
