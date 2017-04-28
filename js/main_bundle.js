@@ -4673,7 +4673,6 @@ var WelcomeView = Backbone.View.extend({
   },
 
   initialize: function() {
-    console.log('hola')
   },
 
   render: function() {
@@ -4681,19 +4680,35 @@ var WelcomeView = Backbone.View.extend({
   },
 
   show: function() {
-    console.log('shoe')
     this.getLocale();
   },
 
   getLocale: function() {
     var language = window.navigator.userLanguage || window.navigator.language;
-    console.log(language);
 
-    // switch(language) {
-    //   case 'en-US':
-    //     window.location.href = '/es';
-    //     break
-    // }
+    switch(language) {
+      case 'es-ES':
+        window.location.href = '/spanish';
+        break
+      case 'es':
+        window.location.href = '/spanish';
+        break
+      case 'fr-FR':
+        window.location.href = '/french';
+        break
+      case 'fr':
+        window.location.href = '/french';
+        break
+      case 'ar':
+        window.location.href = '/arabic';
+        break
+      case 'ru':
+        window.location.href = '/rusian';
+        break
+      case 'zh':
+        window.location.href = '/chinese';
+        break
+    }
   }
 });
 
