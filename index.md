@@ -4,6 +4,7 @@ title: The SDG16 Data Initiative
 page-name: welcome
 advise: This is a beta version of our website - please consider it work in progress!
 published: true
+btn-text: get started
 ---
 ## The SDG16 Data Initiative
 
