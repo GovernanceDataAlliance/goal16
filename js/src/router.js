@@ -5,6 +5,7 @@ var _ = require('lodash'),
 var ViewManager = require('./lib/view_manager.js'),
   MobileMenuView = require('./views/common/mobile_menu_view.js'),
   WelcomeView = require('./views/welcome/welcome.js'),
+  LocalesView = require('./views/welcome/locales.js'),
   MapView = require('./views/map/map.js'),
   DashboardView = require('./views/map/dashboard.js'),
   CompareView = require('./views/compare/compare.js'),
@@ -27,6 +28,7 @@ var Router = Backbone.Router.extend({
 
   routes: {
     "(/)": "welcome",
+    "(es/)": "locales",
     "map(/)(?layerType=:type)(&layer=:layer)(&zoom=:zoom)(&center=:center)": "map",
     "countries(/)(?iso=:iso)": "countries",
     "compare(/)": "compare",
@@ -208,6 +210,17 @@ var Router = Backbone.Router.extend({
     view = this.viewManager.getView('blog');
 
     this.viewManager.showView('blog');
+  },
+
+  //LOCALES
+  locales: function() {
+    if (!this.viewManager.hasView('locales')) {
+      this.viewManager.addView('locales', LocalesView);
+    }
+
+    view = this.viewManager.getView('locales');
+
+    this.viewManager.showView('locales');
   }
 
 });
