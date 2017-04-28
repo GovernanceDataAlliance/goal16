@@ -1,10 +1,10 @@
 ---
 layout: welcome
 title: The SDG16 Data Initiative
-page-name: welcome
-advise: This is a beta version of our website - please consider it work in progress!
+page-name: welcome-chinese
+advise: 本网站正在测试中，请予以理解。
 published: true
-btn-text: 开始 本网站正在测试中，请予以理解。
+btn-text: 开始
 ---
 ## 可持续发展目标16（SDG16）数据倡仪
 

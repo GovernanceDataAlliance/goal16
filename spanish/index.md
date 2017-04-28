@@ -1,7 +1,7 @@
 ---
 layout: welcome
 title: The SDG16 Data Initiative
-page-name: welcome
+page-name: welcome-spanish
 advise: This is a beta version of our website - please consider it work in progress!
 published: true
 btn-text: empezar

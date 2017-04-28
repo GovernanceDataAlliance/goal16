@@ -4349,6 +4349,19 @@ select {
     background-color: #fff;
     color: #19aec4; }
 
+.m-internazionalization {
+  text-align: center;
+  margin-top: 20px; }
+  .m-internazionalization li {
+    display: inline-block; }
+    .m-internazionalization li a {
+      font-size: 12px;
+      padding: 0 10px;
+      color: #fff;
+      text-decoration: underline; }
+      .m-internazionalization li a.-active {
+        color: #19aec4; }
+
 .c-button {
   display: inline-block;
   padding: 0.9375rem 2.8125rem;

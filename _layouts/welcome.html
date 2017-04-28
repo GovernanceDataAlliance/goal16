@@ -13,6 +13,14 @@
         <div class="link-container">
           <a href="{{ site.baseurl }}/map" class="c-button -primary">{{ page.btn-text}}</a>
         </div>
+        <ul class="m-internazionalization">
+          <li><a href="/" class='{% if page.page-name == "welcome" %} -active {% endif %}'>English</a></li>
+          <li><a href="/spanish" class='{% if page.page-name == "welcome-spanish" %} -active {% endif %}'>Español</a></li>
+          <li><a href="/french" class='{% if page.page-name == "welcome-french" %} -active {% endif %}'>Français</a></li>
+          <li><a href="/russian" class='{% if page.page-name == "welcome-russian" %} -active {% endif %}'>русский</a></li>
+          <li><a href="/arabic" class='{% if page.page-name == "welcome-arabic" %} -active {% endif %}'>العربية</a></li>
+          <li><a href="/chinese" class='{% if page.page-name == "welcome-chinese" %} -active {% endif %}'>奇诺</a></li>
+        </ul>
         <p class="-advise">{{ page.advise }}</p>
       </div>
     </div>
