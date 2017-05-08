@@ -1,0 +1,19 @@
+.m-internazionalization {
+  text-align: center;
+  margin-top: 20px;
+
+  li {
+    display: inline-block;
+
+    a {
+      font-size: 12px;
+      padding: 0 10px;
+      color: $white;
+      text-decoration: underline;
+
+      &.-active {
+        color: $color-1;
+      }
+    }
+  }
+}
