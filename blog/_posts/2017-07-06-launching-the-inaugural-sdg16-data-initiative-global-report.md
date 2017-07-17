@@ -25,4 +25,5 @@ Check out the Global Report to learn about both the many challenges to producing
 
 **_[Download the report](https://drive.google.com/uc?export=download&id=0B39Nx8qx75auQjE1RTBZNVJmZHM)_**
 
+![2017 report cover small]({{site.baseurl}}/img/Report Cover small.png)
 
