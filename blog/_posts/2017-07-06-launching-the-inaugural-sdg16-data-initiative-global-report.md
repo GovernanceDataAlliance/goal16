@@ -12,6 +12,8 @@ summary: >-
   evidence base to help policymakers identify shortcomings in both implementing
   and monitoring SDG16.
 category: Annual Report
+author: ''
+image: ''
 ---
 The SDG16 Data Initiative is proud to launch our inaugural Global Report to assess progress toward realizing the 2030 Agenda’s commitment to peaceful, just, and inclusive societies. The SDG16 Data Initiative 2017 Global Report is intended to provide governments, UN officials, and civil society stakeholders with a resource for tracking progress on SDG16 targets, and provide an evidence base to help policymakers identify shortcomings in both implementing and monitoring SDG16. 
 
@@ -19,4 +21,8 @@ The inaugural Global Report assesses measurable, worldwide progress towards meet
 
 Check out the Global Report to learn about both the many challenges to producing data and measuring progress toward Goal 16 and each of its 12 targets – including the lack of effective methodologies to produce needed data, the misalignment between certain targets and their indicators, and insufficient coverage of particular datasets – as well as the ways in which measuring SDG16 is enabling sustained progress in building peaceful, just, and inclusive societies. You can explore the report online or download the PDF version for printing.
 
-**[Explore the report!](http://sdg16report.org/)**
+**[Explore the report online!](http://sdg16report.org/)**
+
+**_[Download the report](https://drive.google.com/uc?export=download&id=0B39Nx8qx75auQjE1RTBZNVJmZHM)_**
+
+
