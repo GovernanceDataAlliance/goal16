@@ -15,4 +15,4 @@ The SDG16 Data Initiative is proud to launch our second annual Global Report! Th
 
 The 2017 Global Report covered all twelve targets, creating the critical baseline of available data necessary for future substantive analysis. The 2018 Global Report, prepared in anticipation the SDG16’s initial review at the 2019 High-Level Political Forum (HLPF), takes a deep-dive into the triune objectives of SDG16, peaceful societies, just societies and inclusive societies, through SDG16 targets 16.1, 16.3, 16.6 and 16.7. Through this review, the 2018 Global Report aims to provide policymakers and civil society actors with pathways forward to improve both SDG16 implementation and data coverage.
 
-**_[Download the report](https://drive.google.com/open?id=1yYs86j8wT4e49VdioBVjvSHKMhlPJrXv)_**
+**_[Download the report](https://drive.google.com/file/d/1yYs86j8wT4e49VdioBVjvSHKMhlPJrXv/view?usp=sharing)_**
