@@ -2,6 +2,8 @@
 published: true
 layout: blog/post
 title: The Global State of Democracy
+date: '2018-10-19'
+author: IDEA
 ---
 ## EXPLORING DEMOCRACY’S RESILIENCE
 
