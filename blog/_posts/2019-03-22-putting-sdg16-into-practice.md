@@ -12,4 +12,4 @@ Since 2015, Saferworld has worked with national partners to adapt the 2030 Agend
 
 This infographic illustrates how this ‘localisation’ approach works in 11 important steps:
 
-![]({{site.baseurl}}/img/steps-sdg-infographic-draft-072_cropped.png)![steps-sdg-infographic-draft-072_cropped.png]({{site.baseurl}}/img/steps-sdg-infographic-draft-072_cropped.png)
+![steps-sdg-infographic-draft-072_cropped.png]({{site.baseurl}}/img/steps-sdg-infographic-draft-072_cropped.png)
