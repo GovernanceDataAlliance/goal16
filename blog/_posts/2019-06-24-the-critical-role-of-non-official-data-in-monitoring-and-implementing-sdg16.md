@@ -8,9 +8,9 @@ summary: >-
   “Peaceful, Just and Inclusive Societies: SDG 16 implementation and the path
   towards leaving no one behind”
 ---
-### 27 - 29 May 2019
-### Ministry of Foreign Affairs and International Cooperation, Rome, Italy
-### Summary of Side-Event
+**27 - 29 May 2019**
+**Ministry of Foreign Affairs and International Cooperation, Rome, Italy**
+Summary of Side-Event
 
 ## The Critical Role of Non-Official Data in Monitoring and Implementing SDG16
 
