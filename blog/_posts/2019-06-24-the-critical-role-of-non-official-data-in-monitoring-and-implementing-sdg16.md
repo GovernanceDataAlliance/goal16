@@ -3,6 +3,10 @@ published: true
 layout: blog/post
 title: The Critical Role of Non-Official Data in Monitoring and Implementing SDG16
 date: '2019-05-28'
+summary: >-
+  Summary of Side-Event at the conference in preparation for HLPF 2019:
+  “Peaceful, Just and Inclusive Societies: SDG 16 implementation and the path
+  towards leaving no one behind”
 ---
 ### 27 - 29 May 2019
 ### Ministry of Foreign Affairs and International Cooperation, Rome, Italy
