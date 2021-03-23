@@ -59,6 +59,9 @@ Reports:
 + TAP Network. "Goal 16 Advocacy Toolkit". [https://sustainabledevelopment.un.org/content/documents/9935TAP%20Network%20Goal%2016%20Advocacy%20Toolkit.pdf](https://sustainabledevelopment.un.org/content/documents/9935TAP%20Network%20Goal%2016%20Advocacy%20Toolkit.pdf){:target="_blank"}
 + European Center for Development Policy Management. "The Challenge of Measuring SDG 16: What role for African Region Frameworks". [http://ecdpm.org/wp-content/uploads/DP175-Challenge-Measuring-SDG16-May-2015.pdf](http://ecdpm.org/wp-content/uploads/DP175-Challenge-Measuring-SDG16-May-2015.pdf){:target="_blank"}
 + Safeworld. "Greater than the sum of our parts: Global partnership for Goal 16". [http://www.saferworld.org.uk/resources/view-resource/1057-greater-than-the-sum-of-our-parts-global-partnerships-for-goal-16](http://www.saferworld.org.uk/resources/view-resource/1057-greater-than-the-sum-of-our-parts-global-partnerships-for-goal-16){:target="_blank"}
++ International IDEA. "Tracking Progress on Sustainable Development Goal 16 with Global State of Democracy Indices". [The GSoD IN FOCUS No. 8](https://www.idea.int/sites/default/files/publications/tracking-progress-sdg16-with-gsod-indices.pdf)
++ International IDEA. "Monitoring Achievements on Sustainable Development Goal 16 from 2015-2019: A Global State of Demococracy Indices Perspective".[The GSoD IN FOCUS No. 11](https://www.idea.int/sites/default/files/publications/monitoring-achievements-on-SDG16-a-gsod-indices-perspective.pdf)
+
 
  Further Resources:
  
