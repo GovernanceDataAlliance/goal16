@@ -11,5 +11,6 @@ The **SDG16 Data Initiative** is proud to launch our third **Annual Global Repor
 The 2019 Global Report covers all twelve targets, creating the critical baseline of available data necessary for future substantive analysis. The 2019 Global Report, prepared in light of SDG16’s initial review at the 2019 High-Level Political Forum (HLPF), assess progress made on all twelve targets. Through this review, the 2019 Global Report aims to provide policymakers and civil society actors with pathways forward to improve both SDG16 implementation and data coverage.
 
 **_[Download the report](https://drive.google.com/file/d/1FuVB6Bd1mUdBnjWK18ytmdnyu3H8vgc8/view)_**
+
 ![sdg16di3report.PNG]({{site.baseurl}}/img/sdg16di3report.PNG)
 
