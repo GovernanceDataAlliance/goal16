@@ -7,7 +7,7 @@ author: SDG16 Data Initiative
 summary: >-
   The SDG16 Data Initiative is proud to launch our fourth SDG16 Data Report for
   2020!
-image: sdg16di-report-cover.png
+image: '![sdg16di-report-cover.png]({{site.baseurl}}/img/sdg16di-report-cover.png)'
 ---
 The **SDG16 Data Initiative** is proud to launch our **2020 Annual Global Report**! The SDG16 Data Initiative Global Report series aims to evaluate global progress towards realizing the 2030 Agenda’s promise of peaceful, just and inclusive societies. The Global Report provides governments, UN officials, and civil society stakeholders with a resource to help understand progress on SDG16 targets and an evidence base for them to identify gaps and shortcomings in both implementing and monitoring SDG16.
 
