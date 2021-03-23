@@ -14,4 +14,4 @@ The SDG16 Data Initiative is proud to launch our 2020 annual Global Report! The 
 
 [Download the 2020 SDG16 Data Initiative Report!](https://drive.google.com/file/d/1TuSISe7KJCmU1UXCTAqfVvgm8Q0hf2BJ/view?usp=sharing)
 
-![]({{site.baseurl}}/img/SDG16DI%20Report%20cover.PNG)
+![sdg16di-report-cover.png]({{site.baseurl}}/img/sdg16di-report-cover.png)
