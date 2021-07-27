@@ -30,16 +30,17 @@ The Covid-19 pandemic has presented significant challenges to the implementation
 
  
 
-More resources related to the event can be found below:
+_More resources related to the event can be found below:_
 
-[Power Point Presentation by Haakon Gjerløw](https://www.idea.int/sites/default/files/news/news-pdfs/Haakon%20PPT.pptx)
+- [Power Point Presentation by Haakon Gjerløw](https://www.idea.int/sites/default/files/news/news-pdfs/Haakon%20PPT.pptx)
 
-[Power Point Presentation by Sarah Long](https://www.idea.int/sites/default/files/news/news-pdfs/Sarah%20PPT.pdf)
+- [Power Point Presentation by Sarah Long](https://www.idea.int/sites/default/files/news/news-pdfs/Sarah%20PPT.pdf)
 
-[Power Point Presentation by Ivana Vucinic](https://www.idea.int/sites/default/files/news/news-pdfs/Ivana%20PPT.pptx)
+- [Power Point Presentation by Ivana Vucinic](https://www.idea.int/sites/default/files/news/news-pdfs/Ivana%20PPT.pptx)
 
-[Power Point Presentation by Miguel Angel Lara Otaola](https://www.idea.int/sites/default/files/SDG16%20and%20GSoD%20Indices%2012%20July.pptx)
+- [Power Point Presentation by Miguel Angel Lara Otaola](https://www.idea.int/sites/default/files/SDG16%20and%20GSoD%20Indices%2012%20July.pptx)
 
-[Recording of the event on International IDEA's YouTube Channel](https://www.youtube.com/watch?v=_j2z5erFIq0&t=204s)
+- [Recording of the event on International IDEA's YouTube Channel](https://www.youtube.com/watch?v=_j2z5erFIq0&t=204s)
 
-[Biography of the Panelists](https://www.idea.int/sites/default/files/news/news-pdfs/HLPF%202021%20Panelists%27%20Bios.pdf)
+- [Biography of the Panelists](https://www.idea.int/sites/default/files/news/news-pdfs/HLPF%202021%20Panelists%27%20Bios.pdf)
+
