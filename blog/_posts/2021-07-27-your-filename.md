@@ -4,11 +4,8 @@ layout: blog/post
 title: >-
   Impact of the Pandemic on Measuring Progress of the SDG 16+: Looking Forward,
   Tackling Obstacles
-date: ''
-author: ''
-summary: ''
-image: ''
-category: ''
+date: '2021-07-27'
+author: Matilde Ascheri
 ---
 # Impact of the Pandemic on Measuring Progress of the SDG 16+: Looking Forward, Tackling Obstacles
 
