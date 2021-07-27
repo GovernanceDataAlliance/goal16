@@ -28,7 +28,7 @@ The Covid-19 pandemic has presented significant challenges to the implementation
   
   
   
-**** _More resources related to the event can be found below:_
+**_More resources related to the event can be found below:_**
 
 [Power Point Presentation by Haakon Gjerløw](https://www.idea.int/sites/default/files/news/news-pdfs/Haakon%20PPT.pptx)
 
@@ -41,3 +41,5 @@ The Covid-19 pandemic has presented significant challenges to the implementation
 [Recording of the event on International IDEA's YouTube Channel](https://www.youtube.com/watch?v=_j2z5erFIq0&t=204s)
 
 [Biography of the Panelists](https://www.idea.int/sites/default/files/news/news-pdfs/HLPF%202021%20Panelists%27%20Bios.pdf)
+
+![Flyer IMPACT OF THE PANDEMIC ON MEASURING PROGRESS OF SDG 16+ LOOKING FORWARD, TACKLING OBSTACLES.png]({{site.baseurl}}/img/Flyer IMPACT OF THE PANDEMIC ON MEASURING PROGRESS OF SDG 16+ LOOKING FORWARD, TACKLING OBSTACLES.png)
