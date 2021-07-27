@@ -42,4 +42,4 @@ The Covid-19 pandemic has presented significant challenges to the implementation
 
 [Biography of the Panelists](https://www.idea.int/sites/default/files/news/news-pdfs/HLPF%202021%20Panelists%27%20Bios.pdf)
 
-![Flyer IMPACT OF THE PANDEMIC ON MEASURING PROGRESS OF SDG 16+ LOOKING FORWARD, TACKLING OBSTACLES.png]({{site.baseurl}}/img/Flyer IMPACT OF THE PANDEMIC ON MEASURING PROGRESS OF SDG 16+ LOOKING FORWARD, TACKLING OBSTACLES.png)
+![]({{site.baseurl}}/img/Flyer%20IMPACT%20OF%20THE%20PANDEMIC%20ON%20MEASURING%20PROGRESS%20OF%20SDG%2016%2B%20LOOKING%20FORWARD%2C%20TACKLING%20OBSTACLES.png)
