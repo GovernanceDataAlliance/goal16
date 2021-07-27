@@ -4,7 +4,9 @@ layout: blog/post
 title: Impact of the Pandemic on Measuring Progress of SDG16+
 date: '2021-07-27'
 author: Matilde Ascheri
-summary: News Article
+summary: >-
+  News Article on the event held on the margins of the High Level Political
+  Forum 2021.
 ---
 On Monday, 12 July, members of the SDG16 Data Initiative— a collective project by a consortium of 17 organizations seeking to support tracking the global commitments made by more than 194 countries on peace, justice, and strong institutions— held a side event on the margins of the 2021 High-Level Political Forum (HLPF) to discuss challenges and opportunities on the creation of data and measurement of progress in achieving SDG16 during and after the pandemic; and to hold a conversation on the SDG16 Data Initiative Global Report 2021, which will be launched at the end of 2021 as a collaborative effort among the members of the Initiative.
 
@@ -41,5 +43,3 @@ The Covid-19 pandemic has presented significant challenges to the implementation
 [Recording of the event on International IDEA's YouTube Channel](https://www.youtube.com/watch?v=_j2z5erFIq0&t=204s)
 
 [Biography of the Panelists](https://www.idea.int/sites/default/files/news/news-pdfs/HLPF%202021%20Panelists%27%20Bios.pdf)
-
-![]({{site.baseurl}}/img/Flyer%20IMPACT%20OF%20THE%20PANDEMIC%20ON%20MEASURING%20PROGRESS%20OF%20SDG%2016%2B%20LOOKING%20FORWARD%2C%20TACKLING%20OBSTACLES.png)
