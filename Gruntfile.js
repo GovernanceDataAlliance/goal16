@@ -6,8 +6,8 @@ module.exports = function(grunt) {
     jekyll: {
       options: {
         bundleExec: true,
-        src : '<%= app %>',
-        dest: '<%= dist %>',
+        // src : '<%= app %>',
+        // dest: '<%= dist %>',
         config: '_config.yml'
       },
       dist: { options: {} },
