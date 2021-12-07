@@ -97,7 +97,7 @@ var DataView = Backbone.View.extend({
     var targets = this.targetsCollection;
 
     this.targetsCollection.each(_.bind(function(target){
-      var indicatorsPerTarget = _.where(this.indicatorsCollection.toJSON(), { 'target_slug': target.get('slug') });
+      var indicatorsPerTarget = _.filter(this.indicatorsCollection.toJSON(), { 'target_slug': target.get('slug') });
       target.set({'indicators': indicatorsPerTarget});
     }, this));
 
