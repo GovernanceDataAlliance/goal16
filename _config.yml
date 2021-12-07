@@ -11,7 +11,7 @@ baseurl: ''
 # Staging
 # baseurl: '/goal16'
 
-gems: [jekyll-paginate]
+plugins: [jekyll-paginate]
 paginate: 25
 paginate_path: "blog/page:num"
 
