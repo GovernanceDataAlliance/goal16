@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'jekyll', '2.4.0'
+gem 'jekyll'
 gem 'sass'
-gem 'github-pages', '39'
+gem 'github-pages', '~> 219', group: :jekyll_plugins
 gem 'jekyll-paginate'
 gem 'kramdown'
