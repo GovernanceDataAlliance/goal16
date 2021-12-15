@@ -120,8 +120,8 @@ module.exports = function(grunt) {
       // This task will add the base url to css files when needed.
       // Attenction, this var is ONLY to deploy in github pages. If ussing custom domain,
       // set it to ''.
-      // var baseUrl = env === 'dist' ? '/goal16' : '';
-      var baseUrl = '';
+      var baseUrl = env === 'dist' ? '/goal16' : '';
+      // var baseUrl = '';
       grunt.file.write('_sass/_env.scss', '$baseUrl:"' + baseUrl + '";');
   });
 
