@@ -986,7 +986,7 @@ var Router = Backbone.Router.extend({
     "compare(/)": "compare",
     "data(/)(?indicator=:indicator)": "data",
     "about(/)": "about",
-    "blog(/)(*actions)": "blog",
+    "blog(/)(*actions)": "blog"
   },
 
   initialize: function() {

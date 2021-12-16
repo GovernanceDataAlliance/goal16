@@ -1,6 +1,6 @@
 .c-section-title {
   position: relative;
-  margin-top: rem(32px);
+  // margin-top: rem(32px);
   font-size: $font-size-large;
   font-weight: $font-weight-regular;
   color: $font-color-2;
@@ -9,7 +9,7 @@
   font-family: $font-family-primary;
 
   @media screen and (min-width: $screen-s) {
-    margin-top: rem(72px);
+    // margin-top: rem(72px);
     font-size: $font-size-xlarge;
   }
 
@@ -23,5 +23,9 @@
 
   @media screen and (min-width: $screen-l) {
 
+  }
+
+  &.-ocean-section-title {
+    width: 100%;
   }
 }

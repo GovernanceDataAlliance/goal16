@@ -44,6 +44,8 @@ prose:
     - /map
     - /compare
     - /countries
+    - /events
+    - /reports
     - /css
     - .editorconfig
     - .gitignore

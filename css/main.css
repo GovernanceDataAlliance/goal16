@@ -1956,6 +1956,14 @@ select {
     .m-breadcrumbs,
     .c-share-shortcut {
       padding: 0 5.625rem; } }
+  .wrap.-ocean-wrap,
+  .-ocean-wrap.m-breadcrumbs,
+  .-ocean-wrap.c-share-shortcut {
+    height: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center; }
 
 .l-map {
   position: absolute;
@@ -2223,20 +2231,17 @@ select {
 
 .l-banner {
   position: relative;
-  padding-top: 1.5rem;
-  padding-bottom: 4.1875rem; }
+  height: 8.75rem; }
   .l-banner:before {
     content: "";
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
-    right: 0;
-    background-color: rgba(14, 29, 42, 0.5); }
+    right: 0; }
   @media screen and (min-width: 768px) {
     .l-banner {
-      padding-top: 2.5rem;
-      padding-bottom: 7rem; } }
+      height: 12.5rem; } }
   .l-banner.-promoHome {
     background-image: url("/img/cover-pages/promoHome.jpg");
     background-size: cover;
@@ -2265,6 +2270,21 @@ select {
     background-image: url("/img/cover-pages/promoInteriores-Blog.jpg");
     background-size: cover;
     background-position: center; }
+  .l-banner.-ocean-news {
+    background-color: #57BAB0;
+    background-image: url("/img/cover-pages/bg_lines.svg");
+    background-repeat: no-repeat;
+    background-position: top left; }
+  .l-banner.-ocean-events {
+    background-color: #176875;
+    background-image: url("/img/cover-pages/bg_lines.svg");
+    background-repeat: no-repeat;
+    background-position: top left; }
+  .l-banner.-ocean-reports {
+    background-color: #20ADC5;
+    background-image: url("/img/cover-pages/bg_lines.svg");
+    background-repeat: no-repeat;
+    background-position: top left; }
   .l-banner.-topsection-countries {
     padding-top: 1.5rem;
     padding-bottom: 5.5rem; }
@@ -4589,7 +4609,6 @@ select {
 
 .c-section-title {
   position: relative;
-  margin-top: 2rem;
   font-size: 27px;
   font-weight: 400;
   color: #fff;
@@ -4598,8 +4617,9 @@ select {
   font-family: "Merriweather Sans", sans-serif; }
   @media screen and (min-width: 640px) {
     .c-section-title {
-      margin-top: 4.5rem;
       font-size: 55px; } }
+  .c-section-title.-ocean-section-title {
+    width: 100%; }
 
 .c-search {
   width: 650px;

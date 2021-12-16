@@ -1,10 +1,13 @@
 $backgrounds: 'promoHome', 'topsection-country', 'topsection-countries', 'topsection-compare', 'topsection-data', 'topsection-about', 'promoInteriores-Blog';
 $regions: 'africa', 'americas', 'asia', 'europe', 'oceania';
+$bannerOcean: 'ocean-news', 'ocean-events', 'ocean-reports';
+$oceanShades: '#57BAB0', '#176875', '#20ADC5';
 
 .l-banner {
   position: relative;
-  padding-top: rem(24px);
-  padding-bottom: rem(67px);
+  // padding-top: rem(24px);
+  // padding-bottom: rem(67px);
+  height: rem(140px);
 
   &:before {
     content: "";
@@ -13,12 +16,13 @@ $regions: 'africa', 'americas', 'asia', 'europe', 'oceania';
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: rgba(14, 29, 42, .5);
+    // background-color: rgba(14, 29, 42, .5);
   }
 
   @media screen and (min-width: 768px) {
-    padding-top: rem(40px);
-    padding-bottom: rem(112px);
+    // padding-top: rem(40px);
+    // padding-bottom: rem(112px);
+    height: rem(200px);
   }
 
   @for $i from 1 through length($backgrounds) {
@@ -26,6 +30,15 @@ $regions: 'africa', 'americas', 'asia', 'europe', 'oceania';
       background-image: url('#{$baseUrl}/img/cover-pages/#{nth($backgrounds, $i)}.jpg');
       background-size: cover;
       background-position: center;
+    }
+  }
+
+  @for $i from 1 through length($bannerOcean) {
+    &.-#{nth($bannerOcean, $i)} {
+      background-color: #{nth($oceanShades, $i)};
+      background-image: url('#{$baseUrl}/img/cover-pages/bg_lines.svg');
+      background-repeat: no-repeat;
+      background-position: top left;
     }
   }
 
