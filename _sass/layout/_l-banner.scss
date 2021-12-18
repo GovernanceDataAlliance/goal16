@@ -5,9 +5,8 @@ $oceanShades: '#57BAB0', '#176875', '#20ADC5';
 
 .l-banner {
   position: relative;
-  // padding-top: rem(24px);
-  // padding-bottom: rem(67px);
-  height: rem(140px);
+  padding-top: rem(24px);
+  padding-bottom: rem(67px);
 
   &:before {
     content: "";
@@ -16,13 +15,12 @@ $oceanShades: '#57BAB0', '#176875', '#20ADC5';
     bottom: 0;
     left: 0;
     right: 0;
-    // background-color: rgba(14, 29, 42, .5);
+    background-color: rgba(14, 29, 42, .5);
   }
 
   @media screen and (min-width: 768px) {
-    // padding-top: rem(40px);
-    // padding-bottom: rem(112px);
-    height: rem(200px);
+    padding-top: rem(40px);
+    padding-bottom: rem(112px);
   }
 
   @for $i from 1 through length($backgrounds) {
@@ -39,6 +37,18 @@ $oceanShades: '#57BAB0', '#176875', '#20ADC5';
       background-image: url('#{$baseUrl}/img/cover-pages/bg_lines.svg');
       background-repeat: no-repeat;
       background-position: top left;
+      height: rem(140px);
+      padding-top: 0;
+      padding-bottom: 0;
+
+      @media screen and (min-width: 768px) {
+        height: rem(200px);
+      }
+
+      &:before {
+        background-color: transparent;
+      }
+
     }
   }
 
