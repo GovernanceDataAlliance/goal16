@@ -3,16 +3,23 @@
   position: relative;
   text-align: center;
   display: flex;
+  align-items: center;
+  height: 2rem;
+
+  @media screen and (min-width: $screen-s) {
+    height: 3rem;
+  }
+
   ul{
     list-style: none;
     display: block;
-    margin: 0 auto;
+    // margin: 0 auto;
 
 
 
     li,a,span{
       float:left;
-      color: #fff;
+      color: $black;
       font-size: $font-size-xxsmall;
       font-weight: 400;
       letter-spacing: 0.5px;
