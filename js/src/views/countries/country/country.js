@@ -9,7 +9,8 @@ var CountriesCollection = require('../../../collections/common/countries.js'),
 
 var template = require('../../../templates/countries/country/index.hbs');
 
-var BannerView = require('./banner.js'),
+var BreadcrumbView = require('./country-breadcrumb.js'),
+  BannerView = require('./banner.js'),
   TargetCardView = require('./target-card.js'),
   ShareWindowView = require('../../common/share_window.js');
 
@@ -86,9 +87,12 @@ var CountryView = Backbone.View.extend({
     };
 
     $('.l-banner').remove();
+    $('.m-breadcrumbs.-light').remove();
 
+    var breadcrumbView = new BreadcrumbView(viewOptions);
     var bannerView = new BannerView(viewOptions);
-    this.$header.after(bannerView.render().el);
+
+    this.$header.after(breadcrumbView.render().el, bannerView.render().el);
   },
 
   _renderData: function() {
