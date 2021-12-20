@@ -5,15 +5,14 @@ title: Mans Not Hot
 date: '2021-12-20 10:08:00 +0800'
 author: Alex Chia
 summary: Man needs to be hot
-image: >-
-  https://www.nme.com/wp-content/uploads/2017/12/Big-Shaq-Mans-Not-Hot-video-696x442.png
 category: category1
+image: img/big-shaq.png
 ---
 ## Mans Not Hot
 
 Pa pa pa perrrrrahhhhh! Pap! Pap! Pah!
 
-![Big Shaq]({{site.baseurl}}/https://www.nme.com/wp-content/uploads/2017/12/Big-Shaq-Mans-Not-Hot-video-696x442.png)
+![big-shaq.png]({{site.baseurl}}/img/big-shaq.png)
 
 "Init Blood"
 
