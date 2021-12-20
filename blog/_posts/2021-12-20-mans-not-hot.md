@@ -6,7 +6,7 @@ date: '2021-12-20 10:08:00 +0800'
 author: Alex Chia
 summary: Man needs to be hot
 category: category1
-image: img/big-shaq.png
+image: big-shaq.png
 ---
 ## Mans Not Hot
 
