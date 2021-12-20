@@ -116,7 +116,7 @@ prose:
           label: "summary"
       - name: image
         field:
-          element: "text"
+          element: "image"
           label: image
           placeholder: "example.jpg"
           value:
