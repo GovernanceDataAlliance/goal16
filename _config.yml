@@ -116,8 +116,8 @@ prose:
           label: "summary"
       - name: image
         field:
-          element: "image"
-          label: "select image"
+          element: "text"
+          label: image
           placeholder: "example.jpg"
           value:
       - name: category
