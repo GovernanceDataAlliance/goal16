@@ -2,7 +2,7 @@
 published: true
 layout: blog/post
 title: Mans Not Hot
-date: '2021-12-20 10:08:00'
+date: '2021-12-20 10:08:00 +0800'
 author: Alex Chia
 summary: Man needs to be hot
 image: >-
