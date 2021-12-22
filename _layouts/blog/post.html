@@ -19,7 +19,7 @@
         </ul>
       </div>
 
-      <div class="l-banner -section-3">
+      <!-- <div class="l-banner -section-3">
         <div class="wrap">
           <h1 class="c-section-title -light">
             {{page.title}}
@@ -33,6 +33,28 @@
             {{ page.author }}
           </span>
         </div>
+      </div> -->
+
+      <div class="l-hero">
+        <div class="wrap">
+          <div class="hero-wrapper">
+            <div class="img-placeholder"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="l-post-title">
+        <div class="wrap">
+          <h1 class="post-title -light">
+            {{page.title}}
+          </h1>
+        </div>
+      </div>
+
+      <div class="l-post">
+        <div class="wrap">
+          {% include modules/post_module.html %}
+        </div>
       </div>
 
       <div class="l-toolbar -blog -center">
@@ -42,12 +64,6 @@
             <button class="c-button -primary -small" id="js--share" type="button" name="share"> share</button>
           </div>
 
-        </div>
-      </div>
-
-      <div class="l-post">
-        <div class="wrap">
-          {% include modules/post_module.html %}
         </div>
       </div>
 

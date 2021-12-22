@@ -84,3 +84,61 @@
   //   border-bottom: rem(1px) solid #e5eaea;
   // }
 }
+
+.l-hero {
+
+  .hero-wrapper {
+
+    @media screen and (min-width: $screen-m) {
+      max-width: 80%;
+      // margin: 0 auto;
+    }
+
+    @media screen and (min-width: $screen-l) {
+      max-width: 70%;
+      // margin: 0 auto;
+    }
+
+    @media screen and (min-width: $screen-xl) {
+      max-width: 60%;
+      // margin: 0 auto;
+    }
+
+    .img-placeholder {
+      padding-top: 59%;
+      background-color: $light-grey;
+      // background-image: url('#{$baseUrl}/img/blog/promoInteriores-Blog.jpg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+  }
+
+}
+
+.l-post-title {
+  .post-title {
+    font-family: $font-family-title;
+    font-size: $font-size-large;
+    font-weight: $font-weight-bold;
+    color: $black;
+    line-height: rem(35px);
+
+
+    @media screen and (min-width: $screen-m) {
+      max-width: 80%;
+      font-size: $font-size-xlarge;
+      line-height: rem(70px);
+      margin-top: rem(20px);
+    }
+
+    @media screen and (min-width: $screen-l) {
+      max-width: 70%;
+    }
+
+    @media screen and (min-width: $screen-xl) {
+      max-width: 60%;
+    }
+
+  }
+}

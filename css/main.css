@@ -1915,6 +1915,41 @@ select {
   z-index: 1;
   background-color: #fff; }
 
+@media screen and (min-width: 769px) {
+  .l-hero .hero-wrapper {
+    max-width: 80%; } }
+@media screen and (min-width: 1024px) {
+  .l-hero .hero-wrapper {
+    max-width: 70%; } }
+@media screen and (min-width: 1280px) {
+  .l-hero .hero-wrapper {
+    max-width: 60%; } }
+.l-hero .hero-wrapper .img-placeholder {
+  padding-top: 59%;
+  background-color: #e5eaea;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; }
+
+.l-post-title .post-title {
+  font-family: "Merriweather", serif;
+  font-size: 27px;
+  font-weight: 700;
+  color: #333;
+  line-height: 2.1875rem; }
+  @media screen and (min-width: 769px) {
+    .l-post-title .post-title {
+      max-width: 80%;
+      font-size: 55px;
+      line-height: 4.375rem;
+      margin-top: 1.25rem; } }
+  @media screen and (min-width: 1024px) {
+    .l-post-title .post-title {
+      max-width: 70%; } }
+  @media screen and (min-width: 1280px) {
+    .l-post-title .post-title {
+      max-width: 60%; } }
+
 .l-selectors {
   padding: 1.875rem 0;
   background-color: #e5eaea; }
@@ -2957,10 +2992,10 @@ select {
 .m-markdown {
   max-width: 100%; }
   .m-markdown > .content {
-    margin-top: 1.25rem; }
+    margin-top: 0.625rem; }
     @media screen and (min-width: 769px) {
       .m-markdown > .content {
-        margin-top: 3.125rem; } }
+        margin-top: 1.5625rem; } }
     .m-markdown > .content > p {
       margin-bottom: 0.625rem; }
       .m-markdown > .content > p:last-child {
@@ -3443,8 +3478,13 @@ select {
         margin: 3.125rem 0 1.875rem; } }
   @media screen and (min-width: 769px) {
     .m-post .content {
-      max-width: 80%;
-      margin: 0 auto; } }
+      max-width: 80%; } }
+  @media screen and (min-width: 1024px) {
+    .m-post .content {
+      max-width: 70%; } }
+  @media screen and (min-width: 1280px) {
+    .m-post .content {
+      max-width: 60%; } }
   .-list .m-post .title h3 {
     line-height: inherit;
     font-size: inherit; }
