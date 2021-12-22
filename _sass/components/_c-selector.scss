@@ -1,3 +1,6 @@
+$bannerOcean: 'ocean-news', 'ocean-events', 'ocean-reports';
+$oceanShades: $fountain-blue, $dark-aqua, $ball-blue;
+
 .c-selector {
   width: 100%;
   margin-bottom: rem(15px);
@@ -20,7 +23,7 @@
     font-size: rem(16px);
     line-height: rem(16px) !important;
 
-    border: rem(1px) solid rgba($border-1, .5);
+    border: rem(1px) solid rgba($border-5, 1);
     background-color: $white;
 
     @media screen and (min-width: $screen-m) {
@@ -31,10 +34,34 @@
       line-height: rem(11px) !important;
     }
 
+    @for $i from 1 through length($bannerOcean) {
+      &.-#{nth($bannerOcean, $i)} {
+        &:after {
+          content: "";
+          @extend %centery;
+          @include arrow (5px, #{nth($oceanShades, $i)}, 2px, 225deg);
+          top: 40%;
+          right: rem(20px);
+          pointer-events: none;
+
+          @media screen and (min-width: $screen-s) {
+            right: rem(10px);
+          }
+
+          @media screen and (min-width: $screen-l) {
+            right: rem(20px);
+          }
+        }
+      }
+    }
+
+    /*
+    * Fallback Selector
+    */
     &:after {
       content: "";
       @extend %centery;
-      @include arrow (5px, $color-5, 2px, 225deg);
+      @include arrow (5px, $fountain-blue, 2px, 225deg);
       top: 40%;
       right: rem(20px);
       pointer-events: none;

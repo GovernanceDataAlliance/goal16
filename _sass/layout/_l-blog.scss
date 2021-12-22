@@ -5,18 +5,31 @@
   border-right: 0;
   min-height: rem(300px);
 
-  &:after {
-    content: "sorry, no post for your filter options";
-    display: block;
-    position: absolute;
-    top: 100px;
-    bottom: 0;
-    left: 0;
-    text-align: center;
-    right: 0;
-    color: $font-color-7;
-    font-size: rem(27px);
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(1, 1fr);
+  margin: 25px 0;
+
+  @media screen and (min-width: $screen-s) {
+    grid-template-columns: repeat(2, 1fr);
   }
+
+  @media screen and (min-width: $screen-m) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  // &:after {
+  //   content: "sorry, no post for your filter options";
+  //   display: block;
+  //   position: absolute;
+  //   top: 100px;
+  //   bottom: 0;
+  //   left: 0;
+  //   text-align: center;
+  //   right: 0;
+  //   color: $font-color-7;
+  //   font-size: rem(27px);
+  // }
 
   .blog-filter {
     display: none;
@@ -65,8 +78,9 @@
   position: relative;
   z-index: 1;
   background-color: $white;
+  // border: 1px solid black;
 
-  &.-list {
-    border-bottom: rem(1px) solid #e5eaea;
-  }
+  // &.-list {
+  //   border-bottom: rem(1px) solid #e5eaea;
+  // }
 }

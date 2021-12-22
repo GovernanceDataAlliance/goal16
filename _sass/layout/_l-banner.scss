@@ -1,7 +1,7 @@
 $backgrounds: 'promoHome', 'topsection-country', 'topsection-countries', 'topsection-compare', 'topsection-data', 'topsection-about', 'promoInteriores-Blog';
 $regions: 'africa', 'americas', 'asia', 'europe', 'oceania';
 $bannerOcean: 'ocean-news', 'ocean-events', 'ocean-reports';
-$oceanShades: '#57BAB0', '#176875', '#20ADC5';
+$oceanShades: $fountain-blue, $dark-aqua, $ball-blue;
 
 .l-banner {
   position: relative;

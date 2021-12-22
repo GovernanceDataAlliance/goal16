@@ -13,8 +13,13 @@ select {
  * Reset chosen. Just in case you are using
  * chosen.js.
  */
+
+$dropdownOcean: 'ocean-news', 'ocean-events', 'ocean-reports'; // Change back to ocean-news later
+$oceanShades: $fountain-blue, $dark-aqua, $ball-blue;
+
+
 .chzn-container-single .chzn-single {
-  color: $font-color-5;
+  // color: blue;
   background-image: none;
   background-color: transparent;
   border: none;
@@ -22,6 +27,13 @@ select {
   font-size: 11px;
   height: auto;
   font-family: $font-family-secondary;
+
+  @for $i from 1 through length($dropdownOcean) {
+    &.-#{nth($dropdownOcean, $i)} {
+      color: #{nth($oceanShades, $i)};
+      // background-image: url('#{$baseUrl}/img/cover-pages/bg_lines.svg');
+    }
+  }
 }
 
 .chzn-container-single .chzn-drop {
@@ -102,9 +114,13 @@ select {
   }
 }
 
+
+
 .chzn-container-single .chzn-single span {
   font-family: $font-family-primary;
-  color: $font-color-5;
+  // color: $font-color-5;
   text-transform: uppercase;
   line-height: 1.2em;
+
+
 }

@@ -24,7 +24,56 @@ $sections-padding: .5rem .5rem .5rem 0;
 .m-post {
   padding: 0;
   // text-align: center;
-  padding: rem(70px) 0;
+  // padding: rem(70px) 0;
+  height: 100%;
+
+  .news-thumbnail {
+
+    .img-placeholder {
+      padding-top: 56%;
+      background-color: $light-grey;
+      // background-image: url('#{$baseUrl}/img/blog/promoInteriores-Blog.jpg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+  }
+
+  .news-details {
+    margin: 1rem 0;
+
+    > * {
+      margin-bottom: 0.5rem;
+    }
+
+    .-date {
+      font-family: $font-family-primary;
+      font-size: rem(12px);
+      line-height: 1;
+      color: $font-color-7;
+    }
+
+    .-title {
+      font-family: $font-family-title;
+      font-size: rem(24px);
+      color: $font-color-6;
+      font-weight: $font-weight-bold;
+    }
+
+    .-summary {
+      font-family: $font-family-primary;
+      font-size: $font-size-normal;
+      color: $font-color-12;
+    }
+
+    .-link {
+      font-size: $font-size-normal;
+      color: $fountain-blue;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
 
   &.-list {
     text-align: center;

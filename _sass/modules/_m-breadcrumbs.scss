@@ -27,6 +27,14 @@
       text-transform: uppercase;
     }
 
+    a {
+      color: $dark-aqua;
+    }
+
+    span.-active {
+      color: $dark-aqua;
+    }
+
     > li:nth-child(even) {
       margin: 0 rem(5px);
     }
