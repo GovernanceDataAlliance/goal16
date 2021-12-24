@@ -12,9 +12,9 @@
       <div class="m-breadcrumbs">
         <ul>
           <li><a href="{{ site.baseurl }}/"> home </a></li>
-          <li><span> > </span></li>
+          <li><span class="-active"> > </span></li>
           <li><a href="{{ site.baseurl }}/blog/"> blog </a></li>
-          <li><span> > </span></li>
+          <li><span class="-active"> > </span></li>
           <li> {{ page.title }} </li>
         </ul>
       </div>
@@ -43,13 +43,26 @@
         </div>
       </div>
 
-      <div class="l-post-title">
+      <div class="m-backbutton">
         <div class="wrap">
-          <h1 class="post-title -light">
-            {{page.title}}
-          </h1>
+          <div class="backbutton">
+            <span> < </span><a href="{{ site.baseurl }}/blog/"> Back to overview</a>
+          </div>
         </div>
       </div>
+
+      <div class="l-post-title">
+        <div class="wrap">
+          <h1 class="post-title">
+            {{page.title}}
+          </h1>
+          <div class="post-date">
+            {{page.date | date: '%d-%m-%Y'}}
+          </div>
+        </div>
+      </div>
+
+
 
       <div class="l-post">
         <div class="wrap">
@@ -57,13 +70,23 @@
         </div>
       </div>
 
-      <div class="l-toolbar -blog -center">
+      <!-- <div class="l-toolbar -blog -center">
         <div class="wrap">
 
           <div class="l-share">
             <button class="c-button -primary -small" id="js--share" type="button" name="share"> share</button>
           </div>
 
+        </div>
+      </div> -->
+
+      <div class="share-this">
+        <div class="wrap">
+          <div class="share-this-text">
+            Share this
+          </div>
+          <div class="twitter-btn" id="js--twitter"></div>
+          <div class="share-btn"></div>
         </div>
       </div>
 

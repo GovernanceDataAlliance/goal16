@@ -1,6 +1,7 @@
 
 .m-markdown {
   max-width: 100%;
+  color: $deep-black;
 
   > .content {
     margin-top: rem(10px);
@@ -27,9 +28,12 @@
     }
 
     a {
-      color: $font-color-3;
+      // color: $font-color-3;
+      color: $font-color-13;
+      text-decoration: underline;
+
       &:hover {
-        color: $color-4;
+        color: $color-3;
       }
     }
 

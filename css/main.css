@@ -977,12 +977,12 @@ ul {
 
 .m-markdown > .content p, .m-markdown > .content a, .m-markdown > .content h5 {
   font-size: 0.875rem;
-  line-height: 1.625rem;
+  line-height: 1.5rem;
   letter-spacing: 0.025rem; }
   @media screen and (min-width: 1280px) {
     .m-markdown > .content p, .m-markdown > .content a, .m-markdown > .content h5 {
-      font-size: 0.9375rem;
-      line-height: 1.8125rem; } }
+      font-size: 1rem;
+      line-height: 1.75rem; } }
 
 .c-indicator-metadata > span:nth-child(even):before, .c-indicator-metadata > span:nth-child(even) + span:before {
   content: '|';
@@ -1936,19 +1936,69 @@ select {
   font-size: 27px;
   font-weight: 700;
   color: #333;
-  line-height: 2.1875rem; }
+  line-height: 2.1875rem;
+  margin-top: 1.25rem; }
   @media screen and (min-width: 769px) {
     .l-post-title .post-title {
-      max-width: 80%;
-      font-size: 55px;
-      line-height: 4.375rem;
-      margin-top: 1.25rem; } }
+      font-size: 41px;
+      line-height: 3.28125rem;
+      max-width: 80%; } }
   @media screen and (min-width: 1024px) {
     .l-post-title .post-title {
       max-width: 70%; } }
   @media screen and (min-width: 1280px) {
     .l-post-title .post-title {
+      font-size: 55px;
+      line-height: 4.375rem;
       max-width: 60%; } }
+.l-post-title .post-date {
+  margin-top: 10px;
+  font-family: "Merriweather Sans", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1;
+  color: #809497; }
+
+.m-backbutton {
+  font-family: "Merriweather Sans", sans-serif;
+  font-weight: 700;
+  margin-top: 0.625rem; }
+  .m-backbutton .backbutton {
+    font-size: 16px;
+    color: #176875; }
+    .m-backbutton .backbutton a {
+      font-size: 16px;
+      color: #176875; }
+      .m-backbutton .backbutton a:hover {
+        text-decoration: underline; }
+
+.share-this {
+  margin: 25px 0 25px; }
+  .share-this .wrap {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
+    font-weight: 700; }
+    .share-this .wrap .twitter-btn {
+      background-image: url("/img/logos/twitter.svg");
+      background-color: #51ABC2;
+      margin-left: 1rem; }
+      .share-this .wrap .twitter-btn:hover {
+        cursor: pointer;
+        background-color: rgba(81, 171, 194, 0.7); }
+    .share-this .wrap .share-btn {
+      background-image: url("/img/logos/share.svg");
+      background-color: #176875;
+      margin-left: 0.5rem; }
+      .share-this .wrap .share-btn:hover {
+        cursor: pointer;
+        background-color: rgba(23, 104, 117, 0.7); }
+    .share-this .wrap .twitter-btn, .share-this .wrap .share-btn {
+      width: 60px;
+      height: 60px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 35% 35%; }
 
 .l-selectors {
   padding: 1.875rem 0;
@@ -2990,7 +3040,8 @@ select {
       width: 6.25rem; } }
 
 .m-markdown {
-  max-width: 100%; }
+  max-width: 100%;
+  color: #000000; }
   .m-markdown > .content {
     margin-top: 0.625rem; }
     @media screen and (min-width: 769px) {
@@ -3004,9 +3055,10 @@ select {
         .m-markdown > .content > p {
           margin-bottom: 1.5625rem; } }
     .m-markdown > .content a {
-      color: #19aec4; }
+      color: #176875;
+      text-decoration: underline; }
       .m-markdown > .content a:hover {
-        color: #156975; }
+        color: #a1babd; }
     .m-markdown > .content h2, .m-markdown > .content h3, .m-markdown > .content h4, .m-markdown > .content h5 {
       margin: 0.625rem 0;
       font-weight: 400;

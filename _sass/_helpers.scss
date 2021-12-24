@@ -75,12 +75,15 @@
 
 %md-paragraph {
   font-size: rem(14px);
-  line-height: rem(26px);
+  // line-height: rem(26px);
+  line-height: rem(24px);
   letter-spacing: rem(.4px);
 
   @media screen and (min-width: $screen-xl) {
-    font-size: rem(15px);
-    line-height: rem(29px);
+    // font-size: rem(15px);
+    font-size: rem(16px);
+    // line-height: rem(29px);
+    line-height: rem(28px);
   }
 }
 
