@@ -16,15 +16,10 @@ var ShareView = Backbone.View.extend({
   initialize: function(opt) {},
 
   _copyUrl: function() {
-    console.log('Copy url clicked');
-
     $url = this.$el.find('#copy_url')
     $getUrlText = $url.data('url');
 
-    console.log("$url", $url);
-
     navigator.clipboard.writeText($getUrlText);
-
   },
 
   render: function(opt) {

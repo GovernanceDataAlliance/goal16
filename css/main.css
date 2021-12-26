@@ -2648,9 +2648,9 @@ select {
         justify-content: space-between;
         -ms-flex-align: center;
             align-items: center;
-        max-width: 28.125rem;
-        width: 90%;
-        padding-right: 1.25rem; }
+        width: 100%;
+        padding-right: 1.25rem;
+        padding-left: 1.25rem; }
         .m-site-navigation.-header ul > .selected-option-menu a {
           color: #156975;
           font-weight: 700 !important; }
@@ -2686,7 +2686,7 @@ select {
     .m-site-navigation.-header:after {
       margin-left: 4.1875rem; }
     .m-site-navigation.-header ul {
-      padding-right: 4.375rem; } }
+      padding-right: 2.5rem; } }
   @media screen and (min-width: 640px) {
     .m-site-navigation {
       padding: 0px; } }
