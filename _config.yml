@@ -44,7 +44,7 @@ prose:
     - /map
     - /compare
     - /countries
-    - /events
+    # - /events
     - /reports
     - /css
     - .editorconfig
@@ -149,3 +149,42 @@ prose:
         field:
           element: "text"
           label: "description"
+    events:
+      - name: layout
+        field:
+          element: "hidden"
+          label: "layout"
+          value: events/post
+      - name: "published"
+        field:
+          element: 'hidden'
+          value: true
+      - name: title
+        field:
+          element: "text"
+          label: "title"
+      - name: date
+        field:
+          element: "text"
+          label: "date"
+          placeholder: YYYY-MM-DD HH:MM:SS
+      - name: author
+        field:
+          element: "text"
+          label: "author"
+      - name: summary
+        field:
+          element: "text"
+          label: "summary"
+      - name: image
+        field:
+          element: "text"
+          label: image
+          placeholder: "example.jpg"
+          value:
+      - name: category
+        field:
+          element: "text"
+          label: category
+          placeholder: "add only one category"
+          value:

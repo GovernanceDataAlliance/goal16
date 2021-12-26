@@ -64,8 +64,10 @@
 
       <div class="wrap">
         <div class="l-blog">
-          {% for post in paginator.posts %}
-            {% include modules/post_list_module.html %}
+          {% for post in site.posts %}
+            {% if post.tag == 'events' %}
+              {% include modules/post_list_module.html %}
+            {% endif %}
           {% endfor %}
         </div>
       </div>

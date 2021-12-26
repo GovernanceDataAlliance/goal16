@@ -29,7 +29,7 @@
               <select>
                 <option value="">All categories</option>
                 {% for category in site.categories %}
-                  {% unless category[0] == "blog" %}
+                  {% unless category[0] == "blog" or category[0] == "events" %}
                     <option value="{{ category | first | remove:' ' | downcase }}">
                       {{ category | first }}
                     </option>
@@ -66,7 +66,9 @@
       <div class="wrap">
         <div class="l-blog">
           {% for post in paginator.posts %}
-            {% include modules/post_list_module.html %}
+            {% if post.tag != 'events' %}
+              {% include modules/post_list_module.html %}
+            {% endif %}
           {% endfor %}
         </div>
       </div>

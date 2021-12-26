@@ -1289,7 +1289,7 @@ var $ = require('jquery'),
 
 var CategorySelector = require('./category_selector.js');
 var DateSelector = require('./date_selector.js');
-var ShareWindowView = require('../common/share_window.js');
+// var ShareWindowView = require('../common/share_window.js');
 var FunctionHelper = require('../../helpers/functions.js');
 var ShareThisView = require('../common/share_this.js');
 
@@ -1315,9 +1315,8 @@ var BlogView = Backbone.View.extend({
       onlyShare: true
     };
 
-    this.shareWindowView = new ShareWindowView(this.shareOptions);
+    // this.shareWindowView = new ShareWindowView(this.shareOptions);
     this.shareThisView = new ShareThisView({el: "#js--sharethis"});
-
     this.shareThisView.render();
 
     this.FunctionHelper.scrollTop();
@@ -1336,8 +1335,8 @@ var BlogView = Backbone.View.extend({
   },
 
   _share: function() {
-    this.shareWindowView.render(this.shareOptions);
-    this.shareWindowView.delegateEvents();
+    // this.shareWindowView.render(this.shareOptions);
+    // this.shareWindowView.delegateEvents();
   },
 
   show: function() {
@@ -1347,7 +1346,7 @@ var BlogView = Backbone.View.extend({
 
 module.exports = BlogView;
 
-},{"../../helpers/functions.js":8,"../common/share_this.js":75,"../common/share_window.js":77,"./category_selector.js":68,"./date_selector.js":69,"backbone":97,"jquery":149}],68:[function(require,module,exports){
+},{"../../helpers/functions.js":8,"../common/share_this.js":75,"./category_selector.js":68,"./date_selector.js":69,"backbone":97,"jquery":149}],68:[function(require,module,exports){
 (function (global){(function (){
 var $ = require('jquery');
 global.$ = $; // for chosen.js
