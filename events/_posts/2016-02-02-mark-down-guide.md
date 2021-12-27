@@ -1,6 +1,6 @@
 ---
 published: true
-layout: blog/post
+layout: events/post
 date: "2016-03-11"
 author: Vizzuality
 image: ""

@@ -6,7 +6,7 @@
   <body>
     {% include icons.html %}
 
-    <div class="l-main-container">
+    <div class="l-main-container js-event">
       {% include header.html %}
 
       {% include breadcrumbs.html %}
@@ -26,9 +26,9 @@
           <div class="c-selector">
             <div class="btn-drop-down" id="categorySelector" data-url="{{ site.baseurl }}">
               <select>
-                <option value="">All categories</option>
+                <option value="">Upcoming events</option>
                 {% for category in site.categories %}
-                  {% unless category[0] == "blog" %}
+                  {% unless category[0] == "blog" or categories[0] == "events" %}
                     <option value="{{ category | first | remove:' ' | downcase }}">
                       {{ category | first }}
                     </option>
@@ -40,7 +40,7 @@
           </div>
           {% endunless %}
 
-          <div class="c-selector">
+          <!-- <div class="c-selector">
             <div class="btn-drop-down" id="dateSelector" data-url="{{ site.baseurl }}">
               <select>
                 <option value="">All dates</option>
@@ -55,7 +55,7 @@
                 {% endfor %}
               </select>
             </div>
-          </div>
+          </div> -->
 
           <!-- <button class="c-button -primary -small" id="js--share" type="button" name="share"> share</button> -->
 
@@ -66,7 +66,7 @@
         <div class="l-blog">
           {% for post in site.posts %}
             {% if post.tag == 'events' %}
-              {% include modules/post_list_module.html %}
+              {% include events_post_list.html %}
             {% endif %}
           {% endfor %}
         </div>
@@ -98,6 +98,13 @@
       var SITEURL = '{{ site.baseurl }}' || null;
     </script>
     <script src="{{ site.baseurl }}/js/main_bundle.js"></script>
+    <script>
+      var bannerCheck =  $('div.l-banner').hasClass('-ocean-events');
+
+      bannerCheck && $(".chzn-container-single .chzn-single").addClass(`-ocean-events`);
+      bannerCheck && $(".btn-drop-down").addClass(`-ocean-events`);
+
+    </script>
   </body>
 
 </html>

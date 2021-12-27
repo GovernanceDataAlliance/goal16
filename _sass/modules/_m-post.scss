@@ -26,6 +26,7 @@ $sections-padding: .5rem .5rem .5rem 0;
   // text-align: center;
   // padding: rem(70px) 0;
   height: 100%;
+  border-bottom: 1px solid $silver;
 
   .news-thumbnail {
 
@@ -43,7 +44,7 @@ $sections-padding: .5rem .5rem .5rem 0;
     margin: 1rem 0;
 
     > * {
-      margin-bottom: 0.5rem;
+      margin-bottom: 1rem;
     }
 
     .-date {
@@ -51,26 +52,54 @@ $sections-padding: .5rem .5rem .5rem 0;
       font-size: rem(12px);
       line-height: 1;
       color: $font-color-7;
+
+      &.events  {
+        font-size: rem(16px);
+        color: $dark-aqua;
+        font-weight: 700;
+
+        @media screen and (min-width: 768px) {
+          font-size: rem(18px);
+        }
+      }
     }
 
     .-title {
       font-family: $font-family-title;
-      font-size: rem(24px);
+      font-size: rem(18px);
       color: $font-color-6;
       font-weight: $font-weight-bold;
+
+      @media screen and (min-width: 768px) {
+        font-size: rem(24px);
+      }
     }
 
     .-summary {
       font-family: $font-family-primary;
-      font-size: $font-size-normal;
+      font-size: $font-size-small;
       color: $font-color-12;
+
+      @media screen and (min-width: 768px) {
+        font-size: $font-size-normal;
+      }
     }
 
     .-link {
-      font-size: $font-size-normal;
+      font-size: $font-size-small;
       color: $fountain-blue;
+      font-weight: 700;
+
       &:hover{
         text-decoration: underline;
+      }
+
+      &.events {
+        color: $dark-aqua;
+      }
+
+      @media screen and (min-width: 768px) {
+        font-size: $font-size-normal;
       }
     }
   }
@@ -245,6 +274,7 @@ $sections-padding: .5rem .5rem .5rem 0;
   }
 
   @media screen and (min-width: $screen-m) {
+    border-bottom: 0;
 
      .properties {
       flex-direction: row;
