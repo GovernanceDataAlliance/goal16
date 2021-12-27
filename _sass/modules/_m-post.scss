@@ -28,7 +28,22 @@ $sections-padding: .5rem .5rem .5rem 0;
   height: 100%;
   border-bottom: 1px solid $silver;
 
+  a.reports-post {
+    display: flex;
+    align-items: center;
+    padding-bottom: 1.5rem;
+
+    @media screen and (min-width: 768px) {
+      padding-bottom: 0;
+    }
+
+  }
+
   .news-thumbnail {
+
+    &.-reports {
+      width: 30%;
+    }
 
     .img-placeholder {
       padding-top: 56%;
@@ -37,6 +52,10 @@ $sections-padding: .5rem .5rem .5rem 0;
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
+
+      &.-reports {
+        padding-top: 142%;
+      }
     }
   }
 
@@ -98,9 +117,18 @@ $sections-padding: .5rem .5rem .5rem 0;
         color: $dark-aqua;
       }
 
+      &.reports {
+        color: $ball-blue;
+      }
+
       @media screen and (min-width: 768px) {
         font-size: $font-size-normal;
       }
+    }
+
+    &.-reports {
+      width: 70%;
+      padding: 1rem 2rem;
     }
   }
 

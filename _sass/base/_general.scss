@@ -162,3 +162,13 @@ svg:not(:root) {
 .units {
   font-size: rem(14px);
 }
+
+.ellipsis {
+  display: block;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  /* autoprefixer: off */
+}

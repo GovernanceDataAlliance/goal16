@@ -1230,6 +1230,15 @@ svg:not(:root) {
 .units {
   font-size: 0.875rem; }
 
+.ellipsis {
+  display: block;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  /* autoprefixer: off */ }
+
 select {
   color: #19aec4;
   font-family: "Lora", serif;
@@ -1894,6 +1903,10 @@ select {
     .l-blog {
       -ms-grid-columns: (1fr)[3];
           grid-template-columns: repeat(3, 1fr); } }
+  @media screen and (min-width: 640px) {
+    .l-blog.reports {
+      -ms-grid-columns: (1fr)[2];
+          grid-template-columns: repeat(2, 1fr); } }
   .l-blog .blog-filter {
     display: none; }
     .l-blog .blog-filter.-active {
@@ -1931,6 +1944,19 @@ select {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover; }
+  .l-hero .hero-wrapper .img-placeholder.-reports {
+    padding-top: 142%; }
+.l-hero .hero-wrapper.-reports {
+  width: 25%; }
+  @media screen and (min-width: 769px) {
+    .l-hero .hero-wrapper.-reports {
+      width: calc(80% / 3); } }
+  @media screen and (min-width: 1024px) {
+    .l-hero .hero-wrapper.-reports {
+      width: calc(70% / 3); } }
+  @media screen and (min-width: 1280px) {
+    .l-hero .hero-wrapper.-reports {
+      width: calc(60% / 3); } }
 
 .l-post-title .post-title {
   font-family: "Merriweather", serif;
@@ -1971,6 +1997,10 @@ select {
       color: #176875; }
       .m-backbutton .backbutton a:hover {
         text-decoration: underline; }
+      .m-backbutton .backbutton a.-reports {
+        color: #20ADC5; }
+    .m-backbutton .backbutton.-reports {
+      color: #20ADC5; }
 
 .share-this {
   margin: 25px 0 25px; }
@@ -2000,6 +2030,68 @@ select {
       background-repeat: no-repeat;
       background-position: center;
       background-size: 35% 35%; }
+
+.reports-coverpage-wrapper .wrap .content {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column; }
+  @media screen and (min-width: 769px) {
+    .reports-coverpage-wrapper .wrap .content {
+      max-width: 80%;
+      -ms-flex-direction: row;
+          flex-direction: row; } }
+  @media screen and (min-width: 1024px) {
+    .reports-coverpage-wrapper .wrap .content {
+      max-width: 70%; } }
+  @media screen and (min-width: 1280px) {
+    .reports-coverpage-wrapper .wrap .content {
+      max-width: 60%; } }
+  .reports-coverpage-wrapper .wrap .content .coverpage-img {
+    width: 30%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: center;
+        justify-content: center; }
+    .reports-coverpage-wrapper .wrap .content .coverpage-img .hero-wrapper {
+      width: 100%; }
+      .reports-coverpage-wrapper .wrap .content .coverpage-img .hero-wrapper .img-placeholder {
+        padding-top: 142%;
+        background-color: #e5eaea;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover; }
+  .reports-coverpage-wrapper .wrap .content .coverpage-title {
+    width: 70%;
+    padding: 1rem 0;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex-pack: center;
+        justify-content: center; }
+    @media screen and (min-width: 769px) {
+      .reports-coverpage-wrapper .wrap .content .coverpage-title {
+        padding: 1rem 2rem; } }
+    .reports-coverpage-wrapper .wrap .content .coverpage-title .report-headline .report-title {
+      font-family: "Merriweather", serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: #333;
+      line-height: 2.1875rem;
+      margin-top: 0.625rem; }
+      @media screen and (min-width: 769px) {
+        .reports-coverpage-wrapper .wrap .content .coverpage-title .report-headline .report-title {
+          font-size: 36px;
+          line-height: 2.8125rem; } }
+    .reports-coverpage-wrapper .wrap .content .coverpage-title .report-headline .report-date {
+      margin-top: 10px;
+      font-family: "Merriweather Sans", sans-serif;
+      font-size: 0.875rem;
+      line-height: 1;
+      color: #809497; }
 
 .l-selectors {
   padding: 1.875rem 0;
@@ -3436,12 +3528,25 @@ select {
   padding: 0;
   height: 100%;
   border-bottom: 1px solid #e5eaea; }
+  .m-post a.reports-post {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
+    padding-bottom: 1.5rem; }
+    @media screen and (min-width: 768px) {
+      .m-post a.reports-post {
+        padding-bottom: 0; } }
+  .m-post .news-thumbnail.-reports {
+    width: 30%; }
   .m-post .news-thumbnail .img-placeholder {
     padding-top: 56%;
     background-color: #e5eaea;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover; }
+    .m-post .news-thumbnail .img-placeholder.-reports {
+      padding-top: 142%; }
   .m-post .news-details {
     margin: 1rem 0; }
     .m-post .news-details > * {
@@ -3481,9 +3586,14 @@ select {
         text-decoration: underline; }
       .m-post .news-details .-link.events {
         color: #176875; }
+      .m-post .news-details .-link.reports {
+        color: #20ADC5; }
       @media screen and (min-width: 768px) {
         .m-post .news-details .-link {
           font-size: 16px; } }
+    .m-post .news-details.-reports {
+      width: 70%;
+      padding: 1rem 2rem; }
   .m-post.-list {
     text-align: center; }
   .m-post a {

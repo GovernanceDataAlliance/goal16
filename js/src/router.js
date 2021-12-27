@@ -12,6 +12,7 @@ var ViewManager = require('./lib/view_manager.js'),
   AboutView = require('./views/about/about.js'),
   BlogView = require('./views/blog/blog.js'),
   EventsView = require('./views/events/events.js'),
+  ReportsView = require('./views/reports/reports.js'),
   CountriesListView = require('./views/countries/countries-list/countries.js'),
   CountryView = require('./views/countries/country/country.js');
   InfowindowView = require('./views/common/infowindow.js');
@@ -34,7 +35,8 @@ var Router = Backbone.Router.extend({
     "data(/)(?indicator=:indicator)": "data",
     "about(/)": "about",
     "blog(/)(*actions)": "blog",
-    "events(/)(*actions)": "events"
+    "events(/)(*actions)": "events",
+    "reports(/)(*actions)": "reports"
   },
 
   initialize: function() {
@@ -221,6 +223,17 @@ var Router = Backbone.Router.extend({
     view = this.viewManager.getView('events');
 
     this.viewManager.showView('events');
+  },
+
+  // REPORTS
+  reports: function() {
+    if (!this.viewManager.hasView('reports')) {
+      this.viewManager.addView('reports', ReportsView);
+    }
+
+    view = this.viewManager.getView('reports');
+
+    this.viewManager.showView('reports');
   }
 
 });

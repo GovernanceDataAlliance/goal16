@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body>
+    {% include icons.html %}
+
+    <div class="l-main-container js-reports">
+      {% include header.html %}
+
+      {% include breadcrumbs.html %}
+
+      <div class="l-banner -section-2 -about -ocean-reports">
+
+        <div class="wrap -ocean-wrap">
+          <h1 class="c-section-title -ocean-section-title -light">{{ page.title }}</h1>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <div class="l-blog reports">
+          {% for post in site.posts %}
+            {% if post.tag == 'reports' %}
+              {% include reports_post_list.html %}
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="l-toolbar -pagination -footer">
+        <div class="wrap">
+          <div class="m-controls -full -centered">
+            <div class="m-pagination">
+              {% if paginator.previous_page %}
+                <a href="{{ site.baseurl }}{{ paginator.previous_page_path }}" class="page-link"> &lt; Newer Post</a>
+              {% else %}
+                <span class="page-link -disabled">&lt; Newer Post</span>
+              {% endif %}
+              <span class="page-number ">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+              {% if paginator.next_page %}
+                <a href="{{ site.baseurl }}{{ paginator.next_page_path }}/" class="page-link"> Older post > </a>
+              {% else %}
+                <span class="page-link -disabled">Older post ></span>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {% include footer.html %}
+    </div>
+    <script>
+      var SITEURL = '{{ site.baseurl }}' || null;
+    </script>
+    <script src="{{ site.baseurl }}/js/main_bundle.js"></script>
+  </body>
+
+</html>

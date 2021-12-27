@@ -7,7 +7,7 @@
         <div class="news-details">
           <div class="-date events">{{ post.date | date: '%d-%m-%Y'}}</div>
           <div class="-title">{{ post.title }}</div>
-          <div class="-summary">{{post.summary ? post.summary | post.excerpt}}</div>
+          <div class="-summary ellipsis">{{post.summary ? post.summary | post.excerpt}}</div>
           <div class="-link events">Read more ></div>
         </div>
       </a>

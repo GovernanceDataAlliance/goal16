@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body class="is-post-page">
+    {% include icons.html %}
+
+    <div class="l-main-container js-blog">
+      {% include header.html %}
+
+      <div class="m-breadcrumbs">
+        <ul>
+          <li><a href="{{ site.baseurl }}/"> home </a></li>
+          <li><span class="-active"> > </span></li>
+          <li><a href="{{ site.baseurl }}/reports/"> reports </a></li>
+          <li><span class="-active"> > </span></li>
+          <li> {{ page.title }} </li>
+        </ul>
+      </div>
+
+      <div class="reports-coverpage-wrapper">
+        <div class="wrap">
+          <div class="content">
+
+            <div class="coverpage-img">
+              <div class="hero-wrapper">
+                <div class="img-placeholder"></div>
+              </div>
+            </div>
+
+            <div class="coverpage-title">
+
+              <div class="m-backbutton">
+                <div class="backbutton -reports">
+                  <span> < </span><a class="-reports" href="{{ site.baseurl }}/reports/"> Back to overview</a>
+                </div>
+              </div>
+
+              <div class="report-headline">
+                <h1 class="report-title">
+                  {{page.title}}
+                </h1>
+                <div class="report-date">
+                  {{page.date | date: '%d-%m-%Y'}}
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="l-post">
+        <div class="wrap">
+          {% include modules/post_module.html %}
+        </div>
+      </div>
+
+      <!-- <div class="l-toolbar -blog -center">
+        <div class="wrap">
+
+          <div class="l-share">
+            <button class="c-button -primary -small" id="js--share" type="button" name="share"> share</button>
+          </div>
+
+        </div>
+      </div> -->
+
+      <div class="share-this" id="js--sharethis"></div>
+
+      {% include footer.html %}
+
+    </div>
+    <script>
+      var SITEURL = '{{ site.baseurl }}' || null;
+    </script>
+    <script src="{{ site.baseurl }}/js/main_bundle.js"></script>
+  </body>
+
+</html>
