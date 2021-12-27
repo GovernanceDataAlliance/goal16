@@ -78,15 +78,19 @@
           <div class="m-controls -full -centered">
             <div class="m-pagination">
               {% if paginator.previous_page %}
-                <a href="{{ site.baseurl }}{{ paginator.previous_page_path }}" class="page-link"> &lt; Newer Post</a>
+                <a href="{{ site.baseurl }}{{ paginator.previous_page_path }}/">
+                  <div class="left-btn news"></div>
+                </a>
               {% else %}
-                <span class="page-link -disabled">&lt; Newer Post</span>
+                <div class="left-btn news -disabled"></div>
               {% endif %}
-              <span class="page-number ">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+              <span class="page-number ">{{ paginator.page }} of {{ paginator.total_pages }}</span>
               {% if paginator.next_page %}
-                <a href="{{ site.baseurl }}{{ paginator.next_page_path }}/" class="page-link"> Older post > </a>
+                <a href="{{ site.baseurl }}{{ paginator.next_page_path }}/">
+                  <div class="right-btn news"></div>
+                </a>
               {% else %}
-                <span class="page-link -disabled">Older post ></span>
+                <div class="right-btn news -disabled"></div>
               {% endif %}
             </div>
           </div>
