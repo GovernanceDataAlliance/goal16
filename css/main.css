@@ -1299,7 +1299,7 @@ select {
   padding: 8px 30px 8px 5px;
   border-color: #beb7aa;
   color: #82bf72;
-  background: url("/img/miscellaneous/search.svg") no-repeat 95% 50%;
+  background: url("/goal16/img/miscellaneous/search.svg") no-repeat 95% 50%;
   background-size: 15px 15px; }
 
 .chzn-container .chzn-results {
@@ -1537,7 +1537,7 @@ select {
   padding: 2rem 0;
   margin-bottom: 2rem;
   background-color: #57BAB0;
-  background-image: url("/img/cover-pages/bg_lines.svg");
+  background-image: url("/goal16/img/cover-pages/bg_lines.svg");
   background-repeat: no-repeat;
   background-position: top left;
   background-size: auto 100%;
@@ -1827,7 +1827,7 @@ select {
         flex-basis: 50%;
     background-color: #ddd; }
     .l-presentation > .picture.distribuidoresMul-01 {
-      background-image: url("/img/distribuidoresMul-01.jpg");
+      background-image: url("/goal16/img/distribuidoresMul-01.jpg");
       background-size: cover;
       background-position: center; }
       .l-presentation > .picture.distribuidoresMul-01:before {
@@ -1839,7 +1839,7 @@ select {
         right: 0;
         background-color: rgba(65, 52, 43, 0.5); }
     .l-presentation > .picture.distribuidoresMul-03 {
-      background-image: url("/img/distribuidoresMul-03.jpg");
+      background-image: url("/goal16/img/distribuidoresMul-03.jpg");
       background-size: cover;
       background-position: center; }
       .l-presentation > .picture.distribuidoresMul-03:before {
@@ -1851,7 +1851,7 @@ select {
         right: 0;
         background-color: rgba(65, 52, 43, 0.5); }
     .l-presentation > .picture.distribuidoresMul-04 {
-      background-image: url("/img/distribuidoresMul-04.jpg");
+      background-image: url("/goal16/img/distribuidoresMul-04.jpg");
       background-size: cover;
       background-position: center; }
       .l-presentation > .picture.distribuidoresMul-04:before {
@@ -2029,14 +2029,14 @@ select {
         align-items: center;
     font-weight: 700; }
     .share-this .wrap .twitter-btn {
-      background-image: url("/img/logos/twitter.svg");
+      background-image: url("/goal16/img/logos/twitter.svg");
       background-color: #51ABC2;
       margin-left: 1rem; }
       .share-this .wrap .twitter-btn:hover {
         cursor: pointer;
         background-color: rgba(81, 171, 194, 0.7); }
     .share-this .wrap .share-btn {
-      background-image: url("/img/logos/share.svg");
+      background-image: url("/goal16/img/logos/share.svg");
       background-color: #176875;
       margin-left: 0.5rem; }
       .share-this .wrap .share-btn:hover {
@@ -2263,7 +2263,7 @@ select {
       .l-highlight .wrap {
         padding: 0px; } }
   .l-highlight.-crosseling-map {
-    background-image: url("/img/crosseling/crosseling-map.jpg");
+    background-image: url("/goal16/img/crosseling/crosseling-map.jpg");
     background-size: cover;
     background-position: center; }
     .l-highlight.-crosseling-map:before {
@@ -2275,7 +2275,7 @@ select {
       right: 0;
       background-color: rgba(14, 29, 42, 0.4); }
   .l-highlight.-crosseling-compare {
-    background-image: url("/img/crosseling/crosseling-compare.jpg");
+    background-image: url("/goal16/img/crosseling/crosseling-compare.jpg");
     background-size: cover;
     background-position: center; }
     .l-highlight.-crosseling-compare:before {
@@ -2287,7 +2287,7 @@ select {
       right: 0;
       background-color: rgba(14, 29, 42, 0.4); }
   .l-highlight.-crosseling-about {
-    background-image: url("/img/crosseling/crosseling-about.jpg");
+    background-image: url("/goal16/img/crosseling/crosseling-about.jpg");
     background-size: cover;
     background-position: center; }
     .l-highlight.-crosseling-about:before {
@@ -2337,7 +2337,7 @@ select {
       justify-content: center;
   -ms-flex-align: center;
       align-items: center;
-  background-image: url("/img/fullscreenbg.jpg");
+  background-image: url("/goal16/img/fullscreenbg.jpg");
   z-index: 2; }
   @media screen and (min-width: 640px) {
     .l-welcome {
@@ -2449,36 +2449,36 @@ select {
       padding-top: 2.5rem;
       padding-bottom: 7rem; } }
   .l-banner.-promoHome {
-    background-image: url("/img/cover-pages/promoHome.jpg");
+    background-image: url("/goal16/img/cover-pages/promoHome.jpg");
     background-size: cover;
     background-position: center; }
   .l-banner.-topsection-country {
-    background-image: url("/img/cover-pages/topsection-country.jpg");
+    background-image: url("/goal16/img/cover-pages/topsection-country.jpg");
     background-size: cover;
     background-position: center; }
   .l-banner.-topsection-countries {
-    background-image: url("/img/cover-pages/topsection-countries.jpg");
+    background-image: url("/goal16/img/cover-pages/topsection-countries.jpg");
     background-size: cover;
     background-position: center; }
   .l-banner.-topsection-compare {
-    background-image: url("/img/cover-pages/topsection-compare.jpg");
+    background-image: url("/goal16/img/cover-pages/topsection-compare.jpg");
     background-size: cover;
     background-position: center; }
   .l-banner.-topsection-data {
-    background-image: url("/img/cover-pages/topsection-data.jpg");
+    background-image: url("/goal16/img/cover-pages/topsection-data.jpg");
     background-size: cover;
     background-position: center; }
   .l-banner.-topsection-about {
-    background-image: url("/img/cover-pages/topsection-about.jpg");
+    background-image: url("/goal16/img/cover-pages/topsection-about.jpg");
     background-size: cover;
     background-position: center; }
   .l-banner.-promoInteriores-Blog {
-    background-image: url("/img/cover-pages/promoInteriores-Blog.jpg");
+    background-image: url("/goal16/img/cover-pages/promoInteriores-Blog.jpg");
     background-size: cover;
     background-position: center; }
   .l-banner.-ocean-news {
     background-color: #57BAB0;
-    background-image: url("/img/cover-pages/bg_lines.svg");
+    background-image: url("/goal16/img/cover-pages/bg_lines.svg");
     background-repeat: no-repeat;
     background-position: top left;
     height: 8.75rem;
@@ -2491,7 +2491,7 @@ select {
       background-color: transparent; }
   .l-banner.-ocean-events {
     background-color: #176875;
-    background-image: url("/img/cover-pages/bg_lines.svg");
+    background-image: url("/goal16/img/cover-pages/bg_lines.svg");
     background-repeat: no-repeat;
     background-position: top left;
     height: 8.75rem;
@@ -2504,7 +2504,7 @@ select {
       background-color: transparent; }
   .l-banner.-ocean-reports {
     background-color: #20ADC5;
-    background-image: url("/img/cover-pages/bg_lines.svg");
+    background-image: url("/goal16/img/cover-pages/bg_lines.svg");
     background-repeat: no-repeat;
     background-position: top left;
     height: 8.75rem;
@@ -2519,15 +2519,15 @@ select {
     padding-top: 1.5rem;
     padding-bottom: 5.5rem; }
     .l-banner.-topsection-countries.-africa {
-      background-image: url("/img/cover-pages/regions/africa.jpg"); }
+      background-image: url("/goal16/img/cover-pages/regions/africa.jpg"); }
     .l-banner.-topsection-countries.-americas {
-      background-image: url("/img/cover-pages/regions/americas.jpg"); }
+      background-image: url("/goal16/img/cover-pages/regions/americas.jpg"); }
     .l-banner.-topsection-countries.-asia {
-      background-image: url("/img/cover-pages/regions/asia.jpg"); }
+      background-image: url("/goal16/img/cover-pages/regions/asia.jpg"); }
     .l-banner.-topsection-countries.-europe {
-      background-image: url("/img/cover-pages/regions/europe.jpg"); }
+      background-image: url("/goal16/img/cover-pages/regions/europe.jpg"); }
     .l-banner.-topsection-countries.-oceania {
-      background-image: url("/img/cover-pages/regions/oceania.jpg"); }
+      background-image: url("/goal16/img/cover-pages/regions/oceania.jpg"); }
     @media screen and (min-width: 640px) {
       .l-banner.-topsection-countries {
         padding-top: 2.5rem;
@@ -3340,7 +3340,7 @@ select {
   .m-pagination .left-btn {
     width: 60px;
     height: 60px;
-    background-image: url("/img/miscellaneous/chevron-left-white.svg");
+    background-image: url("/goal16/img/miscellaneous/chevron-left-white.svg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 25% 25%; }
@@ -3362,7 +3362,7 @@ select {
   .m-pagination .right-btn {
     width: 60px;
     height: 60px;
-    background-image: url("/img/miscellaneous/chevron-right-white.svg");
+    background-image: url("/goal16/img/miscellaneous/chevron-right-white.svg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 25% 25%; }
@@ -3758,7 +3758,7 @@ select {
 
 .m-aside-compare .image-compare-banner {
   position: relative;
-  background-image: url("/img/crosseling/crosseling-compare.jpg");
+  background-image: url("/goal16/img/crosseling/crosseling-compare.jpg");
   max-width: 69.125rem;
   width: 100%;
   box-shadow: 0 0 60px 0 rgba(7, 51, 56, 0.15);
@@ -4670,23 +4670,23 @@ select {
         font-size: 0.75rem; } }
     .m-legend .bucket.bucket-1 {
       background-color: color100;
-      background-image: url("/img/patterns/color100.png");
+      background-image: url("/goal16/img/patterns/color100.png");
       border: 1px solid #121c12; }
     .m-legend .bucket.bucket-2 {
       background-color: color75;
-      background-image: url("/img/patterns/color75.png");
+      background-image: url("/goal16/img/patterns/color75.png");
       border: 1px solid #243b24; }
     .m-legend .bucket.bucket-3 {
       background-color: color50;
-      background-image: url("/img/patterns/color50.png");
+      background-image: url("/goal16/img/patterns/color50.png");
       border: 1px solid #466748; }
     .m-legend .bucket.bucket-4 {
       background-color: color25;
-      background-image: url("/img/patterns/color25.png");
+      background-image: url("/goal16/img/patterns/color25.png");
       border: 1px solid #7bb67d; }
     .m-legend .bucket.bucket-5 {
       background-color: color0;
-      background-image: url("/img/patterns/color0.png");
+      background-image: url("/goal16/img/patterns/color0.png");
       border: 1px solid #c2dac0; }
     .m-legend .bucket.bucket-5 {
       margin-right: 0; }
