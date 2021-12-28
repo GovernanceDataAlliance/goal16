@@ -18,6 +18,12 @@ $oceanShades: $fountain-blue, $dark-aqua, $ball-blue;
     background-color: rgba(14, 29, 42, .5);
   }
 
+  &.country-shade {
+    &:before {
+      background-color: rgba($dark-aqua, .4);
+    }
+  }
+
   @media screen and (min-width: 768px) {
     padding-top: rem(40px);
     padding-bottom: rem(112px);

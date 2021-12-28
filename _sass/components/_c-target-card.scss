@@ -63,17 +63,18 @@
     display: block;
     width: 100%;
     height: 100%;
+    padding-top: rem(30px);
 
     @media screen and (min-width: 768px) {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-      -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-      justify-content: space-between;
-      padding-top: rem(30px);
+      // display: -webkit-box;
+      // display: -ms-flexbox;
+      // display: flex;
+      // -ms-flex-wrap: wrap;
+      // flex-wrap: wrap;
+      // -webkit-box-pack: justify;
+      // -ms-flex-pack: justify;
+      // justify-content: space-between;
+      // padding-top: rem(30px);
     }
 
     &.slick-slider {

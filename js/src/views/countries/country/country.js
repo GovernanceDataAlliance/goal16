@@ -119,7 +119,7 @@ var CountryView = Backbone.View.extend({
 
       this.$targetList.find('> .wrap').append(targetCard.render().el);
 
-      targetCard.setSlick();
+      // targetCard.setSlick(); Triggers Swipe view between Global and Complementary Indicators
 
       if (openFirst) {
         targetCard.targetCardHeaderView.toggleCard();

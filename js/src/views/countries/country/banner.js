@@ -24,6 +24,8 @@ var CountryBanner = Backbone.View.extend({
 
     this.$el.addClass(regionClass);
 
+    this.$el.addClass('country-shade');
+
     return this;
   }
 

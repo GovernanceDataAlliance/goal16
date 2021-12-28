@@ -66,9 +66,6 @@
       <div class="wrap">
         <div class="l-blog">
           {% for post in paginator.posts %}
-          <!-- <pre style="position: absolute; top: 0%; right: 0%; max-width: 30%; min-height: 100px; color: black; background-color: blanchedalmond; white-space: normal; z-index: 99;">
-            <div>{{post | inspect }}</div>
-          </pre> -->
             {% unless post.tag == 'events' or post.tag == 'reports' %}
               {% include modules/post_list_module.html %}
             {% endunless %}
