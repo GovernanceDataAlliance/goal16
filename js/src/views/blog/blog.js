@@ -11,9 +11,9 @@ var BlogView = Backbone.View.extend({
 
   el: '.js-blog',
 
-  events: {
-    'click #js--share' : '_share'
-  },
+  // events: {
+  //   'click #js--share' : '_share'
+  // },
 
   initialize: function() {
     this.FunctionHelper = FunctionHelper;

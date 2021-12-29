@@ -1,16 +1,16 @@
 .c-target-card {
-  padding-bottom: rem(22px);
+  padding-bottom: rem(20px);
   @media screen and (min-width: 768px) {
-    padding-bottom: rem(53px);
+    padding-bottom: rem(29px);
   }
   > .js--target-info {
     display: flex;
     justify-content: space-between;
-    padding-bottom: rem(4px);
-    border-bottom: rem(1px) solid rgba($border-2, .7);
+    padding-bottom: rem(20px);
+    border-bottom: rem(1px) solid rgba($gainsboro, 1);
     cursor: pointer;
     @media screen and (min-width: $screen-m) {
-    padding-bottom: rem(15px);
+    padding-bottom: rem(29px);
   }
   }
 

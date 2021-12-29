@@ -103,7 +103,8 @@ var IndicatorCardView = Backbone.View.extend({
       iso: iso,
       officialIndicators: officialIndicators,
       shadowIndicators: shadowIndicators,
-      siteurl: SITEURL
+      siteurl: SITEURL,
+      target: target // Only for button-container for previous map/compare buttons
     }));
 
     this._setViews();

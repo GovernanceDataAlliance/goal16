@@ -41,7 +41,7 @@
 
   > .card-title {
     position: relative;
-    // padding-bottom: rem(30px);
+    padding-bottom: rem(10px);
 
     font-family: $font-family-title;
     font-size: rem($font-size-small);
@@ -51,6 +51,7 @@
 
     @media screen and (min-width: $screen-m) {
       font-size: rem(20px);
+      padding-bottom: rem(20px);
     }
 
     // &:after {
@@ -93,17 +94,19 @@
     //   margin-top: rem(35px);
     // }
 
-    // &:last-child {
-    //   margin-bottom: 0;
-    // }
+    &:last-child {
+      margin-bottom: 2rem;
+    }
 
     > .indicator-score {
       font-family: $font-family-secondary;
       font-size: rem(22px);
       letter-spacing: rem(.2px);
       color: $font-color-9;
+      margin-top: 1rem;
 
       @media screen and (min-width: $screen-s) {
+        margin-top: 0;
         margin-left: 1rem;
         width: 15%;
       }
