@@ -3,7 +3,11 @@ $oceanShades: $fountain-blue, $dark-aqua, $ball-blue;
 
 .c-selector {
   width: 100%;
-  margin-bottom: rem(15px);
+  margin-bottom: rem(10px);
+
+  @media screen and (min-width: $screen-s) {
+    margin: 0 rem(15px) 0 0;
+  }
 
   @media screen and (min-width: $screen-m) {
     width: rem(310px);
@@ -17,13 +21,13 @@ $oceanShades: $fountain-blue, $dark-aqua, $ball-blue;
   > .btn-drop-down {
     position: relative;
     width: 100%;
-    height: rem(45px);
+    height: rem(50px);
     padding-right: rem(6px);
 
     font-size: rem(16px);
     line-height: rem(16px) !important;
 
-    border: rem(1px) solid rgba($border-5, 1);
+    border: rem(1px) solid rgba($dark-aqua, 1);
     background-color: $white;
 
     @media screen and (min-width: $screen-m) {

@@ -37,17 +37,19 @@ var SelectorsView = Backbone.View.extend({
   },
 
   setView: function() {
-    enquire.register("screen and (max-width:767px)", {
-      match: _.bind(function(){
-        this._destroyChosen();
-      },this)
-    });
+    // enquire.register("screen and (max-width:767px)", {
+    //   match: _.bind(function(){
+    //     this._destroyChosen();
+    //   },this)
+    // });
 
-    enquire.register("screen and (min-width:768px)", {
-      match: _.bind(function(){
-        this._setChosen();
-      },this)
-    });
+    this._setChosen();
+
+    // enquire.register("screen and (min-width:768px)", {
+    //   match: _.bind(function(){
+    //     this._setChosen();
+    //   },this)
+    // });
   },
 
   _setVars: function() {

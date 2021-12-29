@@ -1,7 +1,7 @@
 select {
   @extend %clean-button-or-input;
   color: $font-color-3;
-  font-family: $font-family-secondary;
+  font-family: $font-family-primary;
   font-size: 16px;
 
   @media screen and (min-width: 768px) {
@@ -27,7 +27,9 @@ $oceanShades: $fountain-blue, $dark-aqua, $ball-blue;
   font-size: 11px;
   font-weight: 700;
   height: auto;
-  font-family: $font-family-secondary;
+  font-family: $font-family-primary;
+  color: $dark-aqua;
+  padding: 0 0 0 15px;
 
   @for $i from 1 through length($dropdownOcean) {
     &.-#{nth($dropdownOcean, $i)} {
@@ -44,7 +46,7 @@ $oceanShades: $fountain-blue, $dark-aqua, $ball-blue;
   border-radius: 0;
   background-color: $light-grey-two;
   transform: translate(-5%, 1px);
-  font-family: $font-family-secondary;
+  font-family: $font-family-primary;
 }
 
 .chzn-container-single .chzn-single span {
