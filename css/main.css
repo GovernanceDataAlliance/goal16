@@ -1301,7 +1301,7 @@ select {
   padding: 8px 30px 8px 5px;
   border-color: #beb7aa;
   color: #82bf72;
-  background: url("/goal16/img/miscellaneous/search.svg") no-repeat 95% 50%;
+  background: url("/img/miscellaneous/search.svg") no-repeat 95% 50%;
   background-size: 15px 15px; }
 
 .chzn-container .chzn-results {
@@ -1539,7 +1539,7 @@ select {
   padding: 2rem 0;
   margin-bottom: 2rem;
   background-color: #57BAB0;
-  background-image: url("/goal16/img/cover-pages/bg_lines.svg");
+  background-image: url("/img/cover-pages/bg_lines.svg");
   background-repeat: no-repeat;
   background-position: top left;
   background-size: auto 100%;
@@ -1829,7 +1829,7 @@ select {
         flex-basis: 50%;
     background-color: #ddd; }
     .l-presentation > .picture.distribuidoresMul-01 {
-      background-image: url("/goal16/img/distribuidoresMul-01.jpg");
+      background-image: url("/img/distribuidoresMul-01.jpg");
       background-size: cover;
       background-position: center; }
       .l-presentation > .picture.distribuidoresMul-01:before {
@@ -1841,7 +1841,7 @@ select {
         right: 0;
         background-color: rgba(65, 52, 43, 0.5); }
     .l-presentation > .picture.distribuidoresMul-03 {
-      background-image: url("/goal16/img/distribuidoresMul-03.jpg");
+      background-image: url("/img/distribuidoresMul-03.jpg");
       background-size: cover;
       background-position: center; }
       .l-presentation > .picture.distribuidoresMul-03:before {
@@ -1853,7 +1853,7 @@ select {
         right: 0;
         background-color: rgba(65, 52, 43, 0.5); }
     .l-presentation > .picture.distribuidoresMul-04 {
-      background-image: url("/goal16/img/distribuidoresMul-04.jpg");
+      background-image: url("/img/distribuidoresMul-04.jpg");
       background-size: cover;
       background-position: center; }
       .l-presentation > .picture.distribuidoresMul-04:before {
@@ -2031,14 +2031,14 @@ select {
         align-items: center;
     font-weight: 700; }
     .share-this .wrap .twitter-btn {
-      background-image: url("/goal16/img/logos/twitter.svg");
+      background-image: url("/img/logos/twitter.svg");
       background-color: #51ABC2;
       margin-left: 1rem; }
       .share-this .wrap .twitter-btn:hover {
         cursor: pointer;
         background-color: rgba(81, 171, 194, 0.7); }
     .share-this .wrap .share-btn {
-      background-image: url("/goal16/img/logos/share.svg");
+      background-image: url("/img/logos/share.svg");
       background-color: #176875;
       margin-left: 0.5rem; }
       .share-this .wrap .share-btn:hover {
@@ -2331,7 +2331,7 @@ select {
       .l-highlight .wrap {
         padding: 0px; } }
   .l-highlight.-crosseling-map {
-    background-image: url("/goal16/img/crosseling/crosseling-map.jpg");
+    background-image: url("/img/crosseling/crosseling-map.jpg");
     background-size: cover;
     background-position: center;
     background-blend-mode: overlay; }
@@ -2343,7 +2343,7 @@ select {
       left: 0;
       right: 0; }
   .l-highlight.-crosseling-compare {
-    background-image: url("/goal16/img/crosseling/crosseling-compare.jpg");
+    background-image: url("/img/crosseling/crosseling-compare.jpg");
     background-size: cover;
     background-position: center;
     background-blend-mode: overlay; }
@@ -2355,7 +2355,7 @@ select {
       left: 0;
       right: 0; }
   .l-highlight.-crosseling-about {
-    background-image: url("/goal16/img/crosseling/crosseling-about.jpg");
+    background-image: url("/img/crosseling/crosseling-about.jpg");
     background-size: cover;
     background-position: center;
     background-blend-mode: overlay; }
@@ -2405,7 +2405,7 @@ select {
       justify-content: center;
   -ms-flex-align: center;
       align-items: center;
-  background-image: url("/goal16/img/fullscreenbg.jpg");
+  background-image: url("/img/fullscreenbg.jpg");
   z-index: 2; }
   @media screen and (min-width: 640px) {
     .l-welcome {
@@ -2519,36 +2519,36 @@ select {
       padding-top: 2.5rem;
       padding-bottom: 7rem; } }
   .l-banner.-promoHome {
-    background-image: url("/goal16/img/cover-pages/promoHome.jpg");
+    background-image: url("/img/cover-pages/promoHome.jpg");
     background-size: cover;
     background-position: center; }
   .l-banner.-topsection-country {
-    background-image: url("/goal16/img/cover-pages/topsection-country.jpg");
+    background-image: url("/img/cover-pages/topsection-country.jpg");
     background-size: cover;
     background-position: center; }
   .l-banner.-topsection-countries {
-    background-image: url("/goal16/img/cover-pages/topsection-countries.jpg");
+    background-image: url("/img/cover-pages/topsection-countries.jpg");
     background-size: cover;
     background-position: center; }
   .l-banner.-topsection-compare {
-    background-image: url("/goal16/img/cover-pages/topsection-compare.jpg");
+    background-image: url("/img/cover-pages/topsection-compare.jpg");
     background-size: cover;
     background-position: center; }
   .l-banner.-topsection-data {
-    background-image: url("/goal16/img/cover-pages/topsection-data.jpg");
+    background-image: url("/img/cover-pages/topsection-data.jpg");
     background-size: cover;
     background-position: center; }
   .l-banner.-topsection-about {
-    background-image: url("/goal16/img/cover-pages/topsection-about.jpg");
+    background-image: url("/img/cover-pages/topsection-about.jpg");
     background-size: cover;
     background-position: center; }
   .l-banner.-promoInteriores-Blog {
-    background-image: url("/goal16/img/cover-pages/promoInteriores-Blog.jpg");
+    background-image: url("/img/cover-pages/promoInteriores-Blog.jpg");
     background-size: cover;
     background-position: center; }
   .l-banner.-ocean-news {
     background-color: #57BAB0;
-    background-image: url("/goal16/img/cover-pages/bg_lines.svg");
+    background-image: url("/img/cover-pages/bg_lines.svg");
     background-repeat: no-repeat;
     background-position: top left;
     height: 8.75rem;
@@ -2561,7 +2561,7 @@ select {
       background-color: transparent; }
   .l-banner.-ocean-events {
     background-color: #176875;
-    background-image: url("/goal16/img/cover-pages/bg_lines.svg");
+    background-image: url("/img/cover-pages/bg_lines.svg");
     background-repeat: no-repeat;
     background-position: top left;
     height: 8.75rem;
@@ -2574,7 +2574,7 @@ select {
       background-color: transparent; }
   .l-banner.-ocean-reports {
     background-color: #20ADC5;
-    background-image: url("/goal16/img/cover-pages/bg_lines.svg");
+    background-image: url("/img/cover-pages/bg_lines.svg");
     background-repeat: no-repeat;
     background-position: top left;
     height: 8.75rem;
@@ -2589,15 +2589,15 @@ select {
     padding-top: 1.5rem;
     padding-bottom: 5.5rem; }
     .l-banner.-topsection-countries.-africa {
-      background-image: url("/goal16/img/cover-pages/regions/africa.jpg"); }
+      background-image: url("/img/cover-pages/regions/africa.jpg"); }
     .l-banner.-topsection-countries.-americas {
-      background-image: url("/goal16/img/cover-pages/regions/americas.jpg"); }
+      background-image: url("/img/cover-pages/regions/americas.jpg"); }
     .l-banner.-topsection-countries.-asia {
-      background-image: url("/goal16/img/cover-pages/regions/asia.jpg"); }
+      background-image: url("/img/cover-pages/regions/asia.jpg"); }
     .l-banner.-topsection-countries.-europe {
-      background-image: url("/goal16/img/cover-pages/regions/europe.jpg"); }
+      background-image: url("/img/cover-pages/regions/europe.jpg"); }
     .l-banner.-topsection-countries.-oceania {
-      background-image: url("/goal16/img/cover-pages/regions/oceania.jpg"); }
+      background-image: url("/img/cover-pages/regions/oceania.jpg"); }
     @media screen and (min-width: 640px) {
       .l-banner.-topsection-countries {
         padding-top: 2.5rem;
@@ -2655,7 +2655,7 @@ select {
       .country-header .wrap .button-container .options-btn {
         width: 30px;
         height: 20px;
-        background-image: url("/goal16/img/miscellaneous/options-btn.svg");
+        background-image: url("/img/miscellaneous/options-btn.svg");
         background-repeat: no-repeat;
         background-size: contain;
         background-position: center; }
@@ -3507,7 +3507,7 @@ select {
   .m-pagination .left-btn {
     width: 60px;
     height: 60px;
-    background-image: url("/goal16/img/miscellaneous/chevron-left-white.svg");
+    background-image: url("/img/miscellaneous/chevron-left-white.svg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 25% 25%; }
@@ -3529,7 +3529,7 @@ select {
   .m-pagination .right-btn {
     width: 60px;
     height: 60px;
-    background-image: url("/goal16/img/miscellaneous/chevron-right-white.svg");
+    background-image: url("/img/miscellaneous/chevron-right-white.svg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 25% 25%; }
@@ -3930,7 +3930,7 @@ select {
 
 .m-aside-compare .image-compare-banner {
   position: relative;
-  background-image: url("/goal16/img/crosseling/crosseling-compare.jpg");
+  background-image: url("/img/crosseling/crosseling-compare.jpg");
   max-width: 69.125rem;
   width: 100%;
   box-shadow: 0 0 60px 0 rgba(7, 51, 56, 0.15);
@@ -4745,7 +4745,7 @@ select {
     padding-bottom: 0.625rem;
     font-family: "Merriweather", serif;
     font-size: 0.875rem;
-    font-weight: 700;
+    font-weight: 400;
     letter-spacing: 0.01875rem;
     text-align: left; }
     @media screen and (min-width: 768px) {
@@ -4874,23 +4874,23 @@ select {
         font-size: 0.75rem; } }
     .m-legend .bucket.bucket-1 {
       background-color: color100;
-      background-image: url("/goal16/img/patterns/color100.png");
+      background-image: url("/img/patterns/color100.png");
       border: 1px solid #121c12; }
     .m-legend .bucket.bucket-2 {
       background-color: color75;
-      background-image: url("/goal16/img/patterns/color75.png");
+      background-image: url("/img/patterns/color75.png");
       border: 1px solid #243b24; }
     .m-legend .bucket.bucket-3 {
       background-color: color50;
-      background-image: url("/goal16/img/patterns/color50.png");
+      background-image: url("/img/patterns/color50.png");
       border: 1px solid #466748; }
     .m-legend .bucket.bucket-4 {
       background-color: color25;
-      background-image: url("/goal16/img/patterns/color25.png");
+      background-image: url("/img/patterns/color25.png");
       border: 1px solid #7bb67d; }
     .m-legend .bucket.bucket-5 {
       background-color: color0;
-      background-image: url("/goal16/img/patterns/color0.png");
+      background-image: url("/img/patterns/color0.png");
       border: 1px solid #c2dac0; }
     .m-legend .bucket.bucket-5 {
       margin-right: 0; }
@@ -5584,10 +5584,12 @@ select {
         padding-right: 5%; } }
 
 .c-score-table > .table-header {
-  padding-top: 1.5625rem; }
+  margin-top: 1rem; }
   @media screen and (min-width: 768px) {
     .c-score-table > .table-header {
-      padding: 0.9375rem 0; } }
+      margin-top: 1rem; } }
+  .c-score-table > .table-header > .table-row:last-child {
+    margin-bottom: 0; }
 .c-score-table .table-row {
   display: -ms-flexbox;
   display: flex;
@@ -5595,16 +5597,17 @@ select {
       flex-wrap: wrap;
   -ms-flex-pack: justify;
       justify-content: space-between;
-  padding-bottom: 0.5rem;
-  border-bottom: 0.0625rem dashed #e5eaea; }
+  margin-bottom: 1rem; }
   .c-score-table .table-row:first-child {
     margin-top: 0; }
+  .c-score-table .table-row:last-child {
+    margin-bottom: 1rem; }
   @media screen and (min-width: 768px) {
     .c-score-table .table-row {
       -ms-flex-pack: start;
           justify-content: flex-start;
-      padding: 1.25rem 0;
-      margin-top: 1rem; } }
+      margin-bottom: 0;
+      padding: 1.25rem 0; } }
 .c-score-table .table-cell {
   display: -ms-inline-flexbox;
   display: inline-flex; }
@@ -5618,7 +5621,7 @@ select {
   .c-score-table .table-cell.-category, .c-score-table .table-cell.-indicator {
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
-    margin: 0.9375rem 0 0.3125rem; }
+    margin: 0.3125rem 0; }
     @media screen and (min-width: 768px) {
       .c-score-table .table-cell.-category, .c-score-table .table-cell.-indicator {
         -ms-flex-preferred-size: 60%;
@@ -5630,33 +5633,49 @@ select {
     .c-score-table .table-cell.-country, .c-score-table .table-cell.-score {
       -ms-flex-preferred-size: calc(13.33% - 20px);
           flex-basis: calc(13.33% - 20px);
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
       margin: 0 0.625rem; } }
-  .c-score-table .table-cell.-category, .c-score-table .table-cell.-country {
+  .c-score-table .table-cell.-category {
+    font-family: "Merriweather", serif;
+    font-size: 14px;
+    color: #333; }
+    @media screen and (min-width: 768px) {
+      .c-score-table .table-cell.-category {
+        font-size: 20px; } }
+  .c-score-table .table-cell.-country {
     font-size: 10px;
     letter-spacing: 0.03125rem;
-    color: #809497;
-    text-transform: uppercase; }
+    color: #000000;
+    text-transform: uppercase;
+    font-weight: bold; }
+    @media screen and (min-width: 768px) {
+      .c-score-table .table-cell.-country {
+        font-size: 12px; } }
   .c-score-table .table-cell.-country {
     display: none; }
     @media screen and (min-width: 768px) {
       .c-score-table .table-cell.-country {
         display: -ms-flexbox;
         display: flex;
-        text-align: right; }
+        text-align: left;
+        -ms-flex-align: end;
+            align-items: flex-end; }
         .c-score-table .table-cell.-country:nth-of-type(2) {
           margin-left: 0; } }
   .c-score-table .table-cell.-indicator {
     -ms-flex-direction: column;
         flex-direction: column; }
+    @media screen and (min-width: 768px) {
+      .c-score-table .table-cell.-indicator {
+        padding-right: 1rem; } }
   .c-score-table .table-cell.-score {
     -ms-flex-direction: column;
         flex-direction: column;
     margin: 0 0.625rem;
     font-family: "Lora", serif;
-    font-size: 1.375rem;
-    color: #19aec4;
+    font-size: 1rem;
+    color: #57BAB0;
     letter-spacing: 0.0125rem;
     -ms-flex-preferred-size: calc(33.33% - 20px);
         flex-basis: calc(33.33% - 20px); }
@@ -5667,20 +5686,43 @@ select {
       font-size: 0.5625rem;
       text-transform: uppercase;
       letter-spacing: 0.03125rem;
-      color: #809497; }
+      color: rgba(0, 0, 0, 0.8);
+      font-weight: bold; }
     @media screen and (min-width: 768px) {
       .c-score-table .table-cell.-score {
+        font-size: 1.375rem;
         -ms-flex-direction: row;
             flex-direction: row;
         -ms-flex-preferred-size: calc(13.33% - 20px);
             flex-basis: calc(13.33% - 20px);
-        -ms-flex-align: center;
-            align-items: center; } }
+        -ms-flex-align: start;
+            align-items: flex-start; } }
 .c-score-table .no-indicators {
   margin: 1.25rem 0 0.6875rem; }
   @media screen and (min-width: 768px) {
     .c-score-table .no-indicators {
       margin: 0; } }
+.c-score-table.-complementary {
+  background-color: #F7FAF9;
+  position: relative;
+  z-index: 1;
+  padding: .5rem 0; }
+  .c-score-table.-complementary::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #F7FAF9;
+    width: 150vw;
+    height: 100%;
+    z-index: -1; }
+    @media screen and (min-width: 1400px) {
+      .c-score-table.-complementary::before {
+        width: 114.8%; } }
+  @media screen and (min-width: 768px) {
+    .c-score-table.-complementary {
+      padding: 1rem 0; } }
 
 .c-shortener-button {
   position: relative;
@@ -5879,16 +5921,22 @@ select {
 
 .c-indicator-metadata {
   margin-top: 0.3125rem;
-  font-size: 12px;
-  color: #809497;
+  font-size: 10px;
+  color: rgba(0, 0, 0, 0.8);
   line-height: 1.5; }
+  @media screen and (min-width: 768px) {
+    .c-indicator-metadata {
+      font-size: 12px; } }
 
 .c-indicator-name {
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   font-weight: 700;
-  color: #073339;
+  color: #000000;
   line-height: 1.6;
   letter-spacing: normal; }
+  @media screen and (min-width: 768px) {
+    .c-indicator-name {
+      font-size: 14px; } }
   .c-indicator-name.-dashboard {
     color: #19aec4;
     cursor: pointer; }

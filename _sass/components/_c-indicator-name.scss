@@ -1,9 +1,13 @@
 .c-indicator-name {
-  font-size: rem($font-size-xsmall);
+  font-size: rem(13px);
   font-weight: $font-weight-bold;
-  color: $font-color-1;
+  color: $deep-black;
   line-height: 1.6;
   letter-spacing: normal;
+
+  @media screen and (min-width: $screen-m) {
+    font-size: 14px;
+  }
 
   &.-dashboard {
     color: $font-color-3;
