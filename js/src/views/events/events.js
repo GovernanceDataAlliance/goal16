@@ -5,7 +5,7 @@ var CategorySelector = require('./category_selector.js');
 var FunctionHelper = require('../../helpers/functions.js');
 var ShareThisView = require('../common/share_this.js');
 
-var BlogView = Backbone.View.extend({
+var EventsView = Backbone.View.extend({
 
   el: '.js-events',
 
@@ -40,4 +40,4 @@ var BlogView = Backbone.View.extend({
 
 });
 
-module.exports = BlogView;
+module.exports = EventsView;

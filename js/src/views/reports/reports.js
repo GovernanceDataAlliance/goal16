@@ -4,16 +4,16 @@ var $ = require('jquery'),
 var FunctionHelper = require('../../helpers/functions.js');
 var ShareThisView = require('../common/share_this.js');
 
-var BlogView = Backbone.View.extend({
+var ReportsView = Backbone.View.extend({
 
   el: '.js-reports',
 
   initialize: function() {
     this.FunctionHelper = FunctionHelper;
 
-    if (! !!$('body').hasClass('is-post-page')) {
-      this._category();
-    };
+    // if (! !!$('body').hasClass('is-post-page')) {
+    //   this._category();
+    // };
 
     this.shareOptions = {
       noDownload: true,
@@ -33,4 +33,4 @@ var BlogView = Backbone.View.extend({
 
 });
 
-module.exports = BlogView;
+module.exports = ReportsView;
