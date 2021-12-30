@@ -18,7 +18,8 @@ var DataView = Backbone.View.extend({
   className: 'l-data',
 
   events: {
-    'click .js--toggle-indicator': '_toggleIndicator'
+    'click .js--toggle-indicator': '_toggleIndicator',
+    'click .js--toggle-header': '_toggleParentIndicator'
   },
 
   initialize: function() {
@@ -31,7 +32,7 @@ var DataView = Backbone.View.extend({
     enquire.register("screen and (max-width:768px)", {
       match: _.bind(function(){
         this.mobile = true;
-        this._shortTexts();
+        // this._shortTexts();
       },this)
     });
 
@@ -49,7 +50,38 @@ var DataView = Backbone.View.extend({
     this._setVars();
   },
 
-  _setVars: function() {
+  _setVars() {
+
+  },
+
+  _revealFirstIndicator: function() {
+    // 1st Parent Indicator
+    this.$firstIndicatorsWrapper = this.$el.find('.js--indicators-wrapper').first();
+    this.$firstCloseBtn = this.$el.find('.icon-close').first();
+    this.$firstOpenBtn = this.$el.find('.icon-open_arrow').first();
+
+    this.$firstIndicatorsWrapper.toggleClass('is-closed');
+    this.$firstCloseBtn.toggleClass('is-hidden');
+    this.$firstOpenBtn.toggleClass('is-hidden');
+
+    // 1st Child Indicator of Parent
+    this.$firstChildIndicator = this.$el.find('.indicator-info').first();
+    this.$firstChildCloseBtn = this.$el.find('.js--icon-close').first();
+    this.$firstChildOpenBtn = this.$el.find('.js--icon-open').first();
+
+    this.$firstChildIndicator.toggleClass('is-hidden');
+    this.$firstChildCloseBtn.toggleClass('is-hidden');
+    this.$firstChildOpenBtn.toggleClass('is-hidden');
+  },
+
+  _toggleParentIndicator: function(e) {
+    var $indicatorsWrapper = $(e.currentTarget).next('.js--indicators-wrapper');
+    var $closeBtn = $(e.currentTarget).find('.icon-close');
+    var $openBtn = $(e.currentTarget).find('.icon-open_arrow');
+
+    $indicatorsWrapper.toggleClass('is-closed');
+    $closeBtn.toggleClass('is-hidden');
+    $openBtn.toggleClass('is-hidden');
   },
 
   _toggleIndicator: function(e) {
@@ -105,6 +137,8 @@ var DataView = Backbone.View.extend({
 
     var currentInd = this.status.get('indicator')
     currentInd && this._setSelectedIndicator(currentInd);
+
+    this._revealFirstIndicator();
   },
 
   _setSelectedIndicator: function(currentInd) {

@@ -22,7 +22,7 @@
   &.-data {
     max-width: 85%;
 
-    font-size: $font-size-normal;
+    font-size: 13px;
     line-height: 1.7;
 
     > span {
@@ -30,7 +30,7 @@
     }
 
     @media screen and (min-width: $screen-m) {
-      font-size: $font-size-medium;
+      font-size: $font-size-normal;
     }
   }
 

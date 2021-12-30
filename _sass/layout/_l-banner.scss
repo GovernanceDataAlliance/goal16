@@ -37,6 +37,16 @@ $oceanShades: $fountain-blue, $dark-aqua, $ball-blue;
     }
   }
 
+  &.-topsection-data:before, &.-topsection-about:before  {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(23, 104, 117, 0.5);
+  }
+
   @for $i from 1 through length($bannerOcean) {
     &.-#{nth($bannerOcean, $i)} {
       background-color: #{nth($oceanShades, $i)};

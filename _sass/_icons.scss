@@ -10,7 +10,11 @@
 }
 
 .icon-open_arrow {
-	width: 1.4287109375em;
+	width: 1em;
+
+  @media screen and (min-width: $screen-m) {
+    width: 1.4287109375em;
+  }
 }
 
 .icon-open_bigarrow {

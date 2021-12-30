@@ -5,37 +5,37 @@
     line-height: 1.7;
   }
 
-  @media screen and (min-width: $screen-s) {
+  @media screen and (min-width: $screen-m) {
     width: 100%;
-    max-width: rem(736px);
-    margin: 0 auto;
+    max-width: 80%;
+    // margin: 0 auto;
   }
 
   @media screen and (min-width: $screen-xl) {
-    max-width: $content-width;
+    max-width: 75%;
   }
 
   // Links, paragraphs
   p, a, h6 {
     font-family: $font-family-primary;
-    font-size: $font-size-small;
+    font-size: 14px;
     font-weight: $font-weight-regular;
     line-height: 1.90;
 
-    @media screen and (min-width: $screen-s) {
+    @media screen and (min-width: $screen-m) {
       font-size: $font-size-normal;
       line-height: 1.75;
     }
   }
 
   p {
-    color: $font-color-1;
+    color: rgba($deep-black, 0.8);
   }
 
   a {
-    color: $font-color-3;
+    color: $dark-aqua;
     &:hover {
-      color: $color-4;
+      color: rgba($dark-aqua, 0.5);
     }
   }
 

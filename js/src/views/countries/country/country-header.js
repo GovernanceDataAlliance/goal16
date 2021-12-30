@@ -17,12 +17,9 @@ var CountryHeaderView = Backbone.View.extend({
 
   initialize: function(opt) {
     this.options = opt || {};
-
-    console.log("countryheaderview options", this.options);
   },
 
   _toggleBtn: function() {
-    console.log('Toggle here');
     this.$buttonContainer = this.$el.find('.buttons-trigger');
 
     this.$buttonContainer.toggle(); // Toggles the map/compare buttons
