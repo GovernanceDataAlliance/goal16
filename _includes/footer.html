@@ -1,28 +1,35 @@
 <footer class="l-footer">
-  <div class="l-menus -footer">
+  <div class="wrap">
+    <div class="l-menus -footer">
+      <div class="footer-info-founder">
+        <img src="{{site.baseurl}}/img/logo/goal16_logo_ver_pos.svg" alt="logo Goal16" class="footer-logo-goal">
+        <p class="footer-powered-info">Powered by the <a href="http://www.governancedata.org/" target="_blank">Governance Data Alliance</a><img src="{{site.baseurl}}/img/logo/gda_symbol.svg" alt="logo gda" class="footer-logo-gda"></p>
+      </div>
       <div class="menus-wrapper">
         <nav class="m-site-navigation -footer">
           <ul>
+            <li class='link {% if page.url == "/countries.html" %} -current {% endif %}'><a href="{{ site.baseurl }}/">home</a></li>
             <li class='link {% if page.url == "/countries.html" %} -current {% endif %}'><a href="{{ site.baseurl }}/map">explore</a></li>
             <li class='link {% if page.url == "/data.html" %} -current {% endif %}'><a href="{{ site.baseurl }}/data">data</a></li>
             <li class='link {% if page.url == "/indicators.html" %} -current {% endif %}'><a href="{{ site.baseurl }}/countries">countries</a></li>
             <li class='link {% if page.url == "/compare.html" %} -current {% endif %}'><a href="{{ site.baseurl }}/compare">compare</a></li>
-            <li class='link {% if page.url == "/about.html" %} -current {% endif %}'><a href="{{ site.baseurl }}/about">about</a></li>
-            <!-- <li class='link {% if page.url == "/blog.html" %} -current {% endif %}'><a href="{{ site.baseurl }}/blog">blog</a></li> -->
+          </ul>
+          <ul>
+            <li class='link {% if page.url == "/about.html" %} -current {% endif %}'><a href="{{ site.baseurl }}/about">about us</a></li>
+            <li class='link {% if page.url == "/blog.html" %} -current {% endif %}'><a href="{{ site.baseurl }}/blog">blog</a></li>
+            <li class='link {% if page.url == "/blog.html" %} -current {% endif %}'><a href="{{ site.baseurl }}/events">events</a></li>
+            <li class='link {% if page.url == "/blog.html" %} -current {% endif %}'><a href="{{ site.baseurl }}/reports">reports</a></li>
           </ul>
         </nav>
       </div>
-        <div class="footer-info-founder">
-          <p class="footer-powered-info">Powered by the <a href="http://www.governancedata.org/" target="_blank">Governance Data Alliance</a><img src="{{site.baseurl}}/img/logo/gda_symbol.svg" alt="logo gda" class="footer-logo-gda"></p>
-            <img src="{{site.baseurl}}/img/logo/goal16_logo_ver_pos.svg" alt="logo Goal16" class="footer-logo-goal">
-        </div>
-        <div class="footer-info-license">
+        <!-- <div class="footer-info-license">
           <p class="text-creative-license">Creative Commons Attribution 4.0 International License
           <a class="creative-common-logo" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a></p>
 
           <p class="text-info-vizzuality">Designed by <a href="http://www.vizzuality.com/" target="_blank"><img src="{{site.baseurl}}/img/logo/logo_vizzuality.svg" alt="logo Goal16" class="footer-logo-vizzuality"></a></p>
 
-        </div>
+        </div> -->
     </div>
+  </div>
 
 </footer>

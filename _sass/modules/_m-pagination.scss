@@ -3,6 +3,7 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: rem(10px);
+  min-width: rem(200px);
 
   > .page-link {
     font-family: $font-family-secondary;
