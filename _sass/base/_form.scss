@@ -29,7 +29,7 @@ $oceanShades: $fountain-blue, $dark-aqua, $ball-blue;
   height: auto;
   font-family: $font-family-primary;
   color: $dark-aqua;
-  padding: 0 0 0 15px;
+  // padding: 0 0 0 15px;
 
   @for $i from 1 through length($dropdownOcean) {
     &.-#{nth($dropdownOcean, $i)} {
@@ -40,13 +40,18 @@ $oceanShades: $fountain-blue, $dark-aqua, $ball-blue;
 }
 
 .chzn-container-single .chzn-drop {
-  width: 110% !important;
   padding: 0 0 10px 0;
   border: none;
   border-radius: 0;
-  background-color: $light-grey-two;
-  transform: translate(-5%, 1px);
+  background-color: $white;
   font-family: $font-family-primary;
+  width: 101.4% !important;
+  transform: translate(-0.15%, 0.9%);
+
+  @media screen and (min-width: $screen-m) {
+    width: 109% !important;
+    transform: translate(-4.2%, 1%);
+  }
 }
 
 .chzn-container-single .chzn-single span {
@@ -86,20 +91,21 @@ $oceanShades: $fountain-blue, $dark-aqua, $ball-blue;
 
 .chzn-container .chzn-results .active-result {
   font-family: $font-family-primary;
-  color: $font-color-5;
-  padding: rem(5px) 5%;
-  font-size: rem(14px);
+  color: rgba($deep-black, 0.8);
+  padding: 0.5rem 1rem;
+  font-size: rem(12px);
+  text-transform: uppercase;
 
   &.result-selected {
-    color: $font-color-5;
     background: none;
+    font-weight: 700;
     background-color: rgba(190, 183, 170, .2);
   }
 
   &.highlighted {
     // color: $font-color-hover;
     font-weight: 700;
-    text-decoration: underline;
+    // text-decoration: underline;
     background: none;
   }
 }
@@ -126,4 +132,20 @@ $oceanShades: $fountain-blue, $dark-aqua, $ball-blue;
   line-height: 1.2em;
 
 
+}
+
+#aboutSelector {
+  .chzn-container-single .chzn-drop {
+    border-bottom: 1px solid $dark-aqua;
+    border-left: 1px solid $dark-aqua;
+    border-right: 1px solid $dark-aqua;
+  }
+
+  .chzn-container .chzn-results .active-result {
+    color: $dark-aqua;
+  }
+
+  &.btn-drop-down:after {
+    @include arrow (5px, $dark-aqua, 2px, 225deg);
+  }
 }
