@@ -3,6 +3,7 @@ published: true
 layout: blog/post
 title: Putting SDG16+ into practice
 date: '2019-03-01'
+image: promoInteriores-Blog.jpg
 author: Saferworld
 summary: >-
   This infographic illustrates how this ‘localisation’ approach works in 11

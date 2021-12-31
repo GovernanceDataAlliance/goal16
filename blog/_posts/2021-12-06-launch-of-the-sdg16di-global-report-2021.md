@@ -1,5 +1,5 @@
 ---
-published: true
+published: false
 layout: blog/post
 title: Launch of the SDG16DI Global Report 2021!
 ---

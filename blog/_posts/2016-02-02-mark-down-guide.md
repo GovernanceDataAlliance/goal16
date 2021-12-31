@@ -3,7 +3,7 @@ published: true
 layout: blog/post
 date: "2016-03-11"
 author: Vizzuality
-image: ""
+image: "promoInteriores-Blog.jpg"
 category:
 tags: ""
 title: A markdown guide

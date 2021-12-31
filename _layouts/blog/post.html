@@ -38,7 +38,7 @@
       <div class="l-hero">
         <div class="wrap">
           <div class="hero-wrapper">
-            <div class="img-placeholder"></div>
+            <div class="img-placeholder" {% unless page.image == '' %} style="background-image:url({{site.baseurl}}/img/blog/{{page.image}})" {% endunless %}></div>
           </div>
         </div>
       </div>

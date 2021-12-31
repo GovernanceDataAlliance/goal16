@@ -3,12 +3,13 @@ published: true
 layout: blog/post
 title: The Global State of Democracy
 date: '2018-10-19'
+image: promoInteriores-Blog.jpg
 author: IDEA
 summary: >-
   This first edition of The Global State of Democracy, published by
   International IDEA in November 2017, explores current challenges to democracy
   and the enabling conditions for its resilience.
-image: 'https://community-democracies.org/app/uploads/2017/11/GSOD.png'
+# image: 'https://community-democracies.org/app/uploads/2017/11/GSOD.png'
 ---
 ## EXPLORING DEMOCRACY’S RESILIENCE
 
