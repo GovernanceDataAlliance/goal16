@@ -112,7 +112,7 @@
 
         > .selected-option-menu {
           a {
-            color: $color-4;
+            color: $fountain-blue;
             font-weight: 700 !important;
           }
 
@@ -121,7 +121,7 @@
             content: "";
             width: 100%;
             height: 4px;
-            background-color: $color-7;
+            background-color: $fountain-blue;
             position: relative;
             bottom: rem(33px);
             margin-bottom: rem(-4px);
@@ -150,7 +150,7 @@
 
           > a {
             font-size: rem(11px);
-            font-weight: 400;
+            font-weight: bold;
 
             &:hover {
               color: $font-color-3;

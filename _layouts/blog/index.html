@@ -104,14 +104,6 @@
       var SITEURL = '{{ site.baseurl }}' || null;
     </script>
     <script src="{{ site.baseurl }}/js/main_bundle.js"></script>
-    <script>
-      // var pageName = '{{ page.page-name | json }}';
-      var bannerCheck =  $('div.l-banner').hasClass('-ocean-news');
-
-      bannerCheck && $(".chzn-container-single .chzn-single").addClass(`-ocean-news`);
-      bannerCheck && $(".btn-drop-down").addClass(`-ocean-news`);
-
-    </script>
   </body>
 
 </html>

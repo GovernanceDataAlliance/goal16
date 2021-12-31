@@ -17,24 +17,22 @@ var CategorySelector = Backbone.View.extend({
   },
 
   initialize: function() {
-    enquire.register("screen and (max-width:768px)", {
-      match: _.bind(function(){
-        this.mobile = true;
-      },this)
-    });
+    // enquire.register("screen and (max-width:768px)", {
+    //   match: _.bind(function(){
+    //     this.mobile = true;
+    //   },this)
+    // });
 
-    enquire.register("screen and (min-width:769px)", {
-      match: _.bind(function(){
-        this.mobile = false;
-      },this)
-    });
+    // enquire.register("screen and (min-width:769px)", {
+    //   match: _.bind(function(){
+    //     this.mobile = false;
+    //   },this)
+    // });
 
     this.blog = $('.l-blog');
     this.posts = $('.l-post');
 
-    if (!this.mobile) {
-      this.$('select').chosen();
-    }
+    this.$('select').chosen();
   },
 
   setActive: function(cat) {

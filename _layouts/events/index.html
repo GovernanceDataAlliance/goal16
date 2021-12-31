@@ -24,7 +24,7 @@
           {% assign categoriesSize = site.categories | size %}
           {% unless categoriesSize == 1 %}
           <div class="c-selector">
-            <div class="btn-drop-down" id="categorySelector" data-url="{{ site.baseurl }}">
+            <div class="btn-drop-down" id="eventsSelector" data-url="{{ site.baseurl }}">
               <select>
                 <option value="">Upcoming events</option>
                 {% for category in site.categories %}
@@ -106,13 +106,6 @@
       var SITEURL = '{{ site.baseurl }}' || null;
     </script>
     <script src="{{ site.baseurl }}/js/main_bundle.js"></script>
-    <script>
-      var bannerCheck =  $('div.l-banner').hasClass('-ocean-events');
-
-      bannerCheck && $(".chzn-container-single .chzn-single").addClass(`-ocean-events`);
-      bannerCheck && $(".btn-drop-down").addClass(`-ocean-events`);
-
-    </script>
   </body>
 
 </html>

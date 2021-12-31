@@ -6,7 +6,7 @@ $oceanShades: $fountain-blue, $dark-aqua, $ball-blue;
   margin-bottom: rem(10px);
 
   @media screen and (min-width: $screen-s) {
-    margin: 0 rem(15px) 0 0;
+    margin: 0 rem(15px) rem(10px) 0;
   }
 
   @media screen and (min-width: $screen-m) {

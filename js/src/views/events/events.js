@@ -1,7 +1,7 @@
 var $ = require('jquery'),
   Backbone = require('backbone');
 
-var CategorySelector = require('./category_selector.js');
+var EventsSelector = require('./events_selector.js');
 var FunctionHelper = require('../../helpers/functions.js');
 var ShareThisView = require('../common/share_this.js');
 
@@ -30,8 +30,8 @@ var EventsView = Backbone.View.extend({
   },
 
   _category: function() {
-    new CategorySelector({
-      el: '#categorySelector'
+    new EventsSelector({
+      el: '#eventsSelector'
     });
   },
 

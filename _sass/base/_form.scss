@@ -17,7 +17,6 @@ select {
 $dropdownOcean: 'ocean-news', 'ocean-events', 'ocean-reports'; // Change back to ocean-news later
 $oceanShades: $fountain-blue, $dark-aqua, $ball-blue;
 
-
 .chzn-container-single .chzn-single {
   // color: blue;
   background-image: none;
@@ -31,12 +30,6 @@ $oceanShades: $fountain-blue, $dark-aqua, $ball-blue;
   color: $dark-aqua;
   // padding: 0 0 0 15px;
 
-  @for $i from 1 through length($dropdownOcean) {
-    &.-#{nth($dropdownOcean, $i)} {
-      color: #{nth($oceanShades, $i)};
-      // background-image: url('#{$baseUrl}/img/cover-pages/bg_lines.svg');
-    }
-  }
 }
 
 .chzn-container-single .chzn-drop {
@@ -135,7 +128,6 @@ $oceanShades: $fountain-blue, $dark-aqua, $ball-blue;
 }
 
 #aboutSelector {
-
   &.btn-drop-down {
     border: 1px solid $fountain-blue;
 
@@ -156,5 +148,50 @@ $oceanShades: $fountain-blue, $dark-aqua, $ball-blue;
   .chzn-container-single .chzn-single {
     color: $fountain-blue;
   }
+}
 
+#categorySelector, #dateSelector {
+  &.btn-drop-down {
+    border: 1px solid $gainsboro;
+
+    &:after {
+      @include arrow (5px, $fountain-blue, 2px, 225deg);
+    }
+  }
+  .chzn-container-single .chzn-drop {
+    border-bottom: 1px solid $gainsboro;
+    border-left: 1px solid $gainsboro;
+    border-right: 1px solid $gainsboro;
+  }
+
+  .chzn-container .chzn-results .active-result {
+    color: $fountain-blue;
+  }
+
+  .chzn-container-single .chzn-single {
+    color: $fountain-blue;
+  }
+}
+
+#eventsSelector {
+  &.btn-drop-down {
+    border: 1px solid $gainsboro;
+
+    &:after {
+      @include arrow (5px, $dark-aqua, 2px, 225deg);
+    }
+  }
+  .chzn-container-single .chzn-drop {
+    border-bottom: 1px solid $gainsboro;
+    border-left: 1px solid $gainsboro;
+    border-right: 1px solid $gainsboro;
+  }
+
+  .chzn-container .chzn-results .active-result {
+    color: $dark-aqua;
+  }
+
+  .chzn-container-single .chzn-single {
+    color: $dark-aqua;
+  }
 }
