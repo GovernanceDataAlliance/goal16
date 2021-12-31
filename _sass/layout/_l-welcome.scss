@@ -9,7 +9,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url('#{$baseUrl}/img/fullscreenbg.jpg');
+  background-image: url('#{$baseUrl}/img/welcomebg.jpeg');
   z-index: 2;
 
   @media screen and (min-width: $screen-s) {
@@ -33,6 +33,10 @@
     right: 0;
     bottom: 0;
     left: 0;
+    background-image: url('#{$baseUrl}/img/welcome_bglines.svg');
+    background-position: 100% 0%;
+    background-repeat: no-repeat;
+    // background-size: contain
 
     background-color: $bg-veil;
   }
@@ -48,47 +52,6 @@
     z-index: 1;
     padding: rem(50px) rem(17px);
 
-    h2{
-      color: $font-color-2;
-      font-family: $font-family-secondary;
-      font-size: $font-size-normal;
-      font-weight: $font-weight-regular;
-      line-height: 1.36;
-      text-align: center;
-      display: block;
-      margin: 0 auto;
-      margin-bottom: rem(32px);
-      @media screen and (min-width: 768px) {
-        font-size: $font-size-large;
-        width: rem(736px);
-        letter-spacing: 0.3px;
-        margin-bottom: rem(22px);
-      }
-    }
-
-    p{
-      color: $font-color-2;
-      font-family: $font-family-primary;
-      font-size: $font-size-small;
-      font-weight: $font-weight-regular;
-      line-height: 1.79;
-      width: 100%;
-      display: block;
-      text-align: center;
-      margin: rem(22px) auto;
-      @media screen and (min-width: 768px) {
-        width: rem(736px);
-        line-height: 1.75;
-        font-size: $font-size-normal;
-        margin-top: rem(16px);
-      }
-      &.-advise{
-        margin-top: rem(32px);
-        font-style: italic;
-        font-size: $font-size-xsmall;
-      }
-    }
-
     // padding: rem(45px) $wrap-padding-mobile rem(20px);
 
     @media screen and (min-width: $screen-s) {
@@ -103,27 +66,92 @@
       padding: rem(60px) 0;
     }
 
-    @media screen and (min-width: $screen-xxl) {
-      padding: rem(90px) 0;
-      padding-bottom: 0;
-    }
+    // @media screen and (min-width: $screen-xxl) {
+    //   padding: rem(90px) 0;
+    //   padding-bottom: 0;
+    // }
 
-    .text-heading-underline > img{
+    h2{
+      color: $font-color-2;
+      font-family: $font-family-title;
+      font-size: 28px;
+      font-weight: $font-weight-bold;
+      line-height: 1.36;
+      text-align: left;
       display: block;
-      width: rem(150px);
-      margin: 0 auto;
-
-      @media screen and (min-width: $screen-s) {
-        width: rem(200px);
+      margin: 0 0;
+      margin-bottom: rem(22px);
+      @media screen and (min-width: 768px) {
+        font-size: 36px;
+        width: rem(736px);
+        letter-spacing: 0.3px;
+        margin-bottom: rem(32px);
       }
     }
 
+    p{
+      color: $font-color-2;
+      font-family: $font-family-primary;
+      font-size: $font-size-small;
+      font-weight: $font-weight-regular;
+      line-height: 1.79;
+      width: 100%;
+      display: block;
+      text-align: left;
+      margin: rem(22px) 0;
+      @media screen and (min-width: 768px) {
+        width: 43rem;
+        line-height: 1.75;
+        font-size: $font-size-normal;
+        margin-top: rem(16px);
+      }
+
+      @media screen and (min-width: $screen-l) {
+        width: rem(950px);
+      }
+
+      &.-advise{
+        margin-top: rem(32px);
+        font-style: italic;
+        font-size: $font-size-xsmall;
+      }
+    }
+
+    .wrap {
+      // padding: 0;
+
+      @media screen and (min-width: $screen-l) {
+        padding: 0 2.5rem;
+      }
+    }
+
+    .text-heading-underline {
+      margin-bottom: 32px;
+
+      @media screen and (min-width: $screen-m) {
+        margin-bottom: 50px;
+      }
+
+      > img{
+        display: block;
+        width: rem(150px);
+        margin: 0 0;
+
+        @media screen and (min-width: $screen-s) {
+          width: rem(200px);
+        }
+      }
+    }
+
+
     .link-container {
       margin-top: rem(30px);
-      text-align: center;
+      text-align: left;
+
 
       .c-button {
         margin-bottom: rem(20px);
+        width: auto;
       }
 
       @media screen and (min-width: $screen-s) {
