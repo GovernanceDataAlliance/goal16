@@ -135,17 +135,26 @@ $oceanShades: $fountain-blue, $dark-aqua, $ball-blue;
 }
 
 #aboutSelector {
+
+  &.btn-drop-down {
+    border: 1px solid $fountain-blue;
+
+    &:after {
+      @include arrow (5px, $fountain-blue, 2px, 225deg);
+    }
+  }
   .chzn-container-single .chzn-drop {
-    border-bottom: 1px solid $dark-aqua;
-    border-left: 1px solid $dark-aqua;
-    border-right: 1px solid $dark-aqua;
+    border-bottom: 1px solid $fountain-blue;
+    border-left: 1px solid $fountain-blue;
+    border-right: 1px solid $fountain-blue;
   }
 
   .chzn-container .chzn-results .active-result {
-    color: $dark-aqua;
+    color: $fountain-blue;
   }
 
-  &.btn-drop-down:after {
-    @include arrow (5px, $dark-aqua, 2px, 225deg);
+  .chzn-container-single .chzn-single {
+    color: $fountain-blue;
   }
+
 }
