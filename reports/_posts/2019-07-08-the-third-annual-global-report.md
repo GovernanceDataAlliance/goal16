@@ -3,7 +3,8 @@ published: true
 layout: reports/post
 title: The Third Annual SDG16 Data Initiative Global Report
 date: '2019-07-08'
-summary: 'The SDG16 Data Initiative is proud to launch our third annual Global Report! '
+image: report_sample.png
+summary: 'The SDG16 Data Initiative is proud to launch our third annual Global Report!'
 tag: reports
 ---
 

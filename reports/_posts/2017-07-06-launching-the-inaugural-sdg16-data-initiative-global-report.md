@@ -2,6 +2,7 @@
 published: true
 layout: reports/post
 title: Launching the Inaugural SDG16 Data Initiative Global Report
+image: report_sample.png
 date: '2017-07-07'
 summary: >-
   The SDG16 Data Initiative is proud to launch our inaugural Global Report to

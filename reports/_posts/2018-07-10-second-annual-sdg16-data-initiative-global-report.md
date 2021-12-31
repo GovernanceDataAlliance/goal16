@@ -3,7 +3,8 @@ published: true
 layout: reports/post
 title: Second Annual SDG16 Data Initiative Global Report
 date: '2018-07-10'
-image: 'https://farm5.staticflickr.com/4795/38879931920_716a23c695_k.jpg'
+image: report_sample.png
+# image: 'https://farm5.staticflickr.com/4795/38879931920_716a23c695_k.jpg'
 summary: >-
   The SDG16 Data Initiative is proud to launch our second annual Global Report!
   The SDG16 Data Initiative Global Report series aims to evaluate global

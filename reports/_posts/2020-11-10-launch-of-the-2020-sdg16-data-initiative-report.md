@@ -3,6 +3,7 @@ published: true
 layout: reports/post
 title: Launch of the 2020 SDG16 Data Initiative Report
 date: '2020-11-10'
+image: report_sample.png
 author: SDG16 Data Initiative
 summary: >-
   The SDG16 Data Initiative is proud to launch our fourth SDG16 Data Report for
