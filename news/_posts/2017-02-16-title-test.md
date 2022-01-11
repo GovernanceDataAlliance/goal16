@@ -1,6 +1,6 @@
 ---
 published: false
-layout: blog/post
+layout: news/post
 title: Title test
 date: '2017-02-17'
 author: Vizzuality

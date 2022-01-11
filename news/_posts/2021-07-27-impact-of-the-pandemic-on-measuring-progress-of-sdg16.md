@@ -1,6 +1,6 @@
 ---
 published: true
-layout: blog/post
+layout: news/post
 title: Impact of the Pandemic on Measuring Progress of SDG16+
 date: '2021-07-27'
 image: promoInteriores-Blog.jpg

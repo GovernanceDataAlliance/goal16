@@ -1,6 +1,6 @@
 ---
 published: true
-layout: blog/post
+layout: news/post
 title: The Critical Role of Non-Official Data in Monitoring and Implementing SDG16
 date: '2019-05-28'
 image: promoInteriores-Blog.jpg

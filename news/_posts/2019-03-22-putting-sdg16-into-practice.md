@@ -1,6 +1,6 @@
 ---
 published: true
-layout: blog/post
+layout: news/post
 title: Putting SDG16+ into practice
 date: '2019-03-01'
 image: promoInteriores-Blog.jpg

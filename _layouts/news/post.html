@@ -13,7 +13,7 @@
         <ul>
           <li><a href="{{ site.baseurl }}/"> home </a></li>
           <li><span class="-active"> > </span></li>
-          <li><a href="{{ site.baseurl }}/blog/"> news </a></li>
+          <li><a href="{{ site.baseurl }}/news/"> news </a></li>
           <li><span class="-active"> > </span></li>
           <li> {{ page.title }} </li>
         </ul>
@@ -38,7 +38,7 @@
       <div class="l-hero">
         <div class="wrap">
           <div class="hero-wrapper">
-            <div class="img-placeholder" {% unless page.image == '' %} style="background-image:url({{site.baseurl}}/img/blog/{{page.image}})" {% endunless %}></div>
+            <div class="img-placeholder" {% unless page.image == '' %} style="background-image:url({{site.baseurl}}/img/news/{{page.image}})" {% endunless %}></div>
           </div>
         </div>
       </div>
@@ -46,7 +46,7 @@
       <div class="m-backbutton">
         <div class="wrap">
           <div class="backbutton">
-            <span> < </span><a href="{{ site.baseurl }}/blog/"> Back to overview</a>
+            <span> < </span><a href="{{ site.baseurl }}/news/"> Back to overview</a>
           </div>
         </div>
       </div>

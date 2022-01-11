@@ -1,6 +1,6 @@
 ---
 published: false
-layout: blog/post
+layout: news/post
 title: Launching the Inaugural SDG16 Data Initiative Global Report
 date: '2017-07-07'
 summary: >-

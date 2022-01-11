@@ -7,7 +7,7 @@ var DateSelector = require('./date_selector.js');
 var FunctionHelper = require('../../helpers/functions.js');
 var ShareThisView = require('../common/share_this.js');
 
-var BlogView = Backbone.View.extend({
+var NewsView = Backbone.View.extend({
 
   el: '.js-blog',
 
@@ -58,4 +58,4 @@ var BlogView = Backbone.View.extend({
 
 });
 
-module.exports = BlogView;
+module.exports = NewsView;

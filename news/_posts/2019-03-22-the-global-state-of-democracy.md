@@ -1,6 +1,6 @@
 ---
 published: true
-layout: blog/post
+layout: news/post
 title: The Global State of Democracy
 date: '2018-10-19'
 image: promoInteriores-Blog.jpg

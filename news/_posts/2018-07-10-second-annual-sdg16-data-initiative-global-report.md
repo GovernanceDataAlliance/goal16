@@ -1,6 +1,6 @@
 ---
 published: false
-layout: blog/post
+layout: news/post
 title: Second Annual SDG16 Data Initiative Global Report
 date: '2018-07-10'
 image: 'https://farm5.staticflickr.com/4795/38879931920_716a23c695_k.jpg'

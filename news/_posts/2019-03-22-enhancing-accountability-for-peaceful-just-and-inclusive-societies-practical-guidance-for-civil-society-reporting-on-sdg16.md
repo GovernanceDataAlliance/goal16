@@ -1,6 +1,6 @@
 ---
 published: true
-layout: blog/post
+layout: news/post
 title: >-
   Enhancing accountability for peaceful, just and inclusive societies: Practical
   guidance for civil society reporting on SDG16+
