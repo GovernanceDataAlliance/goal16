@@ -14,4 +14,4 @@ The news have been pretty silent recently...
 
 We might be going out of business
 
-**Stay tuned!**__
+_**Stay tuned!**_
