@@ -118,7 +118,7 @@ prose:
         field:
           element: "text"
           label: cover image
-          placeholder: "'example.jpg' - upload image to 'img/news' with the same name"
+          placeholder: "example.jpg (upload image to img/news with the same name)"
           value:
       - name: category
         field:
