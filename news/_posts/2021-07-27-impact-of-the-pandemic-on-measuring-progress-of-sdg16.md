@@ -3,7 +3,7 @@ published: true
 layout: news/post
 title: Impact of the Pandemic on Measuring Progress of SDG16+
 date: '2021-07-27'
-image: promoInteriores-Blog.jpg
+image: ' tai-s-captures-Lhb-zwQ-QGI-unsplash.jpg'
 author: Matilde Ascheri
 summary: >-
   News Article on the event held on the margins of the High Level Political
