@@ -117,14 +117,14 @@ prose:
       - name: image
         field:
           element: "text"
-          label: image
-          placeholder: "example.jpg"
+          label: cover image
+          placeholder: "'example.jpg' - upload image to 'img/news' with the same name"
           value:
       - name: category
         field:
           element: "text"
           label: category
-          placeholder: "add only one category"
+          placeholder: "One category (and 1 word)"
           value:
     _organizations:
       - name: name
