@@ -6,10 +6,10 @@ description: Goal16 dashboard
 url: "http://www.sdg16.org/"
 
 # Develop and Production
-# baseurl: ''
+baseurl: ''
 
 # Staging
-baseurl: '/goal16'
+# baseurl: '/goal16'
 
 plugins: [jekyll-paginate]
 paginate: 25
@@ -87,12 +87,12 @@ prose:
     - manifest.json
     - robots.txt
   metadata:
-    blog:
+    news:
       - name: layout
         field:
           element: "hidden"
           label: "layout"
-          value: blog/post
+          value: news/post
       - name: "published"
         field:
           element: 'hidden'
