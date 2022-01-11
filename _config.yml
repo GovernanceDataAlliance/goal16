@@ -124,7 +124,7 @@ prose:
         field:
           element: "text"
           label: category
-          placeholder: "One category (and 1 word)"
+          placeholder: "add only one category"
           value:
     _organizations:
       - name: name
@@ -179,8 +179,8 @@ prose:
       - name: image
         field:
           element: "text"
-          label: image
-          placeholder: "example.jpg"
+          label: cover image
+          placeholder: "example.jpg (upload image to img/events with the same name)"
           value:
       - name: category
         field:
@@ -218,8 +218,8 @@ prose:
       - name: image
         field:
           element: "text"
-          label: image
-          placeholder: "example.jpg"
+          label: cover image
+          placeholder: "example.jpg (upload image to img/reports with the same name)"
           value:
       - name: category
         field:
