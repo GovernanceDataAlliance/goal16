@@ -3,7 +3,7 @@ published: true
 layout: news/post
 title: The Critical Role of Non-Official Data in Monitoring and Implementing SDG16
 date: '2019-05-28'
-image: promoInteriores-Blog.jpg
+image: non-official-data.jpg
 summary: >-
   Summary of Side-Event at the conference in preparation for HLPF 2019:
   “Peaceful, Just and Inclusive Societies: SDG 16 implementation and the path
@@ -35,4 +35,3 @@ The side-event was promoted by the SDG16 Data Initiative (DI), launched in July 
 - Expanding the members of civil society - especially those representing local and marginalized voices - who understand and engage with SDG16 and its targets, indicators and data.
 - The official indicators should both retain tier III indicators, that have not yet an agreed methodology, and add additional indicators that meet quality standards and more accurately reflect the objectives of the targets.
 - Member states, NSOs and UN custodian agencies should accept the role of civil society non-official innovative methodologies, data and resources, which should be integrated into monitoring processes. Custodian agencies for different indicators should be required to come up with clear methodologies for assessing whether States have achieved those indicators.
-
