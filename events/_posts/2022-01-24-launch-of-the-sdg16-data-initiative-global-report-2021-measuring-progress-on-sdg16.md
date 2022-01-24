@@ -30,4 +30,4 @@ The online discussion panel convenes authors of the several chapters of the repo
 
 **Miguel Angel Lara Otaola,** Senior Democracy Assessment Specialist, International IDEA
 
-_*Individuals noted on any [UN sanctions list](https://www.un.org/securitycouncil/content/un-sc-consolidated-list) (United Nations Security Council Consolidated List) or European Union sanctions list are not allowed to participate in any International IDEA events._
+*Individuals noted on any [UN sanctions list](https://www.un.org/securitycouncil/content/un-sc-consolidated-list) (United Nations Security Council Consolidated List) or European Union sanctions list are not allowed to participate in any International IDEA events.

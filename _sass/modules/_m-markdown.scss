@@ -43,10 +43,11 @@
       font-weight: 400;
       color: $font-color-1;
       letter-spacing: rem(.3px);
+      font-family: $font-family-title;
     }
 
     h2 {
-      text-align: center;
+      text-align: left;
       font-size: rem(30px);
       line-height: rem(37px);
     }
@@ -197,7 +198,7 @@
       background: $light-grey;
 
       @media screen and (min-width: 768px) {
-        margin: rem(100px) 0;
+        // margin: rem(100px) 0;
       }
     }
 
