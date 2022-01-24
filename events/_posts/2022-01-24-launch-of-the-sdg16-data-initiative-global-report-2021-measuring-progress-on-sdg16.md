@@ -6,6 +6,7 @@ title: >-
   SDG16+
 date: '2021-12-07'
 image: SDG16DI.gif
+tag: events
 ---
 The launch of the SDG16DI Global Report will take place this year in the form of an online discussion panel held in the framework of the **Global Democracy Coalition Forum (GDCF)** convened by International IDEA, the current coordinator of the SDG16DI, to galvanize a global conversation on democracy, as inputs to the Summit for Democracy to be held on 9 and 10 December 2021. The Forum seeks to provide a platform for voices, actors and issues that may not be part of the official Summit and will thereby contribute to broadening the conversations held around key issues inherently connected to the broader concept of democracy. The panel on the SDG 16 Data Initiative report will present the main findings of the report and in doing so, will help articulate the linkage between SDG 16 and the discussions in the Summit for Democracy, which focus on combatting corruption, advancing the respect for human rights and countering rising authoritarianism. 
 
