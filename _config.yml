@@ -6,10 +6,10 @@ description: Goal16 dashboard
 url: "http://www.sdg16.org/"
 
 # Develop and Production
-# baseurl: ''
+baseurl: ''
 
 # Staging
-baseurl: '/goal16'
+# baseurl: '/goal16'
 
 plugins: [jekyll-paginate]
 paginate: 25
@@ -188,6 +188,12 @@ prose:
           label: category
           placeholder: "add only one category"
           value:
+      - name: tag
+        field:
+          element: "hidden"
+          label: tag
+          placeholder: "add only one event"
+          value: "events"
     reports:
       - name: layout
         field:
