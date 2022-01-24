@@ -190,9 +190,9 @@ prose:
           value:
       - name: tag
         field:
-          element: "hidden"
+          element: "text"
           label: tag
-          placeholder: "add only one event"
+          placeholder: "add only one tag"
           value: "events"
     reports:
       - name: layout
