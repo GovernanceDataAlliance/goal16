@@ -6,10 +6,8 @@ title: >-
   Impact of the Pandemic on Measuring Progress of SDG16+: Looking Forward,
   Tackling Obstacles
 date: '2021-07-12'
-image: >-
-  IMPACT_OF_THE_PANDEMIC_ON_MEASURING_PROGRESS_OF_SDG_16_LOOKING_FORWARD_TACKLING_OBSTACLES).png
+image: LOOKING_FORWARD_TACKLING_OBSTACLES.png
 ---
-[UN OFFICE (NEW YORK)](https://www.idea.int/our-work/where-we-work/un-office-new-york) | [COVID-19 AND DEMOCRACY](https://www.idea.int/our-work/what-we-do/covid-19-and-democracy) | [DEMOCRATIC ACCOUNTABILITY](https://www.idea.int/our-work/what-we-do/democratic-accountability) | [REGIONAL ORGANIZATIONS](https://www.idea.int/our-work/what-we-do/regional-organizations)
 
 Mankind continues to face one of the deepest health crises in its history, affecting the quality of democracies, economies, and welfare worldwide. More than five years from the adoption of the 2030 Sustainable Development Agenda and the Sustainable Development Goals framework, we find ourselves at a point of setback, where the need to have strong and inclusive institutions, able to guarantee justice and peace, becomes instrumental to enable the achievement of the already ambitious SDGs.
 
@@ -36,8 +34,8 @@ SDG16 Data Initiative
 For further information, please contact Ms Amanda Sourek at a.sourek@idea.int
 
 ### USEFUL DOCUMENTS:
-[PDF icon Concept Note - Side Event - Effects of the Pandemic on Measuring Progress of SDG16 (HLPF 2021).pdf](https://www.idea.int/sites/default/files/events/Concept%20Note%20-%20Side%20Event%20-%20Effects%20of%20the%20Pandemic%20on%20Measuring%20Progress%20of%20SDG16%20%28HLPF%202021%29.pdf)
-[PDF icon HLPF 2021 Panelists' Bios.pdf](https://www.idea.int/sites/default/files/events/HLPF%202021%20Panelists%27%20Bios.pdf)
+- [PDF icon Concept Note - Side Event - Effects of the Pandemic on Measuring Progress of SDG16 (HLPF 2021).pdf](https://www.idea.int/sites/default/files/events/Concept%20Note%20-%20Side%20Event%20-%20Effects%20of%20the%20Pandemic%20on%20Measuring%20Progress%20of%20SDG16%20%28HLPF%202021%29.pdf)
+- [PDF icon HLPF 2021 Panelists' Bios.pdf](https://www.idea.int/sites/default/files/events/HLPF%202021%20Panelists%27%20Bios.pdf)
 
 ### USEFUL LINKS / INFORMATION:Registration Form
 Watch the event LIVE on YouTube
