@@ -18,15 +18,14 @@ Among the key issues analyzed in this edition of the Global Report, we highlight
 
 The purpose of this online event is to launch the Global Report, and have a conversation on its key elements, while further discussing challenges and opportunities for the achievement of SDG16, with special focus on:
 
-The crucial role of civil society in supporting and complementing the work of governments in collecting, monitoring, and reporting on data for SDG16.
-SDG16 as an enabler of the broader Sustainable Development Agenda; and the impact of the current pandemic and its intensifying effect on many pre-existing challenges to achieving peace, justice, and inclusion.
-Positive developments that contribute to the Decade of Action and Accountability, building on highlights of the three previous SDG16DI Global Reports covering the availability of data on all 12 SDG16 targets (2017); the triune aims of SDG16 for peace, justice, and inclusion (2018); and the state of SDG16 globally according to nonofficial data for all 12 targets (2019).
-Reinforcement of the importance of non-official data in monitoring the governance, impact and response to COVID-19.
- 
+- The crucial role of civil society in supporting and complementing the work of governments in collecting, monitoring, and reporting on data for SDG16.
+- SDG16 as an enabler of the broader Sustainable Development Agenda; and the impact of the current pandemic and its intensifying effect on many pre-existing challenges to achieving peace, justice, and inclusion.
+- Positive developments that contribute to the Decade of Action and Accountability, building on highlights of the three previous SDG16DI Global Reports covering the availability of data on all 12 SDG16 targets (2017); the triune aims of SDG16 for peace, justice, and inclusion (2018); and the state of SDG16 globally according to nonofficial data for all 12 targets (2019).
+- Reinforcement of the importance of non-official data in monitoring the governance, impact and response to COVID-19.
 
-To RSVP, please use this registration form. Registration will close on 12 November at 7:00 am (EST).
+To RSVP, please use this [registration form](https://forms.office.com/Pages/ResponsePage.aspx?id=s_PyQFopw02zVuV_On1HWbJw9hWPQAtGpb7ggekfoghUME8wQTBIN0hWSU44RzE2UENFM00xSUM0WC4u). Registration will close on 12 November at 7:00 am (EST).
 
-*The event will be livestreamed on International IDEA's YouTube Channel.
+*The event will be livestreamed on International IDEA's [YouTube Channel](https://www.youtube.com/watch?v=0yW9070mKF8&feature=youtu.be).
 
 ### PARTNER ORGANIZATIONS/COLLABORATORS: 
 SDG16 Data Initiative
@@ -39,6 +38,6 @@ Ms. Amanda Sourek (a.sourek@idea.int)
 Mr. Luis Consuegra (l.consuegra@idea.int)
 
 ### USEFUL DOCUMENTS: 
-[PDF icon SDG16DI Global Report 2020.pdf](https://www.idea.int/sites/default/files/events/SDG16DI%20Global%20Report%202020_0.pdf)
-[PDF icon Concept Note - Launch of the SDG16DI Annual Report.pdf](https://www.idea.int/sites/default/files/events/Concept%20Note%20-%20Launch%20of%20the%20SDG16DI%20Annual%20Report_1.pdf)
-[PDF icon Invitation SDG16DI (registration link).pdf](https://www.idea.int/sites/default/files/events/Invitation%20SDG16DI%20%28registration%20link%29_0.pdf)
+- [PDF icon SDG16DI Global Report 2020.pdf](https://www.idea.int/sites/default/files/events/SDG16DI%20Global%20Report%202020_0.pdf)
+- [PDF icon Concept Note - Launch of the SDG16DI Annual Report.pdf](https://www.idea.int/sites/default/files/events/Concept%20Note%20-%20Launch%20of%20the%20SDG16DI%20Annual%20Report_1.pdf)
+- [PDF icon Invitation SDG16DI (registration link).pdf](https://www.idea.int/sites/default/files/events/Invitation%20SDG16DI%20%28registration%20link%29_0.pdf)

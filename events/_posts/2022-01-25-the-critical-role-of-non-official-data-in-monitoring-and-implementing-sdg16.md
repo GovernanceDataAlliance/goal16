@@ -16,4 +16,4 @@ The event will be webcast live at [http://webtv.un.org/](http://webtv.un.org/)
 SDG16 Data Initiative and UNITAR
 
 ### RSVP/CONTACTS: 
-Amanda Sourek: a.sourek@idea.int
+Amanda Sourek: _a.sourek@idea.int_

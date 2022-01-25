@@ -3,7 +3,7 @@ published: true
 layout: events/post
 tag: events
 title: Mainstreaming SDG 16+ in VNRs and National Development Planning
-date: '2021-07-08 14:00:00'
+date: '2021-07-08'
 image: learning_lab.png
 ---
 This Learning Lab is a special session of the [2021 High Level Political Forum on sustainable development (HLPF)](https://sustainabledevelopment.un.org/hlpf) that will focus on the implementation and reporting of SDG 16+ and its centrality to ensure no one is left behind. Governments and organizations will demonstrate how monitoring and mainstreaming SDG 16 can effectively bring together a cross-section of national actors to review commitments and assess national progress across all 17 Goals and accelerate the 2030 Agenda. The SDG 16+ resources and initiatives presented will offer practical ways to build an inclusive and effective path forward.

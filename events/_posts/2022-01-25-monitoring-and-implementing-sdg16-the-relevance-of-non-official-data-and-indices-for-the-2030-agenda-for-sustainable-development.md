@@ -17,7 +17,7 @@ Non-official data, as highlighted by the SDG16 DI, independently address gaps in
 
 This session will advance monitoring and implementing SDG16+ with new data and guidance for policy makers and civil society. The side event will analyze the main outcomes of the SDG16 DI. First, the session will provide an overview of the type of data collected and shared through the interactive website [SDG16.org](http://www.sdg16.org/), which allows users to compare progress across time and context, understand the strengths and weaknesses of different indicators and data sets, and identify gaps in data availability.
 
-Second, the panel will present the experience of the SDG16 DI in monitoring progress on the implementation of the 2030 Agenda on the basis of the Annual Global Reports produced by the partnership in 2017-19 (available online at http://www.sdg16.org/). Since it assesses global progress towards realizing the 2030 Agenda’s commitment to peaceful, just and inclusive societies, the Annual Global Report is an opportunity to benchmark progress over the past year and explore key trends in-depth.
+Second, the panel will present the experience of the SDG16 DI in monitoring progress on the implementation of the 2030 Agenda on the basis of the Annual Global Reports produced by the partnership in 2017-19 (available online at [http://www.sdg16.org/](http://www.sdg16.org/)). Since it assesses global progress towards realizing the 2030 Agenda’s commitment to peaceful, just and inclusive societies, the Annual Global Report is an opportunity to benchmark progress over the past year and explore key trends in-depth.
 
 Third, the panel will provide an opportunity to share tools and knowledge products developed and tested by members of the SDG16 DI partnership for analyzing trends in the implementation of the 2030 Agenda, at both country (Voluntary National Reviews) and global levels.
 
@@ -58,7 +58,7 @@ Mr Bill Orme, on behalf of the Global Forum for Media Development (GFMD)
 
 Dr Massimo Tommasoli, Permanent Observer for International IDEA to the United Nations
 
-To RSVP, please visit: https://www.eventbrite.com/e/monitoring-and-implementing-sdg16-registration-95285215645.
+To RSVP, please visit: [https://www.eventbrite.com/e/monitoring-and-implementing-sdg16-registration-95285215645](https://www.eventbrite.com/e/monitoring-and-implementing-sdg16-registration-95285215645).
 
 ### PARTNER ORGANIZATIONS/COLLABORATORS: 
 SDG16 Data Initiative
