@@ -19,12 +19,11 @@ National Statistical Offices have an important role to play in coordinating stak
 
 This session has the following objectives:
 
-To showcase innovative data collaborative partnerships between various data providers around SDG16
-To identify and unpack challenges related to SDG16 data collection, as well as around data sharing and cross-fertilization amongst data providers
-To foster an interactive dialogue amongst participants around best practices, opportunities and potential solutions to scale up within the SDG16 data community
+- To showcase innovative data collaborative partnerships between various data providers around SDG16
+- To identify and unpack challenges related to SDG16 data collection, as well as around data sharing and cross-fertilization amongst data providers
+- To foster an interactive dialogue amongst participants around best practices, opportunities and potential solutions to scale up within the SDG16 data community
  
-
-For questions to the panelists, please e-mail Ms. Amanda Sourek at a.sourek@idea.int or tweet us at @IIDEA_UN.
+For questions to the panelists, please e-mail Ms. Amanda Sourek at _a.sourek@idea.int_ or tweet us at @IIDEA_UN.
 
 ### PARTNER ORGANIZATIONS/COLLABORATORS: 
 International Institute for Democracy and Electoral Assistance (IDEA), United Nations Institute for Training and Research (UNITAR), SDG16 Data Initiative, the Global Alliance for Reporting Progress on Peaceful, Just and In
