@@ -3870,51 +3870,51 @@ select {
     background-size: cover; }
     .m-post .news-thumbnail .img-placeholder.-reports {
       padding-top: 142%; }
-  .m-post .news-details {
+  .m-post .news-details, .m-post .events-details {
     margin: 1rem 0; }
-    .m-post .news-details > * {
+    .m-post .news-details > *, .m-post .events-details > * {
       margin-bottom: 1rem; }
-    .m-post .news-details .-date {
+    .m-post .news-details .-date, .m-post .events-details .-date {
       font-family: "Merriweather Sans", sans-serif;
       font-size: 0.75rem;
       line-height: 1;
       color: #809497; }
-      .m-post .news-details .-date.events {
+      .m-post .news-details .-date.events, .m-post .events-details .-date.events {
         font-size: 1rem;
         color: #176875;
         font-weight: 700; }
         @media screen and (min-width: 768px) {
-          .m-post .news-details .-date.events {
+          .m-post .news-details .-date.events, .m-post .events-details .-date.events {
             font-size: 1.125rem; } }
-    .m-post .news-details .-title {
+    .m-post .news-details .-title, .m-post .events-details .-title {
       font-family: "Merriweather", serif;
       font-size: 1.125rem;
       color: #333;
       font-weight: 700; }
       @media screen and (min-width: 768px) {
-        .m-post .news-details .-title {
+        .m-post .news-details .-title, .m-post .events-details .-title {
           font-size: 1.5rem; } }
-    .m-post .news-details .-summary {
+    .m-post .news-details .-summary, .m-post .events-details .-summary {
       font-family: "Merriweather Sans", sans-serif;
       font-size: 14px;
       color: #000000; }
       @media screen and (min-width: 768px) {
-        .m-post .news-details .-summary {
+        .m-post .news-details .-summary, .m-post .events-details .-summary {
           font-size: 16px; } }
-    .m-post .news-details .-link {
+    .m-post .news-details .-link, .m-post .events-details .-link {
       font-size: 14px;
       color: #57BAB0;
       font-weight: 700; }
-      .m-post .news-details .-link:hover {
+      .m-post .news-details .-link:hover, .m-post .events-details .-link:hover {
         text-decoration: underline; }
-      .m-post .news-details .-link.events {
+      .m-post .news-details .-link.events, .m-post .events-details .-link.events {
         color: #176875; }
-      .m-post .news-details .-link.reports {
+      .m-post .news-details .-link.reports, .m-post .events-details .-link.reports {
         color: #20ADC5; }
       @media screen and (min-width: 768px) {
-        .m-post .news-details .-link {
+        .m-post .news-details .-link, .m-post .events-details .-link {
           font-size: 16px; } }
-    .m-post .news-details.-reports {
+    .m-post .news-details.-reports, .m-post .events-details.-reports {
       width: 70%;
       padding: 1rem 2rem; }
   .m-post .-summary p {

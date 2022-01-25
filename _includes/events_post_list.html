@@ -4,7 +4,7 @@
         <div class="news-thumbnail">
           <div class="img-placeholder" {% unless post.image == '' %} style="background-image:url({{site.baseurl}}/img/events/{{post.image}})" {% endunless %}></div>
         </div>
-        <div class="news-details">
+        <div class="events-details">
           <div class="-date events">{{ post.date | date: '%d-%m-%Y'}}</div>
           <div class="-title">{{ post.title }}</div>
           <div class="-summary ellipsis">{% if post.summary %} {{ post.summary}} {% else %} {{post.excerpt}} {% endif %}</div>

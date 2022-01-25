@@ -22,7 +22,6 @@ This session has the following objectives:
 To showcase innovative data collaborative partnerships between various data providers around SDG16
 To identify and unpack challenges related to SDG16 data collection, as well as around data sharing and cross-fertilization amongst data providers
 To foster an interactive dialogue amongst participants around best practices, opportunities and potential solutions to scale up within the SDG16 data community
- 
 
 For questions to the panelists, please e-mail Ms. Amanda Sourek at a.sourek@idea.int or tweet us at @IIDEA_UN.
 
@@ -33,8 +32,8 @@ International Institute for Democracy and Electoral Assistance (IDEA), United Na
 Kindly fill out the [registration form](https://forms.office.com/Pages/ResponsePage.aspx?id=s_PyQFopw02zVuV_On1HWbJw9hWPQAtGpb7ggekfoghUM1RTQUFVSEVEMjBPTVkxNVY1U00yT01aTy4u) to receive the Webex link for this event, or e-mail Ms. Amanda Sourek at a.sourek@idea.int
 
 ### USEFUL DOCUMENTS: 
-[PDF icon Concept Note SDG16 Side Event at HLPF.pdf](https://www.idea.int/sites/default/files/events/Concept%20Note%20SDG16%20Side%20Event%20at%20HLPF.pdf)
-[PDF icon Panelists’ Bios and Programme.pdf](https://www.idea.int/sites/default/files/events/Panelists%E2%80%99%20Bios%20and%20Programme.pdf)
+- [PDF icon Concept Note SDG16 Side Event at HLPF.pdf](https://www.idea.int/sites/default/files/events/Concept%20Note%20SDG16%20Side%20Event%20at%20HLPF.pdf)
+- [PDF icon Panelists’ Bios and Programme.pdf](https://www.idea.int/sites/default/files/events/Panelists%E2%80%99%20Bios%20and%20Programme.pdf)
 
 ### USEFUL LINKS / INFORMATION: 
 [Click Here to Watch the Live Event](https://youtu.be/jH3ZLCCOX24)
