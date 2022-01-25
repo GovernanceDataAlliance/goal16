@@ -37,5 +37,6 @@ For further information, please contact Ms Amanda Sourek at a.sourek@idea.int
 - [PDF icon Concept Note - Side Event - Effects of the Pandemic on Measuring Progress of SDG16 (HLPF 2021).pdf](https://www.idea.int/sites/default/files/events/Concept%20Note%20-%20Side%20Event%20-%20Effects%20of%20the%20Pandemic%20on%20Measuring%20Progress%20of%20SDG16%20%28HLPF%202021%29.pdf)
 - [PDF icon HLPF 2021 Panelists' Bios.pdf](https://www.idea.int/sites/default/files/events/HLPF%202021%20Panelists%27%20Bios.pdf)
 
-### USEFUL LINKS / INFORMATION:Registration Form
-Watch the event LIVE on YouTube
+### USEFUL LINKS / INFORMATION:
+- [Registration Form](https://forms.office.com/Pages/ResponsePage.aspx?id=s_PyQFopw02zVuV_On1HWbJw9hWPQAtGpb7ggekfoghUMUJNQUs4SFdYMlVKOEk4NkE1VEVLQThPUi4u)
+- [Watch the event LIVE on YouTube](https://www.youtube.com/watch?v=_j2z5erFIq0)
