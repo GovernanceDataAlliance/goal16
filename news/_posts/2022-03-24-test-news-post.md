@@ -6,7 +6,7 @@ title: Test News Post
 date: '2022-03-24'
 author: Poetfarmer
 summary: Using tags for posts
-category: 'old, covid-19'
+category: 'covid-19'
 ---
 ## News tag is hidden
 

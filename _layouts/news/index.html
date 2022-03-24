@@ -29,7 +29,7 @@
               <select>
                 <option value="">All categories</option>
                 {% for category in site.categories %}
-                  {% unless category[0] == "blog" or category[0] == "events" or category[0] == "reports" %}
+                  {% unless category[0] == "news" or category[0] == "events" or category[0] == "reports" %}
                     <option value="{{ category | first | remove:' ' | downcase }}">
                       {{ category | first }}
                     </option>
@@ -46,13 +46,20 @@
               <select>
                 <option value="">All dates</option>
                 {% for post in site.posts %}
+
+                  {% if post.tag == 'news' %}
                   {% assign currentdate = post.date | date: "%B, %Y" %}
-                  {% if currentdate != date %}
 
-                    <option value="{{ post.date | date: '%B%Y' }}">{{ currentdate }}</option>
+                    <!-- Prevents duplication of dates -->
+                    {% if currentdate != date %}
 
-                    {% assign date = currentdate %}
+                      <option value="{{ post.date | date: '%B%Y' }}">{{ currentdate }}</option>
+
+                      {% assign date = currentdate %}
+                    {% endif %}
+
                   {% endif %}
+
                 {% endfor %}
               </select>
             </div>
