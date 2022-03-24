@@ -9,6 +9,7 @@ summary: >-
   porro nihil beatae! Quas temporibus consequuntur, soluta eligendi delectus
   sint,
 category: events
+tag: "news"
 ---
 some text
 

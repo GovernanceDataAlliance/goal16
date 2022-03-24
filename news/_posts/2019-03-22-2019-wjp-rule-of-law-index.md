@@ -6,6 +6,7 @@ image: 'https://www.moldova.org/en/wp-content/uploads/sites/2/2019/03/featured3.
 date: '2019-02-28'
 image: promoInteriores-Blog.jpg
 author: World Justice Project
+tag: "news"
 summary: >-
   The World Justice Project Rule of Law Index® measures how the rule of law is
   experienced and perceived by the general public in 126 countries and

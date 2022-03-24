@@ -5,6 +5,7 @@ title: Putting SDG16+ into practice
 date: '2019-03-01'
 image: promoInteriores-Blog.jpg
 author: Saferworld
+tag: "news"
 summary: >-
   This infographic illustrates how this ‘localisation’ approach works in 11
   important steps

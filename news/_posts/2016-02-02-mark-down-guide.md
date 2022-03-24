@@ -5,7 +5,7 @@ date: "2016-03-11"
 author: Vizzuality
 image: "promoInteriores-Blog.jpg"
 category:
-tags: ""
+tag: "news"
 title: A markdown guide
 summary: Here you will find a guide of styles available for your text. Enjoy! 
 

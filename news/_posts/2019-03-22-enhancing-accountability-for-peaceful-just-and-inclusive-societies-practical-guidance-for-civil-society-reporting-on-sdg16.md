@@ -7,6 +7,7 @@ title: >-
 date: '2019-02-01'
 image: promoInteriores-Blog.jpg
 author: Saferworld
+tag: "news"
 summary: >-
   This briefing provides practical guidance for civil society organisations to
   develop independent reports on progress towards the goal of peaceful, just and

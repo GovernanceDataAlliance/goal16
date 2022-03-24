@@ -4,6 +4,7 @@ layout: news/post
 title: The Critical Role of Non-Official Data in Monitoring and Implementing SDG16
 date: '2019-05-28'
 image: non-official-data.jpg
+tag: "news"
 summary: >-
   Summary of Side-Event at the conference in preparation for HLPF 2019:
   “Peaceful, Just and Inclusive Societies: SDG 16 implementation and the path
