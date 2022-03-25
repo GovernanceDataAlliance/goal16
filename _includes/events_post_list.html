@@ -1,0 +1,15 @@
+<div class="l-post -list {% unless post.image == '' %} -img {% endunless %}" data-date="{{ post.date | date: '%B%Y' }}" data-category="{{ post.category | downcase}}">
+  <div class="m-post {% unless post.image == '' %} -light {% endunless %}">
+      <a href="{{ site.baseurl }}{{ post.url }}">
+        <div class="news-thumbnail">
+          <div class="img-placeholder" {% unless post.image == '' %} style="background-image:url({{site.baseurl}}/img/events/{{post.image}})" {% endunless %}></div>
+        </div>
+        <div class="events-details">
+          <div class="-date events">{{ post.date | date: '%d-%m-%Y'}}</div>
+          <div class="-title">{{ post.title }}</div>
+          <div class="-summary ellipsis">{% if post.summary %} {{ post.summary}} {% else %} {{post.excerpt}} {% endif %}</div>
+          <div class="-link events">Read more ></div>
+        </div>
+      </a>
+    </div>
+</div>

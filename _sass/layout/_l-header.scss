@@ -15,6 +15,8 @@ $header-height: rem(80px);
   margin: 0 auto;
 
   background-color: $white;
+  border-bottom: 1px solid $light-grey;
+  overflow: hidden;
 
   &.is-map{
     max-width: rem(1402px);
@@ -28,15 +30,24 @@ $header-height: rem(80px);
     transform: translate(0, 70px);
   }
 
+  @media screen and (min-width: $screen-s) {
+    padding-left: rem($wrap-padding-tablet);
+  }
+
+
   @media screen and (min-width: 768px) {
     position: relative;
     height: rem(80px);
-    padding-left: rem(90px);
+    padding-left: rem($wrap-padding-desktop);
     padding-right: rem(0px);
   }
 
   @media screen and (min-width: $screen-l) {
     height: rem(80px);
+  }
+
+  @media screen and (min-width: $screen-xl) {
+    padding-left: rem($wrap-padding-desktop-xl);
   }
 
   .l-brand {

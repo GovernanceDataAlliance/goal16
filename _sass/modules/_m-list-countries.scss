@@ -1,5 +1,26 @@
 .m-list {
 
+  .c-title-underline {
+    font-size: 16px;
+
+    &:after {
+      display: none;
+    }
+
+    @media screen and (min-width: $screen-s) {
+      font-size: 24px;
+      margin-bottom: 20px;
+
+      &.-mobile {
+        text-align: left;
+
+        &:after {
+          display: none;
+        }
+      }
+    }
+  }
+
   .open-menu {
     width: 10px;
     float: right;
@@ -21,21 +42,21 @@
       float: left;
       display: block;
       text-align: left;
-      width: 50%;
+      width: 100%;
       margin-top: rem(15px);
-      &:first-child{
-        padding-right: rem(15px);
-      }
-      &:last-child{
-        padding-left: rem(15px);
-      }
+      // &:first-child{
+      //   padding-right: rem(15px);
+      // }
+      // &:last-child{
+      //   padding-left: rem(15px);
+      // }
 
       @media screen and (min-width: $screen-s) {
-        width: 33%;
-        text-align: center;
+        width: 50%;
+        // text-align: center;
         margin-top: 0;
-        padding-left: rem(25px);
-        padding-right: rem(25px);
+        // padding-left: rem(25px);
+        // padding-right: rem(25px);
         &:first-child{
           padding-right: 0;
         }
@@ -44,15 +65,21 @@
         }
       }
 
+      @media screen and (min-width: $screen-m) {
+        width: 25%;
+      }
+
       li {
         margin-right: rem(10px);
-        line-height: 2.5;
+        line-height: 2;
         @media screen and (min-width: $screen-s) {
-          line-height: 2.13;
+          line-height: 1.8;
         }
         a {
           font-size: $font-size-xsmall;
-          color: $font-color-3;
+          color: $dark-aqua;
+          text-decoration: underline;
+
           @media screen and (min-width: $screen-s) {
             font-size: $font-size-normal;
           }

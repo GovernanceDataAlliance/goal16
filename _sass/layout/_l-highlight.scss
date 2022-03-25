@@ -4,7 +4,7 @@ $backgrounds-highlight: 'crosseling-map', 'crosseling-compare', 'crosseling-abou
   position: relative;
   display: flex;
   align-items: center;
-  padding: rem(50px) 0;
+  padding: rem(100px) 0;
   background-color: #ccc;
   // min-height: rem(600px);
   .wrap{
@@ -21,6 +21,7 @@ $backgrounds-highlight: 'crosseling-map', 'crosseling-compare', 'crosseling-abou
       background-image: url('#{$baseUrl}/img/crosseling/#{nth($backgrounds-highlight, $i)}.jpg');
       background-size: cover;
       background-position: center;
+      background-blend-mode: overlay;
 
       &:before {
         content: "";
@@ -29,7 +30,7 @@ $backgrounds-highlight: 'crosseling-map', 'crosseling-compare', 'crosseling-abou
         bottom: 0;
         left: 0;
         right: 0;
-        background-color: rgba(14, 29, 42, 0.4);
+        // background-color: rgba(14, 29, 42, 0.4);
       }
     }
   }

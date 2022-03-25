@@ -3,6 +3,7 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: rem(10px);
+  min-width: rem(200px);
 
   > .page-link {
     font-family: $font-family-secondary;
@@ -35,6 +36,82 @@
     }
   }
 
+  .left-btn {
+    width: 60px;
+    height: 60px;
+    background-image: url('#{$baseUrl}/img/miscellaneous/chevron-left-white.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 25% 25%;
+
+    &.news {
+      background-color: $fountain-blue;
+
+      &:hover {
+        background-color: rgba($fountain-blue, 0.7);
+      }
+    }
+
+    &.events {
+      background-color: $dark-aqua;
+
+      &:hover {
+        background-color: rgba($dark-aqua, 0.7);
+      }
+    }
+
+    &.reports {
+      background-color: $ball-blue;
+
+      &:hover {
+        background-color: rgba($ball-blue, 0.7);
+      }
+    }
+
+    &.-disabled {
+      opacity: 0.3;
+      cursor: inherit;
+    }
+  }
+
+  .right-btn {
+    width: 60px;
+    height: 60px;
+    background-image: url('#{$baseUrl}/img/miscellaneous/chevron-right-white.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 25% 25%;
+
+    &.news {
+      background-color: $fountain-blue;
+
+      &:hover {
+        background-color: rgba($fountain-blue, 0.7);
+      }
+    }
+
+    &.events {
+      background-color: $dark-aqua;
+
+      &:hover {
+        background-color: rgba($dark-aqua, 0.7);
+      }
+    }
+
+    &.reports {
+      background-color: $ball-blue;
+
+      &:hover {
+        background-color: rgba($ball-blue, 0.7);
+      }
+    }
+
+    &.-disabled {
+      opacity: 0.3;
+      cursor: inherit;
+    }
+  }
+
   > .page-number {
     font-size: rem(12px);
     color: $font-color-1;
@@ -47,7 +124,7 @@
     margin-bottom: 0;
 
     > .page-number {
-      font-size: rem(12px);
+      font-size: rem(16px);
     }
   }
 }

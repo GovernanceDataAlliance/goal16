@@ -4,11 +4,11 @@
   display: flex; display: -ms-box;
   height: auto;
   padding: rem(20px) 0;
-  background-color: $bg-color-4;
+  background-color: $white;
   border-bottom: 1px solid $border-1;
 
   @media screen and (min-width: $screen-s) {
-    padding: rem(10px) 0;
+    padding: rem(15px) 0;
   }
 
   @media screen and (min-width: 768px) {
@@ -21,7 +21,7 @@
     display: flex;
     display: -ms-box;
     flex: 1 1 100%;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-direction: column;
     min-height: rem(105px);
 
@@ -127,7 +127,7 @@
     border: none;
 
     @media screen and (min-width: $screen-s) {
-      height: rem(56px);
+      height: 5.5rem;
     }
 
     @media screen and (min-width: 768px) {

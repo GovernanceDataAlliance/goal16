@@ -2,11 +2,11 @@
   position: relative;
   margin-top: rem(32px);
   font-size: $font-size-large;
-  font-weight: $font-weight-regular;
+  font-weight: $font-weight-bold;
   color: $font-color-2;
   line-height: 1.55em;
   text-align: center;
-  font-family: $font-family-primary;
+  font-family: $font-family-title;
 
   @media screen and (min-width: $screen-s) {
     margin-top: rem(72px);
@@ -23,5 +23,10 @@
 
   @media screen and (min-width: $screen-l) {
 
+  }
+
+  &.-ocean-section-title {
+    width: 100%;
+    margin-top: 0;
   }
 }

@@ -2,45 +2,57 @@
   <div class="l-target-card" id="{{slug}}">
     <div class="wrap">
       <div class="m-data-target">
-        <div class="header">
-          <h3 class="c-title-underline">{{code}} {{title}}</h2>
-        </div>
-        {{#each indicators}}
-        <div id="indicator-{{indicator_slug}}" class="m-data-indicator">
-          <div class="header js--toggle-indicator" data-slug={{slug}}>
-            <h1 class="c-indicator-name -data">{{indicator_code}} {{indicator_title}} <span>({{#typeOfIndicator type}}{{/typeOfIndicator}})</span></h1>
-            <div class="buttons">
-              <button class="js--icon-open">
-                <svg class="icon">
-                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-open_bigarrow">
-                </svg>
-              </button>
-              <button class="js--icon-close is-hidden">
-                <svg class="icon">
-                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-close">
-                </svg>
-              </button>
+        <header class="js--toggle-header">
+          <h3 class="c-target-name"><span class="color-code">{{ code }}</span>  {{ title }}</h3>
+          <div class="card-options">
+            <div class="js--toggle-card">
+              <svg class="icon icon-open_arrow">
+                <use xlink:href="#icon-open_bigarrow"></use>
+              </svg>
+              <svg class="icon icon-close is-hidden">
+                <use xlink:href="#icon-close"></use>
+              </svg>
             </div>
           </div>
-          <div class="indicator-info is-hidden">
-            <p>{{{ description }}}</p>
-            <div class="indicator-metadata">
-              <ul>
-                <li>
-                  <span class="key-item">Source: </span>{{#if source_link }} <a target="_blank" href="{{ source_link }}">{{ source_name }}</a>{{else}}<span> - </span>{{/if}}
-                </li>
-                <li>
-                  <span class="key-item">Worst score: </span><span>{{#if  worst_score }} {{ worst_score}} {{else}}  - {{/if}}</span>
-                  <span class="key-item">Best score: </span><span>{{#if  best_score }} {{ best_score}} {{else}}  - {{/if}}</span>
-                  <span class="key-item">Units: </span><span>{{#if units }}{{ units }}{{ else }}-{{/if}}</span>
-                </li>
-              </ul>
-
+        </header>
+        <div class="js--indicators-wrapper is-closed">
+          {{#each indicators}}
+          <div id="indicator-{{indicator_slug}}" class="m-data-indicator">
+            <div class="header js--toggle-indicator" data-slug={{slug}}>
+              <h1 class="c-indicator-name -data">{{indicator_code}} {{indicator_title}} <span>({{#typeOfIndicator type}}{{/typeOfIndicator}})</span></h1>
+              <div class="buttons">
+                <button class="js--icon-open">
+                  <svg class="icon">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-open_bigarrow">
+                  </svg>
+                </button>
+                <button class="js--icon-close is-hidden">
+                  <svg class="icon">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-close">
+                  </svg>
+                </button>
+              </div>
             </div>
-          </div>
+            <div class="indicator-info is-hidden">
+              <p>{{{ description }}}</p>
+              <div class="indicator-metadata">
+                <ul>
+                  <li>
+                    <span class="key-item">Source: </span>{{#if source_link }} <a target="_blank" href="{{ source_link }}">{{ source_name }}</a>{{else}}<span> - </span>{{/if}}
+                  </li>
+                  <li>
+                    <span class="key-item">Worst score: </span><span>{{#if  worst_score }} {{ worst_score}} {{else}}  - {{/if}}</span>
+                    <span class="key-item">Best score: </span><span>{{#if  best_score }} {{ best_score}} {{else}}  - {{/if}}</span>
+                    <span class="key-item">Units: </span><span>{{#if units }}{{ units }}{{ else }}-{{/if}}</span>
+                  </li>
+                </ul>
 
+              </div>
+            </div>
+
+          </div>
+          {{/each}}
         </div>
-        {{/each}}
       </div>
     </div>
   </div>

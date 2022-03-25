@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body>
+    {% include icons.html %}
+
+    <div class="l-main-container js-blog">
+      {% include header.html %}
+
+      {% include breadcrumbs.html %}
+
+      <div class="l-banner -section-2 -ocean-news">
+
+        <div class="wrap -ocean-wrap">
+          <h1 class="c-section-title -ocean-section-title -light">{{ page.title }}</h1>
+          <!-- <p class="text text-banner-m">{{ page.intro-text }}</p> -->
+        </div>
+      </div>
+
+      <div class="l-toolbar -blog">
+        <div class="wrap">
+
+          {% assign categoriesSize = site.categories | size %}
+          {% unless categoriesSize == 1 %}
+          <div class="c-selector">
+            <div class="btn-drop-down" id="categorySelector" data-url="{{ site.baseurl }}">
+              <select>
+                <option value="">All categories</option>
+                {% for post in site.posts %}
+
+                  {% if post.tag == 'news' %}
+                  {% assign currentCategory = post.category %}
+
+                    {% if currentCategory != category %}
+                      <option value="{{ currentCategory | remove:' ' | downcase }}">
+                        {{ currentCategory }}
+                      </option>
+                      {% assign category = currentCategory %}
+                    {% endif %}
+
+                  {% endif %}
+                {% endfor %}
+              </select>
+            </div>
+          </div>
+          {% endunless %}
+
+          <div class="c-selector">
+            <div class="btn-drop-down" id="dateSelector" data-url="{{ site.baseurl }}">
+              <select>
+                <option value="">All dates</option>
+                {% for post in site.posts %}
+
+                  {% if post.tag == 'news' %}
+                  {% assign currentdate = post.date | date: "%B, %Y" %}
+
+                    <!-- Prevents duplication of dates -->
+                    {% if currentdate != date %}
+
+                      <option value="{{ post.date | date: '%B%Y' }}">{{ currentdate }}</option>
+
+                      {% assign date = currentdate %}
+                    {% endif %}
+
+                  {% endif %}
+
+                {% endfor %}
+              </select>
+            </div>
+          </div>
+
+          <!-- <button class="c-button -primary -small" id="js--share" type="button" name="share"> share</button> -->
+
+        </div>
+      </div>
+
+      <div class="wrap">
+        <div class="l-blog">
+          {% for post in paginator.posts %}
+            {% unless post.tag == 'events' or post.tag == 'reports' %}
+              {% include modules/post_list_module.html %}
+            {% endunless %}
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="l-toolbar -pagination -footer">
+        <div class="wrap">
+          <div class="m-controls -full -centered">
+            <div class="m-pagination">
+              {% if paginator.previous_page %}
+                <a href="{{ site.baseurl }}{{ paginator.previous_page_path }}/">
+                  <div class="left-btn news"></div>
+                </a>
+              {% else %}
+                <div class="left-btn news -disabled"></div>
+              {% endif %}
+              <span class="page-number ">{{ paginator.page }} of {{ paginator.total_pages }}</span>
+              {% if paginator.next_page %}
+                <a href="{{ site.baseurl }}{{ paginator.next_page_path }}/">
+                  <div class="right-btn news"></div>
+                </a>
+              {% else %}
+                <div class="right-btn news -disabled"></div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {% include footer.html %}
+
+    </div>
+    <script>
+      var SITEURL = '{{ site.baseurl }}' || null;
+    </script>
+    <script src="{{ site.baseurl }}/js/main_bundle.js"></script>
+  </body>
+
+</html>

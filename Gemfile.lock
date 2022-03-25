@@ -274,7 +274,6 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages (~> 219)
-  jekyll
   jekyll-paginate
   kramdown
   sass

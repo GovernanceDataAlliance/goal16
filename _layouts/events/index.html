@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body>
+    {% include icons.html %}
+
+    <div class="l-main-container js-events">
+      {% include header.html %}
+
+      {% include breadcrumbs.html %}
+
+      <div class="l-banner -section-2 -about -ocean-events">
+
+        <div class="wrap -ocean-wrap">
+          <h1 class="c-section-title -ocean-section-title -light">{{ page.title }}</h1>
+        </div>
+      </div>
+
+      <div class="l-toolbar -blog">
+        <div class="wrap">
+
+          <!-- {% assign categoriesSize = site.categories | size %} -->
+          <!-- {% unless categoriesSize == 1 %} -->
+          <div class="c-selector">
+            <div class="btn-drop-down" id="eventsSelector" data-url="{{ site.baseurl }}">
+              <select>
+                <option value="">All events</option>
+                {% for post in site.posts %}
+
+                  {% if post.tag == 'events' %}
+                  {% assign currentCategory = post.category %}
+
+                    {% if currentCategory != category %}
+                      <option value="{{ category | remove:' ' | downcase }}">
+                        {{ category }}
+                      </option>
+                      {% assign category = currentCategory %}
+                    {% endif %}
+
+                  {% endif %}
+                {% endfor %}
+              </select>
+            </div>
+          </div>
+          <!-- {% endunless %} -->
+
+          <!-- <button class="c-button -primary -small" id="js--share" type="button" name="share"> share</button> -->
+
+        </div>
+      </div>
+
+      <div class="wrap">
+        <div class="l-blog">
+          {% for post in site.posts %}
+            {% if post.tag == 'events' %}
+              {% include events_post_list.html %}
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="l-toolbar -pagination -footer">
+        <div class="wrap">
+          <div class="m-controls -full -centered">
+            <div class="m-pagination">
+              {% if paginator.previous_page %}
+                <a href="{{ site.baseurl }}{{ paginator.previous_page_path }}/">
+                  <div class="left-btn events"></div>
+                </a>
+              {% else %}
+                <div class="left-btn events -disabled"></div>
+              {% endif %}
+              {% if paginator.total_pages %}
+              <span class="page-number ">{{ paginator.page }} of {{ paginator.total_pages }}</span>
+              {% else %}
+              <span class="page-number ">1 of 1</span>
+              {% endif %}
+              {% if paginator.next_page %}
+                <a href="{{ site.baseurl }}{{ paginator.next_page_path }}/">
+                  <div class="right-btn events"></div>
+                </a>
+              {% else %}
+                <div class="right-btn events -disabled"></div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {% include footer.html %}
+    </div>
+    <script>
+      var SITEURL = '{{ site.baseurl }}' || null;
+    </script>
+    <script src="{{ site.baseurl }}/js/main_bundle.js"></script>
+  </body>
+
+</html>

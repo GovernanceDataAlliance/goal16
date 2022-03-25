@@ -5,7 +5,9 @@ page-name: about
 published: true
 ---
 
-The SDG16 Data Initiative is a collective project by a consortium of organisations seeking to support the open tracking of the global commitments made by more than 194 countries on peace, justice, and strong institutions.
+## Introduction
+
+The SDG16 Data Initiative is a collective project by a consortium of organisations seeking to support the open tracking of the global commitments made by more than 194 countries on peace, justice, and strong institutions!
 
 The initiative aims to complement the current efforts underway to develop an official indicator framework for monitoring the SDGs. The [Inter-agency Expert Group on SDG Indicators](http://unstats.un.org/sdgs/iaeg-sdgs/) (IAEG-SDGs) has identified 23 global indicators under SDG16’s 12 targets. It is intended that national statistical systems will eventually produce the majority of the data for these indicators. The UN Statistical System and other global organizations will then collate this official data at the global level.
 
@@ -58,9 +60,10 @@ Reports:
 + The Institute for Economics and Peace. "From now to 2030: What is needed to measure Goal 16". [http://economicsandpeace.org/wp-content/uploads/2016/09/Goal16_2016_webfile.pdf](http://economicsandpeace.org/wp-content/uploads/2016/09/Goal16_2016_webfile.pdf){:target="_blank"}
 + TAP Network. "Goal 16 Advocacy Toolkit". [https://sustainabledevelopment.un.org/content/documents/9935TAP%20Network%20Goal%2016%20Advocacy%20Toolkit.pdf](https://sustainabledevelopment.un.org/content/documents/9935TAP%20Network%20Goal%2016%20Advocacy%20Toolkit.pdf){:target="_blank"}
 + European Center for Development Policy Management. "The Challenge of Measuring SDG 16: What role for African Region Frameworks". [http://ecdpm.org/wp-content/uploads/DP175-Challenge-Measuring-SDG16-May-2015.pdf](http://ecdpm.org/wp-content/uploads/DP175-Challenge-Measuring-SDG16-May-2015.pdf){:target="_blank"}
-+ Saferworld. "Greater than the sum of our parts: Global partnership for Goal 16". [http://www.saferworld.org.uk/resources/view-resource/1057-greater-than-the-sum-of-our-parts-global-partnerships-for-goal-16](http://www.saferworld.org.uk/resources/view-resource/1057-greater-than-the-sum-of-our-parts-global-partnerships-for-goal-16){:target="_blank"}
-+ International IDEA. "Tracking Progress on SDG16 with Global State of Democracy Indices". [The GSoD IN FOCUS No. 8](https://www.idea.int/publications/catalogue/tracking-progress-sdg16-with-gsod-indices?lang=en){:target="_blank"}
-+ International IDEA. "Monitoring Achievements on SDG16 from 2015-2019: A Global State of Democracy Indices Perspective". [The GSoD IN FOCUS No. 11](https://www.idea.int/publications/catalogue/monitoring-achievements-on-sdg16-a-gsod-perspective?lang=en){:target="_blank"}
++ Safeworld. "Greater than the sum of our parts: Global partnership for Goal 16". [http://www.saferworld.org.uk/resources/view-resource/1057-greater-than-the-sum-of-our-parts-global-partnerships-for-goal-16](http://www.saferworld.org.uk/resources/view-resource/1057-greater-than-the-sum-of-our-parts-global-partnerships-for-goal-16){:target="_blank"}
++ International IDEA. "Tracking Progress on Sustainable Development Goal 16 with Global State of Democracy Indices". [The GSoD IN FOCUS No. 8](https://www.idea.int/sites/default/files/publications/tracking-progress-sdg16-with-gsod-indices.pdf)
++ International IDEA. "Monitoring Achievements on Sustainable Development Goal 16 from 2015-2019: A Global State of Demococracy Indices Perspective".[The GSoD IN FOCUS No. 11](https://www.idea.int/sites/default/files/publications/monitoring-achievements-on-SDG16-a-gsod-indices-perspective.pdf)
+
 
  Further Resources:
  

@@ -6,9 +6,9 @@
     <div class="l-main-container" id="l-about">
       {% include header.html %}
 
-      <div class="l-banner -section-2 -about -topsection-about">
+      {% include breadcrumbs.html %}
 
-        {% include breadcrumbs.html %}
+      <div class="l-banner -section-2 -about -topsection-about">
 
         <div class="wrap">
           <h1 class="c-section-title -light">{{ page.title }}</h1>
@@ -19,12 +19,30 @@
       <div class="l-about-menu">
         <div class="wrap">
           <ul>
+            <li><button class="js-about-link" data-section="introduction">Introduction</button></li>
             <li><button class="js-about-link" data-section="take-note">Take Note!</button></li>
             <li><button class="js-about-link" data-section="comments">Comments?</button></li>
-            <li><button class="js-about-link" data-section="we-the-peoples">"We the People's"</button></li>
+            <li><button class="js-about-link" data-section="we-the-peoples">"We the Peoples"</button></li>
             <li><button class="js-about-link" data-section="resources">Resources</button></li>
             <li><button class="js-about-link" data-section="partners">Partners</button></li>
           </ul>
+        </div>
+      </div>
+
+      <div class="m-about-menu">
+        <div class="wrap">
+          <div class="c-selector">
+            <div class="btn-drop-down" id="aboutSelector" data-url="{{ site.baseurl }}">
+              <select>
+                <option value="introduction">Introduction</option>
+                <option value="take-note">Take Note!</option>
+                <option value="comments">Comments?</option>
+                <option value="we-the-peoples">"We the Peoples"</option>
+                <option value="resources">Resources</option>
+                <option value="partners">Partners</option>
+              </select>
+            </div>
+          </div>
         </div>
       </div>
 

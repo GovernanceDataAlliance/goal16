@@ -11,6 +11,10 @@
     padding: rem(120px) 0;
   }
 
+  &.-data {
+    background-color: $bg-page;
+  }
+
   .btn.-secondary {
     margin-top: rem(30px);
   }
@@ -20,10 +24,10 @@
   }
 
   &.-main {
-    padding-top: rem(34px);
+    padding: rem(20px) 0;
 
     @media screen and (min-width: $screen-s) {
-      padding-top: rem(70px);
+      padding: rem(40px) 0;
     }
 
     @media screen and (min-width: 768px) {}

@@ -1,5 +1,7 @@
 $backgrounds: 'promoHome', 'topsection-country', 'topsection-countries', 'topsection-compare', 'topsection-data', 'topsection-about', 'promoInteriores-Blog';
 $regions: 'africa', 'americas', 'asia', 'europe', 'oceania';
+$bannerOcean: 'ocean-news', 'ocean-events', 'ocean-reports';
+$oceanShades: $fountain-blue, $dark-aqua, $ball-blue;
 
 .l-banner {
   position: relative;
@@ -13,7 +15,13 @@ $regions: 'africa', 'americas', 'asia', 'europe', 'oceania';
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: rgba(14, 29, 42, .5);
+    background-color: rgba(0, 0, 0, .4);
+  }
+
+  &.country-shade {
+    &:before {
+      background-color: rgba($dark-aqua, .4);
+    }
   }
 
   @media screen and (min-width: 768px) {
@@ -26,6 +34,37 @@ $regions: 'africa', 'americas', 'asia', 'europe', 'oceania';
       background-image: url('#{$baseUrl}/img/cover-pages/#{nth($backgrounds, $i)}.jpg');
       background-size: cover;
       background-position: center;
+    }
+  }
+
+  &.-topsection-data:before, &.-topsection-about:before  {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(23, 104, 117, 0.5);
+  }
+
+  @for $i from 1 through length($bannerOcean) {
+    &.-#{nth($bannerOcean, $i)} {
+      background-color: #{nth($oceanShades, $i)};
+      background-image: url('#{$baseUrl}/img/cover-pages/bg_lines.svg');
+      background-repeat: no-repeat;
+      background-position: top left;
+      height: rem(140px);
+      padding-top: 0;
+      padding-bottom: 0;
+
+      @media screen and (min-width: 768px) {
+        height: rem(200px);
+      }
+
+      &:before {
+        background-color: transparent;
+      }
+
     }
   }
 
@@ -69,4 +108,125 @@ $regions: 'africa', 'americas', 'asia', 'europe', 'oceania';
       color: $font-color-2;
     }
   }
+}
+
+.country-header {
+  position: sticky;
+  top: 0.9%;
+  padding: 1rem 0;
+  border-bottom: 1px solid $gainsboro;
+  z-index: 1;
+  background-color: $white;
+
+  @media screen and (min-width: $screen-s) {
+    top: 0;
+  }
+
+  @media screen and (min-width: $screen-m) {
+    padding: 2rem 0;
+  }
+
+  .wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .country-header--title {
+      font-family: $font-family-title;
+      font-size: rem(16px);
+      font-weight: bold;
+      color: $dark-aqua;
+
+      @media screen and (min-width: $screen-m) {
+        font-size: rem(24px);
+      }
+    }
+
+    .button-container {
+      display: flex;
+      align-items: center;
+      position: relative;
+
+      .options-btn {
+        width: 30px;
+        height: 20px;
+        background-image: url('#{$baseUrl}/img/miscellaneous/options-btn.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        @media screen and (min-width: $screen-s) {
+          display: none;
+        }
+      }
+
+      .buttons-trigger{
+        display: none;
+
+        @media screen and (min-width: $screen-s) {
+          display: block;
+        }
+      }
+
+      .buttons-wrapper {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        position: absolute;
+        transform: translateY(106%);
+        bottom: 0;
+        right: 0;
+
+        > a {
+          white-space: nowrap;
+        }
+
+        @media screen and (min-width: $screen-s) {
+          position: static;
+          flex-direction: row;
+          transform: translateY(0);
+        }
+
+        .c-button.-small {
+          width: 105px;
+          height: 50px;
+          padding: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          &:nth-child(1) {
+            color: $white;
+            background-color: $dark-aqua;
+
+            &:hover {
+              background-color: rgba($dark-aqua, .9);
+            }
+
+            @media screen and (min-width: $screen-s) {
+              color: $dark-aqua;
+              background-color: $white;
+              border: rem(1px) solid $dark-aqua;
+
+              &:hover {
+                color: $white;
+                border-color: transparent;
+                background-color: $dark-aqua;
+              }
+            }
+          }
+        }
+      }
+
+
+      .-small {
+        padding: rem(15px) rem(45px);
+      }
+    }
+  }
+
 }
