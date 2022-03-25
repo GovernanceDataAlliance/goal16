@@ -33,7 +33,7 @@
                   {% assign currentCategory = post.category %}
 
                     {% if currentCategory != category %}
-                      <option value="{{ category | first | remove:' ' | downcase }}">
+                      <option value="{{ category | remove:' ' | downcase }}">
                         {{ category }}
                       </option>
                       {% assign category = currentCategory %}
