@@ -7,6 +7,7 @@ title: >-
   Tackling Obstacles
 date: '2021-07-12'
 image: LOOKING_FORWARD_TACKLING_OBSTACLES.png
+category: 'Past'
 ---
 
 Mankind continues to face one of the deepest health crises in its history, affecting the quality of democracies, economies, and welfare worldwide. More than five years from the adoption of the 2030 Sustainable Development Agenda and the Sustainable Development Goals framework, we find ourselves at a point of setback, where the need to have strong and inclusive institutions, able to guarantee justice and peace, becomes instrumental to enable the achievement of the already ambitious SDGs.

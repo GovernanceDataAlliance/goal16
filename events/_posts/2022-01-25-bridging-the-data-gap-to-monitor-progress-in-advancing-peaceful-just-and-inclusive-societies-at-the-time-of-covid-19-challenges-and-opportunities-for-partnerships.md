@@ -2,6 +2,7 @@
 published: true
 layout: events/post
 tag: events
+category: 'Past'
 title: >-
   Bridging the data gap to monitor progress in advancing peaceful, just and
   inclusive societies at the time of COVID-19 – challenges and opportunities for

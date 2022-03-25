@@ -2,6 +2,7 @@
 published: true
 layout: events/post
 tag: events
+category: 'Past'
 title: >-
   Monitoring and Implementing SDG16+: The Relevance of Non-Official Data and
   Indices for the 2030 Agenda for Sustainable Development
