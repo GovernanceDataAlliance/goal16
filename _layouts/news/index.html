@@ -28,13 +28,19 @@
             <div class="btn-drop-down" id="categorySelector" data-url="{{ site.baseurl }}">
               <select>
                 <option value="">All categories</option>
-                {% for category in site.categories %}
-                  {% unless category[0] == "news" or category[0] == "events" or category[0] == "reports" %}
-                    <option value="{{ category | first | remove:' ' | downcase }}">
-                      {{ category | first }}
-                    </option>
-                    {% if forloop.last %}.{% else %}, {% endif %}
-                  {% endunless %}
+                {% for post in site.posts %}
+
+                  {% if post.tag == 'news' %}
+                  {% assign currentCategory = post.category %}
+
+                    {% if currentCategory != category %}
+                      <option value="{{ currentCategory | remove:' ' | downcase }}">
+                        {{ currentCategory }}
+                      </option>
+                      {% assign category = currentCategory %}
+                    {% endif %}
+
+                  {% endif %}
                 {% endfor %}
               </select>
             </div>
