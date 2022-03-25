@@ -5,7 +5,7 @@ title: >-
   Enhancing accountability for peaceful, just and inclusive societies: Practical
   guidance for civil society reporting on SDG16+
 date: '2019-02-01'
-image: promoInteriores-Blog.jpg
+image: accountability.jpg
 author: Saferworld
 tag: "news"
 summary: >-

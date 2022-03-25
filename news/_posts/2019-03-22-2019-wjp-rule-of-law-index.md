@@ -2,9 +2,8 @@
 published: true
 layout: news/post
 title: 2019 WJP Rule of Law Index
-image: 'https://www.moldova.org/en/wp-content/uploads/sites/2/2019/03/featured3.jpg'
+image: rule-of-law.jpg
 date: '2019-02-28'
-image: promoInteriores-Blog.jpg
 author: World Justice Project
 tag: "news"
 summary: >-

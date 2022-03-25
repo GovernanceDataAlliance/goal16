@@ -3,7 +3,7 @@ published: true
 layout: news/post
 title: Putting SDG16+ into practice
 date: '2019-03-01'
-image: promoInteriores-Blog.jpg
+image: steps-sdg-infographic-cropped2.png
 author: Saferworld
 tag: "news"
 summary: >-
@@ -15,4 +15,3 @@ Since 2015, Saferworld has worked with national partners to adapt the 2030 Agend
 [This infographic](https://www.saferworld.org.uk/multimedia/putting-sdg16-into-practice) illustrates how this ‘localisation’ approach works in 11 important steps:
 
 ![steps-sdg-infographic-cropped2.png]({{site.baseurl}}/img/steps-sdg-infographic-cropped2.png)
-
