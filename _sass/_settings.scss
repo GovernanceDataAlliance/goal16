@@ -12,7 +12,7 @@ $button-height: 40px;
 ////////////////////
 $screen-xs: 320px;
 $screen-s: 640px;
-$screen-m: 769px;
+$screen-m: 768px;
 $screen-l: 1024px;
 $screen-xl: 1280px;
 $screen-xxl: 1300px;
@@ -39,9 +39,11 @@ $dashboard-width: 400px;
 ////////////////////
 $font-family-primary: 'Merriweather Sans', sans-serif;
 $font-family-secondary: 'Lora',  serif;
+$font-family-title: 'Merriweather', serif;
 
 $font-size-xxlarge: 70px;
 $font-size-xlarge: 55px;
+$font-size-large2: 41px;
 $font-size-large: 27px;
 $font-size-medium: 19px;
 $font-size-normal: 16px;
@@ -75,6 +77,7 @@ $orange: #cd8200;
 $blue: #5883b4;
 $dark-sky-blue: #55cee2;
 $black: #333;
+$deep-black: #000000;
 
 // GOAL16
 $blue-topaz: #19aec4;
@@ -98,6 +101,12 @@ $dark-grey: #9b9b9b;
 $grey: #b4b6b6;
 $light-grey: #e5eaea;
 $light-grey-two: #eeedea;
+
+// New Goal16 colours
+$fountain-blue: #57BAB0;
+$dark-aqua: #176875;
+$ball-blue: #20ADC5;
+$gainsboro: #DBDCDD;
 
 //Legend
 $bucket-1: #1f301f;
@@ -127,7 +136,7 @@ $color-11: $seafoam-blue;
 
 // background colors
 $bg-page: #F7FAF9;
-$bg-veil: rgba(14, 29, 42, .6);
+$bg-veil: rgba(14, 29, 42, .4);
 $bg-color-1: $pale-grey;
 $bg-color-2: $brown;
 $bg-color-3: $beige;
@@ -139,13 +148,15 @@ $font-color-1: $blue-evergreen;
 $font-color-2: $white;
 $font-color-3: $blue-topaz;
 $font-color-4: $dark-grey;
-$font-color-5: $color-5;
+$font-color-5: $soft-green;
 $font-color-6: $black;
 $font-color-7: $bluish-grey;
 $font-color-8: $blue-topaz-two;
 $font-color-9: $turquoise;
 $font-color-10: $mint-green;
 $font-color-11: $tree-green;
+$font-color-12: $deep-black;
+$font-color-13: $dark-aqua;
 
 
 //border-colors

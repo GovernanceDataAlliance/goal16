@@ -13,7 +13,7 @@ baseurl: ''
 
 plugins: [jekyll-paginate]
 paginate: 25
-paginate_path: "blog/page:num"
+paginate_path: "news/page:num"
 
 collections:
 - organizations
@@ -44,6 +44,8 @@ prose:
     - /map
     - /compare
     - /countries
+    # - /events
+    # - /reports
     - /css
     - .editorconfig
     - .gitignore
@@ -85,12 +87,12 @@ prose:
     - manifest.json
     - robots.txt
   metadata:
-    blog:
+    news:
       - name: layout
         field:
           element: "hidden"
           label: "layout"
-          value: blog/post
+          value: news/post
       - name: "published"
         field:
           element: 'hidden'
@@ -115,8 +117,8 @@ prose:
       - name: image
         field:
           element: "text"
-          label: image
-          placeholder: "example.jpg"
+          label: cover image
+          placeholder: "example.jpg (upload image to img/news with the same name)"
           value:
       - name: category
         field:
@@ -124,6 +126,11 @@ prose:
           label: category
           placeholder: "add only one category"
           value:
+      - name: tag
+        field:
+          element: "hidden"
+          label: "tag"
+          value: "news"
     _organizations:
       - name: name
         field:
@@ -147,3 +154,91 @@ prose:
         field:
           element: "text"
           label: "description"
+    events:
+      - name: layout
+        field:
+          element: "hidden"
+          label: "layout"
+          value: events/post
+      - name: "published"
+        field:
+          element: 'hidden'
+          value: true
+      - name: title
+        field:
+          element: "text"
+          label: "title"
+      - name: date
+        field:
+          element: "text"
+          label: "date"
+          placeholder: YYYY-MM-DD HH:MM:SS
+      - name: author
+        field:
+          element: "text"
+          label: "author"
+      - name: summary
+        field:
+          element: "text"
+          label: "summary"
+      - name: image
+        field:
+          element: "text"
+          label: cover image
+          placeholder: "example.jpg (upload image to img/events with the same name)"
+          value:
+      - name: category
+        field:
+          element: "text"
+          label: category
+          placeholder: "add only one category"
+          value:
+      - name: tag
+        field:
+          element: "hidden"
+          label: "tag"
+          value: "events"
+    reports:
+      - name: layout
+        field:
+          element: "hidden"
+          label: "layout"
+          value: reports/post
+      - name: "published"
+        field:
+          element: 'hidden'
+          value: true
+      - name: title
+        field:
+          element: "text"
+          label: "title"
+      - name: date
+        field:
+          element: "text"
+          label: "date"
+          placeholder: YYYY-MM-DD HH:MM:SS
+      - name: author
+        field:
+          element: "text"
+          label: "author"
+      - name: summary
+        field:
+          element: "text"
+          label: "summary"
+      - name: image
+        field:
+          element: "text"
+          label: cover image
+          placeholder: "example.jpg (upload image to img/reports with the same name)"
+          value:
+      - name: category
+        field:
+          element: "text"
+          label: category
+          placeholder: "add only one category"
+          value:
+      - name: tag
+        field:
+          element: "hidden"
+          label: "tag"
+          value: "reports"

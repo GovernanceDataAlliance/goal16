@@ -1,20 +1,20 @@
 .c-title-underline {
-  font-family: $font-family-secondary;
-  font-size: $font-size-medium;
-  font-weight: $font-weight-regular;
+  font-family: $font-family-title;
+  font-size: 32px;
+  font-weight: $font-weight-bold;
   color: $font-color-6;
   letter-spacing: rem(.2px);
   line-height: 1.3;
   text-align: center;
 
-  &:after {
-    content: "";
-    display: block;
-    height: rem(3px);
-    background-color: $blue-topaz;
-    margin: rem(25px) auto rem(20px);
-    width: rem(37px);
-  }
+  // &:after {
+  //   content: "";
+  //   display: block;
+  //   height: rem(3px);
+  //   background-color: $blue-topaz;
+  //   margin: rem(25px) auto rem(20px);
+  //   width: rem(37px);
+  // }
 
   &.-mobile {
     text-align: left;
@@ -33,8 +33,8 @@
   }
 
   @media screen and (min-width: $screen-s) {
-    font-size: $font-size-large;
-    font-weight: $font-weight-regular;
+    font-size: 36px;
+    // font-weight: $font-weight-regular;
     margin-bottom: rem(50px);
 
     &:after {

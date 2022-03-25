@@ -42,22 +42,30 @@
   &.-footer {
     width: 100%;
     max-width: 430px;
+    display: flex;
+    // border: 1px solid skyblue;
 
     ul {
       display: flex;
-      flex-direction: row;
-      justify-content: space-between;
+      flex-direction: column;
+      // justify-content: space-between;
       max-width: rem(450px);
       width: 100%;
       padding: 0 rem(10px);
+      // border: 1px solid springgreen;
 
       li {
+        margin-bottom: 10px;
+
         > a {
           font-size: rem(11px);
           letter-spacing: rem(.7px);
+          color: $fountain-blue;
+          text-decoration: underline;
+          font-weight: bold;
 
           &:hover {
-            color: $color-4;
+            color: $dark-aqua;
           }
         }
       }
@@ -66,7 +74,7 @@
 
   @media screen and (min-width: 768px) {
     &.-header {
-      width: calc(100% - 100px);
+      width: calc(100% - 60px);
       ul {
         max-width: rem(550px);
       }
@@ -97,13 +105,14 @@
         -ms-flex-pack: justify;
         justify-content: space-between;
         align-items: center;
-        max-width: rem(450px);
-        width: 90%;
+        // max-width: rem(450px);
+        width: 100%;
         padding-right: rem(20px);
+        padding-left: rem(20px);
 
         > .selected-option-menu {
           a {
-            color: $color-4;
+            color: $fountain-blue;
             font-weight: 700 !important;
           }
 
@@ -112,7 +121,7 @@
             content: "";
             width: 100%;
             height: 4px;
-            background-color: $color-7;
+            background-color: $fountain-blue;
             position: relative;
             bottom: rem(33px);
             margin-bottom: rem(-4px);
@@ -141,7 +150,7 @@
 
           > a {
             font-size: rem(11px);
-            font-weight: 400;
+            font-weight: bold;
 
             &:hover {
               color: $font-color-3;
@@ -154,12 +163,15 @@
 
   @media screen and (min-width: $screen-l) {
     &.-header {
+      width: calc(100% - 100px);
+
       &:after {
         margin-left: rem(67px);
       }
 
       ul {
-        padding-right: rem(70px);
+        // padding-right: rem(70px);
+        padding-right: rem(40px);
       }
     }
   }

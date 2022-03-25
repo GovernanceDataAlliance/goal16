@@ -1,7 +1,7 @@
 select {
   @extend %clean-button-or-input;
   color: $font-color-3;
-  font-family: $font-family-secondary;
+  font-family: $font-family-primary;
   font-size: 16px;
 
   @media screen and (min-width: 768px) {
@@ -13,25 +13,38 @@ select {
  * Reset chosen. Just in case you are using
  * chosen.js.
  */
+
+$dropdownOcean: 'ocean-news', 'ocean-events', 'ocean-reports'; // Change back to ocean-news later
+$oceanShades: $fountain-blue, $dark-aqua, $ball-blue;
+
 .chzn-container-single .chzn-single {
-  color: $font-color-5;
+  // color: blue;
   background-image: none;
   background-color: transparent;
   border: none;
   box-shadow: none;
   font-size: 11px;
+  font-weight: 700;
   height: auto;
-  font-family: $font-family-secondary;
+  font-family: $font-family-primary;
+  color: $dark-aqua;
+  // padding: 0 0 0 15px;
+
 }
 
 .chzn-container-single .chzn-drop {
-  width: 110% !important;
   padding: 0 0 10px 0;
   border: none;
   border-radius: 0;
-  background-color: $light-grey-two;
-  transform: translate(-5%, 1px);
-  font-family: $font-family-secondary;
+  background-color: $white;
+  font-family: $font-family-primary;
+  width: 101.4% !important;
+  transform: translate(-0.15%, 0.9%);
+
+  @media screen and (min-width: $screen-m) {
+    width: 109% !important;
+    transform: translate(-4.2%, 1%);
+  }
 }
 
 .chzn-container-single .chzn-single span {
@@ -71,20 +84,21 @@ select {
 
 .chzn-container .chzn-results .active-result {
   font-family: $font-family-primary;
-  color: $font-color-5;
-  padding: rem(5px) 5%;
-  font-size: rem(14px);
+  color: rgba($deep-black, 0.8);
+  padding: 0.5rem 1rem;
+  font-size: rem(12px);
+  text-transform: uppercase;
 
   &.result-selected {
-    color: $font-color-5;
     background: none;
+    font-weight: 700;
     background-color: rgba(190, 183, 170, .2);
   }
 
   &.highlighted {
     // color: $font-color-hover;
     font-weight: 700;
-    text-decoration: underline;
+    // text-decoration: underline;
     background: none;
   }
 }
@@ -102,9 +116,82 @@ select {
   }
 }
 
+
+
 .chzn-container-single .chzn-single span {
   font-family: $font-family-primary;
-  color: $font-color-5;
+  // color: $font-color-5;
   text-transform: uppercase;
   line-height: 1.2em;
+
+
+}
+
+#aboutSelector {
+  &.btn-drop-down {
+    border: 1px solid $fountain-blue;
+
+    &:after {
+      @include arrow (5px, $fountain-blue, 2px, 225deg);
+    }
+  }
+  .chzn-container-single .chzn-drop {
+    border-bottom: 1px solid $fountain-blue;
+    border-left: 1px solid $fountain-blue;
+    border-right: 1px solid $fountain-blue;
+  }
+
+  .chzn-container .chzn-results .active-result {
+    color: $fountain-blue;
+  }
+
+  .chzn-container-single .chzn-single {
+    color: $fountain-blue;
+  }
+}
+
+#categorySelector, #dateSelector {
+  &.btn-drop-down {
+    border: 1px solid $gainsboro;
+
+    &:after {
+      @include arrow (5px, $fountain-blue, 2px, 225deg);
+    }
+  }
+  .chzn-container-single .chzn-drop {
+    border-bottom: 1px solid $gainsboro;
+    border-left: 1px solid $gainsboro;
+    border-right: 1px solid $gainsboro;
+  }
+
+  .chzn-container .chzn-results .active-result {
+    color: $fountain-blue;
+  }
+
+  .chzn-container-single .chzn-single {
+    color: $fountain-blue;
+  }
+}
+
+#eventsSelector {
+  &.btn-drop-down {
+    border: 1px solid $gainsboro;
+
+    &:after {
+      @include arrow (5px, $dark-aqua, 2px, 225deg);
+    }
+  }
+  .chzn-container-single .chzn-drop {
+    border-bottom: 1px solid $gainsboro;
+    border-left: 1px solid $gainsboro;
+    border-right: 1px solid $gainsboro;
+  }
+
+  .chzn-container .chzn-results .active-result {
+    color: $dark-aqua;
+  }
+
+  .chzn-container-single .chzn-single {
+    color: $dark-aqua;
+  }
 }

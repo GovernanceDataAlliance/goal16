@@ -9,7 +9,9 @@ var CountriesCollection = require('../../../collections/common/countries.js'),
 
 var template = require('../../../templates/countries/country/index.hbs');
 
-var BannerView = require('./banner.js'),
+var BreadcrumbView = require('./country-breadcrumb.js'),
+  BannerView = require('./banner.js'),
+  CountryHeaderView = require('./country-header.js'),
   TargetCardView = require('./target-card.js'),
   ShareWindowView = require('../../common/share_window.js');
 
@@ -82,13 +84,18 @@ var CountryView = Backbone.View.extend({
 
     var viewOptions = {
       country: country,
-      regionClass: regionClass
+      regionClass: regionClass,
+      iso: iso
     };
 
     $('.l-banner').remove();
+    $('.m-breadcrumbs.-light').remove();
 
+    var breadcrumbView = new BreadcrumbView(viewOptions);
     var bannerView = new BannerView(viewOptions);
-    this.$header.after(bannerView.render().el);
+    var countryHeaderView = new CountryHeaderView(viewOptions);
+
+    this.$header.after(breadcrumbView.render().el, bannerView.render().el, countryHeaderView.render().el);
   },
 
   _renderData: function() {
@@ -115,7 +122,7 @@ var CountryView = Backbone.View.extend({
 
       this.$targetList.find('> .wrap').append(targetCard.render().el);
 
-      targetCard.setSlick();
+      // targetCard.setSlick(); Triggers Swipe view between Global and Complementary Indicators
 
       if (openFirst) {
         targetCard.targetCardHeaderView.toggleCard();

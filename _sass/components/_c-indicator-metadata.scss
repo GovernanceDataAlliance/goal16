@@ -1,9 +1,13 @@
 .c-indicator-metadata {
   margin-top: rem(5px);
 
-  font-size: $font-size-xsmall;
-  color: $font-color-7;
+  font-size: $font-size-xxsmall;
+  color: rgba($deep-black, 0.8);
   line-height: 1.5;
+
+  @media screen and (min-width: $screen-m) {
+    font-size: $font-size-xsmall;
+  }
 
   // separators
   > span:nth-child(even) {

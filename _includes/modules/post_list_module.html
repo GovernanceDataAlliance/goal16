@@ -1,9 +1,16 @@
-<div class="l-post -list {% unless post.image == '' %} -img {% endunless %}" {% unless post.image == '' %} style="background-image:url({{site.baseurl}}/img/blog/{{post.image}})" {% endunless %} data-date="{{ post.date | date: '%B%Y' }}" data-category="{{ post.category }}">
-  <div class="wrap">
-
-    <div class="m-post {% unless post.image == '' %} -light {% endunless %}">
+<div class="l-post -list {% unless post.image == '' %} -img {% endunless %}" data-date="{{ post.date | date: '%B%Y' }}" data-category="{{ post.category | downcase}}">
+  <div class="m-post {% unless post.image == '' %} -light {% endunless %}">
       <a href="{{ site.baseurl }}{{ post.url }}">
-        <div class="details">
+        <div class="news-thumbnail">
+          <div class="img-placeholder" {% unless post.image == '' %} style="background-image:url({{site.baseurl}}/img/news/{{post.image}})" {% endunless %}></div>
+        </div>
+        <div class="news-details">
+          <div class="-date">{{ post.date | date: '%d-%m-%Y'}}</div>
+          <div class="-title">{{ post.title }}</div>
+          <div class="-summary ellipsis">{% if post.summary %} {{ post.summary}} {% else %} {{post.excerpt}} {% endif %}</div>
+          <div class="-link">Read more ></div>
+        </div>
+        <!-- <div class="details">
           <span class="date">
             <time>{{ post.date | date: '%d %b, %Y'}}</time>
           </span>
@@ -20,10 +27,7 @@
 
         <div class="content">
           {{post.summary ? post.summary | post.excerpt}}
-        </div>
+        </div> -->
       </a>
     </div>
-
-  </div>
-
 </div>

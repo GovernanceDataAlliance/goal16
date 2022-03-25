@@ -1,4 +1,5 @@
 .c-block-title {
+  font-family: $font-family-title;
   font-size: rem(35px);
   margin-bottom: rem(15px);
 
@@ -19,4 +20,17 @@
   @media screen and (min-width: $screen-xl) {
     font-size: rem(60px);
   }
+}
+
+.-crosseling-map {
+  .c-block-title {
+    font-size: 24px;
+    color: $dark-aqua;
+    font-weight: bold;
+
+    @media screen and (min-width: $screen-s) {
+      font-size: rem(36px);
+    }
+  }
+
 }

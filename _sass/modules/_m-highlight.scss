@@ -1,11 +1,16 @@
 .m-highlight {
   //Paddings and layout stuff are here for IE...
   max-width: 100%;
+  text-align: center;
+
+  @media screen and (min-width: $screen-s) {
+    text-align: left;
+  }
 
   h2 {
     color: $font-color-2;
     margin-bottom: 0px;
-    margin-top: rem(44px);
+    margin-top: rem(0px);
 
     @media screen and (min-width: $screen-s) {
       margin-top: rem(155px);
@@ -14,24 +19,26 @@
 
   .text-banner-m{
     display: block;
-    margin: rem(31px) auto;
+    margin: rem(10px) auto;
     margin-bottom: 0px;
+    color: $black;
 
     @media screen and (min-width: $screen-s) {
-      margin: rem(40px) auto;
+      margin: rem(20px) auto;
       margin-bottom: 0px;
     }
   }
 
   .c-button {
-    margin: rem(32px) auto;
+    margin: rem(20px) auto;
     margin-bottom: 0;
+    width: auto;
 
     @media screen and (min-width: $screen-s) {
       position: relative;
       left: 50%;
       transform: translateX(-50%);
-      margin: rem(50px) auto;
+      // margin: rem(20px) auto;
       margin-bottom: rem(170px);
     }
   }

@@ -5,17 +5,36 @@
   border-right: 0;
   min-height: rem(300px);
 
-  &:after {
-    content: "sorry, no post for your filter options";
-    display: block;
-    position: absolute;
-    top: 100px;
-    bottom: 0;
-    left: 0;
-    text-align: center;
-    right: 0;
-    color: $font-color-7;
-    font-size: rem(27px);
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(1, 1fr);
+  margin: 25px 0;
+
+  @media screen and (min-width: $screen-s) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (min-width: $screen-m) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  // &:after {
+  //   content: "sorry, no post for your filter options";
+  //   display: block;
+  //   position: absolute;
+  //   top: 100px;
+  //   bottom: 0;
+  //   left: 0;
+  //   text-align: center;
+  //   right: 0;
+  //   color: $font-color-7;
+  //   font-size: rem(27px);
+  // }
+
+  &.reports {
+    @media screen and (min-width: $screen-s) {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   .blog-filter {
@@ -65,8 +84,255 @@
   position: relative;
   z-index: 1;
   background-color: $white;
+  // border: 1px solid black;
 
-  &.-list {
-    border-bottom: rem(1px) solid #e5eaea;
+  // &.-list {
+  //   border-bottom: rem(1px) solid #e5eaea;
+  // }
+}
+
+$hero-m: 80%;
+$hero-l: 70%;
+$hero-xl: 60%;
+
+.l-hero {
+
+  .hero-wrapper {
+
+    @media screen and (min-width: $screen-m) {
+      max-width: $hero-m;
+      // margin: 0 auto;
+    }
+
+    @media screen and (min-width: $screen-l) {
+      max-width: $hero-l;
+      // margin: 0 auto;
+    }
+
+    @media screen and (min-width: $screen-xl) {
+      max-width: $hero-xl;
+      // margin: 0 auto;
+    }
+
+    .img-placeholder {
+      padding-top: 59%;
+      background-color: $light-grey;
+      // background-image: url('#{$baseUrl}/img/blog/promoInteriores-Blog.jpg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+
+      &.-reports {
+        padding-top: 142%;
+      }
+    }
+
+    &.-reports {
+      width: 25%;
+
+      @media screen and (min-width: $screen-m) {
+        width: calc(#{$hero-m} / 3);
+        // margin: 0 auto;
+      }
+
+      @media screen and (min-width: $screen-l) {
+        width: calc(#{$hero-l} / 3);
+        // margin: 0 auto;
+      }
+
+      @media screen and (min-width: $screen-xl) {
+        width: calc(#{$hero-xl} / 3);
+        // margin: 0 auto;
+      }
+    }
+  }
+
+}
+
+.l-post-title {
+  .post-title {
+    font-family: $font-family-title;
+    font-size: $font-size-large;
+    font-weight: $font-weight-bold;
+    color: $black;
+    line-height: rem(35px);
+    margin-top: rem(20px);
+
+
+    @media screen and (min-width: $screen-m) {
+      font-size: $font-size-large2;
+      line-height: rem(52.5px);
+      max-width: $hero-m;
+    }
+
+    @media screen and (min-width: $screen-l) {
+      max-width: $hero-l;
+    }
+
+    @media screen and (min-width: $screen-xl) {
+      font-size: $font-size-xlarge;
+      line-height: rem(70px);
+      max-width: $hero-xl;
+    }
+
+  }
+
+  .post-date {
+    margin-top: 10px;
+    font-family: $font-family-primary;
+    font-size: rem(14px);
+    line-height: 1;
+    color: $font-color-7;
+  }
+}
+
+.m-backbutton {
+  font-family: $font-family-primary;
+  font-weight: $font-weight-bold;
+  margin-top: rem(10px);
+
+  .backbutton {
+    font-size: $font-size-normal;
+    color: $dark-aqua;
+
+    a {
+      font-size: $font-size-normal;
+      color: $dark-aqua;
+
+      &:hover{
+        text-decoration: underline;;
+      }
+
+      &.-reports {
+        color: $ball-blue;
+      }
+    }
+
+    &.-reports {
+      color: $ball-blue;
+    }
+  }
+}
+
+.share-this {
+  margin: 25px 0 25px;
+  .wrap {
+    display: flex;
+    align-items: center;
+    font-weight: $font-weight-bold;
+
+    .twitter-btn {
+      background-image: url('#{$baseUrl}/img/logos/twitter.svg');
+      background-color: #51ABC2;
+      margin-left: 1rem;
+
+      &:hover {
+        cursor: pointer;
+        background-color: rgba(#51ABC2, 0.7);
+      }
+    }
+
+    .share-btn {
+      background-image: url('#{$baseUrl}/img/logos/share.svg');
+      background-color: $dark-aqua;
+      margin-left: 0.5rem;
+
+      &:hover {
+        cursor: pointer;
+        background-color: rgba($dark-aqua, 0.7);
+      }
+    }
+
+    .twitter-btn, .share-btn {
+      width: 60px;
+      height: 60px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 35% 35%;
+    }
+  }
+}
+
+.reports-coverpage-wrapper {
+
+  .wrap {
+
+    .content {
+      display: flex;
+      flex-direction: column;
+
+      @media screen and (min-width: $screen-m) {
+        max-width: $hero-m;
+        flex-direction: row;
+      }
+
+      @media screen and (min-width: $screen-l) {
+        max-width: $hero-l;
+      }
+
+      @media screen and (min-width: $screen-xl) {
+        max-width: $hero-xl;
+      }
+
+      .coverpage-img {
+        width: 30%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+
+        .hero-wrapper {
+          width: 100%;
+
+          .img-placeholder {
+            padding-top: 142%;
+            background-color: $light-grey;
+            // background-image: url('#{$baseUrl}/img/blog/promoInteriores-Blog.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+          }
+        }
+      }
+
+      .coverpage-title {
+        width: 70%;
+        padding: 1rem 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @media screen and (min-width: $screen-m) {
+          padding: 1rem 2rem;
+        }
+
+        .report-headline {
+          .report-title {
+            font-family: $font-family-title;
+            font-size: 28px;
+            font-weight: $font-weight-bold;
+            color: $black;
+            line-height: rem(35px);
+            margin-top: rem(10px);
+
+
+            @media screen and (min-width: $screen-m) {
+              font-size: 36px;
+              line-height: rem(45px);
+            }
+          }
+
+          .report-date {
+            margin-top: 10px;
+            font-family: $font-family-primary;
+            font-size: rem(14px);
+            line-height: 1;
+            color: $font-color-7;
+          }
+        }
+      }
+
+    }
+
   }
 }

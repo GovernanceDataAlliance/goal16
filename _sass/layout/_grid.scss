@@ -17,6 +17,12 @@
   @media screen and (min-width: $screen-xl) {
     padding: 0 rem($wrap-padding-desktop-xl);
   }
+
+  &.-ocean-wrap {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
 }
 
 @mixin col($columns) {

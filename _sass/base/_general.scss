@@ -19,7 +19,7 @@ html {
 body {
   margin: 0;
   font-family: $font-family-primary;
-  color: $font-color-1;
+  color: rgba($deep-black, 0.8);
   font-size: rem(15px);
   background-color: $bg-page;
   -webkit-font-smoothing: antialiased;
@@ -161,4 +161,14 @@ svg:not(:root) {
 
 .units {
   font-size: rem(14px);
+}
+
+.ellipsis {
+  display: block;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  /* autoprefixer: off */
 }

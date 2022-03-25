@@ -9,16 +9,16 @@
     <div class="l-main-container">
       {% include header.html %}
 
-      <div class="l-banner -section-2 -about -topsection-data">
+      {% include breadcrumbs.html %}
 
-        {% include breadcrumbs.html %}
+      <div class="l-banner -section-2 -about -topsection-data">
 
         <div class="wrap">
           <h1 class="c-section-title -light">{{ page.title }}</h1>
         </div>
       </div>
 
-      <div class="l-content -main -no_padding_bottom">
+      <div class="l-content -data -main">
         <div class="wrap">
           <div class="m-static-content">
             {{ content }}
@@ -30,7 +30,7 @@
 
       {% include modules/compare_module.html %}
 
-      <div class="l-highlight -crosseling-about">
+      <!-- <div class="l-highlight -crosseling-about">
         <div class="wrap">
           <div class="m-highlight">
             <h2 class="c-block-title text-big-title">
@@ -42,7 +42,7 @@
             <a href="{{ site.baseurl }}/about" class="c-button -primary">find out more</a>
           </div>
         </div>
-      </div>
+      </div> -->
 
       {% include footer.html %}
     </div>

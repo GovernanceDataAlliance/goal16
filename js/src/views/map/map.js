@@ -189,13 +189,14 @@ var MapView = Backbone.View.extend({
     };
 
     $.ajax({
+      crossOrigin: true,
       type: 'POST',
       dataType: 'json',
-      contentType: 'application/json; charset=UTF-8',
-      url: 'https://'+ cartoAccount +'.cartodb.com/api/v1/map/',
+      contentType: 'application/json',
+      url: 'https://'+ cartoAccount +'.carto.com/api/v1/map/',
       data: JSON.stringify(request),
     }).done(_.bind(function(data) {
-          var tileUrl = 'https://'+ cartoAccount +'.cartodb.com/api/v1/map/'+ data.layergroupid + '/{z}/{x}/{y}.png32';
+          var tileUrl = 'https://'+ cartoAccount +'.carto.com/api/v1/map/'+ data.layergroupid + '/{z}/{x}/{y}.png';
           if (labels) {
             this.baseMapLabels = L.tileLayer(tileUrl, { noWrap: true, https: true });
           } else {
@@ -248,13 +249,14 @@ var MapView = Backbone.View.extend({
     };
 
     $.ajax({
+      crossOrigin: true,
       type: 'POST',
       dataType: 'json',
-      contentType: 'application/json; charset=UTF-8',
-      url: 'https://'+ cartoAccount +'.cartodb.com/api/v1/map/',
+      contentType: 'application/json',
+      url: 'https://'+ cartoAccount +'.carto.com/api/v1/map/',
       data: JSON.stringify(request),
     }).done(_.bind(function(data) {
-          var tileUrl = 'https://'+ cartoAccount +'.cartodb.com/api/v1/map/'+ data.layergroupid + '/{z}/{x}/{y}.png32';
+          var tileUrl = 'https://'+ cartoAccount +'.carto.com/api/v1/map/'+ data.layergroupid + '/{z}/{x}/{y}.png';
           this._removeLayer();
           this.layer = L.tileLayer(tileUrl, { noWrap: true, https: true });
           return deferred.resolve();

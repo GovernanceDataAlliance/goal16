@@ -28,7 +28,7 @@ var CountryListView = Backbone.View.extend({
 
   _divideCols: function() {
     var regions = this._getRegions(),
-      cols = window.innerWidth > 767 ? 3 : 2,
+      cols = window.innerWidth > 768 ? 4 : window.innerWidth > 639 ? 2 : 1;
       list = {};
 
     if (!Object.keys(regions).length > 0) {

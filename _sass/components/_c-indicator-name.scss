@@ -1,12 +1,17 @@
 .c-indicator-name {
-  font-size: rem($font-size-xsmall);
-  font-weight: $font-weight-regular;
-  color: $font-color-1;
+  font-size: rem(13px);
+  font-weight: $font-weight-bold;
+  color: $deep-black;
   line-height: 1.6;
   letter-spacing: normal;
 
+  @media screen and (min-width: $screen-m) {
+    font-size: 14px;
+  }
+
   &.-dashboard {
     color: $font-color-3;
+    font-weight: $font-weight-regular;
 
     cursor: pointer;
 
@@ -18,7 +23,7 @@
   &.-data {
     max-width: 85%;
 
-    font-size: $font-size-normal;
+    font-size: 13px;
     line-height: 1.7;
 
     > span {
@@ -26,7 +31,7 @@
     }
 
     @media screen and (min-width: $screen-m) {
-      font-size: $font-size-medium;
+      font-size: $font-size-normal;
     }
   }
 

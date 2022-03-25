@@ -1,12 +1,13 @@
 
 .m-markdown {
   max-width: 100%;
+  color: $deep-black;
 
   > .content {
-    margin-top: rem(20px);
+    margin-top: rem(10px);
 
     @media screen and (min-width: $screen-m) {
-      margin-top: rem(50px);
+      margin-top: rem(25px);
     }
 
     // Paragraphs, links
@@ -27,9 +28,12 @@
     }
 
     a {
-      color: $font-color-3;
+      // color: $font-color-3;
+      color: $font-color-13;
+      text-decoration: underline;
+
       &:hover {
-        color: $color-4;
+        color: $color-3;
       }
     }
 
@@ -39,10 +43,11 @@
       font-weight: 400;
       color: $font-color-1;
       letter-spacing: rem(.3px);
+      font-family: $font-family-title;
     }
 
     h2 {
-      text-align: center;
+      text-align: left;
       font-size: rem(30px);
       line-height: rem(37px);
     }
@@ -193,7 +198,7 @@
       background: $light-grey;
 
       @media screen and (min-width: 768px) {
-        margin: rem(100px) 0;
+        // margin: rem(100px) 0;
       }
     }
 

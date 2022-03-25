@@ -1,23 +1,108 @@
 .l-selectors {
   padding: rem(30px) 0;
 
-  background-color: $bg-color-5;
+  background-color: $white;
+  border-bottom: 1px solid $gainsboro;
+
+  .wrap {
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (min-width: $screen-s) and (max-width: calc(#{$screen-l} - 1px)) {
+      align-items: center;
+      flex-direction: column;
+    }
+
+    @media screen and (min-width :$screen-l) {
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row;
+    }
+  }
+
+
+  .selectors-selection {
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (min-width: $screen-s) {
+      flex-direction: row;
+      // justify-content: space-between;
+    }
+  }
 
   .selectors-box {
     display: flex;
     flex-direction: column;
-    
+    margin-bottom: 20px;
+
+    @media screen and (min-width: $screen-s) {
+      margin-bottom: 0;
+      flex-direction: row;
+    }
+
     @media screen and (min-width: $screen-m) {
       flex-direction: row;
-      justify-content: space-between;
+      // justify-content: space-between;
+    }
+
+    @media screen and (min-width: $screen-s) and (max-width: calc(#{$screen-l} - 1px)) {
+      margin-top: 1rem;
+    }
+
+    .btn-drop-down {
+      &:after {
+        @include arrow (5px, $dark-aqua, 2px, 225deg);
+      }
     }
 
   }
 
   .buttons-box {
-    display: flex;
-    justify-content: center;
+    // display: flex;
+    // justify-content: center;
 
-    padding-top: rem(25px);
+    // padding-top: rem(25px);
+
+    @media screen and (min-width: $screen-s) and (max-width: calc(#{$screen-l} - 1px)) {
+      margin-top: 1rem;
+    }
+
+    .c-button#compare-countries {
+      min-height: 50px;
+
+      @media screen and (min-width: $screen-s) {
+        padding: rem(15px) rem(20px);
+      }
+      @media screen and (min-width: $screen-m) {
+        min-height: auto;
+      }
+
+
+    }
+  }
+
+  .c-selector {
+    width: auto;
+
+    @media screen and (min-width: $screen-m) {
+      min-width: 160px;
+    }
+  }
+}
+
+.compare-title {
+  font-family: $font-family-title;
+  font-size: rem(16px);
+  font-weight: bold;
+  color: $dark-aqua;
+  margin-bottom: 20px;
+
+  @media screen and (min-width: $screen-s) {
+    margin-bottom: 0;
+  }
+
+  @media screen and (min-width: $screen-m) {
+    font-size: rem(24px);
   }
 }

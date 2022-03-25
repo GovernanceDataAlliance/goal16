@@ -5,62 +5,63 @@
     line-height: 1.7;
   }
 
-  @media screen and (min-width: $screen-s) {
+  @media screen and (min-width: $screen-m) {
     width: 100%;
-    max-width: rem(736px);
-    margin: 0 auto;
+    max-width: 80%;
+    // margin: 0 auto;
   }
 
   @media screen and (min-width: $screen-xl) {
-    max-width: $content-width;
+    max-width: 75%;
   }
 
   // Links, paragraphs
   p, a, h6 {
     font-family: $font-family-primary;
-    font-size: $font-size-small;
+    font-size: 14px;
     font-weight: $font-weight-regular;
     line-height: 1.90;
 
-    @media screen and (min-width: $screen-s) {
+    @media screen and (min-width: $screen-m) {
       font-size: $font-size-normal;
       line-height: 1.75;
     }
   }
 
   p {
-    color: $font-color-1;
+    color: rgba($deep-black, 0.8);
   }
 
   a {
-    color: $font-color-3;
+    color: $dark-aqua;
     &:hover {
-      color: $color-4;
+      color: rgba($dark-aqua, 0.5);
     }
   }
 
   // Headings
   h2 {
-    font-family: $font-family-secondary;
+    font-family: $font-family-title;
     color: $font-color-6;
-    font-weight: $font-weight-regular;
+    font-weight: $font-weight-bold;
     font-size: $font-size-medium;
     letter-spacing: 0.2px;
-    text-align: center;
+    text-align: left;
+    margin-bottom: rem(20px);
 
-    &:after {
-      content: "";
-      display: block;
-      height: rem(3px);
-      background-color: $blue-topaz;
-      margin: rem(25px) auto rem(20px);
-      width: rem(37px);
-    }
+    // &:after {
+    //   content: "";
+    //   display: block;
+    //   height: rem(3px);
+    //   background-color: $blue-topaz;
+    //   margin: rem(25px) auto rem(20px);
+    //   width: rem(37px);
+    // }
 
     @media screen and (min-width: $screen-s) {
       font-size: $font-size-large;
-      font-weight: $font-weight-regular;
-      margin-bottom: rem(50px);
+      // font-weight: $font-weight-regular;
+      // margin-bottom: rem(40px);
 
       &:after {
         margin: rem(40px) auto rem(60px);
@@ -180,12 +181,12 @@
   // Miscellaneous
   hr {
     height: rem(1px);
-    margin: rem(32px) 0;
+    margin: rem(25px) 0;
     border: 0;
     background: $color-9;
 
     @media screen and (min-width: $screen-s) {
-      margin: rem(95px) 0;
+      margin: rem(75px) 0;
     }
 
     @media screen and (min-width: 768px) {

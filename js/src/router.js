@@ -10,7 +10,9 @@ var ViewManager = require('./lib/view_manager.js'),
   CompareView = require('./views/compare/compare.js'),
   DataView = require('./views/data/data.js'),
   AboutView = require('./views/about/about.js'),
-  BlogView = require('./views/blog/blog.js'),
+  NewsView = require('./views/news/news.js'),
+  EventsView = require('./views/events/events.js'),
+  ReportsView = require('./views/reports/reports.js'),
   CountriesListView = require('./views/countries/countries-list/countries.js'),
   CountryView = require('./views/countries/country/country.js');
   InfowindowView = require('./views/common/infowindow.js');
@@ -32,7 +34,9 @@ var Router = Backbone.Router.extend({
     "compare(/)": "compare",
     "data(/)(?indicator=:indicator)": "data",
     "about(/)": "about",
-    "blog(/)(*actions)": "blog"
+    "news(/)(*actions)": "news",
+    "events(/)(*actions)": "events",
+    "reports(/)(*actions)": "reports"
   },
 
   initialize: function() {
@@ -200,14 +204,36 @@ var Router = Backbone.Router.extend({
   },
 
   // BLOG
-  blog: function() {
+  news: function() {
     if (!this.viewManager.hasView('blog')) {
-      this.viewManager.addView('blog', BlogView);
+      this.viewManager.addView('blog', NewsView);
     }
 
     view = this.viewManager.getView('blog');
 
     this.viewManager.showView('blog');
+  },
+
+  // EVENTS
+  events: function() {
+    if (!this.viewManager.hasView('events')) {
+      this.viewManager.addView('events', EventsView);
+    }
+
+    view = this.viewManager.getView('events');
+
+    this.viewManager.showView('events');
+  },
+
+  // REPORTS
+  reports: function() {
+    if (!this.viewManager.hasView('reports')) {
+      this.viewManager.addView('reports', ReportsView);
+    }
+
+    view = this.viewManager.getView('reports');
+
+    this.viewManager.showView('reports');
   }
 
 });
