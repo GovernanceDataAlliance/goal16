@@ -2,7 +2,7 @@
   "cartodb": {
     "user_name": "goal16",
     "countries_table": "countries",
-    "indicators_table": "indicators",
+    "indicators_table": "indicators_032022",
     "organizations_table": "organizations",
     "scores_table": "scores_032022",
     "sources_table": "sources",
