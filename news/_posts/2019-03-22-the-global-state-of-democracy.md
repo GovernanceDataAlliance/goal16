@@ -5,6 +5,7 @@ title: The Global State of Democracy
 date: '2018-10-19'
 image: gsod.jpg
 author: IDEA
+tag: 'news'
 summary: >-
   This first edition of The Global State of Democracy, published by
   International IDEA in November 2017, explores current challenges to democracy
