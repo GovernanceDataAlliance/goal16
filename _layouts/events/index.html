@@ -27,19 +27,34 @@
             <div class="btn-drop-down" id="eventsSelector" data-url="{{ site.baseurl }}">
               <select>
                 <option value="">All events</option>
+                <!-- Collection of all post's category type in a string -->
+                {% assign stringCategories = '' %}
+
                 {% for post in site.posts %}
 
+                  <!-- Only posts from events -->
                   {% if post.tag == 'events' %}
-                  {% assign currentCategory = post.category %}
 
-                    {% if currentCategory != category %}
-                      <option value="{{ category | remove:' ' | downcase }}">
-                        {{ category }}
-                      </option>
-                      {% assign category = currentCategory %}
-                    {% endif %}
+                    <!-- Assign cat_item in the string format '[CATEGORY],' (Must remain in the same line with no space in between) -->
+                    {% capture cat_item %}{{ post.category | replace: ' ', '_' | downcase }},{% endcapture %}
+
+                    <!-- Append each cat_item in the stringCategories array -->
+                    {% assign stringCategories = stringCategories | append: cat_item %}
 
                   {% endif %}
+
+                {% endfor %}
+
+                <!-- Assign string of categories into an array (deilimiter is ,) -->
+                {% assign arrCategories = stringCategories | split: ',' %}
+
+                <!-- Create an array that remove duplicate items from arrCategories -->
+                {% assign uniqueCategories = arrCategories | uniq  %}
+
+                {% for uniqueCat in uniqueCategories %}
+                  <option value="{{ uniqueCat }}">
+                    {{ uniqueCat | replace: '_', ' ' }}
+                  </option>
                 {% endfor %}
               </select>
             </div>
