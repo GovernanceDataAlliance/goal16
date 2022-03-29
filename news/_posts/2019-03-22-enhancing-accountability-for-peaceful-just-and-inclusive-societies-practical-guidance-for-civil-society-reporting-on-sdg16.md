@@ -12,6 +12,7 @@ summary: >-
   This briefing provides practical guidance for civil society organisations to
   develop independent reports on progress towards the goal of peaceful, just and
   inclusive societies, referred to as SDG16+.
+category: "Civil Society"
 ---
 ## Practical guidance for civil society reporting on SDG16+
 

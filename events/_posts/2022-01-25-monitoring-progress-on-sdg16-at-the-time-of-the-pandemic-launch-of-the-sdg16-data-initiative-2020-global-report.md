@@ -2,7 +2,7 @@
 published: true
 layout: events/post
 tag: events
-category: 'Past'
+category: 'Past Events'
 title: >-
   Monitoring Progress on SDG16 at the Time of the Pandemic: Launch of the SDG16
   Data Initiative 2020 Global Report

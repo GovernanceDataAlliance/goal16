@@ -2,7 +2,7 @@
 published: true
 layout: events/post
 tag: events
-category: 'Past'
+category: ''
 title: Mainstreaming SDG 16+ in VNRs and National Development Planning
 date: '2021-07-08'
 image: learning_lab.png

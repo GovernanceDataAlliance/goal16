@@ -9,6 +9,7 @@ summary: >-
   Summary of Side-Event at the conference in preparation for HLPF 2019:
   “Peaceful, Just and Inclusive Societies: SDG 16 implementation and the path
   towards leaving no one behind”
+category: "SDG16"
 ---
 **27 - 29 May 2019**
 **Ministry of Foreign Affairs and International Cooperation, Rome, Italy**

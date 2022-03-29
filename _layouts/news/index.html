@@ -22,30 +22,45 @@
       <div class="l-toolbar -blog">
         <div class="wrap">
 
-          {% assign categoriesSize = site.categories | size %}
-          {% unless categoriesSize == 1 %}
+          <!-- {% assign categoriesSize = site.categories | size %}
+          {% unless categoriesSize == 1 %} -->
           <div class="c-selector">
             <div class="btn-drop-down" id="categorySelector" data-url="{{ site.baseurl }}">
               <select>
                 <option value="">All categories</option>
+                <!-- Collection of all post's category type in a string -->
+                {% assign stringCategories = '' %}
+
                 {% for post in site.posts %}
 
+                  <!-- Only posts from news -->
                   {% if post.tag == 'news' %}
-                  {% assign currentCategory = post.category %}
 
-                    {% if currentCategory != category %}
-                      <option value="{{ currentCategory | remove:' ' | downcase }}">
-                        {{ currentCategory }}
-                      </option>
-                      {% assign category = currentCategory %}
-                    {% endif %}
+                    <!-- Assign cat_item in the string format '[CATEGORY],' (Must remain in the same line with no space in between) -->
+                    {% capture cat_item %}{{ post.category | replace: ' ', '_' | downcase }},{% endcapture %}
+
+                    <!-- Append each cat_item in the stringCategories array -->
+                    {% assign stringCategories = stringCategories | append: cat_item %}
 
                   {% endif %}
+
+                {% endfor %}
+
+                <!-- Assign string of categories into an array (deilimiter is ,) -->
+                {% assign arrCategories = stringCategories | split: ',' %}
+
+                <!-- Create an array that remove duplicate items from arrCategories -->
+                {% assign uniqueCategories = arrCategories | uniq  %}
+
+                {% for uniqueCat in uniqueCategories %}
+                  <option value="{{ uniqueCat }}">
+                    {{ uniqueCat | replace: '_', ' ' }}
+                  </option>
                 {% endfor %}
               </select>
             </div>
           </div>
-          {% endunless %}
+          <!-- {% endunless %} -->
 
           <div class="c-selector">
             <div class="btn-drop-down" id="dateSelector" data-url="{{ site.baseurl }}">
@@ -79,9 +94,9 @@
       <div class="wrap">
         <div class="l-blog">
           {% for post in paginator.posts %}
-            {% unless post.tag == 'events' or post.tag == 'reports' %}
+            {% if post.tag == 'news' %}
               {% include modules/post_list_module.html %}
-            {% endunless %}
+            {% endif %}
           {% endfor %}
         </div>
       </div>

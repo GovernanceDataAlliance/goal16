@@ -4,7 +4,7 @@ layout: events/post
 tag: events
 title: The Critical Role of Non-Official Data in Monitoring and Implementing SDG16
 image: sdg16_critical_role.png
-category: 'Upcoming'
+category: 'Upcoming Events'
 date: '2019-07-08'
 ---
 The SDG16 is particularly challenging for open data collection. Non-official data, as highlighted by SDG16 Data Initiative (SDG16 DI), independently address gaps in data availability, through innovative methodologies and can reduce capacity strain on NGOs through strategic partnerships. Critically, non-official data can provide accountability to governments, ensuring perceptions and needs of marginalized groups are accounted for.
