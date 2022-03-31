@@ -7,12 +7,25 @@
     <div id="welcome-container" class="l-welcome">
       <div class="welcome-content">
         <div class="wrap">
-          <h1 class="text-heading-underline">
-            <img src="{{ site.baseurl }}/img/logo/goal16_logo_ver_neg.svg" alt="logo Goal16">
-          </h1>
+          <div class="welcome-header">
+            <h1 class="text-heading-underline">
+              <img src="{{ site.baseurl }}/img/logo/goal16_logo_ver_neg.svg" alt="logo Goal16">
+            </h1>
+            <div class="lang-dropdown">
+              <button class="dropdown-btn">{{page.page-lang}}</button>
+              <div id="js-dropdown" class="dropdown-content">
+                {% if page.page-lang != 'english' %}<a href="{{ site.baseurl }}/">english</a>{% endif %}
+                {% if page.page-lang != 'spanish' %}<a href="{{ site.baseurl }}/spanish">spanish</a>{% endif %}
+                {% if page.page-lang != 'french' %}<a href="{{ site.baseurl }}/french">french</a>{% endif %}
+                {% if page.page-lang != 'russian' %}<a href="{{ site.baseurl }}/russian">russian</a>{% endif %}
+                {% if page.page-lang != 'chinese' %}<a href="{{ site.baseurl }}/chinese">chinese</a>{% endif %}
+                {% if page.page-lang != 'arabic' %}<a href="{{ site.baseurl }}/arabic">arabic</a>{% endif %}
+              </div>
+            </div>
+          </div>
           {{ content }}
           <div class="link-container">
-            <a href="{{ site.baseurl }}/map" class="c-button -primary">get started</a>
+            <a href="{{ site.baseurl }}/map" class="c-button -primary">{{page.btn-text}}</a>
           </div>
           <!-- <p class="-advise">{{ page.advise }}</p> -->
         </div>
@@ -22,7 +35,7 @@
     <script>
       var SITEURL = '{{ site.baseurl }}' || null;
     </script>
-    <script src="js/main_bundle.js"></script>
+    <script src="{{ site.baseurl }}/js/main_bundle.js"></script>
   </body>
 
 </html>

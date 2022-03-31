@@ -29,6 +29,11 @@ var Router = Backbone.Router.extend({
 
   routes: {
     "(/)": "welcome",
+    "spanish(/)": "welcome",
+    "french(/)": "welcome",
+    "arabic(/)": "welcome",
+    "russian(/)": "welcome",
+    "chinese(/)": "welcome",
     "map(/)(?layerType=:type)(&layer=:layer)(&zoom=:zoom)(&center=:center)": "map",
     "countries(/)(?iso=:iso)": "countries",
     "compare(/)": "compare",

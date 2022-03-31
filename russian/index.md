@@ -5,6 +5,7 @@ page-name: welcome-russian
 advise: This is a beta version of our website - please consider it work in progress!
 published: true
 btn-text: НАЧАТЬ
+page-lang: russian
 ---
 ## Инициатива данных ЦУР16
 

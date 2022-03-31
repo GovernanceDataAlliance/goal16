@@ -5,6 +5,7 @@ page-name: welcome-spanish
 advise: This is a beta version of our website - please consider it work in progress!
 published: true
 btn-text: empezar
+page-lang: spanish
 ---
 ## La Iniciativa de Datos SDG16
 
