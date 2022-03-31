@@ -5,6 +5,7 @@ page-name: welcome-arabic
 advise: This is a beta version of our website - please consider it work in progress!
 published: true
 btn-text: get started
+page-lang: arabic
 ---
 ## مبادرة بيانات الهدف 16:
 

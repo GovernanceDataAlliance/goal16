@@ -159,4 +159,66 @@
       }
     }
   }
+
+  .welcome-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    .lang-dropdown {
+      position: relative;
+      border: 1px solid white;
+
+      .dropdown-btn, .dropdown-content > a {
+        text-transform: uppercase;
+        color: white;
+        font-size: $font-size-xsmall;
+        font-weight: bold;
+      }
+
+      .dropdown-content > a {
+        display: block;
+        padding: .75rem 1rem;
+
+        &:hover {
+          color: rgba(255,255,255, 0.6)
+        }
+      }
+
+      .dropdown-btn {
+        // position: relative;
+        padding: 1rem;
+        min-width: 120px;
+        white-space: nowrap;
+
+        &:after {
+          content: '';
+          background-image: url('#{$baseUrl}/img/miscellaneous/chevron-down-white.svg');
+          background-size: contain;
+          background-position: center;
+          background-repeat: no-repeat;
+          width: 10px;
+          height: 12px;
+          display: inline-block;
+          margin-left: 1rem;
+        }
+
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        bottom: 0;
+        left: -1%;
+        width: 102%;
+        transform: translateY(100%);
+        border: 1px solid white;
+        background-color: rgba(0,0,0, 0.5);
+
+        &.show {
+          display: block;
+        }
+      }
+    }
+  }
 }

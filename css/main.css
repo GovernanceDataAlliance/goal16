@@ -2537,6 +2537,51 @@ select {
       @media screen and (min-width: 640px) {
         .l-welcome .welcome-content .link-container {
           margin-top: 2rem; } }
+  .l-welcome .welcome-header {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    -ms-flex-align: start;
+        align-items: flex-start; }
+    .l-welcome .welcome-header .lang-dropdown {
+      position: relative;
+      border: 1px solid white; }
+      .l-welcome .welcome-header .lang-dropdown .dropdown-btn, .l-welcome .welcome-header .lang-dropdown .dropdown-content > a {
+        text-transform: uppercase;
+        color: white;
+        font-size: 12px;
+        font-weight: bold; }
+      .l-welcome .welcome-header .lang-dropdown .dropdown-content > a {
+        display: block;
+        padding: .75rem 1rem; }
+        .l-welcome .welcome-header .lang-dropdown .dropdown-content > a:hover {
+          color: rgba(255, 255, 255, 0.6); }
+      .l-welcome .welcome-header .lang-dropdown .dropdown-btn {
+        padding: 1rem;
+        min-width: 120px;
+        white-space: nowrap; }
+        .l-welcome .welcome-header .lang-dropdown .dropdown-btn:after {
+          content: '';
+          background-image: url("/img/miscellaneous/chevron-down-white.svg");
+          background-size: contain;
+          background-position: center;
+          background-repeat: no-repeat;
+          width: 10px;
+          height: 12px;
+          display: inline-block;
+          margin-left: 1rem; }
+      .l-welcome .welcome-header .lang-dropdown .dropdown-content {
+        display: none;
+        position: absolute;
+        bottom: 0;
+        left: -1%;
+        width: 102%;
+        transform: translateY(100%);
+        border: 1px solid white;
+        background-color: rgba(0, 0, 0, 0.5); }
+        .l-welcome .welcome-header .lang-dropdown .dropdown-content.show {
+          display: block; }
 
 .l-banner {
   position: relative;

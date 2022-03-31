@@ -5,6 +5,7 @@ page-name: welcome-french
 advise: This is a beta version of our website - please consider it work in progress!
 published: true
 btn-text: COMMENCER
+page-lang: french
 ---
 ## L'Initiative sur les données ODD16
 

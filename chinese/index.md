@@ -5,6 +5,7 @@ page-name: welcome-chinese
 advise: 本网站正在测试中，请予以理解。
 published: true
 btn-text: 开始
+page-lang: chinese
 ---
 ## 可持续发展目标16（SDG16）数据倡仪
 
