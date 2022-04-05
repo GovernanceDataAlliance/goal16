@@ -63,8 +63,13 @@ var FunctionHelper =  {
             var score = indicator.score.toString();
 
             if (indicator['units'] == 'Yes/No') {
+              // If there is 'units' with 'Yes/No' then assign 'worse_score' and 'best_score' to change the Score range
+              indicator['worst_score'] = '0';
+              indicator['best_score'] = '1';
 
-              indicator.literalScore = score === '1' ? 'Yes' : 'No';
+              // indicator.literalScore = score === '1' ? 'Yes' : 'No';
+              indicator.literalScore = score;
+
             }
 
             if (indicator['units'] == 'grade') {
@@ -81,8 +86,12 @@ var FunctionHelper =  {
         var score = indicators.score.toString();
 
         if (indicators['units'] == 'Yes/No') {
+          // If there is 'units' with 'Yes/No' then assign 'worse_score' and 'best_score' to change the Score range
+          indicator['worst_score'] = '0';
+          indicator['best_score'] = '1';
 
-          indicators.literalScore = score === '1' ? 'Yes' : 'No';
+          // indicators.literalScore = score === '1' ? 'Yes' : 'No';
+          indicator.literalScore = score;
         }
 
         if (indicators['units'] == 'grade') {
@@ -108,7 +117,12 @@ var FunctionHelper =  {
             if (score) {
 
               if (indicator['units'] == 'Yes/No') {
-                indicator.literalScoreA = score === '1' ? 'Yes' : 'No';
+                // If there is 'units' with 'Yes/No' then assign 'worse_score' and 'best_score' to change the Score range
+                indicator['worst_score'] = '0';
+                indicator['best_score'] = '1';
+
+                // indicator.literalScoreA = score === '1' ? 'Yes' : 'No';
+                indicator.literalScoreA = score;
               }
 
               if (indicator['units'] == 'grade') {
@@ -122,7 +136,12 @@ var FunctionHelper =  {
 
             if (score) {
               if (indicator['units'] == 'Yes/No') {
-                indicator.literalScoreB = score === '1' ? 'Yes' : 'No';
+                // If there is 'units' with 'Yes/No' then assign 'worse_score' and 'best_score' to change the Score range
+                indicator['worst_score'] = '0';
+                indicator['best_score'] = '1';
+
+                // indicator.literalScoreB = score === '1' ? 'Yes' : 'No';
+                indicator.literalScoreB = score;
               }
 
               if (indicator['units'] == 'grade') {
@@ -136,7 +155,12 @@ var FunctionHelper =  {
 
             if (score) {
               if (indicator['units'] == 'Yes/No') {
-                indicator.literalScoreC = score === '1' ? 'Yes' : 'No';
+                // If there is 'units' with 'Yes/No' then assign 'worse_score' and 'best_score' to change the Score range
+                indicator['worst_score'] = '0';
+                indicator['best_score'] = '1';
+
+                // indicator.literalScoreC = score === '1' ? 'Yes' : 'No';
+                indicator.literalScoreC = score;
               }
 
               if (indicator['units'] == 'grade') {
