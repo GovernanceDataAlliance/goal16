@@ -6,10 +6,9 @@ title: >-
   Impact of the Pandemic on Measuring Progress of SDG16+: Looking Forward,
   Tackling Obstacles
 date: '2021-07-12'
-image: Flyer%20Start.png
+image: LOOKING_FORWARD_TACKLING_OBSTACLES.png
 category: Past
 ---
-![]({{site.baseurl}}/img/Flyer%20Start.png)
 Mankind continues to face one of the deepest health crises in its history, affecting the quality of democracies, economies, and welfare worldwide. More than five years from the adoption of the 2030 Sustainable Development Agenda and the Sustainable Development Goals framework, we find ourselves at a point of setback, where the need to have strong and inclusive institutions, able to guarantee justice and peace, becomes instrumental to enable the achievement of the already ambitious SDGs.
 
 The Covid-19 pandemic has presented significant challenges to the implementation of the 2030 Agenda for Sustainable Development, jeopardizing the global ability to achieve all 17 goals by 2030. This becomes evident with increased levels of inequalities, limitations in State capacity, erosion of democratic institutions, constraints in the access to justice and protection of human rights, increased conflicts based on exacerbates social, political and economic weaknesses all over the world, among other concerning effects that continue to impact us on a daily basis. In addition to this, limitations in the capacity to collect data (official and unofficial) and access to information has presented complications to accurately measure progress and have a clear idea of where we stand and what is needed to continue moving forward.
