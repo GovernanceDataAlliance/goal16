@@ -55,7 +55,7 @@ Blogs:
 + Center for Global Development. SDG Indicators: Serious Gaps abound data availability. [http://www.cgdev.org/blog/sdg-indicators-serious-gaps-abound-data-availability](http://www.cgdev.org/blog/sdg-indicators-serious-gaps-abound-data-availability){:target="_blank"}
 + Saferworld. Peaceful approaches to global challenges. [http://www.saferworld.org.uk/news-and-views/comment/223-peaceful-approaches-to-global-challenges-on-international-day-of-peace-2016](http://www.saferworld.org.uk/news-and-views/comment/223-peaceful-approaches-to-global-challenges-on-international-day-of-peace-2016){:target="_blank"}
   
-Reports:
+Reports:   
 
 + The Institute for Economics and Peace. "From now to 2030: What is needed to measure Goal 16". [http://economicsandpeace.org/wp-content/uploads/2016/09/Goal16_2016_webfile.pdf](http://economicsandpeace.org/wp-content/uploads/2016/09/Goal16_2016_webfile.pdf){:target="_blank"}
 + TAP Network. "Goal 16 Advocacy Toolkit". [https://sustainabledevelopment.un.org/content/documents/9935TAP%20Network%20Goal%2016%20Advocacy%20Toolkit.pdf](https://sustainabledevelopment.un.org/content/documents/9935TAP%20Network%20Goal%2016%20Advocacy%20Toolkit.pdf){:target="_blank"}
