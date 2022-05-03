@@ -49,6 +49,8 @@ Websites:
 + SDG Indicators. [http://unstats.un.org/sdgs/](http://unstats.un.org/sdgs/){:target="_blank"}
 + The World Bank. Sustainable Development Goals. [http://data.worldbank.org/data-catalog/sustainable-development-goals](http://data.worldbank.org/data-catalog/sustainable-development-goals){:target="_blank"}
 + TAP Network. SDG (Goal 16) Indicators. [http://tapnetwork2030.org/our-work/sdg-goal-16-indicators/](http://tapnetwork2030.org/our-work/sdg-goal-16-indicators/){:target="_blank"}
++ Global Right to Information Rating. 
+[https://www.rti-rating.org/](https://www.rti-rating.org/){:target="_blank"}
  
 Blogs:
 
