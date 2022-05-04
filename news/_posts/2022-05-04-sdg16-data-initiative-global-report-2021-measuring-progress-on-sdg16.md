@@ -7,7 +7,7 @@ author: Theodor Thisell
 summary: News Article on the launch of  the SDG16 Data Initiative Global Report 2021
 category: SDG16 Data Initiative Global Report 2021
 image: report-2021.png
-date: ''
+date: '2022-05-04'
 ---
 The **SDG16 Data Initiative** is proud to launch our [2021 Annual Global Report](https://www.idea.int/sites/default/files/news/news-pdfs/SDG16DI%20Global%20Report%202021%20FINAL.pdf)! The SDG16 Data Initiative Global Report series aims to evaluate global progress towards realizing the 2030 Agenda’s promise of peaceful, just and inclusive societies. The Global Report provides governments, UN officials, and civil society stakeholders with a resource to help understand progress on SDG16 targets and an evidence base for them to identify gaps and shortcomings in both implementing and monitoring SDG16.
 
