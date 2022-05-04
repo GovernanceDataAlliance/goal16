@@ -17,7 +17,7 @@ The SDG16 Data Initiative is a consortium dedicated to promoting non-official da
   
   
   
-**_More resources related to the event can be found below:_**
+**_More resources related to the report can be found below:_**
 
 [Read the SDG16 Data Initiative Global Report 2021: Measuring Progress on SDG16+](http://www.sdg16.org/reports/2021/12/06/launch-of-the-sdg16di-global-report-2021.html)
 
