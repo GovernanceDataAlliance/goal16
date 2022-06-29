@@ -2,9 +2,7 @@
 tag: events
 published: true
 layout: events/post
-title: >-
-  High-Level Political Forum on Sustainable Development Side Event: Progress on
-  SDG16: How are we doing and what happens if we fail?
+title: 'Progress on SDG16: How are we doing and what happens if we fail?'
 image: SDG16_HLPF_June_flyer2.gif
 date: '2022-06-29'
 ---
