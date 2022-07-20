@@ -3,15 +3,15 @@ with r as (
     count(target_slug) base, 
     target_slug 
   FROM 
-    indicators group by target_slug
+    {{indicators}} group by target_slug
 ), s as ( 
   SELECT 
     distinct on (target_slug, iso) target_slug, 
     iso, 
     count(iso) over (PARTITION BY iso, target_slug ORDER BY iso DESC) 
-  FROM indicators 
+  FROM {{indicators}} 
   inner join 
-    scores 
+    {{scores}} 
   on 
     slug=indicator_slug 
   order by 
@@ -27,6 +27,6 @@ select
 from s 
 left join r 
   on r.target_slug=s.target_slug 
-inner join countries c 
+inner join {{countries}} c 
   on c.iso=s.iso 
 where s.target_slug ='{{slug}}'

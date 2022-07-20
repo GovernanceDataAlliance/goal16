@@ -75,7 +75,7 @@ var Router = Backbone.Router.extend({
     var view;
 
     var uri = new URI(window.location),
-        params = uri.search(true);
+        params = uri.search(true); // Returns URL params into an object
 
     if (!this.viewManager.hasView('map')) {
       this.viewManager.addView('map', MapView);

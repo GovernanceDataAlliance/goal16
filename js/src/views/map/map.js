@@ -24,6 +24,11 @@ var MapView = Backbone.View.extend({
   id: 'map-container',
   className: 'l-map',
 
+  // Options - linking to latest tables for creating map layers of countries
+  countries_table: CONFIG.cartodb.countries_table,
+  scores_table: CONFIG.cartodb.scores_table,
+  indicators_table: CONFIG.cartodb.indicators_table,
+
   options: {
     legend: false,
     basemap: 'https://api.tiles.mapbox.com/v4/goal16.9990f1b9/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZ29hbDE2IiwiYSI6ImNpcGgzaWwzbDAwMW52Mmt3ZG5tMnRwN3gifQ.-e8de3rW2J8gc2Iv3LzMnA',
@@ -51,6 +56,18 @@ var MapView = Backbone.View.extend({
 
   initialize: function() {
     this.status = status;
+
+    /*
+      Status Object - parameters for fetching country and map datapoints
+      {
+        center: ""
+        lat: ""
+        layer: "" // Links to 'target_slug' from indicators table
+        layerType: "" // Clicking the layer 2 levels i.e. 16.x gives 'target'. 3 levels i.e. gives 'indicators'
+        lng: "4.5"
+        zoom: ""
+      }
+    */
   },
 
   updateMapParams: function() {
@@ -58,6 +75,7 @@ var MapView = Backbone.View.extend({
     this.options.map.center = this.status.get('lat') && this.status.get('lng') ? [this.status.get('lat'), this.status.get('lng')] : this.options.map.center;
   },
 
+  // 'layer' checks if target/indicators have been selected to create country map layers. If not then, it just shows the world base map layer
   setMapLayer: function() {
     if (this.status.get('layer')) {
       this.$el.addClass('is-loading -map');
@@ -76,6 +94,7 @@ var MapView = Backbone.View.extend({
     this.shareWindowView;
   },
 
+  // Javascript Media Query Listenener
   _setView: function() {
     enquire.register("screen and (max-width:767px)", {
       match: _.bind(function(){
@@ -143,6 +162,7 @@ var MapView = Backbone.View.extend({
     this.map.setView( [this.status.get('lat'), this.status.get('lng') ] );
   },
 
+  // Creates the base map layer of world
   _initMap: function() {
     // use proj4 text for desired SRID
     this.options.map.crs =  cartodbProj('+proj=eqc +lat_ts=0 +lat_0=0 +lon_0=0 +x_0=0 +y_0=0 +a=6371007 +b=6371007 +units=m +no_defs');
@@ -150,11 +170,13 @@ var MapView = Backbone.View.extend({
     /* Here we create the map with Leafleft... */
     this.map = L.map(this.el, this.options.map);
 
+    // Get world base map first
     this._getBasemapLayer().done(function(){
       this.map.addLayer(this.baseMap);
       this.baseMap.setZIndex(1);
     }.bind(this));
 
+    // Get all map labels (i.e. country & ocean names) and layer on top of world base map
     this._getBasemapLayer('labels').done(function(){
       this.map.addLayer(this.baseMapLabels);
       this.baseMapLabels.setZIndex(2000);
@@ -218,6 +240,7 @@ var MapView = Backbone.View.extend({
   },
 
   _activeLayer: function() {
+    // Checks if the target/indicators are selected from dashboard
     if (this.status.get('layer')) {
       this._createLayer().done(_.bind(function() {
         this._addLayer();
@@ -229,10 +252,11 @@ var MapView = Backbone.View.extend({
     }
   },
 
+  // Creates a map layer for countries based on either target (16.x) / indicator (16.x.x)
   _createLayer: function() {
     var sql = this._getLayerQuery();
     var cartoAccount = this.options.cartodb.user_name;
-    var type = this.status.get('layerType');
+    var type = this.status.get('layerType'); // target/indicator
     var cartoCss = this.options.cartodb.cartocss[type];
     var deferred = $.Deferred();
 
@@ -296,10 +320,21 @@ var MapView = Backbone.View.extend({
     var layer = this.status.get('layer');
     var type = this.status.get('layerType');
     var options = {
-      slug: layer
+      slug: layer,
+      countries: this.countries_table,
+      scores: this.scores_table,
+      indicators: this.indicators_table
     };
 
+    // console.log("options", options);
+
+    /*
+      targetLayerSQL = SQL statement for target i.e 16.x
+      indicatorLayerSQL = SQL statement for indicator i.e 16.x.x
+    */
     var query = type === 'target' ? targetLayerSQL(options) : indicatorLayerSQL(options);
+
+    // console.log("query", query);
 
     return query;
   },

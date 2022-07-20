@@ -3,5 +3,5 @@ select
   st_transform(c.the_geom_webmercator, 3786) as the_geom_webmercator, 
   s.iso, 
   s.score  
-FROM scores as s JOIN countries as c on c.iso = s.iso 
+FROM {{scores}} as s JOIN {{countries}} as c on c.iso = s.iso 
 WHERE indicator_slug='{{slug}}'
