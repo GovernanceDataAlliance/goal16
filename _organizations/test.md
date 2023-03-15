@@ -3,6 +3,7 @@ published: true
 name: International IDEA
 link: 'https://idea.int'
 description: Test
+logo: idea.png
 ---
 ## A New Post
 
