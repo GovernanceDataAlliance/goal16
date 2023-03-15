@@ -39,7 +39,7 @@ prose:
     - /blog/categories.html
     - /blog/tags.html
     - /scripts
-    - /_organizations
+    # - /_organizations
     - /data
     - /map
     - /compare
