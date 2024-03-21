@@ -991,9 +991,15 @@ var Router = Backbone.Router.extend({
     "arabic(/)": "welcome",
     "russian(/)": "welcome",
     "chinese(/)": "welcome",
+<<<<<<< HEAD
     // "map(/)(?layerType=:type)(&layer=:layer)(&zoom=:zoom)(&center=:center)": "map",
     // "countries(/)(?iso=:iso)": "countries",
     // "compare(/)": "compare",
+=======
+    "map(/)(?layerType=:type)(&layer=:layer)(&zoom=:zoom)(&center=:center)": "map",
+    "countries(/)(?iso=:iso)": "countries",
+    "compare(/)": "compare",
+>>>>>>> 59e8163 ([fix] page routes are now disable through jekyll config)
     "data(/)(?indicator=:indicator)": "data",
     "about(/)": "about",
     "news(/)(*actions)": "news",
