@@ -4,7 +4,7 @@ published: true
 layout: reports/post
 title: 'Launch of the 2022 Global Report: Are we on track to meeting the 2030 agenda?'
 date: '2022-11-11'
-image: SDG_16_Data_Initiative_Report_2022_cover.jpg
+image: SDG_16_Data_Initiative_Report_2022_cover.png
 ---
 The **SDG16 Data Initiative** is proud to launch our **2022 Annual Global Report**. The report, jointly produced by the SDG16 Data Initiative consortium, aims to evaluate global progress towards realizing Sustainable Development Goal 16 - Promoting peaceful and inclusive societies for sustainable development – presenting the latest evidence. In addition, as we are near the halfway point for the 2030 Agenda for Sustainable Development, the report constitutes a moment for reflection and clarification of priorities for all actors involved in this collaborative pursuit.
 
