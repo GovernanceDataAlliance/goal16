@@ -26,7 +26,7 @@ exclude: [
   'node_modules',
   'vendor',
   'compare', # Exclude page from build
-  'map', # Exclude page from build
+  # 'map', # Exclude page from build
   'countries', # Exclude page from build
 ]
 
