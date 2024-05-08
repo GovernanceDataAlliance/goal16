@@ -43,9 +43,9 @@
     var divElement = document.getElementById('viz1715133886609');
     var vizElement = divElement.getElementsByTagName('object')[0];
 
-    // let headerHeight = document.getElementById('header').offsetHeight;
+    let headerHeight = document.getElementById('header').offsetHeight;
 
-    let dynamicVizHeight = (divElement.offsetWidth * 0.75);
+    let dynamicVizHeight = (divElement.offsetWidth * 0.75) - headerHeight;
 
     if (divElement.offsetWidth > 800) {
       vizElement.style.width = '100%';
