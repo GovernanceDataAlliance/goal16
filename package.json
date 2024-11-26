@@ -29,7 +29,7 @@
     "slick-carousel-browserify": "^1.6.12",
     "stringify": "^5.2.0",
     "topojson": "^1.6.19",
-    "urijs": "^1.16.1",
+    "urijs": "^1.19.11",
     "watchify": "^4.0.0"
   },
   "devDependencies": {
