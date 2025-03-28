@@ -7,7 +7,7 @@ published: true
 
 ## Introduction
 
-The SDG16 Data Initiative is a collective project by a consortium of organisations seeking to support the open tracking of the global commitments made by more than 194 countries on peace, justice, and strong institutions!
+The SDG16 Data Initiative is a collective project by a consortium of 18 organisations seeking to support the open tracking of the global commitments made by more than 194 countries on peace, justice, and strong institutions!
 
 The initiative aims to complement the current efforts underway to develop an official indicator framework for monitoring the SDGs. The [Inter-agency Expert Group on SDG Indicators](http://unstats.un.org/sdgs/iaeg-sdgs/) (IAEG-SDGs) has identified 23 global indicators under SDG16’s 12 targets. It is intended that national statistical systems will eventually produce the majority of the data for these indicators. The UN Statistical System and other global organizations will then collate this official data at the global level.
 
