@@ -2,7 +2,7 @@
 tag: reports
 published: true
 layout: reports/post
-title: SDG 16 Data Initiative Report 2024
+title: SDG16 Data Initiative Report 2024
 image: sdg16di2024.jpg
 date: '2024-12-12'
 ---
