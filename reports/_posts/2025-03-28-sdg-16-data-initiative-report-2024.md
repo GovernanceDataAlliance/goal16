@@ -3,6 +3,7 @@ tag: reports
 published: true
 layout: reports/post
 title: SDG 16 Data Initiative Report 2024
+image: SDG16DI2024.jpg
 ---
 ## SDG 16 as a Key Vector for Eliminating Poverty
 
