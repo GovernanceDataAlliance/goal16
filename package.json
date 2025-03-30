@@ -9,7 +9,7 @@
     "deploy": "./scripts/deploy.sh"
   },
   "dependencies": {
-    "async": "^1.5.0",
+    "async": "^2.6.4",
     "autoprefixer": "^6.3.1",
     "backbone": "^1.2.3",
     "backbone.marionette": "^4.1.3",
