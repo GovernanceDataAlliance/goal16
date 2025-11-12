@@ -4,6 +4,7 @@ published: true
 layout: reports/post
 title: SDG 16 Data Initiative Report 2025
 date: '2025-11-12'
+image: img/reports/SDG16DI2025
 ---
 ## Promoting Progress on SDG 16 and SDG 5 as Pathways to Inclusive Social Development
 
