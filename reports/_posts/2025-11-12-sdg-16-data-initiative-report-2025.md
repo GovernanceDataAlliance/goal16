@@ -21,7 +21,8 @@ The Beijing Declaration and Platform for Action (United Nations 1996) and the Co
 As the world approaches the final years of the SDGs, the commitments made 30 years ago remain central to the aspirations of today, including gender equality and women’s empowerment, democracy, transparent governance, social justice and peace—all indispensable for people-centred development and enshrined in SDG 5 and SDG 16.
 
 
-Read the report to learn more about the interlinkages between SDG 16, SDG 5 and social development!
+Read the report to learn more about the interlinkages between SDG 16, SDG 5 and social development.
+
 [Download the Report Here!](https://www.idea.int/sites/default/files/2025-11/SDG16%20DI%20Report%202025.pdf)
 
 
